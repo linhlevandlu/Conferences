@@ -91,13 +91,15 @@ The CNN was designed and trained for performing an automatic landmarks detection
 	\label{figarch}
 \end{figure}
 
-After three feature extraction structures, the architecture contains two full connected layers with 1000 units per each layer and a dropout layer between them. The probability value of this layer is set to $0.5$. The output layer contains 16 units corresponding to the coordinates of eight predicted landmarks. The detail of parameters at each layer are shown in Appendix section. The implementation of this architecture used Python on Lasagne framework\cite{lasagne} which allows to train the network on GPU. The training process took around 3 hours using NVIDIA TITAN X cards.
+After three feature extraction structures, the architecture contains two full connected layers with 1000 units per each layer and a dropout layer between them. The probability value of this layer is set to $0.5$. The output layer contains 16 units corresponding to the coordinates of eight predicted landmarks. The detail of parameters at each layer are shown in Appendix section. The implementation of this architecture used Python on Lasagne framework\cite{lasagne} which allows to train the network on GPU. The training process took around 3 hours using NVIDIA TITAN X cards. The design of the network is available on GitHub\footnote{It is freely obtained by request the authors.}.
 \subsection{Overfitting problem}
 The proposed network has a large number of learnable parameters. In addition, the size of the dataset is limited, this means that overfitting will occur during the training process. Because the network works on  gray-scale image and mostly the processes compute the value from the pixels. So, we have applied two rules to enlarge the size of the dataset.
 
 The first rule was applied to change the value of each channel in the original image. According to this rule, a constant is adding to a channel of RGB image and for each time, we just change the value of one of three channels. For example, from an original RGB image, if we add a constant $c = 10$ to the red channel, we will obtain a new image with the values at red channel are greater than the red channel of original image a value of 10. By this way, we can generate three new RGB images from a RGB image.
 
 The second rule is splitting the channels of RGB images. It means that we separate the channels of RGB into three gray-scale images. This work seems like right because the network works on single-channel images. At the end, we can generate six version from an image, the total number of images that used to train and validate is $260 \times 7 = 1820$ images (six versions and original image). The number of images that used for training and validation is split randomly by a ratio that has been set during setup the network.
+
+Besides enlarge the dataset, we also used dropout layers to prevent the overfitting. The idea of dropout is to randomly drop units from the neural network during training. It deters units from co-adapting too much. During training, dropout samples from an exponential number of different ``thinned" network. At test times, it is easy to approximate the effect of averaging the prediction of all thinned networks by simply using a single unthinned network that has smaller weights. This significantly reduces overfitting and gives major improvements over other regularization methods\cite{srivastava2014dropout}.
 \section{Results}
 The dataset has been built by the biologists. It includes the images and manual landmarks. So, we can use the manual landmarks coordinates as ground truth to evaluate the coordinates of predicted landmarks. In the context of deep learning, landmark prediction can see as the regression problem. Therefore, the quality metric is used to evaluate the results. In particular, we use root mean square error (RMSE) to compute the accuracy of the implemented architecture. To have the predicted coordinates of all landmarks in all the images, the network was trained many times with different training dataset and was tested on the corresponding test set.
 
@@ -155,8 +157,13 @@ Besides the coefficient, the distance from predicted landmarks to manual landmar
 	\caption{The proportion of acceptable predicted landmarks}
 	\label{figchart}
 \end{figure}
+
+At the test phase, the trained network is used to predict the landmarks on a set of unseen images (test set). With a bit of Python code, the program outputs the predicted-landmarks of the images as TPS files; in additional, it also fills and displays the predicted-landmarks on sixteenth firstly images of test data. With the outputs are TPS files, the user can use MAELab\cite{le2017maelab} framework\footnote{MAELab is a free software written in C++. It can be directly
+and freely obtained by request at the authors.} to display the landmarks on the images.
 \section{Conclusion and future works}
-We present a method for landmarks prediction on beetle images. The method used the convolutional neural network for automatic detection landmarks. After training with the manual landmarks which given by the biologist, the network is possible to predict the landmarks on unseen images. The model is implemented using open source tools. The results from the testing period are evaluated by several different methods. Some of them has been given the good coefficient. The quality of prediction can be used to replace for manual landmarks in some aspect.
+We present a method for landmarks prediction on beetle images, specifically, pronotum images. The method used the convolutional neural network for automatic detection landmarks. It includes three times repeated of a structure consists of a convolutional layer, a max pooling layer, and a dropout layer, followed by the connected layers. During the training phase, the techniques are used to prevent overfitting, a common issue of the neural network. The network was trained in several times in different selection of training data. After training with the manual landmarks which given by the biologist, the network is possible to predict the landmarks on the set of unseen images. The model is implemented using open source tools and available on GitHub.
+
+The results from the testing period are evaluated by several different methods: The correlations have been used to calculate the coefficients on coordinates of predicted landmarks. Besides, the distance between manual landmark and corresponding predicted-landmark were also computed. Then, the standard deviation based on the distance is used to correct the acceptable landmarks. The average of distance errors on each landmark was also considered. Some of the methods have been given the good coefficient. The quality of prediction can be used to replace for manual landmarks in some aspect.
 
 Finally, using the convolutional network to predict the landmarks on biological images promising the good results. However, when we expect more about the accuracy of predicted landmarks, the result of this work is not enough. Therefore, future research in landmarking identification appears as a improve the worth exploring.
 
@@ -206,7 +213,7 @@ The detail parameters in each layer are shown in Table \ref{modelparameters}.
 		layer 13 & FC(16) \\ \hline
 	\end{tabular}
 	\label{modelparameters}
-\end{table}~\\
+\end{table}~\\[1cm]
 Which:
 \begin{itemize}
 	\item CONV(x,y,z,t): convolutional layer with the parameters: \textit{x = number of filters, y = size of filter matrix, z = stride value, t = padding value}

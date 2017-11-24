@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: main.aux
 The style file: IEEEtran.bst
@@ -12,50 +12,54 @@ Repeated entry---line 144 of file includes/references.bib
  : @article{lecun2015deep
  :                       ,
 I'm skipping whatever remains of this entry
--- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
+Repeated entry---line 339 of file includes/references.bib
+ : @article{srivastava2014dropout
+ :                               ,
+I'm skipping whatever remains of this entry
+-- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 
 Done.
-You've used 38 entries,
-            4039 wiz_defined-function locations,
-            1023 strings with 14873 characters,
-and the built_in function-call counts, 31583 in all, are:
-= -- 2438
-> -- 884
-< -- 269
-+ -- 484
-- -- 160
-* -- 1516
-:= -- 4502
-add.period$ -- 84
-call.type$ -- 38
-change.case$ -- 36
-chr.to.int$ -- 654
-cite$ -- 38
-duplicate$ -- 2224
-empty$ -- 2613
-format.name$ -- 192
-if$ -- 7352
+You've used 39 entries,
+            4087 wiz_defined-function locations,
+            1040 strings with 15186 characters,
+and the built_in function-call counts, 32792 in all, are:
+= -- 2529
+> -- 915
+< -- 282
++ -- 502
+- -- 165
+* -- 1570
+:= -- 4654
+add.period$ -- 86
+call.type$ -- 39
+change.case$ -- 37
+chr.to.int$ -- 684
+cite$ -- 39
+duplicate$ -- 2296
+empty$ -- 2686
+format.name$ -- 198
+if$ -- 7723
 int.to.chr$ -- 0
-int.to.str$ -- 38
-missing$ -- 404
-newline$ -- 143
-num.names$ -- 38
-pop$ -- 994
+int.to.str$ -- 39
+missing$ -- 416
+newline$ -- 146
+num.names$ -- 39
+pop$ -- 1018
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 2423
+skip$ -- 2508
 stack$ -- 0
-substring$ -- 1564
-swap$ -- 1828
-text.length$ -- 51
+substring$ -- 1635
+swap$ -- 1898
+text.length$ -- 54
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 38
+type$ -- 39
 warning$ -- 0
-while$ -- 147
-width$ -- 40
-write$ -- 383
-(There was 1 error message)
+while$ -- 152
+width$ -- 41
+write$ -- 394
+(There were 2 error messages)
