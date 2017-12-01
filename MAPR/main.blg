@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: main.aux
 The style file: IEEEtran.bst
@@ -16,22 +16,22 @@ Repeated entry---line 339 of file includes/references.bib
  : @article{srivastava2014dropout
  :                               ,
 I'm skipping whatever remains of this entry
--- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
+-- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 
 Done.
 You've used 39 entries,
-            4087 wiz_defined-function locations,
-            1040 strings with 15186 characters,
-and the built_in function-call counts, 32792 in all, are:
+            4039 wiz_defined-function locations,
+            1029 strings with 15116 characters,
+and the built_in function-call counts, 32674 in all, are:
 = -- 2529
 > -- 915
 < -- 282
 + -- 502
 - -- 165
 * -- 1570
-:= -- 4654
+:= -- 4653
 add.period$ -- 86
 call.type$ -- 39
 change.case$ -- 37
@@ -40,7 +40,7 @@ cite$ -- 39
 duplicate$ -- 2296
 empty$ -- 2686
 format.name$ -- 198
-if$ -- 7723
+if$ -- 7606
 int.to.chr$ -- 0
 int.to.str$ -- 39
 missing$ -- 416
