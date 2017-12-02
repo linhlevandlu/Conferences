@@ -116,14 +116,13 @@ The second rule is splitting the channels of RGB images. It means that we separa
 \section{Results}
 The dataset has been built by the biologists. It includes the images and manual landmarks. So, we can use the manual landmarks coordinates as ground truth to evaluate the coordinates of predicted landmarks. In the context of deep learning, landmark prediction can see as the regression problem. Therefore, the quality metric is used to evaluate the results. In particular, we use root mean square error (RMSE) to compute the accuracy of the implemented architecture. To have the predicted coordinates of all landmarks in all the images, the network was trained many times with different training dataset and was tested on the corresponding test set.
 
-Fig. show the training errors and the validation errors of a training time on the first and the third model. The blue curve presents RMSE on training set, the green curve presents the validation error. Clearly, the overfitting has appeared in the first model.  Besides, the validation loss stabled from 2000 epochs while the training loss continued to decrease. This against with the losses of the third model. At the beginning, we see the variety between the losses but the training continue, the variety reduced and the overfitting problem have been solved.
+Fig.\ref{figloss1} and \ref{figloss} show the training errors and the validation errors of a training time on the first and the third model. The blue curve presents RMSE on training set, the green curve presents the validation error. Clearly, the overfitting has appeared in the first model(Fig.\ref{figloss1}). Besides, the validation loss stabled from 2000 epochs while the training loss continued to decrease. This against with the losses of the third model. At the beginning, we see the variety between the losses but the training continue, the variety reduced and the overfitting problem have been solved.
 
 \begin{figure}[htbp]
 	\centerline{\includegraphics[scale=0.3]{images/loss_model_1}}
 	\caption{Learning curves of the first model.}
-	\label{figloss}
+	\label{figloss1}
 \end{figure}
-
 \begin{figure}[htbp]
 	\centerline{\includegraphics[scale=0.35]{images/loss_v16}}
 	\caption{Learning curves of the last model.}
