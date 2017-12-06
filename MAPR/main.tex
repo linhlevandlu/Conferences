@@ -53,11 +53,11 @@ Morphometry, biological, landmarks, CNN
 Morphometry analysis refers to measure the topography of an object, a notion that includes the shape and size. Morphometry analysis is often applied to organisms. In biology, the biologist can work with several parameters from organisms such as lengths, widths, masses, angles,... to analyze the interaction of environment to the developmental of organisms. Besides the traditional information, the landmark is known as one of the characteristics to analyze the shape. Instead of collecting all information, the shape is determined by a finite set of points, called landmarks. The landmarks are the points that store the important information about the shape of the object, \textit{for example}, four corners of the rectangle are four landmarks of a rectangle. Currently, the landmarks are along the outline of the object but in some special cases, it has been defined inside the object. Morphometry landmarks are a kind of points-of-interest, they are directly linked to the animal anatomy. In our study, the morphometric landmarks are specific points defined by the biologists. They are used in many biological studies. Manual landmarks setting is time-consuming and difficult to reproduce. Therefore, a method that gives automatically the location of landmarks could has a lot of interest.
 
 This work introduces a method for automatic detection of the landmarks on biological images. The main idea consists design and train a convolutional neural network\cite{lecun2010convolutional} with a set of manual landmarks. By this way, the trained network will be able to detect the morphometry landmarks on biological images. The dataset includes 293 beetles images from Brittany lands. All the images are presented in RGB color with two dimensions. For each beetle, the biologists took images of five parts: \textit{left and right mandibles, head, body, and pronotum}. For each image, a set of landmarks has been manually determined by experts. In the last our work, a method has been presented to determine the landmarks on left and right mandibles\cite{le2017maelab}. This method is based on the image processing techniques\cite{canny1986computational}, combining with principal component analysis\cite{shlens2014tutorial} and SIFT descriptor\cite{lowe2004distinctive}. In the context of this work, we work on the dataset of pronotum images (Fig.\ref{figpronotum}). For each pronotum image, a set of 8 manual landmarks have been set by the biologists. The coordinates of manual landmarks were used as the input to train the network. During the first phase, a number of 260 images and their manual landmarks were used to train and validate the network. The remaining images were used to evaluate the output model of the network in the second phase.
-\begin{figure}[htbp]
-	\centerline{\includegraphics[scale=0.8]{images/pronotum}}
-	\caption{An example of pronotum with manual landmarks}
-	\label{figpronotum}
-\end{figure}
+%\begin{figure}[htbp]
+%	\centerline{\includegraphics[scale=0.8]{images/pronotum}}
+%	\caption{An example of pronotum with manual landmarks}
+%	\label{figpronotum}
+%\end{figure}
 
 In the next section, we study several related works to determine the landmarks on 2D images by CNN. Section 3 presents the architecture of the network, its parameters, and the implementation. All the experiments and analysing the results will be detailed in section 4.
 \section{Related works}
@@ -66,6 +66,12 @@ In recent years, deep learning is known as a solution in computer vision. Using 
 In the field of facial keypoint detection, Yi Sun et al.\cite{sun2013deep} proposed cascaded convolutional networks to predict five facial points (points stay on the human face): \textit{left eye center, right eye center, nose, left mouth corner, and right mouth corner}. They cascade three levels of the convolutional networks to predict the facial points: The first level, the networks are designed to predict several landmarks together by covering the whole face; the networks in the second and the third level are used to predict each landmark on the face. They take the patches centered at the predicted positions of previous levels as input and try to improve the accuracy of predicted positions. Zhanpeng Zhang et al\cite{zhang2014facial} proposed a \textit{Tasks-Constrained Deep Convolutional Network} to optimize facial landmarks detection. The model determines the facial landmarks with a set of related tasks such as head pose estimation, gender classification, age estimation, face recognition, or facial attribute inference. Firstly, all the images are used as the input, their output spaces the images into several tasks. Then, the network is applied to determine the landmarks on the images of each task. 
 
 In biology field, Cintas et al\cite{cintas2016automatic} has introduced a network to predict the landmarks on human ears. The network was designed to receive the images with the size of $96 \times 96$ pixels as the inputs. After training, the network has the ability to predict 45 landmarks and semi-landmarks on human ears. In their proposed architecture, the network with three times repeated of a structure includes two convolutional layers with the filters, followed by maximum pooling and dropout layers. The structures then adding two full-connected layers and a dropout layer. At the end, an output layer with 90 output units corresponding with 45 landmarks is hired to provide the position of the predicted landmarks.
+\section{Convolutional neural networks}
+\section{Application to landmarks identification}
+\subsection{Preprocessing data}
+\subsection{Network architecture and training}
+\subsection{Results}
+\section{Conclusion and future works}
 
 \section{Method and implementation}
 \label{sec3}
