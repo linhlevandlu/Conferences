@@ -16,51 +16,58 @@ Repeated entry---line 339 of file includes/references.bib
  : @article{srivastava2014dropout
  :                               ,
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for ""
+Repeated entry---line 348 of file includes/references.bib
+ : @article{lowe2004distinctive
+ :                             ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 358 of file includes/references.bib
+ : @article{palaniswamy2010automatic
+ :                                  ,
+I'm skipping whatever remains of this entry
 -- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 
 Done.
-You've used 39 entries,
+You've used 25 entries,
             4039 wiz_defined-function locations,
-            1029 strings with 15116 characters,
-and the built_in function-call counts, 32674 in all, are:
-= -- 2529
-> -- 915
-< -- 282
-+ -- 502
-- -- 165
-* -- 1570
-:= -- 4653
-add.period$ -- 86
-call.type$ -- 39
-change.case$ -- 37
-chr.to.int$ -- 684
-cite$ -- 39
-duplicate$ -- 2296
-empty$ -- 2686
-format.name$ -- 198
-if$ -- 7606
+            953 strings with 12464 characters,
+and the built_in function-call counts, 21686 in all, are:
+= -- 1682
+> -- 600
+< -- 192
++ -- 331
+- -- 106
+* -- 1054
+:= -- 3070
+add.period$ -- 56
+call.type$ -- 25
+change.case$ -- 25
+chr.to.int$ -- 471
+cite$ -- 25
+duplicate$ -- 1515
+empty$ -- 1769
+format.name$ -- 128
+if$ -- 5049
 int.to.chr$ -- 0
-int.to.str$ -- 39
-missing$ -- 416
-newline$ -- 146
-num.names$ -- 39
-pop$ -- 1018
+int.to.str$ -- 25
+missing$ -- 270
+newline$ -- 102
+num.names$ -- 25
+pop$ -- 661
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 2508
+skip$ -- 1656
 stack$ -- 0
-substring$ -- 1635
-swap$ -- 1898
-text.length$ -- 54
+substring$ -- 1127
+swap$ -- 1262
+text.length$ -- 35
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 39
+type$ -- 25
 warning$ -- 0
-while$ -- 152
-width$ -- 41
-write$ -- 394
-(There were 2 error messages)
+while$ -- 102
+width$ -- 27
+write$ -- 263
+(There were 4 error messages)

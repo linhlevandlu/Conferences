@@ -50,48 +50,10 @@ D.~G. Lowe, ``Distinctive image features from scale-invariant keypoints,''
   \emph{International journal of computer vision}, vol.~60, no.~2, pp. 91--110,
   2004.
 
-\bibitem{krizhevsky2012imagenet}
-A.~Krizhevsky, I.~Sutskever, and G.~E. Hinton, ``Imagenet classification with
-  deep convolutional neural networks,'' in \emph{Advances in neural information
-  processing systems}, 2012, pp. 1097--1105.
-
-\bibitem{ciregan2012multi}
-D.~Ciregan, U.~Meier, and J.~Schmidhuber, ``Multi-column deep neural networks
-  for image classification,'' in \emph{Computer Vision and Pattern Recognition
-  (CVPR), 2012 IEEE Conference on}.\hskip 1em plus 0.5em minus 0.4em\relax
-  IEEE, 2012, pp. 3642--3649.
-
-\bibitem{li2015convolutional}
-H.~Li, Z.~Lin, X.~Shen, J.~Brandt, and G.~Hua, ``A convolutional neural network
-  cascade for face detection,'' in \emph{Proceedings of the IEEE Conference on
-  Computer Vision and Pattern Recognition}, 2015, pp. 5325--5334.
-
-\bibitem{lawrence1997face}
-S.~Lawrence, C.~L. Giles, A.~C. Tsoi, and A.~D. Back, ``Face recognition: A
-  convolutional neural-network approach,'' \emph{IEEE transactions on neural
-  networks}, vol.~8, no.~1, pp. 98--113, 1997.
-
-\bibitem{farfade2015multi}
-S.~S. Farfade, M.~J. Saberian, and L.-J. Li, ``Multi-view face detection using
-  deep convolutional neural networks,'' in \emph{Proceedings of the 5th ACM on
-  International Conference on Multimedia Retrieval}.\hskip 1em plus 0.5em minus
-  0.4em\relax ACM, 2015, pp. 643--650.
-
-\bibitem{osadchy2007synergistic}
-M.~Osadchy, Y.~L. Cun, and M.~L. Miller, ``Synergistic face detection and pose
-  estimation with energy-based models,'' \emph{Journal of Machine Learning
-  Research}, vol.~8, no. May, pp. 1197--1215, 2007.
-
-\bibitem{lecun1990handwritten}
-Y.~LeCun, B.~E. Boser, J.~S. Denker, D.~Henderson, R.~E. Howard, W.~E. Hubbard,
-  and L.~D. Jackel, ``Handwritten digit recognition with a back-propagation
-  network,'' in \emph{Advances in neural information processing systems}, 1990,
-  pp. 396--404.
-
-\bibitem{graves2009offline}
-A.~Graves and J.~Schmidhuber, ``Offline handwriting recognition with
-  multidimensional recurrent neural networks,'' in \emph{Advances in neural
-  information processing systems}, 2009, pp. 545--552.
+\bibitem{palaniswamy2010automatic}
+S.~Palaniswamy, N.~A. Thacker, and C.~P. Klingenberg, ``Automatic
+  identification of landmarks in digital images,'' \emph{IET Computer Vision},
+  vol.~4, no.~4, pp. 247--260, 2010.
 
 \bibitem{sun2013deep}
 Y.~Sun, X.~Wang, and X.~Tang, ``Deep convolutional network cascade for facial
@@ -110,19 +72,20 @@ C.~Cintas, M.~Quinto-S{\'a}nchez, V.~Acu{\~n}a, C.~Paschetta, S.~de~Azevedo,
   geometric morphometrics and convolutional neural networks,'' \emph{IET
   Biometrics}, vol.~6, no.~3, pp. 211--223, 2016.
 
-\bibitem{palaniswamy2010automatic}
-S.~Palaniswamy, N.~A. Thacker, and C.~P. Klingenberg, ``Automatic
-  identification of landmarks in digital images,'' \emph{IET Computer Vision},
-  vol.~4, no.~4, pp. 247--260, 2010.
-
-\bibitem{kaur2015automatic}
-A.~Kaur and C.~Singh, ``Automatic cephalometric landmark detection using
-  zernike moments and template matching,'' \emph{Signal, Image and Video
-  Processing}, vol.~9, no.~1, pp. 117--132, 2015.
-
 \bibitem{lecun2015deep}
 Y.~LeCun, Y.~Bengio, and G.~Hinton, ``Deep learning,'' \emph{Nature}, vol. 521,
   no. 7553, pp. 436--444, 2015.
+
+\bibitem{krizhevsky2012imagenet}
+A.~Krizhevsky, I.~Sutskever, and G.~E. Hinton, ``Imagenet classification with
+  deep convolutional neural networks,'' in \emph{Advances in neural information
+  processing systems}, 2012, pp. 1097--1105.
+
+\bibitem{ciregan2012multi}
+D.~Ciregan, U.~Meier, and J.~Schmidhuber, ``Multi-column deep neural networks
+  for image classification,'' in \emph{Computer Vision and Pattern Recognition
+  (CVPR), 2012 IEEE Conference on}.\hskip 1em plus 0.5em minus 0.4em\relax
+  IEEE, 2012, pp. 3642--3649.
 
 \bibitem{szegedy2015going}
 C.~Szegedy, W.~Liu, Y.~Jia, P.~Sermanet, S.~Reed, D.~Anguelov, D.~Erhan,
@@ -164,39 +127,16 @@ S.~Jean, K.~Cho, R.~Memisevic, and Y.~Bengio, ``On using very large target
   vocabulary for neural machine translation,'' \emph{arXiv preprint
   arXiv:1412.2007}, 2014.
 
+\bibitem{li2015convolutional}
+H.~Li, Z.~Lin, X.~Shen, J.~Brandt, and G.~Hua, ``A convolutional neural network
+  cascade for face detection,'' in \emph{Proceedings of the IEEE Conference on
+  Computer Vision and Pattern Recognition}, 2015, pp. 5325--5334.
+
 \bibitem{tompson2014joint}
 J.~J. Tompson, A.~Jain, Y.~LeCun, and C.~Bregler, ``Joint training of a
   convolutional network and a graphical model for human pose estimation,'' in
   \emph{Advances in neural information processing systems}, 2014, pp.
   1799--1807.
-
-\bibitem{jia2014caffe}
-Y.~Jia, E.~Shelhamer, J.~Donahue, S.~Karayev, J.~Long, R.~Girshick,
-  S.~Guadarrama, and T.~Darrell, ``Caffe: Convolutional architecture for fast
-  feature embedding,'' in \emph{Proceedings of the 22nd ACM international
-  conference on Multimedia}.\hskip 1em plus 0.5em minus 0.4em\relax ACM, 2014,
-  pp. 675--678.
-
-\bibitem{yu2014introduction}
-D.~Yu, A.~Eversole, M.~Seltzer, K.~Yao, Z.~Huang, B.~Guenter, O.~Kuchaiev,
-  Y.~Zhang, F.~Seide, H.~Wang \emph{et~al.}, ``An introduction to computational
-  networks and the computational network toolkit,'' \emph{Microsoft Technical
-  Report MSR-TR-2014--112}, 2014.
-
-\bibitem{chollet2015keras}
-F.~Chollet \emph{et~al.}, ``Keras,'' 2015.
-
-\bibitem{2016arXiv160502688short}
-\BIBentryALTinterwordspacing
-{Theano Development Team}, ``{Theano: A {Python} framework for fast computation
-  of mathematical expressions},'' \emph{arXiv e-prints}, vol. abs/1605.02688,
-  May 2016. [Online]. Available: \url{http://arxiv.org/abs/1605.02688}
-\BIBentrySTDinterwordspacing
-
-\bibitem{abadi2016tensorflow}
-M.~Abadi, P.~Barham, J.~Chen, Z.~Chen, A.~Davis, J.~Dean, M.~Devin,
-  S.~Ghemawat, G.~Irving, M.~Isard \emph{et~al.}, ``Tensorflow: A system for
-  large-scale machine learning.'' in \emph{OSDI}, vol.~16, 2016, pp. 265--283.
 
 \bibitem{lasagne}
 \BIBentryALTinterwordspacing
@@ -215,18 +155,6 @@ N.~Srivastava, G.~E. Hinton, A.~Krizhevsky, I.~Sutskever, and R.~Salakhutdinov,
   ``Dropout: a simple way to prevent neural networks from overfitting.''
   \emph{Journal of machine learning research}, vol.~15, no.~1, pp. 1929--1958,
   2014.
-
-\bibitem{pallant2013spss}
-J.~Pallant, \emph{SPSS survival manual}.\hskip 1em plus 0.5em minus 0.4em\relax
-  McGraw-Hill Education (UK), 2013.
-
-\bibitem{myers2010research}
-J.~L. Myers, A.~Well, and R.~F. Lorch, \emph{Research design and statistical
-  analysis}.\hskip 1em plus 0.5em minus 0.4em\relax Routledge, 2010.
-
-\bibitem{kendall1938new}
-M.~G. Kendall, ``A new measure of rank correlation,'' \emph{Biometrika},
-  vol.~30, no. 1/2, pp. 81--93, 1938.
 
 \bibitem{bland1996statistics}
 J.~M. Bland and D.~G. Altman, ``Statistics notes: measurement error,''
