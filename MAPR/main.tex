@@ -14,31 +14,30 @@
 
 \title{Landmarks detection by convolutional neural network}
 
-\author{\IEEEauthorblockN{Van Linh LE}
-\IEEEauthorblockA{\textit{LaBRI - CNRS 5800, France} \\
-\textit{ITDLU - Dalat University, Vietnam}\\
-van-linh.le@labri.fr/ \\
-linhlv@dlu.edu.vn}
-\and
-\IEEEauthorblockN{Marie BEURTON-AIMAR}
-\IEEEauthorblockA{\textit{LaBRI - CNRS 5800} \\
-\textit{Bordeaux University}\\
-Talence, France \\
-beurton@labri.fr}
-\and
-\IEEEauthorblockN{Akka ZEMMARI}
-\IEEEauthorblockA{\textit{LaBRI - CNRS 5800} \\
-\textit{Bordeaux University}\\
-Talence, France \\
-zemmari@labri.fr}
-\and
-\IEEEauthorblockN{Nicolas PARISEY}
-\IEEEauthorblockA{\textit{IGEPP} \\
-\textit{INRA 1349}\\
-Le Rheu, France \\
-nparisey@rennes.inra.fr}
-
-}
+%\author{\IEEEauthorblockN{Van Linh LE}
+%\IEEEauthorblockA{\textit{LaBRI - CNRS 5800, France} \\
+%\textit{ITDLU - Dalat University, Vietnam}\\
+%van-linh.le@labri.fr/ \\
+%linhlv@dlu.edu.vn}
+%\and
+%\IEEEauthorblockN{Marie BEURTON-AIMAR}
+%\IEEEauthorblockA{\textit{LaBRI - CNRS 5800} \\
+%\textit{Bordeaux University}\\
+%Talence, France \\
+%beurton@labri.fr}
+%\and
+%\IEEEauthorblockN{Akka ZEMMARI}
+%\IEEEauthorblockA{\textit{LaBRI - CNRS 5800} \\
+%\textit{Bordeaux University}\\
+%Talence, France \\
+%zemmari@labri.fr}
+%\and
+%\IEEEauthorblockN{Nicolas PARISEY}
+%\IEEEauthorblockA{\textit{IGEPP} \\
+%\textit{INRA 1349}\\
+%Le Rheu, France \\
+%nparisey@rennes.inra.fr}
+%}
 
 \maketitle
 
@@ -222,9 +221,11 @@ Fig.\ref{figchart} shows the proportion of acceptable landmarks. In our case, a 
 At the test phase, the trained network is used to predict the landmarks on a set of test images. The program outputs the predicted-landmarks of the images as TPS files; in additional, it also fills and displays the predicted-landmarks on sixteenth firstly images of test data. With the outputs are TPS files, the user can use MAELab\cite{le2017maelab} framework\footnote{MAELab is a free software written in C++. It can be directly
 and freely obtained by request at the authors.} to display the landmarks on the images.
 \section{Conclusion and future works}
-With beetle mandibles images, the object is easy to segment and we have succeeded to determine the landmarks automatically. In opposite, the pronotum images are difficult to segment , method which not suppose to be based on segmentation are necessary. In this paper, after testing several models, we have presented a convolutional neural network for automatic detection landmarks on the pronotum. It includes three times repeated of a structure consists of a convolutional layer, a max pooling layer, and a dropout layer, followed by the connected layers. During the training phase, the techniques are used to prevent overfitting, a common issue of the neural networks. The network was trained in several times in different selection of training data. After training with the manual landmarks which given by the biologist, the network is able to predict the landmarks on the set of unseen images.
+With beetle mandibles images, the object is easy to segment and we have succeeded to determine the landmarks automatically. In opposite, the pronotum images are difficult to segment, method which not suppose to be based on segmentation are necessary. In this paper, after testing several models, we have presented a convolutional neural network for automatic detection landmarks on the pronotum. It includes three times repeated of a structure consists of a convolutional layer, a max pooling layer, and a dropout layer, followed by the connected layers. During the training phase, the techniques are used to prevent overfitting, a common issue of the neural networks. The network was trained in several times in different selection of training data. After training with the manual landmarks which given by the biologist, the network is able to predict the landmarks on the set of unseen images.
 
 The results from the test set have been evaluated by calculating the distance between manual landmarks and corresponding predicted-landmarks. The average of distance errors on each landmark has been also considered. Using the convolutional network to predict the landmarks on biological images promising good results in the case that image can not segment. The quality of prediction allows using automatic landmarking to replace for manual landmarks in some aspect.  In our case, the training dataset is limited. As a result, the accuracy of the network is acceptable. However, when we expect more about the accuracy of predicted landmarks(coordinates of predicted landmarks), the result of this work is still needed to improve (for example using a larger training dataset). Therefore, future research in landmarking identification appears as a improve the worth exploring.
+\section*{Acknowledgment}
+The research has been supported by INRA. We would like to thank the biologists, who have provided the dataset. We thank also our colleague, Nicolas PARISEY, who provided insight and expertise that greatly assisted the research.
 \bibliographystyle{IEEEtran}
 \bibliography{includes/references}
 \end{document}
