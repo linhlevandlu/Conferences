@@ -61,12 +61,25 @@
 	\fi
 }
 
+\def\thirdauthoraddr#1{\def\@thirdauthoraddr{#1}}
+\thirdauthoraddr{}
+
+\def\makethirdauthoraddr{%
+	\if \@thirdauthoraddr
+		%nothing to do if it is not defined
+	\else 
+		  \\
+		  \large{\@thirdauthoraddr}
+	\fi
+}
+
 \author{
 \begin{large}
   \begin{tabular}{c}
   \bf{\@authorname}\\[5mm]
   \@authoraddr
   \makesecondauthoraddr
+  \makethirdauthoraddr
   \end{tabular}
 \end{large}
 }
