@@ -26,7 +26,7 @@
 
 \title{An improvement on estimated landmarks of Beetle's pronotum}
 
-\authorname{Le Van Linh$^{1,3}$, Beurton-Aimar Marie$^{1}$, Zemmari Akka$^1$, PARISEY Nicolas$^2$}
+\authorname{Le Van Linh$^{1,3}$, Beurton-Aimar Marie$^{1}$, Zemmari Akka$^1$, Parisey Nicolas$^2$}
 \authoraddr{$^1$LaBRI - CNRS 5800 Bordeaux University, France, van-linh.le/beurton/zemmari@labri.fr}
 
 %optional
@@ -37,30 +37,19 @@
 \maketitle
 
 \keywords
-Landmarks, convolutional neural networks, fine-tuning, recogntion, procrustes
+Landmarks, convolutional neural networks, fine-tuning, recogntion, procrustes.
 
 \abstract
-This is where the abstract should be placed. It should consist
-of one paragraph and a concise summary of the material
-discussed in the article below. It is preferable not to use
-footnotes in the abstract or the title. The acknowledgement
-for funding organisations etc. is placed in a separate section at
-the end of the text. We wish you success with the preparation
-of your manuscript.
+In recent years, deep learning is known as a good solution for the difficult problems in computer vision. It appears in many fields such as classification, recognition, face detection. In this paper, we propose a scenario to predict the landmarks on 2D images, specify beetle's head images. The proposed method includes two stages: firstly, the landmarks are estimated by applying convolutional neural network; then, the estimated landmarks are verified to increase the accuracy. The method experimented on a set of 293 images. The accuracy of the method is evaluated by calculating the distance in pixels between the coordinates of the predicted landmarks and manual landmarks which were provided by the biologists.
 
 \section{Introduction}
-The Proceedings produced for ICPRS 2018 will contain all the
-papers accepted for the conference, of which camera-ready versions
-need to have been received
-by the organisers no later than 9 April 2018. Papers
-received after that date will not be included. Papers, which
-appear in the Proceedings, have undergone the review process
-of the Technical Programme Committee of ICPRS 2018.
-Comments of reviewers are made available to the authors. Authors are
-asked to prepare and submit electronic versions of their full
-papers according to the instructions below.
+Morphometry landmark (or point of interest) is an important feature in many biological investigations. It was usually used to analyze the forms of whole biological organs or organisms. The analysis is mainly based on the coordinates of the landmarks. The collecting of enough the number of landmarks can help the biologists make a good estimate about organisms. Depending on the problem, the number of landmarks may be more or less; besides, the location of landmarks can be located on the shape (border) or inside the object, \textit{for examples,} the landmarks on Drosophila wings have stayed on the veins of the wings but the landmarks on human ear can be located at the ear hole or inside. Recently, the landmarks were set manually by the biologist. This work is time-consuming and difficult to reproduce. Therefore, a method that proposes automatically the coordinates of landmarks could be a concern. 
 
-\section{Manuscript preparation}
+For segmented images, identification of landmarks on the shape can be finished by applying the image processing techniques such as HOG\cite{}, SIFT\cite{}, .... But for un-segmented images, defining the landmarks become a challenge and the image processing techniques seem to be inappropriate. This article introduces a scenario for automatic detection of the landmarks on biological images, specific beetle's head images, called pronotum images (Fig. ). The method includes 2 stages: 1) the initially predicted landmarks are given by a convolutional neural network (CNN) \cite{}; 2) the predicted landmarks which located in the shape of pronotum will be refined the location to increase the accuracy of coordinates. In the first stage, the main idea is design and train a CNN with a set of images and their manual landmarks. The dataset includes $293$ pronotum images and their manual landmarks which have been provided by the biologists. The images are presented in two dimensions and RGB color. After training, the trained network will be able to detect the initially predicted landmarks on the pronotum images. In the second stage, the predicted landmarks in the shape will be refined the coordinates by applying a Procrustes analysis\cite{}. A model is generated for the specific manual landmark. Then, it used to refine the corresponding predicted landmarks.
+
+In the next section, we present related works in domain automatically estimation landmarks on 2D images. In section 3, we present an overview about the stage that predict the initial landmarks by applying CNN. The procedure apply to refine the predicted landmarks which provide by CNN will be presented in section 4. In the last section, we show all the experiments and analysing the results.
+
+\section{Related works}
 Full papers must be typed in English. This instruction page is
 an example of the format and font sizes to be used. MS Word
 users can download from the conference site these
@@ -92,7 +81,8 @@ final paper to be included directly in the Proceedings. All
 PDF files should NOT be locked and all fonts and
 graphics should be embedded.
 
-\subsection{Figures and tables}
+\section{Convolutional neural network and landmarks detection}
+\subsection{Data processing}
 Figures and tables should be centred in the column, numbered
 consecutively throughout the text, and each should have a
 caption underneath it (see for example Table 1). Care should
@@ -122,7 +112,7 @@ nn!1 \\
 \caption{\label{tab1}This is an example of a table caption.}
 \end{table}
 
-\subsection{Equations}
+\subsection{Network architecture and training}
 Equations should be typed within the text, centred, and should
 be numbered consecutively throughout the text. They should
 be referred to in the text as Equation (n). Their numbers
@@ -132,7 +122,7 @@ example.
 	    PA + A'P - PBR^{-1}B'P + Q  =  0 \enspace.
 \end{equation}
 
-\section{Generating a {PDF} file}
+\section{Improving the predicted landmarks}
 The PDF format will be the final format under which the
 papers will appear in the Proceedings. Therefore you are
 required to submit your paper as PDF document. If this is not
@@ -141,7 +131,7 @@ other than the recommended fonts are used.
 
 You can use any of the popular free LaTeX editors (e.g. Kile).
 
-\section{Electronic submission of the full paper}
+\section{Experiments}
 The submission process for ICPRS 2018 should be done on
 line at http://www.icprs.org
 
