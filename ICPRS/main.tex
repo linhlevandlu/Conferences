@@ -26,7 +26,8 @@
 % This should produce references in the order they appear
 \bibliographystyle{ieeetr}
 
-\title{An improvement on estimated landmarks of Beetle's pronotum}
+\title{Automatically landmarks prediction on Beetle's pronotum}
+%\title{An improvement on estimated landmarks of Beetle's pronotum}
 
 \authorname{Le Van Linh$^{1,3}$, Beurton-Aimar Marie$^{1}$, Zemmari Akka$^1$, Parisey Nicolas$^2$}
 \authoraddr{$^1$LaBRI - CNRS 5800 Bordeaux University, France, van-linh.le/beurton/zemmari@labri.fr}
@@ -47,7 +48,7 @@ In recent years, deep learning is known as a good solution for the difficult pro
 \section{Introduction}
 Morphometry landmark (or point of interest) is an important feature in many biological investigations. It was usually used to analyze the forms of whole biological organs or organisms. The analysis is mainly based on the coordinates of the landmarks. The collecting of enough the number of landmarks can help the biologists make a good estimate about organisms. Depending on the problem, the number of landmarks may be more or less; besides, the location of landmarks can be located on the shape (border) or inside the object, \textit{for examples,} the landmarks on Drosophila wings have stayed on the veins of the wings but the landmarks on human ear can be located at the ear hole or inside. Recently, the landmarks were set manually by the biologist. This work is time-consuming and difficult to reproduce. Therefore, a method that proposes automatically the coordinates of landmarks could be a concern. 
 
-Based on the characteristics of the images, the images can be divided into two groups: the images that we can easy to segment the objects in the image, called segmented images; and the images that we can go in tight when segment the objects, called un-segmented images. For that reason, the methods that used to identify the landmarks automatically may be divided into two groups too. For segmented images, identification of landmarks on the shape can be finished by applying the image processing techniques such as HOG\cite{}, SIFT\cite{}, .... But for un-segmented images, defining the landmarks become a challenge and the image processing techniques seem to be inappropriate. This article introduces a scenario for automatic detection of the landmarks on biological images, specific beetle's head images, called \textit{pronotum} images (Fig. \ref{figpronotum}). The method includes 2 stages: 1) the initially predicted landmarks are given by a convolutional neural network (CNN) \cite{}; 2) the predicted landmarks which located in the shape of pronotum will be refined the location to increase the accuracy of coordinates. In the first stage, the main idea is design and train a CNN with a set of images and their manual landmarks. The dataset includes $293$ pronotum images and their manual landmarks which have been provided by the biologists. The images are presented in two dimensions and RGB color. After training, the trained network will be able to detect the initially predicted landmarks on the pronotum images. In the second stage, the predicted landmarks in the shape will be refined the coordinates by applying a Procrustes analysis\cite{}. For each manual landmark, a model is generated as a specific. Then, it is used to refine the corresponding predicted landmarks.
+Based on the characteristics of the images, the images can be divided into two groups: the images that we can easy to segment the objects in the image, called segmented images; and the images that we can go in tight when segment the objects, called un-segmented images. For that reason, the methods that used to identify the landmarks automatically may be divided into two groups too. For segmented images, identification of landmarks on the shape can be finished by applying the image processing techniques such as HOG\cite{•}, SIFT\cite{•}, .... But for un-segmented images, defining the landmarks become a challenge and the image processing techniques seem to be inappropriate. This article introduces a scenario for automatic detection of the landmarks on biological images, specific beetle's head images, called \textit{pronotum} images (Fig. \ref{figpronotum}). The method includes 2 stages: 1) the initially predicted landmarks are given by a convolutional neural network (CNN) \cite{•}; 2) the predicted landmarks which located in the shape of pronotum will be refined the location to increase the accuracy of coordinates. In the first stage, the main idea is design and train a CNN with a set of images and their manual landmarks. The dataset includes $293$ pronotum images and their manual landmarks which have been provided by the biologists. The images are presented in two dimensions and RGB color. After training, the trained network will be able to detect the initially predicted landmarks on the pronotum images. In the second stage, the predicted landmarks in the shape will be refined the coordinates by applying a Procrustes analysis\cite{•}. For each manual landmark, a model is generated as a specific. Then, it is used to refine the corresponding predicted landmarks.
 
 \begin{figure}[htbp]
 \centering
@@ -61,39 +62,14 @@ In the next section, we present related works in domain automatically estimation
 \section{Related works}
 Landmarks or points of interest are one of the important characteristics in geometric morphometrics. Landmark studies have traditionally analyzed on 2D images. Depending on which situation was stayed (segmented or un-segmented images), setting landmarks must apply the different methods.
 
-When segmentation can be applied,
-Full papers must be typed in English. This instruction page is
-an example of the format and font sizes to be used. MS Word
-users can download from the conference site these
-instructions in Word format.
+When segmentation can be applied, Lowe et al. \cite{•} have proposed a method to identify the key points in the 2D image. From the detected key points, the method is able to match two images. Palaniswamy et al. \cite{•} have applied probabilistic Hough Transform to automatically estimate the landmarks in images of Drosophila wings. Adrien et al. \cite{•} have extended Palaniswamy's method to detect landmarks automatically on beetles mandibles. Unfortunately, this method can not be applied to other parts of beetle that the segmentation has too many noises, such as pronotum images.
 
-These are detailed instructions valid for any word
-processor. In the title of the paper the initial letters should be
-capitalised in all words except articles and prepositions (e.g.:
-in, a, an, and, the, there, their, do, on, of, from, with, at etc.).
-E.g. "ErDoped Si Nanocrystals as a Candidate for Optical
-Amplification" The type should be boldface 18pt and centred
-on the page. The author’s name is typed in capital and lower
-case bold letters and centred on the page. Directly under the
-author’s name in capital and lower case letters and also
-centred is the author’s affiliation, address, plus email
-address of (at least) the corresponding author. Manuscripts must be
-typed single spaced using 10 point characters. Only Times,
-Times Roman, Times New Roman and Symbol fonts are
-accepted. The text must fall within a frame of 18 cm x 24 cm
-centred on an A4 page (21 cm x 29.7 cm).Paragraphs are
-separated by 6 points and with no indentation. The text of the
-full papers is written in two columns and justified. Each
-column has a width of 8.8 cm and the columns are separated
-by a margin of 0.4 cm. The maximum length of the full paper
-is 6 pages. Do not number the pages. The final format in
-which the papers will appear on the Proceedings will be a
-PDF file. Authors are required to send a PDF file of their
-final paper to be included directly in the Proceedings. All
-PDF files should NOT be locked and all fonts and
-graphics should be embedded.
+%It presents a learning method with multiple levels of representation of connected layers (convolutional neural network). Data representation is transform from a lower level to a higher level with many complex functions can be learned.
+Recently years, machine learning is developing rapidly, specifically deep learning (CNN). It exists in most of the fields, especially in computer vision. We can finish a lot of difficult tasks with a deep convolution neural network such as classification \cite{•}, image recognition \cite{•}, speech recognition \cite{•} and language translation \cite{•}. Using CNN to determine landmarks on 2D images will produce good results and it may be a good solution for the un-segmented images. Yi Sun et al. \cite{•} have proposed a cascaded convolutional network to predict the key points on the human face. Zhang et al. \cite{•} optimizes facial landmarks detection with a set of related tasks such as head pose estimation, age estimation, .... Cintas et al. \cite{•} have introduced a network to predict the landmarks on human ear images. In the same context, we have applied CNN to predict the landmarks on pronotum images. The predicted landmarks then refined to increase the accuracy of coordinates.
 
-\section{Convolutional neural network and landmarks detection}
+\section{Automatic landmarks by using CNN}
+\subsection{Network architecture}
+
 \subsection{Data processing}
 Figures and tables should be centred in the column, numbered
 consecutively throughout the text, and each should have a
@@ -124,7 +100,6 @@ nn!1 \\
 \caption{\label{tab1}This is an example of a table caption.}
 \end{table}
 
-\subsection{Network architecture and training}
 Equations should be typed within the text, centred, and should
 be numbered consecutively throughout the text. They should
 be referred to in the text as Equation (n). Their numbers
@@ -133,6 +108,7 @@ example.
 \begin{equation}
 	    PA + A'P - PBR^{-1}B'P + Q  =  0 \enspace.
 \end{equation}
+\subsection{Training and experiments}
 
 \section{Improving the predicted landmarks}
 The PDF format will be the final format under which the
@@ -143,7 +119,7 @@ other than the recommended fonts are used.
 
 You can use any of the popular free LaTeX editors (e.g. Kile).
 
-\section{Experiments}
+\section{Results}
 The submission process for ICPRS 2018 should be done on
 line at http://www.icprs.org
 
@@ -153,7 +129,7 @@ published directly from the file you send without any further
 proofreading. Therefore, it is advisable for the authors to
 print a hard copy of their final version and read it carefully.
 
-\section{Your References}
+\section{Conclusions}
 The list of references should be ordered in the same order as
 first cited in the text. All references should be cited in the
 text, and using square brackets such as \cite{ref01} and \cite{ref01,ref02}. We
