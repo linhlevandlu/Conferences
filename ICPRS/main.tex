@@ -19,6 +19,7 @@
 
 \usepackage{textcomp}
 \usepackage[justification=centering]{caption}
+\usepackage{subcaption}
 
 \begin{document}
 \noindent
@@ -64,52 +65,142 @@ Landmarks or points of interest are one of the important characteristics in geom
 
 When segmentation can be applied, Lowe et al. \cite{•} have proposed a method to identify the key points in the 2D image. From the detected key points, the method is able to match two images. Palaniswamy et al. \cite{•} have applied probabilistic Hough Transform to automatically estimate the landmarks in images of Drosophila wings. Adrien et al. \cite{•} have extended Palaniswamy's method to detect landmarks automatically on beetles mandibles. Unfortunately, this method can not be applied to other parts of beetle that the segmentation has too many noises, such as pronotum images.
 
-%It presents a learning method with multiple levels of representation of connected layers (convolutional neural network). Data representation is transform from a lower level to a higher level with many complex functions can be learned.
 Recently years, machine learning is developing rapidly, specifically deep learning (CNN). It exists in most of the fields, especially in computer vision. We can finish a lot of difficult tasks with a deep convolution neural network such as classification \cite{•}, image recognition \cite{•}, speech recognition \cite{•} and language translation \cite{•}. Using CNN to determine landmarks on 2D images will produce good results and it may be a good solution for the un-segmented images. Yi Sun et al. \cite{•} have proposed a cascaded convolutional network to predict the key points on the human face. Zhang et al. \cite{•} optimizes facial landmarks detection with a set of related tasks such as head pose estimation, age estimation, .... Cintas et al. \cite{•} have introduced a network to predict the landmarks on human ear images. In the same context, we have applied CNN to predict the landmarks on pronotum images. The predicted landmarks then refined to increase the accuracy of coordinates.
 
 \section{Automatic landmarks by using CNN}
+Deep learning presents a learning method with multiple levels of representation of connected layers (convolutional neural network). Data representation is transformed from a lower level to a higher level with many complex functions can be learned via backpropagation. In this section, we will present a CNN that we used to predict the landmarks on pronotum images. Besides, the techniques that applied to preprocess data before using for training the network.
 \subsection{Network architecture}
+Like the other networks \cite{•}, the proposed network consists of several common layers with different learnable parameters (Fig.\ref{cnnnetwork}). It receives an input of $1 \times 256 \times 192$ to train, validate, and test. The network consists of three repeated-structure of a convolutional layer followed by a maximum pooling layer and a dropout layer. The depth
+of convolutional layers increases from $32$, $64$, and $128$ with
+different size of the filter kernel: $3 \times 3$, $2 \times 2$, and $2 \times 2$.
+All the kernels of pooling layers have the same size of $2 \times 2$. The probability values used for dropout layers are $0.1, 0.2,$ and $0.3$.
+At the end, three full connected layers have been added to the
+network. The outputs of the full connected layers are $1000$, $1000$,
+and $16$, respectively. The output of the last full-connected
+layer corresponds to 8 landmarks (x and y coordinates) which
+we would like to predict. Additional, to have a better control of overfitting, another dropout layer with a probability of $0.5$ is inserted between the first two full connected layers \cite{•}.
 
-\subsection{Data processing}
-Figures and tables should be centred in the column, numbered
-consecutively throughout the text, and each should have a
-caption underneath it (see for example Table 1). Care should
-be taken that the lettering is not too small. All figures and
-tables should be included in the electronic versions of the full
-paper. We cannot guarantee that any printed version of the
-proceedings will use colour.
-
-
-\begin{figure}[h]
+\begin{figure}[htbp]
 \centering
-\includegraphics[width=1.5cm]{images/fig1}
-\caption{\label{tab1}This is an example of a figure caption.} 
+\includegraphics[scale=0.5]{images/architecture3}
+\caption{The architecture of the proposed convolutional neural network} 
+\label{cnnnetwork}
 \end{figure}
 
+During training, the values of learnable parameters have been updated to increase the accuracy of the network by applying gradient descent in backward phase. Therefore, the network is designed with a small sharing learning rate and momentum. Their values are updated over training time to fit with the number of epochs. The implementation of the network is done on Lasagne framework \cite{•} which allows computing on GPU. The network has been trained on NVIDIA TITAN X cards.
 
-\begin{table}[h]
-\begin{center}
+\subsection{Data processing}
+The dataset includes $293$ pronotum images of beetles. All images are taken with the same camera in the same condition with a resolution of $3264 \times 2448$. Each image has been set $8$ manual landmarks by biologists (Fig. \ref{figpronotum}). The dataset was split into two subsets: training (and validation) set contains $260$ images and testing set includes $33$ images. In most of CNNs \cite{•}, the size of the input was limited to $256$ pixels. In our case, the resolution of input image seems that too large and it becomes a difficulty for the network. So, the images are down-sampling to a new resolution $256 \times 192$ before training and testing. Of course, the coordinates of manual landmarks are also scaled to fit with the new resolution of images.
 
-\begin{tabular}{c}
-nn!1 \\
-2 \\
-31 \\
-6 \\
-\end{tabular}
-\end{center}
-\caption{\label{tab1}This is an example of a table caption.}
-\end{table}
+Besides the size of the input, the number of images is also a challenge when applying CNN. Normally, training a CNN with a large dataset will give us the result better than when we training CNN on a small dataset. Moreover, working with a small dataset, we can meet a popular problem, \textit{overfitting}. So, we need to enlarge the size of the dataset instead of $293$. In image processing, we usually apply transform procedures (translation, rotation) to generate a new image but in fact, when we compute the value of the pixels, it does not change while CNN computes the values of the pixels. Therefore, we have applied two other procedures to increase the number of images in the dataset. To address this problem, we have applied two procedures to enlarge the size of the dataset.
 
-Equations should be typed within the text, centred, and should
-be numbered consecutively throughout the text. They should
-be referred to in the text as Equation (n). Their numbers
-should be typed in parentheses, flush right, as in the following
-example.
-\begin{equation}
-	    PA + A'P - PBR^{-1}B'P + Q  =  0 \enspace.
-\end{equation}
+The first procedure was applied to change the value of each
+channel in the original image. According to this, a constant is
+added to a channel of RGB image and for each time, we just
+change the value of one of three channels. For example, from
+an original RGB image, if we add a constant c = 10 to the
+red channel, we will obtain a new image with the values at
+red channel by greater than the red channel of original image
+a value of 10. By this way, we can generate three new RGB
+images from a RGB image.
+
+The second procedure is splitting the channels of RGB
+images. It means that we separate the channels of RGB into
+three gray-scale images. This work seems promising because
+the network works on single-channel images. At the end, we
+can generate six versions from an image, the total number of
+images used to train and validate is $260 \times 7 = 1820$ images
+(six versions and original image).
+%\begin{table}[h]
+%\begin{center}
+%\begin{tabular}{c}
+%nn!1 \\
+%2 \\
+%31 \\
+%6 \\
+%\end{tabular}
+%\end{center}
+%\caption{\label{tab1}This is an example of a table caption.}
+%\end{table}
+%\begin{equation}
+%	    PA + A'P - PBR^{-1}B'P + Q  =  0 \enspace.
+%\end{equation}
+
 \subsection{Training and experiments}
+The network was trained on a dataset of $1820$ images. The number of images that
+used for training and validation is splitted randomly by a ratio
+(training: $80\%$, validation: $20\%$) that has been set during the
+network setup. During the training, the network learned the information through a pair of \textit{(image, landmarks)} in training set. At the test phase, the image without landmarks was given to the trained network and the predicted landmarks will be given at the output. In practical of CNN, convergence is
+usually faster if the average of each input variable over the
+training set is close to zero. Moreover, when the input is set
+closed with zero, it will be more suitable with the sigmoid
+activation function \cite{•}. According to \cite{•}, the brightness of
+the image is normalized to $[0; 1]$, instead of $[0; 255]$ and the
+coordinates of the landmarks are normalized to $[-1; 1]$, instead
+of $[0; 256]$ and $[0; 192]$ before giving to the network.
 
+The training was finished in $5000$ epochs\footnote{An epoch is a single pass through the full training set}. The learning rate was initialized at $0.03$ and stopped at $0.00001$, while the momentum was updated from $0.9$ to $0.9999$. 
+Because landmarks prediction can be seen as a regression problem in deep learning. Therefore, the root mean square error (RMSE) was used as a quality metric to evaluate the result and compute the losses of the proposed architecture.
+
+Fig. \ref{cnnlosses} shows the training error and the validation error during training time. The blue curve presents RMSE error on training data. The green curve presents the validation error. Clearly, the losses are very different from the beginning. But, the difference is narrowed when the epoch increase.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=0.417]{images/losses}
+\caption{The loss curves during training of proposed network} 
+\label{cnnlosses}
+\end{figure}
+
+Besides the losses during training, the accuracy on coordinates of predicted landmarks of the test images is also considered. Firstly, the trained model was used to predict the landmarks on all images in the test set. Then, the distance (in pixels) between manual and corresponding landmarks in each image was calculated as the error distance. Finally, the error distance per landmark was calculated for all test images. Table.\ref{tabledistance} shows the average error distance given on each landmark. With the size of the images is $256 \times 192$, if we accept an error around $3\%$ of the image size ($ \sim3.5$ pixels), the error distances are acceptable.
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|c|p{1.5cm}|}
+\hline
+\textbf{$\#$Landmark} & \textbf{Distance} \\ \hline
+1 & 4.002  \\ \hline
+2 & 4.4831 \\ \hline
+3 & 4.2959 \\ \hline
+4 & 4.3865 \\ \hline
+5 & 4.2925 \\ \hline
+6 & 5.3631 \\ \hline
+7 & 4.636 \\ \hline
+8 & 4.9363 \\ \hline
+\end{tabular}
+\caption{The average error distance per landmark}
+\label{tabledistance}
+\end{table}
+Fig.\ref{figrsexample} shows the predicted landmarks on two test images. When we consider the accuracy of predicted landmarks by calculating the distance between manual and corresponding predicted landmarks, the accuracy on coordinates of predicted landmarks on Fig.\ref{figsub1} is $99\%$ and the propotion on Fig.\ref{figsub2} is $80\%$.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[t]{0.25\textwidth}
+        \centering
+        \includegraphics[height=1.2in]{images/plandmark}
+        \caption{Image with well-predicted landmarks}
+        \label{figsub1}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[t]{0.25\textwidth}
+        \centering
+        \includegraphics[height=1.2in]{images/plandmark2}
+        \caption{Image with inaccuracy landmarks}
+        \label{figsub2}
+    \end{subfigure}
+    \caption{The predicted landmarks on an image in test set.\\
+    		 The read points present for the predicted landmarks}\
+    \label{figrsexample}
+\end{figure}
+
+To have a better evaluation of the predicted landmarks, we have applied the standard deviation \cite{•} to quantify the dispersion of a set of distances. In this case, a predicted landmark is considered as acceptable if its error distance to the corresponding manual landmark is less than the average error (per landmark) plus standard deviation value. Fig. \ref{figchart} shows the ratio of acceptable per landmark. Most of landmarks have been predicted with the accuracy grater than \textbf{$70\%$}. In which, the lowest and highest prediction accuracies are \textbf{$66.67\%$} and \textbf{$87.88\%$}, respectively.
+
+\begin{figure}[htbp]
+	\centerline{\includegraphics[scale=0.2]{images/chart}}
+	\caption{The proportion of acceptable predicted landmarks}
+	\label{figchart}
+\end{figure}
+
+As a result, the network is able to predict the landmarks on a test set of pronotum images. In statistic side, the predicted landmarks are acceptable. But in image processing side, we expect more about the accuracy (coordinates of predicted landmarks), and the result of CNN is still needed to improve. However, improving on all landmarks is difficult to perform because a number of landmarks have stayed inside the pronotum. Instead of, we will improve the result of the landmarks that stay in the shape of the pronotum.
 \section{Improving the predicted landmarks}
 The PDF format will be the final format under which the
 papers will appear in the Proceedings. Therefore you are
