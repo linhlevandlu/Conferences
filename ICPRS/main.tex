@@ -202,13 +202,15 @@ To have a better evaluation of the predicted landmarks, we have applied the stan
 
 As a result, the network is able to predict the landmarks on a test set of pronotum images. In statistic side, the predicted landmarks are acceptable. But in image processing side, we expect more about the accuracy (coordinates of predicted landmarks), and the result of CNN is still needed to improve. However, improving on all landmarks is difficult to perform because a number of landmarks have stayed inside the pronotum. Instead of, we will improve the result of the landmarks that stay in the shape of the pronotum.
 \section{Improving the predicted landmarks}
-The PDF format will be the final format under which the
-papers will appear in the Proceedings. Therefore you are
-required to submit your paper as PDF document. If this is not
-possible, Postscript format is also accepted as long as no fonts
-other than the recommended fonts are used.
+In the previous section, we have presented a CNN to predict the landmarks on pronotum images. The results of experiments have shown that the network has worked well to detect the landmarks on the images in the test set. However, when we consider the predicted landmarks by displaying the landmarks on the images, the result is still not precise, specifically, the landmarks stayed on the shape border and at the corner of pronotum. In this section, we describe a scenario to improve the locations of the predicted landmarks which stay at the corner of the pronotum shape, \textit{i.e} $3^{rd}, 4^{th}, 6^{th}, $ and $7^{th}$ landmarks (Fig. ).
 
-You can use any of the popular free LaTeX editors (e.g. Kile).
+show the images
+
+steps of the method
+
+result
+
+For each image in dataset, a set of 8 landmarks has been defined arround the head of beetle. In which, we have 
 
 \section{Results}
 The submission process for ICPRS 2018 should be done on
