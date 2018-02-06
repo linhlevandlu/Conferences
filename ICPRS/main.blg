@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: main.aux
+The style file: ieeetr.bst
+Database file #1: IEEEabrv.bib
+Database file #2: includes/icdp2009.bib
+Warning--empty booktitle in szegedy2015going
+You've used 21 entries,
+            1876 wiz_defined-function locations,
+            1125 strings with 18324 characters,
+and the built_in function-call counts, 7115 in all, are:
+= -- 674
+> -- 328
+< -- 0
++ -- 117
+- -- 96
+* -- 534
+:= -- 987
+add.period$ -- 21
+call.type$ -- 21
+change.case$ -- 21
+chr.to.int$ -- 0
+cite$ -- 22
+duplicate$ -- 362
+empty$ -- 654
+format.name$ -- 96
+if$ -- 1715
+int.to.chr$ -- 0
+int.to.str$ -- 21
+missing$ -- 20
+newline$ -- 66
+num.names$ -- 21
+pop$ -- 90
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 255
+stack$ -- 0
+substring$ -- 535
+swap$ -- 155
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 1
+while$ -- 70
+width$ -- 23
+write$ -- 209
+(There was 1 warning)
