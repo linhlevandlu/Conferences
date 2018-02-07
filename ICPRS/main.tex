@@ -232,7 +232,7 @@ In the previous section, we have applied a CNN to predict the landmarks on prono
 \subsection{Generating mean curve}
 The mean curve was generated from a set of training images with their manual landmarks. For each image and its manual landmarks, the process to extract the curve via a manual landmark in an image as following:
 \begin{enumerate}[nosep]
-	\item Segmenting the image to obtain the contour (shape),
+	\item Segmenting the image to obtain the contour (see \cite{le2017maelab}),
 	\item Extracting a patch with the size of $7 \times 7$ centering at the manual landmark\footnote{The size of patch was chosen by experiments.},
 	\item Detecting the contour points inside the patch.
 \end{enumerate}
