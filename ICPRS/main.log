@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.18)  6 FEB 2018 16:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.18)  7 FEB 2018 17:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -416,7 +416,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 File: images/pronotum.jpg Graphic file (type jpg)
  <use images/pronotum.jpg>
 Package pdftex.def Info: images/pronotum.jpg used on input line 58.
-(pdftex.def)             Requested size: 125.2665pt x 93.94987pt.
+(pdftex.def)             Requested size: 144.53963pt x 108.40471pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -438,36 +438,36 @@ Overfull \hbox (0.55252pt too wide) in paragraph at lines 87--88
 
 [2 <./images/architecture3.png>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 144.
+(Font)              <9> on input line 145.
 
 <images/losses.png, id=19, 578.16pt x 433.62pt>
 File: images/losses.png Graphic file (type png)
  <use images/losses.png>
-Package pdftex.def Info: images/losses.png used on input line 151.
+Package pdftex.def Info: images/losses.png used on input line 152.
 (pdftex.def)             Requested size: 241.09642pt x 180.82233pt.
 
 <images/plandmark.png, id=21, 1097.09875pt x 829.0975pt>
 File: images/plandmark.png Graphic file (type png)
 
 <use images/plandmark.png>
-Package pdftex.def Info: images/plandmark.png used on input line 181.
+Package pdftex.def Info: images/plandmark.png used on input line 182.
 (pdftex.def)             Requested size: 114.75514pt x 86.72377pt.
 
 <images/plandmark2.png, id=22, 745.78625pt x 558.085pt>
 File: images/plandmark2.png Graphic file (type png)
 
 <use images/plandmark2.png>
-Package pdftex.def Info: images/plandmark2.png used on input line 188.
+Package pdftex.def Info: images/plandmark2.png used on input line 189.
 (pdftex.def)             Requested size: 115.89154pt x 86.72377pt.
 
-Overfull \hbox (9.4905pt too wide) in paragraph at lines 179--193
+Overfull \hbox (9.4905pt too wide) in paragraph at lines 180--194
  [][]  [] 
  []
 
 <images/chart.png, id=23, 1277.77374pt x 763.85374pt>
 File: images/chart.png Graphic file (type png)
  <use images/chart.png>
-Package pdftex.def Info: images/chart.png used on input line 200.
+Package pdftex.def Info: images/chart.png used on input line 201.
 (pdftex.def)             Requested size: 255.55022pt x 152.76804pt.
 
 [3 <./images/losses.png>]
@@ -475,55 +475,50 @@ Package pdftex.def Info: images/chart.png used on input line 200.
 File: images/pronotum_model.jpg Graphic file (type jpg)
 
 <use images/pronotum_model.jpg>
-Package pdftex.def Info: images/pronotum_model.jpg used on input line 214.
+Package pdftex.def Info: images/pronotum_model.jpg used on input line 215.
 (pdftex.def)             Requested size: 96.35976pt x 72.26999pt.
 
 <images/pronotum_overlap.jpg, id=29, 192.72pt x 144.54pt>
 File: images/pronotum_overlap.jpg Graphic file (type jpg)
 
 <use images/pronotum_overlap.jpg>
-Package pdftex.def Info: images/pronotum_overlap.jpg used on input line 221.
+Package pdftex.def Info: images/pronotum_overlap.jpg used on input line 222.
 (pdftex.def)             Requested size: 96.35976pt x 72.26999pt.
 
-Overfull \hbox (9.4905pt too wide) in paragraph at lines 212--225
+Overfull \hbox (9.4905pt too wide) in paragraph at lines 213--226
  [][]  [] 
  []
 
-<images/mean_cv_lm3.png, id=30, 501.875pt x 171.64125pt>
-File: images/mean_cv_lm3.png Graphic file (type png)
+<images/curve_lm32.png, id=30, 272.01625pt x 221.82875pt>
+File: images/curve_lm32.png Graphic file (type png)
 
-<use images/mean_cv_lm3.png>
-Package pdftex.def Info: images/mean_cv_lm3.png used on input line 244.
-(pdftex.def)             Requested size: 211.31445pt x 72.26999pt.
+<use images/curve_lm32.png>
+Package pdftex.def Info: images/curve_lm32.png used on input line 247.
+(pdftex.def)             Requested size: 119.63771pt x 97.56493pt.
 
-Overfull \hbox (5.69046pt too wide) in paragraph at lines 242--247
- []$[]$ 
- []
+<images/curve_lm72.png, id=31, 272.01625pt x 222.8325pt>
+File: images/curve_lm72.png Graphic file (type png)
 
-<images/mean_cv_lm7.png, id=31, 497.86pt x 168.63pt>
-File: images/mean_cv_lm7.png Graphic file (type png)
+<use images/curve_lm72.png>
+Package pdftex.def Info: images/curve_lm72.png used on input line 253.
+(pdftex.def)             Requested size: 119.09813pt x 97.56493pt.
 
-<use images/mean_cv_lm7.png>
-Package pdftex.def Info: images/mean_cv_lm7.png used on input line 251.
-(pdftex.def)             Requested size: 213.36913pt x 72.26999pt.
-
-Overfull \hbox (5.69046pt too wide) in paragraph at lines 249--255
- [][] 
+Overfull \hbox (9.4905pt too wide) in paragraph at lines 245--257
+ [][]  [] 
  []
 
 [4 <./images/plandmark.png (PNG copy)> <./images/plandmark2.png> <./images/char
 t.png> <./images/pronotum_model.jpg> <./images/pronotum_overlap.jpg> <./images/
-mean_cv_lm3.png> <./images/mean_cv_lm7.png>]
-<images/improving.jpg, id=40, 294.34969pt x 186.38052pt>
-File: images/improving.jpg Graphic file (type jpg)
+curve_lm32.png (PNG copy)> <./images/curve_lm72.png (PNG copy)>]
+<images/chart_cnn_improving.jpg, id=38, 332.74312pt x 200.83453pt>
+File: images/chart_cnn_improving.jpg Graphic file (type jpg)
 
-<use images/improving.jpg>
-Package pdftex.def Info: images/improving.jpg used on input line 281.
-(pdftex.def)             Requested size: 264.91225pt x 167.7409pt.
+<use images/chart_cnn_improving.jpg>
+Package pdftex.def Info: images/chart_cnn_improving.jpg used on input line 283.
 
-Underfull \vbox (badness 1057) has occurred while \output is active []
-
- [5 <./images/improving.jpg>] (./main.bbl
+(pdftex.def)             Requested size: 266.19484pt x 160.66783pt.
+ [5 <./images/chart_cnn_improving.jpg>]
+(./main.bbl
 Underfull \hbox (badness 1062) in paragraph at lines 33--36
 []\OT1/ptm/m/n/10 D. Cire-gan, U. Meier, and J. Schmid-hu-ber, ``Multi-
  []
@@ -544,13 +539,13 @@ Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ¸ in font ptmr7t!
 ) [6] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 4122 strings out of 493029
- 65430 string characters out of 6136234
- 134649 words of memory out of 5000000
- 7570 multiletter control sequences out of 15000+600000
+ 4123 strings out of 493029
+ 65481 string characters out of 6136234
+ 134659 words of memory out of 5000000
+ 7571 multiletter control sequences out of 15000+600000
  44051 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,9n,39p,1908b,432s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,9n,39p,1873b,432s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/sh
 are/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-
 mathsy.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/sha
@@ -562,9 +557,9 @@ ype1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (6 pages, 1083020 bytes).
+Output written on main.pdf (6 pages, 1086276 bytes).
 PDF statistics:
- 86 PDF objects out of 1000 (max. 8388607)
+ 84 PDF objects out of 1000 (max. 8388607)
  52 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  56 words of extra memory for PDF output out of 10000 (max. 10000000)
