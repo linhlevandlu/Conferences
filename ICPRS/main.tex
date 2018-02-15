@@ -194,10 +194,10 @@ Fig.\ref{figrsexample} shows the predicted landmarks on two test images. When we
     \label{figrsexample}
 \end{figure}
 
-To have a better evaluation of the predicted landmarks, we have applied the standard deviation \cite{bland1996statistics} to quantify the dispersion of a set of distances. In this case, a predicted landmark is considered as acceptable if its error distance to the corresponding manual landmark is less than the average error (per landmark) plus standard deviation value. Fig. \ref{figchart} shows the ratio of acceptable per landmark. Most of landmarks have been predicted with the accuracy grater than \textbf{$70\%$}. In which, the lowest and highest prediction accuracies are \textbf{$66.67\%$} and \textbf{$87.88\%$}, respectively.
+To have a better evaluation of the predicted landmarks, we have applied the standard deviation \cite{bland1996statistics} to quantify the dispersion of a set of distances. In this case, a predicted landmark is considered as acceptable if its error distance to the corresponding manual landmark is less than the average error (per landmark) plus standard deviation value. Fig. \ref{figchart} shows the ratio of acceptable per landmark. Most of landmarks have been predicted with the accuracy grater than \textbf{$80\%$}. In which, the lowest and highest prediction accuracies are \textbf{$83.62\%$} and \textbf{$89.08\%$}, respectively.
 
 \begin{figure}[htbp]
-	\centerline{\includegraphics[scale=0.2]{images/chart}}
+	\centerline{\includegraphics[scale=0.45]{images/chart_sd}}
 	\caption{The proportion of acceptable predicted landmarks}
 	\label{figchart}
 \end{figure}
@@ -276,7 +276,7 @@ $7^{th}$ & 4.6360 & \textbf{3.4166} \\
 \label{tabledistance2}
 \end{table}
 
-In another side, we would like take into account the number of acceptable landmarks by applying the same way than we have done with CNN (standard deviation). Fig.\ref{figchart2} shows a comparison of the proportions of acceptable per landmark (in percent) between two periods (before and after improving the coordinates of predicted landmarks). According to the figure, the proportion of acceptable on $3^{rd}$ landmark has improved around $23.09\%$, while this rate at $7^{th}$ landmark is $15.02\%$. Comparing with the output from CNN, the coordinates of predicted landmarks at position $3$ and $7$ have been vastly improved.
+In another side, we would like take into account the number of acceptable landmarks by applying the same way than we have done with CNN (standard deviation). Fig.\ref{figchart2} shows a comparison of the proportions of acceptable per landmark (in percent) between two periods (before and after improving the coordinates of predicted landmarks). According to the figure, the proportion of acceptable on $3^{rd}$ landmark has improved around $2.05\%$, while this rate at $7^{th}$ landmark is $7.16\%$. Comparing with the output from CNN, the coordinates of predicted landmarks at position $3$ and $7$ have been vastly improved.
 
 \begin{figure}[htbp]
 	\centerline{\includegraphics[scale=0.8]{images/chart_cnn_improving}}

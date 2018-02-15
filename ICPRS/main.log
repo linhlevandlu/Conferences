@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.18)  8 FEB 2018 18:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.18)  15 FEB 2018 16:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -462,13 +462,13 @@ Overfull \hbox (9.4905pt too wide) in paragraph at lines 179--193
  [][]  [] 
  []
 
-<images/chart.png, id=23, 1277.77374pt x 763.85374pt>
-File: images/chart.png Graphic file (type png)
- <use images/chart.png>
-Package pdftex.def Info: images/chart.png used on input line 200.
-(pdftex.def)             Requested size: 255.55022pt x 152.76804pt.
+<images/chart_sd.jpg, id=23, 552.56438pt x 304.29474pt>
+File: images/chart_sd.jpg Graphic file (type jpg)
 
-[3 <./images/losses.png>]
+<use images/chart_sd.jpg>
+Package pdftex.def Info: images/chart_sd.jpg used on input line 200.
+(pdftex.def)             Requested size: 248.65166pt x 136.93135pt.
+ [3 <./images/losses.png>]
 <images/pronotum_model.jpg, id=28, 192.72pt x 144.54pt>
 File: images/pronotum_model.jpg Graphic file (type jpg)
 
@@ -506,8 +506,8 @@ Overfull \hbox (9.4905pt too wide) in paragraph at lines 244--256
  []
 
 [4 <./images/plandmark.png (PNG copy)> <./images/plandmark2.png> <./images/char
-t.png> <./images/pronotum_model.jpg> <./images/pronotum_overlap.jpg> <./images/
-curve_lm32.png (PNG copy)> <./images/curve_lm72.png (PNG copy)>]
+t_sd.jpg> <./images/pronotum_model.jpg> <./images/pronotum_overlap.jpg> <./imag
+es/curve_lm32.png (PNG copy)> <./images/curve_lm72.png (PNG copy)>]
 <images/chart_cnn_improving.jpg, id=38, 332.74312pt x 200.83453pt>
 File: images/chart_cnn_improving.jpg Graphic file (type jpg)
 
@@ -538,7 +538,7 @@ Missing character: There is no ¸ in font ptmr7t!
 ) [6] (./main.aux) ) 
 Here is how much of TeX's memory you used:
  4123 strings out of 493029
- 65481 string characters out of 6136234
+ 65496 string characters out of 6136234
  134659 words of memory out of 5000000
  7571 multiletter control sequences out of 15000+600000
  44051 words of font info for 55 fonts, out of 8000000 for 9000
@@ -555,7 +555,7 @@ ype1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (6 pages, 1086417 bytes).
+Output written on main.pdf (6 pages, 786416 bytes).
 PDF statistics:
  84 PDF objects out of 1000 (max. 8388607)
  52 compressed objects within 1 object stream
