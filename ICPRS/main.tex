@@ -28,8 +28,8 @@
 % This should produce references in the order they appear
 \bibliographystyle{ieeetr}
 
-\title{Automatically landmarks prediction on Beetle's pronotum}
-%\title{An improvement on estimated landmarks of Beetle's pronotum}
+%\title{Automatically landmarks prediction on Beetle's pronotum}
+\title{Deep network for landmarks prediction on Beetle pronotums}
 
 \authorname{Van Linh Le$^{1,3}$, Marie Beurton-Aimar$^{1}$, Akka Zemmari$^1$, Nicolas Parisey$^2$}
 \authoraddr{$^1$LaBRI - CNRS 5800 Bordeaux University, France, van-linh.le/beurton/zemmari@labri.fr}
@@ -45,7 +45,7 @@
 Landmarks, convolutional neural networks, fine-tuning, recogntion, procrustes.
 
 \abstract
-Morphometry landmarks were used in many biological applications. Mostly, the landmarks are defined manually or semi-automatic by applying the image processing techniques. In recent years, deep learning is known as a good solution for the difficult problems in computer vision. It appears in many fields such as classification, recognition, face detection. In the context applying the deep learning to solve the recognition problems, in this paper, we propose a scenario to predict the landmarks on 2D images, specify beetle's head images. The proposed method includes two stages: firstly, the landmarks are estimated by applying convolutional neural network; then, the estimated landmarks are improved to increase the accuracy. The method experimented on a set of 293 images. The accuracy of the method is evaluated by calculating the distance in pixels between the coordinates of the predicted landmarks and manual landmarks which were provided by the biologists.
+Morphometry landmarks are used in many biological applications. Mostly, the landmarks are defined manually or semi-automatic by applying the image processing techniques. In recent years, deep learning is known as a good solution for the difficult problems in computer vision. It appears in many fields such as classification, recognition, face detection. In the context applying the deep learning to solve the recognition problems, in this paper, we propose a scenario to predict the landmarks on 2D images, specify beetle's head images. The proposed method includes two stages: firstly, the landmarks are estimated by applying convolutional neural network; then, the estimated landmarks are improved to increase the accuracy. The method experimented on a set of 293 images. The accuracy of the method is evaluated by calculating the distance in pixels between the coordinates of the predicted landmarks and manual landmarks which were provided by the biologists.
 
 \section{Introduction}
 Morphometry landmark (or point of interest) is an important feature in many biological investigations. It was usually used to analyze the forms of whole biological organs or organisms. The analysis is mainly based on the coordinates of the landmarks. The collecting of enough the number of landmarks can help the biologists make a good estimate about organisms. Depending on the problem, the number of landmarks may be more or less; besides, the location of landmarks can be located on the shape (border) or inside the object, \textit{for examples,} the landmarks on Drosophila wings have stayed on the veins of the wings but the landmarks on human ear can be located at the ear hole or inside. Recently, the landmarks were set manually by the biologists. This work is time-consuming and difficult to reproduce. Therefore, a method that proposes automatically the coordinates of landmarks could be a concern. 
@@ -131,7 +131,7 @@ images used to train and validate is $260 \times 7 = 1820$ images
 \label{straining}
 The network was trained on a dataset of $1820$ images. The number of images that
 used for training and validation is splitted randomly by a ratio
-(training: $80\%$, validation: $20\%$) that has been set during the
+(training: $60\%$, validation: $40\%$) that has been set during the
 network setup. During the training, the network learned the information through a pair of \textit{(image, landmarks)} in training set. At the test phase, the image without landmarks was given to the trained network and the predicted landmarks will be given at the output. In practical of CNN, convergence is
 usually faster if the average of each input variable over the
 training set is close to zero. Moreover, when the input is set
@@ -141,7 +141,7 @@ the image is normalized to $[0; 1]$, instead of $[0; 255]$ and the
 coordinates of the landmarks are normalized to $[-1; 1]$, instead
 of $[0; 256]$ and $[0; 192]$ before giving to the network.
 
-The training was finished in $5000$ epochs\footnote{An epoch is a single pass through the full training set}. The learning rate was initialized at $0.03$ and stopped at $0.00001$, while the momentum was updated from $0.9$ to $0.9999$. 
+The training was finished in $5000$ epochs\footnote{An epoch is a single pass through the full training set.}. The learning rate was initialized at $0.03$ and stopped at $0.00001$, while the momentum was updated from $0.9$ to $0.9999$. 
 Because landmarks prediction can be seen as a regression problem in deep learning. Therefore, the root mean square error (RMSE) was used as a quality metric to evaluate the result and compute the losses of the proposed architecture.
 
 Fig. \ref{cnnlosses} shows the training error and the validation error during training time. The blue curve presents RMSE error on training data. The green curve presents the validation error. Clearly, the losses are very different from the beginning. But, the difference is narrowed when the epoch increase.
@@ -153,7 +153,7 @@ Fig. \ref{cnnlosses} shows the training error and the validation error during tr
 \label{cnnlosses}
 \end{figure}
 
-Besides the losses during training, the accuracy on coordinates of predicted landmarks of the test images is also considered. Firstly, the trained model was used to predict the landmarks on all images in the test set. Then, the distance (in pixels) between manual and corresponding landmarks in each image was calculated as the error distance. Finally, the error distance per landmark was calculated for all test images. Table.\ref{tabledistance} shows the average error distance given on each landmark. With the size of the images is $256 \times 192$, if we accept an error around $3\%$ of the image size ($ \sim3.5$ pixels), the error distances are acceptable.
+Besides the losses during training, the accuracy on coordinates of predicted landmarks of the test images is also considered. Firstly, the trained model was used to predict the landmarks on all images in the test set. Then, the distances (in pixels) between manual and corresponding predicted landmarks in each image were calculated as the error distances. Finally, the error distance per landmark was calculated for all test images. Table.\ref{tabledistance} shows the average error distance given on each landmark. With the size of the images is $256 \times 192$, if we accept an error around $3\%$ of the image size ($ \sim3.5$ pixels), the error distances are acceptable.
 
 \begin{table}[htbp]
 \centering
