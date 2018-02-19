@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.18)  19 FEB 2018 19:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.24)  19 FEB 2018 23:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **main.tex
 (./main.tex
 LaTeX2e <2016/02/01>
-Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
+Babel <3.9q> and hyphenation patterns for 7 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
@@ -427,7 +427,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 File: images/pronotum.jpg Graphic file (type jpg)
  <use images/pronotum.jpg>
 Package pdftex.def Info: images/pronotum.jpg used on input line 64.
-(pdftex.def)             Requested size: 144.53963pt x 108.40471pt.
+(pdftex.def)             Requested size: 154.1762pt x 115.63214pt.
 
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
@@ -439,24 +439,24 @@ File: images/architecture1.png Graphic file (type png)
 
 <use images/architecture1.png>
 Package pdftex.def Info: images/architecture1.png used on input line 94.
-(pdftex.def)             Requested size: 200.74643pt x 148.95386pt.
+(pdftex.def)             Requested size: 225.84166pt x 167.57451pt.
 
 <images/architecture3.png, id=14, 501.875pt x 372.39125pt>
 File: images/architecture3.png Graphic file (type png)
 
 <use images/architecture3.png>
 Package pdftex.def Info: images/architecture3.png used on input line 107.
-(pdftex.def)             Requested size: 200.74643pt x 148.95386pt.
+(pdftex.def)             Requested size: 225.84166pt x 167.57451pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <9> on input line 112.
  [2 <./images/architecture1.png (PNG copy)>]
-<images/losses.png, id=20, 578.16pt x 433.62pt>
+[3 <./images/architecture3.png>]
+<images/losses.png, id=23, 578.16pt x 433.62pt>
 File: images/losses.png Graphic file (type png)
  <use images/losses.png>
 Package pdftex.def Info: images/losses.png used on input line 194.
 (pdftex.def)             Requested size: 241.09642pt x 180.82233pt.
 
-[3 <./images/architecture3.png>]
 <images/plandmark.png, id=25, 1097.09875pt x 829.0975pt>
 File: images/plandmark.png Graphic file (type png)
 
@@ -464,20 +464,16 @@ File: images/plandmark.png Graphic file (type png)
 Package pdftex.def Info: images/plandmark.png used on input line 224.
 (pdftex.def)             Requested size: 114.75514pt x 86.72377pt.
 
-<images/plandmark2.png, id=26, 745.78625pt x 558.085pt>
+<images/plandmark2.png, id=26, 178.9887pt x 133.9404pt>
 File: images/plandmark2.png Graphic file (type png)
 
 <use images/plandmark2.png>
 Package pdftex.def Info: images/plandmark2.png used on input line 231.
-(pdftex.def)             Requested size: 115.89154pt x 86.72377pt.
+(pdftex.def)             Requested size: 115.89334pt x 86.72377pt.
 
 Overfull \hbox (9.4905pt too wide) in paragraph at lines 222--236
  [][]  [] 
  []
-
-
-Underfull \vbox (badness 1902) has occurred while \output is active []
-
 
 <images/ftete.jpg, id=27, 192.72pt x 144.54pt>
 File: images/ftete.jpg Graphic file (type jpg)
@@ -518,27 +514,44 @@ File: images/felytre2.jpg Graphic file (type jpg)
 Package pdftex.def Info: images/felytre2.jpg used on input line 308.
 (pdftex.def)             Requested size: 77.08662pt x 57.81496pt.
  [4 <./images/losses.png> <./images/plandmark.png (PNG copy)> <./images/plandma
-rk2.png>]
-<images/avg_finetune.jpg, id=37, 455.45157pt x 258.65053pt>
-File: images/avg_finetune.jpg Graphic file (type jpg)
+rk2.png (PNG copy)>]
+<images/fn_accuracy.png, id=37, 76.3653pt x 57.3342pt>
+File: images/fn_accuracy.png Graphic file (type png)
 
-<use images/avg_finetune.jpg>
-Package pdftex.def Info: images/avg_finetune.jpg used on input line 358.
-(pdftex.def)             Requested size: 227.72522pt x 129.32494pt.
- [5 <./images/ftete.jpg> <./images/fpronotum.jpg> <./images/felytre.jpg> <./ima
-ges/ftete2.jpg> <./images/felytre2.jpg> <./images/avg_finetune.jpg>] (./main.bb
-l
-Underfull \hbox (badness 1062) in paragraph at lines 29--32
+<use images/fn_accuracy.png>
+Package pdftex.def Info: images/fn_accuracy.png used on input line 360.
+(pdftex.def)             Requested size: 115.52177pt x 86.72377pt.
+
+<images/fn_inaccuracy.png, id=38, 114.9093pt x 86.724pt>
+File: images/fn_inaccuracy.png Graphic file (type png)
+
+<use images/fn_inaccuracy.png>
+Package pdftex.def Info: images/fn_inaccuracy.png used on input line 367.
+(pdftex.def)             Requested size: 114.91426pt x 86.72377pt.
+
+Overfull \hbox (9.4905pt too wide) in paragraph at lines 358--371
+ [][]  [] 
+ []
+
+[5 <./images/ftete.jpg> <./images/fpronotum.jpg> <./images/felytre.jpg> <./imag
+es/ftete2.jpg> <./images/felytre2.jpg> <./images/fn_accuracy.png (PNG copy)> <.
+/images/fn_inaccuracy.png (PNG copy)>] (./main.bbl
+Underfull \hbox (badness 1838) in paragraph at lines 18--21
+\OT1/ptm/m/n/10 trans-fer-able are fea-tures in deep neu-ral net-works?,''
+ []
+
+
+Underfull \hbox (badness 1062) in paragraph at lines 34--37
 []\OT1/ptm/m/n/10 D. Cire-gan, U. Meier, and J. Schmid-hu-ber, ``Multi-
  []
 
 
-Underfull \hbox (badness 1132) in paragraph at lines 34--37
+Underfull \hbox (badness 1132) in paragraph at lines 39--42
 []\OT1/ptm/m/n/10 C. Szegedy, W. Liu, Y. Jia, P. Ser-manet, S. Reed,
  []
 
 
-Underfull \hbox (badness 1824) in paragraph at lines 49--53
+Underfull \hbox (badness 1824) in paragraph at lines 54--58
 []\OT1/ptm/m/n/10 T. Mikolov, A. De-o-ras, D. Povey, L. Bur-get, and
  []
 
@@ -548,13 +561,13 @@ Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ¸ in font ptmr7t!
 ) [6] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 4217 strings out of 493029
- 66985 string characters out of 6136234
- 139238 words of memory out of 5000000
- 7660 multiletter control sequences out of 15000+600000
+ 4227 strings out of 494883
+ 67190 string characters out of 6178693
+ 135681 words of memory out of 5000000
+ 7434 multiletter control sequences out of 15000+600000
  44051 words of font info for 55 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 38i,9n,39p,1269b,426s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36 hyphenation exceptions out of 8191
+ 38i,9n,39p,1269b,432s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/sh
 are/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texlive/texmf-dist/fonts
 /enc/dvips/base/8r.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}</usr/sha
@@ -565,10 +578,10 @@ pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/u
 tmri8a.pfb>
-Output written on main.pdf (6 pages, 766897 bytes).
+Output written on main.pdf (6 pages, 755415 bytes).
 PDF statistics:
- 77 PDF objects out of 1000 (max. 8388607)
+ 78 PDF objects out of 1000 (max. 8388607)
  46 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 61 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 66 words of extra memory for PDF output out of 10000 (max. 10000000)
 

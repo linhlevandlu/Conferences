@@ -5,45 +5,45 @@ The style file: ieeetr.bst
 Database file #1: IEEEabrv.bib
 Database file #2: includes/icdp2009.bib
 Warning--empty booktitle in szegedy2015going
-You've used 19 entries,
+You've used 20 entries,
             1876 wiz_defined-function locations,
-            1109 strings with 18087 characters,
-and the built_in function-call counts, 6606 in all, are:
-= -- 618
-> -- 316
+            1113 strings with 18241 characters,
+and the built_in function-call counts, 7016 in all, are:
+= -- 659
+> -- 330
 < -- 0
-+ -- 112
-- -- 93
-* -- 500
-:= -- 917
-add.period$ -- 19
-call.type$ -- 19
-change.case$ -- 19
++ -- 117
+- -- 97
+* -- 527
+:= -- 967
+add.period$ -- 20
+call.type$ -- 20
+change.case$ -- 20
 chr.to.int$ -- 0
-cite$ -- 20
-duplicate$ -- 332
-empty$ -- 606
-format.name$ -- 93
-if$ -- 1586
+cite$ -- 21
+duplicate$ -- 355
+empty$ -- 646
+format.name$ -- 97
+if$ -- 1688
 int.to.chr$ -- 0
-int.to.str$ -- 19
-missing$ -- 18
-newline$ -- 60
-num.names$ -- 19
-pop$ -- 87
+int.to.str$ -- 20
+missing$ -- 19
+newline$ -- 63
+num.names$ -- 20
+pop$ -- 94
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 233
+skip$ -- 251
 stack$ -- 0
-substring$ -- 505
-swap$ -- 141
+substring$ -- 545
+swap$ -- 152
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 1
-while$ -- 64
-width$ -- 21
-write$ -- 187
+while$ -- 68
+width$ -- 22
+write$ -- 196
 (There was 1 warning)

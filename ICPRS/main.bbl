@@ -14,6 +14,11 @@ Y.~LeCun, K.~Kavukcuoglu, and C.~Farabet, ``Convolutional networks and
   applications in vision,'' in {\em Circuits and Systems (ISCAS), Proceedings
   of 2010 IEEE International Symposium on}, pp.~253--256, IEEE, 2010.
 
+\bibitem{yosinski2014transferable}
+J.~Yosinski, J.~Clune, Y.~Bengio, and H.~Lipson, ``How transferable are
+  features in deep neural networks?,'' in {\em Advances in neural information
+  processing systems}, pp.~3320--3328, 2014.
+
 \bibitem{le2017maelab}
 V.~L. LE, M.~BEURTON-AIMAR, A.~KR{\"A}HENB{\"U}HL, and N.~PARISEY, ``{MAELab: a
   framework to automatize landmark estimation},'' in {\em {WSCG 2017}}, 25th
