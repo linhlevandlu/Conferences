@@ -14,10 +14,6 @@ Y.~LeCun, K.~Kavukcuoglu, and C.~Farabet, ``Convolutional networks and
   applications in vision,'' in {\em Circuits and Systems (ISCAS), Proceedings
   of 2010 IEEE International Symposium on}, pp.~253--256, IEEE, 2010.
 
-\bibitem{gower1975generalized}
-J.~C. Gower, ``Generalized procrustes analysis,'' {\em Psychometrika}, vol.~40,
-  no.~1, pp.~33--51, 1975.
-
 \bibitem{le2017maelab}
 V.~L. LE, M.~BEURTON-AIMAR, A.~KR{\"A}HENB{\"U}HL, and N.~PARISEY, ``{MAELab: a
   framework to automatize landmark estimation},'' in {\em {WSCG 2017}}, 25th
@@ -102,9 +98,5 @@ S.~Dieleman, J.~Schlüter, C.~Raffel, E.~Olson, S.~K. Sønderby, D.~Nouri, {\em
 Y.~A. LeCun, L.~Bottou, G.~B. Orr, and K.-R. M{\"u}ller, ``Efficient
   backprop,'' in {\em Neural networks: Tricks of the trade}, pp.~9--48,
   Springer, 2012.
-
-\bibitem{bland1996statistics}
-J.~M. Bland and D.~G. Altman, ``Statistics notes: measurement error,'' {\em
-  Bmj}, vol.~313, no.~7059, p.~744, 1996.
 
 \end{thebibliography}
