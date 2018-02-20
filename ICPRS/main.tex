@@ -102,12 +102,12 @@ The remaining dropout layer is inserted between the first
 two full connected layers. The probability value of this layer
 is set to $0.5$. The output layer still contains 16 units corresponding to the coordinates of 8 predicted landmarks (Fig.\ref{cnnnetwork2}).
 
-\begin{figure}[htbp]
+\begin{figure*}[!t]
 \centering
-\includegraphics[scale=0.45]{images/architecture3}
+\includegraphics[scale=0.4]{images/model_arch}
 \caption{The last version of the proposed convolutional neural network} 
 \label{cnnnetwork2}
-\end{figure}
+\end{figure*}
 
 During training, the values of learnable parameters have been updated to increase the accuracy of the network by applying gradient descent in backward phase. Therefore, the network is designed with a small sharing learning rate and momentum. Their values are updated over training time to fit with the number of epochs\footnote{An epoch is a single pass through the full training set.}. The network was designed to finish the training in $5000$ epochs. The learning rate was initialized at $0.03$ and stopped at $0.00001$, while the momentum was updated from $0.9$ to $0.9999$. 
 Because landmarks prediction can be seen as a regression problem in deep learning. Therefore, the root mean square error (RMSE) was used as a quality metric to evaluate the result and compute the losses of the proposed architecture. The implementation of the network is done on Lasagne framework \cite{lasagne} which allows computing on GPU. The network has been trained on NVIDIA TITAN X cards.
