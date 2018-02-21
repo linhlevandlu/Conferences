@@ -7,7 +7,7 @@ Database file #2: includes/icdp2009.bib
 Warning--empty booktitle in szegedy2015going
 You've used 20 entries,
             1876 wiz_defined-function locations,
-            1113 strings with 18241 characters,
+            1113 strings with 18233 characters,
 and the built_in function-call counts, 7016 in all, are:
 = -- 659
 > -- 330

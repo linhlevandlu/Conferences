@@ -22,6 +22,7 @@
 \usepackage{subcaption}
 \usepackage{enumitem}
 \usepackage[caption=false]{subfig}
+\usepackage{enumitem}
 \begin{document}
 \noindent
 
@@ -94,7 +95,7 @@ network. %The outputs of the full connected layers are $1000$, $1000$,and $16$, 
  The output of the last full-connected
 layer corresponds to 8 landmarks (x and y coordinates) which
 we would like to predict. In general way, the layers and their parameters are presented as following:
-\begin{itemize}
+\begin{itemize}[nosep,label=\footnotesize$\bullet$]
 	\item CONV(x,y,z,t): presents for convolutional layer with its parameters: \textit{x = number of filters, y = size of filter matrix, z = stride value, t = padding value},
 	\item POOL(y,z,t): presents maximum pooling layer with: \textit{y = size of filter, z = stride value, t = padding value},
 	\item FC(x): presents a full-connected layer with \textit{x is the number of output}
@@ -135,6 +136,7 @@ Table.\ref{tblmodel1} shows the sequence layers in the model along with the para
 	\caption{The losses during training the model on pronotum images dataset}
 	\label{tblmodel1}
 \end{table}
+
 The training result shows that the architecture of this model is not good enough to predict the landmarks. It is still general and overfitting has appeared during training and validation.
 To prevent the overfitting, four dropout layers have been added into the network. These are considered as the good solution to prevent the overfitting. The idea of dropout is to randomly drop units from the neural network during training \cite{srivastava2014dropout}. Fig.\ref{cnnnetwork2} presents the final architecture of the model. The first three dropout layers are supplemented to the repeated-structures followed the maximum pooling layers. In that way, structure becomes an elementary block includes a convolution layer (\textit{$C_i$}) followed by a maximum pooling (\textit{$P_i$}) and dropout layer (\textit{$D_i$})(with $i=1..3$). The probability values used for dropout layers are $0.1$, $0.2$, and $0.3$. Actually, we keep the same value for the parameters of the convolutional, pooling and full-connected layers as the previous architecture. 
 The remaining dropout layer (\textit{$D_4$}) is inserted between the first
@@ -143,7 +145,7 @@ is set to $0.5$. The output layer (\textit{$FC_3$}) still contains 16 units corr
 
 \begin{figure*}[!t]
 \centering
-\includegraphics[scale=0.45]{images/arch_model}
+\includegraphics[scale=0.32]{images/arch_model}
 \caption{The last version of the proposed convolutional neural network} 
 \label{cnnnetwork2}
 \end{figure*}
@@ -289,7 +291,7 @@ As a result, the network is able to predict the landmarks on a test set of prono
 \label{secimproving}
 In section \ref{sectrain1}, the proposed network has been experimented by training from scratch on pronotum dataset. The results of experiments have shown that the network has worked well to detect the landmarks on the pronotum images. However, when we consider the predicted landmarks by displaying the landmarks on the images, the result is still not precise, the average error still high ($\geq 4$ pixels). 
 
-In this section, we describe another scenario to predict the landmarks. Instead of training and testing on pronotum images dataset, the network has been trained on the dataset includes the images of three parts of beetle i.e pronotum, body and head. Then, the trained model has been used to fine-tune and test on pronotum set.
+In order to reach more acceptable results for biologists, we have broadened the mdoel with step of fine-tuning. Instead of training and testing on pronotum images dataset, the network has been trained on the dataset includes the images of three parts of beetle i.e pronotum, body and head. Then, the trained model has been used to fine-tune and test on pronotum set.
 
 %In this section, we describe a scenario to improve the locations of the predicted landmarks which stay at the corner of the pronotum shape, \textit{i.e}  $3^{rd} $ and $7^{th}$ landmarks, called \textit{corner landmarks}. Fig.\ref{figshape} shows the simulation of a pronotum with its shape and manual landmarks. Fig.\ref{figsub11} shows the shape of pronotum and its manual landmarks. The red points represent for the corner landmarks, the yellow points represent the landmarks inside the pronotum. Fig.\ref{figsub22} display an overlap between the shape and real image.
 
@@ -315,7 +317,7 @@ In this section, we describe another scenario to predict the landmarks. Instead 
 %\textit{The main idea of this process is generated a general curve through a landmark and tried to adapt the predicted landmark to corresponding general curve,} this work looks like a Procrustes analysis. The scenario starts from the segmentation result of the image. Firstly, from the training dataset, a ``mean curve" is generated for each manual landmark that stays in the shape of pronotum (i.e $3^{rd}, 7^{th}$). Secondly, for each predicted landmark from CNN, we try to adapt the landmark to the contour of pronotum. Finally, we search a pixel around ``adapted point" that the curve via it is closest to the ``mean curve".
 
 \subsubsection{Training data preparation}
-Unlike the previous, in this case, the training dataset includes a combination of the images from three sets: pronotum, body and head (Fig.\ref{figshape3parts}). For each set, $260$ images have been chosen for training and validation, the remaining images ($33$ images) have been used for testing. By applying the same procedure in section \ref{sec_data}, the training dataset was enlarged to $5460$ images ($260 \times 7 \times 3$). However, another challenge was appeared, the number of manual landmarks of each part is difference: \textit{$8$ landmarks on pronotum part, $11$ landmarks on body part, and $10$ landmarks on head part}. We see that the trained model will be fine-tuned on pronotum set. So, we kept the number of the landmark on pronotum as a reference and we suppressed some landmarks on the body and head part. Specifically, we have removed three landmarks on the body part ($1^{st}; 6^{t}h; 9^{th}$) and two landmarks on the head part ($5{th}; 6^{th}$) (Fig.\ref{figshape3parts}).
+The training dataset includes a combination of the images from three sets: pronotum, body and head (Fig.\ref{figshape3parts}). For each set, $260$ original images have been chosen radomly for training and validation. By applying the same procedure in section \ref{sec_data}, the training dataset was enlarged to $5460$ images ($260 \times 7 \times 3$). However, the number of manual landmarks on each part is difference: \textit{$8$ landmarks on pronotum part, $11$ landmarks on body part, and $10$ landmarks on head part}. The manual landmarks have a specific meaning for the biologists. So, we can not insert the landmarks arbitrarily. Instead of, we will keep the smallest number of landmarks among three parts and we remove some landmarks on other parts. Therefore, we kept the number of the landmark on pronotum as a reference and we suppressed some landmarks on the body and head part. Specifically, we have removed three landmarks on the body part ($1^{st}; 6^{t}h; 9^{th}$) and two landmarks on the head part ($5{th}; 6^{th}$) (Fig.\ref{figshape3parts}).
 
 \begin{figure}[htbp]
     \centering
@@ -332,21 +334,8 @@ Unlike the previous, in this case, the training dataset includes a combination o
 	\begin{subfigure}[t]{0.156\textwidth}
         \centering
         \includegraphics[scale=0.4]{images/felytre}
-    \end{subfigure}~\\    
-	\begin{subfigure}[t]{0.156\textwidth}
-        \centering
-        \includegraphics[scale=0.4]{images/ftete2}
-    \end{subfigure}%
-    ~ 
-    \begin{subfigure}[t]{0.156\textwidth}
-        \centering
-        \includegraphics[scale=0.4]{images/fpronotum}
-    \end{subfigure}~
-	\begin{subfigure}[t]{0.156\textwidth}
-        \centering
-        \includegraphics[scale=0.4]{images/felytre2}
     \end{subfigure}    
-    \caption{The dataset images. \textit{Top row}: The images with their manual landmarks. \textit{Bottom row}: The training images (some landmarks have been removed on head and body parts) } 
+    \caption{The dataset images. The \textit{red} points represent the landmarks that are kept, while \textit{yellow} points represent for the suppressed landmarks during training the model} 
     \label{figshape3parts}
 \end{figure}
 
@@ -416,7 +405,7 @@ predicted-landmarks of the images as TPS files. With the outputs are TPS files,
 the user can use MAELab framework\footnote{MAELab is a free software written in C++. It can be directly and freely
 obtained by request at the authors.} to display the
 landmarks on the images.
-\section{Conclusions}
+\section{Conclusion}
 In this paper, we have presented a CNN with two scenarios to predict the landmarks on beetle's pronotum images. The CNN network has been designed with three times repeated structure which consists of a convolutional layer, a max pooling layer, and a dropout layer, followed by the connected layers. In the training phase, the CNN have been trained with several times in different selections of training data. After training, the network was able to predict the landmarks on the images in the test set. 
 
 In the first scenario, the model has been trained (from scratch) and tested on the dataset of pronotum images. While in the second scenario, the model has been trained on a dataset includes the images from three parts of beetles. Then, the trained model has been used to fine-tune and test on pronotum images.

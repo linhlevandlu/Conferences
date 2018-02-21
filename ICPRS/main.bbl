@@ -19,12 +19,6 @@ J.~Yosinski, J.~Clune, Y.~Bengio, and H.~Lipson, ``How transferable are
   features in deep neural networks?,'' in {\em Advances in neural information
   processing systems}, pp.~3320--3328, 2014.
 
-\bibitem{le2017maelab}
-V.~L. LE, M.~BEURTON-AIMAR, A.~KR{\"A}HENB{\"U}HL, and N.~PARISEY, ``{MAELab: a
-  framework to automatize landmark estimation},'' in {\em {WSCG 2017}}, 25th
-  International Conference in Central Europe on Computer Graphics,
-  Visualization and Computer Vision'2017, (Plzen, Czech Republic), May 2017.
-
 \bibitem{krizhevsky2012imagenet}
 A.~Krizhevsky, I.~Sutskever, and G.~E. Hinton, ``Imagenet classification with
   deep convolutional neural networks,'' in {\em Advances in neural information
@@ -89,6 +83,12 @@ C.~Cintas, M.~Quinto-S{\'a}nchez, V.~Acu{\~n}a, C.~Paschetta, S.~de~Azevedo,
   {\em et~al.}, ``Automatic ear detection and feature extraction using
   geometric morphometrics and convolutional neural networks,'' {\em IET
   Biometrics}, vol.~6, no.~3, pp.~211--223, 2016.
+
+\bibitem{le2017maelab}
+V.~L. Le, M.~Beurton-Aimar, A.~Krahenbuhl, and N.~Parisey, ``{MAELab: a
+  framework to automatize landmark estimation},'' in {\em {WSCG 2017}}, 25th
+  International Conference in Central Europe on Computer Graphics,
+  Visualization and Computer Vision'2017, (Plzen, Czech Republic), May 2017.
 
 \bibitem{srivastava2014dropout}
 N.~Srivastava, G.~E. Hinton, A.~Krizhevsky, I.~Sutskever, and R.~Salakhutdinov,

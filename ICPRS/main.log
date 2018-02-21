@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.24)  21 FEB 2018 11:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.18)  21 FEB 2018 13:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **main.tex
 (./main.tex
 LaTeX2e <2016/02/01>
-Babel <3.9q> and hyphenation patterns for 7 language(s) loaded.
+Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
@@ -264,26 +264,26 @@ Package: subfig 2005/06/28 ver: 1.3 subfig package
 ) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 25.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 25.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 26.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 26.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 25.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 26.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
@@ -383,50 +383,50 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 44.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 44.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 45.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 45.
 
 (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 44.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 45.
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 44.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 45.
 
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 44.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 45.
 
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 44.
+(Font)              <12> on input line 45.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 44.
+(Font)              <8> on input line 45.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 44.
+(Font)              <6> on input line 45.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 44.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 45.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 47.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 48.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 50.
+(Font)              <10> on input line 51.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 50.
+(Font)              <7> on input line 51.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 50.
+(Font)              <5> on input line 51.
 
 <images/pronotum.jpg, id=1, 192.72pt x 144.54pt>
 File: images/pronotum.jpg Graphic file (type jpg)
  <use images/pronotum.jpg>
-Package pdftex.def Info: images/pronotum.jpg used on input line 65.
+Package pdftex.def Info: images/pronotum.jpg used on input line 66.
 (pdftex.def)             Requested size: 154.1762pt x 115.63214pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -436,135 +436,124 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
  <./images/pronotum.jpg>]
-LaTeX Font Info:    Try loading font information for TS1+ptm on input line 98.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 99.
 
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-)
-Overfull \hbox (80.00809pt too wide) in paragraph at lines 113--121
+Overfull \hbox (80.00809pt too wide) in paragraph at lines 114--122
  [][] 
  []
 
 
-Overfull \hbox (69.7335pt too wide) in paragraph at lines 125--134
+Overfull \hbox (69.7335pt too wide) in paragraph at lines 126--135
  [][] 
  []
 
-<images/arch_model.png, id=13, 1111.15125pt x 194.7275pt>
+<images/arch_model.png, id=13, 1616.0375pt x 279.0425pt>
 File: images/arch_model.png Graphic file (type png)
 
 <use images/arch_model.png>
-Package pdftex.def Info: images/arch_model.png used on input line 146.
-(pdftex.def)             Requested size: 500.01344pt x 87.62656pt.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 151.
- [2]
+Package pdftex.def Info: images/arch_model.png used on input line 148.
+(pdftex.def)             Requested size: 517.14258pt x 89.29541pt.
+
+Overfull \hbox (4.99295pt too wide) in paragraph at lines 148--149
+ [][] 
+ []
+
+[2]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/losses.png, id=21, 578.16pt x 433.62pt>
+<images/losses.png, id=22, 578.16pt x 433.62pt>
 File: images/losses.png Graphic file (type png)
  <use images/losses.png>
-Package pdftex.def Info: images/losses.png used on input line 233.
+Package pdftex.def Info: images/losses.png used on input line 235.
 (pdftex.def)             Requested size: 241.09642pt x 180.82233pt.
 
 [3 <./images/arch_model.png>]
-<images/plandmark.png, id=26, 1097.09875pt x 829.0975pt>
+<images/plandmark.png, id=27, 1097.09875pt x 829.0975pt>
 File: images/plandmark.png Graphic file (type png)
 
 <use images/plandmark.png>
-Package pdftex.def Info: images/plandmark.png used on input line 263.
+Package pdftex.def Info: images/plandmark.png used on input line 265.
 (pdftex.def)             Requested size: 114.75514pt x 86.72377pt.
 
-<images/plandmark2.png, id=27, 178.9887pt x 133.9404pt>
+<images/plandmark2.png, id=28, 178.9887pt x 133.9404pt>
 File: images/plandmark2.png Graphic file (type png)
 
 <use images/plandmark2.png>
-Package pdftex.def Info: images/plandmark2.png used on input line 270.
+Package pdftex.def Info: images/plandmark2.png used on input line 272.
 (pdftex.def)             Requested size: 115.89334pt x 86.72377pt.
 
-Overfull \hbox (9.4905pt too wide) in paragraph at lines 261--275
+Overfull \hbox (9.4905pt too wide) in paragraph at lines 263--277
  [][]  [] 
  []
 
-<images/ftete.jpg, id=28, 192.72pt x 144.54pt>
+<images/ftete.jpg, id=29, 192.72pt x 144.54pt>
 File: images/ftete.jpg Graphic file (type jpg)
  <use images/ftete.jpg>
-Package pdftex.def Info: images/ftete.jpg used on input line 324.
+Package pdftex.def Info: images/ftete.jpg used on input line 326.
 (pdftex.def)             Requested size: 77.08662pt x 57.81496pt.
 
-<images/fpronotum.jpg, id=29, 192.72pt x 144.54pt>
+<images/fpronotum.jpg, id=30, 192.72pt x 144.54pt>
 File: images/fpronotum.jpg Graphic file (type jpg)
  <use images/fpronotum.jpg>
-Package pdftex.def Info: images/fpronotum.jpg used on input line 329.
+Package pdftex.def Info: images/fpronotum.jpg used on input line 331.
 (pdftex.def)             Requested size: 77.08662pt x 57.81496pt.
 
-<images/felytre.jpg, id=30, 192.72pt x 144.54pt>
+<images/felytre.jpg, id=31, 192.72pt x 144.54pt>
 File: images/felytre.jpg Graphic file (type jpg)
  <use images/felytre.jpg>
-Package pdftex.def Info: images/felytre.jpg used on input line 334.
+Package pdftex.def Info: images/felytre.jpg used on input line 336.
 (pdftex.def)             Requested size: 77.08662pt x 57.81496pt.
 
-Overfull \hbox (1.00568pt too wide) in paragraph at lines 322--335
+Overfull \hbox (1.00568pt too wide) in paragraph at lines 324--338
  [][]  []  [] 
  []
 
-<images/ftete2.jpg, id=31, 192.72pt x 144.54pt>
-File: images/ftete2.jpg Graphic file (type jpg)
- <use images/ftete2.jpg>
-Package pdftex.def Info: images/ftete2.jpg used on input line 338.
-(pdftex.def)             Requested size: 77.08662pt x 57.81496pt.
-File: images/fpronotum.jpg Graphic file (type jpg)
-
-<use images/fpronotum.jpg>
-Package pdftex.def Info: images/fpronotum.jpg used on input line 343.
-(pdftex.def)             Requested size: 77.08662pt x 57.81496pt.
- <images/felytre2.jpg, id=32, 192.72pt x 144.54pt>
-File: images/felytre2.jpg Graphic file (type jpg)
-
-<use images/felytre2.jpg>
-Package pdftex.def Info: images/felytre2.jpg used on input line 347.
-(pdftex.def)             Requested size: 77.08662pt x 57.81496pt.
- [4 <./images/losses.png> <./images/plandmark.png (PNG copy)> <./images/plandma
-rk2.png (PNG copy)>]
-<images/fn_accuracy.png, id=37, 76.3653pt x 57.3342pt>
+[4 <./images/losses.png> <./images/plandmark.png (PNG copy)> <./images/plandmar
+k2.png (PNG copy)>] <images/fn_accuracy.png, id=36, 76.3653pt x 57.3342pt>
 File: images/fn_accuracy.png Graphic file (type png)
 
 <use images/fn_accuracy.png>
-Package pdftex.def Info: images/fn_accuracy.png used on input line 399.
+Package pdftex.def Info: images/fn_accuracy.png used on input line 388.
 (pdftex.def)             Requested size: 115.52177pt x 86.72377pt.
 
-<images/fn_inaccuracy.png, id=38, 114.9093pt x 86.724pt>
+<images/fn_inaccuracy.png, id=37, 114.9093pt x 86.724pt>
 File: images/fn_inaccuracy.png Graphic file (type png)
 
 <use images/fn_inaccuracy.png>
-Package pdftex.def Info: images/fn_inaccuracy.png used on input line 406.
+Package pdftex.def Info: images/fn_inaccuracy.png used on input line 395.
 (pdftex.def)             Requested size: 114.91426pt x 86.72377pt.
 
-Overfull \hbox (9.4905pt too wide) in paragraph at lines 397--410
+Overfull \hbox (9.4905pt too wide) in paragraph at lines 386--399
  [][]  [] 
  []
 
 [5 <./images/ftete.jpg> <./images/fpronotum.jpg> <./images/felytre.jpg> <./imag
-es/ftete2.jpg> <./images/felytre2.jpg> <./images/fn_accuracy.png (PNG copy)> <.
-/images/fn_inaccuracy.png (PNG copy)>] (./main.bbl
+es/fn_accuracy.png (PNG copy)> <./images/fn_inaccuracy.png (PNG copy)>]
+(./main.bbl
 Underfull \hbox (badness 1838) in paragraph at lines 18--21
 \OT1/ptm/m/n/10 trans-fer-able are fea-tures in deep neu-ral net-works?,''
  []
 
 
-Underfull \hbox (badness 1062) in paragraph at lines 34--37
+Underfull \hbox (badness 1062) in paragraph at lines 28--31
 []\OT1/ptm/m/n/10 D. Cire-gan, U. Meier, and J. Schmid-hu-ber, ``Multi-
  []
 
 
-Underfull \hbox (badness 1132) in paragraph at lines 39--42
+Underfull \hbox (badness 1132) in paragraph at lines 33--36
 []\OT1/ptm/m/n/10 C. Szegedy, W. Liu, Y. Jia, P. Ser-manet, S. Reed,
  []
 
 
-Underfull \hbox (badness 1824) in paragraph at lines 54--58
+Underfull \hbox (badness 1824) in paragraph at lines 48--52
 []\OT1/ptm/m/n/10 T. Mikolov, A. De-o-ras, D. Povey, L. Bur-get, and
+ []
+
+
+Underfull \hbox (badness 2253) in paragraph at lines 88--92
+[]\OT1/ptm/m/n/10 V. L. Le, M. Beurton-Aimar, A. Kra-hen-buhl, and
  []
 
 Missing character: There is no Ã in font ptmr7t!
@@ -573,12 +562,12 @@ Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ¸ in font ptmr7t!
 ) [6] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 4251 strings out of 494883
- 67464 string characters out of 6178693
- 135679 words of memory out of 5000000
- 7455 multiletter control sequences out of 15000+600000
- 44365 words of font info for 56 fonts, out of 8000000 for 9000
- 36 hyphenation exceptions out of 8191
+ 4220 strings out of 493029
+ 67018 string characters out of 6136234
+ 140274 words of memory out of 5000000
+ 7665 multiletter control sequences out of 15000+600000
+ 44051 words of font info for 55 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
  38i,11n,39p,1440b,432s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/
 texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-
@@ -587,13 +576,14 @@ re/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/
 lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texm
 f/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.
 pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/ty
-pe1/public/lm/lmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/u
-tmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (6 pages, 781783 bytes).
+pe1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy9.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (6 pages, 798206 bytes).
 PDF statistics:
- 81 PDF objects out of 1000 (max. 8388607)
- 49 compressed objects within 1 object stream
+ 83 PDF objects out of 1000 (max. 8388607)
+ 52 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 61 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
