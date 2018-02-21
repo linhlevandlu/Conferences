@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.24)  21 FEB 2018 07:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.24)  21 FEB 2018 11:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -436,90 +436,94 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
  <./images/pronotum.jpg>]
-<images/architecture1.png, id=13, 501.875pt x 372.39125pt>
-File: images/architecture1.png Graphic file (type png)
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 98.
 
-<use images/architecture1.png>
-Package pdftex.def Info: images/architecture1.png used on input line 101.
-(pdftex.def)             Requested size: 225.84166pt x 167.57451pt.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+)
+Overfull \hbox (80.00809pt too wide) in paragraph at lines 113--121
+ [][] 
+ []
 
-<images/arch_model.png, id=14, 1111.15125pt x 194.7275pt>
+
+Overfull \hbox (69.7335pt too wide) in paragraph at lines 125--134
+ [][] 
+ []
+
+<images/arch_model.png, id=13, 1111.15125pt x 194.7275pt>
 File: images/arch_model.png Graphic file (type png)
 
 <use images/arch_model.png>
-Package pdftex.def Info: images/arch_model.png used on input line 114.
+Package pdftex.def Info: images/arch_model.png used on input line 146.
 (pdftex.def)             Requested size: 500.01344pt x 87.62656pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 119.
-
-Underfull \vbox (badness 2856) has occurred while \output is active []
-
- [2 <./images/architecture1.png (PNG copy)>]
+(Font)              <9> on input line 151.
+ [2]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<images/losses.png, id=20, 578.16pt x 433.62pt>
+<images/losses.png, id=21, 578.16pt x 433.62pt>
 File: images/losses.png Graphic file (type png)
  <use images/losses.png>
-Package pdftex.def Info: images/losses.png used on input line 201.
+Package pdftex.def Info: images/losses.png used on input line 233.
 (pdftex.def)             Requested size: 241.09642pt x 180.82233pt.
 
 [3 <./images/arch_model.png>]
-<images/plandmark.png, id=25, 1097.09875pt x 829.0975pt>
+<images/plandmark.png, id=26, 1097.09875pt x 829.0975pt>
 File: images/plandmark.png Graphic file (type png)
 
 <use images/plandmark.png>
-Package pdftex.def Info: images/plandmark.png used on input line 231.
+Package pdftex.def Info: images/plandmark.png used on input line 263.
 (pdftex.def)             Requested size: 114.75514pt x 86.72377pt.
 
-<images/plandmark2.png, id=26, 178.9887pt x 133.9404pt>
+<images/plandmark2.png, id=27, 178.9887pt x 133.9404pt>
 File: images/plandmark2.png Graphic file (type png)
 
 <use images/plandmark2.png>
-Package pdftex.def Info: images/plandmark2.png used on input line 238.
+Package pdftex.def Info: images/plandmark2.png used on input line 270.
 (pdftex.def)             Requested size: 115.89334pt x 86.72377pt.
 
-Overfull \hbox (9.4905pt too wide) in paragraph at lines 229--243
+Overfull \hbox (9.4905pt too wide) in paragraph at lines 261--275
  [][]  [] 
  []
 
-<images/ftete.jpg, id=27, 192.72pt x 144.54pt>
+<images/ftete.jpg, id=28, 192.72pt x 144.54pt>
 File: images/ftete.jpg Graphic file (type jpg)
  <use images/ftete.jpg>
-Package pdftex.def Info: images/ftete.jpg used on input line 293.
+Package pdftex.def Info: images/ftete.jpg used on input line 324.
 (pdftex.def)             Requested size: 77.08662pt x 57.81496pt.
 
-<images/fpronotum.jpg, id=28, 192.72pt x 144.54pt>
+<images/fpronotum.jpg, id=29, 192.72pt x 144.54pt>
 File: images/fpronotum.jpg Graphic file (type jpg)
  <use images/fpronotum.jpg>
-Package pdftex.def Info: images/fpronotum.jpg used on input line 298.
+Package pdftex.def Info: images/fpronotum.jpg used on input line 329.
 (pdftex.def)             Requested size: 77.08662pt x 57.81496pt.
 
-<images/felytre.jpg, id=29, 192.72pt x 144.54pt>
+<images/felytre.jpg, id=30, 192.72pt x 144.54pt>
 File: images/felytre.jpg Graphic file (type jpg)
  <use images/felytre.jpg>
-Package pdftex.def Info: images/felytre.jpg used on input line 303.
+Package pdftex.def Info: images/felytre.jpg used on input line 334.
 (pdftex.def)             Requested size: 77.08662pt x 57.81496pt.
 
-Overfull \hbox (1.00568pt too wide) in paragraph at lines 291--304
+Overfull \hbox (1.00568pt too wide) in paragraph at lines 322--335
  [][]  []  [] 
  []
 
-<images/ftete2.jpg, id=30, 192.72pt x 144.54pt>
+<images/ftete2.jpg, id=31, 192.72pt x 144.54pt>
 File: images/ftete2.jpg Graphic file (type jpg)
  <use images/ftete2.jpg>
-Package pdftex.def Info: images/ftete2.jpg used on input line 307.
+Package pdftex.def Info: images/ftete2.jpg used on input line 338.
 (pdftex.def)             Requested size: 77.08662pt x 57.81496pt.
 File: images/fpronotum.jpg Graphic file (type jpg)
 
 <use images/fpronotum.jpg>
-Package pdftex.def Info: images/fpronotum.jpg used on input line 312.
+Package pdftex.def Info: images/fpronotum.jpg used on input line 343.
 (pdftex.def)             Requested size: 77.08662pt x 57.81496pt.
- <images/felytre2.jpg, id=31, 192.72pt x 144.54pt>
+ <images/felytre2.jpg, id=32, 192.72pt x 144.54pt>
 File: images/felytre2.jpg Graphic file (type jpg)
 
 <use images/felytre2.jpg>
-Package pdftex.def Info: images/felytre2.jpg used on input line 316.
+Package pdftex.def Info: images/felytre2.jpg used on input line 347.
 (pdftex.def)             Requested size: 77.08662pt x 57.81496pt.
  [4 <./images/losses.png> <./images/plandmark.png (PNG copy)> <./images/plandma
 rk2.png (PNG copy)>]
@@ -527,17 +531,17 @@ rk2.png (PNG copy)>]
 File: images/fn_accuracy.png Graphic file (type png)
 
 <use images/fn_accuracy.png>
-Package pdftex.def Info: images/fn_accuracy.png used on input line 368.
+Package pdftex.def Info: images/fn_accuracy.png used on input line 399.
 (pdftex.def)             Requested size: 115.52177pt x 86.72377pt.
 
 <images/fn_inaccuracy.png, id=38, 114.9093pt x 86.724pt>
 File: images/fn_inaccuracy.png Graphic file (type png)
 
 <use images/fn_inaccuracy.png>
-Package pdftex.def Info: images/fn_inaccuracy.png used on input line 375.
+Package pdftex.def Info: images/fn_inaccuracy.png used on input line 406.
 (pdftex.def)             Requested size: 114.91426pt x 86.72377pt.
 
-Overfull \hbox (9.4905pt too wide) in paragraph at lines 366--379
+Overfull \hbox (9.4905pt too wide) in paragraph at lines 397--410
  [][]  [] 
  []
 
@@ -567,32 +571,29 @@ Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ¼ in font ptmr7t!
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ¸ in font ptmr7t!
-) [6] (./main.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+) [6] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 4227 strings out of 494883
- 67175 string characters out of 6178693
- 135681 words of memory out of 5000000
- 7434 multiletter control sequences out of 15000+600000
- 44051 words of font info for 55 fonts, out of 8000000 for 9000
+ 4251 strings out of 494883
+ 67464 string characters out of 6178693
+ 135679 words of memory out of 5000000
+ 7455 multiletter control sequences out of 15000+600000
+ 44365 words of font info for 56 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 38i,9n,39p,1440b,432s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/en
-c/dvips/lm/lm-mathsy.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r
-.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}</usr/share/texmf/fonts/typ
-e1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr
-/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/publ
-ic/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/te
-xmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr
-8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (6 pages, 781595 bytes).
+ 38i,11n,39p,1440b,432s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/
+texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-
+mathsy.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/sha
+re/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/
+lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texm
+f/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.
+pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/ty
+pe1/public/lm/lmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/u
+tmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (6 pages, 781783 bytes).
 PDF statistics:
- 78 PDF objects out of 1000 (max. 8388607)
- 46 compressed objects within 1 object stream
+ 81 PDF objects out of 1000 (max. 8388607)
+ 49 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 66 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

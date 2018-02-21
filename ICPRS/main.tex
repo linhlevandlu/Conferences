@@ -53,7 +53,7 @@ Morphometry landmarks are used in many biological applications. Mostly, the land
 Morphometry landmark (or point of interest) is an important feature in many biological investigations. It was usually used to analyze the forms of whole biological organs or organisms. The analysis is mainly based on the coordinates of the landmarks. The collecting of enough the number of landmarks can help the biologists make a good estimate about organisms. Depending on the problem, the number of landmarks may be more or less; besides, the location of landmarks can be located on the shape (border) or inside the object, \textit{for examples,} the landmarks on Drosophila wings have stayed on the veins of the wings but the landmarks on human ear can be located at the ear hole or inside. Recently, the landmarks were set manually by the biologists. This work is time-consuming and difficult to reproduce. Therefore, a method that proposes automatically the coordinates of landmarks could be a concern. 
 
 Based on the characteristics of digital images acquired for morphological studies, the images can be divided into two groups: the images where they are easy to segment the objects of interest, called \textit{segment-able images}; and the images that we can go in tight when segment the objects, called \textit{un-segment-able images}. For that reason, the methods that used to identify the landmarks automatically may be divided into two groups too. For segment-able images, identification of landmarks on the shape can be finished by applying the image processing techniques such as HOG\cite{palaniswamy2010automatic}, SIFT\cite{lowe2004distinctive}, .... But for un-segment-able images, defining the landmarks become a challenge and the image processing techniques seem to be inappropriate. This article introduces two scenarios for automatic detection of the landmarks on biological images, specific beetle's images. The dataset includes $293$ images of beetles. For each beetle, five parts have been extracted (\textit{pronotum, head, body, left and right mandible}) with their manual landmarks by the biologists. So, the coordinates of the manual landmarks can be seen as the ground truth to evaluated the predicted landmarks.
-In this article, a convolutional neural network (CNN)\cite{lecun2010convolutional} has been designed and used in two ways to predict the landmarks: in the first way, the network has been trained from scratch on the dataset of pronotum images. In the second way, the network has been trained on a  ``combination dataset" includes the images of three parts of beetle, firstly; then the trained model was used to fine-tune \cite{yosinski2014transferable} on pronotum dataset. The output model uses to predict the landmarks on a test set of pronotum (Fig.\ref{figpronotum}). 
+In this article, a Convolutional Neural Network (CNN)\cite{lecun2010convolutional} has been designed and used in two ways to predict the landmarks: in the first way, the network has been trained from scratch on the dataset of pronotum images. In the second way, the network has been trained on a  ``combination dataset" includes the images of three parts of beetle, firstly; then the trained model was used to fine-tune \cite{yosinski2014transferable} on pronotum dataset. The output model uses to predict the landmarks on a test set of pronotum (Fig.\ref{figpronotum}). 
 
 
 
@@ -86,28 +86,60 @@ Deep learning presents a learning method with multiple levels of representation 
 \label{secmodel}
 The first step to work in CNN is to study the network architecture. After several tests, we have chosen for this application to work with a model provided in Lasagne framework coming from Theano. In the first section, we will present the original model and then, we will describe how we have modified it by definition of an elementary block that we compose in the final model.
 
-Like the other networks \cite{lecun2010convolutional, li2015convolutional, cintas2016automatic}, the proposed network consists of several common layers with different learnable parameters (Fig.\ref{cnnnetwork1}). It receives an input of $1 \times 256 \times 192$ to train, validate, and test. The network consists of three repeated-structure of a convolutional layer followed by a maximum pooling layer and. The depth
-of convolutional layers increases from $32$, $64$, and $128$ with
-different size of the filter kernel: $3 \times 3$, $2 \times 2$, and $2 \times 2$.
-All the kernels of pooling layers have the same size of $2 \times 2$. 
+Like the networks \cite{lecun2010convolutional, li2015convolutional, cintas2016automatic}, the proposed network consists of common layers with different learnable parameters. It receives an input of $1 \times 256 \times 192$ to train, to validate, and to  test. The network consists of three repeated-structures of a convolutional layer followed by a maximum pooling layer. The depth
+of convolutional layers increases with different size of the filter kernels.
+All the kernels of pooling layers have the same size. 
 At the end, three full connected layers have been added to the
-network. The outputs of the full connected layers are $1000$, $1000$,
-and $16$, respectively. The output of the last full-connected
+network. %The outputs of the full connected layers are $1000$, $1000$,and $16$, respectively.
+ The output of the last full-connected
 layer corresponds to 8 landmarks (x and y coordinates) which
-we would like to predict. The training result shows that the architecture of this model is not good enough to predict the landmarks. It is still generic and overfitting has appeared during training and validation.
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[scale=0.45]{images/architecture1}
-\caption{The first version of the proposed convolutional neural network} 
-\label{cnnnetwork1}
-\end{figure}
-
-
-To prevent the overfitting, four dropout layers have been added into the network. These are considered as the good solution to prevent the overfitting. The idea of dropout is to randomly drop units from the neural network during training \cite{srivastava2014dropout}. The first three dropout layers are supplemented to the repeated-structures followed the maximum pooling layers. In that way, structure becomes a convolution layer with square filter, followed by a maximum pooling and dropout layer. The probability values used for dropout layers are $0.1$, $0.2$, and $0.3$. Actually, we keep the same value for the parameters of the convolutional $(32, 64,$ and $128)$, pooling $(3 \times 3, 2 \times 2,$ and $2 \times 2)$ and full-connected layers $(1000, 1000,$ and $16)$ as the previous architecture. 
-The remaining dropout layer is inserted between the first
-two full connected layers. The probability value of this layer
-is set to $0.5$. The output layer still contains 16 units corresponding to the coordinates of 8 predicted landmarks (Fig.\ref{cnnnetwork2}).
+we would like to predict. In general way, the layers and their parameters are presented as following:
+\begin{itemize}
+	\item CONV(x,y,z,t): presents for convolutional layer with its parameters: \textit{x = number of filters, y = size of filter matrix, z = stride value, t = padding value},
+	\item POOL(y,z,t): presents maximum pooling layer with: \textit{y = size of filter, z = stride value, t = padding value},
+	\item FC(x): presents a full-connected layer with \textit{x is the number of output}
+\end{itemize}.
+Table.\ref{tblmodel1} shows the sequence layers in the model along with the parameters at each layer.
+%\begin{figure}[htbp]
+%\centering
+%\includegraphics[scale=0.45]{images/architecture1}
+%\caption{The first version of the proposed convolutional neural network} 
+%\label{cnnnetwork1}
+%\end{figure}
+\begin{table}[h!]
+	
+	\begin{subtable}{.22\linewidth}
+	\centering
+	\begin{tabular}{l l }
+	Order & Layer \\ \hline
+	1 & Input($1\times256\times192)$ \\ \hline
+	2 & CONV(32,3,1,0)\\ \hline
+	3 & POOL(2,2,0)\\ \hline
+	4 & CONV(64,2,1,0)\\ \hline
+	5 & POOL(2,2,0)\\ \hline
+	\end{tabular}
+	\end{subtable}%
+	\hspace{2.8cm}
+	\begin{subtable}{.2\linewidth}
+	\centering
+	\begin{tabular}{l l }
+	Order & Layer \\ \hline
+	6 & CONV(128,2,1,0)\\ \hline
+	7 & POOL(2,2,0)\\ \hline
+	8 & FC(1000)\\ \hline
+	9 & FC(1000)\\ \hline
+	10 & FC(16)\\ \hline
+	
+	\end{tabular}
+	\end{subtable}
+	\caption{The losses during training the model on pronotum images dataset}
+	\label{tblmodel1}
+\end{table}
+The training result shows that the architecture of this model is not good enough to predict the landmarks. It is still general and overfitting has appeared during training and validation.
+To prevent the overfitting, four dropout layers have been added into the network. These are considered as the good solution to prevent the overfitting. The idea of dropout is to randomly drop units from the neural network during training \cite{srivastava2014dropout}. Fig.\ref{cnnnetwork2} presents the final architecture of the model. The first three dropout layers are supplemented to the repeated-structures followed the maximum pooling layers. In that way, structure becomes an elementary block includes a convolution layer (\textit{$C_i$}) followed by a maximum pooling (\textit{$P_i$}) and dropout layer (\textit{$D_i$})(with $i=1..3$). The probability values used for dropout layers are $0.1$, $0.2$, and $0.3$. Actually, we keep the same value for the parameters of the convolutional, pooling and full-connected layers as the previous architecture. 
+The remaining dropout layer (\textit{$D_4$}) is inserted between the first
+two full connected layers (\textit{$FC_1$ and $FC_2$}). The probability value of this layer
+is set to $0.5$. The output layer (\textit{$FC_3$}) still contains 16 units corresponding to the coordinates of 8 predicted landmarks (Fig.\ref{cnnnetwork2}).
 
 \begin{figure*}[!t]
 \centering
@@ -116,17 +148,17 @@ is set to $0.5$. The output layer still contains 16 units corresponding to the c
 \label{cnnnetwork2}
 \end{figure*}
 
-During training, the values of learnable parameters have been updated to increase the accuracy of the network by applying gradient descent in backward phase. Therefore, the network is designed with a small sharing learning rate and momentum. Their values are updated over training time to fit with the number of epochs\footnote{An epoch is a single pass through the full training set.}. The network was designed to finish the training in $5000$ epochs. The learning rate was initialized at $0.03$ and stopped at $0.00001$, while the momentum was updated from $0.9$ to $0.9999$. 
+During training, the values of learnable parameters have been updated to increase the accuracy of the network by applying gradient descent in backward phase. Therefore, the network is designed with a small sharing learning rate and momentum. Their values are updated over training time to fit with the number of epochs\footnote{An epoch is a single pass through the full training set.}. The network is designed to finish the training in $5000$ epochs. The learning rate was initialized at $0.03$ and stopped at $0.00001$, while the momentum was updated from $0.9$ to $0.9999$. 
 Because landmarks prediction can be seen as a regression problem in deep learning. Therefore, the root mean square error (RMSE) was used as a quality metric to evaluate the result and compute the losses of the proposed architecture. The implementation of the network is done on Lasagne framework \cite{lasagne} which allows computing on GPU. The network has been trained on NVIDIA TITAN X cards.
 
 \subsection{Enlarge the dataset}
 \label{sec_data}
-The dataset includes $293$ images of beetles (for each part). All images are taken with the same camera in the same condition with a resolution of $3264 \times 2448$. Each image has been set $8$ manual landmarks by biologists (Fig. \ref{figpronotum}). The dataset was split into two subsets: training (and validation) set contains $260$ images and testing set includes $33$ images. In most of CNNs \cite{lecun2010convolutional, sun2013deep,  krizhevsky2012imagenet, cintas2016automatic}, the size of the input was limited to $256$ pixels. In our case, the resolution of input image seems that too large and it becomes a difficulty for the network. So, the images are down-sampling to a new resolution $256 \times 192$ before training and testing. Of course, the coordinates of manual landmarks are also scaled to fit with the new resolution of images.
+The dataset includes $293$ images of beetles (for each part). All images are taken with the same camera in the same condition with a resolution of $3264 \times 2448$. Each image has been set $8$ manual landmarks by biologists (Fig. \ref{figpronotum}). The dataset was split into two subsets: training (and validation) set contains $260$ images and testing set includes $33$ images. In most of CNNs \cite{lecun2010convolutional, sun2013deep,  krizhevsky2012imagenet, cintas2016automatic}, the size of the input is limited to $256$ pixels. In our case, the resolution of input image seems that too large and it becomes a difficulty for the network. So, the images are down-sampling to a new resolution $256 \times 192$ before training and testing. Of course, the coordinates of manual landmarks are also scaled to fit with the new resolution of images.
 
-Besides the size of the input, the number of images is also a challenge when applying CNN. Normally, training a CNN with a large dataset will give us the result better than when we training CNN on a small dataset. Moreover, working with a small dataset, we can meet a popular problem, \textit{overfitting}. So, we need to enlarge the size of the dataset instead of $260$. In image processing, we usually apply transform procedures (translation, rotation) to generate a new image but in fact, when we compute the value of the pixels, it does not change while CNN computes the values of the pixels. Therefore, we have applied two other procedures to increase the number of images in the dataset. To address this problem, we have applied two procedures to enlarge the size of the dataset.
+Besides the size of the input, the number of images is also a challenge when applying CNN. Normally, training a CNN with a large dataset will give us the result better than when we training CNN on a small dataset. Moreover, working with a small dataset, we can meet a popular problem, \textit{overfitting}. So, we need to enlarge the size of the dataset instead of $260$. In image processing, we usually apply transform procedures (translation, rotation) to generate a new image but in fact, when we compute the value of the pixels, it does not change while CNN computes the values of the pixels. To address this problem, we have applied two procedures to enlarge the size of the dataset.
 
-The first procedure was applied to change the value of each
-channel in the original image. According to this, a constant is
+The first procedure is applied to change the value of each
+channel in the original image. According to that, a constant is
 added to a channel of RGB image and for each time, we just
 change the value of one of three channels. For example, from
 an original RGB image, if we add a constant c = 10 to the
@@ -253,8 +285,7 @@ Fig.\ref{figrsexample} shows the predicted landmarks on two test images. When we
 %\end{figure}
 
 As a result, the network is able to predict the landmarks on a test set of pronotum images. At statistic side, the predicted landmarks are acceptable. But in image processing side, we expect more about the accuracy (coordinates of predicted landmarks), and the result of CNN is still needed to improve. 
-\section{Experiments}
-\subsection{Fine-tuning to transfer learning}
+\section{Fine-tuning to transfer learning}
 \label{secimproving}
 In section \ref{sectrain1}, the proposed network has been experimented by training from scratch on pronotum dataset. The results of experiments have shown that the network has worked well to detect the landmarks on the pronotum images. However, when we consider the predicted landmarks by displaying the landmarks on the images, the result is still not precise, the average error still high ($\geq 4$ pixels). 
 
