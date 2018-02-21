@@ -67,6 +67,27 @@ I.~Sutskever, O.~Vinyals, and Q.~V. Le, ``Sequence to sequence learning with
   neural networks,'' in {\em Advances in neural information processing
   systems}, pp.~3104--3112, 2014.
 
+\bibitem{jia2014caffe}
+Y.~Jia, E.~Shelhamer, J.~Donahue, S.~Karayev, J.~Long, R.~Girshick,
+  S.~Guadarrama, and T.~Darrell, ``Caffe: Convolutional architecture for fast
+  feature embedding,'' {\em arXiv preprint arXiv:1408.5093}, 2014.
+
+\bibitem{2016arXiv160502688short}
+{Theano Development Team}, ``{Theano: A {Python} framework for fast computation
+  of mathematical expressions},'' {\em arXiv e-prints}, vol.~abs/1605.02688,
+  May 2016.
+
+\bibitem{tensorflow2015}
+M.~Abadi, A.~Agarwal, P.~Barham, E.~Brevdo, Z.~Chen, C.~Citro, G.~S. Corrado,
+  A.~Davis, J.~Dean, M.~Devin, S.~Ghemawat, I.~Goodfellow, A.~Harp, G.~Irving,
+  M.~Isard, Y.~Jia, R.~Jozefowicz, L.~Kaiser, M.~Kudlur, J.~Levenberg,
+  D.~Man\'{e}, R.~Monga, S.~Moore, D.~Murray, C.~Olah, M.~Schuster, J.~Shlens,
+  B.~Steiner, I.~Sutskever, K.~Talwar, P.~Tucker, V.~Vanhoucke, V.~Vasudevan,
+  F.~Vi\'{e}gas, O.~Vinyals, P.~Warden, M.~Wattenberg, M.~Wicke, Y.~Yu, and
+  X.~Zheng, ``{TensorFlow}: Large-scale machine learning on heterogeneous
+  systems,'' 2015.
+\newblock Software available from tensorflow.org.
+
 \bibitem{sun2013deep}
 Y.~Sun, X.~Wang, and X.~Tang, ``Deep convolutional network cascade for facial
   point detection,'' in {\em Proceedings of the IEEE conference on computer
@@ -103,5 +124,10 @@ S.~Dieleman, J.~Schlüter, C.~Raffel, E.~Olson, S.~K. Sønderby, D.~Nouri, {\em
 Y.~A. LeCun, L.~Bottou, G.~B. Orr, and K.-R. M{\"u}ller, ``Efficient
   backprop,'' in {\em Neural networks: Tricks of the trade}, pp.~9--48,
   Springer, 2012.
+
+\bibitem{torrey2009transfer}
+L.~Torrey and J.~Shavlik, ``Transfer learning,'' {\em Handbook of Research on
+  Machine Learning Applications and Trends: Algorithms, Methods, and
+  Techniques}, vol.~1, p.~242, 2009.
 
 \end{thebibliography}

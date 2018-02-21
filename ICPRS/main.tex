@@ -71,11 +71,11 @@ In this article, a Convolutional Neural Network (CNN)\cite{lecun2010convolutiona
 In the next section, we present related works in domain automatically estimation landmarks on 2D images. In section 3, we present the architecture of the network and the procedure to generate the data images. Two scenarios to predict the landmarks by using the network are discussed in Section 4. In the last section, we have some conclusion based on the experiments and analyzing the results.
 
 \section{Related works}
-Deep learning methods are coming from machine learning theory. They were introduced in a long time ago but their development was still limited because of the limitation of hardware. Recently, the improvement of computing capacity, both in memory size and time with GPU programming has opened a new challenge for deep learning. Many deep learning architectures have been proposed to solve the problems of classification \cite{krizhevsky2012imagenet, ciregan2012multi}, image recognition \cite{szegedy2015going, farabet2013learning, li2015convolutional}, speech recognition \cite{mikolov2011strategies, hinton2012deep} and language translation \cite{jean2014using, sutskever2014sequence}. Along with that development, many frameworks have been built such as Caffe, Theano, Tensorflow, PyTorch, .... The appearance of the frameworks has helped the users easier to access deep learning. In image analysis field, deep learning, specifically CNN, is used to predict the key points on the image. Yi Sun et al. \cite{sun2013deep} have proposed a cascaded convolutional network to predict the key points on the human face. Zhang et al. \cite{zhang2014facial} optimizes facial landmarks detection with a set of related tasks such as head pose estimation, age estimation, .... Cintas et al. \cite{cintas2016automatic} have introduced a network to predict the landmarks on human ear images to characterize ear shape. 
+Deep learning methods are coming from machine learning theory. They were introduced in a long time ago but the development was still limited. Recently, the improvement of computing capacity, both in memory size and time with GPU programming has opened a new challenge for deep learning. Many deep learning architectures have been proposed to solve the problems of classification \cite{krizhevsky2012imagenet, ciregan2012multi}, image recognition \cite{szegedy2015going, farabet2013learning, li2015convolutional}, speech recognition \cite{mikolov2011strategies, hinton2012deep} and language translation \cite{jean2014using, sutskever2014sequence}. Along with that development, many frameworks have been built such as Caffe \cite{jia2014caffe}, Theano \cite{2016arXiv160502688short}, Tensorflow \cite{tensorflow2015},.... The appearance of the frameworks has helped the users easier to work on deep learning. In image analysis field, deep learning, specifically CNN, is used to predict the key points on the image. Yi Sun et al. \cite{sun2013deep} have proposed a cascaded convolutional network to predict the key points on the human face. Zhang et al. \cite{zhang2014facial} optimizes facial landmarks detection with a set of related tasks such as head pose estimation, age estimation, .... Cintas et al. \cite{cintas2016automatic} have introduced a network to predict the landmarks on human ear images to characterize ear shape. 
 
 
 
-Landmarks or points of interest are one of the important characteristics in geometric morphometrics. Landmark studies have traditionally analyzed on 2D images. Depending on which situation was stayed (segment-able or un-segment-able images), setting landmarks must apply the different methods.
+In geometric morphometrics, landmarks or points of interest are one of the important characteristics. Landmark studies have traditionally analyzed on 2D images. Depending on which situation was stayed (segment-able or un-segment-able images), setting landmarks must apply the different methods.
 
 When segmentation can be applied, Lowe et al. \cite{lowe2004distinctive} have proposed a method to identify the key points in the 2D image. From the detected key points, the method is able to match two images. Palaniswamy et al. \cite{palaniswamy2010automatic} have applied probabilistic Hough Transform to automatically estimate the landmarks in images of Drosophila wings. Krahenbuhl et al. \cite{le2017maelab} have extended Palaniswamy's method to detect landmarks automatically on beetles mandibles. Unfortunately, this method can not be applied to other parts of beetle that the segmentation has too many noises, such as pronotum images. Fortunately, the applying deep learning sees that a suitable solution to predict the landmarks on un-segment-able images.
 
@@ -100,7 +100,7 @@ we would like to predict. In general way, the layers and their parameters are pr
 	\item POOL(y,z,t): presents maximum pooling layer with: \textit{y = size of filter, z = stride value, t = padding value},
 	\item FC(x): presents a full-connected layer with \textit{x is the number of output}
 \end{itemize}.
-Table.\ref{tblmodel1} shows the sequence layers in the model along with the parameters at each layer.
+Table.\ref{tblmodel1} shows the sequence layers in the model along with the parameters at each layer of the original model.
 %\begin{figure}[htbp]
 %\centering
 %\includegraphics[scale=0.45]{images/architecture1}
@@ -133,15 +133,15 @@ Table.\ref{tblmodel1} shows the sequence layers in the model along with the para
 	
 	\end{tabular}
 	\end{subtable}
-	\caption{The losses during training the model on pronotum images dataset}
+	\caption{The layers and their parameters in the original model}
 	\label{tblmodel1}
 \end{table}
 
-The training result shows that the architecture of this model is not good enough to predict the landmarks. It is still general and overfitting has appeared during training and validation.
+The experiment on original model shows that this architecture is still not good enough to predict the landmarks. It is still general and overfitting has appeared during training and validation.
 To prevent the overfitting, four dropout layers have been added into the network. These are considered as the good solution to prevent the overfitting. The idea of dropout is to randomly drop units from the neural network during training \cite{srivastava2014dropout}. Fig.\ref{cnnnetwork2} presents the final architecture of the model. The first three dropout layers are supplemented to the repeated-structures followed the maximum pooling layers. In that way, structure becomes an elementary block includes a convolution layer (\textit{$C_i$}) followed by a maximum pooling (\textit{$P_i$}) and dropout layer (\textit{$D_i$})(with $i=1..3$). The probability values used for dropout layers are $0.1$, $0.2$, and $0.3$. Actually, we keep the same value for the parameters of the convolutional, pooling and full-connected layers as the previous architecture. 
 The remaining dropout layer (\textit{$D_4$}) is inserted between the first
 two full connected layers (\textit{$FC_1$ and $FC_2$}). The probability value of this layer
-is set to $0.5$. The output layer (\textit{$FC_3$}) still contains 16 units corresponding to the coordinates of 8 predicted landmarks (Fig.\ref{cnnnetwork2}).
+is set to $0.5$. The output layer (\textit{$FC_3$}) still contains 16 units corresponding to the coordinates of 8 predicted landmarks.
 
 \begin{figure*}[!t]
 \centering
@@ -291,7 +291,7 @@ As a result, the network is able to predict the landmarks on a test set of prono
 \label{secimproving}
 In section \ref{sectrain1}, the proposed network has been experimented by training from scratch on pronotum dataset. The results of experiments have shown that the network has worked well to detect the landmarks on the pronotum images. However, when we consider the predicted landmarks by displaying the landmarks on the images, the result is still not precise, the average error still high ($\geq 4$ pixels). 
 
-In order to reach more acceptable results for biologists, we have broadened the mdoel with step of fine-tuning. Instead of training and testing on pronotum images dataset, the network has been trained on the dataset includes the images of three parts of beetle i.e pronotum, body and head. Then, the trained model has been used to fine-tune and test on pronotum set.
+In order to reach more acceptable results for biologists, we have broadened the model with the step of transfer learning. That is a method that we re-use the model developed for a task on another task. It allows rapid progress or improved the performance of the model on the second task \cite{torrey2009transfer}. In our case, we have applied fine-tuning, a strategy of transfer learning. Fine-tuning is to not only replace and retrain the model on the new dataset, it also fine-tunes the weight of trained model by continuing the backpropagation. So, instead of training and testing on pronotum images dataset, the network will be trained on the dataset includes the images of three parts of beetle i.e pronotum, body and head. Then, the trained model will be used to fine-tune and test on pronotum set.
 
 %In this section, we describe a scenario to improve the locations of the predicted landmarks which stay at the corner of the pronotum shape, \textit{i.e}  $3^{rd} $ and $7^{th}$ landmarks, called \textit{corner landmarks}. Fig.\ref{figshape} shows the simulation of a pronotum with its shape and manual landmarks. Fig.\ref{figsub11} shows the shape of pronotum and its manual landmarks. The red points represent for the corner landmarks, the yellow points represent the landmarks inside the pronotum. Fig.\ref{figsub22} display an overlap between the shape and real image.
 
@@ -316,7 +316,7 @@ In order to reach more acceptable results for biologists, we have broadened the 
 
 %\textit{The main idea of this process is generated a general curve through a landmark and tried to adapt the predicted landmark to corresponding general curve,} this work looks like a Procrustes analysis. The scenario starts from the segmentation result of the image. Firstly, from the training dataset, a ``mean curve" is generated for each manual landmark that stays in the shape of pronotum (i.e $3^{rd}, 7^{th}$). Secondly, for each predicted landmark from CNN, we try to adapt the landmark to the contour of pronotum. Finally, we search a pixel around ``adapted point" that the curve via it is closest to the ``mean curve".
 
-\subsubsection{Training data preparation}
+\subsection{Training data preparation}
 The training dataset includes a combination of the images from three sets: pronotum, body and head (Fig.\ref{figshape3parts}). For each set, $260$ original images have been chosen radomly for training and validation. By applying the same procedure in section \ref{sec_data}, the training dataset was enlarged to $5460$ images ($260 \times 7 \times 3$). However, the number of manual landmarks on each part is difference: \textit{$8$ landmarks on pronotum part, $11$ landmarks on body part, and $10$ landmarks on head part}. The manual landmarks have a specific meaning for the biologists. So, we can not insert the landmarks arbitrarily. Instead of, we will keep the smallest number of landmarks among three parts and we remove some landmarks on other parts. Therefore, we kept the number of the landmark on pronotum as a reference and we suppressed some landmarks on the body and head part. Specifically, we have removed three landmarks on the body part ($1^{st}; 6^{t}h; 9^{th}$) and two landmarks on the head part ($5{th}; 6^{th}$) (Fig.\ref{figshape3parts}).
 
 \begin{figure}[htbp]
@@ -339,7 +339,7 @@ The training dataset includes a combination of the images from three sets: prono
     \label{figshape3parts}
 \end{figure}
 
-\subsubsection{Using fine-tuning for pronotum dataset}
+\subsection{Using fine-tuning for pronotum dataset}
 The training data includes $5460$ images was trained on the proposed network (section \ref{secmodel}) with the same parameters than we have trained on pronotum images. After that, the trained model have been continued to fine-tune on pronotum dataset. To compare the result with the previous one, the trained model has been fine-tuned in many rounds with different datasets. The losses during fine-tuning are shown in Table.\ref{tblfinetuningloss}. Comparing with the losses when we trained the model from scratch (Table. \ref{tbltrainingloss}), the validation losses of this scenario are significantly improved (around $40\%$).
 \begin{table}[h!]
 	\centering
@@ -366,12 +366,12 @@ The output model has been used to predict the landmarks on the test images. Then
 \begin{tabular}{|c|c|c|c|}
 \hline
 \textbf{$\#$Landmark} & \textbf{Error 1} & \textbf{Error 2} & \textbf{Improved($\%$)} \\ \hline
-1 & 4.002 & 2.486 & 37.88 \\ \hline
+\textbf{1} & \textbf{4.002} & \textbf{2.486} & \textbf{37.88} \\ \hline
 2 & 4.4831 & 2.720 & 39.33 \\ \hline
 3 & 4.2959  & 2.652 & 38.27 \\ \hline
 4 & 4.3865  & 2.771 & 36.83 \\ \hline
 5 & 4.2925  & 2.487 & 42.06 \\ \hline
-6 & 5.3631  & 3.049 & 43.15 \\ \hline
+\textbf{6} & \textbf{5.3631}  & \textbf{3.049} & \textbf{43.15} \\ \hline
 7 & 4.636  & 2.684 & 42.11 \\ \hline
 8 & 4.9363  & 2.871 & 41.84 \\ \hline
 \end{tabular}
@@ -413,7 +413,7 @@ In the first scenario, the model has been trained (from scratch) and tested on t
 The result has been evaluated by comparing the coordinates between predicted and manual landmarks.  The results have shown that using the convolutional network to predict the landmarks on biological images is promising good results in the case that the image was difficult to segment. The quality of prediction allows using automatic landmarking to replace manual landmarks in some aspects. Training model from scratch or fine-tuning the trained model are given the acceptable results. But with a limited number of data, we need to improve the results a little bit. Therefore, future research in landmarking identification appears as an improved of the worth exploring.
 
 \section*{Acknowledgements}
-The research has been supported by INRA. We would like to thank the biologists, who have provided the dataset. We thank also our colleague, Nicolas PARISEY, who provided insight and expertise that greatly assisted the research.
+The research has been supported by DevMap project. We would like to thank the my colleague, ALEXIA Marie, who have provided manual landmarks on beetle images.
 
 \bibliography{IEEEabrv,includes/icdp2009}
 
