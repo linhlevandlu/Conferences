@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.18)  22 FEB 2018 19:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.2.21)  22 FEB 2018 23:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **main.tex
 (./main.tex
 LaTeX2e <2016/02/01>
-Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
+Babel <3.9q> and hyphenation patterns for 12 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
@@ -406,9 +406,6 @@ Overfull \hbox (65.03642pt too wide) in paragraph at lines 386--394
  [][] 
  []
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
 [3 <./images/arch_model.png>]
 <images/fn_accuracy.png, id=25, 76.3653pt x 57.3342pt>
 File: images/fn_accuracy.png Graphic file (type png)
@@ -526,12 +523,12 @@ Underfull \hbox (badness 1824) in paragraph at lines 75--79
 
 ) [6] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 4152 strings out of 493029
- 65612 string characters out of 6136234
- 142474 words of memory out of 5000000
- 7619 multiletter control sequences out of 15000+600000
+ 4152 strings out of 494837
+ 65612 string characters out of 6176554
+ 137158 words of memory out of 5000000
+ 7398 multiletter control sequences out of 15000+600000
  23966 words of font info for 47 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
+ 36 hyphenation exceptions out of 8191
  38i,10n,39p,408b,447s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/
@@ -545,7 +542,7 @@ amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (6 pages, 666792 bytes).
+Output written on main.pdf (6 pages, 666813 bytes).
 PDF statistics:
  83 PDF objects out of 1000 (max. 8388607)
  52 compressed objects within 1 object stream

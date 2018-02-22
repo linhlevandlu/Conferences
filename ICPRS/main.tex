@@ -57,7 +57,7 @@ years, deep learning is known as a good solution to achieve image analysis tasks
 classification, recognition, face detection. In this context, we
 present a convolutional neural network to predict the landmarks on 2D
 biological images, specifically beetle's images. The proposed model is designed from an \textit{elementary block} of three layers: convolution, pooling and dropout. The experiments on the
-proposed network have been done in two ways: training from scratch and
+proposed network have been done in two steps: training from scratch and
 fine-tuning from a trained model. The dataset includes the images of 
 collecting from $293$ beetles (on \textit{head, pronotum, body} parts).
  Among these, a set of manual landmarks has been built for each part by 
@@ -77,7 +77,7 @@ be on the shape (border) or inside the object. For
 veins of the wings but the landmarks on human ear \cite{cintas2016automatic} can be located at
 the ear border or inside it. Currently, the landmarks are set manually by
 the biologists, one can note that this work is time-consuming and difficult to
-reproduce, therefore, a method that proposes automatically the
+reproduce. Therefore, a method that proposes automatically the
 coordinates of landmarks could be a concern.
 
 In image processing, segmentation is most often the first and the most
@@ -97,7 +97,7 @@ been separated from each other, their segmentation by image processing
 procedures has been given up. Coordinates of manual landmarks for each part
 have been provided and are considered as the ground
 truth to evaluated the predicted landmarks by the algorithms. We have focus on the
-pronotum parts for this studying, see (Fig.\ref{figpronotum}) to see
+pronotum parts for this studying. Fig.\ref{figpronotum} shows
 the $8$ landmarks that we are looking for.
 
 
@@ -185,7 +185,7 @@ Theano \cite{2016arXiv160502688short}. We will first present the
 original model and then, we will describe how we have modified it by definition of an
 \textit{elementary block} that we compose in the final model.
 
-Like the networks have been proposed by LeCun et al. \cite{lecun2010convolutional}, Li et al. \cite{li2015convolutional}, and Cintas et al. \cite{cintas2016automatic}, the proposed network consists of common layers
+Like the networks have been proposed by Cintas et al. \cite{cintas2016automatic}, Li et al. \cite{li2015convolutional}, and  LeCun et al. \cite{lecun2010convolutional}, the proposed network consists of common layers
 with different learnable parameters. It receives an input image with
 the size  $1 \times 256 \times 192$ to train, to validate, and to
 test. The network consists of three repeated-structures of a convolutional layer
@@ -210,7 +210,7 @@ times before to achieve the computation with the full-connected
 layers. For our purpose, we have assembled $3$ \textit{elementary
   blocks} in our model (see Fig.\ref{cnnnetwork2}). The parameters for
 each layer are as below, the list of values follows the order of
-\textit{elementary blocks} :
+\textit{elementary blocks}:
 
 \begin{itemize}[nosep,label=\footnotesize$\bullet$]
 
@@ -232,8 +232,8 @@ each layer are as below, the list of values follows the order of
 			\item Propabilities: $0.1, 0.2, $ and $0.3$.
 		\end{itemize}
 	\end{itemize}
-In the last fool connected layers (FC), the parameters are : FC1 output :
-$1000$, FC2 output : $1000$, FC3  output : $16$. As usual, a dropout layer is
+In the last full-connected layers (FC), the parameters are: FC1 output:
+$1000$, FC2 output: $1000$, FC3  output: $16$. As usual, a dropout layer is
 inserted between FC1 ond FC2 with a probability equal to $0.5$.
 
 
@@ -266,10 +266,10 @@ network has been trained on NVIDIA TITAN X cards.
 \label{sec_data}
 The dataset includes $293$ images of beetles (for each part). All
 images are taken with the same camera in the same condition with a
-resolution of $3264 \times 2448$. Each image has $8$ manual
-landmarks setting by biologists (Fig. \ref{figpronotum}). Thte
-experiments have been designed with a testing set which  includes $33$
-and the remained $260$ images are put in two equal subsets one for
+resolution of $3264 \times 2448$. Each image has the manual
+landmarks setting by biologists i.e pronotum has $8$ manual landmarks. Thte
+experiments have been designed with a testing set which includes $33$
+and the remained $260$ images are put in two subsets, one for
 training and one for validation. For performance considerations, in most of CNNs
 \cite{lecun2010convolutional, sun2013deep,  krizhevsky2012imagenet,
   cintas2016automatic}, the size of the input is limited to $256
@@ -313,7 +313,7 @@ proceede the dataset expansion.
 The set of images that have been used for both training and validation
 has been built randomly from the original dataset with a ratio of
 $60\%$ for training and $40\%$ for  validation. The training step
-takes into account a a pair of informations \textit{(image, manual
+takes into account a pair of informations \textit{(image, manual
   landmark coordinates)}. At the test phase, images without landmarks
 is given to the previous trained network that produces as output
 coordinates of the predicted landmarks. To obtain a fast convergence
@@ -346,7 +346,7 @@ the $9$ rounds.
 	8 & 0.00018 & 0.00021 \\ \hline
 	9 & 0.00020 & 0.00027 \\ \hline
 	\end{tabular}
-	\caption{The losses during training the model on pronotum images dataset}
+	\caption{\small{The losses during training the model on pronotum images dataset}}
 	\label{tbltrainingloss}
 \end{table}
 
@@ -354,7 +354,7 @@ The main goal of the computing is to predict position of landmarks so
 the distance (in pixels) between the manual ones (the ground truth)
 and the predicted ones has to be now considered. A correlation test
 gives us a good correlation between position of a manual landmark and
-its corresponding predicted one. But, we have considered that this
+its corresponding predicted one. But we have considered that this
 measure is not good enough to provide a useful result to biologist. We
 have prefered to evaluate the distance in pixels between the ground
 truth and the prediction. Table.\ref{tabledistance} shows the
@@ -363,7 +363,7 @@ images, landmark per landmark. With images of $256 \times 192$ size we
 can consider that an error of $1\%$ corresponds to $2$ pixels that
 could be an acceptable error. Unfortunatly our results exhibits
 average distance of $4$ pixels in the best case, landmark $1$ and more
-than $5$, landmark $6$. More the error distance is more than  $2\%$
+than $5$ pixels, landmark $6$. More the error distance is more than  $2\%$
 pixels.
 
 
@@ -392,7 +392,7 @@ pixels.
 	8 & 4.9363 \\ \hline
 	\end{tabular}
 	\end{subtable}
-	\caption{The average error distance per landmark}
+	\caption{\small{The average error distance per landmark}}
 	\label{tabledistance}
 \end{table}
 
@@ -505,7 +505,7 @@ $40\%$).
 	8 & 0.00018 & 0.00006 \\ \hline
 	9 & 0.00018 & 0.00009 \\ \hline
 	\end{tabular}
-	\caption{The losses during fine-tuning model}
+	\caption{\small{The losses during fine-tuning model}}
 	\label{tblfinetuningloss}
 \end{table}
 
@@ -534,11 +534,11 @@ fine-tuning is more precise than the first way to do it.
 	LM7 & 4.636 & 2.8426 & 2.6836 & 1.7781 \\ \hline
 	LM8 & 4.9363 & 3.0801 & 2.8709 & 1.9662 \\ \hline
 \end{tabular}
-\caption{A comparing between the average error distances, the standard deviation values per landmark of two steps.}
+\caption{\small{A comparing between the average error distances, the standard deviation values per landmark of two steps.}}
 \label{tab2}
 \end{table}
 
-To illustrate the final results, we display the distribution fo the
+To illustrate the final results, we display the distribution of the
 distance of both the best and the worst results (resp. landamark $1$
 and $6$). The Fig.\ref{figrsexample2} shown in (a) and (b) diagrams
  how much the average distance (blue lines) and standard error (red lines) have
@@ -588,10 +588,10 @@ In this paper, we have presented a CNN to predict the landmarks on beetle's pron
 In the first step, the model has been trained from scratch and tested on the dataset of pronotum images. While in the second step, the model has been trained on a dataset includes all the images from three parts of beetles. Then, the trained model has been used to fine-tune and to test on pronotum images.
 
 The result has been evaluated by comparing the coordinates between predicted and manual landmarks.  The results have shown that using the convolutional network to predict the landmarks on biological images is able to provide good results in the case that the image was difficult to segment. The quality of prediction allows using automatic landmarking to replace manual landmarks in some aspects. 
-Training model with fine-tuning the trained model has provided the best results. Furture works will have to test our model on another kind of biological images.
+Training model with fine-tuning the trained model has provided the best results. Future works will have to test our model on another kind of biological images.
 
 \section*{Acknowledgements}
-The research has been supported by DevMap project\footnote{https://www6.rennes.inra.fr/igepp\_eng/Research\-teams/Demecology/Projects/INRA\-SPE\-DevMAP}. We would like to thank the my colleague, ALEXIA Marie, who have provided manual landmarks on beetle images.
+The research has been supported by DevMAP project\footnote{https://www6.rennes.inra.fr/igepp\_eng/Research\-teams/Demecology/Projects/INRA\-SPE\-DevMAP}. We would like to thank the my colleague, ALEXIA Marie, who have provided manual landmarks on beetle images.
 
 \bibliography{IEEEabrv,includes/icdp2009}
 
