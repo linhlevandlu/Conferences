@@ -1,5 +1,23 @@
 \begin{thebibliography}{10}
 
+\bibitem{drosophilaWings}
+A.~Sonnenschein, D.~VanderZee, W.~R. Pitchers, S.~Chari, and I.~Dworkin,
+  ``Supporting material and data for "an image database of drosophila
+  melanogaster wings for phenomic and biometric analysis",'' 2015.
+
+\bibitem{cintas2016automatic}
+C.~Cintas, M.~Quinto-S{\'a}nchez, V.~Acu{\~n}a, C.~Paschetta, S.~de~Azevedo,
+  C.~C.~S. de~Cerqueira, V.~Ramallo, C.~Gallo, G.~Poletti, M.~C. Bortolini,
+  {\em et~al.}, ``Automatic ear detection and feature extraction using
+  geometric morphometrics and convolutional neural networks,'' {\em IET
+  Biometrics}, vol.~6, no.~3, pp.~211--223, 2016.
+
+\bibitem{le2017maelab}
+V.~L. Le, M.~Beurton-Aimar, A.~Krahenbuhl, and N.~Parisey, ``{MAELab: a
+  framework to automatize landmark estimation},'' in {\em {WSCG 2017}}, 25th
+  International Conference in Central Europe on Computer Graphics,
+  Visualization and Computer Vision'2017, (Plzen, Czech Republic), May 2017.
+
 \bibitem{palaniswamy2010automatic}
 S.~Palaniswamy, N.~A. Thacker, and C.~P. Klingenberg, ``Automatic
   identification of landmarks in digital images,'' {\em IET Computer Vision},
@@ -9,10 +27,19 @@ S.~Palaniswamy, N.~A. Thacker, and C.~P. Klingenberg, ``Automatic
 D.~G. Lowe, ``Distinctive image features from scale-invariant keypoints,'' {\em
   International journal of computer vision}, vol.~60, no.~2, pp.~91--110, 2004.
 
+\bibitem{bay2006surf}
+H.~Bay, T.~Tuytelaars, and L.~Van~Gool, ``Surf: Speeded up robust features,''
+  in {\em European conference on computer vision}, pp.~404--417, Springer,
+  2006.
+
 \bibitem{lecun2010convolutional}
 Y.~LeCun, K.~Kavukcuoglu, and C.~Farabet, ``Convolutional networks and
   applications in vision,'' in {\em Circuits and Systems (ISCAS), Proceedings
   of 2010 IEEE International Symposium on}, pp.~253--256, IEEE, 2010.
+
+\bibitem{lasagne}
+S.~Dieleman, J.~Schlüter, C.~Raffel, E.~Olson, S.~K. Sønderby, D.~Nouri, {\em
+  et~al.}, ``Lasagne: First release.,'' Aug. 2015.
 
 \bibitem{yosinski2014transferable}
 J.~Yosinski, J.~Clune, Y.~Bengio, and H.~Lipson, ``How transferable are
@@ -78,13 +105,7 @@ Y.~Jia, E.~Shelhamer, J.~Donahue, S.~Karayev, J.~Long, R.~Girshick,
   May 2016.
 
 \bibitem{tensorflow2015}
-M.~Abadi, A.~Agarwal, P.~Barham, E.~Brevdo, Z.~Chen, C.~Citro, G.~S. Corrado,
-  A.~Davis, J.~Dean, M.~Devin, S.~Ghemawat, I.~Goodfellow, A.~Harp, G.~Irving,
-  M.~Isard, Y.~Jia, R.~Jozefowicz, L.~Kaiser, M.~Kudlur, J.~Levenberg,
-  D.~Man\'{e}, R.~Monga, S.~Moore, D.~Murray, C.~Olah, M.~Schuster, J.~Shlens,
-  B.~Steiner, I.~Sutskever, K.~Talwar, P.~Tucker, V.~Vanhoucke, V.~Vasudevan,
-  F.~Vi\'{e}gas, O.~Vinyals, P.~Warden, M.~Wattenberg, M.~Wicke, Y.~Yu, and
-  X.~Zheng, ``{TensorFlow}: Large-scale machine learning on heterogeneous
+M.~A. et~al, ``{TensorFlow}: Large-scale machine learning on heterogeneous
   systems,'' 2015.
 \newblock Software available from tensorflow.org.
 
@@ -98,27 +119,10 @@ Z.~Zhang, P.~Luo, C.~C. Loy, and X.~Tang, ``Facial landmark detection by deep
   multi-task learning,'' in {\em European Conference on Computer Vision},
   pp.~94--108, Springer, 2014.
 
-\bibitem{cintas2016automatic}
-C.~Cintas, M.~Quinto-S{\'a}nchez, V.~Acu{\~n}a, C.~Paschetta, S.~de~Azevedo,
-  C.~C.~S. de~Cerqueira, V.~Ramallo, C.~Gallo, G.~Poletti, M.~C. Bortolini,
-  {\em et~al.}, ``Automatic ear detection and feature extraction using
-  geometric morphometrics and convolutional neural networks,'' {\em IET
-  Biometrics}, vol.~6, no.~3, pp.~211--223, 2016.
-
-\bibitem{le2017maelab}
-V.~L. Le, M.~Beurton-Aimar, A.~Krahenbuhl, and N.~Parisey, ``{MAELab: a
-  framework to automatize landmark estimation},'' in {\em {WSCG 2017}}, 25th
-  International Conference in Central Europe on Computer Graphics,
-  Visualization and Computer Vision'2017, (Plzen, Czech Republic), May 2017.
-
 \bibitem{srivastava2014dropout}
 N.~Srivastava, G.~E. Hinton, A.~Krizhevsky, I.~Sutskever, and R.~Salakhutdinov,
   ``Dropout: a simple way to prevent neural networks from overfitting.,'' {\em
   Journal of machine learning research}, vol.~15, no.~1, pp.~1929--1958, 2014.
-
-\bibitem{lasagne}
-S.~Dieleman, J.~Schlüter, C.~Raffel, E.~Olson, S.~K. Sønderby, D.~Nouri, {\em
-  et~al.}, ``Lasagne: First release.,'' Aug. 2015.
 
 \bibitem{lecun2012efficient}
 Y.~A. LeCun, L.~Bottou, G.~B. Orr, and K.-R. M{\"u}ller, ``Efficient
@@ -129,5 +133,14 @@ Y.~A. LeCun, L.~Bottou, G.~B. Orr, and K.-R. M{\"u}ller, ``Efficient
 L.~Torrey and J.~Shavlik, ``Transfer learning,'' {\em Handbook of Research on
   Machine Learning Applications and Trends: Algorithms, Methods, and
   Techniques}, vol.~1, p.~242, 2009.
+
+\bibitem{imagenet_cvpr09}
+J.~Deng, W.~Dong, R.~Socher, L.-J. Li, K.~Li, and L.~Fei-Fei, ``{ImageNet: A
+  Large-Scale Hierarchical Image Database},'' in {\em CVPR09}, 2009.
+
+\bibitem{margeta_mri}
+J.~M. et~al, ``Fine-tuned convolutional neural nets for cardiac mri acquisition
+  plane recognition,'' {\em Computer Methods in Biomechanics and Biomedical
+  Engineering: Imaging \& Visualization}, vol.~5, no.~5, pp.~339--349, 2017.
 
 \end{thebibliography}

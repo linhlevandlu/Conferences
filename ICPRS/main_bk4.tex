@@ -52,19 +52,24 @@ Landmarks, convolutional neural networks, fine-tuning, recogntion, procrustes.
 \abstract
 Morphometry landmarks are used in many biological
 applications. Mostly, the landmarks are defined manually or
-semi-automatically by applying the image processing techniques. In recent
-years, deep learning is known as a good solution to achieve image analysis tasks. It appears in many fields such as
-classification, recognition, face detection. In this context, we
+semi-automatic by applying the image processing techniques. In recent
+years, deep learning is known as a good solution for the difficult
+problems in computer vision. It appears in many fields such as
+classification, recognition, face detection. In the context applying
+deep learning to solve the regression problems, in this paper, we
 present a convolutional neural network to predict the landmarks on 2D
-biological images, specifically beetle's images. The proposed model is designed from an \textit{elementary block} of three layers: convolution, pooling and dropout. The experiments on the
+images, specify beetle's images. The experiments on the
 proposed network have been done in two ways: training from scratch and
 fine-tuning from a trained model. The dataset includes the images of 
-collecting from $293$ beetles (on \textit{head, pronotum, body} parts).
+collecting from $253$ beetles. For each beetle, the images of 5 parts 
+have been extracted(\textit{head, pronotum, body, left and right mandible}).
  Among these, a set of manual landmarks has been built for each part by 
-the biologists. In this work, we have worked on prediction of pronotum landmarks. The quality of predicted landmarks
+the biologists. In this task, we use the images of 3 parts (head, pronotum, and body) with the main purpose to predict the landmarks on pronotum images.
+ The quality of predicted landmarks
 is evaluated by calculating the distance in pixels between the
 coordinates of the predicted landmarks and manual landmarks which are
 considered as ground truth.
+
 
 \section{Introduction}
 Morphometrics landmarks (or point of interest) is important features
@@ -119,7 +124,8 @@ step the training has been modified to include a fine-tuning
 
 In the next section, we present related works about automatic
 estimation landmarks on 2D images. In section $3$, we present the
-architecture of the network and the procedure to enlarge the dataset. In section $4$ we compare the results obtained with the first
+architecture of the network and the procedure to enlarge the data
+set. In section $4$ we compare the results obtained with the first
 model and these ones after fine-tuning. 
 
 
@@ -180,37 +186,50 @@ to begin to predict the landmarks.
 \subsection{Network architecture}
 \label{secmodel}
 The first step to work in CNN is to study the network
-architecture. After several tests, we have chosen to work with a model provided in Lasagne framework \cite{lasagne} coming from
-Theano \cite{2016arXiv160502688short}. We will first present the
-original model and then, we will describe how we have modified it by definition of an
-\textit{elementary block} that we compose in the final model.
+architecture. After several tests, we have chosen for this application
+to work with a model provided in Lasagne framework \cite{lasagne} coming from
+Theano \cite{2016arXiv160502688short}. In the first section, we will present the original model
+and then, we will describe how we have modified it by definition of an
+elementary block that we compose in the final model.
+
 
 Like the networks have been proposed by LeCun et al. \cite{lecun2010convolutional}, Li et al. \cite{li2015convolutional}, and Cintas et al. \cite{cintas2016automatic}, the proposed network consists of common layers
-with different learnable parameters. It receives an input image with
-the size  $1 \times 256 \times 192$ to train, to validate, and to
-test. The network consists of three repeated-structures of a convolutional layer
-followed by a pooling layer (keeping the maximum value). The depth of convolutional layers increases with different size of the filter kernels.
+with different learnable parameters. It receives an input of $1 \times
+256 \times 192$ to train, to validate, and to  test. The network
+consists of three repeated-structures of a convolutional layer
+followed by a maximum pooling layer. The depth of convolutional layers increases with different size of the filter kernels.
 All the kernels of pooling layers have the same size. 
-At the end, three full connected layers are added to the
+At the end, three full connected layers have been added to the
 network. The output of the last full-connected
 layer corresponds to the $16$ values which are the coordinates of the
 $8$ landmarks to predict.
 
 
-Experiments with this origin model show that this architecture is still
-not good enough to predict the landmark positions precisely. For
-instance, overfitting appears during training and validation
-steps. Srivastava et al. \cite{srivastava2014dropout} suggest to use
-dropout sequence to correct overfitting artefacts. Dropout step randomly drops units from the
-neural network during training and so includes some variations between
-the different runs. We have updated the model architecture in that
-way. An \textit{elementary block} is defined as a sequence of
-convolution (\textit{$C_i$}), pooling (\textit{$P_i$}) and dropout(\textit{$D_i$}) layers that can be repeated several
-times before to achieve the computation with the full-connected
-layers. For our purpose, we have assembled $3$ \textit{elementary
-  blocks} in our model (see Fig.\ref{cnnnetwork2}). The parameters for
-each layer are as below, the list of values follows the order of
-\textit{elementary blocks} :
+
+
+The experiment on original model shows that this architecture is still
+not good enough to predict the landmarks. It is still general and
+overfitting has appeared during training and validation.
+To prevent the overfitting, four dropout layers have been added into
+the network. These are considered as the good solution to prevent the
+overfitting. The idea of dropout is to randomly drop units from the
+neural network during training
+\cite{srivastava2014dropout}. Fig.\ref{cnnnetwork2} presents the final
+architecture of the model. The first three dropout layers are
+supplemented to the repeated-structures followed the maximum pooling
+layers. In that way, structure becomes an elementary block includes a
+convolution layer (\textit{$C_i$}) followed by a maximum pooling
+(\textit{$P_i$}) and dropout layer (\textit{$D_i$})(with
+$i=1..3$). The probability values used for dropout layers are $0.1$,
+$0.2$, and $0.3$. Actually, we keep the same value for the parameters
+of the convolutional, pooling and full-connected layers as the
+previous architecture.
+
+The remaining dropout layer (\textit{$D_4$}) is inserted between the first
+two full connected layers (\textit{$FC_1$ and $FC_2$}). The probability value of this layer
+is set to $0.5$. The output layer (\textit{$FC_3$}) still contains 16
+units corresponding to the coordinates of 8 predicted landmarks.
+For each elementary blocks, the layers and parameters are as below, the order of parameter values of each layer corresponding to the order of each in elementary blocks.
 
 \begin{itemize}[nosep,label=\footnotesize$\bullet$]
 
@@ -232,65 +251,30 @@ each layer are as below, the list of values follows the order of
 			\item Propabilities: $0.1, 0.2, $ and $0.3$.
 		\end{itemize}
 	\end{itemize}
-In the last fool connected layers (FC), the parameters are : FC1 output :
-$1000$, FC2 output : $1000$, FC3  output : $16$. As usual, a dropout layer is
-inserted between FC1 ond FC2 with a probability equal to $0.5$.
+The last fool connected layers (FC) parameters are : FC1 output :
+$1000$, FC2 output : $1000$, FC3  output : $16$. A dropout layer is
+inserted between FC1 ond FC2 with probability equal to $0.5$.
 
 
 \begin{figure*}[!t]
 \centering
 \includegraphics[scale=0.32]{images/arch_model}
-\caption{{\small{Network architecture using $3$ \textit{elementary blocks}.
+\caption{{\small{Network architecture using $3$ elementary block.
   Convolution
   layer in red, pooling in yellow and dropout in green color.}}} 
 \label{cnnnetwork2}
 \end{figure*}
 
-During training, the values of learnable parameters have been updated
-to increase the accuracy of the network by applying gradient descent
-in backward phase. Therefore, the network is designed with a small
-sharing learning rate and momentum. Their values are updated over
-training time to fit with the number of epochs\footnote{An epoch is a
-  single pass through the full training set.}. The network is designed
-to finish the training in $5000$ epochs. The learning rate was
-initialized at $0.03$ and stopped at $0.00001$, while the momentum was
-updated from $0.9$ to $0.9999$.
+During training, the values of learnable parameters have been updated to increase the accuracy of the network by applying gradient descent in backward phase. Therefore, the network is designed with a small sharing learning rate and momentum. Their values are updated over training time to fit with the number of epochs\footnote{An epoch is a single pass through the full training set.}. The network is designed to finish the training in $5000$ epochs. The learning rate was initialized at $0.03$ and stopped at $0.00001$, while the momentum was updated from $0.9$ to $0.9999$. 
+Because landmarks prediction can be seen as a regression problem in deep learning. Therefore, the root mean square error (RMSE) was used as a quality metric to evaluate the result and compute the losses of the proposed architecture. The implementation of the network is done on Lasagne framework \cite{lasagne} which allows computing on GPU. The network has been trained on NVIDIA TITAN X cards.
 
-
-The implementation of the network is done
-on Lasagne framework \cite{lasagne} which allows computing on GPU. The
-network has been trained on NVIDIA TITAN X cards.
-
-
-\subsection{Expanding the dataset}
+\subsection{Enlarge the dataset}
 \label{sec_data}
-The dataset includes $293$ images of beetles (for each part). All
-images are taken with the same camera in the same condition with a
-resolution of $3264 \times 2448$. Each image has $8$ manual
-landmarks setting by biologists (Fig. \ref{figpronotum}). Thte
-experiments have been designed with a testing set which  includes $33$
-and the remained $260$ images are put in two equal subsets one for
-training and one for validation. For performance considerations, in most of CNNs
-\cite{lecun2010convolutional, sun2013deep,  krizhevsky2012imagenet,
-  cintas2016automatic}, the size of the input is limited to $256
-\times 256$ pixels, thus we have down-sampling our images to a new
-resolution $256 \times 192$ (to respect the ratio between $x$ and
-$y$), of course the coordinates of manual landmarks have been also
-scaled to fit with the new resolution.
+The dataset includes $293$ images of beetles (for each part). All images are taken with the same camera in the same condition with a resolution of $3264 \times 2448$. Each image has been set $8$ manual landmarks by biologists (Fig. \ref{figpronotum}). The dataset was split into two subsets: training (and validation) set contains $260$ images and testing set includes $33$ images. In most of CNNs \cite{lecun2010convolutional, sun2013deep,  krizhevsky2012imagenet, cintas2016automatic}, the size of the input is limited to $256$ pixels. In our case, the resolution of input image seems that too large and it becomes a difficulty for the network. So, the images are down-sampling to a new resolution $256 \times 192$ before training and testing. Of course, the coordinates of manual landmarks are also scaled to fit with the new resolution of images.
 
+Besides the size of the input, the number of images is also a challenge when applying CNN. Normally, training a CNN with a large dataset will give us the result better than when we training CNN on a small dataset. Moreover, working with a small dataset, we can meet a popular problem, \textit{overfitting}. So, we need to enlarge the size of the dataset instead of $260$. In image processing, we usually apply transform procedures (translation, rotation) to generate a new image but in fact, when we compute the value of the pixels, it does not change while CNN computes the values of the pixels. To address this problem, we have applied two procedures to enlarge the size of the dataset.
 
-One of the main characteristics of CNN is to deal with a huge size of
-dataset and one can consider that only several hundreds of images is
-not relevent to use CNN. Moreover, working with small dataset can push
-us again to the popular problem of \textit{overfitting}. A way to  to
-enlarge the dataset size has to be considered. In image processing, we usually apply
-transform procedures (translation, rotation) to generate a new image
-but unfortunatly the methods to compute features through a CNN
-mostoften are translation and rotation independant. Another way to
-enlarge the dataset has to be imagined.
-
-
-A first procedure has been applied to change the value of each
+The first procedure is applied to change the value of each
 channel in the original image. According to that, a constant is
 added to a channel of RGB image and for each time, we just
 change the value of one of three channels. For example, from
@@ -300,37 +284,32 @@ red channel by greater than the red channel of original image
 a value of 10. By this way, we can generate three new RGB
 images from a RGB image.
 
-The second procedure separates the channels of RGB into
-three gray-scale images. As the network works on single-channel images
-we are able to  generate six versions of the same image, the total number of
+The second procedure is splitting the channels of RGB
+images. It means that we separate the channels of RGB into
+three gray-scale images. This work seems promising because
+the network works on single-channel images. At the end of the procedures, we
+can generate six versions from an image, the total number of
 images used to train and validate is $260 \times 7 = 1820$ images
-(six versions and original image). This has been an efficient way to
-proceede the dataset expansion. 
+(six versions and original image).
 
 
 \subsection{First results}
 \label{sectrain1}
-The set of images that have been used for both training and validation
-has been built randomly from the original dataset with a ratio of
-$60\%$ for training and $40\%$ for  validation. The training step
-takes into account a a pair of informations \textit{(image, manual
-  landmark coordinates)}. At the test phase, images without landmarks
-is given to the previous trained network that produces as output
-coordinates of the predicted landmarks. To obtain a fast convergence
-during the computing of CNN, it is useful to normalized the pixel
-color value between $[0; 1]$ range, instead of $[0; 255]$  \cite{lecun2012efficient}. The
-coordinate values has also been normalized.
+In this scenario, the network was trained on a dataset of $1820$ pronotum images which were generated from $293$ original pronotum images by applying the procedure in section \ref{sec_data}. The number of images that
+used for training and validation is splitted randomly by a ratio
+(training: $60\%$, validation: $40\%$) that has been set during the
+network setup. During the training, the network learned the information through a pair of \textit{(image, landmarks)} in training set. At the test phase, the image without landmarks was given to the trained network and the predicted landmarks will be given at the output. In practical of CNN, convergence is
+usually faster if the average of each input variable over the
+training set is close to zero. Moreover, when the input is set
+closed with zero, it will be more suitable with the sigmoid
+activation function \cite{lecun2012efficient}. According to \cite{lecun2012efficient}, the brightness of
+the image is normalized to $[0; 1]$, instead of $[0; 255]$ and the
+coordinates of the landmarks are normalized to $[-1; 1]$, instead
+of $[0; 256]$ and $[0; 192]$ before giving to the network.
 
-In order to test predictions for all pronotum images (instead
-of only $33$ images), an algorithm to choose the test images is executed,
-called \textit{round}. For each round, a set of 33 images have been
-chosen for the test set in the whole dataset; the remaining images have been put into the
-training set. Following that, the network will be trained with many
-different training datasets and the output model will be used to
-predict the landmarks on the images in the corresponding test
-set. After $9$ rounds all images have been
-tested. Table.\ref{tbltrainingloss} resumes the training losses for
-the $9$ rounds.
+
+
+To obtain all the predicted landmarks for all pronotum images (instead of $33$ images), a situation to choose the test images is executed, called \textit{round}. For each round, a set of 33 images have been chosen for the test set; the remaining images have been put into the training set. Following that, the network will be trained with many different training datasets and the output model will be used to predict the landmarks on the images in the corresponding test set. Table.\ref{tbltrainingloss} shows the losses during training the network on pronotum images.
 
 \begin{table}[h!]
 	\centering
@@ -350,22 +329,16 @@ the $9$ rounds.
 	\label{tbltrainingloss}
 \end{table}
 
-The main goal of the computing is to predict position of landmarks so
-the distance (in pixels) between the manual ones (the ground truth)
-and the predicted ones has to be now considered. A correlation test
-gives us a good correlation between position of a manual landmark and
-its corresponding predicted one. But, we have considered that this
-measure is not good enough to provide a useful result to biologist. We
-have prefered to evaluate the distance in pixels between the ground
-truth and the prediction. Table.\ref{tabledistance} shows the
-average distance between manual and predicted landmarks for all
-images, landmark per landmark. With images of $256 \times 192$ size we
-can consider that an error of $1\%$ corresponds to $2$ pixels that
-could be an acceptable error. Unfortunatly our results exhibits
-average distance of $4$ pixels in the best case, landmark $1$ and more
-than $5$, landmark $6$. More the error distance is more than  $2\%$
-pixels.
-
+Besides the losses during training, the accuracy on coordinates of
+predicted landmarks in the test images is also considered. Firstly,
+the trained model was used to predict the landmarks on all images in
+the test set. Then, the distances (in pixels) between manual and
+corresponding predicted landmarks in each image were calculated as the
+error distances. Finally, the error distance per landmark was
+calculated for all test images. Table.\ref{tabledistance} shows the
+average error distance given on each landmark. With the size of the
+images is $256 \times 192$, if we accept an error around $3\%$ of the
+image size ($ \sim3.5$ pixels), the error distances are acceptable.
 
 \begin{table}[h!]
 	\begin{subtable}{.22\linewidth}
@@ -396,33 +369,40 @@ pixels.
 	\label{tabledistance}
 \end{table}
 
-To illustrate this purpose, Fig.\ref{figrsexample} shows the predicted landmarks on two test
-images. One can note that even some predicted landmarks (left side)
-are closed to the manual ones, in some case (right side) the predicted
-ones are far from the expect results. The next step has been dedicated
-to the improvement of these results.
-
-
+Fig.\ref{figrsexample} shows the predicted landmarks on two test
+images. When we consider the accuracy of predicted landmarks by
+calculating the distance between manual and corresponding predicted
+landmarks, the accuracy on coordinates of predicted landmarks on
+Fig.\ref{figsub1} is $99\%$ and the propotion on Fig.\ref{figsub2} is
+$80\%$.
 
 
 \begin{figure}[htbp]
     \centering
     \begin{subfigure}[t]{0.25\textwidth}
         \centering
-        \includegraphics[scale=1.5]{images/fn_accuracy}
+        \includegraphics[height=1.2in]{images/fn_accuracy}
         \caption{\small{Image with well-predicted landmarks}}
         \label{figsub1}
     \end{subfigure}%
     ~ 
     \begin{subfigure}[t]{0.25\textwidth}
         \centering
-        \includegraphics[scale=.65]{images/plandmark2}
+        \includegraphics[height=1.2in]{images/plandmark2}
         \caption{\small{Image with inaccuracy landmarks}}
         \label{figsub2}
     \end{subfigure}
-    \caption{\small{The predicted landmarks, in red,  on the images in test set.}}
+    \caption{\small{The predicted landmarks on the images in test set.\\
+    		 The red points present for the predicted landmarks}}
     \label{figrsexample}
 \end{figure}
+
+
+As a result, the network is able to predict the landmarks on a test
+set of pronotum images. At statistic side, the predicted landmarks are
+acceptable. But in image processing side, we expect more about the
+accuracy (coordinates of predicted landmarks), and the result of CNN
+is still needed to improve.
 
 \section{Fine-tuning to transfer learning}
 \label{secimproving}
@@ -437,21 +417,14 @@ pixels).
 
 In order to reach more acceptable results for biologists, we have
 broadened the model with the step of transfer learning. That is a
-method that re-uses the model developed for a specific task/dataset
-to lead  another task with another dataset. This allows rapid progress or improved the performance of the
-model on the second task \cite{torrey2009transfer}. The most popular
-example has been given with the project ImageNet of Google \cite{imagenet_cvpr09} which has labelled several millions of images. The obtained parameter values can
-be used in another context to classify another dataset, eventually
-very different dataset \cite{margeta_mri}. The name of this procedure to re-use parameters
-to pre-train a model is called \textit{fine-tuning}.
-
-Fine-tuning is not only to replace and to retrain the model on the new
-dataset, but also to fine-tune the weight of trained model by continuing the
-backpropagation. Unfortunatly some rapid tests have shown that
-re-using ImageNet features has not been relevant for our
-application. We have designed a way to reproduce the method with our
-own data, of course the size of the used data has been drastically decreased.
-In that way, the network has been trained on a dataset including
+method that we re-use the model developed for a task on another
+task. It allows rapid progress or improved the performance of the
+model on the second task \cite{torrey2009transfer}. In our case, we
+have applied fine-tuning, a strategy of transfer learning. Fine-tuning
+is to not only replace and retrain the model on the new dataset, it
+also fine-tunes the weight of trained model by continuing the
+backpropagation. So, instead of training and testing on pronotum
+images dataset, the network will be trained on the dataset includes
 the images of three parts of beetle i.e pronotum, body and head. Then,
 the trained model will be used to fine-tune and test on pronotum set.
 
@@ -474,23 +447,19 @@ part. Specifically, we have removed three landmarks on the body part
 ($1^{st}; 6^{t}h; 9^{th}$) and two landmarks on the head part ($5{th};
 6^{th}$) (Fig.\ref{figshape3parts}).
 
+
 \begin{figure}[htbp]
+
         \centering
-        \includegraphics[scale=0.3]{images/merge}
+        \includegraphics[scale=0.25]{images/merge}
+ 
+ 
     \caption{\small{A presentation of head, pronotum and body part with corresponding manual landmarks}} 
     \label{figshape3parts}
 \end{figure}
 
 \subsection{Using fine-tuning for pronotum dataset}
-At the first step, the network is trained with $5460$ images following
-the same way than explained in (section \ref{secmodel}). After that, 
-this trained model has used to fine-tune the pronotum dataset. To compare the result with
-the previous one, the trained model has been fine-tuned in many rounds
-with different datasets. The losses during fine-tuning are shown in
-Table.\ref{tblfinetuningloss}. Comparing with the losses when we
-trained the model from scratch (Table. \ref{tbltrainingloss}), the
-validation losses of this scenario have been significantly improved (around
-$40\%$).
+The training data includes $5460$ images was trained on the proposed network (section \ref{secmodel}) with the same parameters than we have trained on pronotum images. After that, the trained model have been continued to fine-tune on pronotum dataset. To compare the result with the previous one, the trained model has been fine-tuned in many rounds with different datasets. The losses during fine-tuning are shown in Table.\ref{tblfinetuningloss}. Comparing with the losses when we trained the model from scratch (Table. \ref{tbltrainingloss}), the validation losses of this scenario are significantly improved (around $40\%$).
 \begin{table}[h!]
 	\centering
 	\begin{tabular}{l l l}
@@ -509,15 +478,8 @@ $40\%$).
 	\label{tblfinetuningloss}
 \end{table}
 
-The output model has been used to predict the landmarks on the test
-images. Then, average error based on the distance between
-predicted and corresponding manual landmarks has been computed. The results
-are shown in Table.\ref{tab2}. The \textbf{Average} (CNN) column reminds
-the average distance obtained previously. The \textbf{Average} (fine-tuning)
-column presents for the new average distance
-after fine-tuning the pronotum from the trained model. Besides, the standard errors of both cases have been presented (SD columns). It is
-clearly shown that the result of predicted landmarks with the help of
-fine-tuning is more precise than the first way to do it.
+The output model has been used to predict the landmarks on the test images. Then, the average errors based on the distances between predicted and corresponding manual landmarks are given. The results are shown in Table.\ref{tab2}. The \textbf{Error 1} column presents for the average error during training from scratch on pronotum images; the \textbf{Error 2} column presents for the average error during fine-tuning the pronotum from the trained model; and the \textbf{Percentage} column presents for the difference between the distance errors in percentage. Clearly, when we compare the average errors between two scenarios, the result of predicted landmarks in the second scenario is more precise than the first one.
+
 
 \begin{table}[htbp]
 \centering
@@ -538,13 +500,7 @@ fine-tuning is more precise than the first way to do it.
 \label{tab2}
 \end{table}
 
-To illustrate the final results, we display the distribution fo the
-distance of both the best and the worst results (resp. landamark $1$
-and $6$). The Fig.\ref{figrsexample2} shown in (a) and (b) diagrams
- how much the average distance (blue lines) and standard error (red lines) have
- been improved for the landmark $1$, the (c) and (d) diagrams for the
- landmark $6$.
-
+Fig.\ref{figrsexample2} shows the distribution of error distances on two landmarks. We can see that in both two cases, the result when we fine-tune the model is more improved than the first result.
 \begin{figure}[htbp]
    
     \begin{subfigure}[t]{0.25\textwidth}
@@ -573,7 +529,7 @@ and $6$). The Fig.\ref{figrsexample2} shown in (a) and (b) diagrams
         \caption{\small{Landmark 6 - fine-tuning}}
         \label{figsub222}
     \end{subfigure}
-    \caption{\small{The distribution of distance error on $1^{st}$ and $6^{th}$ landmarks of all images in two testing step (CNN and fine-tuning). The blue and red lines present for the average distances and standard deviation values, respectively.}}
+    \caption{\small{The distribution of distance error on $1^{st}$ and $6^{th}$ landmarks of all images in two testing step(CNN and fine-tuning). The blue and red lines present for the average distances and standard deviation values, respectively.}}
     \label{figrsexample2}
 \end{figure}
 
@@ -583,17 +539,75 @@ the user can use MAELab framework\footnote{MAELab is a free software written in 
 obtained by request at the authors.} to display the
 landmarks on the images.
 \section{Conclusion}
-In this paper, we have presented a CNN to predict the landmarks on beetle's pronotum images. The CNN network has been designed with three times repeated of elementary block which consists of a convolutional, a max pooling, and a dropout layers, followed after by the full connected layers. In the training phase, the CNN have been trained several times with different selections of training data.
+In this paper, we have presented a CNN with two scenarios to predict the landmarks on beetle's pronotum images. The CNN network has been designed with three times repeated structure which consists of a convolutional layer, a max pooling layer, and a dropout layer, followed by the connected layers. In the training phase, the CNN have been trained with several times in different selections of training data. After training, the network was able to predict the landmarks on the images in the test set. 
 
-In the first step, the model has been trained from scratch and tested on the dataset of pronotum images. While in the second step, the model has been trained on a dataset includes all the images from three parts of beetles. Then, the trained model has been used to fine-tune and to test on pronotum images.
+In the first scenario, the model has been trained (from scratch) and tested on the dataset of pronotum images. While in the second scenario, the model has been trained on a dataset includes the images from three parts of beetles. Then, the trained model has been used to fine-tune and test on pronotum images.
 
-The result has been evaluated by comparing the coordinates between predicted and manual landmarks.  The results have shown that using the convolutional network to predict the landmarks on biological images is able to provide good results in the case that the image was difficult to segment. The quality of prediction allows using automatic landmarking to replace manual landmarks in some aspects. 
-Training model with fine-tuning the trained model has provided the best results. Furture works will have to test our model on another kind of biological images.
+The result has been evaluated by comparing the coordinates between predicted and manual landmarks.  The results have shown that using the convolutional network to predict the landmarks on biological images is promising good results in the case that the image was difficult to segment. The quality of prediction allows using automatic landmarking to replace manual landmarks in some aspects. Training model from scratch or fine-tuning the trained model are given the acceptable results. But with a limited number of data, we need to improve the results a little bit. Therefore, future research in landmarking identification appears as an improved of the worth exploring.
 
 \section*{Acknowledgements}
-The research has been supported by DevMap project\footnote{https://www6.rennes.inra.fr/igepp\_eng/Research\-teams/Demecology/Projects/INRA\-SPE\-DevMAP}. We would like to thank the my colleague, ALEXIA Marie, who have provided manual landmarks on beetle images.
+The research has been supported by DevMap project. We would like to thank the my colleague, ALEXIA Marie, who have provided manual landmarks on beetle images.
 
 \bibliography{IEEEabrv,includes/icdp2009}
 
 
 \end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+the predicted landmarks by applying the second scenario on the same test images as Fig.\ref{figrsexample}. The red points present for the predicted landmarks. In Fig.\ref{figsub11}, the positions of predicted landmarks are the same when we compare with the result from Fig.\ref{figsub1}; but in Fig.\ref{figsub22}, the coordinates of predicted landmarks are strongly improved.
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|c|p{1.5cm}|}
+\hline
+\textbf{$\#$Landmark} & \textbf{Distance} \\ \hline
+1 & 4.002  \\ \hline
+2 & 4.4831 \\ \hline
+3 & 4.2959 \\ \hline
+4 & 4.3865 \\ \hline
+5 & 4.2925 \\ \hline
+6 & 5.3631 \\ \hline
+7 & 4.636 \\ \hline
+8 & 4.9363 \\ \hline
+\end{tabular}
+\caption{The average error distance per landmark}
+\label{tabledistance}
+\end{table}
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{$\#$Landmark} & \textbf{Error 1} & \textbf{Error 2} & \textbf{Improved($\%$)} \\ \hline
+\textbf{1} & \textbf{4.002} & \textbf{2.486} & \textbf{37.88} \\ \hline
+2 & 4.4831 & 2.720 & 39.33 \\ \hline
+3 & 4.2959  & 2.652 & 38.27 \\ \hline
+4 & 4.3865  & 2.771 & 36.83 \\ \hline
+5 & 4.2925  & 2.487 & 42.06 \\ \hline
+\textbf{6} & \textbf{5.3631}  & \textbf{3.049} & \textbf{43.15} \\ \hline
+7 & 4.636  & 2.684 & 42.11 \\ \hline
+8 & 4.9363  & 2.871 & 41.84 \\ \hline
+\end{tabular}
+\caption{The average error distance per landmark.}
+\label{tab2}
+\end{center}
+\end{table}

@@ -52,19 +52,24 @@ Landmarks, convolutional neural networks, fine-tuning, recogntion, procrustes.
 \abstract
 Morphometry landmarks are used in many biological
 applications. Mostly, the landmarks are defined manually or
-semi-automatically by applying the image processing techniques. In recent
-years, deep learning is known as a good solution to achieve image analysis tasks. It appears in many fields such as
-classification, recognition, face detection. In this context, we
+semi-automatic by applying the image processing techniques. In recent
+years, deep learning is known as a good solution for the difficult
+problems in computer vision. It appears in many fields such as
+classification, recognition, face detection. In the context applying
+deep learning to solve the regression problems, in this paper, we
 present a convolutional neural network to predict the landmarks on 2D
-biological images, specifically beetle's images. The proposed model is designed from an \textit{elementary block} of three layers: convolution, pooling and dropout. The experiments on the
+images, specify beetle's images. The experiments on the
 proposed network have been done in two ways: training from scratch and
 fine-tuning from a trained model. The dataset includes the images of 
-collecting from $293$ beetles (on \textit{head, pronotum, body} parts).
+collecting from $253$ beetles. For each beetle, the images of 5 parts 
+have been extracted(\textit{head, pronotum, body, left and right mandible}).
  Among these, a set of manual landmarks has been built for each part by 
-the biologists. In this work, we have worked on prediction of pronotum landmarks. The quality of predicted landmarks
+the biologists. In this task, we use the images of 3 parts (head, pronotum, and body) with the main purpose to predict the landmarks on pronotum images.
+ The quality of predicted landmarks
 is evaluated by calculating the distance in pixels between the
 coordinates of the predicted landmarks and manual landmarks which are
 considered as ground truth.
+
 
 \section{Introduction}
 Morphometrics landmarks (or point of interest) is important features
@@ -119,7 +124,8 @@ step the training has been modified to include a fine-tuning
 
 In the next section, we present related works about automatic
 estimation landmarks on 2D images. In section $3$, we present the
-architecture of the network and the procedure to enlarge the dataset. In section $4$ we compare the results obtained with the first
+architecture of the network and the procedure to enlarge the data
+set. In section $4$ we compare the results obtained with the first
 model and these ones after fine-tuning. 
 
 
@@ -262,9 +268,9 @@ on Lasagne framework \cite{lasagne} which allows computing on GPU. The
 network has been trained on NVIDIA TITAN X cards.
 
 
-\subsection{Expanding the dataset}
+\subsection{Expanding the data set}
 \label{sec_data}
-The dataset includes $293$ images of beetles (for each part). All
+The data set includes $293$ images of beetles (for each part). All
 images are taken with the same camera in the same condition with a
 resolution of $3264 \times 2448$. Each image has $8$ manual
 landmarks setting by biologists (Fig. \ref{figpronotum}). Thte
@@ -409,14 +415,14 @@ to the improvement of these results.
     \centering
     \begin{subfigure}[t]{0.25\textwidth}
         \centering
-        \includegraphics[scale=1.5]{images/fn_accuracy}
+        \includegraphics[height=1.2in]{images/fn_accuracy}
         \caption{\small{Image with well-predicted landmarks}}
         \label{figsub1}
     \end{subfigure}%
     ~ 
     \begin{subfigure}[t]{0.25\textwidth}
         \centering
-        \includegraphics[scale=.65]{images/plandmark2}
+        \includegraphics[height=1.2in]{images/plandmark2}
         \caption{\small{Image with inaccuracy landmarks}}
         \label{figsub2}
     \end{subfigure}
@@ -440,9 +446,10 @@ broadened the model with the step of transfer learning. That is a
 method that re-uses the model developed for a specific task/dataset
 to lead  another task with another dataset. This allows rapid progress or improved the performance of the
 model on the second task \cite{torrey2009transfer}. The most popular
-example has been given with the project ImageNet of Google \cite{imagenet_cvpr09} which has labelled several millions of images. The obtained parameter values can
+example has been given with the project ImageNet of Google \cite{put
+  the ref} which has labelled several millions of images. The obtained parameter values can
 be used in another context to classify another dataset, eventually
-very different dataset \cite{margeta_mri}. The name of this procedure to re-use parameters
+very different dataset \cite{put ref on MRI images}. The name of this procedure to re-use parameters
 to pre-train a model is called \textit{fine-tuning}.
 
 Fine-tuning is not only to replace and to retrain the model on the new
@@ -474,14 +481,19 @@ part. Specifically, we have removed three landmarks on the body part
 ($1^{st}; 6^{t}h; 9^{th}$) and two landmarks on the head part ($5{th};
 6^{th}$) (Fig.\ref{figshape3parts}).
 
+
 \begin{figure}[htbp]
+
         \centering
-        \includegraphics[scale=0.3]{images/merge}
+        \includegraphics[scale=0.25]{images/merge}
+ 
+ 
     \caption{\small{A presentation of head, pronotum and body part with corresponding manual landmarks}} 
     \label{figshape3parts}
 \end{figure}
 
 \subsection{Using fine-tuning for pronotum dataset}
+
 At the first step, the network is trained with $5460$ images following
 the same way than explained in (section \ref{secmodel}). After that, 
 this trained model has used to fine-tune the pronotum dataset. To compare the result with
@@ -491,6 +503,7 @@ Table.\ref{tblfinetuningloss}. Comparing with the losses when we
 trained the model from scratch (Table. \ref{tbltrainingloss}), the
 validation losses of this scenario have been significantly improved (around
 $40\%$).
+
 \begin{table}[h!]
 	\centering
 	\begin{tabular}{l l l}
@@ -512,12 +525,15 @@ $40\%$).
 The output model has been used to predict the landmarks on the test
 images. Then, average error based on the distance between
 predicted and corresponding manual landmarks has been computed. The results
-are shown in Table.\ref{tab2}. The \textbf{Average} (CNN) column reminds
-the average distance obtained previously. The \textbf{Average} (fine-tuning)
+are shown in Table.\ref{tab2}. The \textbf{Distance 1} column reminds
+the average distance obtained previously. The \textbf{Distance 2}
 column presents for the new average distance
-after fine-tuning the pronotum from the trained model. Besides, the standard errors of both cases have been presented (SD columns). It is
+after fine-tuning the pronotum from the trained model. The
+\textbf{Percentage} column contains the ratio of improvements. It is
 clearly shown that the result of predicted landmarks with the help of
 fine-tuning is more precise than the first way to do it.
+
+
 
 \begin{table}[htbp]
 \centering
@@ -537,14 +553,12 @@ fine-tuning is more precise than the first way to do it.
 \caption{A comparing between the average error distances, the standard deviation values per landmark of two steps.}
 \label{tab2}
 \end{table}
-
 To illustrate the final results, we display the distribution fo the
 distance of both the best and the worst results (resp. landamark $1$
 and $6$). The Fig.\ref{figrsexample2} shown in (a) and (b) diagrams
- how much the average distance (blue lines) and standard error (red lines) have
+ how much the average distance and standard error (red lines) have
  been improved for the landmark $1$, the (c) and (d) diagrams for the
  landmark $6$.
-
 \begin{figure}[htbp]
    
     \begin{subfigure}[t]{0.25\textwidth}
@@ -556,14 +570,14 @@ and $6$). The Fig.\ref{figrsexample2} shown in (a) and (b) diagrams
     ~ 
     \begin{subfigure}[t]{0.25\textwidth}
         \centering
-        \includegraphics[scale=.34]{images/lm1_finetuning_2}
-        \caption{\small{Landmark 1 - fine-tuning}}
+        \includegraphics[scale=.34]{images/lm6_cnn_2}
+        \caption{\small{Landmark 6 - CNN}}
         \label{figsub22}
     \end{subfigure}~\\
     \begin{subfigure}[t]{0.25\textwidth}
         \centering
-        \includegraphics[scale=.33]{images/lm6_cnn_2}
-        \caption{\small{Landmark 6 - CNN}}
+        \includegraphics[scale=.33]{images/lm1_finetuning_2}
+        \caption{\small{Landmark 1 - fine-tuning}}
         \label{figsub111}
     \end{subfigure}%
     ~ 
@@ -573,27 +587,80 @@ and $6$). The Fig.\ref{figrsexample2} shown in (a) and (b) diagrams
         \caption{\small{Landmark 6 - fine-tuning}}
         \label{figsub222}
     \end{subfigure}
-    \caption{\small{The distribution of distance error on $1^{st}$ and $6^{th}$ landmarks of all images in two testing step (CNN and fine-tuning). The blue and red lines present for the average distances and standard deviation values, respectively.}}
+    \caption{\small{The distribution of distance error on $1^{st}$ and $6^{th}$ landmarks of all images in two testing step(CNN and fine-tuning). The blue and red lines present for the average distances and standard deviation values, respectively.}}
     \label{figrsexample2}
 \end{figure}
 
-As a result of working, the program outputs the
-predicted-landmarks of the images as TPS files. With the outputs are TPS files,
-the user can use MAELab framework\footnote{MAELab is a free software written in C++. It can be directly and freely
-obtained by request at the authors.} to display the
-landmarks on the images.
 \section{Conclusion}
-In this paper, we have presented a CNN to predict the landmarks on beetle's pronotum images. The CNN network has been designed with three times repeated of elementary block which consists of a convolutional, a max pooling, and a dropout layers, followed after by the full connected layers. In the training phase, the CNN have been trained several times with different selections of training data.
+In this paper, we have presented a CNN with two scenarios to predict the landmarks on beetle's pronotum images. The CNN network has been designed with three times repeated structure which consists of a convolutional layer, a max pooling layer, and a dropout layer, followed by the connected layers. In the training phase, the CNN have been trained with several times in different selections of training data. After training, the network was able to predict the landmarks on the images in the test set. 
 
-In the first step, the model has been trained from scratch and tested on the dataset of pronotum images. While in the second step, the model has been trained on a dataset includes all the images from three parts of beetles. Then, the trained model has been used to fine-tune and to test on pronotum images.
+In the first scenario, the model has been trained (from scratch) and tested on the dataset of pronotum images. While in the second scenario, the model has been trained on a dataset includes the images from three parts of beetles. Then, the trained model has been used to fine-tune and test on pronotum images.
 
-The result has been evaluated by comparing the coordinates between predicted and manual landmarks.  The results have shown that using the convolutional network to predict the landmarks on biological images is able to provide good results in the case that the image was difficult to segment. The quality of prediction allows using automatic landmarking to replace manual landmarks in some aspects. 
-Training model with fine-tuning the trained model has provided the best results. Furture works will have to test our model on another kind of biological images.
+The result has been evaluated by comparing the coordinates between predicted and manual landmarks.  The results have shown that using the convolutional network to predict the landmarks on biological images is promising good results in the case that the image was difficult to segment. The quality of prediction allows using automatic landmarking to replace manual landmarks in some aspects. Training model from scratch or fine-tuning the trained model are given the acceptable results. But with a limited number of data, we need to improve the results a little bit. Therefore, future research in landmarking identification appears as an improved of the worth exploring.
 
 \section*{Acknowledgements}
-The research has been supported by DevMap project\footnote{https://www6.rennes.inra.fr/igepp\_eng/Research\-teams/Demecology/Projects/INRA\-SPE\-DevMAP}. We would like to thank the my colleague, ALEXIA Marie, who have provided manual landmarks on beetle images.
+The research has been supported by DevMap project. We would like to thank the my colleague, ALEXIA Marie, who have provided manual landmarks on beetle images.
 
 \bibliography{IEEEabrv,includes/icdp2009}
 
 
 \end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+the predicted landmarks by applying the second scenario on the same test images as Fig.\ref{figrsexample}. The red points present for the predicted landmarks. In Fig.\ref{figsub11}, the positions of predicted landmarks are the same when we compare with the result from Fig.\ref{figsub1}; but in Fig.\ref{figsub22}, the coordinates of predicted landmarks are strongly improved.
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|c|p{1.5cm}|}
+\hline
+\textbf{$\#$Landmark} & \textbf{Distance} \\ \hline
+1 & 4.002  \\ \hline
+2 & 4.4831 \\ \hline
+3 & 4.2959 \\ \hline
+4 & 4.3865 \\ \hline
+5 & 4.2925 \\ \hline
+6 & 5.3631 \\ \hline
+7 & 4.636 \\ \hline
+8 & 4.9363 \\ \hline
+\end{tabular}
+\caption{The average error distance per landmark}
+\label{tabledistance}
+\end{table}
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{$\#$Landmark} & \textbf{Error 1} & \textbf{Error 2} & \textbf{Improved($\%$)} \\ \hline
+\textbf{1} & \textbf{4.002} & \textbf{2.486} & \textbf{37.88} \\ \hline
+2 & 4.4831 & 2.720 & 39.33 \\ \hline
+3 & 4.2959  & 2.652 & 38.27 \\ \hline
+4 & 4.3865  & 2.771 & 36.83 \\ \hline
+5 & 4.2925  & 2.487 & 42.06 \\ \hline
+\textbf{6} & \textbf{5.3631}  & \textbf{3.049} & \textbf{43.15} \\ \hline
+7 & 4.636  & 2.684 & 42.11 \\ \hline
+8 & 4.9363  & 2.871 & 41.84 \\ \hline
+\end{tabular}
+\caption{The average error distance per landmark.}
+\label{tab2}
+\end{center}
+\end{table}
