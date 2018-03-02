@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: main.aux
 The style file: IEEEtran.bst
@@ -8,38 +8,22 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: includes/references.bib
-Repeated entry---line 144 of file includes/references.bib
- : @article{lecun2015deep
- :                       ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 339 of file includes/references.bib
- : @article{srivastava2014dropout
- :                               ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 348 of file includes/references.bib
- : @article{lowe2004distinctive
- :                             ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 358 of file includes/references.bib
- : @article{palaniswamy2010automatic
- :                                  ,
-I'm skipping whatever remains of this entry
--- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
+-- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 
 Done.
 You've used 25 entries,
-            4039 wiz_defined-function locations,
-            953 strings with 12464 characters,
-and the built_in function-call counts, 21686 in all, are:
+            4087 wiz_defined-function locations,
+            964 strings with 12534 characters,
+and the built_in function-call counts, 21762 in all, are:
 = -- 1682
 > -- 600
 < -- 192
 + -- 331
 - -- 106
 * -- 1054
-:= -- 3070
+:= -- 3071
 add.period$ -- 56
 call.type$ -- 25
 change.case$ -- 25
@@ -48,7 +32,7 @@ cite$ -- 25
 duplicate$ -- 1515
 empty$ -- 1769
 format.name$ -- 128
-if$ -- 5049
+if$ -- 5124
 int.to.chr$ -- 0
 int.to.str$ -- 25
 missing$ -- 270
@@ -70,4 +54,3 @@ warning$ -- 0
 while$ -- 102
 width$ -- 27
 write$ -- 263
-(There were 4 error messages)
