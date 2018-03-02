@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.18)  2 MAR 2018 12:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.18)  2 MAR 2018 14:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -445,16 +445,6 @@ e
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 
-
-LaTeX Warning: No \author given.
-
-
-LaTeX Warning: No \author given.
-
-
-LaTeX Warning: No \author given.
-
-
 Underfull \hbox (badness 2393) in paragraph at lines 50--52
 []\OT1/ptm/b/it/9 Index Terms\OT1/ptm/b/n/9 ---Morphometry, bi-o-log-i-cal, lan
 d-marks, deep
@@ -543,7 +533,7 @@ ted-to.pdf images/pronotum.eps>
 (epstopdf)             \includegraphics on input line 113.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/pronotum-eps-converted-to.pdf, id=28, 193.72375pt x 145.54375pt>
+<images/pronotum-eps-converted-to.pdf, id=27, 193.72375pt x 145.54375pt>
 File: images/pronotum-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/pronotum-eps-converted-to.pdf>
@@ -562,7 +552,7 @@ onverted-to.pdf images/architecture1.eps>
 (epstopdf)             \includegraphics on input line 136.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/architecture1-eps-converted-to.pdf, id=29, 493.845pt x 362.35374pt>
+<images/architecture1-eps-converted-to.pdf, id=28, 493.845pt x 362.35374pt>
 File: images/architecture1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/architecture1-eps-converted-to.pdf>
@@ -625,9 +615,12 @@ File: images/loss_v16-eps-converted-to.pdf Graphic file (type pdf)
 Package pdftex.def Info: images/loss_v16-eps-converted-to.pdf used on input lin
 e 160.
 (pdftex.def)             Requested size: 260.62128pt x 195.57887pt.
- [4 <./images/architecture1-eps-converted-to.pdf> <./images/architecture3-eps-c
-onverted-to.pdf> <./images/loss_model_1-eps-converted-to.pdf> <./images/loss_v1
-6-eps-converted-to.pdf>]
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[4 <./images/architecture1-eps-converted-to.pdf> <./images/architecture3-eps-co
+nverted-to.pdf> <./images/loss_model_1-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <images/plandmark.eps>
 (epstopdf)                    date: 2018-03-02 12:02:08
 (epstopdf)                    size: 2480935 bytes
@@ -639,7 +632,7 @@ rted-to.pdf images/plandmark.eps>
 (epstopdf)             \includegraphics on input line 172.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/plandmark-eps-converted-to.pdf, id=54, 1098.1025pt x 830.10126pt>
+<images/plandmark-eps-converted-to.pdf, id=51, 1098.1025pt x 830.10126pt>
 File: images/plandmark-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/plandmark-eps-converted-to.pdf>
@@ -657,7 +650,7 @@ erted-to.pdf images/plandmark2.eps>
 (epstopdf)             \includegraphics on input line 179.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/plandmark2-eps-converted-to.pdf, id=55, 746.79pt x 559.08875pt>
+<images/plandmark2-eps-converted-to.pdf, id=52, 746.79pt x 559.08875pt>
 File: images/plandmark2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/plandmark2-eps-converted-to.pdf>
@@ -679,7 +672,7 @@ Package epstopdf Info: Source file: <images/statistic.eps>
 rted-to.pdf images/statistic.eps>
 (epstopdf)             \includegraphics on input line 210.
 Package epstopdf Info: Output file is already uptodate.
-<images/statistic-eps-converted-to.pdf, id=56, 609.27625pt x 435.6275pt>
+<images/statistic-eps-converted-to.pdf, id=53, 609.27625pt x 435.6275pt>
 File: images/statistic-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/statistic-eps-converted-to.pdf>
@@ -697,16 +690,21 @@ Package epstopdf Info: Source file: <images/chart.eps>
 (epstopdf)             \includegraphics on input line 217.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/chart-eps-converted-to.pdf, id=57, 1278.7775pt x 764.8575pt>
+<images/chart-eps-converted-to.pdf, id=54, 1278.7775pt x 764.8575pt>
 File: images/chart-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/chart-eps-converted-to.pdf>
 Package pdftex.def Info: images/chart-eps-converted-to.pdf used on input line 2
 17.
 (pdftex.def)             Requested size: 255.75096pt x 152.96878pt.
- [5 <./images/plandmark-eps-converted-to.pdf> <./images/plandmark2-eps-converte
-d-to.pdf> <./images/statistic-eps-converted-to.pdf> <./images/chart-eps-convert
-ed-to.pdf>] (./main.bbl
+ [5 <./images/loss_v16-eps-converted-to.pdf> <./images/plandmark-eps-converted-
+to.pdf> <./images/plandmark2-eps-converted-to.pdf> <./images/statistic-eps-conv
+erted-to.pdf> <./images/chart-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 229--229
+[][][]\OT1/ptm/m/n/8 https://www6.rennes.inra.fr/igepp[]eng/Research-
+ []
+
+(./main.bbl
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ¼ in font ptmr7t!
 Missing character: There is no Ã in font ptmr7t!
@@ -731,11 +729,11 @@ Before submitting the final camera ready copy, remember to:
 
 [6] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 5156 strings out of 493029
- 81505 string characters out of 6136234
+ 5158 strings out of 493029
+ 81529 string characters out of 6136234
  147685 words of memory out of 5000000
- 8605 multiletter control sequences out of 15000+600000
- 43819 words of font info for 88 fonts, out of 8000000 for 9000
+ 8606 multiletter control sequences out of 15000+600000
+ 44897 words of font info for 89 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,9n,40p,1558b,413s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</
@@ -746,7 +744,7 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
 rw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8
 a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (6 pages, 751043 bytes).
+Output written on main.pdf (6 pages, 752848 bytes).
 PDF statistics:
  104 PDF objects out of 1000 (max. 8388607)
  63 compressed objects within 1 object stream
