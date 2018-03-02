@@ -65,14 +65,14 @@ This work introduces a method for automatic detection of the landmarks on biolog
     \centering
     \begin{subfigure}[t]{0.25\textwidth}
         \centering
-        \includegraphics[height=1.2in]{images/md19}
+        \includegraphics[height=1.2in]{images/md19.eps}
         \caption{Right mandible}
         \label{figsub01}
     \end{subfigure}%
     ~ 
     \begin{subfigure}[t]{0.25\textwidth}
         \centering
-        \includegraphics[height=1.2in]{images/prono60}
+        \includegraphics[height=1.2in]{images/prono60.eps}
         \caption{Pronotum }
         \label{figsub02}
     \end{subfigure}
@@ -93,7 +93,7 @@ Deep learning allows computational model composed of multiple processing layers 
 
 Convolutional neural networks (CNNs) contribute to solve the state of the art in many computer vision tasks such as classification \cite{krizhevsky2012imagenet}\cite{ciregan2012multi} or recognition \cite{li2015convolutional}\cite{tompson2014joint}. A CNN consists a number of connected layers. The layers of CNN has neurons arranged in three dimensions: \textit{width, height, and depth} with learnable parameters. Fig. \ref{figconvarc} shows a common example of CNN. It is a pipeline of usual layers: convolutional layers (CONV), pooling layers (POOLING), dropout layers (DROPOUT), and full-connected layers (FC).
 \begin{figure}[htbp]
-	\centerline{\includegraphics[scale=0.45]{images/convarc}}
+	\centerline{\includegraphics[scale=0.45]{images/convarc.eps}}
 	\caption{An example of usual convolutional neural network}
 	\label{figconvarc}
 \end{figure}
@@ -110,7 +110,7 @@ In previous sections, we have had an overview of the landmarks and CNN. In this 
 The images come from a collection of 293 beetles from Brittany lands. All the images are taken with the same camera under same conditions with a $3264 \times 2448$ resolutions. For each specific part, a set of manual landmarks has been determined by biologists, \textit{for examples, 8 landmarks for pronotum, 16 landmarks for the left mandible, 18 landmarks for right mandible}. In the content of this study, we work on pronotum part of beetle. The provided dataset contains 293 images, each image with 8 landmarks provided by biologists. The dataset was split into a training set with 260 images (training and validation) and a testing set of 33 images. During the training, the network learned the information through a pair of \textit{(image, landmarks)} in training set. At the testing phase, the image without landmarks was given to the trained network and the predicted landmarks will be given at the output. Fig. \ref{figpronotum} shows an example of pronotum image with its manual landmarks.
 
 \begin{figure}[htbp]
-	\centerline{\includegraphics[scale=0.8]{images/pronotum}}
+	\centerline{\includegraphics[scale=0.8]{images/pronotum.eps}}
 	\caption{An example of pronotum with manual landmarks}
 	\label{figpronotum}
 \end{figure}
@@ -133,7 +133,7 @@ The second network has the same architecture as the first one. But, number of ou
 %The CNN was designed and trained for performing an automatic landmarks detection on pronotum images. The network consists several common layers in the neural network with different learnable parameters. It takes a single channel pronotum image with the size of  $256 \times 192$ as the input. Before entering the network, the brightness of pixels in the image are normalized to $[0,1]$ and the coordinates of landmarks are normalized to $[-1,1]$.
 
 \begin{figure}[htbp]
-	\centerline{\includegraphics[scale=0.45]{images/architecture1}}
+	\centerline{\includegraphics[scale=0.45]{images/architecture1.eps}}
 	\caption{The architecture of the first network}
 	\label{figarch0}
 \end{figure}
@@ -141,7 +141,7 @@ The second network has the same architecture as the first one. But, number of ou
 In the third network, instead of changing the parameters, we have added four dropout layers to the network. These are considered as the good solution to prevent the overfitting. The idea of dropout is to randomly drop units from the neural network during training. It prevents units from co-adapting too much. During training, dropout samples are done from an exponential number of different ``thinned" network. At test times, it is easy to approximate the effect of averaging the prediction of all thinned networks by simply using a single unthinned network with smaller weights. This significantly reduces overfitting and gives major improvements over other regularization methods \cite{srivastava2014dropout}. Fig.\ref{figarch} shows the architecture of the third network. The first three dropout layers are supplemented to the repeated-structures followed the maximum pooling layers. In that way, structure becomes a convolution layer with square filter, followed by a \textit{maximum} pooling and dropout layer. The probability values used for dropout layers are $0.1$, $0.2$, and $0.3$. Actually, we keep the same value for the parameters of the convolutional ($32, 64,$ and $128$), pooling ($3 \times 3$, $2 \times 2$, and $2 \times 2$) and full-connected layers ($1000, 1000,$ and $16$) as the second one.
 
 \begin{figure}[htbp]
-	\centerline{\includegraphics[scale=0.45]{images/architecture3}}
+	\centerline{\includegraphics[scale=0.45]{images/architecture3.eps}}
 	\caption{The architecture of the last network}
 	\label{figarch}
 \end{figure}
@@ -152,12 +152,12 @@ Additionally, the network is designed with a small sharing learning rate and the
 \subsection{Results}
 The dataset has been built by the biologists. It includes the images and manual landmarks. So, we can use the manual landmarks coordinates as ground truth to evaluate the coordinates of predicted landmarks. In the context of deep learning, landmark prediction can be seen as a regression problem. Therefore, the quality metric is used to evaluate the results. In particular, we use root mean square error (RMSE) to compute the accuracy of the implemented architecture. 
 \begin{figure}[h!]
-	\centerline{\includegraphics[scale=0.45]{images/loss_model_1}}
+	\centerline{\includegraphics[scale=0.45]{images/loss_model_1.eps}}
 	\caption{Learning curves of the first model.}
 	\label{figloss1}
 \end{figure}~\\
 \begin{figure}[h!]
-	\centerline{\includegraphics[scale=0.45]{images/loss_v16}}
+	\centerline{\includegraphics[scale=0.45]{images/loss_v16.eps}}
 	\caption{Learning curves of the last model.}
 	\label{figloss}
 \end{figure}~\\[0.1cm]
@@ -169,14 +169,14 @@ Fig.\ref{figrsexample} shows the predicted landmarks on test images set by the t
     \centering
     \begin{subfigure}[t]{0.25\textwidth}
         \centering
-        \includegraphics[height=1.2in]{images/plandmark}
+        \includegraphics[height=1.2in]{images/plandmark.eps}
         \caption{Image with well-predicted landmarks}
         \label{figsub1}
     \end{subfigure}%
     ~ 
     \begin{subfigure}[t]{0.25\textwidth}
         \centering
-        \includegraphics[height=1.2in]{images/plandmark2}
+        \includegraphics[height=1.2in]{images/plandmark2.eps}
         \caption{Image with inaccuracy landmarks}
         \label{figsub2}
     \end{subfigure}
@@ -207,14 +207,14 @@ Besides the losses of training, the distance from predicted landmarks to manual 
 Fig.\ref{figchartlm1} shows the distribution of the distances on the first landmarks of all images. The accuracy based on the distance of each image can be separated into three spaces: the images have the distance less than average value ($4$ pixels): \textbf{56.66$\%$}; the images have the distance from average value to $10$ pixels: \textbf{40.27$\%$}; and the images have the distance greater than $10$ pixels: \textbf{3.07$\%$}. The network has enabled to detect the landmark on pronotum automatically. %If we consider the distance less than average value are good,
 
 \begin{figure}[htbp]
-	\centerline{\includegraphics[scale=0.3]{images/statistic}}
+	\centerline{\includegraphics[scale=0.3]{images/statistic.eps}}
 	\caption{The distribution of the distances on the first landmark. The blue line is the average value of all distances.}
 	\label{figchartlm1}
 \end{figure}
 Fig.\ref{figchart} shows the proportion of acceptable landmarks. In our case, a predicted landmark is acceptable if the distance between it and corresponding manual landmarks is less than the average distance plus a value of standard deviation. Most of the landmarks have been detected with the accuracy greater than $70\%$. %However, we can see a vast difference between the correlation coefficient results and the proportions on each landmark.
 
 \begin{figure}[htbp]
-	\centerline{\includegraphics[scale=0.2]{images/chart}}
+	\centerline{\includegraphics[scale=0.2]{images/chart.eps}}
 	\caption{The proportion of acceptable predicted landmarks}
 	\label{figchart}
 \end{figure}
