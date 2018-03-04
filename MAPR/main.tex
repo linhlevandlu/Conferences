@@ -15,31 +15,6 @@
 
 \title{Landmarks detection by applying Deep networks}
 
-\author{\IEEEauthorblockN{Van Linh LE}
-\IEEEauthorblockA{\textit{LaBRI - CNRS 5800, France} \\
-\textit{ITDLU - Dalat University, Vietnam}\\
-van-linh.le@labri.fr/ \\
-linhlv@dlu.edu.vn}
-\and
-\IEEEauthorblockN{Marie BEURTON-AIMAR}
-\IEEEauthorblockA{\textit{LaBRI - CNRS 5800} \\
-\textit{Bordeaux University}\\
-Talence, France \\
-beurton@labri.fr}
-\and
-\IEEEauthorblockN{Akka ZEMMARI}
-\IEEEauthorblockA{\textit{LaBRI - CNRS 5800} \\
-\textit{Bordeaux University}\\
-Talence, France \\
-zemmari@labri.fr}
-\and
-\IEEEauthorblockN{Nicolas PARISEY}
-\IEEEauthorblockA{\textit{IGEPP} \\
-\textit{INRA 1349}\\
-Le Rheu, France \\
-nparisey@rennes.inra.fr}
-}
-
 \maketitle
 
 \begin{abstract}
@@ -219,6 +194,20 @@ Fig.\ref{figchart} shows the proportion of acceptable landmarks. In our case, a 
 	\label{figchart}
 \end{figure}
 
+To have a comparison with the related works, we have calculated the same quality metrics for regression problem, \textit{such as,} $r^2$, RMSE, explained variance (EV), and Pearson correlation using \textit{scikit-learn} \cite{pedregosa2011scikit}. The accuracy of the last model has been shown in Table.\ref{tab3}. Comparing with the result of Cintas \cite{cintas2016automatic}, most of our metrics are better than their result (except RMSE). 
+
+\begin{table}[htbp]
+\caption{The performance of model on regression's quality metrics}
+\begin{center}
+\begin{tabular}{|c|p{1cm}|p{1cm}|p{1cm}|p{1cm}|}
+\hline
+Metric & \textbf{$r^2$} & \textbf{RMSE} & \textbf{EV} & \textbf{Distance} \\ \hline
+Value & $0.9952$ & $3.8512$ & $0.9952$ & $0.9974$ \\ \hline
+\end{tabular}
+\label{tab3}
+\end{center}
+\end{table}
+
 At the test phase, the trained network is used to predict the landmarks on a set of test images. The program outputs the predicted-landmarks of the images as TPS files; in additional, it also fills and displays the predicted-landmarks on sixteenth firstly images of test data. With the outputs are TPS files, the user can use MAELab \cite{le2017maelab} framework\footnote{MAELab is a free software written in C++. It can be directly
 and freely obtained by request at the authors.} to display the landmarks on the images.
 \section{Conclusion and future works}
@@ -230,3 +219,30 @@ The research has been supported by DevMAP project\footnote{https://www6.rennes.i
 \bibliographystyle{IEEEtran}
 \bibliography{includes/references}
 \end{document}
+
+
+
+\author{\IEEEauthorblockN{Van Linh LE}
+\IEEEauthorblockA{\textit{LaBRI - CNRS 5800, France} \\
+\textit{ITDLU - Dalat University, Vietnam}\\
+van-linh.le@labri.fr/ \\
+linhlv@dlu.edu.vn}
+\and
+\IEEEauthorblockN{Marie BEURTON-AIMAR}
+\IEEEauthorblockA{\textit{LaBRI - CNRS 5800} \\
+\textit{Bordeaux University}\\
+Talence, France \\
+beurton@labri.fr}
+\and
+\IEEEauthorblockN{Akka ZEMMARI}
+\IEEEauthorblockA{\textit{LaBRI - CNRS 5800} \\
+\textit{Bordeaux University}\\
+Talence, France \\
+zemmari@labri.fr}
+\and
+\IEEEauthorblockN{Nicolas PARISEY}
+\IEEEauthorblockA{\textit{IGEPP} \\
+\textit{INRA 1349}\\
+Le Rheu, France \\
+nparisey@rennes.inra.fr}
+}

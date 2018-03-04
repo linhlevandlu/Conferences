@@ -160,4 +160,10 @@ N.~Srivastava, G.~E. Hinton, A.~Krizhevsky, I.~Sutskever, and R.~Salakhutdinov,
 J.~M. Bland and D.~G. Altman, ``Statistics notes: measurement error,''
   \emph{Bmj}, vol. 313, no. 7059, p. 744, 1996.
 
+\bibitem{pedregosa2011scikit}
+F.~Pedregosa, G.~Varoquaux, A.~Gramfort, V.~Michel, B.~Thirion, O.~Grisel,
+  M.~Blondel, P.~Prettenhofer, R.~Weiss, V.~Dubourg \emph{et~al.},
+  ``Scikit-learn: Machine learning in python,'' \emph{Journal of machine
+  learning research}, vol.~12, no. Oct, pp. 2825--2830, 2011.
+
 \end{thebibliography}
