@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.18)  5 MAR 2018 18:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.3.4)  5 MAR 2018 20:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -461,10 +461,10 @@ d-marks, deep
  []
 
 Package epstopdf Info: Source file: <images/md19.eps>
-(epstopdf)                    date: 2018-03-02 12:01:56
+(epstopdf)                    date: 2018-03-02 21:55:31
 (epstopdf)                    size: 190089 bytes
 (epstopdf)             Output file: <images/md19-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-03-02 12:04:49
+(epstopdf)                    date: 2018-03-02 21:55:31
 (epstopdf)                    size: 16628 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/md19-eps-converted-
 to.pdf images/md19.eps>
@@ -478,10 +478,10 @@ Package pdftex.def Info: images/md19-eps-converted-to.pdf used on input line 42
 .
 (pdftex.def)             Requested size: 115.4843pt x 86.72377pt.
 Package epstopdf Info: Source file: <images/prono60.eps>
-(epstopdf)                    date: 2018-03-02 12:02:32
+(epstopdf)                    date: 2018-03-02 21:55:31
 (epstopdf)                    size: 190343 bytes
 (epstopdf)             Output file: <images/prono60-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-03-02 12:04:50
+(epstopdf)                    date: 2018-03-02 21:55:31
 (epstopdf)                    size: 26954 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/prono60-eps-convert
 ed-to.pdf images/prono60.eps>
@@ -505,10 +505,10 @@ Overfull \hbox (10.59991pt too wide) in paragraph at lines 40--53
 
  <./images/md19-eps-converted-to.pdf> <./images/prono60-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <images/convarc.eps>
-(epstopdf)                    date: 2018-03-02 12:03:58
+(epstopdf)                    date: 2018-03-02 21:55:31
 (epstopdf)                    size: 126648 bytes
 (epstopdf)             Output file: <images/convarc-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-03-02 12:04:50
+(epstopdf)                    date: 2018-03-02 21:55:31
 (epstopdf)                    size: 64560 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/convarc-eps-convert
 ed-to.pdf images/convarc.eps>
@@ -533,10 +533,10 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 78.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 Package epstopdf Info: Source file: <images/pronotum.eps>
-(epstopdf)                    date: 2018-03-02 12:02:47
+(epstopdf)                    date: 2018-03-02 21:55:31
 (epstopdf)                    size: 180137 bytes
 (epstopdf)             Output file: <images/pronotum-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-03-02 12:04:51
+(epstopdf)                    date: 2018-03-02 21:55:31
 (epstopdf)                    size: 16005 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/pronotum-eps-conver
 ted-to.pdf images/pronotum.eps>
@@ -552,11 +552,11 @@ e 85.
 (pdftex.def)             Requested size: 174.34975pt x 130.98814pt.
  [2 <./images/convarc-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <images/architecture1.eps>
-(epstopdf)                    date: 2018-03-02 12:00:44
+(epstopdf)                    date: 2018-03-02 21:55:31
 (epstopdf)                    size: 110071 bytes
 (epstopdf)             Output file: <images/architecture1-eps-converted-to.pdf>
 
-(epstopdf)                    date: 2018-03-02 12:04:51
+(epstopdf)                    date: 2018-03-02 21:55:31
 (epstopdf)                    size: 55891 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/architecture1-eps-c
 onverted-to.pdf images/architecture1.eps>
@@ -573,11 +573,11 @@ t line 107.
  [3 <./images/pronotum-eps-converted-to.pdf> <./images/architecture1-eps-conver
 ted-to.pdf>]
 Package epstopdf Info: Source file: <images/architecture3.eps>
-(epstopdf)                    date: 2018-03-02 12:01:05
+(epstopdf)                    date: 2018-03-02 21:55:31
 (epstopdf)                    size: 119316 bytes
 (epstopdf)             Output file: <images/architecture3-eps-converted-to.pdf>
 
-(epstopdf)                    date: 2018-03-02 12:04:51
+(epstopdf)                    date: 2018-03-02 21:55:31
 (epstopdf)                    size: 62114 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/architecture3-eps-c
 onverted-to.pdf images/architecture3.eps>
@@ -592,10 +592,10 @@ Package pdftex.def Info: images/architecture3-eps-converted-to.pdf used on inpu
 t line 115.
 (pdftex.def)             Requested size: 236.35304pt x 175.49567pt.
 Package epstopdf Info: Source file: <images/loss_model_1.eps>
-(epstopdf)                    date: 2018-03-02 12:01:27
+(epstopdf)                    date: 2018-03-02 21:55:31
 (epstopdf)                    size: 115173 bytes
 (epstopdf)             Output file: <images/loss_model_1-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-03-02 12:04:52
+(epstopdf)                    date: 2018-03-02 21:55:31
 (epstopdf)                    size: 32387 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/loss_model_1-eps-co
 nverted-to.pdf images/loss_model_1.eps>
@@ -610,10 +610,10 @@ Package pdftex.def Info: images/loss_model_1-eps-converted-to.pdf used on input
  line 129.
 (pdftex.def)             Requested size: 260.62128pt x 195.57887pt.
 Package epstopdf Info: Source file: <images/loss_v16.eps>
-(epstopdf)                    date: 2018-03-02 12:01:41
+(epstopdf)                    date: 2018-03-02 21:55:31
 (epstopdf)                    size: 110238 bytes
 (epstopdf)             Output file: <images/loss_v16-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-03-02 12:04:53
+(epstopdf)                    date: 2018-03-02 21:55:31
 (epstopdf)                    size: 34405 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/loss_v16-eps-conver
 ted-to.pdf images/loss_v16.eps>
@@ -628,10 +628,10 @@ Package pdftex.def Info: images/loss_v16-eps-converted-to.pdf used on input lin
 e 134.
 (pdftex.def)             Requested size: 260.62128pt x 195.57887pt.
 Package epstopdf Info: Source file: <images/plandmark.eps>
-(epstopdf)                    date: 2018-03-05 18:33:50
+(epstopdf)                    date: 2018-03-05 20:44:46
 (epstopdf)                    size: 4226766 bytes
 (epstopdf)             Output file: <images/plandmark-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-03-05 18:34:02
+(epstopdf)                    date: 2018-03-05 20:44:46
 (epstopdf)                    size: 479189 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/plandmark-eps-conve
 rted-to.pdf images/plandmark.eps>
@@ -646,10 +646,10 @@ Package pdftex.def Info: images/plandmark-eps-converted-to.pdf used on input li
 ne 144.
 (pdftex.def)             Requested size: 95.47382pt x 72.26999pt.
 Package epstopdf Info: Source file: <images/plandmark2.eps>
-(epstopdf)                    date: 2018-03-02 12:02:21
+(epstopdf)                    date: 2018-03-02 21:55:31
 (epstopdf)                    size: 1251364 bytes
 (epstopdf)             Output file: <images/plandmark2-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-03-02 12:04:54
+(epstopdf)                    date: 2018-03-02 21:55:31
 (epstopdf)                    size: 60652 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/plandmark2-eps-conv
 erted-to.pdf images/plandmark2.eps>
@@ -674,10 +674,10 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [4 <./images/architecture3-eps-converted-to.pdf> <./images/loss_model_1-eps-con
 verted-to.pdf> <./images/loss_v16-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <images/statistic.eps>
-(epstopdf)                    date: 2018-03-02 12:03:04
+(epstopdf)                    date: 2018-03-02 21:55:31
 (epstopdf)                    size: 122015 bytes
 (epstopdf)             Output file: <images/statistic-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-03-02 12:04:55
+(epstopdf)                    date: 2018-03-02 21:55:31
 (epstopdf)                    size: 33231 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/statistic-eps-conve
 rted-to.pdf images/statistic.eps>
@@ -692,10 +692,10 @@ Package pdftex.def Info: images/statistic-eps-converted-to.pdf used on input li
 ne 184.
 (pdftex.def)             Requested size: 182.78427pt x 130.68925pt.
 Package epstopdf Info: Source file: <images/chart.eps>
-(epstopdf)                    date: 2018-03-02 12:05:18
+(epstopdf)                    date: 2018-03-02 21:55:31
 (epstopdf)                    size: 1220197 bytes
 (epstopdf)             Output file: <images/chart-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-03-02 12:06:43
+(epstopdf)                    date: 2018-03-02 21:55:31
 (epstopdf)                    size: 153742 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/chart-eps-converted
 -to.pdf images/chart.eps>
@@ -742,7 +742,7 @@ Before submitting the final camera ready copy, remember to:
 [6] (./main.aux) ) 
 Here is how much of TeX's memory you used:
  5171 strings out of 493029
- 81683 string characters out of 6136234
+ 81683 string characters out of 6136235
  147702 words of memory out of 5000000
  8615 multiletter control sequences out of 15000+600000
  45886 words of font info for 94 fonts, out of 8000000 for 9000
