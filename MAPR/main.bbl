@@ -49,15 +49,15 @@ D.~G. Lowe, ``Distinctive image features from scale-invariant keypoints,''
   \emph{International journal of computer vision}, vol.~60, no.~2, pp. 91--110,
   2004.
 
-\bibitem{palaniswamy2010automatic}
-S.~Palaniswamy, N.~A. Thacker, and C.~P. Klingenberg, ``Automatic
-  identification of landmarks in digital images,'' \emph{IET Computer Vision},
-  vol.~4, no.~4, pp. 247--260, 2010.
-
 \bibitem{sun2013deep}
 Y.~Sun, X.~Wang, and X.~Tang, ``Deep convolutional network cascade for facial
   point detection,'' in \emph{Proceedings of the IEEE conference on computer
   vision and pattern recognition}, 2013, pp. 3476--3483.
+
+\bibitem{palaniswamy2010automatic}
+S.~Palaniswamy, N.~A. Thacker, and C.~P. Klingenberg, ``Automatic
+  identification of landmarks in digital images,'' \emph{IET Computer Vision},
+  vol.~4, no.~4, pp. 247--260, 2010.
 
 \bibitem{zhang2014facial}
 Z.~Zhang, P.~Luo, C.~C. Loy, and X.~Tang, ``Facial landmark detection by deep
@@ -134,6 +134,13 @@ J.~J. Tompson, A.~Jain, Y.~LeCun, and C.~Bregler, ``Joint training of a
   convolutional network and a graphical model for human pose estimation,'' in
   \emph{Advances in neural information processing systems}, 2014, pp.
   1799--1807.
+
+\bibitem{theanoframework}
+\BIBentryALTinterwordspacing
+{Theano Development Team}, ``{Theano: A {Python} framework for fast computation
+  of mathematical expressions},'' \emph{arXiv e-prints}, vol. abs/1605.02688,
+  May 2016. [Online]. Available: \url{http://arxiv.org/abs/1605.02688}
+\BIBentrySTDinterwordspacing
 
 \bibitem{lasagne}
 \BIBentryALTinterwordspacing
