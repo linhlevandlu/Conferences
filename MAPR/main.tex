@@ -139,19 +139,18 @@ The dataset has been built by the biologists. It includes the images and manual 
 Fig.\ref{figloss1} and \ref{figloss} show the training errors and the validation errors of a training time on the first and the third model, respectively. The blue curves present RMSE on training set, the green curves present the validation errors. Clearly, the overfitting has appeared in the first model. In Fig.\ref{figloss1}, we can see that if the training is able to decrease with the number of epochs\footnote{An epoch is a single pass through the full training set.}, it is not the case of validation loss. At the opposite in the third model, we can see some different values for the two losses at the beginning but after several epochs, these values become more proximate and the overfitting problem has been solved.
 
 Fig.\ref{figrsexample} shows the predicted landmarks on test images set by the thrid model. When we consider the distance between the predicted and manual landmarks, the accuracy on coordinates of predicted landmarks on Fig.\ref{figsub1} is $99\%$. The propotion on Fig.\ref{figsub2} is $80\%$.
-
 \begin{figure}[h]
     \centering
     \begin{subfigure}[t]{0.25\textwidth}
         \centering
-        \includegraphics[height=1.2in]{images/plandmark.eps}
+        \includegraphics[height=1.0in]{images/plandmark.eps}
         \caption{Image with well-predicted landmarks}
         \label{figsub1}
     \end{subfigure}%
     ~ 
     \begin{subfigure}[t]{0.25\textwidth}
         \centering
-        \includegraphics[height=1.2in]{images/plandmark2.eps}
+        \includegraphics[height=1.0in]{images/plandmark2.eps}
         \caption{Image with inaccuracy landmarks}
         \label{figsub2}
     \end{subfigure}
@@ -165,7 +164,7 @@ Besides the losses of training, the distance from predicted landmarks to manual 
 \begin{center}
 \begin{tabular}{|c|p{1.5cm}|}
 \hline
-\textbf{$\#$Landmark} & \textbf{Distance} \\ \hline
+\textbf{$\#$Landmark} & \textbf{Distance} (in pixels) \\ \hline
 1 & 4.002  \\ \hline
 2 & 4.4831 \\ \hline
 3 & 4.2959 \\ \hline
@@ -194,28 +193,29 @@ Fig.\ref{figchart} shows the proportion of acceptable landmarks. In our case, a 
 	\label{figchart}
 \end{figure}
 
-To have a comparison with the related works, we have calculated the same quality metrics for regression problem, \textit{such as,} $r^2$, RMSE, explained variance (EV), and Pearson correlation using \textit{scikit-learn} \cite{pedregosa2011scikit}. The accuracy of the last model has been shown in Table.\ref{tab3}. Comparing with the result of Cintas \cite{cintas2016automatic}, most of our metrics are better than their result (except RMSE). 
+To have a comparison with the related works, we have calculated the same quality metrics for regression problems as Cintas et al. \cite{cintas2016automatic}, \textit{such as,} coefficient of determination ($r^2$), explained variance (EV), and Pearson correlation, using \textit{scikit-learn} \cite{pedregosa2011scikit}. The best possible scores of all metrics are $1.0$, lower values are worse. The comparing of the quality metrics with the previous works has been shown in Table.\ref{tab3}.
 
 \begin{table}[htbp]
-\caption{The performance of model on regression's quality metrics}
+\centering
+\caption{The performance of the last architecture network on regressions quality metrics, comparing with the results of Cintas et al. \cite{cintas2016automatic}}
 \begin{center}
-\begin{tabular}{|c|p{1cm}|p{1cm}|p{1cm}|p{1cm}|}
+\begin{tabular}{|c|p{1cm}|p{1cm}|p{1cm}|}
 \hline
-Metric & \textbf{$r^2$} & \textbf{RMSE} & \textbf{EV} & \textbf{Distance} \\ \hline
-Value & $0.9952$ & $3.8512$ & $0.9952$ & $0.9974$ \\ \hline
+Metric & $\mathbf{r^{2}}$ & \textbf{EV} & \textbf{Pearson} \\ \hline
+Cintast et al. \cite{cintas2016automatic} & $0.884$ & $0.951$ & $0.976$ \\ \hline
+Our & $\textbf{0.9952}$ & $\textbf{0.9951}$ & $\textbf{0.9974}$ \\ \hline
 \end{tabular}
 \label{tab3}
 \end{center}
 \end{table}
-
 At the test phase, the trained network is used to predict the landmarks on a set of test images. The program outputs the predicted-landmarks of the images as TPS files; in additional, it also fills and displays the predicted-landmarks on sixteenth firstly images of test data. With the outputs are TPS files, the user can use MAELab \cite{le2017maelab} framework\footnote{MAELab is a free software written in C++. It can be directly
 and freely obtained by request at the authors.} to display the landmarks on the images.
 \section{Conclusion and future works}
-With beetle mandibles images, the object is easy to segment and we have succeeded to determine the landmarks automatically. In opposite, the pronotum images are difficult to segment. Methods which not suppose to be based on segmentation are necessary. In this paper, after testing several models, we have presented a convolutional neural network for automatic detection landmarks on the pronotum. It includes three times repeated structure which consists of a convolutional layer, a max pooling layer, and a dropout layer, followed by the connected layers. During the training phase, suitable techniques are used to prevent overfitting, a common issue of the neural networks. The network was trained several times in different selections of training data. After training with the manual landmarks given by the biologist, the network is able to predict the landmarks on the set of unseen images.
+In the context of collaboration with the biologist, the project towards replacing the manual landmarks by the automatic landmark on beetle's images. With beetle mandibles images, the object is easy to segment and we have succeeded to determine the landmarks automatically. In opposite, the pronotum images are difficult to segment. Methods which not suppose to be based on segmentation are necessary. In this paper, after testing several models, we have presented a convolutional neural network for automatic detection landmarks on the pronotum. It includes three times repeated structure which consists of a convolutional layer, a max pooling layer, and a dropout layer, followed by the connected layers. During the training phase, suitable techniques are used to prevent overfitting, a common issue of the neural networks. The network was trained several times in different selections of training data. After training with the manual landmarks given by the biologist, the network is able to predict the landmarks on the set of unseen images.
 
 The results from the test set have been evaluated by calculating the distance between manual landmarks and corresponding predicted-landmarks. The average of distance errors on each landmark has been also considered. Using the convolutional network to predict the landmarks on biological images is promising good results in the case that the image can not be segmentation. The quality of prediction allows using automatic landmarking to replace manual landmarks in some aspects.  In our case, the training dataset is limited. As a result, the accuracy of the network is acceptable. However, when we expect more about the accuracy of predicted landmarks (coordinates of predicted landmarks), the result of this work is still needed to improve (for example using a larger training dataset). Therefore, future research in landmarking identification appears as an improved of the worth exploring.
 \section*{Acknowledgment}
-The research has been supported by DevMAP project\footnote{https://www6.rennes.inra.fr/igepp\_eng/Research\-teams/Demecology/Projects/INRA\-SPE\-DevMAP}. We would like to thank the my colleague, ALEXIA Marie, who have provided manual landmarks on beetle images.
+The research has been supported by DevMAP project\footnote{https://www6.rennes.inra.fr/igepp\_eng/Research\-teams/Demecology/Projects/INRA\-SPE\-DevMAP}. We would like to thank my colleague, ALEXIA Marie, who has provided manual landmarks on beetle images.
 \bibliographystyle{IEEEtran}
 \bibliography{includes/references}
 \end{document}
