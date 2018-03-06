@@ -14,7 +14,30 @@
 \begin{document}
 
 \title{Landmarks detection by applying Deep networks}
-
+\author{\IEEEauthorblockN{Van Linh LE}
+\IEEEauthorblockA{\textit{LaBRI - CNRS 5800, France} \\
+\textit{ITDLU - Dalat University, Vietnam}\\
+van-linh.le@labri.fr/ \\
+linhlv@dlu.edu.vn}
+\and
+\IEEEauthorblockN{Marie BEURTON-AIMAR}
+\IEEEauthorblockA{\textit{LaBRI - CNRS 5800} \\
+\textit{Bordeaux University}\\
+Talence, France \\
+beurton@labri.fr}
+\and
+\IEEEauthorblockN{Akka ZEMMARI}
+\IEEEauthorblockA{\textit{LaBRI - CNRS 5800} \\
+\textit{Bordeaux University}\\
+Talence, France \\
+zemmari@labri.fr}
+\and
+\IEEEauthorblockN{Nicolas PARISEY}
+\IEEEauthorblockA{\textit{IGEPP} \\
+\textit{INRA 1349}\\
+Le Rheu, France \\
+nparisey@rennes.inra.fr}
+}
 \maketitle
 
 \begin{abstract}
@@ -126,12 +149,12 @@ For the test, we have used the manual landmarks coordinates as ground truth to e
 Fig.\ref{figloss1} and \ref{figloss} show the training errors and the validation errors of a training time on the first and the third model, respectively. The blue curves present RMSE on training dataset, the green curves present the validation errors. Clearly, the overfitting has appeared in the first model. In Fig.\ref{figloss1}, we can see that if the training is able to decrease with the number of epochs\footnote{An epoch is a single pass through the full training set.}, it is not the case of validation loss. At the opposite in the third model, we can see some different values for the two losses at the beginning but after several epochs, these values become more proximate and the overfitting problem has been solved.
 
 \begin{figure}[h!]
-	\centerline{\includegraphics[scale=0.45]{images/loss_model_1.eps}}
+	\centerline{\includegraphics[scale=0.43]{images/loss_model_1.eps}}
 	\caption{Learning curves of the first model.}
 	\label{figloss1}
 \end{figure}~\\
 \begin{figure}[h!]
-	\centerline{\includegraphics[scale=0.45]{images/loss_v16.eps}}
+	\centerline{\includegraphics[scale=0.43]{images/loss_v16.eps}}
 	\caption{Learning curves of the last model.}
 	\label{figloss}
 \end{figure}
@@ -222,30 +245,3 @@ The research has been supported by DevMAP project - INRA\footnote{https://www6.r
 \bibliographystyle{IEEEtran}
 \bibliography{includes/references}
 \end{document}
-
-
-
-\author{\IEEEauthorblockN{Van Linh LE}
-\IEEEauthorblockA{\textit{LaBRI - CNRS 5800, France} \\
-\textit{ITDLU - Dalat University, Vietnam}\\
-van-linh.le@labri.fr/ \\
-linhlv@dlu.edu.vn}
-\and
-\IEEEauthorblockN{Marie BEURTON-AIMAR}
-\IEEEauthorblockA{\textit{LaBRI - CNRS 5800} \\
-\textit{Bordeaux University}\\
-Talence, France \\
-beurton@labri.fr}
-\and
-\IEEEauthorblockN{Akka ZEMMARI}
-\IEEEauthorblockA{\textit{LaBRI - CNRS 5800} \\
-\textit{Bordeaux University}\\
-Talence, France \\
-zemmari@labri.fr}
-\and
-\IEEEauthorblockN{Nicolas PARISEY}
-\IEEEauthorblockA{\textit{IGEPP} \\
-\textit{INRA 1349}\\
-Le Rheu, France \\
-nparisey@rennes.inra.fr}
-}
