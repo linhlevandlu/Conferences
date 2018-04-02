@@ -6,17 +6,14 @@ A.~Sonnenschein, D.~VanderZee, W.~R. Pitchers, S.~Chari, and I.~Dworkin,
   melanogaster wings for phenomic and biometric analysis",'' 2015.
 
 \bibitem{cintas2016automatic}
-C.~Cintas, M.~Quinto-S{\'a}nchez, V.~Acu{\~n}a, C.~Paschetta, S.~de~Azevedo,
-  C.~C.~S. de~Cerqueira, V.~Ramallo, C.~Gallo, G.~Poletti, M.~C. Bortolini,
-  {\em et~al.}, ``Automatic ear detection and feature extraction using
+C.~Cintas {\em et~al.}, ``Automatic ear detection and feature extraction using
   geometric morphometrics and convolutional neural networks,'' {\em IET
   Biometrics}, vol.~6, no.~3, pp.~211--223, 2016.
 
 \bibitem{le2017maelab}
 V.~L. Le, M.~Beurton-Aimar, A.~Krahenbuhl, and N.~Parisey, ``{MAELab: a
-  framework to automatize landmark estimation},'' in {\em {WSCG 2017}}, 25th
-  International Conference in Central Europe on Computer Graphics,
-  Visualization and Computer Vision'2017, (Plzen, Czech Republic), May 2017.
+  framework to automatize landmark estimation},'' in {\em {WSCG 2017}}, (Plzen,
+  Czech Republic), May 2017.
 
 \bibitem{palaniswamy2010automatic}
 S.~Palaniswamy, N.~A. Thacker, and C.~P. Klingenberg, ``Automatic
@@ -72,17 +69,14 @@ H.~Li, Z.~Lin, X.~Shen, J.~Brandt, and G.~Hua, ``A convolutional neural network
   Computer Vision and Pattern Recognition}, pp.~5325--5334, 2015.
 
 \bibitem{mikolov2011strategies}
-T.~Mikolov, A.~Deoras, D.~Povey, L.~Burget, and J.~{\v{C}}ernock{\`y},
-  ``Strategies for training large scale neural network language models,'' in
-  {\em Automatic Speech Recognition and Understanding (ASRU), 2011 IEEE
-  Workshop on}, pp.~196--201, IEEE, 2011.
+T.~Mikolov {\em et~al.}, ``Strategies for training large scale neural network
+  language models,'' in {\em Automatic Speech Recognition and Understanding
+  (ASRU), 2011 IEEE Workshop on}, pp.~196--201, IEEE, 2011.
 
 \bibitem{hinton2012deep}
-G.~Hinton, L.~Deng, D.~Yu, G.~E. Dahl, A.-r. Mohamed, N.~Jaitly, A.~Senior,
-  V.~Vanhoucke, P.~Nguyen, T.~N. Sainath, {\em et~al.}, ``Deep neural networks
-  for acoustic modeling in speech recognition: The shared views of four
-  research groups,'' {\em IEEE Signal Processing Magazine}, vol.~29, no.~6,
-  pp.~82--97, 2012.
+G.~Hinton {\em et~al.}, ``Deep neural networks for acoustic modeling in speech
+  recognition: The shared views of four research groups,'' {\em IEEE Signal
+  Processing Magazine}, vol.~29, no.~6, pp.~82--97, 2012.
 
 \bibitem{jean2014using}
 S.~Jean, K.~Cho, R.~Memisevic, and Y.~Bengio, ``On using very large target
@@ -95,9 +89,8 @@ I.~Sutskever, O.~Vinyals, and Q.~V. Le, ``Sequence to sequence learning with
   systems}, pp.~3104--3112, 2014.
 
 \bibitem{jia2014caffe}
-Y.~Jia, E.~Shelhamer, J.~Donahue, S.~Karayev, J.~Long, R.~Girshick,
-  S.~Guadarrama, and T.~Darrell, ``Caffe: Convolutional architecture for fast
-  feature embedding,'' {\em arXiv preprint arXiv:1408.5093}, 2014.
+Y.~Jia {\em et~al.}, ``Caffe: Convolutional architecture for fast feature
+  embedding,'' {\em arXiv preprint arXiv:1408.5093}, 2014.
 
 \bibitem{2016arXiv160502688short}
 {Theano Development Team}, ``{Theano: A {Python} framework for fast computation
@@ -125,9 +118,8 @@ N.~Srivastava, G.~E. Hinton, A.~Krizhevsky, I.~Sutskever, and R.~Salakhutdinov,
   Journal of machine learning research}, vol.~15, no.~1, pp.~1929--1958, 2014.
 
 \bibitem{lecun2012efficient}
-Y.~A. LeCun, L.~Bottou, G.~B. Orr, and K.-R. M{\"u}ller, ``Efficient
-  backprop,'' in {\em Neural networks: Tricks of the trade}, pp.~9--48,
-  Springer, 2012.
+Y.~A. LeCun {\em et~al.}, ``Efficient backprop,'' in {\em Neural networks:
+  Tricks of the trade}, pp.~9--48, Springer, 2012.
 
 \bibitem{torrey2009transfer}
 L.~Torrey and J.~Shavlik, ``Transfer learning,'' {\em Handbook of Research on
@@ -135,12 +127,13 @@ L.~Torrey and J.~Shavlik, ``Transfer learning,'' {\em Handbook of Research on
   Techniques}, vol.~1, p.~242, 2009.
 
 \bibitem{imagenet_cvpr09}
-J.~Deng, W.~Dong, R.~Socher, L.-J. Li, K.~Li, and L.~Fei-Fei, ``{ImageNet: A
-  Large-Scale Hierarchical Image Database},'' in {\em CVPR09}, 2009.
+J.~Deng {\em et~al.}, ``{ImageNet: A Large-Scale Hierarchical Image
+  Database},'' in {\em CVPR09}, 2009.
 
 \bibitem{margeta_mri}
-J.~M. et~al, ``Fine-tuned convolutional neural nets for cardiac mri acquisition
-  plane recognition,'' {\em Computer Methods in Biomechanics and Biomedical
-  Engineering: Imaging \& Visualization}, vol.~5, no.~5, pp.~339--349, 2017.
+J.~Margeta {\em et~al.}, ``Fine-tuned convolutional neural nets for cardiac mri
+  acquisition plane recognition,'' {\em Computer Methods in Biomechanics and
+  Biomedical Engineering: Imaging \& Visualization}, vol.~5, no.~5,
+  pp.~339--349, 2017.
 
 \end{thebibliography}
