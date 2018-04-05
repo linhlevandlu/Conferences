@@ -31,10 +31,8 @@
 % This should produce references in the order they appear
 \bibliographystyle{ieeetr}
 
-%\title{Automatically landmarks prediction on Beetle's pronotum}
-%\title{Deep network for landmarks prediction on Beetle pronotums}
-%\title{Two scenarios to predict landmarks on Beetle pronotum by Deep Network}
 \title{Towards landmarks prediction with Deep Network}
+%\title{Towards landmarks prediction using Convolutional Neural Networks}
 
 \authorname{Van Linh Le$^{1,3}$, Marie Beurton-Aimar$^{1}$, Akka Zemmari$^1$, Nicolas Parisey$^2$}
 \authoraddr{$^1$LaBRI - CNRS 5800 Bordeaux University, France, van-linh.le/beurton/zemmari@labri.fr}
@@ -53,7 +51,7 @@ Landmarks, convolutional neural networks, fine-tuning, recogntion, procrustes.
 Morphometry landmarks are used in many biological
 applications. Mostly, the landmarks are defined manually or
 semi-automatically by applying image processing techniques. In recent
-years, deep learning is known as a good solution to achieve image analysis tasks. It appears in many fields such as
+years, Deep Learning is known as a good solution to achieve image analysis tasks. It appears in many fields such as
 classification, recognition, and face detection. In this context, we
 present a Convolutional Neural Network to predict the landmarks on 2D
 anatomical images, specifically beetle's anatomical images. The proposed model is designed from an \textit{elementary block} of three layers: convolution, pooling and dropout. The network have been trained in two different ways: either from scratch on a specific anatomical part of the beetle or fine-tuned on a specific part from a model previously trained on all the parts. The dataset includes the images of 
@@ -67,8 +65,7 @@ considered as ground truth. Convolutional Neural Network predictions are good co
 Morphometrics landmarks (or point of interest) are important features
 in many biological investigations. They are used as proxy to analyze
 the shape of biological organs or organisms. These shape analysis are mainly
-based on metrics extracted from landmarks coordinates. Depending on the anatomical part, the number of landmarks may vary along their position: at the edge of the anatomical part or inside. For
-  examples, the landmarks on Drosophila wings \cite{drosophilaWings} are inside the wings, near veins, but the landmarks on human ear \cite{cintas2016automatic} can be located at
+based on metrics extracted from landmarks coordinates. Depending on the anatomical part, the number of landmarks may vary along their position: at the edge of the anatomical part or inside. For example, the landmarks on Drosophila wings \cite{drosophilaWings} are inside the wings, near veins, but the landmarks on human ear \cite{cintas2016automatic} can be located at
 the ear edge or inside it. Currently, the landmarks are set manually by
 the entomologist, one can note that this work is time-consuming and difficult to
 reproduce. Therefore, a method that proposes automatically the
@@ -77,24 +74,24 @@ coordinates of landmarks could be a concern.
 In image processing, segmentation is most often the first and the most
 important step. This task remains a bootleneck to compute features of
 an image. In some cases, the object of interest is easy to extract and
-can be analyze with the help of a lot of very well-known image
+can be analyzed with the help of a lot of very well-known image
 analysis procedures. In a previous study \cite{le2017maelab}, we have analyzed beetle
 mandibules with a set of algorithms based on the Hough Transform
 procedure \cite{palaniswamy2010automatic}, SIFT
 \cite{lowe2004distinctive} and SURF \cite{bay2006surf} algorithms could also be
 suitable to work on this topic. But, in some cases, the question of how to properly segment the
-object of interest consumes a lot to time to develop or adapt proper methods. This is why
+object of interest consumes a lot of time to develop or adapt proper methods. This is why
 we have turned to ways of analyzing images without the need for a segmentation step. The application has been again on beetles images
-but on \textit{pronotum, head, body} parts. As the beetles have not been dissected, their anatomical parts have not been set apart. So image segmentation of each part, as they are still attached to the whole specimen, is problematic and has been given up. Coordinates of manual landmarks for each part
+but on \textit{pronotum, head, and body} parts. As the beetles have not been dissected, their anatomical parts have not been set apart. So image segmentation of each part, as they are still attached to the whole specimen, is problematic and has been given up. Coordinates of manual landmarks for each part
 have been provided and are considered as the ground
-truth to evaluated the predicted landmarks by our algorithms. We have focus on the
+truth to evaluate the predicted landmarks by our algorithms. We have focus on the
 pronotum parts for this study. Fig.\ref{figpronotum} shows
 the $8$ landmarks that we are looking for.
 
 
 To achieve the landmarks prediction, a Convolutional Neural Network
-(CNN)\cite{lecun2010convolutional} has been designed using Lasagne
-library\cite{lasagne}. From a first model version, the network has been
+(CNN) \cite{lecun2010convolutional} has been designed using Lasagne
+library \cite{lasagne}. From a first model version, the network has been
 trained from scratch on the dataset of pronotum images. In a second
 step the training has been modified to include a fine-tuning
 \cite{yosinski2014transferable} stage.
@@ -103,7 +100,7 @@ step the training has been modified to include a fine-tuning
 
 \begin{figure}[htbp]
 \centering
-	\centerline{\includegraphics[scale=0.7]{images/pronotum}}
+	\centerline{\includegraphics[scale=0.8]{images/pronotum}}
 	\caption{\small{An example of pronotum images and its manual landmarks}}
 	\label{figpronotum}
 \end{figure}
@@ -115,12 +112,12 @@ model and these ones after fine-tuning.
 
 
 \section{Related works}
-Deep learning methods are coming from machine learning theory. They
+Deep Learning methods are coming from machine learning theory. They
 have been introduced in the middle of previous century for artificial
 intelligence applications but they encounters problems to
 take real world cases. More recently, the improvement of computing capacities, both in
 memory size and time with GPU programming has opened a new challenge  
-for deep learning. Many deep learning architectures have been proposed
+for Deep Learning. Many deep learning architectures have been proposed
 to solve the problems of classification \cite{krizhevsky2012imagenet,
   ciregan2012multi}, image recognition \cite{szegedy2015going,
   farabet2013learning, li2015convolutional}, speech recognition
@@ -131,7 +128,7 @@ developments, many frameworks have been built such as Caffe
 \cite{tensorflow2015},.... These frameworks help
 the users to design their application by re-using, already proposed, networks
 architecture. In image analysis domain,
-deep learning, specifically with CNN, can be used to predict the key points on
+Deep Learning, specifically with CNN, can be used to predict the key points on
 an image. Yi Sun et al. \cite{sun2013deep} have proposed a cascaded
 convolutional network to predict the key points on the human
 face. Zhang et al. \cite{zhang2014facial} optimizes facial landmarks
@@ -152,15 +149,14 @@ Drosophila wings. Krahenbuhl et al. \cite{le2017maelab} have extended
 Palaniswamy's method to detect landmarks automatically on beetles
 mandibles. Unfortunately, after testing, when the segmentation has not good quality,
 we have observed that re-using this method produces too many
-false positives. This is why we have turned our work on deep learning
+false positives. This is why we have turned our work on Deep Learning
 algorithms in order to find suitable solution to predict the landmarks
-on images hard to segment.
+on images which are hard to segment.
 
 
 \section{Network model}
-Deep learning is a learning method with multiple levels of
-representation of connected layers (convolutional neural
-network). Data representation is transformed from a lower level to a
+Deep Learning is a learning method with multiple levels of
+representation of connected layers. Data representation is transformed from a lower level to a
 higher one with many complex functions that can be learned via
 backpropagation. In this section, we present the initial version of the CNN that we have used
 to begin to predict the landmarks. 
@@ -177,7 +173,7 @@ Like the networks have been proposed by Cintas et al. \cite{cintas2016automatic}
 with different learnable parameters. It receives an input image with
 the size  $1 \times 256 \times 192$ to train, to validate, and to
 test. The network consists of three repeated-structures of a convolutional layer
-followed by a pooling layer (keeping the maximum value). The depth of convolutional layers increases with different size of the filter kernels.
+followed by a pooling layer (keeping the maximum value). The depth of convolutional layers increases with different sizes of the filter kernels.
 All the kernels of pooling layers have the same size. 
 At the end, three full connected layers are added to the
 network. The output of the last full-connected
@@ -255,13 +251,14 @@ network has been trained on NVIDIA TITAN X cards.
 The dataset includes $293$ images of beetles (for each anatomical part). All
 images are taken with the same camera in the same condition with a
 resolution of $3264 \times 2448$. Each image has the manual
-landmarks setting by biologists i.e pronotum has $8$ manual landmarks. The
+landmarks setting by biologists, i.e, pronotum has $8$ manual landmarks. The
 experiments have been designed with a testing set which includes $33$
-and the remained $260$ images are put in two subsets, one for
-training and one for validation. For performance considerations, in most of CNNs
+and the remained $260$ images are used to train and to valid the model.
+The images in training and validation set will be chosen randomly followed
+the ratio during setup the network. For performance considerations, in most of CNNs
 \cite{lecun2010convolutional, sun2013deep,  krizhevsky2012imagenet,
   cintas2016automatic}, the size of the input is limited to $256
-\times 256$ pixels, thus we have down-sampling our images to a new
+\times 256$ pixels, thus we did down-sampling of our images to a new
 resolution $256 \times 192$ (to respect the ratio between $x$ and
 $y$), of course the coordinates of manual landmarks have been also
 scaled to fit with the new resolution.
@@ -270,10 +267,9 @@ scaled to fit with the new resolution.
 One of the main characteristics of CNN is that it must use a huge number of data 
 and one can consider that only several hundreds of images is
 not enough to feed a CNN. Moreover, working with small dataset can push
-us again to the popular problem of \textit{overfitting}. A way to  to
-enlarge the dataset size has to be considered. In image processing, we usually apply
-transform procedures (translation, rotation) to generate a new image
-but unfortunatly the methods to compute features through a CNN
+us again to the popular problem of \textit{overfitting}. A way to enlarge the dataset size has to be considered. In image processing, we usually apply
+transform procedures (translation, rotation) to generate a new image. 
+However, unfortunatly the methods to compute features through a CNN
 mostoften are translation and rotation independant. Another way to
 enlarge the dataset has to be imagined.
 
@@ -306,7 +302,7 @@ takes into account a pair of informations \textit{(image, manual
   landmark coordinates)}. At the test phase, images without landmarks
 is given to the previous trained network that produces as output
 coordinates of the predicted landmarks. To obtain a fast convergence
-during the computing of CNN, it is useful to normalized the pixel
+during the computing of CNN, it is useful to normalize the pixel
 color value between $[0; 1]$ range, instead of $[0; 255]$  \cite{lecun2012efficient}. The
 coordinate values has also been normalized.
 
@@ -343,15 +339,15 @@ the distance (in pixels) between the manual ones (the ground truth)
 and the predicted ones has to be now considered. A correlation test
 gives us a good correlation between position of a manual landmark and
 its corresponding predicted one. But we have considered that this
-measure is not good enough to provide a useful result to biologist. We
+measure is not good enough to provide a useful result to biologists. We
 have prefered to evaluate the distance in pixels between the ground
 truth and the prediction. Table.\ref{tabledistance} shows the
 average distance between manual and predicted landmarks for all
 images, landmark per landmark. With images of $256 \times 192$ size we
 can consider that an error of $1\%$ corresponds to $2$ pixels that
-could be an acceptable error. Unfortunatly our results exhibits
+could be an acceptable error. Unfortunatly, our results exhibit
 average distance of $4$ pixels in the best case, landmark $1$ and more
-than $5$ pixels, landmark $6$. More the error distance is more than  $2\%$
+than $5$ pixels, landmark $6$. Other error distances are more than $2\%$
 pixels.
 
 
@@ -419,14 +415,14 @@ by training from scratch on pronotum dataset. The results of
 experiments have shown that the network has worked well to detect the
 landmarks on the pronotum images. However, when we consider the
 predicted landmarks by displaying the landmarks on the images, the
-result is still not precise, the average error still high ($\geq 4$
+result is still not precise, the average error is still high ($\geq 4$
 pixels).
 
 
 In order to reach more acceptable results for biologists, we have
 broadened the model with the step of transfer learning. That is a
 method that re-uses the model developed for a specific task/dataset
-to lead  another task with another dataset. This allows rapid progress or improved the performance of the
+to lead  another task with another dataset. This allows rapid progress or improve the performance of the
 model on the second task \cite{torrey2009transfer}. The most popular
 example has been given with the project ImageNet of Google \cite{imagenet_cvpr09} which has labelled several millions of images. The obtained parameter values can
 be used in another context to classify another dataset, eventually
@@ -434,7 +430,7 @@ very different dataset \cite{margeta_mri}. The name of this procedure to re-use 
 to pre-train a model is called \textit{fine-tuning}.
 
 Fine-tuning is not only to replace and to retrain the model on the new
-dataset, but also to fine-tune the weight of trained model by continuing the
+dataset, but also to fine-tune the weights of trained model by continuing the
 backpropagation. Unfortunatly some rapid tests have shown that
 re-using ImageNet features has not been relevant for our
 application. We have designed a way to reproduce the method with our
@@ -447,11 +443,11 @@ the trained model will be used to fine-tune and test on pronotum set.
 \subsection{Training data preparation}
 The training dataset includes a combination of the images from three
 sets: pronotum, body and head (Fig.\ref{figshape3parts}). For each
-set, $260$ original images have been chosen radomly for training and
+set, $260$ original images have been chosen randomly for training and
 validation. By applying the same procedure in section \ref{sec_data},
 the training dataset was enlarged to $5460$ images ($260 \times 7
 \times 3$). However, the number of manual landmarks on each part is
-difference: \textit{$8$ landmarks on pronotum part, $11$ landmarks on
+different: \textit{$8$ landmarks on pronotum part, $11$ landmarks on
   body part, and $10$ landmarks on head part}. The manual landmarks
 have a specific meaning for the biologists. So, we can not insert the
 landmarks arbitrarily. Instead of, we will keep the smallest number of
@@ -471,8 +467,8 @@ part. Specifically, we have removed three landmarks on the body part
 
 \subsection{Using fine-tuning for pronotum dataset}
 At the first step, the network is trained with $5460$ images following
-the same way than explained in section \ref{secmodel}. After that, 
-this trained model has used to fine-tune the pronotum dataset. To compare the result with
+the same way than explained in Section \ref{secmodel}. After that, 
+this trained model is used to fine-tune the pronotum dataset. To compare the result with
 the previous one, the trained model has been fine-tuned on pronotum images with different cross-validation (as described in section \ref{sectrain1}). The losses during fine-tuning are shown in
 Table.\ref{tblfinetuningloss}. Comparing with the losses when we
 trained the model from scratch (Table.\ref{tbltrainingloss}), the
@@ -501,7 +497,7 @@ images. Then, average error based on the distance between
 predicted and corresponding manual landmarks has been computed. The results
 are shown in Table.\ref{tab2}. The \textbf{Average} (CNN) column reminds
 the average distance obtained previously. The \textbf{Average} (fine-tuning)
-column presents for the new average distance
+column presents the new average distance
 after fine-tuning the pronotum from the trained model. Besides, the standard errors of both cases have been presented (SD columns). It is
 clearly shown that the result of predicted landmarks with the help of
 fine-tuning is more precise than the first way to do it.
@@ -527,7 +523,7 @@ fine-tuning is more precise than the first way to do it.
 
 To illustrate the final results, we display the distribution of the
 distance of both the best and the worst results (resp. landamark $1$
-and $6$). The Fig.\ref{figrsexample2} shown in (a) and (b) diagrams
+and $6$). The Fig.\ref{figrsexample2} shows in (a) and (b) diagrams
  how much the average distance (blue lines) and standard error (red lines) have
  been improved for the landmark $1$, the (c) and (d) diagrams for the
  landmark $6$.
@@ -572,13 +568,12 @@ landmarks on the images.
 \section{Conclusion}
 In this paper, we have presented a CNN to predict the landmarks on beetle's pronotum images. The CNN network has been designed with three times repeated of elementary block which consists of a convolutional, a max pooling, and a dropout layers, followed after by the full connected layers. In the training phase, the CNN have been trained several times with different selections of training data.
 
-In the first step, the model has been trained from scratch and tested on the dataset of pronotum images. While in the second step, the model has been trained on a dataset includes all the images from three parts of beetles. Then, the trained model has been used to fine-tune and to test on pronotum images.
+In the first step, the model has been trained from scratch and tested on the dataset of pronotum images. While in the second step, the model has been trained on a dataset which includes all the images from three parts of beetles. Then, the trained model has been used to fine-tune and to test on pronotum images.
 
-The result has been evaluated by comparing the coordinates between predicted and manual landmarks.  The results have shown that using the convolutional network to predict the landmarks on biological images is able to provide good results in the case that the image was difficult to segment. The quality of prediction allows using automatic landmarking to replace manual landmarks in some aspects. 
-Training model with fine-tuning the trained model has provided the best results. Future works will have to test our model on another kind of biological images.
+The result has been evaluated by comparing the coordinates between predicted and manual landmarks.  The results have shown that using the convolutional network to predict the landmarks on biological images is able to provide good results in the case that the image was difficult to segment. The quality of prediction allows using automatic landmarking to replace manual landmarks in some aspects. Training model with fine-tuning has provided best results. Future works will have to test our model on another kind of biological images.
 
 \section*{Acknowledgements}
-The research has been supported by DevMAP project\footnote{https://www6.rennes.inra.fr/igepp\_eng/Research\-teams/Demecology/Projects/INRA\-SPE\-DevMAP}. We would like to thank the my colleague, ALEXIA Marie, who have provided manual landmarks on beetle images.
+The research has been supported by DevMAP project\footnote{https://www6.rennes.inra.fr/igepp\_eng/Research\-teams/Demecology/Projects/INRA\-SPE\-DevMAP}. We would like to thank our colleague, ALEXIA Marie, who have provided manual landmarks on beetle images.
 
 \bibliography{IEEEabrv,includes/icdp2009}
 
