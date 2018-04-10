@@ -317,7 +317,7 @@ the $9$ rounds.
 
 The main goal of the computing is to predict the position of landmarks so
 the distance (in pixels) between the manual ones (the ground truth)
-and the predicted ones has to be now considered. A correlation test
+and the predicted ones has to be now considered. A correlation metric
 gives us a good correlation between the position of a manual landmark and
 its corresponding predicted one. But we have considered that this
 measure is not good enough to provide a useful result to biologists. We
@@ -390,7 +390,7 @@ to the improvement of these results.
 
 \section{Fine-tuning to transfer learning}
 \label{secimproving}
-The proposed network presented in section \ref{sectrain1} has been trained from scratch on the pronotum dataset. As we have discussed, even the statistic test validates the results, when the predicted landmarks are displayed on the image, the results are not enough precise since the average error is still high ($\geq 4$ pixels).
+The proposed network presented in section \ref{sectrain1} has been trained from scratch on the pronotum dataset. As we have discussed, even if the strengh of the correlation seems to validate the results, when the predicted landmarks are displayed on the image, the results are not enough precise since the average error is still high ($\geq 4$ pixels).
 
 
 In order to reach more acceptable results for biologists, we have
@@ -407,7 +407,7 @@ dataset but also fine-tunes the weights of a trained model by continuing the
 backpropagation. Unfortunately, some rapid tests have shown that
 re-using ImageNet features has not been relevant for our
 application. We have designed a way to reproduce the method with our
-own data. It is worth that of course the size of data to pre-train has drastically decreased. For our pre-training step, the network has been trained on the whole dataset including the images of three parts of beetle i.e pronotum, body and head. Then,
+own data. It is worth noting that of course the size of data to pre-train has drastically decreased. For our pre-training step, the network has been trained on the whole dataset including the images of three parts of beetle i.e pronotum, body and head. Then,
 the trained model will be used to fine-tune and test on pronotum set.
 
 
@@ -461,7 +461,7 @@ $40\%$).
 	
 \end{table}
 
-At the end, predicted landmarks are given for the test images. The average error based on the distance between
+At the end, landmarks are predicted for the test images. The average error based on the distance between
 predicted and corresponding manual landmarks has been also computed. The results
 are shown in Table.\ref{tab2}. The \textbf{Average} \textit{from scratch} column reminds
 the average distance obtained previously. The \textbf{Average} \textit{with fine-tuning}
@@ -528,17 +528,17 @@ and $6$). The Fig.\ref{figrsexample2} shows in (a) and (b) diagrams
     \label{figrsexample2}
 \end{figure}
 
-As a result of working, the program outputs the
-predicted landmarks of the images as TPS files. With the outputs are TPS files,
+As result files, the program outputs the
+predicted landmarks of the images as TPS files (a standard file format for morphometric analysis softwares). With the outputs as TPS files,
 the user can use MAELab framework\footnote{MAELab is a free software written in C++. It can be directly and freely
 obtained by request at the authors.} to display the
 landmarks on the images.
 \section{Conclusion}
-In this paper, we have proposed a CNN model to predict the landmarks on 2D biological images of beetles. The CNN network has been designed from an elementary block repeated three times. This elementary block consists of a convolutional, a max pooling, and a dropout layer. Finally, the elementary blocks are followed after by the usual full connected layers.
+In this paper, we have proposed a CNN model to predict the landmarks on 2D anatomical images of beetles. The CNN network has been designed from an elementary block repeated three times. This elementary block consists of a convolutional, a max pooling, and a dropout layer. Finally, the elementary blocks are followed after by the usual full connected layers.
 
 In the first step, the model has been trained from scratch and tested on the dataset of pronotum images. In order to improve the results, the model has been trained on a dataset including the images of all three parts of beetles. Then, the trained model has been used to fine-tune and to test on pronotum images.
 
-The results have been evaluated by comparing the coordinates between predicted and manual landmarks.  These results have shown that using the convolutional network to predict the landmarks on biological images leads to provide satisfying results without need of segmentation step on the object of interest. The best set of estimated landmarks has been obtained after a step of fine-tuning using the whole set of images that we have for the project, i.e. about all beetle parts. The quality of prediction allows using automatic landmarking to replace the manual ones. In future works, we plan to study more deeply how to characterize the learning problem to design the right pre-training set.
+The results have been evaluated by comparing the coordinates between predicted and manual landmarks. These results have shown that using the convolutional network to predict the landmarks on biological images leads to satisfying results without need for segmentation step on the object of interest. The best set of estimated landmarks has been obtained after a step of fine-tuning using the whole set of images that we have for the project, i.e. about all beetle parts. The quality of prediction allows using automatic landmarking to replace the manual ones. In future works, we plan to study more deeply how to characterize the learning problem to design the right pre-training set.
 
 \section*{Acknowledgements}
 The research has been supported by DevMAP project\footnote{https://www6.rennes.inra.fr/igepp\_eng/Research\-teams/Demecology/Projects/INRA\-SPE\-DevMAP}. We would like to thank our colleague, ALEXIA Marie, who have provided manual landmarks on beetle images.

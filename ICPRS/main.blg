@@ -7,15 +7,15 @@ Database file #2: includes/icdp2009.bib
 Warning--empty booktitle in szegedy2015going
 You've used 28 entries,
             1876 wiz_defined-function locations,
-            1153 strings with 18580 characters,
-and the built_in function-call counts, 8167 in all, are:
+            1153 strings with 18653 characters,
+and the built_in function-call counts, 8207 in all, are:
 = -- 814
-> -- 279
+> -- 288
 < -- 0
-+ -- 103
-- -- 75
-* -- 536
-:= -- 1086
++ -- 106
+- -- 78
+* -- 544
+:= -- 1095
 add.period$ -- 29
 call.type$ -- 28
 change.case$ -- 28
@@ -23,8 +23,8 @@ chr.to.int$ -- 0
 cite$ -- 29
 duplicate$ -- 446
 empty$ -- 826
-format.name$ -- 75
-if$ -- 2024
+format.name$ -- 78
+if$ -- 2030
 int.to.chr$ -- 0
 int.to.str$ -- 28
 missing$ -- 25
@@ -34,7 +34,7 @@ pop$ -- 134
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 314
+skip$ -- 313
 stack$ -- 0
 substring$ -- 611
 swap$ -- 180

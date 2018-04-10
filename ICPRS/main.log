@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.18)  10 APR 2018 09:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.18)  10 APR 2018 17:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -487,11 +487,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 544--544
 [][]\OT1/ptm/m/n/9 https://www6.rennes.inra.fr/igepp[]eng/Research-
  []
 
-(./main.bbl
-Underfull \vbox (badness 2452) has occurred while \output is active []
-
- [5 <./images/lm1_cnn_2.jpg> <./images/lm1_finetuning_2.jpg> <./images/lm6_cnn_
-2.jpg> <./images/lm6_finetuning_2.jpg>]
+(./main.bbl [5 <./images/lm1_cnn_2.jpg> <./images/lm1_finetuning_2.jpg> <./imag
+es/lm6_cnn_2.jpg> <./images/lm6_finetuning_2.jpg>]
 Underfull \hbox (badness 2253) in paragraph at lines 14--17
 []\OT1/ptm/m/n/10 V. L. Le, M. Beurton-Aimar, A. Kra-hen-buhl, and
  []
@@ -515,7 +512,7 @@ Underfull \hbox (badness 1436) in paragraph at lines 69--72
 Here is how much of TeX's memory you used:
  4150 strings out of 493029
  65604 string characters out of 6136234
- 142474 words of memory out of 5000000
+ 143474 words of memory out of 5000000
  7617 multiletter control sequences out of 15000+600000
  23966 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -532,7 +529,7 @@ amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (6 pages, 666413 bytes).
+Output written on main.pdf (6 pages, 666543 bytes).
 PDF statistics:
  83 PDF objects out of 1000 (max. 8388607)
  52 compressed objects within 1 object stream
