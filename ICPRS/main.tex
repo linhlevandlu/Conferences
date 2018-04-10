@@ -45,7 +45,7 @@
 \maketitle
 
 \keywords
-Landmarks, convolutional neural networks, fine-tuning, recogntion, procrustes.
+Landmarks, convolutional neural networks, fine-tuning, recogntion, morphometry analysis.
 
 \abstract
 Morphometry landmarks are used in many biological
@@ -297,6 +297,7 @@ the $9$ rounds.
 
 \begin{table}[h!]
 	\centering
+	%\small{
 	\begin{tabular}{l l l}
 	Round & Training loss & Validation loss \\ \hline
 	1 & 0.00018 & 0.00019  \\ \hline
@@ -311,6 +312,7 @@ the $9$ rounds.
 	\end{tabular}
 	\caption{\small{The losses during training the model on pronotum images dataset}}
 	\label{tbltrainingloss}
+	%}
 \end{table}
 
 The main goal of the computing is to predict the position of landmarks so
@@ -371,14 +373,14 @@ to the improvement of these results.
     \centering
     \begin{subfigure}[t]{0.25\textwidth}
         \centering
-        \includegraphics[scale=1.5]{images/fn_accuracy}
+        \includegraphics[scale=1.3]{images/fn_accuracy}
         \caption{\small{Image with well-predicted landmarks}}
         \label{figsub1}
     \end{subfigure}%
     ~ 
     \begin{subfigure}[t]{0.25\textwidth}
         \centering
-        \includegraphics[scale=.65]{images/plandmark2}
+        \includegraphics[scale=.63]{images/plandmark2}
         \caption{\small{Image with inaccuracy landmarks}}
         \label{figsub2}
     \end{subfigure}
@@ -456,6 +458,7 @@ $40\%$).
 	\end{tabular}
 	\caption{\small{The losses during fine-tuning model}}
 	\label{tblfinetuningloss}
+	
 \end{table}
 
 At the end, predicted landmarks are given for the test images. The average error based on the distance between
@@ -497,14 +500,14 @@ and $6$). The Fig.\ref{figrsexample2} shows in (a) and (b) diagrams
    
     \begin{subfigure}[t]{0.25\textwidth}
         \centering
-        \includegraphics[scale=.35]{images/lm1_cnn_2}
+        \includegraphics[scale=.33]{images/lm1_cnn_2}
         \caption{\small{Landmark 1 - CNN}}
         \label{figsub11}
     \end{subfigure}%
     ~ 
     \begin{subfigure}[t]{0.25\textwidth}
         \centering
-        \includegraphics[scale=.34]{images/lm1_finetuning_2}
+        \includegraphics[scale=.32]{images/lm1_finetuning_2}
         \caption{\small{Landmark 1 - fine-tuning}}
         \label{figsub22}
     \end{subfigure}~\\
@@ -535,7 +538,7 @@ In this paper, we have proposed a CNN model to predict the landmarks on 2D biolo
 
 In the first step, the model has been trained from scratch and tested on the dataset of pronotum images. In order to improve the results, the model has been trained on a dataset including the images of all three parts of beetles. Then, the trained model has been used to fine-tune and to test on pronotum images.
 
-The results have been evaluated by comparing the coordinates between predicted and manual landmarks.  The results have shown that using the convolutional network to predict the landmarks on biological images is able to provide satisfying results without need of segmentation step on the object of interest. The quality of prediction allows using automatic landmarking to replace manual landmarks. Training model with fine-tuning has provided best results. Future works will have to test our model on another kind of biological images.
+The results have been evaluated by comparing the coordinates between predicted and manual landmarks.  These results have shown that using the convolutional network to predict the landmarks on biological images leads to provide satisfying results without need of segmentation step on the object of interest. The best set of estimated landmarks has been obtained after a step of fine-tuning using the whole set of images that we have for the project, i.e. about all beetle parts. The quality of prediction allows using automatic landmarking to replace the manual ones. In future works, we plan to study more deeply how to characterize the learning problem to design the right pre-training set.
 
 \section*{Acknowledgements}
 The research has been supported by DevMAP project\footnote{https://www6.rennes.inra.fr/igepp\_eng/Research\-teams/Demecology/Projects/INRA\-SPE\-DevMAP}. We would like to thank our colleague, ALEXIA Marie, who have provided manual landmarks on beetle images.

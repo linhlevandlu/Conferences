@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.18)  9 APR 2018 19:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.18)  10 APR 2018 09:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -402,12 +402,12 @@ Underfull \vbox (badness 7576) has occurred while \output is active []
 
  [2]
 [3 <./images/arch_model.png>]
-Overfull \hbox (60.02766pt too wide) in paragraph at lines 336--345
+Overfull \hbox (60.02766pt too wide) in paragraph at lines 338--347
  [][] 
  []
 
 
-Overfull \hbox (65.03642pt too wide) in paragraph at lines 349--357
+Overfull \hbox (65.03642pt too wide) in paragraph at lines 351--359
  [][] 
  []
 
@@ -415,24 +415,24 @@ Overfull \hbox (65.03642pt too wide) in paragraph at lines 349--357
 File: images/fn_accuracy.png Graphic file (type png)
 
 <use images/fn_accuracy.png>
-Package pdftex.def Info: images/fn_accuracy.png used on input line 374.
-(pdftex.def)             Requested size: 114.54764pt x 86.00107pt.
+Package pdftex.def Info: images/fn_accuracy.png used on input line 376.
+(pdftex.def)             Requested size: 99.27486pt x 74.53442pt.
 
 <images/plandmark2.png, id=26, 178.9887pt x 133.9404pt>
 File: images/plandmark2.png Graphic file (type png)
 
 <use images/plandmark2.png>
-Package pdftex.def Info: images/plandmark2.png used on input line 381.
-(pdftex.def)             Requested size: 116.34125pt x 87.06021pt.
+Package pdftex.def Info: images/plandmark2.png used on input line 383.
+(pdftex.def)             Requested size: 112.76346pt x 84.38289pt.
 
-Overfull \hbox (9.4905pt too wide) in paragraph at lines 372--385
+Overfull \hbox (9.4905pt too wide) in paragraph at lines 374--387
  [][]  [] 
  []
 
 <images/merge.png, id=27, 729.72626pt x 361.35pt>
 File: images/merge.png Graphic file (type png)
  <use images/merge.png>
-Package pdftex.def Info: images/merge.png used on input line 429.
+Package pdftex.def Info: images/merge.png used on input line 431.
 (pdftex.def)             Requested size: 218.91957pt x 108.40584pt.
 
 [4 <./images/fn_accuracy.png (PNG copy)> <./images/plandmark2.png (PNG copy)> <
@@ -440,21 +440,17 @@ Package pdftex.def Info: images/merge.png used on input line 429.
 File: images/lm1_cnn_2.jpg Graphic file (type jpg)
 
 <use images/lm1_cnn_2.jpg>
-Package pdftex.def Info: images/lm1_cnn_2.jpg used on input line 500.
-(pdftex.def)             Requested size: 132.79811pt x 75.88463pt.
-
-Overfull \hbox (4.76071pt too wide) in paragraph at lines 500--501
- [][] 
- []
+Package pdftex.def Info: images/lm1_cnn_2.jpg used on input line 503.
+(pdftex.def)             Requested size: 125.20816pt x 71.54752pt.
 
 <images/lm1_finetuning_2.jpg, id=34, 414.79968pt x 218.33147pt>
 File: images/lm1_finetuning_2.jpg Graphic file (type jpg)
 
 <use images/lm1_finetuning_2.jpg>
-Package pdftex.def Info: images/lm1_finetuning_2.jpg used on input line 507.
-(pdftex.def)             Requested size: 141.03003pt x 74.2317pt.
+Package pdftex.def Info: images/lm1_finetuning_2.jpg used on input line 510.
+(pdftex.def)             Requested size: 132.7386pt x 69.86748pt.
 
-Overfull \hbox (12.99263pt too wide) in paragraph at lines 507--508
+Overfull \hbox (4.7012pt too wide) in paragraph at lines 510--511
  [][] 
  []
 
@@ -462,62 +458,56 @@ Overfull \hbox (12.99263pt too wide) in paragraph at lines 507--508
 File: images/lm6_cnn_2.jpg Graphic file (type jpg)
 
 <use images/lm6_cnn_2.jpg>
-Package pdftex.def Info: images/lm6_cnn_2.jpg used on input line 513.
+Package pdftex.def Info: images/lm6_cnn_2.jpg used on input line 516.
 (pdftex.def)             Requested size: 126.27509pt x 74.52866pt.
 
 <images/lm6_finetuning_2.jpg, id=36, 407.27156pt x 234.30695pt>
 File: images/lm6_finetuning_2.jpg Graphic file (type jpg)
 
 <use images/lm6_finetuning_2.jpg>
-Package pdftex.def Info: images/lm6_finetuning_2.jpg used on input line 520.
+Package pdftex.def Info: images/lm6_finetuning_2.jpg used on input line 523.
 (pdftex.def)             Requested size: 130.32956pt x 74.97975pt.
 
-Overfull \hbox (2.29216pt too wide) in paragraph at lines 520--521
+Overfull \hbox (2.29216pt too wide) in paragraph at lines 523--524
  [][] 
  []
 
 
-Overfull \hbox (9.4905pt too wide) in paragraph at lines 498--524
+Overfull \hbox (9.4905pt too wide) in paragraph at lines 501--527
 [][]  [] 
  []
 
 
-Overfull \hbox (9.4905pt too wide) in paragraph at lines 498--524
+Overfull \hbox (9.4905pt too wide) in paragraph at lines 501--527
 []  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 541--541
+Underfull \hbox (badness 10000) in paragraph at lines 544--544
 [][]\OT1/ptm/m/n/9 https://www6.rennes.inra.fr/igepp[]eng/Research-
  []
 
-(./main.bbl [5 <./images/lm1_cnn_2.jpg> <./images/lm1_finetuning_2.jpg> <./imag
-es/lm6_cnn_2.jpg> <./images/lm6_finetuning_2.jpg>]
+(./main.bbl
+Underfull \vbox (badness 2452) has occurred while \output is active []
+
+ [5 <./images/lm1_cnn_2.jpg> <./images/lm1_finetuning_2.jpg> <./images/lm6_cnn_
+2.jpg> <./images/lm6_finetuning_2.jpg>]
 Underfull \hbox (badness 2253) in paragraph at lines 14--17
 []\OT1/ptm/m/n/10 V. L. Le, M. Beurton-Aimar, A. Kra-hen-buhl, and
  []
 
-Missing character: There is no Ã in font ptmr7t!
-Missing character: There is no ¼ in font ptmr7t!
-Missing character: There is no Ã in font ptmr7t!
-Missing character: There is no ¸ in font ptmr7t!
 
-Underfull \hbox (badness 1838) in paragraph at lines 42--45
+Underfull \hbox (badness 1838) in paragraph at lines 41--44
 \OT1/ptm/m/n/10 trans-fer-able are fea-tures in deep neu-ral net-works?,''
  []
 
 
-Underfull \hbox (badness 1062) in paragraph at lines 52--55
+Underfull \hbox (badness 1062) in paragraph at lines 51--54
 []\OT1/ptm/m/n/10 D. Cire-gan, U. Meier, and J. Schmid-hu-ber, ``Multi-
  []
 
 
-Underfull \hbox (badness 1132) in paragraph at lines 57--60
-[]\OT1/ptm/m/n/10 C. Szegedy, W. Liu, Y. Jia, P. Ser-manet, S. Reed,
- []
-
-
-Underfull \hbox (badness 1436) in paragraph at lines 72--75
+Underfull \hbox (badness 1436) in paragraph at lines 69--72
 \OT1/ptm/m/it/10 Recog-ni-tion and Un-der-stand-ing (ASRU), 2011 IEEE
  []
 
@@ -542,7 +532,7 @@ amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (6 pages, 666510 bytes).
+Output written on main.pdf (6 pages, 666413 bytes).
 PDF statistics:
  83 PDF objects out of 1000 (max. 8388607)
  52 compressed objects within 1 object stream
