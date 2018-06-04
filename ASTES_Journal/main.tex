@@ -166,7 +166,32 @@ To achieve the landmarks prediction, this work introduces a method for this auto
 
 The rests of the article is organized as follows. In the next sections, we first give a briefly overview of the related works on automatically landmarking. We then shortly present an overview about CNN. After that, in Section X1, we describe the architecture of the proposed network and its parameters also. The dataset augmentation processes are presented in Section X2. In Section X2, we give the first results of the model, then we present the step of fine-tuning to improve the result. Finally, we conclude the article with a discussion of future works in Section X3.
 
-\section{ Ease of Use}
+\section{Related works}
+A landmark is a specific point that may contain useful information. For example, the tip of the nose or the corners of the mouth are landmarks on human face \cite{sun2013deep}. Under image processing point of view, when we want to extract the feature from the image, we can consider two kinds of cases: the object of interest can be segmented or not. Setting landmarks can not be achieved in the same way depending on which situation we are. When segmentation can be applied, Lowe et al. \cite{lowe2004distinctive} have proposed SIFT method to find the corresponding keypoints in the 2D images. From the detected keypoints, the method is able to match two images. Palaniswamy et al. \cite{palaniswamy2010automatic} have proposed a method based on probabilistic Hough Transform to automatically locate the landmarks in digital images of Drosophila wings. In previous work \cite{le2017maelab}, we have proposed a method which have been extended from Palaniswamy's method, to determine landmarks on mandibles of beetles. The mandibles of beetle have the simple shape and easy to segment. We have obtained good enough results about determining the landmarks automatically on mandibles. Unfortunately, after several tests, we have had to conclude that this way does not provide good results with the pronotum images because the pronotum segmentation has too many noises.
+
+In recent years, deep learning is known as a solution for many task in different topics. In image analysis domain, using deep learning, namely CNN, to determine the landmarks on 2D images has achieved better results even if the images that can not segment. Yi Sun et al. \cite{sun2013deep} have proposed cascaded CNNs to predict the facial points of interest on the human face.
+Zhanpeng Zhang et al. \cite{zhang2014facial} proposed a \textit{Tasks-Constrained Deep Convolutional Network} to optimize facial landmarks detection. Their model determines the facial landmarks with a set of related tasks such as head pose estimation, gender classification, age estimation, face recognition, or facial attribute inference. Cintas et al. \cite{cintas2016automatic} has introduced a network to predict the landmarks on human ears. After training, the network has the ability to predict 45 landmarks on human ears. In this way, we have applied CNN computing to work with pronotum landmarks.
+
+\section{Convolutional neural networks}
+Deep learning models are coming from the machine learning theory. They have been introduced in the middle of previous century for artificial intelligence applications but they encounter several problems to take real-world cases. Fortunately, the improvement of computing capacities both in memory size and computing time with GPU programming has opened the new perspective for deep learning. 
+
+Deep learning allows computational model composed of multiple processing layers to learn representations of data with multiple levels of abstraction \cite{lecun2015deep}. Each layer extracts the representation of the input data from the previous layer and computes a new representation for the next layer. In the hierarchy of a model, higher layers of representation enlarge aspects of the input that is important for discrimination and suppress irrelevant variations. Each level of representations is corresponding to the different level of abstraction. During training, it uses gradient descent optimization method to update the learnable parameters via backpropagation. The development of deep learning opens promise results for well-known problems artificial intelligence on high dimensional data, therefore applicable to many domains: image recognition and classification \cite{krizhevsky2012imagenet,ciregan2012multi,szegedy2015going}, speech recognition \cite{mikolov2011strategies,hinton2012deep,sainath2013deep}, question answering \cite{bordes2014question}, language translation \cite{sutskever2014sequence} \cite{jean2014using}, and recognition \cite{li2015convolutional}\cite{tompson2014joint}.
+
+A CNN consists of a number of connected layers. The layers of a CNN has neurons arranged in three dimensions: \textit{width, height, and depth} with learnable parameters. Fig. \ref{figconvarc} shows a classical example of CNN. It is a pipeline of usual layers: convolutional layers (CONV), pooling layers (POOLING), dropout layers (DROPOUT), and full-connected layers (FC).
+
+\begin{figure}[H]
+	\centerline{\includegraphics[height=1.8in]{images/convarc.eps}}
+	\caption{An example of usual convolutional neural network}
+	\label{figconvarc}
+\end{figure}
+
+A \textit{convolutional} layer computes a dot product between its weights and a small region in the input. At the output, the results of connected local regions are combined. Convolution layer uses a set of learnable filters as parameters. Each filter is small spatially but extends the depth of the input. \textit{Pooling} layer is used to down-sampling the input, to reduce the computational cost in remaining layers, and to control overfit. \textit{Dropout} layer refers to dropping out units in the network. Dropping a unit out means temporarily removing it from the network, along with all its incoming and outgoing connections. \textit{Full connected} layer refers to the output of the network. The number of outputs of the last full-connected layer are corresponding to the number of predicted values.
+
+From the beginning of deep learning until now, many deep learning frameworks have been developed.
+These frameworks help the users to design their application by re-using already proposed network architectures. Almost frameworks are open source. According to the written programming languages, the frameworks can be separated into two main groups: C++, \textit{such as Caffe, Deeplearning4j, Microsoft Cognitive Toolkit} and Python \textit{i.e Keras, Theano, PyTorch}. Another framework exists using more confidential languages as \textit{Lua}.
+
+Theano \cite{theanoframework} is an open source framework developed by the machine learning group at the University of $Montr\acute{e}al$. It is a Python library that allows to define, to optimize and to evaluate mathematical expressions relating multi-dimensional arrays efficiently by using a Numpy package. Theano supports compilation on either CPU or GPU architectures. Lasagne \cite{lasagne} is a lightweight library in Theano. It allows to build and to train the neural networks. In this work, we have used Lasagne to implement the proposed neural network. Recently, Theano has been stopped to develop but its community is still large. The networks which have been designed by Theano are still useful and efficient in deep learning area.
+\section{Application to landmarks identification}
 
 
 \subsection{Maintaining the Integrity of the Specifications (Heading 2)}
@@ -335,6 +360,21 @@ Citations in the text should be identified by numbers in square brackets. The li
 \end{multicols}
 
 \end{document}
+
+Deep learning models are coming from the machine learning theory. They have been introduced in the middle of previous century for artificial intelligence applications but they encounter several problems to take real-world cases. Fortunately, the improvement of computing capacities both in memory size and computing time with GPU programming has opened the new perspective for deep learning. Many deep learning architectures have been proposed to solve the problems of classification \cite{.}, image recognition \cite{.}, speech recognition \cite{.} and language translation \cite{.}. To implement
+the algorithms, many frameworks have been built such as Caffe \cite{.}, Theano \cite{.}, Tensorflow \cite{.}, \ldots. These frameworks help
+the users to design their application by re-using already proposed network architectures.
+
+
+
+
+
+
+
+
+
+
+
 
 \begin{thebibliography}{99}
 \bibitem{journal1}

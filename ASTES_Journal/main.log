@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.18)  1 JUN 2018 17:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.3.4)  2 JUN 2018 17:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -925,6 +925,9 @@ Package caption Info: hyperref package is loaded.
 \c@subtable=\count136
 ) (./main.aux
 
+LaTeX Warning: Label `figconvarc' multiply defined.
+
+
 LaTeX Warning: Label `astesj' multiply defined.
 
 )
@@ -1105,7 +1108,7 @@ LaTeX Font Info:    Try loading font information for U+jkpsyc on input line 55.
 (/usr/share/texlive/texmf-dist/tex/latex/kpfonts/ujkpsyc.fd
 File: ujkpsyc.fd 2006/08/15 v1.0
 )
-<images/ASTES_Logo.jpg, id=60, 172.0026pt x 66.0066pt>
+<images/ASTES_Logo.jpg, id=68, 172.0026pt x 66.0066pt>
 File: images/ASTES_Logo.jpg Graphic file (type jpg)
 
 <use images/ASTES_Logo.jpg>
@@ -1159,16 +1162,16 @@ Package multicol Warning: I moved some lines to the next page.
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./images/ASTES_Logo.jpg>]
 Package epstopdf Info: Source file: <images/md19.eps>
-(epstopdf)                    date: 2018-03-02 12:01:56
+(epstopdf)                    date: 2018-06-01 19:54:52
 (epstopdf)                    size: 190089 bytes
 (epstopdf)             Output file: <images/md19-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-06-01 14:25:05
+(epstopdf)                    date: 2018-06-01 19:54:52
 (epstopdf)                    size: 16628 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/md19-eps-converted-
 to.pdf images/md19.eps>
 (epstopdf)             \includegraphics on input line 124.
 Package epstopdf Info: Output file is already uptodate.
- <images/md19-eps-converted-to.pdf, id=80, 257.96375pt x 193.72375pt>
+ <images/md19-eps-converted-to.pdf, id=88, 257.96375pt x 193.72375pt>
 File: images/md19-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/md19-eps-converted-to.pdf>
@@ -1176,35 +1179,35 @@ Package pdftex.def Info: images/md19-eps-converted-to.pdf used on input line 12
 4.
 (pdftex.def)             Requested size: 96.23625pt x 72.26999pt.
 
-<images/mg019.JPG, id=81, 256.96pt x 192.72pt>
+<images/mg019.JPG, id=89, 256.96pt x 192.72pt>
 File: images/mg019.JPG Graphic file (type jpg)
  <use images/mg019.JPG>
 Package pdftex.def Info: images/mg019.JPG used on input line 131.
 (pdftex.def)             Requested size: 96.35976pt x 72.26999pt.
 
-<images/elytre107.JPG, id=82, 256.96pt x 192.72pt>
+<images/elytre107.JPG, id=90, 256.96pt x 192.72pt>
 File: images/elytre107.JPG Graphic file (type jpg)
  <use images/elytre107.JPG>
 Package pdftex.def Info: images/elytre107.JPG used on input line 137.
 (pdftex.def)             Requested size: 96.35976pt x 72.26999pt.
 
-<images/tete081.JPG, id=83, 102.784pt x 77.088pt>
+<images/tete081.JPG, id=91, 102.784pt x 77.088pt>
 File: images/tete081.JPG Graphic file (type jpg)
  <use images/tete081.JPG>
 Package pdftex.def Info: images/tete081.JPG used on input line 144.
 (pdftex.def)             Requested size: 96.3613pt x 72.26999pt.
 Package epstopdf Info: Source file: <images/prono60.eps>
-(epstopdf)                    date: 2018-03-02 12:02:32
+(epstopdf)                    date: 2018-06-01 19:54:52
 (epstopdf)                    size: 190343 bytes
 (epstopdf)             Output file: <images/prono60-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-06-01 14:25:06
+(epstopdf)                    date: 2018-06-01 19:54:52
 (epstopdf)                    size: 26954 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/prono60-eps-convert
 ed-to.pdf images/prono60.eps>
 (epstopdf)             \includegraphics on input line 150.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/prono60-eps-converted-to.pdf, id=84, 103.38625pt x 77.28876pt>
+<images/prono60-eps-converted-to.pdf, id=92, 103.38625pt x 77.28876pt>
 File: images/prono60-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/prono60-eps-converted-to.pdf>
@@ -1222,53 +1225,151 @@ LaTeX Warning: Citation `.' on page 2 undefined on input line 158.
 
 LaTeX Warning: Citation `.' on page 2 undefined on input line 158.
 
-<images/pronotum.jpg, id=85, 192.72pt x 144.54pt>
+<images/pronotum.jpg, id=93, 192.72pt x 144.54pt>
 File: images/pronotum.jpg Graphic file (type jpg)
  <use images/pronotum.jpg>
 Package pdftex.def Info: images/pronotum.jpg used on input line 162.
 (pdftex.def)             Requested size: 154.1762pt x 115.63243pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 179--179
-[]\OT1/jkp/b/n/14.4 Prepare Your Pa-per be-fore
- []
+
+LaTeX Warning: Citation `sun2013deep' on page 2 undefined on input line 170.
+
+
+LaTeX Warning: Citation `lowe2004distinctive' on page 2 undefined on input line
+ 170.
+
+
+LaTeX Warning: Citation `palaniswamy2010automatic' on page 2 undefined on input
+ line 170.
+
+
+LaTeX Warning: Citation `le2017maelab' on page 2 undefined on input line 170.
+
+
+LaTeX Warning: Citation `sun2013deep' on page 2 undefined on input line 172.
+
+
+LaTeX Warning: Citation `zhang2014facial' on page 2 undefined on input line 173
+.
+
+
+LaTeX Warning: Citation `cintas2016automatic' on page 2 undefined on input line
+ 173.
 
 [2 <./images/md19-eps-converted-to.pdf> <./images/mg019.JPG> <./images/elytre10
 7.JPG> <./images/tete081.JPG> <./images/prono60-eps-converted-to.pdf> <./images
 /pronotum.jpg>]
+
+LaTeX Warning: Citation `lecun2015deep' on page 3 undefined on input line 178.
+
+
+LaTeX Warning: Citation `krizhevsky2012imagenet' on page 3 undefined on input l
+ine 178.
+
+
+LaTeX Warning: Citation `ciregan2012multi' on page 3 undefined on input line 17
+8.
+
+
+LaTeX Warning: Citation `szegedy2015going' on page 3 undefined on input line 17
+8.
+
+
+LaTeX Warning: Citation `mikolov2011strategies' on page 3 undefined on input li
+ne 178.
+
+
+LaTeX Warning: Citation `hinton2012deep' on page 3 undefined on input line 178.
+
+
+
+LaTeX Warning: Citation `sainath2013deep' on page 3 undefined on input line 178
+.
+
+
+LaTeX Warning: Citation `bordes2014question' on page 3 undefined on input line 
+178.
+
+
+LaTeX Warning: Citation `sutskever2014sequence' on page 3 undefined on input li
+ne 178.
+
+
+LaTeX Warning: Citation `jean2014using' on page 3 undefined on input line 178.
+
+
+LaTeX Warning: Citation `li2015convolutional' on page 3 undefined on input line
+ 178.
+
+
+LaTeX Warning: Citation `tompson2014joint' on page 3 undefined on input line 17
+8.
+
+Package epstopdf Info: Source file: <images/convarc.eps>
+(epstopdf)                    date: 2018-03-02 21:55:31
+(epstopdf)                    size: 126648 bytes
+(epstopdf)             Output file: <images/convarc-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-06-02 17:34:34
+(epstopdf)                    size: 64560 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/convarc-eps-convert
+ed-to.pdf images/convarc.eps>
+(epstopdf)             \includegraphics on input line 183.
+Package epstopdf Info: Output file is already uptodate.
+<images/convarc-eps-converted-to.pdf, id=107, 518.93875pt x 341.275pt>
+File: images/convarc-eps-converted-to.pdf Graphic file (type pdf)
+
+<use images/convarc-eps-converted-to.pdf>
+Package pdftex.def Info: images/convarc-eps-converted-to.pdf used on input line
+ 183.
+(pdftex.def)             Requested size: 197.80849pt x 130.08621pt.
+
+
+LaTeX Warning: Citation `theanoframework' on page 3 undefined on input line 193
+.
+
+
+LaTeX Warning: Citation `lasagne' on page 3 undefined on input line 193.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 204--204
+[]\OT1/jkp/b/n/14.4 Prepare Your Pa-per be-fore
+ []
+
+[3 <./images/convarc-eps-converted-to.pdf>]
 File: images/ASTES_Logo.jpg Graphic file (type jpg)
  <use images/ASTES_Logo.jpg>
-Package pdftex.def Info: images/ASTES_Logo.jpg used on input line 228.
+Package pdftex.def Info: images/ASTES_Logo.jpg used on input line 253.
 (pdftex.def)             Requested size: 236.84842pt x 90.8918pt.
 File: images/ASTES_Logo.jpg Graphic file (type jpg)
- <use images/ASTES_Logo.jpg>
-Package pdftex.def Info: images/ASTES_Logo.jpg used on input line 235.
+
+<use images/ASTES_Logo.jpg>
+Package pdftex.def Info: images/ASTES_Logo.jpg used on input line 260.
 (pdftex.def)             Requested size: 113.81102pt x 43.67528pt.
-
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 317--318
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 319--321
+ [4]
+Underfull \hbox (badness 10000) in paragraph at lines 342--343
 
  []
 
 
-LaTeX Warning: Citation `journal1' on page 4 undefined on input line 324.
+Underfull \hbox (badness 10000) in paragraph at lines 344--346
+
+ []
+
+
+LaTeX Warning: Citation `journal1' on page 5 undefined on input line 349.
 
 (./main.bbl)
 
-LaTeX Warning: Empty `thebibliography' environment on input line 330.
+LaTeX Warning: Empty `thebibliography' environment on input line 355.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 337.
-[4]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 337.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 362.
+[5]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 362.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 337.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 337.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 362.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 362.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 30C3FC21A8EEBDFB3D355D257FB5EBE0;892.
+(rerunfilecheck)             Checksum: DBBB49DF96D70B61EA849C442D9209AA;1033.
 
 
 LaTeX Warning: There were undefined references.
@@ -1276,28 +1377,29 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 337.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 362.
  ) 
 Here is how much of TeX's memory you used:
- 11414 strings out of 493029
- 169218 string characters out of 6136234
- 305865 words of memory out of 5000000
- 14460 multiletter control sequences out of 15000+600000
- 64236 words of font info for 274 fonts, out of 8000000 for 9000
+ 11452 strings out of 493029
+ 169874 string characters out of 6136235
+ 308865 words of memory out of 5000000
+ 14485 multiletter control sequences out of 15000+600000
+ 65052 words of font info for 280 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,18n,43p,1397b,624s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,18n,43p,1403b,624s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/kpfonts/kpfonts-expert.enc}{/u
 sr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/tex
 mf-dist/fonts/type1/public/kpfonts/jkpbn8a.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/kpfonts/jkpmi.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/kpfonts/jkpmia.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/kpf
 onts/jkpmit8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/kpfonts/jkp
-mn8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/kpfonts/jkpmne.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/kpfonts/jkpsy.pfb>
-Output written on main.pdf (4 pages, 341018 bytes).
+mite.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/kpfonts/jkpmne.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/kpfonts/jkpsy.pfb>
+Output written on main.pdf (5 pages, 414521 bytes).
 PDF statistics:
- 175 PDF objects out of 1000 (max. 8388607)
- 151 compressed objects within 2 object streams
- 43 named destinations out of 1000 (max. 500000)
- 33940 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 198 PDF objects out of 1000 (max. 8388607)
+ 170 compressed objects within 2 object streams
+ 47 named destinations out of 1000 (max. 500000)
+ 33961 words of extra memory for PDF output out of 35830 (max. 10000000)
 
