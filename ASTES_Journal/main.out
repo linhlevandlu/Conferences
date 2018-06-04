@@ -5,14 +5,17 @@
 \BOOKMARK [2][-]{subsection.4.1}{Data augmentation}{section.4}% 5
 \BOOKMARK [2][-]{subsection.4.2}{Network architecture and training}{section.4}% 6
 \BOOKMARK [2][-]{subsection.4.3}{First results}{section.4}% 7
-\BOOKMARK [1][-]{section.5}{Prepare Your Paper before Styling}{}% 8
-\BOOKMARK [2][-]{subsection.5.1}{Abbreviations and Acronyms}{section.5}% 9
-\BOOKMARK [2][-]{subsection.5.2}{Equations}{section.5}% 10
-\BOOKMARK [2][-]{subsection.5.3}{Figures}{section.5}% 11
-\BOOKMARK [2][-]{subsection.5.4}{Tables}{section.5}% 12
-\BOOKMARK [2][-]{subsection.5.5}{Units}{section.5}% 13
-\BOOKMARK [3][-]{subsubsection.5.5.1}{ Some Common Mistakes}{subsection.5.5}% 14
-\BOOKMARK [1][-]{section.6}{ Using the Template}{}% 15
-\BOOKMARK [2][-]{subsection.6.1}{ Identify the Headings}{section.6}% 16
-\BOOKMARK [2][-]{subsection.6.2}{ Heading}{section.6}% 17
-\BOOKMARK [1][-]{section.7}{ Tables and Figures}{}% 18
+\BOOKMARK [1][-]{section.5}{Result improvement by using fine-tuning}{}% 8
+\BOOKMARK [2][-]{subsection.5.1}{Training data preparation}{section.5}% 9
+\BOOKMARK [2][-]{subsection.5.2}{Using fine-tuning for pronotum dataset}{section.5}% 10
+\BOOKMARK [1][-]{section.6}{Prepare Your Paper before Styling}{}% 11
+\BOOKMARK [2][-]{subsection.6.1}{Abbreviations and Acronyms}{section.6}% 12
+\BOOKMARK [2][-]{subsection.6.2}{Equations}{section.6}% 13
+\BOOKMARK [2][-]{subsection.6.3}{Figures}{section.6}% 14
+\BOOKMARK [2][-]{subsection.6.4}{Tables}{section.6}% 15
+\BOOKMARK [2][-]{subsection.6.5}{Units}{section.6}% 16
+\BOOKMARK [3][-]{subsubsection.6.5.1}{ Some Common Mistakes}{subsection.6.5}% 17
+\BOOKMARK [1][-]{section.7}{ Using the Template}{}% 18
+\BOOKMARK [2][-]{subsection.7.1}{ Identify the Headings}{section.7}% 19
+\BOOKMARK [2][-]{subsection.7.2}{ Heading}{section.7}% 20
+\BOOKMARK [1][-]{section.8}{ Tables and Figures}{}% 21

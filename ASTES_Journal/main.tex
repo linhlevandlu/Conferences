@@ -122,36 +122,36 @@ Unfortunately, this method is irrelevant with the case of the images that are no
     \begin{subfigure}[t]{0.23\textwidth}
         \centering
         \includegraphics[height=1in]{images/md19.eps}
-        \caption{Right mandible}
+        \caption{\footnotesize{Right mandible}}
         \label{figsub01}
     \end{subfigure}%
     ~ 
     \begin{subfigure}[t]{0.23\textwidth}
         \centering
         \includegraphics[height=1in]{images/mg019.JPG}
-        \caption{Left mandible }
+        \caption{\footnotesize{Left mandible}}
         \label{figsub02}
     \end{subfigure}~\\
     \begin{subfigure}[t]{0.23\textwidth}
         \centering
         \includegraphics[height=1in]{images/elytre107.JPG}
-        \caption{Elytra}
+        \caption{\footnotesize{Elytra}}
         \label{figsub03}
     \end{subfigure}%
     ~ 
     \begin{subfigure}[t]{0.23\textwidth}
         \centering
         \includegraphics[height=1in]{images/tete081.JPG}
-        \caption{Head }
+        \caption{\footnotesize{Head}}
         \label{figsub04}
     \end{subfigure}~\\
     \begin{subfigure}[t]{0.23\textwidth}
         \centering
         \includegraphics[height=1in]{images/prono60.eps}
-        \caption{Pronotum/thorax }
+        \caption{\footnotesize{Pronotum/thorax}}
         \label{figsub05}
     \end{subfigure}
-    \caption{The anatomical parts of beetle}
+    \caption{\footnotesize{The anatomical parts of beetle}}
     \label{fig1}
 \end{figure}
 
@@ -160,7 +160,7 @@ To achieve the landmarks prediction, this work introduces a method for this auto
 \begin{figure}[H]
 	\centering
 	\includegraphics[height=1.6in]{images/pronotum.jpg}
-	\caption{A pronotum image with its eight manual landmarks}
+	\caption{\footnotesize{A pronotum image with its eight manual landmarks}}
 	\label{figconvarc}
 \end{figure}
 
@@ -181,7 +181,7 @@ A CNN consists of a number of connected layers. The layers of a CNN has neurons 
 
 \begin{figure}[H]
 	\centerline{\includegraphics[height=1.8in]{images/convarc.eps}}
-	\caption{An example of usual convolutional neural network}
+	\caption{\footnotesize{An example of usual convolutional neural network}}
 	\label{figconvarc}
 \end{figure}
 
@@ -205,7 +205,7 @@ The first procedure has been applied to change the value of each channel in the 
 
 \begin{figure}[H]
 	\centerline{\includegraphics[height=1.9in]{images/inc_channels.png}}
-	\caption{A constant (c=10) has been added to each channel of an original image for each time}
+	\caption{\footnotesize{A constant (c=10) has been added to each channel of an original image for each time}}
 	\label{figpronotum}
 \end{figure}
 
@@ -213,7 +213,7 @@ The second procedure splits the channels of RGB images. It means that we separat
 
 \begin{figure}[H]
 	\centerline{\includegraphics[height=1.9in]{images/sp_channels.png}}
-	\caption{The individual channels have been extracted from an original image}
+	\caption{\footnotesize{The individual channels have been extracted from an original image}}
 	\label{figpronotum2}
 \end{figure}
 
@@ -227,7 +227,7 @@ The second network has the same architecture as the first one. But, number of ou
 
 \begin{figure}[H]
 	\centerline{\includegraphics[height=2in]{images/architecture1.eps}}
-	\caption{The architecture of the first network}
+	\caption{\footnotesize{The architecture of the first network}}
 	\label{figarch0}
 \end{figure}
 
@@ -235,7 +235,7 @@ In the third network, instead of changing the parameters, we have added $4$ drop
 
 \begin{figure}[H]
 	\centerline{\includegraphics[height=2in]{images/architecture3.eps}}
-	\caption{The architecture of the last network}
+	\caption{\footnotesize{The architecture of the last network}}
 	\label{figarch}
 \end{figure}
 
@@ -250,27 +250,28 @@ Usually, the first performance of a CNN is appreciated from the loss values in t
 Fig.\ref{figloss1} and \ref{figloss} show the training errors and the validation errors of a training time on the first and the third model, respectively. The blue curves present RMSE on training dataset, the green curves present the validation errors. Clearly, the overfitting has appeared in the first model. In Fig.\ref{figloss1}, we can see that if the training is able to decrease with the number of epochs\footnote{An epoch is a single pass through the full training set.}, it is not the case of validation loss. At the opposite in the third model, we can see some different values for the two losses at the beginning but after several epochs, these values become more proximate and the overfitting problem has been solved.
 
 \begin{figure}[H]
-	\centerline{\includegraphics[height=2.3in]{images/loss_model_1.eps}}
-	\caption{Learning curves of the first model.}
+	\centerline{\includegraphics[height=2.2in]{images/loss_model_1.eps}}
+	\caption{\footnotesize{Learning curves of the first model.}}
 	\label{figloss1}
 \end{figure}~\\
 \begin{figure}[H]
-	\centerline{\includegraphics[height=2.3in]{images/loss_v16.eps}}
-	\caption{Learning curves of the last model.}
+	\centerline{\includegraphics[height=2.2in]{images/loss_v16.eps}}
+	\caption{\footnotesize{Learning curves of the last model.}}
 	\label{figloss}
 \end{figure}
 
-To have the correct about the predicted landmarks, we would like to evaluate the results in other views by using the manual landmarks coordinates (which have provided by the biologists) as ground truth. Firstly, we have considered the results in a statical point of view. We have computed the quality metric to measure the linear cofficient between the coordinates of predicted and manual landmarks. Table.\ref{.} shows the cofficient on $3$ quality metrics: cofficient of determination ($r^2$), explained varicance (EV), and Pearson correlation. From the scores, we can see that the quality of predicted coordinates are very precise.
+To have the correct about the predicted landmarks, we would like to evaluate the results in other views by using the manual landmarks coordinates (which have provided by the biologists) as ground truth. Firstly, we have considered the results in a statical point of view. We have computed the quality metric to measure the linear cofficient between the coordinates of predicted and manual landmarks. The scores have been calculated based on $3$ quality metrics: cofficient of determination ($r^2$), explained varicance (EV), and Pearson correlation (using \textit{scikit-learn} \cite{pedregosa2011scikit}) like Cintas et al. \cite{} have done. Table.\ref{.} shows the comparison between our and their scores. From the scores, we can see that the quality of predicted coordinates are very precise.
 
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|c|p{1cm}|p{1cm}|p{1.5cm}|}
 		\hline
 		Metric & $\mathbf{r^{2}}$ & \textbf{EV} & \textbf{Pearson} \\ \hline
-		Score & $\textbf{0.9952}$ & $\textbf{0.9951}$ & $\textbf{0.9974}$ \\ \hline
+		Cintas et al & $0.884$ & $0.951$ & $0.976$ \\ \hline
+		Our score & $\textbf{0.9952}$ & $\textbf{0.9951}$ & $\textbf{0.9974}$ \\ \hline
 	\end{tabular}
 	\label{table1}
-	\caption{The cofficient on the quality metrics}
+	\caption{\footnotesize{The cofficient on the quality metrics}}
 \end{table}
 
 Then, we have considered the results on the point view of image processing. Fig.\ref{.} display the landmarks on the images. The red points are manual landmarks and the yellow points are predicted landmarks. The landmarks in Fig.\ref{.} are a well prediction, while they are less accurated in the case of Fig.\ref{.}.
@@ -280,21 +281,21 @@ Then, we have considered the results on the point view of image processing. Fig.
     \begin{subfigure}[t]{0.25\textwidth}
         \centering
         \includegraphics[height=1.2in]{images/plandmark.eps}
-        \caption{Image with well-predicted landmarks}
+        \caption{\footnotesize{Image with well-predicted landmarks}}
         \label{figsub1}
     \end{subfigure}%
     ~ 
     \begin{subfigure}[t]{0.25\textwidth}
         \centering
         \includegraphics[height=1.2in]{images/plandmark2.eps}
-        \caption{Image with inaccuracy landmarks}
+        \caption{\footnotesize{Image with inaccuracy landmarks}}
         \label{figsub2}
     \end{subfigure}
-    \caption{The predicted landmarks on an image in test set (yellow points)}\
+    \caption{\footnotesize{The predicted landmarks on an image in test set (yellow points)}}
     \label{figrsexample}
 \end{figure}
 
-To have a correct assessment of predicted coordinates, we have calculated the distances between the predicted and corresponding manual landmarks in all images. Then, we have computed the average distance per landmark as presented in Table.\ref{.}.
+To have a correct assessment of predicted coordinates, we have calculated the distances between the predicted and corresponding manual landmarks in all images. Then, we have computed the average distance per landmark as presented in Table.\ref{.}. The minimum distance is around $4$ pixels in the $1^{st}$ landmark, while the worst distance is more than $5$ pixels in the $6^{th}$ landmark. The other distances are approximate $4.5$ pixels.
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|c|c|}
@@ -310,8 +311,80 @@ To have a correct assessment of predicted coordinates, we have calculated the di
 		8 & 4.9363 \\ \hline
 	\end{tabular}
 	\label{table2}
-	\caption{The average distance per landmark}
+	\caption{\footnotesize{The average distance per landmark}}
 \end{table}
+
+In other view, we have computed the standard deviation \cite{bland1996statistics} which is used to quantify the dispersion of a set of distances. For example, Fig.\ref{figchartlm1} shows the distribution of the distances on the first landmark of all images. The accuracy based on the distance in each image can be separated into three spaces: the images have the distance less than average value ($4$ pixels): \textbf{56.66$\%$}; the images have the distance from average value to $6.5$ pixels (average distance plus standard deviation): \textbf{$yyyyy\%$}; and the images have the distance greater than $6.5$ pixels: \textbf{$zzzz\%$}. 
+
+\begin{figure}[H]
+	\centerline{\includegraphics[height=1.7in]{images/lm1_cnn_2.jpg}}
+	\caption{\footnotesize{The distribution of the distances on the first landmark. The blue line is the average value, the red line is standard deviation value.}}
+	\label{figchartlm1}
+\end{figure}
+
+Fig.\ref{figchart} shows the proportion of acceptable landmarks, i.e a predicted landmark is acceptable if the distance between it and the corresponding manual one is less than the average distance plus the standard deviation  value. Most of the landmarks have been detected with an accuracy greater than $75\%$. 
+
+In the image processing point of view, the distance in $4$ pixels ($1^{st}$ landmark) is still high, it could be considered as not enough precise. Morever, when we consider the distribution of the distance in the $1^{st}$ landmark, the percent rate of the distance less than average value is not enough good. It means that we have less the predicted landmarks closed to the manual ones as we expect (Fig.\ref{}). So, the next step has been decided to improve these results. 
+
+\begin{figure}[H]
+	\centerline{\includegraphics[height=1.8in]{images/chart.eps}}
+	\caption{\footnotesize{The proportion of acceptable predicted landmarks}}
+	\label{figchart}
+\end{figure}
+
+\section{Result improvement by using fine-tuning}
+\label{secimproving}
+As we have discussed in previous sections, the proposed network has been trained from scratch on the pronotum dataset. Even if the strengh of the correlation seems to validate the results, when the predicted landmarks are displayed on the image, the results are not enough precise since the average error is still high ($\geq 4$ pixels).
+
+In order to reach more acceptable results for biologists, we have
+broadened the model with a step of transfer learning. That is a
+method that re-uses model developed for a specific task/dataset
+to lead another task (called \textit{target task}) with another dataset. This allows rapid progress and improves the performance of the model on the target task \cite{torrey2009transfer}. The most popular
+example has been given with the project ImageNet of Google \cite{imagenet_cvpr09} which has labeled several millions of images. The obtained parameter values which can
+be used in another context to classify another dataset, eventually
+very different dataset \cite{margeta_mri}. The name of this procedure to re-use parameters
+to pre-train a model is currently called \textit{fine-tuning}.
+
+Fine-tuning does not only replace and retrain the model on the new
+dataset but also fine-tunes the weights of a trained model by continuing the
+backpropagation. Unfortunately, some rapid tests have shown that
+re-using ImageNet features has not been relevant for our
+application. We have designed a way to reproduce the method with our
+own data. It is worth noting that of course the size of data to pre-train has drastically decreased. For our pre-training step, the network has been trained on the whole dataset including the images of three parts of beetle i.e pronotum, body and head. Then,
+the trained model will be used to fine-tune and test on pronotum set.
+
+\subsection{Training data preparation}
+As we have mentioned, the training dataset includes a combination of the images from three
+sets: pronotum, body, and head (Fig.\ref{figshape3parts}). For each
+set, $260$ original images have been chosen randomly for training and
+validation. By applying the same procedure in section \ref{sec_data},
+the training dataset was enlarged to $5,460$ images ($260 \times 7
+\times 3$). However, the number of manual landmarks on each part is
+different: \textit{$8$ landmarks on pronotum part, $11$ landmarks on
+  body part, and $10$ landmarks on head part} (Fig.\ref{figshape3parts}). The manual landmarks
+have a specific meaning for the biologists. So, we cannot insert the
+landmarks arbitrary. Instead of to do that, we keep the smallest number of
+landmarks among the three parts and remove the supernumerary when it is needed. Specifically, we have removed three landmarks on the body part
+($1^{st}; 6^{t}h; 9^{th}$) and two landmarks on the head part ($5{th};
+6^{th}$) (Fig.\ref{figshape3parts}).
+
+\begin{figure}[H]
+        \centering
+        \includegraphics[height=1.6in]{images/merge.png}
+    \caption{\footnotesize{A presentation of head, pronotum and body part with corresponding manual landmarks}} 
+    \label{figshape3parts}
+\end{figure}
+
+\subsection{Using fine-tuning for pronotum dataset}
+At the first step, the network is trained with $5,460$ images following
+the same way than explained in Section \ref{secmodel}. After that, 
+this trained model is used to fine-tune the pronotum dataset. To compare the result with
+the previous one, the trained model has been fine-tuned on pronotum images with different cross-validation (as described in section \ref{sectrain1}). The losses during fine-tuning are shown in
+Table.\ref{tblfinetuningloss}. Comparing with the losses when we
+trained the model from scratch (Table.\ref{tbltrainingloss}), the
+validation losses of this scenario have been significantly improved (around
+$40\%$).
+
 \section{Prepare Your Paper before Styling}
 
 Before you begin to format your paper, first write and save the content as a separate text file. Keep your text and graphic files separate until after the text has been formatted and styled. Do not use hard tabs, and limit use of hard returns to only one return at the end of a paragraph. Do not add any kind of pagination anywhere in the paper. Do not number text heads-the template will do that for you.
