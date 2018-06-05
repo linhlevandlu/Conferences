@@ -1,46 +1,48 @@
 This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: main.aux
-I found no \bibstyle command---while reading file main.aux
-You've used 26 entries,
-            0 wiz_defined-function locations,
-            110 strings with 915 characters,
-and the built_in function-call counts, 0 in all, are:
-= -- 0
-> -- 0
-< -- 0
-+ -- 0
-- -- 0
-* -- 0
-:= -- 0
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
+The style file: plain.bst
+Database file #1: includes/references.bib
+Warning--I didn't find a database entry for "."
+You've used 29 entries,
+            2118 wiz_defined-function locations,
+            661 strings with 9773 characters,
+and the built_in function-call counts, 12496 in all, are:
+= -- 1223
+> -- 683
+< -- 12
++ -- 271
+- -- 240
+* -- 910
+:= -- 1994
+add.period$ -- 92
+call.type$ -- 29
+change.case$ -- 204
 chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 0
-format.name$ -- 0
-if$ -- 0
+cite$ -- 29
+duplicate$ -- 466
+empty$ -- 907
+format.name$ -- 240
+if$ -- 2652
 int.to.chr$ -- 0
-int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 0
-num.names$ -- 0
-pop$ -- 0
-preamble$ -- 0
-purify$ -- 0
+int.to.str$ -- 29
+missing$ -- 28
+newline$ -- 147
+num.names$ -- 58
+pop$ -- 231
+preamble$ -- 1
+purify$ -- 175
 quote$ -- 0
-skip$ -- 0
+skip$ -- 357
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
-text.length$ -- 0
+substring$ -- 774
+swap$ -- 153
+text.length$ -- 12
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
+type$ -- 116
 warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 0
-(There was 1 error message)
+while$ -- 112
+width$ -- 31
+write$ -- 320
+(There was 1 warning)

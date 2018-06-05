@@ -16,7 +16,7 @@
 \gdef\HyperFirstAtBeginDocument#1{#1}
 \providecommand\HyField@AuxAddToFields[1]{}
 \providecommand\HyField@AuxAddToCoFields[2]{}
-\citation{.}
+\citation{le2017maelab}
 \citation{shlens2014tutorial}
 \citation{lowe2004distinctive}
 \select@language{english}
@@ -25,8 +25,8 @@
 \@writefile{lot}{\select@language{english}}
 \@writefile{toc}{\contentsline {section}{\numberline {1} Introduction}{1}{section.1}}
 \citation{lecun2010convolutional}
-\citation{.}
-\citation{.}
+\citation{torrey2009transfer}
+\citation{lasagne}
 \citation{sun2013deep}
 \citation{lowe2004distinctive}
 \citation{palaniswamy2010automatic}
@@ -48,7 +48,7 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces \relax \fontsize  {8}{9.5}\selectfont  \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip {The anatomical parts of beetle}\relax }}{2}{figure.caption.1}}
 \newlabel{fig1}{{1}{2}{\footnotesize {The anatomical parts of beetle}\relax }{figure.caption.1}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \relax \fontsize  {8}{9.5}\selectfont  \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip {A pronotum image with its eight manual landmarks}\relax }}{2}{figure.caption.2}}
-\newlabel{figconvarc}{{2}{2}{\footnotesize {A pronotum image with its eight manual landmarks}\relax }{figure.caption.2}{}}
+\newlabel{figmlm}{{2}{2}{\footnotesize {A pronotum image with its eight manual landmarks}\relax }{figure.caption.2}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {2}Related works}{2}{section.2}}
 \citation{lecun2015deep}
 \citation{krizhevsky2012imagenet}
@@ -64,77 +64,110 @@
 \citation{tompson2014joint}
 \citation{theanoframework}
 \citation{lasagne}
-\citation{krizhevsky2012imagenet}
-\citation{sun2013deep}
-\citation{cintas2016automatic}
+\citation{.}
 \@writefile{toc}{\contentsline {section}{\numberline {3}Convolutional neural networks}{3}{section.3}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces \relax \fontsize  {8}{9.5}\selectfont  \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip {An example of usual convolutional neural network}\relax }}{3}{figure.caption.3}}
 \newlabel{figconvarc}{{3}{3}{\footnotesize {An example of usual convolutional neural network}\relax }{figure.caption.3}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {4}Application to landmarks identification}{3}{section.4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Data augmentation}{3}{subsection.4.1}}
+\newlabel{SecApp}{{4}{3}{Application to landmarks identification}{section.4}{}}
+\citation{krizhevsky2012imagenet}
+\citation{sun2013deep}
+\citation{cintas2016automatic}
 \citation{lecun2012efficient}
 \citation{lecun2012efficient}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Data augmentation}{4}{subsection.4.1}}
+\newlabel{Secdataaug}{{4.1}{4}{Data augmentation}{subsection.4.1}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces \relax \fontsize  {8}{9.5}\selectfont  \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip {A constant (c=10) has been added to each channel of an original image for each time}\relax }}{4}{figure.caption.4}}
 \newlabel{figpronotum}{{4}{4}{\footnotesize {A constant (c=10) has been added to each channel of an original image for each time}\relax }{figure.caption.4}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces \relax \fontsize  {8}{9.5}\selectfont  \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip {The individual channels have been extracted from an original image}\relax }}{4}{figure.caption.5}}
 \newlabel{figpronotum2}{{5}{4}{\footnotesize {The individual channels have been extracted from an original image}\relax }{figure.caption.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Network architecture and training}{4}{subsection.4.2}}
+\citation{srivastava2014dropout}
 \citation{srivastava2014dropout}
 \citation{lasagne}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Network architecture}{5}{subsection.4.2}}
+\newlabel{SecArch}{{4.2}{5}{Network architecture}{subsection.4.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1}The first networks}{5}{subsubsection.4.2.1}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces \relax \fontsize  {8}{9.5}\selectfont  \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip {The architecture of the first network}\relax }}{5}{figure.caption.6}}
 \newlabel{figarch0}{{6}{5}{\footnotesize {The architecture of the first network}\relax }{figure.caption.6}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces \relax \fontsize  {8}{9.5}\selectfont  \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip {The architecture of the last network}\relax }}{5}{figure.caption.7}}
-\newlabel{figarch}{{7}{5}{\footnotesize {The architecture of the last network}\relax }{figure.caption.7}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}First results}{5}{subsection.4.3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces \relax \fontsize  {8}{9.5}\selectfont  \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip {Learning curves of the first model.}\relax }}{5}{figure.caption.8}}
-\newlabel{figloss1}{{8}{5}{\footnotesize {Learning curves of the first model.}\relax }{figure.caption.8}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2}Elementary block and selected architecture}{5}{subsubsection.4.2.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Training}{5}{subsection.4.3}}
 \citation{pedregosa2011scikit}
-\citation{bland1996statistics}
+\citation{cintas2016automatic}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces \relax \fontsize  {8}{9.5}\selectfont  \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip {The architecture of the last network}\relax }}{6}{figure.caption.7}}
+\newlabel{figarch}{{7}{6}{\footnotesize {The architecture of the last network}\relax }{figure.caption.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}First results}{6}{subsection.4.4}}
+\newlabel{Secfirstrs}{{4.4}{6}{First results}{subsection.4.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces \relax \fontsize  {8}{9.5}\selectfont  \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip {Learning curves of the first model.}\relax }}{6}{figure.caption.8}}
+\newlabel{figloss1}{{8}{6}{\footnotesize {Learning curves of the first model.}\relax }{figure.caption.8}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces \relax \fontsize  {8}{9.5}\selectfont  \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip {Learning curves of the last model.}\relax }}{6}{figure.caption.9}}
 \newlabel{figloss}{{9}{6}{\footnotesize {Learning curves of the last model.}\relax }{figure.caption.9}{}}
-\newlabel{table1}{{\caption@xref {table1}{ on input line 273}}{6}{First results}{table.caption.10}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces \relax \fontsize  {8}{9.5}\selectfont  \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip {The cofficient on the quality metrics}\relax }}{6}{table.caption.10}}
-\newlabel{figsub1}{{10a}{6}{\footnotesize {Image with well-predicted landmarks}\relax }{figure.caption.11}{}}
-\newlabel{sub@figsub1}{{a}{6}{\footnotesize {Image with well-predicted landmarks}\relax }{figure.caption.11}{}}
-\newlabel{figsub2}{{10b}{6}{\footnotesize {Image with inaccuracy landmarks}\relax }{figure.caption.11}{}}
-\newlabel{sub@figsub2}{{b}{6}{\footnotesize {Image with inaccuracy landmarks}\relax }{figure.caption.11}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces \relax \fontsize  {8}{9.5}\selectfont  \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip {The predicted landmarks on an image in test set (yellow points)}\relax }}{6}{figure.caption.11}}
-\newlabel{figrsexample}{{10}{6}{\footnotesize {The predicted landmarks on an image in test set (yellow points)}\relax }{figure.caption.11}{}}
-\newlabel{table2}{{\caption@xref {table2}{ on input line 313}}{6}{First results}{table.caption.12}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces \relax \fontsize  {8}{9.5}\selectfont  \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip {The average distance per landmark}\relax }}{6}{table.caption.12}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces \relax \fontsize  {8}{9.5}\selectfont  \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip {The distribution of the distances on the first landmark. The blue line is the average value, the red line is standard deviation value.}\relax }}{6}{figure.caption.13}}
-\newlabel{figchartlm1}{{11}{6}{\footnotesize {The distribution of the distances on the first landmark. The blue line is the average value, the red line is standard deviation value.}\relax }{figure.caption.13}{}}
+\newlabel{table1}{{1}{6}{\footnotesize {The cofficient on the quality metrics}\relax }{table.caption.10}{}}
+\citation{bland1996statistics}
 \citation{torrey2009transfer}
 \citation{imagenet_cvpr09}
-\citation{margeta_mri}
+\citation{margeta2017fine}
+\newlabel{figsubrs1}{{10a}{7}{\footnotesize {Image with well-predicted landmarks}\relax }{figure.caption.11}{}}
+\newlabel{sub@figsubrs1}{{a}{7}{\footnotesize {Image with well-predicted landmarks}\relax }{figure.caption.11}{}}
+\newlabel{figsubrs2}{{10b}{7}{\footnotesize {Image with fewer accuracy landmarks}\relax }{figure.caption.11}{}}
+\newlabel{sub@figsubrs2}{{b}{7}{\footnotesize {Image with fewer accuracy landmarks}\relax }{figure.caption.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces \relax \fontsize  {8}{9.5}\selectfont  \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip {The predicted landmarks on an image in test set (yellow points)}\relax }}{7}{figure.caption.11}}
+\newlabel{figresult1}{{10}{7}{\footnotesize {The predicted landmarks on an image in test set (yellow points)}\relax }{figure.caption.11}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces \relax \fontsize  {8}{9.5}\selectfont  \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip {The average distance per landmark}\relax }}{7}{table.caption.12}}
+\newlabel{table2}{{2}{7}{\footnotesize {The average distance per landmark}\relax }{table.caption.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces \relax \fontsize  {8}{9.5}\selectfont  \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip {The distribution of the distances on the first landmark. The blue line is the average value, the red line is standard deviation value.}\relax }}{7}{figure.caption.13}}
+\newlabel{figchartlm1}{{11}{7}{\footnotesize {The distribution of the distances on the first landmark. The blue line is the average value, the red line is standard deviation value.}\relax }{figure.caption.13}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces \relax \fontsize  {8}{9.5}\selectfont  \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip {The proportion of acceptable predicted landmarks}\relax }}{7}{figure.caption.14}}
 \newlabel{figchart}{{12}{7}{\footnotesize {The proportion of acceptable predicted landmarks}\relax }{figure.caption.14}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {5}Result improvement by using fine-tuning}{7}{section.5}}
 \newlabel{secimproving}{{5}{7}{Result improvement by using fine-tuning}{section.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Training data preparation}{7}{subsection.5.1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces \relax \fontsize  {8}{9.5}\selectfont  \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip {A presentation of head, pronotum and body part with corresponding manual landmarks}\relax }}{7}{figure.caption.15}}
-\newlabel{figshape3parts}{{13}{7}{\footnotesize {A presentation of head, pronotum and body part with corresponding manual landmarks}\relax }{figure.caption.15}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Using fine-tuning for pronotum dataset}{7}{subsection.5.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Prepare Your Paper before Styling}{7}{section.6}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Abbreviations and Acronyms}{8}{subsection.6.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Equations}{8}{subsection.6.2}}
-\newlabel{eq:1}{{1}{8}{Equations}{equation.6.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Figures}{8}{subsection.6.3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces \relax \fontsize  {8}{9.5}\selectfont  \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip {ASTESJ logo}\relax }}{8}{figure.caption.16}}
-\newlabel{astesj}{{14}{8}{\footnotesize {ASTESJ logo}\relax }{figure.caption.16}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces \relax \fontsize  {8}{9.5}\selectfont  \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip {ASTESJ logo}\relax }}{8}{figure.caption.17}}
-\newlabel{astesj}{{15}{8}{\footnotesize {ASTESJ logo}\relax }{figure.caption.17}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.4}Tables}{8}{subsection.6.4}}
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces \relax \fontsize  {8}{9.5}\selectfont  \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip {Summary of datasets used}\relax }}{8}{table.caption.18}}
-\newlabel{tab:veris}{{3}{8}{\footnotesize {Summary of datasets used}\relax }{table.caption.18}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.5}Units}{8}{subsection.6.5}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.5.1} Some Common Mistakes}{8}{subsubsection.6.5.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {7} Using the Template}{8}{section.7}}
-\citation{journal1}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Training data preparation}{8}{subsection.5.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces \relax \fontsize  {8}{9.5}\selectfont  \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip {A presentation of head, pronotum and body part with corresponding manual landmarks}\relax }}{8}{figure.caption.15}}
+\newlabel{figshape3parts}{{13}{8}{\footnotesize {A presentation of head, pronotum and body part with corresponding manual landmarks}\relax }{figure.caption.15}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Using fine-tuning for pronotum dataset}{8}{subsection.5.2}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces \relax \fontsize  {8}{9.5}\selectfont  \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip {A comparing between the average error distances, the standard deviation values per landmark of two steps.}\relax }}{8}{table.caption.16}}
+\newlabel{table3}{{3}{8}{\footnotesize {A comparing between the average error distances, the standard deviation values per landmark of two steps.}\relax }{table.caption.16}{}}
+\newlabel{figsub11}{{14a}{8}{\footnotesize {Landmark 1 - CNN}\relax }{figure.caption.17}{}}
+\newlabel{sub@figsub11}{{a}{8}{\footnotesize {Landmark 1 - CNN}\relax }{figure.caption.17}{}}
+\newlabel{figsub22}{{14b}{8}{\footnotesize {Landmark 1 - fine-tuning}\relax }{figure.caption.17}{}}
+\newlabel{sub@figsub22}{{b}{8}{\footnotesize {Landmark 1 - fine-tuning}\relax }{figure.caption.17}{}}
+\newlabel{figsub111}{{14c}{8}{\footnotesize {Landmark 6 - CNN}\relax }{figure.caption.17}{}}
+\newlabel{sub@figsub111}{{c}{8}{\footnotesize {Landmark 6 - CNN}\relax }{figure.caption.17}{}}
+\newlabel{figsub222}{{14d}{8}{\footnotesize {Landmark 6 - fine-tuning}\relax }{figure.caption.17}{}}
+\newlabel{sub@figsub222}{{d}{8}{\footnotesize {Landmark 6 - fine-tuning}\relax }{figure.caption.17}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces \relax \fontsize  {8}{9.5}\selectfont  \abovedisplayskip 6\p@ plus2\p@ minus4\p@ \abovedisplayshortskip \z@ plus\p@ \belowdisplayshortskip 3\p@ plus\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 3\p@ plus\p@ minus\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip {The distribution of distance error on $1^{st}$ and $6^{th}$ landmarks of all images in two testing steps (CNN and fine-tuning). The blue and red lines present the average distances and standard deviation values, respectively.}\relax }}{8}{figure.caption.17}}
+\newlabel{figrsexample2}{{14}{8}{\footnotesize {The distribution of distance error on $1^{st}$ and $6^{th}$ landmarks of all images in two testing steps (CNN and fine-tuning). The blue and red lines present the average distances and standard deviation values, respectively.}\relax }{figure.caption.17}{}}
+\bibstyle{plain}
 \bibdata{includes/references}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.1} Identify the Headings}{9}{subsection.7.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.2} Heading}{9}{subsection.7.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {8} Tables and Figures}{9}{section.8}}
-\@writefile{toc}{\contentsline {paragraph}{Conflict of Interest}{9}{section*.19}}
-\@writefile{toc}{\contentsline {paragraph}{Acknowledgment}{9}{section*.20}}
-\@writefile{toc}{\contentsline {paragraph}{References}{9}{section*.21}}
+\bibcite{bland1996statistics}{1}
+\bibcite{bordes2014question}{2}
+\bibcite{cintas2016automatic}{3}
+\bibcite{ciregan2012multi}{4}
+\bibcite{imagenet_cvpr09}{5}
+\bibcite{lasagne}{6}
+\bibcite{pedregosa2011scikit}{7}
+\bibcite{hinton2012deep}{8}
+\bibcite{jean2014using}{9}
+\bibcite{krizhevsky2012imagenet}{10}
+\bibcite{le2017maelab}{11}
+\bibcite{lecun2015deep}{12}
+\bibcite{lecun2010convolutional}{13}
+\bibcite{lecun2012efficient}{14}
+\bibcite{li2015convolutional}{15}
+\bibcite{lowe2004distinctive}{16}
+\bibcite{margeta2017fine}{17}
+\bibcite{mikolov2011strategies}{18}
+\bibcite{palaniswamy2010automatic}{19}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusion}{9}{section.6}}
+\newlabel{Secconclusion}{{6}{9}{Conclusion}{section.6}{}}
+\@writefile{toc}{\contentsline {paragraph}{Acknowledgment}{9}{section*.18}}
+\bibcite{sainath2013deep}{20}
+\bibcite{shlens2014tutorial}{21}
+\bibcite{srivastava2014dropout}{22}
+\bibcite{sun2013deep}{23}
+\bibcite{sutskever2014sequence}{24}
+\bibcite{szegedy2015going}{25}
+\bibcite{theanoframework}{26}
+\bibcite{tompson2014joint}{27}
+\bibcite{torrey2009transfer}{28}
+\bibcite{zhang2014facial}{29}

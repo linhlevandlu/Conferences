@@ -1,0 +1,176 @@
+\begin{thebibliography}{10}
+
+\bibitem{bland1996statistics}
+J~Martin Bland and Douglas~G Altman.
+\newblock Statistics notes: measurement error.
+\newblock {\em Bmj}, 313(7059):744, 1996.
+
+\bibitem{bordes2014question}
+Antoine Bordes, Sumit Chopra, and Jason Weston.
+\newblock Question answering with subgraph embeddings.
+\newblock {\em arXiv preprint arXiv:1406.3676}, 2014.
+
+\bibitem{cintas2016automatic}
+Celia Cintas, Mirsha Quinto-S{\'a}nchez, Victor Acu{\~n}a, Carolina Paschetta,
+  Soledad de~Azevedo, Caio Cesar~Silva de~Cerqueira, Virginia Ramallo, Carla
+  Gallo, Giovanni Poletti, Maria~Catira Bortolini, et~al.
+\newblock Automatic ear detection and feature extraction using geometric
+  morphometrics and convolutional neural networks.
+\newblock {\em IET Biometrics}, 6(3):211--223, 2016.
+
+\bibitem{ciregan2012multi}
+Dan Ciregan, Ueli Meier, and J{\"u}rgen Schmidhuber.
+\newblock Multi-column deep neural networks for image classification.
+\newblock In {\em Computer Vision and Pattern Recognition (CVPR), 2012 IEEE
+  Conference on}, pages 3642--3649. IEEE, 2012.
+
+\bibitem{imagenet_cvpr09}
+Jia Deng, Wei Dong, Richard Socher, Li-Jia Li, Kai Li, and Li~Fei-Fei.
+\newblock {ImageNet: A Large-Scale Hierarchical Image Database}.
+\newblock In {\em CVPR09}, 2009.
+
+\bibitem{lasagne}
+Sander Dieleman, Jan Schlüter, Colin Raffel, Eben Olson, Søren~Kaae
+  Sønderby, Daniel Nouri, et~al.
+\newblock Lasagne: First release., August 2015.
+
+\bibitem{pedregosa2011scikit}
+Pedregosa et~al.
+\newblock Scikit-learn: Machine learning in python.
+\newblock {\em Journal of machine learning research}, 12(Oct):2825--2830, 2011.
+
+\bibitem{hinton2012deep}
+Geoffrey Hinton, Li~Deng, Dong Yu, George~E Dahl, Abdel-rahman Mohamed, Navdeep
+  Jaitly, Andrew Senior, Vincent Vanhoucke, Patrick Nguyen, Tara~N Sainath,
+  et~al.
+\newblock Deep neural networks for acoustic modeling in speech recognition: The
+  shared views of four research groups.
+\newblock {\em IEEE Signal Processing Magazine}, 29(6):82--97, 2012.
+
+\bibitem{jean2014using}
+S{\'e}bastien Jean, Kyunghyun Cho, Roland Memisevic, and Yoshua Bengio.
+\newblock On using very large target vocabulary for neural machine translation.
+\newblock {\em arXiv preprint arXiv:1412.2007}, 2014.
+
+\bibitem{krizhevsky2012imagenet}
+Alex Krizhevsky, Ilya Sutskever, and Geoffrey~E Hinton.
+\newblock Imagenet classification with deep convolutional neural networks.
+\newblock In {\em Advances in neural information processing systems}, pages
+  1097--1105, 2012.
+
+\bibitem{le2017maelab}
+Van~Linh LE, Marie BEURTON-AIMAR, Adrien KR{\"A}HENB{\"U}HL, and Nicolas
+  PARISEY.
+\newblock {MAELab: a framework to automatize landmark estimation}.
+\newblock In {\em {WSCG 2017}}, Plzen, Czech Republic, May 2017.
+
+\bibitem{lecun2015deep}
+Yann LeCun, Yoshua Bengio, and Geoffrey Hinton.
+\newblock Deep learning.
+\newblock {\em Nature}, 521(7553):436--444, 2015.
+
+\bibitem{lecun2010convolutional}
+Yann LeCun, Koray Kavukcuoglu, and Cl{\'e}ment Farabet.
+\newblock Convolutional networks and applications in vision.
+\newblock In {\em Circuits and Systems (ISCAS), Proceedings of 2010 IEEE
+  International Symposium on}, pages 253--256. IEEE, 2010.
+
+\bibitem{lecun2012efficient}
+Yann~A LeCun, L{\'e}on Bottou, Genevieve~B Orr, and Klaus-Robert M{\"u}ller.
+\newblock Efficient backprop.
+\newblock In {\em Neural networks: Tricks of the trade}, pages 9--48. Springer,
+  2012.
+
+\bibitem{li2015convolutional}
+Haoxiang Li, Zhe Lin, Xiaohui Shen, Jonathan Brandt, and Gang Hua.
+\newblock A convolutional neural network cascade for face detection.
+\newblock In {\em Proceedings of the IEEE Conference on Computer Vision and
+  Pattern Recognition}, pages 5325--5334, 2015.
+
+\bibitem{lowe2004distinctive}
+David~G Lowe.
+\newblock Distinctive image features from scale-invariant keypoints.
+\newblock {\em International journal of computer vision}, 60(2):91--110, 2004.
+
+\bibitem{margeta2017fine}
+Jan Margeta, Antonio Criminisi, R~Cabrera~Lozoya, Daniel~C Lee, and Nicholas
+  Ayache.
+\newblock Fine-tuned convolutional neural nets for cardiac mri acquisition
+  plane recognition.
+\newblock {\em Computer Methods in Biomechanics and Biomedical Engineering:
+  Imaging \& Visualization}, 5(5):339--349, 2017.
+
+\bibitem{mikolov2011strategies}
+Tom{\'a}{\v{s}} Mikolov, Anoop Deoras, Daniel Povey, Luk{\'a}{\v{s}} Burget,
+  and Jan {\v{C}}ernock{\`y}.
+\newblock Strategies for training large scale neural network language models.
+\newblock In {\em Automatic Speech Recognition and Understanding (ASRU), 2011
+  IEEE Workshop on}, pages 196--201. IEEE, 2011.
+
+\bibitem{palaniswamy2010automatic}
+Sasirekha Palaniswamy, Neil~A Thacker, and Christian~Peter Klingenberg.
+\newblock Automatic identification of landmarks in digital images.
+\newblock {\em IET Computer Vision}, 4(4):247--260, 2010.
+
+\bibitem{sainath2013deep}
+Tara~N Sainath, Abdel-rahman Mohamed, Brian Kingsbury, and Bhuvana Ramabhadran.
+\newblock Deep convolutional neural networks for lvcsr.
+\newblock In {\em Acoustics, Speech and Signal Processing (ICASSP), 2013 IEEE
+  International Conference on}, pages 8614--8618. IEEE, 2013.
+
+\bibitem{shlens2014tutorial}
+Jonathon Shlens.
+\newblock A tutorial on principal component analysis.
+\newblock {\em arXiv preprint arXiv:1404.1100}, 2014.
+
+\bibitem{srivastava2014dropout}
+Nitish Srivastava, Geoffrey~E Hinton, Alex Krizhevsky, Ilya Sutskever, and
+  Ruslan Salakhutdinov.
+\newblock Dropout: a simple way to prevent neural networks from overfitting.
+\newblock {\em Journal of machine learning research}, 15(1):1929--1958, 2014.
+
+\bibitem{sun2013deep}
+Yi~Sun, Xiaogang Wang, and Xiaoou Tang.
+\newblock Deep convolutional network cascade for facial point detection.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and
+  pattern recognition}, pages 3476--3483, 2013.
+
+\bibitem{sutskever2014sequence}
+Ilya Sutskever, Oriol Vinyals, and Quoc~V Le.
+\newblock Sequence to sequence learning with neural networks.
+\newblock In {\em Advances in neural information processing systems}, pages
+  3104--3112, 2014.
+
+\bibitem{szegedy2015going}
+Christian Szegedy, Wei Liu, Yangqing Jia, Pierre Sermanet, Scott Reed, Dragomir
+  Anguelov, Dumitru Erhan, Vincent Vanhoucke, and Andrew Rabinovich.
+\newblock Going deeper with convolutions.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and
+  pattern recognition}, pages 1--9, 2015.
+
+\bibitem{theanoframework}
+{Theano Development Team}.
+\newblock {Theano: A {Python} framework for fast computation of mathematical
+  expressions}.
+\newblock {\em arXiv e-prints}, abs/1605.02688, May 2016.
+
+\bibitem{tompson2014joint}
+Jonathan~J Tompson, Arjun Jain, Yann LeCun, and Christoph Bregler.
+\newblock Joint training of a convolutional network and a graphical model for
+  human pose estimation.
+\newblock In {\em Advances in neural information processing systems}, pages
+  1799--1807, 2014.
+
+\bibitem{torrey2009transfer}
+Lisa Torrey and Jude Shavlik.
+\newblock Transfer learning.
+\newblock {\em Handbook of Research on Machine Learning Applications and
+  Trends: Algorithms, Methods, and Techniques}, 1:242, 2009.
+
+\bibitem{zhang2014facial}
+Zhanpeng Zhang, Ping Luo, Chen~Change Loy, and Xiaoou Tang.
+\newblock Facial landmark detection by deep multi-task learning.
+\newblock In {\em European Conference on Computer Vision}, pages 94--108.
+  Springer, 2014.
+
+\end{thebibliography}
