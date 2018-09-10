@@ -1,0 +1,116 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citeauthoryear{%
+Adam%
+}{%
+Adam%
+}{%
+{\protect\APACyear{2007}}%
+}]{%
+Ada2007}%
+\APACinsertmetastar{%
+Ada2007}%
+Adam\ C.%
+%
+\unskip\
+\newblock
+\APACrefYear{2007}.
+\newblock
+\APACrefbtitle{Emotions: from psychological theories to logical formalization
+  and implementation in a {BDI} agent}{Emotions: from psychological theories to
+  logical formalization and implementation in a {BDI} agent}.
+\newblock
+\BUPhD, INP, Toulouse, France.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
+Adhitya%
+\ \BBA{} Kuuskankare%
+}{%
+Adhitya%
+\ \BBA{} Kuuskankare%
+}{%
+{\protect\APACyear{2012}}%
+}]{%
+adh12}%
+\APACinsertmetastar{%
+adh12}%
+Adhitya\ S.%
+\BCBT{}\ \BBA{} Kuuskankare\ M.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2012}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{{SUM: from Image-based Sonification to Computeraided
+  Composition}}{{SUM: from Image-based Sonification to Computeraided
+  Composition}}.\BBCQ{}
+\newblock
+\BIn{} \APACrefbtitle{{CMMR, London}.}{{CMMR, London}.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
+Andrienko%
+\ \BBA{} Andrienko%
+}{%
+Andrienko%
+\ \BBA{} Andrienko%
+}{%
+{\protect\APACyear{2006}}%
+}]{%
+and06}%
+\APACinsertmetastar{%
+and06}%
+Andrienko\ N.%
+\BCBT{}\ \BBA{} Andrienko\ G.%
+%
+\unskip\
+\newblock
+\APACrefYear{2006}.
+\newblock
+\APACrefbtitle{{Exploratory Analysis of Spatial and Temporal Data: A Systematic
+  Approach}}{{Exploratory Analysis of Spatial and Temporal Data: A Systematic
+  Approach}}.
+\newblock
+\APACaddressPublisher{}{Springer Verlag}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
+Castel%
+}{%
+Castel%
+}{%
+{\protect\APACyear{1740}}%
+}]{%
+castel}%
+\APACinsertmetastar{%
+castel}%
+Castel\ L\BHBI B.%
+%
+\unskip\
+\newblock
+\APACrefYear{1740}.
+\newblock
+\APACrefbtitle{L'Optique des couleurs}{L'optique des couleurs}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
+Newton%
+}{%
+Newton%
+}{%
+{\protect\APACyear{1704}}%
+}]{%
+newton}%
+\APACinsertmetastar{%
+newton}%
+Newton\ I.%
+%
+\unskip\
+\newblock
+\APACrefYear{1704}.
+\newblock
+\APACrefbtitle{Opticks}{Opticks}.
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}

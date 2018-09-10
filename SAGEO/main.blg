@@ -1,0 +1,62 @@
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: main.aux
+The style file: ./sageo.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=20001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Database file #1: sageo-ref.bib
+sageo.bst [2011/07/19 v1.0 Hermes-Lavoisier (following from 2009/03/01 v4.05 APA bibliography style)]
+Warning--No publisher in adh12
+Warning--No address in adh12
+Warning--No address in and06
+Warning--No publisher in castel
+Warning--No address in castel
+Warning--No publisher in newton
+Warning--No address in newton
+You've used 5 entries,
+            6368 wiz_defined-function locations,
+            1205 strings with 10213 characters,
+and the built_in function-call counts, 8143 in all, are:
+= -- 1066
+> -- 58
+< -- 350
++ -- 337
+- -- 10
+* -- 473
+:= -- 1474
+add.period$ -- 22
+call.type$ -- 5
+change.case$ -- 28
+chr.to.int$ -- 0
+cite$ -- 17
+duplicate$ -- 168
+empty$ -- 330
+format.name$ -- 90
+if$ -- 1598
+int.to.chr$ -- 0
+int.to.str$ -- 10
+missing$ -- 0
+newline$ -- 110
+num.names$ -- 40
+pop$ -- 212
+preamble$ -- 1
+purify$ -- 22
+quote$ -- 0
+skip$ -- 556
+stack$ -- 0
+substring$ -- 374
+swap$ -- 86
+text.length$ -- 12
+text.prefix$ -- 0
+top$ -- 1
+type$ -- 528
+warning$ -- 7
+while$ -- 31
+width$ -- 0
+write$ -- 127
+(There were 7 warnings)
