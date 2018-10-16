@@ -1,3 +1,9 @@
-\BOOKMARK [1][-]{section.1}{The Elsevier article class}{}% 1
-\BOOKMARK [1][-]{section.2}{Front matter}{}% 2
-\BOOKMARK [1][-]{section.3}{Bibliography styles}{}% 3
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Related works}{}% 2
+\BOOKMARK [1][-]{section.3}{Network architectures designing}{}% 3
+\BOOKMARK [1][-]{section.4}{Data augmentation}{}% 4
+\BOOKMARK [1][-]{section.5}{Experiments and results}{}% 5
+\BOOKMARK [1][-]{section.6}{Resulting improvement by fine-tuning}{}% 6
+\BOOKMARK [2][-]{subsection.6.1}{Data preparation and training}{section.6}% 7
+\BOOKMARK [2][-]{subsection.6.2}{Fine-tuning on each dataset}{section.6}% 8
+\BOOKMARK [1][-]{section.7}{Conclusion}{}% 9
