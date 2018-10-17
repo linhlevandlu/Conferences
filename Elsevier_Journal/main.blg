@@ -3,46 +3,49 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: main.aux
 The style file: elsarticle-num.bst
 Database file #1: includes/mybibfile.bib
-Warning--I didn't find a database entry for ""
-You've used 0 entries,
+Warning--empty pages in le2017maelab
+Warning--empty booktitle in szegedy2015going
+Warning--empty pages in szegedy2015going
+Warning--empty pages in imagenet_cvpr09
+You've used 27 entries,
             2937 wiz_defined-function locations,
-            668 strings with 5081 characters,
-and the built_in function-call counts, 44 in all, are:
-= -- 0
-> -- 0
-< -- 0
-+ -- 0
-- -- 0
-* -- 2
-:= -- 23
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
+            827 strings with 9882 characters,
+and the built_in function-call counts, 9693 in all, are:
+= -- 930
+> -- 258
+< -- 11
++ -- 104
+- -- 77
+* -- 625
+:= -- 1210
+add.period$ -- 30
+call.type$ -- 27
+change.case$ -- 27
 chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 1
-format.name$ -- 0
-if$ -- 1
+cite$ -- 31
+duplicate$ -- 364
+empty$ -- 1149
+format.name$ -- 102
+if$ -- 2575
 int.to.chr$ -- 0
-int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 8
-num.names$ -- 0
-pop$ -- 0
+int.to.str$ -- 27
+missing$ -- 25
+newline$ -- 95
+num.names$ -- 27
+pop$ -- 218
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1
+skip$ -- 669
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
-text.length$ -- 0
+substring$ -- 621
+swap$ -- 128
+text.length$ -- 11
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 7
-(There was 1 warning)
+warning$ -- 4
+while$ -- 78
+width$ -- 29
+write$ -- 240
+(There were 4 warnings)
