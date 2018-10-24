@@ -38,13 +38,6 @@ H.~Bay, T.~Tuytelaars, L.~Van~Gool, Surf: Speeded up robust features, in:
 S.~Palaniswamy, N.~A. Thacker, C.~P. Klingenberg, Automatic identification of
   landmarks in digital images, IET Computer Vision 4~(4) (2010) 247--260.
 
-\bibitem{le2017maelab}
-V.~L. Le, M.~Beurton-Aimar, A.~Krahenbuhl, N.~Parisey,
-  \href{https://hal.archives-ouvertes.fr/hal-01571440}{{MAELab: a framework to
-  automatize landmark estimation}}, in: {WSCG 2017}, Plzen, Czech Republic,
-  2017.
-\newline\urlprefix\url{https://hal.archives-ouvertes.fr/hal-01571440}
-
 \bibitem{lecun2015deep}
 Y.~LeCun, Y.~Bengio, G.~Hinton, Deep learning, Nature 521~(7553) (2015)
   436--444.
@@ -99,6 +92,13 @@ Y.~Sun, X.~Wang, X.~Tang, Deep convolutional network cascade for facial point
 \bibitem{zhang2014facial}
 Z.~Zhang, et~al., Facial landmark detection by deep multi-task learning, in:
   European Conference on Computer Vision, Springer, 2014, pp. 94--108.
+
+\bibitem{le2017maelab}
+V.~L. Le, M.~Beurton-Aimar, A.~Krahenbuhl, N.~Parisey,
+  \href{https://hal.archives-ouvertes.fr/hal-01571440}{{MAELab: a framework to
+  automatize landmark estimation}}, in: {WSCG 2017}, Plzen, Czech Republic,
+  2017.
+\newline\urlprefix\url{https://hal.archives-ouvertes.fr/hal-01571440}
 
 \bibitem{srivastava2014dropout}
 N.~Srivastava, G.~E. Hinton, A.~Krizhevsky, I.~Sutskever, R.~Salakhutdinov,

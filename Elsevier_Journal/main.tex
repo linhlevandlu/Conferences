@@ -105,9 +105,26 @@ Finally, the conclusion is given in Section \ref{}.
 
 \section{Related works}
 \label{related_works}
-In geometric morphometry, landmarks (or points of interest) are important features to describe the shape. Depending on the complicacy of the objects in the image, setting automatic landmarks can rely on different methods. When the object can be segmented, the image processing techniques may applied to predict the landmarks. Lowe et al. \cite{lowe2004distinctive} have proposed SIFT method to identify the keypoints on 2D images. From the detected keypoints, the method was abled to find the matching points between two images. SURF is another method which has been proposed by Herbert Bay et al. \cite{bay2006surf}. The SURF algorithm is the same principles with SIFT but details in each step are different. Palaniswamy et al. \cite{palaniswamy2010automatic} have applied probabilistic Hough Transform to automatically detect the landmarks on 2D images of Drosophila wings. In a previous work \cite{le2017maelab}, we have applied a series of alogrithms to detect the landmarks automatically on beetles mandibles which are considered as the easied objects to segment (with an quality enough good for our need). In that work, the landmarks have been detected by registering two segmentations of images and then, using SIFT descriptor to refine the location of predicted landmarks. After the experiment, we have obtained good enough results on mandibles. Unfortunately, we have observed that the method did not provide good results when the segmentation is not precise, i.e. on thorax or elytra images. This is explained why we have turned the automatically landmarking into another stage without any segmentation step.
+In geometric morphometry, landmarks (or points of interest) are important features to describe the shape. Depending on the complicacy of the objects in the image, setting automatic landmarks can rely on different methods. When the object can be segmented, the image processing techniques may applied to predict the landmarks. Lowe et al. \cite{lowe2004distinctive} have proposed SIFT method to identify the keypoints on 2D images by extracting the distinctive features from the images. It is composed by four steps: (1) scale space extrema detection: a difference of Gaussian (DoG) function is applied to identify the interested points at all scales; (2) keypoint localization: the keypoint candidates are localized and refined by deleting the points which have the low contrast or not localized along the edge; (3) orientation assigment: for each keypoint candidates, the orientation and gradient magnitude are computed by considering their 4-neighborhoods; (4) keypoint descriptor are computed for each keypoint from its orientation and gradient magnitude. From the descriptors of the keypoints, they can be used to find the corresponding points between two images. SURF is another method which has been proposed by Herbert Bay et al. \cite{bay2006surf}. The SURF algorithm is the same principles with SIFT but details in each step are different. This algorithm mainly has three steps: (1) keypoints detection, (2) local neighborhood description and (3) matching. Different with SIFT, SURF uses a blob detector base on the Hessian matrix \cite{} to find the keypoints. The Hessian matrix is used as a measure of local change around the point and chooses the points where this determinant is maximal. Then, the descriptors are computed around the key points by describing the intensity distribution of keypoint's neighborhoods. The matching points from different images are obtained by comparing the descriptors of the key points. Palaniswamy et al. \cite{palaniswamy2010automatic} have proposed a method to automatically detect the landmarks on 2D images of Drosophila wings (Fig. \ref{imgflywing}). The method is mainly based on probabilistic Hough Transform. It includes four steps: (1) features detection of the fly wing structure (segmentation); (2) using pairwise geometric histogram (PGH) to record the compact invariant shape descriptor; (3) estimating the global pose of wing using the probabilistic Hough transform; (4) and finally a template matching is applied to refine the correctly of individual features.
 
-In recent years, deep learning \cite{lecun2015deep} is known as a solution for the tasks in computer vision, especially for image analysis. Deep learning has been introduced in the middle of the previous century for artificial intelligence application but it has encountered several problems to take real-world cases. Luckily, the improvement of computing capacities, both in memory size and computing time with GPU programming, has opened a new perspective for deep learning. Many deep learning architectures have been proposed to sovle the problems of classification \cite{krizhevsky2012imagenet, ciregan2012multi}, image recognition \cite{szegedy2015going, farabet2013learning, li2015convolutional}, speech recognition \cite{mikolov2011strategies, hinton2012deep}, language translation \cite{jean2014using, sutskever2014sequence}, \ldots. Using deep learning, specifically CNN, to predict the landmarks on 2D images has achieved better results even if the images that can not segment. Yi Sun et al. \cite{sun2013deep} have proposed a cascaded CNNs to predict the facial points on the human face. Zhanpeng Zhang et al. \cite{zhang2014facial} proposed a \textit{Tasks-Constrained Deep Convolutional Network} to optimize facial landmarks detection. Their model detected the facial landmarks with a set of related tasks such as head pose estimation, gender classification, age estimation, or facial attribute inference. Cintas et al. \cite{cintas2016automatic} has introduced a network to predict the landmarks on human ears. After training, the network has the ability to detect $45$ landmarks on human ears. In the same context of using CNN to predict the keypoints on 2D images, we have applied CNN computing to work on the un-segmentable images of beetles.
+\begin{figure}
+	\centering
+	\includegraphics[scale=.4]{images/wing_landmarks}
+	\label{imgflywing}
+	\caption{A Drosophila wing and its landmarks}
+\end{figure}
+
+In recent years, deep learning \cite{lecun2015deep} is known as a solution for the tasks in computer vision, especially for image analysis. Deep learning has been introduced in the middle of the previous century for artificial intelligence application but it has encountered several problems to take real-world cases. Luckily, the improvement of computing capacities, both in memory size and computing time with GPU programming, has opened a new perspective for deep learning. Many deep learning architectures have been proposed to sovle the problems of classification \cite{krizhevsky2012imagenet, ciregan2012multi}, image recognition \cite{szegedy2015going, farabet2013learning, li2015convolutional}, speech recognition \cite{mikolov2011strategies, hinton2012deep}, language translation \cite{jean2014using, sutskever2014sequence}, \ldots. Using deep learning, specifically CNN, to predict the landmarks on 2D images has achieved better results even if the images that can not segment. Yi Sun et al. \cite{sun2013deep} have proposed a cascaded CNNs to predict the facial points on the human face. Their model includes the networks which have separated into three levels of the cascade. The networks recognize the human face from the global to the local view to increasing the accuracy of predicted key points. Zhanpeng Zhang et al. \cite{zhang2014facial} proposed a \textit{Tasks-Constrained Deep Convolutional Network} to optimize facial landmarks detection. Their model detected the facial landmarks with a set of related tasks such as head pose estimation, gender classification, age estimation, or facial attribute inference. Cintas et al. \cite{cintas2016automatic} has introduced a network to predict the landmarks on human ears (Fig. \ref{imgears}). After training, the network has the ability to detect $45$ landmarks on human ears. 
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=.4]{images/ear_landmarks}
+	\label{imgears}
+	\caption{Landmarks on human ear in study of Cintas et al. \cite{cintas2016automatic}}
+\end{figure}
+
+
+As an association with the biologist, we study to develop an automatic method for predicting the landmarks on beetle's anatomical (Fig. \ref{}). As we can see in this section, the methods for landmarking can be divided into two groups by considering the techniques that they have used. Most of the methods in the first group choose the image processing techniques while other methods are used deep learning for landmarking. In a previous work \cite{le2017maelab}, we have applied a series of algorithms to detect the landmarks automatically on beetles mandibles which are considered as the easied objects to segment (with an quality enough good for our need). In that work, the landmarks have been detected by registering two segmentations of images and then, using SIFT descriptor to refine the location of predicted landmarks. After the experiment, we have obtained good enough results on mandibles. Unfortunately, we have observed that the method did not provide good results when the segmentation is not precise, i.e. on thorax or elytra images. This is explained why we have turned the automatically landmarking into another stage without any segmentation step. Using CNN for landmarking seems that a good choice for un-segmentable images.
 
 \section{Network architectures designing}
 
@@ -289,7 +306,7 @@ To illustrate this purpose, Fig. \ref{figrsexample} shows the predicted landmark
     \label{figrsexample}
 \end{figure}
 
-From the success of the third architecture on thorax dataset, we apply the same procedures (data augmentation, training,\ldots) on other parts of beetle: \textit{elytra and head}. However, we have modified the number of the last full-connected layer to adapt with each dataset before training. Arcoding, the values at the last full-connected layer are set to $22$ and $20$ outputs corresponds to $11$ and $10$ landmarks on elytra and head, respectively. Of course, we have also applied \textit{cross-validation} to select testing data to get all predicted landmarks for all images in each dataset. Then, the quality of predicted landmarks are evaluated by comparing with the corresponding manual landmarks (distance computation). Table. \ref{tblavgdiselytra} and \ref{tblavgdishead} show the average distances on each landmark of elytra and head anatomical, respectively. Comparing with the average distances on the thorax part, it seems that the proposed architecture provides more accurate predictions on the elytra dataset, but the results are opposite on head dataset.
+From the success of the third architecture on thorax dataset, we apply the same procedures (data augmentation, training,\ldots) on other parts of beetle: \textit{left and right mandibles, elytra and head}. However, we have modified the number of the last full-connected layer to adapt with each dataset before training. Arcoding, the values at the last full-connected layer are set to $32$, $36$, $22$ and $20$ outputs corresponds to $16$, $18$, $11$ and $10$ landmarks on left mandible, right mandible, elytra and head, respectively. Of course, we have also applied \textit{cross-validation} to select testing data to get all predicted landmarks for all images in each dataset. Then, the quality of predicted landmarks are evaluated by comparing with the corresponding manual landmarks (distance computation). Table. \ref{tblavgdiselytra}, \ref{tblavgdishead}, \ref{tblavgdislmandible} and \ref{tblavgdisrmandible} show the average distances on each landmark of elytra, head, left and right mandibles anatomical, respectively. Comparing with the average distances on the thorax part, it seems that the proposed architecture provides more accurate predictions on the elytra dataset, but the results are opposite on head dataset.
 
 \begin{table}[htbp]
 \begin{minipage}{0.5\linewidth}
@@ -333,6 +350,63 @@ From the success of the third architecture on thorax dataset, we apply the same 
 	\label{tblavgdishead}
 \end{minipage}
 \end{table}
+
+\begin{table}[htbp]
+\begin{minipage}{0.5\linewidth}
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		\textbf{Landmark} & \textbf{Distance} (in pixels) \\ \hline
+		1 & 9.1267  \\ \hline
+		2 & 6.7198 \\ \hline
+		3 & 6.8704 \\ \hline
+		4 & 6.7719 \\ \hline
+		5 & 7.1250 \\ \hline
+		6 & 6.9441 \\ \hline
+		7 & 7.3158 \\ \hline
+		8 & 7.4142 \\ \hline
+		9 & 7.5846 \\ \hline
+		10 & 7.6349 \\ \hline
+		11 & 7.6873 \\ \hline
+		12 & 8.4248 \\ \hline
+		13 & 7.9983 \\ \hline
+		14 & 7.4919 \\ \hline
+		15 & 7.7903 \\ \hline
+		16 & 8.5198 \\ \hline
+	\end{tabular}
+	\caption{\small{The average distance on all images per landmark on \textbf{left mandible} images}}
+	\label{tblavgdislmandible}
+\end{minipage}
+\hfill
+\begin{minipage}{0.5\linewidth}
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		\textbf{Landmark} & \textbf{Distance} (in pixels) \\ \hline
+		1 & 9.4981  \\ \hline
+		2 & 7.1657 \\ \hline
+		3 & 7.2420 \\ \hline
+		4 & 7.0436 \\ \hline
+		5 & 7.1599 \\ \hline
+		6 & 7.5699 \\ \hline
+		7 & 7.4251 \\ \hline
+		8 & 7.6636 \\ \hline
+		9 & 7.7906 \\ \hline
+		10 & 8.0197 \\ \hline
+		11 & 8.3140 \\ \hline
+		12 & 8.1564 \\ \hline
+		13 & 8.8879 \\ \hline
+		14 & 9.1842 \\ \hline
+		15 & 8.7875 \\ \hline
+		16 & 8.3141 \\ \hline
+		17 & 8.2866 \\ \hline
+		18 & 8.8928 \\ \hline
+	\end{tabular}
+	\caption{\small{The average distance on all images per landmark on \textbf{right mandible} images}}
+	\label{tblavgdisrmandible}
+\end{minipage}
+\end{table}
+
 \section{Resulting improvement by fine-tuning}
 The proposed network (third architecture) presented in Section \ref{} have been trained from scratch on three datasets (thorax, elytra, and head). At the first step, the network was able to predict the landmarks on the images. But as we have discussed, even if the strength of the correlation seems to validate the results, when we display the predicted landmarks on the images, the quality of the predicted coordinates are also not enough precise, and the average error are also still high (of course, we have the distances are higher than the average distances).
 
@@ -515,9 +589,9 @@ In other view, Figs. \ref{figdistthorax}, \ref{figdistelytra},\ref{figdisthead} 
 The fine-tuning process has improved the results of the proposed architecture on both $3$ datasets: thorax, elytra and head. All the average distances are significantly decreased. Specially, the results have been improved $\approx 40.3\%$ on thorax, $\approx 39.8\%$ on elytra, and $\approx 46.4\%$  on head part based on considering the average distances per landmark. Addition, in the cases of thorax and head part, even if we plus the average distance and its standard deviation, the results are also less than the result when we trained the model from scratch.
 
 To illustrate the final results, we display the distribution of
-the distances of both the best and the worst results (resp. landmark $1$ and $6$) on thorax dataset. The Fig. \ref{figdist3parts} shows in (\ref{figdist3parts1}) and (\ref{figdist3parts2}) diagrams how
-much the average distances (blue lines) and standard errors (red
-lines) have been improved for the landmark 1, the (\ref{figdist3parts3}) and (\ref{figdist3parts4}) diagrams for the landmark 6.
+the distances in both cases: the best and the worst results (resp. landmark $1$ and $6$ on thorax dataset) of three datasets (thorax, elytra, and head) in  
+%The Fig. \ref{figdist3parts} shows howmuch the average distances (blue lines) and standard errors (red lines) have been improved for the landmark 1 (Fig. (\ref{figdist3parts1}) and (\ref{figdist3parts2})) and landmark 6 (Fig. \ref{figdist3parts3}) and (\ref{figdist3parts4}).
+Fig. \ref{figdist3parts}, \ref{figdist3partselytre} and \ref{figdist3partstete}, respectively. In these figures, the left images present for the results when we trained the model from scratch; while the right images shows the results after applying fine-tuning. Clearly, the results in the fine-tuning case have been improved significantly than training from scratch.
 
 \begin{figure}[htbp]
     \centering
@@ -529,6 +603,28 @@ lines) have been improved for the landmark 1, the (\ref{figdist3parts3}) and (\r
 landmarks of all images in two testing steps (CNN and fine-tuning) (on thorax dataset). The blue and red lines present the average distances and standard
 deviation values, respectively.}
     \label{figdist3parts}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \subfloat[Landmark 1 - CNN]{\label{figdist3partselytre1}\includegraphics[width=0.5\textwidth]{images/fsc_elytre_lm1}}~~
+	\subfloat[Landmark 1 - fine-tuning]{\label{figdist3partselytre2}\includegraphics[width=0.5\textwidth]{images/fn_elytre_lm1}}\\
+	\subfloat[Landmark 8 - CNN]{\label{figdist3partselytre3}\includegraphics[width=0.5\textwidth]{images/fsc_elytre_lm8}}~~
+	\subfloat[Landmark 8 - fine-tuning]{\label{figdist3partselytre4}\includegraphics[width=0.5\textwidth]{images/fn_elytre_lm8}}\\
+    \caption{The distribution of distances on $1^{st}$ and $8^{th}$
+landmarks of all images in two testing steps (CNN and fine-tuning) (on elytra dataset). The blue line presents the average distance value.}
+    \label{figdist3partselytre}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \subfloat[Landmark 1 - CNN]{\label{figdist3partstete1}\includegraphics[width=0.5\textwidth]{images/fsc_tete_lm1}}~~
+	\subfloat[Landmark 1 - fine-tuning]{\label{figdist3partstete2}\includegraphics[width=0.5\textwidth]{images/fn_tete_lm1}}\\
+	\subfloat[Landmark 6 - CNN]{\label{figdist3partstete3}\includegraphics[width=0.5\textwidth]{images/fsc_tete_lm6}}~~
+	\subfloat[Landmark 6 - fine-tuning]{\label{figdist3partstete4}\includegraphics[width=0.5\textwidth]{images/fn_tete_lm6}}\\
+    \caption{The distribution of distances on $1^{st}$ and $6^{th}$
+landmarks of all images in two testing steps (CNN and fine-tuning) (on head dataset). The blue line presents the average distance value.}
+    \label{figdist3partstete}
 \end{figure}
 
 \section{Conclusion}
