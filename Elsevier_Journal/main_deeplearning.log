@@ -1,0 +1,933 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.18)  9 NOV 2018 16:57
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**main_deeplearning.tex
+(./main_deeplearning.tex
+LaTeX2e <2016/02/01>
+Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/elsarticle/elsarticle.cls
+Document Class: elsarticle 2009/09/17, 1.2.0: Elsevier Ltd
+\@bls=\dimen102
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen103
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2016/01/03 v1.0q Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 95.
+
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen104
+\Gin@req@width=\dimen105
+)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/pifont.sty
+Package: pifont 2005/04/12 PSNFSS-v9.2a Pi font support (SPQR) 
+LaTeX Font Info:    Try loading font information for U+pzd on input line 63.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/upzd.fd
+File: upzd.fd 2001/06/04 font definitions for U/pzd.
+)
+LaTeX Font Info:    Try loading font information for U+psy on input line 64.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/upsy.fd
+File: upsy.fd 2001/06/04 font definitions for U/psy.
+))
+\c@tnote=\count88
+\c@fnote=\count89
+\c@cnote=\count90
+\c@ead=\count91
+\c@author=\count92
+\@eadauthor=\toks15
+\c@affn=\count93
+\absbox=\box26
+\keybox=\box27
+\Columnwidth=\dimen106
+\space@left=\dimen107
+\els@boxa=\box28
+\els@boxb=\box29
+\leftMargin=\dimen108
+\@enLab=\toks16
+\@sep=\skip43
+\@@sep=\skip44
+
+(./main_deeplearning.spl)
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip45
+\bibsep=\skip46
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count94
+)
+\splwrite=\write3
+\openout3 = `main_deeplearning.spl'.
+
+)
+(/usr/share/texlive/texmf-dist/tex/latex/lineno/lineno.sty
+Package: lineno 2005/11/02 line numbers on paragraphs v4.41
+\linenopenalty=\count95
+\output=\toks17
+\linenoprevgraf=\count96
+\linenumbersep=\dimen109
+\linenumberwidth=\dimen110
+\c@linenumber=\count97
+\c@pagewiselinenumber=\count98
+\c@LN@truepage=\count99
+\c@internallinenumber=\count100
+\c@internallinenumbers=\count101
+\quotelinenumbersep=\dimen111
+\bframerule=\dimen112
+\bframesep=\dimen113
+\bframebox=\box30
+LaTeX Info: Redefining \\ on input line 3056.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
+
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
+)
+Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+Package: hopatch 2012/05/28 v1.2 Wrapper for package hooks (HO)
+Package: xcolor-patch 2011/01/30 xcolor patch
+Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
+Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+)
+\@linkdim=\dimen114
+\Hy@linkcounter=\count102
+\Hy@pagecounter=\count103
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count104
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4443.
+Package hyperref Info: Link nesting OFF on input line 4448.
+Package hyperref Info: Hyper index ON on input line 4451.
+Package hyperref Info: Plain pages OFF on input line 4458.
+Package hyperref Info: Backreferencing OFF on input line 4463.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4688.
+\c@Hy@tempcnt=\count105
+
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5041.
+\XeTeXLinkMargin=\dimen115
+\Fld@menulength=\count106
+\Field@Width=\dimen116
+\Fld@charsize=\dimen117
+Package hyperref Info: Hyper figures OFF on input line 6295.
+Package hyperref Info: Link nesting OFF on input line 6300.
+Package hyperref Info: Hyper index ON on input line 6303.
+Package hyperref Info: backreferencing OFF on input line 6310.
+Package hyperref Info: Link coloring OFF on input line 6315.
+Package hyperref Info: Link coloring with OCG OFF on input line 6320.
+Package hyperref Info: PDF/A mode OFF on input line 6325.
+LaTeX Info: Redefining \ref on input line 6365.
+LaTeX Info: Redefining \pageref on input line 6369.
+\Hy@abspage=\count107
+\c@Item=\count108
+\c@Hfootnote=\count109
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
+\Fld@listcount=\count110
+\c@bookmark@seq@number=\count111
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip47
+)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen118
+\captionmargin@=\dimen119
+\captionwidth=\dimen120
+\caption@tempdima=\dimen121
+\caption@indent=\dimen122
+\caption@parindent=\dimen123
+\caption@hangindent=\dimen124
+)
+\c@ContinuedFloat=\count112
+Package caption Info: hyperref package is loaded.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/subfig/subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+\c@KVtest=\count113
+\sf@farskip=\skip48
+\sf@captopadj=\dimen125
+\sf@capskip=\skip49
+\sf@nearskip=\skip50
+\c@subfigure=\count114
+\c@subfigure@save=\count115
+\c@lofdepth=\count116
+\c@subtable=\count117
+\c@subtable@save=\count118
+\c@lotdepth=\count119
+\sf@top=\skip51
+\sf@bottom=\skip52
+)
+(./main_deeplearning.aux
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `sub@' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `sub@' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `sub@' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `sub@' multiply defined.
+
+
+LaTeX Warning: Label `figdist3partstete1' multiply defined.
+
+
+LaTeX Warning: Label `sub@figdist3partstete1' multiply defined.
+
+
+LaTeX Warning: Label `figdist3partstete2' multiply defined.
+
+
+LaTeX Warning: Label `sub@figdist3partstete2' multiply defined.
+
+
+LaTeX Warning: Label `figdist3partstete3' multiply defined.
+
+
+LaTeX Warning: Label `sub@figdist3partstete3' multiply defined.
+
+
+LaTeX Warning: Label `figdist3partstete4' multiply defined.
+
+
+LaTeX Warning: Label `sub@figdist3partstete4' multiply defined.
+
+
+LaTeX Warning: Label `figdist3partstete1' multiply defined.
+
+
+LaTeX Warning: Label `sub@figdist3partstete1' multiply defined.
+
+
+LaTeX Warning: Label `figdist3partstete2' multiply defined.
+
+
+LaTeX Warning: Label `sub@figdist3partstete2' multiply defined.
+
+
+LaTeX Warning: Label `figdist3partstete3' multiply defined.
+
+
+LaTeX Warning: Label `sub@figdist3partstete3' multiply defined.
+
+
+LaTeX Warning: Label `figdist3partstete4' multiply defined.
+
+
+LaTeX Warning: Label `sub@figdist3partstete4' multiply defined.
+
+)
+\openout1 = `main_deeplearning.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+ (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count120
+\scratchdimen=\dimen126
+\scratchbox=\box31
+\nofMPsegments=\count121
+\nofMParguments=\count122
+\everyMPshowfont=\toks18
+\MPscratchCnt=\count123
+\MPscratchDim=\dimen127
+\MPnumerator=\count124
+\makeMPintoPDFobject=\count125
+\everyMPtoPDFconversion=\toks19
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+)
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+\AtBeginShipoutBox=\box32
+Package hyperref Info: Link coloring OFF on input line 43.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+)
+\c@section@level=\count126
+)
+LaTeX Info: Redefining \ref on input line 43.
+LaTeX Info: Redefining \pageref on input line 43.
+LaTeX Info: Redefining \nameref on input line 43.
+
+(./main_deeplearning.out) (./main_deeplearning.out)
+\@outlinefile=\write4
+\openout4 = `main_deeplearning.out'.
+
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 73.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 73.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 80.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 80.
+Missing character: There is no Ã in font cmti8!
+Missing character: There is no © in font cmti8!
+ [1
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] <images/mg019.JPG, id=
+79, 256.96pt x 192.72pt>
+File: images/mg019.JPG Graphic file (type jpg)
+
+<use images/mg019.JPG>
+Package pdftex.def Info: images/mg019.JPG used on input line 94.
+(pdftex.def)             Requested size: 120.7521pt x 90.56369pt.
+Package epstopdf Info: Source file: <images/md19.eps>
+(epstopdf)                    date: 2018-03-02 12:01:56
+(epstopdf)                    size: 190089 bytes
+(epstopdf)             Output file: <images/md19-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-10-17 09:28:26
+(epstopdf)                    size: 16628 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/md19-eps-converted-
+to.pdf images/md19.eps>
+(epstopdf)             \includegraphics on input line 95.
+Package epstopdf Info: Output file is already uptodate.
+
+<images/md19-eps-converted-to.pdf, id=80, 257.96375pt x 193.72375pt>
+File: images/md19-eps-converted-to.pdf Graphic file (type pdf)
+
+<use images/md19-eps-converted-to.pdf>
+Package pdftex.def Info: images/md19-eps-converted-to.pdf used on input line 95
+.
+(pdftex.def)             Requested size: 120.7521pt x 90.68066pt.
+
+<images/tete081.JPG, id=81, 102.784pt x 77.088pt>
+File: images/tete081.JPG Graphic file (type jpg)
+ <use images/tete081.JPG>
+Package pdftex.def Info: images/tete081.JPG used on input line 96.
+(pdftex.def)             Requested size: 120.7521pt x 90.56546pt.
+Package epstopdf Info: Source file: <images/prono60.eps>
+(epstopdf)                    date: 2018-03-02 12:02:32
+(epstopdf)                    size: 190343 bytes
+(epstopdf)             Output file: <images/prono60-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-10-17 09:28:26
+(epstopdf)                    size: 26954 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/prono60-eps-convert
+ed-to.pdf images/prono60.eps>
+(epstopdf)             \includegraphics on input line 97.
+Package epstopdf Info: Output file is already uptodate.
+
+<images/prono60-eps-converted-to.pdf, id=82, 103.38625pt x 77.28876pt>
+File: images/prono60-eps-converted-to.pdf Graphic file (type pdf)
+
+<use images/prono60-eps-converted-to.pdf>
+Package pdftex.def Info: images/prono60-eps-converted-to.pdf used on input line
+ 97.
+(pdftex.def)             Requested size: 120.7521pt x 90.27298pt.
+
+<images/elytre107.JPG, id=83, 256.96pt x 192.72pt>
+File: images/elytre107.JPG Graphic file (type jpg)
+ <use images/elytre107.JPG>
+Package pdftex.def Info: images/elytre107.JPG used on input line 98.
+(pdftex.def)             Requested size: 120.7521pt x 90.56369pt.
+
+[3] [4 <./images/mg019.JPG> <./images/md19-eps-converted-to.pdf> <./images/tete
+081.JPG> <./images/prono60-eps-converted-to.pdf> <./images/elytre107.JPG>]
+<images/wing_landmarks.png, id=116, 625.33624pt x 286.06876pt>
+File: images/wing_landmarks.png Graphic file (type png)
+
+<use images/wing_landmarks.png>
+Package pdftex.def Info: images/wing_landmarks.png used on input line 112.
+(pdftex.def)             Requested size: 250.13007pt x 114.42546pt.
+
+
+LaTeX Warning: Reference `imgears' on page 5 undefined on input line 117.
+
+[5 <./images/wing_landmarks.png (PNG copy)>]
+<images/ear_landmarks.png, id=138, 265.99374pt x 430.60875pt>
+File: images/ear_landmarks.png Graphic file (type png)
+
+<use images/ear_landmarks.png>
+Package pdftex.def Info: images/ear_landmarks.png used on input line 121.
+(pdftex.def)             Requested size: 106.3956pt x 172.24043pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[6] [7 <./images/ear_landmarks.png>] [8]
+<images/net1.png, id=174, 1214.5375pt x 251.94125pt>
+File: images/net1.png Graphic file (type png)
+ <use images/net1.png>
+Package pdftex.def Info: images/net1.png used on input line 142.
+(pdftex.def)             Requested size: 364.36406pt x 75.58295pt.
+
+Overfull \hbox (19.36406pt too wide) in paragraph at lines 142--143
+ [][] 
+ []
+
+<images/net2.png, id=176, 1208.515pt x 248.93pt>
+File: images/net2.png Graphic file (type png)
+ <use images/net2.png>
+Package pdftex.def Info: images/net2.png used on input line 151.
+(pdftex.def)             Requested size: 362.5573pt x 74.67957pt.
+
+Overfull \hbox (17.5573pt too wide) in paragraph at lines 151--152
+ [][] 
+ []
+
+[9 <./images/net1.png> <./images/net2.png>]
+<images/elementary_block.png, id=189, 614.295pt x 325.215pt>
+File: images/elementary_block.png Graphic file (type png)
+
+<use images/elementary_block.png>
+Package pdftex.def Info: images/elementary_block.png used on input line 160.
+(pdftex.def)             Requested size: 184.28992pt x 97.56525pt.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 167.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 167.
+
+<images/arch_model.png, id=191, 1637.11626pt x 283.0575pt>
+File: images/arch_model.png Graphic file (type png)
+
+<use images/arch_model.png>
+Package pdftex.def Info: images/arch_model.png used on input line 189.
+(pdftex.def)             Requested size: 327.41745pt x 56.61049pt.
+ [10 <./images/elementary_block.png (PNG copy)>]
+[11 <./images/arch_model.png>]
+<images/inc_channels.png, id=211, 547.04375pt x 339.2675pt>
+File: images/inc_channels.png Graphic file (type png)
+
+<use images/inc_channels.png>
+Package pdftex.def Info: images/inc_channels.png used on input line 206.
+(pdftex.def)             Requested size: 191.46817pt x 118.74539pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[12] <images/sp_channels.png, id=219, 562.1pt x 338.26375pt>
+File: images/sp_channels.png Graphic file (type png)
+
+<use images/sp_channels.png>
+Package pdftex.def Info: images/sp_channels.png used on input line 215.
+(pdftex.def)             Requested size: 196.73795pt x 118.39407pt.
+ [13 <./images/inc_channels.png> <./images/sp_channels.png (PNG copy)>]
+<images/cnnmodel3_5000_pronotum_v13_without_dropout_normalized_data_loss.png, i
+d=229, 578.16pt x 433.62pt>
+File: images/cnnmodel3_5000_pronotum_v13_without_dropout_normalized_data_loss.p
+ng Graphic file (type png)
+
+<use images/cnnmodel3_5000_pronotum_v13_without_dropout_normalized_data_loss.pn
+g>
+Package pdftex.def Info: images/cnnmodel3_5000_pronotum_v13_without_dropout_nor
+malized_data_loss.png used on input line 230.
+(pdftex.def)             Requested size: 231.2599pt x 173.44492pt.
+ [14 <./images/cnnmodel3_5000_pronotum_v13_without_dropout_normalized_data_loss
+.png>] <images/loss_v16.png, id=239, 578.16pt x 433.62pt>
+File: images/loss_v16.png Graphic file (type png)
+
+<use images/loss_v16.png>
+Package pdftex.def Info: images/loss_v16.png used on input line 239.
+(pdftex.def)             Requested size: 231.2599pt x 173.44492pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[15 <./images/loss_v16.png>] [16]
+<images/statistic_pronotum_from_scratch_lm1.png, id=260, 608.2725pt x 434.62375
+pt>
+File: images/statistic_pronotum_from_scratch_lm1.png Graphic file (type png)
+ <use images/statistic_pronotum_from_scratch_lm1.png>
+Package pdftex.def Info: images/statistic_pronotum_from_scratch_lm1.png used on
+ input line 309.
+(pdftex.def)             Requested size: 182.48315pt x 130.38812pt.
+
+<images/fn_accuracy.png, id=264, 76.3653pt x 57.3342pt>
+File: images/fn_accuracy.png Graphic file (type png)
+
+<use images/fn_accuracy.png>
+Package pdftex.def Info: images/fn_accuracy.png used on input line 318.
+(pdftex.def)             Requested size: 120.7521pt x 90.66576pt.
+
+<images/plandmark2.png, id=265, 178.9887pt x 133.9404pt>
+File: images/plandmark2.png Graphic file (type png)
+
+<use images/plandmark2.png>
+Package pdftex.def Info: images/plandmark2.png used on input line 319.
+(pdftex.def)             Requested size: 120.7521pt x 90.3609pt.
+ [17] [18 <./images/statistic_pronotum_from_scratch_lm1.png> <./images/fn_accur
+acy.png (PNG copy)> <./images/plandmark2.png (PNG copy)>]
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 327--367
+[]$[]$  $[]$ 
+ []
+
+
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 370--423
+[]$[]$  $[]$ 
+ []
+
+[19] [20] [21] <images/merge.png, id=306, 729.72626pt x 361.35pt>
+File: images/merge.png Graphic file (type png)
+
+<use images/merge.png>
+Package pdftex.def Info: images/merge.png used on input line 445.
+(pdftex.def)             Requested size: 364.86224pt x 180.67456pt.
+ [22 <./images/merge.png>] [23]
+Underfull \hbox (badness 10000) in paragraph at lines 464--464
+[]\OT1/cmr/m/n/10 Training
+ []
+
+
+Overfull \hbox (2.321pt too wide) in paragraph at lines 464--464
+[]\OT1/cmr/m/n/10 Validation
+ []
+
+
+Overfull \hbox (21.16843pt too wide) in paragraph at lines 481--493
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 502--502
+[]\OT1/cmr/m/n/10 Training
+ []
+
+
+Overfull \hbox (2.321pt too wide) in paragraph at lines 502--502
+[]\OT1/cmr/m/n/10 Validation
+ []
+
+
+Overfull \hbox (21.16843pt too wide) in paragraph at lines 519--534
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 543--543
+[]\OT1/cmr/m/n/10 Training
+ []
+
+
+Overfull \hbox (2.321pt too wide) in paragraph at lines 543--543
+[]\OT1/cmr/m/n/10 Validation
+ []
+
+
+Overfull \hbox (21.16843pt too wide) in paragraph at lines 560--574
+ [][] 
+ []
+
+
+Overfull \hbox (21.16843pt too wide) in paragraph at lines 582--602
+ [][] 
+ []
+
+
+Overfull \hbox (21.16843pt too wide) in paragraph at lines 608--630
+ [][] 
+ []
+
+<images/mg_part.png, id=332, 455.45157pt x 255.95625pt>
+File: images/mg_part.png Graphic file (type png)
+
+<use images/mg_part.png>
+Package pdftex.def Info: images/mg_part.png used on input line 663.
+(pdftex.def)             Requested size: 172.5pt x 96.94412pt.
+
+<images/md_part.png, id=333, 455.45157pt x 255.95625pt>
+File: images/md_part.png Graphic file (type png)
+
+<use images/md_part.png>
+Package pdftex.def Info: images/md_part.png used on input line 664.
+(pdftex.def)             Requested size: 172.5pt x 96.94412pt.
+
+Overfull \hbox (6.66664pt too wide) in paragraph at lines 663--664
+ [][]   [][] 
+ []
+
+<images/tete_part.png, id=334, 455.45157pt x 255.95625pt>
+File: images/tete_part.png Graphic file (type png)
+
+<use images/tete_part.png>
+Package pdftex.def Info: images/tete_part.png used on input line 665.
+(pdftex.def)             Requested size: 172.5pt x 96.94412pt.
+
+<images/elytre_part.png, id=335, 455.45157pt x 255.95625pt>
+File: images/elytre_part.png Graphic file (type png)
+
+<use images/elytre_part.png>
+Package pdftex.def Info: images/elytre_part.png used on input line 666.
+(pdftex.def)             Requested size: 172.5pt x 96.94412pt.
+
+Overfull \hbox (6.66664pt too wide) in paragraph at lines 665--666
+ [][]   [][] 
+ []
+
+<images/pronotum_part.png, id=336, 455.45157pt x 255.95625pt>
+File: images/pronotum_part.png Graphic file (type png)
+
+<use images/pronotum_part.png>
+Package pdftex.def Info: images/pronotum_part.png used on input line 667.
+(pdftex.def)             Requested size: 172.5pt x 96.94412pt.
+ [24] [25] [26] [27 <./images/mg_part.png (PNG copy)> <./images/md_part.png (PN
+G copy)> <./images/tete_part.png (PNG copy)> <./images/elytre_part.png (PNG cop
+y)> <./images/pronotum_part.png (PNG copy)>]
+<images/lm1_cnn_2.jpg, id=364, 379.4175pt x 216.81pt>
+File: images/lm1_cnn_2.jpg Graphic file (type jpg)
+
+<use images/lm1_cnn_2.jpg>
+Package pdftex.def Info: images/lm1_cnn_2.jpg used on input line 681.
+(pdftex.def)             Requested size: 172.5pt x 98.5726pt.
+
+<images/lm1_finetuning_2.jpg, id=365, 414.79968pt x 218.33147pt>
+File: images/lm1_finetuning_2.jpg Graphic file (type jpg)
+
+<use images/lm1_finetuning_2.jpg>
+Package pdftex.def Info: images/lm1_finetuning_2.jpg used on input line 682.
+(pdftex.def)             Requested size: 172.5pt x 90.79575pt.
+
+Overfull \hbox (6.66664pt too wide) in paragraph at lines 681--682
+ [][]   [][] 
+ []
+
+<images/lm6_cnn_2.jpg, id=366, 382.65063pt x 225.84375pt>
+File: images/lm6_cnn_2.jpg Graphic file (type jpg)
+
+<use images/lm6_cnn_2.jpg>
+Package pdftex.def Info: images/lm6_cnn_2.jpg used on input line 683.
+(pdftex.def)             Requested size: 172.5pt x 101.81139pt.
+
+<images/lm6_finetuning_2.jpg, id=367, 407.27156pt x 234.30695pt>
+File: images/lm6_finetuning_2.jpg Graphic file (type jpg)
+
+<use images/lm6_finetuning_2.jpg>
+Package pdftex.def Info: images/lm6_finetuning_2.jpg used on input line 684.
+(pdftex.def)             Requested size: 172.5pt x 99.24127pt.
+
+Overfull \hbox (6.66664pt too wide) in paragraph at lines 683--684
+ [][]   [][] 
+ []
+
+<images/fsc_elytre_lm1.png, id=368, 455.45157pt x 255.95625pt>
+File: images/fsc_elytre_lm1.png Graphic file (type png)
+
+<use images/fsc_elytre_lm1.png>
+Package pdftex.def Info: images/fsc_elytre_lm1.png used on input line 693.
+(pdftex.def)             Requested size: 137.9979pt x 77.55295pt.
+
+<images/fn_elytre_lm1.png, id=369, 455.45157pt x 255.95625pt>
+File: images/fn_elytre_lm1.png Graphic file (type png)
+
+<use images/fn_elytre_lm1.png>
+Package pdftex.def Info: images/fn_elytre_lm1.png used on input line 694.
+(pdftex.def)             Requested size: 137.9979pt x 77.55295pt.
+
+<images/fsc_elytre_lm8.png, id=370, 455.45157pt x 255.95625pt>
+File: images/fsc_elytre_lm8.png Graphic file (type png)
+
+<use images/fsc_elytre_lm8.png>
+Package pdftex.def Info: images/fsc_elytre_lm8.png used on input line 695.
+(pdftex.def)             Requested size: 137.9979pt x 77.55295pt.
+
+<images/fn_elytre_lm8.png, id=371, 455.45157pt x 255.95625pt>
+File: images/fn_elytre_lm8.png Graphic file (type png)
+
+<use images/fn_elytre_lm8.png>
+Package pdftex.def Info: images/fn_elytre_lm8.png used on input line 696.
+(pdftex.def)             Requested size: 137.9979pt x 77.55295pt.
+
+<images/fsc_tete_lm1.png, id=372, 455.45157pt x 255.95625pt>
+File: images/fsc_tete_lm1.png Graphic file (type png)
+
+<use images/fsc_tete_lm1.png>
+Package pdftex.def Info: images/fsc_tete_lm1.png used on input line 704.
+(pdftex.def)             Requested size: 137.9979pt x 77.55295pt.
+
+<images/fn_tete_lm1.png, id=373, 455.45157pt x 255.95625pt>
+File: images/fn_tete_lm1.png Graphic file (type png)
+
+<use images/fn_tete_lm1.png>
+Package pdftex.def Info: images/fn_tete_lm1.png used on input line 705.
+(pdftex.def)             Requested size: 137.9979pt x 77.55295pt.
+
+<images/fsc_tete_lm6.png, id=374, 455.45157pt x 255.95625pt>
+File: images/fsc_tete_lm6.png Graphic file (type png)
+
+<use images/fsc_tete_lm6.png>
+Package pdftex.def Info: images/fsc_tete_lm6.png used on input line 706.
+(pdftex.def)             Requested size: 137.9979pt x 77.55295pt.
+
+<images/fn_tete_lm6.png, id=375, 455.45157pt x 255.95625pt>
+File: images/fn_tete_lm6.png Graphic file (type png)
+
+<use images/fn_tete_lm6.png>
+Package pdftex.def Info: images/fn_tete_lm6.png used on input line 707.
+(pdftex.def)             Requested size: 137.9979pt x 77.55295pt.
+
+<images/fsc_mg_lm4.png, id=376, 455.45157pt x 255.95625pt>
+File: images/fsc_mg_lm4.png Graphic file (type png)
+
+<use images/fsc_mg_lm4.png>
+Package pdftex.def Info: images/fsc_mg_lm4.png used on input line 715.
+(pdftex.def)             Requested size: 137.9979pt x 77.55295pt.
+
+<images/fn_mg_lm4.png, id=377, 455.45157pt x 255.95625pt>
+File: images/fn_mg_lm4.png Graphic file (type png)
+
+<use images/fn_mg_lm4.png>
+Package pdftex.def Info: images/fn_mg_lm4.png used on input line 716.
+(pdftex.def)             Requested size: 137.9979pt x 77.55295pt.
+
+<images/fsc_mg_lm1.png, id=378, 455.45157pt x 255.95625pt>
+File: images/fsc_mg_lm1.png Graphic file (type png)
+
+<use images/fsc_mg_lm1.png>
+Package pdftex.def Info: images/fsc_mg_lm1.png used on input line 717.
+(pdftex.def)             Requested size: 137.9979pt x 77.55295pt.
+
+<images/fn_mg_lm1.png, id=379, 455.45157pt x 255.95625pt>
+File: images/fn_mg_lm1.png Graphic file (type png)
+
+<use images/fn_mg_lm1.png>
+Package pdftex.def Info: images/fn_mg_lm1.png used on input line 718.
+(pdftex.def)             Requested size: 137.9979pt x 77.55295pt.
+
+<images/fsc_md_lm4.png, id=380, 455.45157pt x 255.95625pt>
+File: images/fsc_md_lm4.png Graphic file (type png)
+
+<use images/fsc_md_lm4.png>
+Package pdftex.def Info: images/fsc_md_lm4.png used on input line 726.
+(pdftex.def)             Requested size: 137.9979pt x 77.55295pt.
+
+<images/fn_md_lm4.png, id=381, 455.45157pt x 255.95625pt>
+File: images/fn_md_lm4.png Graphic file (type png)
+
+<use images/fn_md_lm4.png>
+Package pdftex.def Info: images/fn_md_lm4.png used on input line 727.
+(pdftex.def)             Requested size: 137.9979pt x 77.55295pt.
+
+<images/fsc_md_lm1.png, id=382, 455.45157pt x 255.95625pt>
+File: images/fsc_md_lm1.png Graphic file (type png)
+
+<use images/fsc_md_lm1.png>
+Package pdftex.def Info: images/fsc_md_lm1.png used on input line 728.
+(pdftex.def)             Requested size: 137.9979pt x 77.55295pt.
+
+<images/fn_md_lm1.png, id=383, 455.45157pt x 255.95625pt>
+File: images/fn_md_lm1.png Graphic file (type png)
+
+<use images/fn_md_lm1.png>
+Package pdftex.def Info: images/fn_md_lm1.png used on input line 729.
+(pdftex.def)             Requested size: 137.9979pt x 77.55295pt.
+ [28 <./images/lm1_cnn_2.jpg> <./images/lm1_finetuning_2.jpg> <./images/lm6_cnn
+_2.jpg> <./images/lm6_finetuning_2.jpg>] [29 <./images/fsc_elytre_lm1.png (PNG 
+copy)> <./images/fn_elytre_lm1.png (PNG copy)> <./images/fsc_elytre_lm8.png (PN
+G copy)> <./images/fn_elytre_lm8.png (PNG copy)> <./images/fsc_tete_lm1.png (PN
+G copy)> <./images/fn_tete_lm1.png (PNG copy)> <./images/fsc_tete_lm6.png (PNG 
+copy)> <./images/fn_tete_lm6.png (PNG copy)>]
+[30 <./images/fsc_mg_lm4.png (PNG copy)> <./images/fn_mg_lm4.png (PNG copy)> <.
+/images/fsc_mg_lm1.png (PNG copy)> <./images/fn_mg_lm1.png (PNG copy)> <./image
+s/fsc_md_lm4.png (PNG copy)> <./images/fn_md_lm4.png (PNG copy)> <./images/fsc_
+md_lm1.png (PNG copy)> <./images/fn_md_lm1.png (PNG copy)>]
+(./main_deeplearning.bbl [31] [32] [33])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 749.
+ [34]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 749.
+ (./main_deeplearning.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 749.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 749.
+Package rerunfilecheck Info: File `main_deeplearning.out' has not changed.
+(rerunfilecheck)             Checksum: 7FAA4937AEBF3366A341B4106D6B77C0;617.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 749.
+ ) 
+Here is how much of TeX's memory you used:
+ 7608 strings out of 493029
+ 117618 string characters out of 6136234
+ 230157 words of memory out of 5000000
+ 10881 multiletter control sequences out of 15000+600000
+ 10289 words of font info for 36 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 36i,13n,49p,2572b,523s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmti7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
+t8.pfb>
+Output written on main_deeplearning.pdf (34 pages, 2170546 bytes).
+PDF statistics:
+ 563 PDF objects out of 1000 (max. 8388607)
+ 450 compressed objects within 5 object streams
+ 140 named destinations out of 1000 (max. 500000)
+ 301 words of extra memory for PDF output out of 10000 (max. 10000000)
+
