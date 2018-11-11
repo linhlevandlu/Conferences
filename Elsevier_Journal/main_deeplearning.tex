@@ -120,7 +120,7 @@ In recent years, deep learning \cite{lecun2015deep} is known as a solution for t
 	\centering
 	\includegraphics[scale=.4]{images/ear_landmarks}	\
 	\caption{Landmarks on human ear in study of Cintas et al. \cite{cintas2016automatic}}
-	label{imgears}
+	\label{imgears}
 \end{figure}
 
 
@@ -130,11 +130,26 @@ As an association with the biologist, we study to develop an automatic method fo
 \label{sOverview}
 CNN is a feedforward network. It takes the information following one direction from the inputs to the outputs. Currently, CNNs have many different variations, but in general, it consists of convolutional and pooling layers which are stacked together to convolve and to down-sample the input. Then, they are followed by one or more fully connected layers to give the decision as the output of the network. 
 
-Fig. \ref{} shows an example of a CNN for classification problem. The network inputs directly an image to several stages of convolutional and pooling layers. Then, the representation is feed into one or more full connected layers. Finally, the last fully connected layer gives the category label for the input image. This architecture could be seen as a popular one that we can find from the literature. However, several architectures have been proposed recurrently to improve the accuracy or to decrease the computation costs.
+Fig. \ref{imgcnn_network} shows an example of a CNN for classification problem. The network inputs directly an image to several stages of convolutional and pooling layers. Then, the representation is feed into one or more full connected layers. Finally, the last fully connected layer gives the category label for the input image. This architecture could be seen as a popular one that we can find from the literature. However, several architectures have been proposed recurrently to improve the accuracy or to decrease the computation costs. In this section, we will mention to the popular layers in a CNN: convolutional layers, pooling layers and fully connected layers.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=.5]{images/cnn_network}
+	\caption{A CNN network for classification problem}
+	\label{imgcnn_network}
+\end{figure}
 
 Convolutional layers: use as an features extractor by applying some learnable weights on the input images. The input image are convolved with the learnable weights in order to compute the new feature maps; then, the convolved results are sent through a nonlinear activation. In convolutional layer, the neurons are are arranged into feature maps. All the neurons within a feature map have constrained to be equal; however, different features maps within the same convolutional layer have different weights so that several features can be extract at each location of an input image. 
 
-Pooling layers: is mostly used to down-sampling the size of the input with the purpose to reduce the spatial resolution of the feature map to reduce the computation cost. Initially, it was common practice to use average pooling which propagates the average of all the input to the next layer. However, in more recent models \cite{}, max pooling which propagates the maximum value (selecting the largest value) with a receptive field to the next layer. Fig. \ref{} illustrates the differences between max and average pooling. Give an input image of size $4 \times 4$, if applying a $2 \times 2$ filter and stride of two is applied, the output will be had the size of $2 \times 2$ for both cases. However, the value in each element of the output is different because the max pooling outputs the maximum values of the filter region, while average pooling outputs the average value of the same region.
+Pooling layers: is mostly used to down-sampling the size of the input with the purpose to reduce the spatial resolution of the feature map to reduce the computation cost. Initially, it was common practice to use average pooling which propagates the average of all the input to the next layer. However, in more recent models \cite{}, max pooling which propagates the maximum value (selecting the largest value) with a receptive field to the next layer. Fig. \ref{imgcnn_pooling} illustrates the differences between max and average pooling. Give an input image of size $4 \times 4$, if applying a $2 \times 2$ filter and stride of two is applied, the output will be had the size of $2 \times 2$ for both cases. However, the value in each element of the output is different because the max pooling outputs the maximum values of the filter region, while average pooling outputs the average value of the same region.
+
+From the beginning of deep learning until now, many deep learning frameworks have been developed. Depending on the development team, Almost 
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=.5]{images/pooling}
+	\caption{The results of different pooling}
+	\label{imgcnn_pooling}
+\end{figure}
 
 Fully connected layers: are usually follow the convolutional and pooling layer which used to extract the abstract feature representations. A CNN may be have one or more fully connected layers. It interprets the feature represetations and perform a function of high-level reasoning (i.e. giving classification score) by applying the activation functions. In practice, the last fully connected layer refers to the output of the network and chosing the activation function is depened on which kind of problem that network solve, i.e. we usually softmax activation function for a classfication problem but it is not useful in a support vector machine. 
 \section{Network architectures designing}

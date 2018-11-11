@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.07.0 (MiKTeX 2.9.6840 64-bit)  (format=lualatex 2018.10.21)  9 NOV 2018 23:11
+This is LuaTeX, Version 1.07.0 (MiKTeX 2.9.6840 64-bit)  (format=lualatex 2018.10.21)  11 NOV 2018 22:04
  restricted system commands enabled.
 **main_deeplearning.tex
 (./main_deeplearning.tex
@@ -32,7 +32,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 0.392 seconds ("C:/Program File
+luaotfload | main : initialization completed in 0.388 seconds ("C:/Program File
 s/MiKTeX 2.9/tex/latex/elsarticle/elsarticle.cls"
 Document Class: elsarticle 2018/06/08, 3.0: Elsevier Ltd
 \@bls=\dimen102
@@ -532,12 +532,8 @@ File: images/wing_landmarks.png Graphic file (type png)
 <use images/wing_landmarks.png>
 Package luatex.def Info: images/wing_landmarks.png  used on input line 112.
 (luatex.def)             Requested size: 250.13007pt x 114.42546pt.
-
-
-LaTeX Warning: Reference `imgears' on page 5 undefined on input line 117.
-
-[5<./images/wing_landmarks.png>]
-<images/ear_landmarks.png, id=145, 265.99374pt x 430.60875pt>
+ [5<./images/wing_landmarks.png>]
+<images/ear_landmarks.png, id=146, 265.99374pt x 430.60875pt>
 File: images/ear_landmarks.png Graphic file (type png)
 <use images/ear_landmarks.png>
 Package luatex.def Info: images/ear_landmarks.png  used on input line 121.
@@ -546,372 +542,387 @@ Package luatex.def Info: images/ear_landmarks.png  used on input line 121.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[6] [7<./images/ear_landmarks.png>] [8] [9]
-<images/net1.png, id=190, 1214.5375pt x 251.94125pt>
+[6] [7<./images/ear_landmarks.png>]
+<images/cnn_network.png, id=176, 706.43925pt x 240.29774pt>
+File: images/cnn_network.png Graphic file (type png)
+<use images/cnn_network.png>
+Package luatex.def Info: images/cnn_network.png  used on input line 137.
+(luatex.def)             Requested size: 353.21877pt x 120.14857pt.
+
+Overfull \hbox (8.21877pt too wide) in paragraph at lines 137--138
+ [][] 
+ []
+
+[8<./images/cnn_network.png>]
+<images/pooling.png, id=186, 373.395pt x 316.7835pt>
+File: images/pooling.png Graphic file (type png)
+<use images/pooling.png>
+Package luatex.def Info: images/pooling.png  used on input line 149.
+(luatex.def)             Requested size: 186.69704pt x 158.39136pt.
+ [9<./images/pooling.png>]
+<images/net1.png, id=193, 1214.5375pt x 251.94125pt>
 File: images/net1.png Graphic file (type png)
 <use images/net1.png>
-Package luatex.def Info: images/net1.png  used on input line 148.
+Package luatex.def Info: images/net1.png  used on input line 163.
 (luatex.def)             Requested size: 364.36406pt x 75.58295pt.
 
-Overfull \hbox (19.36406pt too wide) in paragraph at lines 148--149
+Overfull \hbox (19.36406pt too wide) in paragraph at lines 163--164
  [][] 
  []
 
-<images/net2.png, id=192, 1208.515pt x 248.93pt>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[10]
+<images/net2.png, id=203, 1208.515pt x 248.93pt>
 File: images/net2.png Graphic file (type png)
 <use images/net2.png>
-Package luatex.def Info: images/net2.png  used on input line 157.
+Package luatex.def Info: images/net2.png  used on input line 172.
 (luatex.def)             Requested size: 362.5573pt x 74.67957pt.
 
-Overfull \hbox (17.5573pt too wide) in paragraph at lines 157--158
+Overfull \hbox (17.5573pt too wide) in paragraph at lines 172--173
  [][] 
  []
 
-<images/elementary_block.png, id=195, 614.295pt x 325.215pt>
+<images/elementary_block.png, id=206, 614.295pt x 325.215pt>
 File: images/elementary_block.png Graphic file (type png)
 <use images/elementary_block.png>
-Package luatex.def Info: images/elementary_block.png  used on input line 166.
+Package luatex.def Info: images/elementary_block.png  used on input line 181.
 (luatex.def)             Requested size: 184.28992pt x 97.56525pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[10<./images/net1.png><./images/net2.png>]
-<images/arch_model.png, id=206, 1637.11626pt x 283.0575pt>
+[11<./images/net1.png><./images/net2.png>]
+<images/arch_model.png, id=218, 1637.11626pt x 283.0575pt>
 File: images/arch_model.png Graphic file (type png)
 <use images/arch_model.png>
-Package luatex.def Info: images/arch_model.png  used on input line 195.
+Package luatex.def Info: images/arch_model.png  used on input line 210.
 (luatex.def)             Requested size: 327.41745pt x 56.61049pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[11<./images/elementary_block.png>] [12<./images/arch_model.png>]
-<images/inc_channels.png, id=229, 547.04375pt x 339.2675pt>
+ [12<./images/elementary_block.png><./images/arch_model.png>] [13]
+<images/inc_channels.png, id=238, 547.04375pt x 339.2675pt>
 File: images/inc_channels.png Graphic file (type png)
 <use images/inc_channels.png>
-Package luatex.def Info: images/inc_channels.png  used on input line 212.
+Package luatex.def Info: images/inc_channels.png  used on input line 227.
 (luatex.def)             Requested size: 191.46817pt x 118.74539pt.
- [13<./images/inc_channels.png>]
-<images/sp_channels.png, id=239, 562.1pt x 338.26375pt>
+ [14<./images/inc_channels.png>]
+<images/sp_channels.png, id=249, 562.1pt x 338.26375pt>
 File: images/sp_channels.png Graphic file (type png)
 <use images/sp_channels.png>
-Package luatex.def Info: images/sp_channels.png  used on input line 221.
+Package luatex.def Info: images/sp_channels.png  used on input line 236.
 (luatex.def)             Requested size: 196.73795pt x 118.39407pt.
- [14<./images/sp_channels.png>]
+ [15<./images/sp_channels.png>]
 <images/cnnmodel3_5000_pronotum_v13_without_dropout_normalized_data_loss.png, id
-=249, 578.16pt x 433.62pt>
+=258, 578.16pt x 433.62pt>
 File: images/cnnmodel3_5000_pronotum_v13_without_dropout_normalized_data_loss.pn
 g Graphic file (type png)
 <use images/cnnmodel3_5000_pronotum_v13_without_dropout_normalized_data_loss.png
 >
 Package luatex.def Info: images/cnnmodel3_5000_pronotum_v13_without_dropout_norm
-alized_data_loss.png  used on input line 236.
+alized_data_loss.png  used on input line 251.
 (luatex.def)             Requested size: 231.2599pt x 173.44492pt.
- [15<./images/cnnmodel3_5000_pronotum_v13_without_dropout_normalized_data_loss.p
+ [16<./images/cnnmodel3_5000_pronotum_v13_without_dropout_normalized_data_loss.p
 ng>]
-<images/loss_v16.png, id=260, 578.16pt x 433.62pt>
+<images/loss_v16.png, id=270, 578.16pt x 433.62pt>
 File: images/loss_v16.png Graphic file (type png)
 <use images/loss_v16.png>
-Package luatex.def Info: images/loss_v16.png  used on input line 245.
+Package luatex.def Info: images/loss_v16.png  used on input line 260.
 (luatex.def)             Requested size: 231.2599pt x 173.44492pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[16<./images/loss_v16.png>] [17]
-<images/statistic_pronotum_from_scratch_lm1.png, id=285, 608.2725pt x 434.62375p
+[17<./images/loss_v16.png>] [18]
+<images/statistic_pronotum_from_scratch_lm1.png, id=296, 608.2725pt x 434.62375p
 t>
 File: images/statistic_pronotum_from_scratch_lm1.png Graphic file (type png)
 <use images/statistic_pronotum_from_scratch_lm1.png>
 Package luatex.def Info: images/statistic_pronotum_from_scratch_lm1.png  used on
- input line 315.
+ input line 330.
 (luatex.def)             Requested size: 182.48315pt x 130.38812pt.
- [18<./images/statistic_pronotum_from_scratch_lm1.png>]
-<images/fn_accuracy.png, id=295, 76.3653pt x 57.3342pt>
+ [19<./images/statistic_pronotum_from_scratch_lm1.png>]
+<images/fn_accuracy.png, id=308, 76.3653pt x 57.3342pt>
 File: images/fn_accuracy.png Graphic file (type png)
 <use images/fn_accuracy.png>
-Package luatex.def Info: images/fn_accuracy.png  used on input line 324.
+Package luatex.def Info: images/fn_accuracy.png  used on input line 339.
 (luatex.def)             Requested size: 120.7521pt x 90.66576pt.
-<images/plandmark2.png, id=296, 178.9887pt x 133.9404pt>
+<images/plandmark2.png, id=309, 178.9887pt x 133.9404pt>
 File: images/plandmark2.png Graphic file (type png)
 <use images/plandmark2.png>
-Package luatex.def Info: images/plandmark2.png  used on input line 325.
+Package luatex.def Info: images/plandmark2.png  used on input line 340.
 (luatex.def)             Requested size: 120.7521pt x 90.3609pt.
 
-Overfull \hbox (2.22pt too wide) in paragraph at lines 333--373
+Overfull \hbox (2.22pt too wide) in paragraph at lines 348--388
 []$[]$  $[]$ 
  []
 
 
-Overfull \hbox (2.22pt too wide) in paragraph at lines 376--429
+Overfull \hbox (2.22pt too wide) in paragraph at lines 391--444
 []$[]$  $[]$ 
  []
 
-[19<./images/fn_accuracy.png><./images/plandmark2.png>] [20] [21]
-<images/merge.png, id=327, 729.72626pt x 361.35pt>
+[20<./images/fn_accuracy.png><./images/plandmark2.png>] [21] [22]
+<images/merge.png, id=339, 729.72626pt x 361.35pt>
 File: images/merge.png Graphic file (type png)
 <use images/merge.png>
-Package luatex.def Info: images/merge.png  used on input line 451.
+Package luatex.def Info: images/merge.png  used on input line 466.
 (luatex.def)             Requested size: 364.86224pt x 180.67456pt.
- [22] [23<./images/merge.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 470--470
+ [23] [24<./images/merge.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 485--485
 []\TU/lmr/m/n/10 Train-ing
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 470--470
+Underfull \hbox (badness 10000) in paragraph at lines 485--485
 []\TU/lmr/m/n/10 Val-i-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 470--470
+Underfull \hbox (badness 10000) in paragraph at lines 485--485
 \TU/lmr/m/n/10 da-tion
  []
 
 
-Overfull \hbox (21.17442pt too wide) in paragraph at lines 487--499
+Overfull \hbox (21.17442pt too wide) in paragraph at lines 502--514
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 508--508
+Underfull \hbox (badness 10000) in paragraph at lines 523--523
 []\TU/lmr/m/n/10 Train-ing
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 508--508
+Underfull \hbox (badness 10000) in paragraph at lines 523--523
 []\TU/lmr/m/n/10 Val-i-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 508--508
+Underfull \hbox (badness 10000) in paragraph at lines 523--523
 \TU/lmr/m/n/10 da-tion
  []
 
 
-Overfull \hbox (21.17442pt too wide) in paragraph at lines 525--540
+Overfull \hbox (21.17442pt too wide) in paragraph at lines 540--555
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 549--549
+Underfull \hbox (badness 10000) in paragraph at lines 564--564
 []\TU/lmr/m/n/10 Train-ing
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 549--549
+Underfull \hbox (badness 10000) in paragraph at lines 564--564
 []\TU/lmr/m/n/10 Val-i-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 549--549
+Underfull \hbox (badness 10000) in paragraph at lines 564--564
 \TU/lmr/m/n/10 da-tion
  []
 
 
-Overfull \hbox (21.17442pt too wide) in paragraph at lines 566--580
+Overfull \hbox (21.17442pt too wide) in paragraph at lines 581--595
  [][] 
  []
 
 
-Overfull \hbox (21.17442pt too wide) in paragraph at lines 588--608
+Overfull \hbox (21.17442pt too wide) in paragraph at lines 603--623
  [][] 
  []
 
 
-Overfull \hbox (21.17442pt too wide) in paragraph at lines 614--636
+Overfull \hbox (21.17442pt too wide) in paragraph at lines 629--651
  [][] 
  []
 
-<images/mg_part.png, id=351, 455.45157pt x 255.95625pt>
+[25] [26] [27]
+<images/mg_part.png, id=380, 455.45157pt x 255.95625pt>
 File: images/mg_part.png Graphic file (type png)
 <use images/mg_part.png>
-Package luatex.def Info: images/mg_part.png  used on input line 669.
+Package luatex.def Info: images/mg_part.png  used on input line 684.
 (luatex.def)             Requested size: 172.5pt x 96.94412pt.
-<images/md_part.png, id=352, 455.45157pt x 255.95625pt>
+<images/md_part.png, id=381, 455.45157pt x 255.95625pt>
 File: images/md_part.png Graphic file (type png)
 <use images/md_part.png>
-Package luatex.def Info: images/md_part.png  used on input line 670.
+Package luatex.def Info: images/md_part.png  used on input line 685.
 (luatex.def)             Requested size: 172.5pt x 96.94412pt.
 
-Overfull \hbox (6.66pt too wide) in paragraph at lines 669--670
+Overfull \hbox (6.66pt too wide) in paragraph at lines 684--685
  [][]   [][] 
  []
 
-<images/tete_part.png, id=353, 455.45157pt x 255.95625pt>
+<images/tete_part.png, id=382, 455.45157pt x 255.95625pt>
 File: images/tete_part.png Graphic file (type png)
 <use images/tete_part.png>
-Package luatex.def Info: images/tete_part.png  used on input line 671.
+Package luatex.def Info: images/tete_part.png  used on input line 686.
 (luatex.def)             Requested size: 172.5pt x 96.94412pt.
-<images/elytre_part.png, id=354, 455.45157pt x 255.95625pt>
+<images/elytre_part.png, id=383, 455.45157pt x 255.95625pt>
 File: images/elytre_part.png Graphic file (type png)
 <use images/elytre_part.png>
-Package luatex.def Info: images/elytre_part.png  used on input line 672.
+Package luatex.def Info: images/elytre_part.png  used on input line 687.
 (luatex.def)             Requested size: 172.5pt x 96.94412pt.
 
-Overfull \hbox (6.66pt too wide) in paragraph at lines 671--672
+Overfull \hbox (6.66pt too wide) in paragraph at lines 686--687
  [][]   [][] 
  []
 
-<images/pronotum_part.png, id=355, 455.45157pt x 255.95625pt>
+<images/pronotum_part.png, id=384, 455.45157pt x 255.95625pt>
 File: images/pronotum_part.png Graphic file (type png)
 <use images/pronotum_part.png>
-Package luatex.def Info: images/pronotum_part.png  used on input line 673.
+Package luatex.def Info: images/pronotum_part.png  used on input line 688.
 (luatex.def)             Requested size: 172.5pt x 96.94412pt.
-[24] [25] [26<./images/mg_part.png><./images/md_part.png><./images/tete_part.png
-><./images/elytre_part.png><./images/pronotum_part.png>]
-<images/lm1_cnn_2.jpg, id=383, 379.4175pt x 216.81pt>
+[28<./images/mg_part.png><./images/md_part.png><./images/tete_part.png><./images
+/elytre_part.png><./images/pronotum_part.png>]
+<images/lm1_cnn_2.jpg, id=398, 379.4175pt x 216.81pt>
 File: images/lm1_cnn_2.jpg Graphic file (type jpg)
 <use images/lm1_cnn_2.jpg>
-Package luatex.def Info: images/lm1_cnn_2.jpg  used on input line 687.
+Package luatex.def Info: images/lm1_cnn_2.jpg  used on input line 702.
 (luatex.def)             Requested size: 172.5pt x 98.5726pt.
-<images/lm1_finetuning_2.jpg, id=384, 414.79968pt x 218.33147pt>
+<images/lm1_finetuning_2.jpg, id=399, 414.79968pt x 218.33147pt>
 File: images/lm1_finetuning_2.jpg Graphic file (type jpg)
 <use images/lm1_finetuning_2.jpg>
-Package luatex.def Info: images/lm1_finetuning_2.jpg  used on input line 688.
+Package luatex.def Info: images/lm1_finetuning_2.jpg  used on input line 703.
 (luatex.def)             Requested size: 172.5pt x 90.79575pt.
 
-Overfull \hbox (6.66pt too wide) in paragraph at lines 687--688
+Overfull \hbox (6.66pt too wide) in paragraph at lines 702--703
  [][]   [][] 
  []
 
-<images/lm6_cnn_2.jpg, id=385, 382.65063pt x 225.84375pt>
+<images/lm6_cnn_2.jpg, id=400, 382.65063pt x 225.84375pt>
 File: images/lm6_cnn_2.jpg Graphic file (type jpg)
 <use images/lm6_cnn_2.jpg>
-Package luatex.def Info: images/lm6_cnn_2.jpg  used on input line 689.
+Package luatex.def Info: images/lm6_cnn_2.jpg  used on input line 704.
 (luatex.def)             Requested size: 172.5pt x 101.81139pt.
-<images/lm6_finetuning_2.jpg, id=386, 407.27156pt x 234.30695pt>
+<images/lm6_finetuning_2.jpg, id=401, 407.27156pt x 234.30695pt>
 File: images/lm6_finetuning_2.jpg Graphic file (type jpg)
 <use images/lm6_finetuning_2.jpg>
-Package luatex.def Info: images/lm6_finetuning_2.jpg  used on input line 690.
+Package luatex.def Info: images/lm6_finetuning_2.jpg  used on input line 705.
 (luatex.def)             Requested size: 172.5pt x 99.24127pt.
 
-Overfull \hbox (6.66pt too wide) in paragraph at lines 689--690
+Overfull \hbox (6.66pt too wide) in paragraph at lines 704--705
  [][]   [][] 
  []
 
-<images/fsc_elytre_lm1.png, id=387, 455.45157pt x 255.95625pt>
+<images/fsc_elytre_lm1.png, id=402, 455.45157pt x 255.95625pt>
 File: images/fsc_elytre_lm1.png Graphic file (type png)
 <use images/fsc_elytre_lm1.png>
-Package luatex.def Info: images/fsc_elytre_lm1.png  used on input line 699.
+Package luatex.def Info: images/fsc_elytre_lm1.png  used on input line 714.
 (luatex.def)             Requested size: 137.9979pt x 77.55295pt.
-<images/fn_elytre_lm1.png, id=388, 455.45157pt x 255.95625pt>
+<images/fn_elytre_lm1.png, id=403, 455.45157pt x 255.95625pt>
 File: images/fn_elytre_lm1.png Graphic file (type png)
 <use images/fn_elytre_lm1.png>
-Package luatex.def Info: images/fn_elytre_lm1.png  used on input line 700.
+Package luatex.def Info: images/fn_elytre_lm1.png  used on input line 715.
 (luatex.def)             Requested size: 137.9979pt x 77.55295pt.
-<images/fsc_elytre_lm8.png, id=389, 455.45157pt x 255.95625pt>
+<images/fsc_elytre_lm8.png, id=404, 455.45157pt x 255.95625pt>
 File: images/fsc_elytre_lm8.png Graphic file (type png)
 <use images/fsc_elytre_lm8.png>
-Package luatex.def Info: images/fsc_elytre_lm8.png  used on input line 701.
+Package luatex.def Info: images/fsc_elytre_lm8.png  used on input line 716.
 (luatex.def)             Requested size: 137.9979pt x 77.55295pt.
-<images/fn_elytre_lm8.png, id=390, 455.45157pt x 255.95625pt>
+<images/fn_elytre_lm8.png, id=405, 455.45157pt x 255.95625pt>
 File: images/fn_elytre_lm8.png Graphic file (type png)
 <use images/fn_elytre_lm8.png>
-Package luatex.def Info: images/fn_elytre_lm8.png  used on input line 702.
+Package luatex.def Info: images/fn_elytre_lm8.png  used on input line 717.
 (luatex.def)             Requested size: 137.9979pt x 77.55295pt.
-<images/fsc_tete_lm1.png, id=391, 455.45157pt x 255.95625pt>
+<images/fsc_tete_lm1.png, id=406, 455.45157pt x 255.95625pt>
 File: images/fsc_tete_lm1.png Graphic file (type png)
 <use images/fsc_tete_lm1.png>
-Package luatex.def Info: images/fsc_tete_lm1.png  used on input line 710.
+Package luatex.def Info: images/fsc_tete_lm1.png  used on input line 725.
 (luatex.def)             Requested size: 137.9979pt x 77.55295pt.
-<images/fn_tete_lm1.png, id=392, 455.45157pt x 255.95625pt>
+<images/fn_tete_lm1.png, id=407, 455.45157pt x 255.95625pt>
 File: images/fn_tete_lm1.png Graphic file (type png)
 <use images/fn_tete_lm1.png>
-Package luatex.def Info: images/fn_tete_lm1.png  used on input line 711.
+Package luatex.def Info: images/fn_tete_lm1.png  used on input line 726.
 (luatex.def)             Requested size: 137.9979pt x 77.55295pt.
-<images/fsc_tete_lm6.png, id=393, 455.45157pt x 255.95625pt>
+<images/fsc_tete_lm6.png, id=408, 455.45157pt x 255.95625pt>
 File: images/fsc_tete_lm6.png Graphic file (type png)
 <use images/fsc_tete_lm6.png>
-Package luatex.def Info: images/fsc_tete_lm6.png  used on input line 712.
+Package luatex.def Info: images/fsc_tete_lm6.png  used on input line 727.
 (luatex.def)             Requested size: 137.9979pt x 77.55295pt.
-<images/fn_tete_lm6.png, id=394, 455.45157pt x 255.95625pt>
+<images/fn_tete_lm6.png, id=409, 455.45157pt x 255.95625pt>
 File: images/fn_tete_lm6.png Graphic file (type png)
 <use images/fn_tete_lm6.png>
-Package luatex.def Info: images/fn_tete_lm6.png  used on input line 713.
+Package luatex.def Info: images/fn_tete_lm6.png  used on input line 728.
 (luatex.def)             Requested size: 137.9979pt x 77.55295pt.
-<images/fsc_mg_lm4.png, id=395, 455.45157pt x 255.95625pt>
+<images/fsc_mg_lm4.png, id=410, 455.45157pt x 255.95625pt>
 File: images/fsc_mg_lm4.png Graphic file (type png)
 <use images/fsc_mg_lm4.png>
-Package luatex.def Info: images/fsc_mg_lm4.png  used on input line 721.
+Package luatex.def Info: images/fsc_mg_lm4.png  used on input line 736.
 (luatex.def)             Requested size: 137.9979pt x 77.55295pt.
-<images/fn_mg_lm4.png, id=396, 455.45157pt x 255.95625pt>
+<images/fn_mg_lm4.png, id=411, 455.45157pt x 255.95625pt>
 File: images/fn_mg_lm4.png Graphic file (type png)
 <use images/fn_mg_lm4.png>
-Package luatex.def Info: images/fn_mg_lm4.png  used on input line 722.
+Package luatex.def Info: images/fn_mg_lm4.png  used on input line 737.
 (luatex.def)             Requested size: 137.9979pt x 77.55295pt.
-<images/fsc_mg_lm1.png, id=397, 455.45157pt x 255.95625pt>
+<images/fsc_mg_lm1.png, id=412, 455.45157pt x 255.95625pt>
 File: images/fsc_mg_lm1.png Graphic file (type png)
 <use images/fsc_mg_lm1.png>
-Package luatex.def Info: images/fsc_mg_lm1.png  used on input line 723.
+Package luatex.def Info: images/fsc_mg_lm1.png  used on input line 738.
 (luatex.def)             Requested size: 137.9979pt x 77.55295pt.
-<images/fn_mg_lm1.png, id=398, 455.45157pt x 255.95625pt>
+<images/fn_mg_lm1.png, id=413, 455.45157pt x 255.95625pt>
 File: images/fn_mg_lm1.png Graphic file (type png)
 <use images/fn_mg_lm1.png>
-Package luatex.def Info: images/fn_mg_lm1.png  used on input line 724.
+Package luatex.def Info: images/fn_mg_lm1.png  used on input line 739.
 (luatex.def)             Requested size: 137.9979pt x 77.55295pt.
-<images/fsc_md_lm4.png, id=399, 455.45157pt x 255.95625pt>
+<images/fsc_md_lm4.png, id=414, 455.45157pt x 255.95625pt>
 File: images/fsc_md_lm4.png Graphic file (type png)
 <use images/fsc_md_lm4.png>
-Package luatex.def Info: images/fsc_md_lm4.png  used on input line 732.
+Package luatex.def Info: images/fsc_md_lm4.png  used on input line 747.
 (luatex.def)             Requested size: 137.9979pt x 77.55295pt.
-<images/fn_md_lm4.png, id=400, 455.45157pt x 255.95625pt>
+<images/fn_md_lm4.png, id=415, 455.45157pt x 255.95625pt>
 File: images/fn_md_lm4.png Graphic file (type png)
 <use images/fn_md_lm4.png>
-Package luatex.def Info: images/fn_md_lm4.png  used on input line 733.
+Package luatex.def Info: images/fn_md_lm4.png  used on input line 748.
 (luatex.def)             Requested size: 137.9979pt x 77.55295pt.
-<images/fsc_md_lm1.png, id=401, 455.45157pt x 255.95625pt>
+<images/fsc_md_lm1.png, id=416, 455.45157pt x 255.95625pt>
 File: images/fsc_md_lm1.png Graphic file (type png)
 <use images/fsc_md_lm1.png>
-Package luatex.def Info: images/fsc_md_lm1.png  used on input line 734.
+Package luatex.def Info: images/fsc_md_lm1.png  used on input line 749.
 (luatex.def)             Requested size: 137.9979pt x 77.55295pt.
-<images/fn_md_lm1.png, id=402, 455.45157pt x 255.95625pt>
+<images/fn_md_lm1.png, id=417, 455.45157pt x 255.95625pt>
 File: images/fn_md_lm1.png Graphic file (type png)
 <use images/fn_md_lm1.png>
-Package luatex.def Info: images/fn_md_lm1.png  used on input line 735.
+Package luatex.def Info: images/fn_md_lm1.png  used on input line 750.
 (luatex.def)             Requested size: 137.9979pt x 77.55295pt.
-[27] [28] [29<./images/lm1_cnn_2.jpg><./images/lm1_finetuning_2.jpg><./images/lm
-6_cnn_2.jpg><./images/lm6_finetuning_2.jpg>] [30<./images/fsc_elytre_lm1.png><./
-images/fn_elytre_lm1.png><./images/fsc_elytre_lm8.png><./images/fn_elytre_lm8.pn
-g><./images/fsc_tete_lm1.png><./images/fn_tete_lm1.png><./images/fsc_tete_lm6.pn
-g><./images/fn_tete_lm6.png>] [31<./images/fsc_mg_lm4.png><./images/fn_mg_lm4.pn
-g><./images/fsc_mg_lm1.png><./images/fn_mg_lm1.png><./images/fsc_md_lm4.png><./i
-mages/fn_md_lm4.png><./images/fsc_md_lm1.png><./images/fn_md_lm1.png>]
-(./main_deeplearning.bbl [32] [33]
+[29] [30<./images/lm1_cnn_2.jpg><./images/lm1_finetuning_2.jpg><./images/lm6_cnn
+_2.jpg><./images/lm6_finetuning_2.jpg>] [31<./images/fsc_elytre_lm1.png><./image
+s/fn_elytre_lm1.png><./images/fsc_elytre_lm8.png><./images/fn_elytre_lm8.png><./
+images/fsc_tete_lm1.png><./images/fn_tete_lm1.png><./images/fsc_tete_lm6.png><./
+images/fn_tete_lm6.png>] [32<./images/fsc_mg_lm4.png><./images/fn_mg_lm4.png><./
+images/fsc_mg_lm1.png><./images/fn_mg_lm1.png><./images/fsc_md_lm4.png><./images
+/fn_md_lm4.png><./images/fsc_md_lm1.png><./images/fn_md_lm1.png>]
+(./main_deeplearning.bbl [33] [34]
 Underfull \hbox (badness 1303) in paragraph at lines 133--144
 \TU/lmr/m/n/10 339--349.  []$\TU/lmtt/m/n/10 arXiv:https://doi.org/10.1080/2168
 1163.2015.1061448$[]\TU/lmr/m/n/10 ,
  []
 
-[34])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 755.
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 770.
  [35]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 755.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 770.
  (./main_deeplearning.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 755.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 755.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 770.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 770.
 Package rerunfilecheck Info: File `main_deeplearning.out' has not changed.
 (rerunfilecheck)             Checksum: AC80E390D4AA468BA4B9317764EBF150;627.
 
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 755.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 770.
 )
 
 Here is how much of LuaTeX's memory you used:
- 8341 strings out of 494407
+ 8371 strings out of 494407
  100000,266212 words of node,token memory allocated
  515 words of node memory still in use:
    2 hlist, 1 vlist, 1 rule, 6 glue, 3 kern, 1 glyph, 12 attribute, 55 glue_spec
 , 12 attribute_list, 1 write, 4 pdf_action nodes
-   avail lists: 2:2519,3:470,4:36,5:306,6:119,7:7763,8:620,9:908,10:24,11:326
- 11701 multiletter control sequences out of 65536+200000
+   avail lists: 2:2070,3:412,4:36,5:306,6:92,7:5747,8:581,9:743,10:24,11:326
+ 11711 multiletter control sequences out of 65536+200000
  50 fonts using 3860975 bytes
- 36i,13n,49p,2573b,554s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,13n,49p,2573b,520s stack positions out of 5000i,500n,10000p,200000b,50000s
 <c:/program files/miktex 2.9/fonts/opentype/public/lm/lmmono10-regular.otf><c:/p
 rogram files/miktex 2.9/fonts/opentype/public/lm/lmroman9-bold.otf><c:/program f
 iles/miktex 2.9/fonts/opentype/public/lm/lmroman9-regular.otf><c:/program files/
@@ -936,9 +947,9 @@ pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Pro
 gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program File
 s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX 2
 .9/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on main_deeplearning.pdf (35 pages, 2153686 bytes).
+Output written on main_deeplearning.pdf (35 pages, 2261037 bytes).
 
-PDF statistics: 621 PDF objects out of 1000 (max. 8388607)
- 142 named destinations out of 1000 (max. 131072)
+PDF statistics: 627 PDF objects out of 1000 (max. 8388607)
+ 144 named destinations out of 1000 (max. 131072)
  81 words of extra memory for PDF output out of 10000 (max. 100000000)
 
