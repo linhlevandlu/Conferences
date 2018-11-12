@@ -5,7 +5,7 @@
 %\usepackage[margin=2cm]{geometry}
 \usepackage[justification=centering]{caption}
 \usepackage{subfig}
-
+\usepackage{multirow}
 \journal{Pattern Recognition}
 
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -70,11 +70,11 @@
 \address[itdlu]{Dalat University, Dalat, Lamdong, Vietnam}
 
 \begin{abstract}
-In recent years, improvement in computing, both in memory size and computing time with GPU programming, has been opened a new perspective for Deep Learning which has been introduced in the middle of the previous century for artificial intelligence. Deep learning, specially Convolutional Neural Network (CNN), has been applied to solve the problems in different domains such as computer vision, speech recognition, or languages translation,\ldots. In computer vision, CNN has been used to classify the images into different categories, or to detect the object in images/videos, or to predict the key points of the objects in the images,\ldots. In this work, we propose a CNN to predict the key points (landmarks) on 2D anatomical biological images, specify beetle's images. Our network is trained and evaluated on a dataset includes the images of collecting from $293$ beetles. During the experiments, the network is tested in two ways: training from scratch and applying fine-tuning. The quality of predicted landmarks is evaluated by comparing with the manual landmarks which provided by the biologists. The obtained results are considered to be statistically good enough to replace the manual landmarks for the different morphometry analysis.
+In recent years, deep learning, which has been introduced in the middle of the previous century for artificial intelligence, has risen strongly because of improvements in the computation both in memory size and computing time with GPU programming. Deep learning, specially Convolutional Neural Network (CNN), has been applied to solve the problems in different domains such as computer vision, speech recognition, or languages translation,\ldots. In computer vision, CNN has been used to classify the images into different categories, or to detect the object in images/videos, or to predict the key points of the objects in the images,\ldots and it has brought the amazing achievements. In this work, we propose a CNN model to predict the key points (landmarks) on 2D anatomical biological images, specify beetle's images. Our proposed network is trained and evaluated on a dataset includes the images of collecting from $293$ beetles. During the experiments, the network is tested in two ways: training from scratch and applying fine-tuning. The quality of predicted landmarks is evaluated by comparing with the manual landmarks which provided by the biologists. The obtained results are considered to be statistically good enough to replace the manual landmarks for the different morphometry analysis.
 \end{abstract}
 
 \begin{keyword}
-Morphometry landmarks \sep deep learning \sep fine-tuning \sep morphometry analysis
+Landmarks \sep deep learning \sep fine-tuning \sep CNN
 \end{keyword}
 
 \end{frontmatter}
@@ -83,11 +83,11 @@ Morphometry landmarks \sep deep learning \sep fine-tuning \sep morphometry analy
 
 \section{Introduction}
 \label{sIntroduction}
-Key points (landmarks) detection has a wide useful in image analysis in different domain, such as: In geosciences, the key points can be used to seabed recognition by extracting and comparing the landmarks from sonar images at different times; or computer vison, they are fundamental to detect the human face; in biology, the topography of the objects of an organism can be measured if we have enough the number of landmarks. Landmarks, or \textit{key points}, or \textit{points of interest}, are the points on the image that store important information about the shape of the object, \textit{for example}, the left and right corners of eyes are two important points to detect the human eyes. Depending the object, the number of landmarks may different, as well as their position can be defined along the outline of the object or inside the object, i.e. the landmarks on Drosophila wings \cite{drosophilaWings} are stayed on the veins of the wings, but the landmarks on human ears \cite{cintas2016automatic} can be located on the ear edge or inside the pimas of the ears.
+Key points (landmarks) detection has a wide useful in image analysis in different domain, such as: In geosciences, the key points can be used to recognize the seabed by extracting and comparing the landmarks from sonar images at different times; or computer vison, they are fundamental to detect the human face; in biology, the topography of the objects of an organism can be measured if we have enough the number of landmarks. Landmarks, or \textit{key points}, or \textit{points of interest}, are the points on the image that store important information about the shape of the object, \textit{for example}, the left and right corners of eyes are two important points to detect the human eyes. Depending on the object, the number of landmarks may  be different, as well as their position can be defined along the outline of the object or inside the object, i.e. the landmarks on Drosophila wings \cite{drosophilaWings} are stayed on the veins of the wings, but the landmarks on human ears \cite{cintas2016automatic} can be located on the ear edge or inside the pimas of the ears.
 
-Early methods \cite{} mainly focused on the low level-vision of the image by applying the image processing techniques, and segmentation is most often the first and the most important step. This task remains a bottleneck to compute the features of an image. In some cases, the interested object is easy to extract and can be analyzed by applying the well-known image analysis procedures. Nevertheless, we can not apply the same procedure for un-segmentable images. It really becomes a challenge on the complex images. Luckily, the appearance of deep learning has seen huge success in handwritten digit recognition, speech, images classification and detecting objects in images. Now, an interesting thing is how to use deep learning for landmark detecting, which can be considered as the local characteristic of the image. Our motivation to design a CNN model that able to extract the landmarks on images (even it is segmentable or un-segmentable), which will be used to replace for the previous procedures.
+Early methods \cite{lowe2004distinctive,bay2006surf,palaniswamy2010automatic} mainly focused on the low level-vision of the image by applying the image processing techniques, and segmentation is most often the first and the most important step. This task remains a bottleneck to compute the features of an image. In some cases, the interested object is easy to extract and can be analyzed by applying the well-known image analysis procedures. Nevertheless, we can not apply the same procedure for un-segmentable images. It really becomes a challenge on the complex images. Luckily, the appearance of deep learning has seen huge success in handwritten digit recognition, speech, images classification and detecting objects in images. Now, an interesting thing is how to use deep learning for landmark detecting, which can be considered as the local characteristic of the image. Our motivation to design a CNN model that able to extract the landmarks on images (even it is segmentable or un-segmentable), which will be used to replace for the previous procedures.
 
-The main idea consists of the designing and training a CNN \cite{lecun2010convolutional} on a dataset with manual landmarks. Like other CNNs, the features are extracted by using a group of different layer types (i.e. convolutional layer, pooling layer,\ldots). After designing, the proposed model will be trained on the dataset includes the images which are taken from $293$ beetles. For each beetle, the biologists have taken images of five parts: \textit{left and right mandibles, head, elytra, and thorax} (Fig. \ref{figbeetle}). All the images are presented in the RGB color model with two dimensions. Along with each image, a set of landmarks has been marked by experts which can be used as ground truth to evaluate the predicted landmarks. During the experiments, the proposed network has been trained on the dataset by applying two strategies. In the first strategy, the network is trained from scratch on each dataset; while in the second strategy, the training process has been modified to include a fine-tuning \cite{yosinski2014transferable} stage. Besides, the value of Root Mean Square Error (RMSE) \cite{} is used to compute the loss during two experiment processes.
+The main idea consists of the designing and training a CNN \cite{lecun2010convolutional} on a dataset with manual landmarks. Like other CNNs, the features are extracted by using a group of different layer types (i.e. convolutional layer, pooling layer,\ldots). After designing, the proposed model will be trained on the dataset includes the images which are taken from $293$ beetles. For each beetle, the biologists have taken images of five parts: \textit{left and right mandibles, head, elytra, and thorax} (Fig. \ref{figbeetle}). All the images are presented in the RGB color model with two dimensions. Along with each image, a set of landmarks has been marked by experts which can be used as ground truth to evaluate the predicted landmarks. During the experiments, the proposed network has been trained on the dataset by applying two strategies. In the first strategy, the network is trained from scratch on each dataset; while in the second strategy, the training process has been modified to include a fine-tuning \cite{yosinski2014transferable} stage. Besides, the value of Root Mean Square Error (RMSE) is used to compute the loss during two experiment processes.
 
 \begin{figure}[htbp]
     \centering
@@ -105,7 +105,7 @@ Finally, the conclusion is given in Section \ref{sconclusion}.
 
 \section{Related works}
 \label{related_works}
-In geometric morphometry, landmarks (or points of interest) are important features to describe the shape. Depending on the complicacy of the objects in the image, setting automatic landmarks can rely on different methods. When the object can be segmented, the image processing techniques may applied to predict the landmarks. Lowe et al. \cite{lowe2004distinctive} have proposed SIFT method to identify the keypoints on 2D images by extracting the distinctive features from the images. It is composed by four steps: (1) scale space extrema detection: a difference of Gaussian (DoG) function is applied to identify the interested points at all scales; (2) keypoint localization: the keypoint candidates are localized and refined by deleting the points which have the low contrast or not localized along the edge; (3) orientation assigment: for each keypoint candidates, the orientation and gradient magnitude are computed by considering their 4-neighborhoods; (4) keypoint descriptor are computed for each keypoint from its orientation and gradient magnitude. From the descriptors of the keypoints, they can be used to find the corresponding points between two images. SURF is another method which has been proposed by Herbert Bay et al. \cite{bay2006surf}. The SURF algorithm is the same principles with SIFT but details in each step are different. This algorithm mainly has three steps: (1) keypoints detection, (2) local neighborhood description and (3) matching. Different with SIFT, SURF uses a blob detector base on the Hessian matrix \cite{} to find the keypoints. The Hessian matrix is used as a measure of local change around the point and chooses the points where this determinant is maximal. Then, the descriptors are computed around the key points by describing the intensity distribution of keypoint's neighborhoods. The matching points from different images are obtained by comparing the descriptors of the key points. Palaniswamy et al. \cite{palaniswamy2010automatic} have proposed a method to automatically detect the landmarks on 2D images of Drosophila wings (Fig. \ref{imgflywing}). The method is mainly based on probabilistic Hough Transform. It includes four steps: (1) features detection of the fly wing structure (segmentation); (2) using pairwise geometric histogram (PGH) to record the compact invariant shape descriptor; (3) estimating the global pose of wing using the probabilistic Hough transform; (4) and finally a template matching is applied to refine the correctly of individual features.
+In geometric morphometry, landmarks (or points of interest) are important features to describe the shape. Depending on the complicacy of the objects in the image, setting automatic landmarks can rely on different methods. When the object can be segmented, the image processing techniques may applied to predict the landmarks. Lowe et al. \cite{lowe2004distinctive} have proposed SIFT method to identify the keypoints on 2D images by extracting the distinctive features from the images. It is composed by four steps: (1) scale space extrema detection: a difference of Gaussian (DoG) function is applied to identify the interested points at all scales; (2) keypoint localization: the keypoint candidates are localized and refined by deleting the points which have the low contrast or not localized along the edge; (3) orientation assigment: for each keypoint candidates, the orientation and gradient magnitude are computed by considering their 4-neighborhoods; (4) keypoint descriptor are computed for each keypoint from its orientation and gradient magnitude. From the descriptors of the keypoints, they can be used to find the corresponding points between two images. SURF is another method which has been proposed by Herbert Bay et al. \cite{bay2006surf}. The SURF algorithm is the same principles with SIFT but details in each step are different. This algorithm mainly has three steps: (1) keypoints detection, (2) local neighborhood description and (3) matching. Different with SIFT, SURF uses a blob detector base on the Hessian matrix to find the keypoints. The Hessian matrix is used as a measure of local change around the point and chooses the points where this determinant is maximal. Then, the descriptors are computed around the key points by describing the intensity distribution of keypoint's neighborhoods. The matching points from different images are obtained by comparing the descriptors of the key points. Palaniswamy et al. \cite{palaniswamy2010automatic} have proposed a method to automatically detect the landmarks on 2D images of Drosophila wings (Fig. \ref{imgflywing}). The method is mainly based on probabilistic Hough Transform. It includes four steps: (1) features detection of the fly wing structure (segmentation); (2) using pairwise geometric histogram (PGH) to record the compact invariant shape descriptor; (3) estimating the global pose of wing using the probabilistic Hough transform; (4) and finally a template matching is applied to refine the correctly of individual features.
 
 \begin{figure}
 	\centering
@@ -141,9 +141,8 @@ Fig. \ref{imgcnn_network} shows an example of a CNN for classification problem. 
 
 Convolutional layers: use as an features extractor by applying some learnable weights on the input images. The input image are convolved with the learnable weights in order to compute the new feature maps; then, the convolved results are sent through a nonlinear activation. In convolutional layer, the neurons are are arranged into feature maps. All the neurons within a feature map have constrained to be equal; however, different features maps within the same convolutional layer have different weights so that several features can be extract at each location of an input image. 
 
-Pooling layers: is mostly used to down-sampling the size of the input with the purpose to reduce the spatial resolution of the feature map to reduce the computation cost. Initially, it was common practice to use average pooling which propagates the average of all the input to the next layer. However, in more recent models \cite{}, max pooling which propagates the maximum value (selecting the largest value) with a receptive field to the next layer. Fig. \ref{imgcnn_pooling} illustrates the differences between max and average pooling. Give an input image of size $4 \times 4$, if applying a $2 \times 2$ filter and stride of two is applied, the output will be had the size of $2 \times 2$ for both cases. However, the value in each element of the output is different because the max pooling outputs the maximum values of the filter region, while average pooling outputs the average value of the same region.
+Pooling layers: is mostly used to down-sampling the size of the input with the purpose to reduce the spatial resolution of the feature map to reduce the computation cost. Initially, it was common practice to use average pooling which propagates the average of all the input to the next layer. However, in more recent models \cite{krizhevsky2012imagenet, ciregan2012multi, li2015convolutional}, max pooling which propagates the maximum value (selecting the largest value) with a receptive field to the next layer. Fig. \ref{imgcnn_pooling} illustrates the differences between max and average pooling. Give an input image of size $4 \times 4$, if applying a $2 \times 2$ filter and stride of two is applied, the output will be had the size of $2 \times 2$ for both cases. However, the value in each element of the output is different because the max pooling outputs the maximum values of the filter region, while average pooling outputs the average value of the same region.
 
-From the beginning of deep learning until now, many deep learning frameworks have been developed. Depending on the development team, Almost 
 \begin{figure}[!h]
 	\centering
 	\includegraphics[scale=.5]{images/pooling}
@@ -242,9 +241,9 @@ In practical, to obtain a fast convergence during the computing, it is useful to
 
 \section{Experiments and results}
 \label{sexperiments}
-Before widely applying to all anatomical parts, we have firstly tried with thorax part to evaluate the performance. The networks have been trained in $5, 000$ epochs on Ubuntu machine by using NVIDIA TITAN X cards. The set of images that used for training and validation are merged together. During the training, the images are chosen randomly from the dataset with a ratio of $60\%$ for training and $40\%$ for validation. The training step takes into account a pair of information (\textit{images, manual landmarks coordinates})  as training data. In the context of deep learning, landmark prediction can be seen as a regression problem. So, we have used Root Mean Square Error (RMSE) to compute the loss of implemented architectures.
+Before widely applying to all anatomical parts, we have firstly tried with thorax part to evaluate the performance. The networks have been trained in $5, 000$ epochs on Ubuntu machine by using NVIDIA TITAN X cards. The set of images that used for training and validation are merged together. During the training, the images are chosen randomly from the dataset with a ratio of $60\%$ for training and $40\%$ for validation. The training step takes into account a pair of information (\textit{images, manual landmarks coordinates})  as training data. In the context of deep learning, landmark prediction can be seen as a regression problem. So, we have used Root Mean Square Error (RMSE) to compute the loss of implemented architectures. At the test phase, images without landmarks are given to the trained network to produce output coordinates of the predicted landmarks. The results then evaluated by comparing with the manual landmarks coordinates provided by biologists which have been seen as ground truth. 
 
-At the test phase, images without landmarks are given to the trained network to produce output coordinates of the predicted landmarks. The results then evaluated by comparing with the manual landmarks coordinates provided by biologists which have been seen as ground truth. Fig. \ref{figloss1} shows the training errors and the validation errors during traning phase of the first architecture. The blue curve presents the RMSE errors of training process, the green curve presents the validation errors. Clearly, over-fitting has appeared in the first model. The training losses are able to decrease but the validation losses are stable. In the second model (section \ref{}), we have modified the parameters of full-connected layers to prevent the over-fitting but it seems that this solution is still not suitable.
+Fig. \ref{figloss1} shows the training errors and the validation errors during traning phase of the first architecture. The blue curve presents the RMSE errors of training process while green curve is the validation errors. Clearly, over-fitting has appeared in the first model. The training losses are able to decrease but the validation losses are stable. In the second model (section \ref{Sneuralnetwork}), we have modified the parameters of full-connected layers to prevent the over-fitting but it seems that this solution is still not suitable.
 
 \begin{figure}[!h]
 	\centering
@@ -322,8 +321,7 @@ pixels.
 Fig. \ref{figchartlm1} shows the distribution of the distances on the first landmark of all images. The accuracy based on the distance in each image can be
 separated into three spaces: the images have the distance less
 than average value ($4$ pixels): $56.66\%$; the images have the
-distance from average value to $10$ pixels (average distance plus
-standard deviation): $40.27\%$; and the images have the distance
+distance from average value to $10$ pixels ($5\%$ acceptable errors): $40.27\%$; and the images have the distance
 greater than $10$ pixels: $3.07\%$.
 
 \begin{figure}[htbp]
@@ -332,7 +330,7 @@ greater than $10$ pixels: $3.07\%$.
 	\label{figchartlm1}
 \end{figure}
 
-To illustrate this purpose, Fig. \ref{figrsexample} shows the predicted landmarks on two test images. One can note that even some predicted landmarks (Fig. \ref{figsub1}) are closed to the manual ones, in some case (Fig. \ref{figsub2}) the predicted ones are far from the expect results. The next step has been dedicated to the improvement of these results.
+To illustrate this purpose, Fig. \ref{figrsexample} shows the predicted landmarks on two test images. One can note that even some predicted landmarks (Fig. \ref{figsub1}) are closed to the manual ones, in some case (Fig. \ref{figsub2}) the predicted ones are far from the expect results. This result explains why the average distance by landmarks are enough good while some predicted landmarks are so far from the manual one. So, the next step has been dedicated to the improvement of these results.
 
 \begin{figure}[htbp]
     \centering
@@ -342,105 +340,35 @@ To illustrate this purpose, Fig. \ref{figrsexample} shows the predicted landmark
     \label{figrsexample}
 \end{figure}
 
-From the success of the third architecture on thorax dataset, we apply the same procedures (data augmentation, training,\ldots) on other parts of beetle: \textit{left and right mandibles, elytra and head}. However, we have modified the number of output of the last full-connected layer to adapt with each dataset before training. According, the values at the last full-connected layer are set to $32$, $36$, $22$ and $20$ outputs corresponds to $16$, $18$, $11$ and $10$ landmarks on left mandible, right mandible, elytra and head, respectively. Of course, we have also applied \textit{cross-validation} to select testing data to get all predicted landmarks for all images in each dataset. Then, the quality of predicted landmarks are evaluated by comparing with the corresponding manual landmarks (distance computation). Table. \ref{tblavgdiselytra}, \ref{tblavgdishead}, \ref{tblavgdislmandible} and \ref{tblavgdisrmandible} show the average distances on each landmark of elytra, head, left and right mandibles anatomical, respectively. Comparing with the average distances on the thorax part, it seems that the proposed architecture provides more accurate predictions on the elytra dataset, but the results are opposite on other datasets.
+From the success of the third architecture on thorax dataset, we apply the same procedures (data augmentation, training,\ldots) on other parts of beetle: \textit{left and right mandibles, elytra and head}. However, we have modified the number of output of the last full-connected layer to adapt with each dataset before training. According, the values at the last full-connected layer are set to $32$, $36$, $22$ and $20$ outputs corresponds to $16$, $18$, $11$ and $10$ landmarks on left mandible, right mandible, elytra and head, respectively. Of course, we have also applied \textit{cross-validation} to select testing data to get all predicted landmarks for all images in each dataset. Then, the quality of predicted landmarks are evaluated by comparing with the corresponding manual landmarks (distance computation). Table. \ref{tblavg4parts} shows the average distances on each landmark of elytra, head, left and right mandibles anatomical, respectively. Comparing with the average distances on the thorax part, it seems that the proposed architecture provides more accurate predictions on the elytra dataset, but the results are opposite on other datasets.
 
 \begin{table}[htbp]
-\begin{minipage}{0.5\linewidth}
-	\centering
-	\begin{tabular}{|c|c|}
+	\centering	
+	\begin{tabular}{|c|c|c|c|c|}
 		\hline
-		\textbf{Landmark} & \textbf{Distance} (in pixels) \\ \hline
-		1 & 3.8669  \\ \hline
-		2 & 3.9730 \\ \hline
-		3 & 3.9166 \\ \hline
-		4 & 3.8673 \\ \hline
-		5 & 4.0151 \\ \hline
-		6 & 4.8426 \\ \hline
-		7 & 5.2125 \\ \hline
-		8 & 5.4685 \\ \hline
-		9 & 5.2692 \\ \hline
-		10 & 4.0709 \\ \hline
-		11 & 3.9896 \\ \hline
+		\multirow{2}{*}{\textbf{Landmark}} & \multicolumn{4}{|c|}{\textbf{Distance (in pixels)}} \\ \cline{2-5}
+		 & Left mandible & Right mandible & Elytra & Head  \\ \hline
+		1 & 9.4981 & 9.1267 & 3.8669 & 5.528  \\ \hline
+2 & 7.1657 & 6.7198 & 3.973 & 5.1609  \\ \hline
+3 & 7.242 & 6.8704 & 3.9166 & 5.3827 \\ \hline
+4 & 7.0436 & 6.7719 & 3.8673 & 5.0345 \\ \hline
+5 & 7.1599 & 7.125 & 4.0151 & 4.8393 \\ \hline
+6 & 7.5699 & 6.9441 & 4.8426 & 4.4516 \\ \hline
+7 & 7.4251 & 7.3158 & 5.2125 & 4.7937 \\ \hline
+8 & 7.6636 & 7.4142 & 5.4685 & 4.5322 \\ \hline
+9 & 7.7906 & 7.5846 & 5.2692 & 5.1412 \\ \hline
+10 & 8.0197 & 7.6349 & 4.0709 & 5.0564 \\ \hline
+11 & 8.314 & 7.6873 & 3.9896 & - \\ \hline
+12 & 8.1564 & 8.4248 & - & - \\ \hline
+13 & 8.8879 & 7.9983 & - & - \\ \hline
+14 & 9.1842 & 7.4919 & - & - \\ \hline
+15 & 8.7875 & 7.7903 & - & - \\ \hline
+16 & 8.3141 & 8.5198 & - & - \\ \hline
+17 & 8.2866 & - & - & - \\ \hline
+18 & 8.8928 & - & - & - \\ \hline
 	\end{tabular}
-	\caption{\small{The average distance on all images per landmark on \textbf{elytra} images}}
-	\label{tblavgdiselytra}
-\end{minipage}
-\hfill
-\begin{minipage}{0.5\linewidth}
-	\centering
-	\begin{tabular}{|c|c|}
-		\hline
-		\textbf{Landmark} & \textbf{Distance} (in pixels) \\ \hline
-		1 & 5.5280  \\ \hline
-		2 & 5.1609 \\ \hline
-		3 & 5.3827 \\ \hline
-		4 & 5.0345 \\ \hline
-		5 & 4.8393 \\ \hline
-		6 & 4.4516 \\ \hline
-		7 & 4.7937 \\ \hline
-		8 & 4.5322 \\ \hline
-		9 & 5.1412 \\ \hline
-		10 & 5.0564 \\ \hline
-	\end{tabular}
-	\caption{\small{The average distance on all images per landmark on \textbf{head} images}}
-	\label{tblavgdishead}
-\end{minipage}
-\end{table}
-
-\begin{table}[htbp]
-\begin{minipage}{0.5\linewidth}
-	\centering
-	\begin{tabular}{|c|c|}
-		\hline
-		\textbf{Landmark} & \textbf{Distance} (in pixels) \\ \hline
-		1 & 9.1267  \\ \hline
-		2 & 6.7198 \\ \hline
-		3 & 6.8704 \\ \hline
-		4 & 6.7719 \\ \hline
-		5 & 7.1250 \\ \hline
-		6 & 6.9441 \\ \hline
-		7 & 7.3158 \\ \hline
-		8 & 7.4142 \\ \hline
-		9 & 7.5846 \\ \hline
-		10 & 7.6349 \\ \hline
-		11 & 7.6873 \\ \hline
-		12 & 8.4248 \\ \hline
-		13 & 7.9983 \\ \hline
-		14 & 7.4919 \\ \hline
-		15 & 7.7903 \\ \hline
-		16 & 8.5198 \\ \hline
-	\end{tabular}
-	\caption{\small{The average distance on all images per landmark on \textbf{left mandible} images}}
-	\label{tblavgdislmandible}
-\end{minipage}
-\hfill
-\begin{minipage}{0.5\linewidth}
-	\centering
-	\begin{tabular}{|c|c|}
-		\hline
-		\textbf{Landmark} & \textbf{Distance} (in pixels) \\ \hline
-		1 & 9.4981  \\ \hline
-		2 & 7.1657 \\ \hline
-		3 & 7.2420 \\ \hline
-		4 & 7.0436 \\ \hline
-		5 & 7.1599 \\ \hline
-		6 & 7.5699 \\ \hline
-		7 & 7.4251 \\ \hline
-		8 & 7.6636 \\ \hline
-		9 & 7.7906 \\ \hline
-		10 & 8.0197 \\ \hline
-		11 & 8.3140 \\ \hline
-		12 & 8.1564 \\ \hline
-		13 & 8.8879 \\ \hline
-		14 & 9.1842 \\ \hline
-		15 & 8.7875 \\ \hline
-		16 & 8.3141 \\ \hline
-		17 & 8.2866 \\ \hline
-		18 & 8.8928 \\ \hline
-	\end{tabular}
-	\caption{\small{The average distance on all images per landmark on \textbf{right mandible} images}}
-	\label{tblavgdisrmandible}
-\end{minipage}
+	\caption{The average distances on all images per landmark on left mandible, right mandible, elytra and head images.}
+	\label{tblavg4parts}
 \end{table}
 
 \section{Resulting improvement by fine-tuning}
@@ -653,7 +581,7 @@ On each part, the landmarks are predicted on the test images. Then, the average 
 \end{minipage}
 \end{table}
 
-In other view, Fig. \ref{figdist5parts} shows the comparation of the average distance distribution on each dataset in two procedures (from scratch and fine-tuning). In which:
+In another view, Fig. \ref{figdist5parts} shows the comparation of the average distance distribution on each dataset in two procedures (from scratch and fine-tuning). In which:
 \begin{itemize}
 	\item \textbf{Blue} curves: present for the average distances on each landmarks when we train the model from scratch.
 	\item \textbf{Orange} curves: describe for the average distance on each landmark when we fine-tune the trained model.
@@ -690,7 +618,7 @@ In other view, Fig. \ref{figdist5parts} shows the comparation of the average dis
     \label{figdist5parts}
 \end{figure}
 
-The fine-tuning process has improved the results of the proposed architecture on both $3$ datasets: thorax, elytra and head. All the average distances are significantly decreased. Specially, the results have been improved $\approx 40.3\%$ on thorax, $\approx 39.8\%$ on elytra, and $\approx 46.4\%$  on head part based on considering the average distances per landmark. Addition, in the cases of thorax and head part, even if we plus the average distance and its standard deviation, the results are also less than the result when we trained the model from scratch.
+The fine-tuning process has improved the results of the proposed architecture on both $5$ datasets: left, right mandible, thorax, elytra and head. All the average distances are significantly decreased. Specially, the results have been improved $\approx 26.9\%$ on left mandible, $\approx 22.8\%$ on right mandible, $\approx 40.3\%$ on thorax, $\approx 39.8\%$ on elytra, and $\approx 46.4\%$  on head part based on considering the average distances per landmark. Addition, in the cases of thorax and head part, even if we plus the average distance and its standard deviation, the results are also less than the result when we trained the model from scratch.
 
 To illustrate the final results, we display the distribution of
 the distances in both cases: the best and the worst results (resp. landmark $1$ and $6$ on thorax dataset) of five datasets (thorax, elytra, head, left and right mandible) in  
@@ -755,7 +683,7 @@ landmarks of all images in two testing steps (CNN and fine-tuning) (on right man
 
 \section{Conclusion}
 \label{sconclusion}
-In this work, we have presented how to apply convolutional neural network to predict the landmark on 2D anatomical images of beetles. After testing several models, we have presented a convolutional neural network for automatic detection landmarks on anatomical images of beetles. The training and testing processes have been finished by using two strategies: \textit{train from scratch} and \textit{fine-tuning}. 
+In this work, we have presented how to apply convolutional neural network to predict the landmark on 2D anatomical images of beetles. After going through many trial models, we have presented a convolutional neural network for automatic detection landmarks on anatomical images of beetles which includes the repeated of some elementary blocks (an elementary block consists of a convolutional layer, a max pooling layer, and a dropout layer) followed by fully connected layers. Then, the proposed model have been trained and tested by using two strategies: \textit{train from scratch} and \textit{fine-tuning}. 
 
 In our case, the size of dataset is limited. Therefore, we have applied the image processing techniques to augment dataset. The predicted landmarks have been evaluated by calculating the distance between manual landmarks and corresponding predicted landmarks. Then, the average of distance errors on each landmarks has been considered.
 
@@ -768,3 +696,105 @@ project, i.e. about all beetle parts. The quality of prediction allows using aut
 \bibliography{includes/mybibfile}
 
 \end{document}
+
+
+
+
+\begin{table}[htbp]
+\begin{minipage}{0.5\linewidth}
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		\textbf{Landmark} & \textbf{Distance} (in pixels) \\ \hline
+		1 & 3.8669  \\ \hline
+		2 & 3.9730 \\ \hline
+		3 & 3.9166 \\ \hline
+		4 & 3.8673 \\ \hline
+		5 & 4.0151 \\ \hline
+		6 & 4.8426 \\ \hline
+		7 & 5.2125 \\ \hline
+		8 & 5.4685 \\ \hline
+		9 & 5.2692 \\ \hline
+		10 & 4.0709 \\ \hline
+		11 & 3.9896 \\ \hline
+	\end{tabular}
+	\caption{\small{The average distance on all images per landmark on \textbf{elytra} images}}
+	\label{tblavgdiselytra}
+\end{minipage}
+\hfill
+\begin{minipage}{0.5\linewidth}
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		\textbf{Landmark} & \textbf{Distance} (in pixels) \\ \hline
+		1 & 5.5280  \\ \hline
+		2 & 5.1609 \\ \hline
+		3 & 5.3827 \\ \hline
+		4 & 5.0345 \\ \hline
+		5 & 4.8393 \\ \hline
+		6 & 4.4516 \\ \hline
+		7 & 4.7937 \\ \hline
+		8 & 4.5322 \\ \hline
+		9 & 5.1412 \\ \hline
+		10 & 5.0564 \\ \hline
+	\end{tabular}
+	\caption{\small{The average distance on all images per landmark on \textbf{head} images}}
+	\label{tblavgdishead}
+\end{minipage}
+\end{table}
+
+\begin{table}[htbp]
+\begin{minipage}{0.5\linewidth}
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		\textbf{Landmark} & \textbf{Distance} (in pixels) \\ \hline
+		1 & 9.1267  \\ \hline
+		2 & 6.7198 \\ \hline
+		3 & 6.8704 \\ \hline
+		4 & 6.7719 \\ \hline
+		5 & 7.1250 \\ \hline
+		6 & 6.9441 \\ \hline
+		7 & 7.3158 \\ \hline
+		8 & 7.4142 \\ \hline
+		9 & 7.5846 \\ \hline
+		10 & 7.6349 \\ \hline
+		11 & 7.6873 \\ \hline
+		12 & 8.4248 \\ \hline
+		13 & 7.9983 \\ \hline
+		14 & 7.4919 \\ \hline
+		15 & 7.7903 \\ \hline
+		16 & 8.5198 \\ \hline
+	\end{tabular}
+	\caption{\small{The average distance on all images per landmark on \textbf{left mandible} images}}
+	\label{tblavgdislmandible}
+\end{minipage}
+\hfill
+\begin{minipage}{0.5\linewidth}
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		\textbf{Landmark} & \textbf{Distance} (in pixels) \\ \hline
+		1 & 9.4981  \\ \hline
+		2 & 7.1657 \\ \hline
+		3 & 7.2420 \\ \hline
+		4 & 7.0436 \\ \hline
+		5 & 7.1599 \\ \hline
+		6 & 7.5699 \\ \hline
+		7 & 7.4251 \\ \hline
+		8 & 7.6636 \\ \hline
+		9 & 7.7906 \\ \hline
+		10 & 8.0197 \\ \hline
+		11 & 8.3140 \\ \hline
+		12 & 8.1564 \\ \hline
+		13 & 8.8879 \\ \hline
+		14 & 9.1842 \\ \hline
+		15 & 8.7875 \\ \hline
+		16 & 8.3141 \\ \hline
+		17 & 8.2866 \\ \hline
+		18 & 8.8928 \\ \hline
+	\end{tabular}
+	\caption{\small{The average distance on all images per landmark on \textbf{right mandible} images}}
+	\label{tblavgdisrmandible}
+\end{minipage}
+\end{table}

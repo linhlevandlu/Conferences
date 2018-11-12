@@ -16,16 +16,6 @@ C.~Cintas, et~al., Automatic ear detection and feature extraction using
   geometric morphometrics and convolutional neural networks, IET Biometrics
   6~(3) (2016) 211--223.
 
-\bibitem{lecun2010convolutional}
-Y.~LeCun, K.~Kavukcuoglu, C.~Farabet, Convolutional networks and applications
-  in vision, in: Circuits and Systems (ISCAS), Proceedings of 2010 IEEE
-  International Symposium on, IEEE, 2010, pp. 253--256.
-
-\bibitem{yosinski2014transferable}
-J.~Yosinski, J.~Clune, Y.~Bengio, H.~Lipson, How transferable are features in
-  deep neural networks?, in: Advances in neural information processing systems,
-  2014, pp. 3320--3328.
-
 \bibitem{lowe2004distinctive}
 D.~G. Lowe, Distinctive image features from scale-invariant keypoints,
   International journal of computer vision 60~(2) (2004) 91--110.
@@ -37,6 +27,16 @@ H.~Bay, T.~Tuytelaars, L.~Van~Gool, Surf: Speeded up robust features, in:
 \bibitem{palaniswamy2010automatic}
 S.~Palaniswamy, N.~A. Thacker, C.~P. Klingenberg, Automatic identification of
   landmarks in digital images, IET Computer Vision 4~(4) (2010) 247--260.
+
+\bibitem{lecun2010convolutional}
+Y.~LeCun, K.~Kavukcuoglu, C.~Farabet, Convolutional networks and applications
+  in vision, in: Circuits and Systems (ISCAS), Proceedings of 2010 IEEE
+  International Symposium on, IEEE, 2010, pp. 253--256.
+
+\bibitem{yosinski2014transferable}
+J.~Yosinski, J.~Clune, Y.~Bengio, H.~Lipson, How transferable are features in
+  deep neural networks?, in: Advances in neural information processing systems,
+  2014, pp. 3320--3328.
 
 \bibitem{lecun2015deep}
 Y.~LeCun, Y.~Bengio, G.~Hinton, Deep learning, Nature 521~(7553) (2015)
