@@ -347,7 +347,7 @@ From the success of the third architecture on thorax dataset, we apply the same 
 	\begin{tabular}{|c|c|c|c|c|}
 		\hline
 		\multirow{2}{*}{\textbf{Landmark}} & \multicolumn{4}{|c|}{\textbf{Distance (in pixels)}} \\ \cline{2-5}
-		 & Left mandible & Right mandible & Elytra & Head  \\ \hline
+		 & Right mandible & Left mandible & Elytra & Head  \\ \hline
 		1 & 9.4981 & 9.1267 & 3.8669 & 5.528  \\ \hline
 2 & 7.1657 & 6.7198 & 3.973 & 5.1609  \\ \hline
 3 & 7.242 & 6.8704 & 3.9166 & 5.3827 \\ \hline
@@ -585,7 +585,7 @@ In another view, Fig. \ref{figdist5parts} shows the comparation of the average d
 \begin{itemize}
 	\item \textbf{Blue} curves: present for the average distances on each landmarks when we train the model from scratch.
 	\item \textbf{Orange} curves: describe for the average distance on each landmark when we fine-tune the trained model.
-	%\item \textbf{Green} curves: illuslate for the average distances \textbf{plus its standard deviation} on each landmark in fine-tuning case.
+	\item \textbf{Black} curves (in the case of left and right mandibles): illuslate for the average distances when we applied the image processing techniques to predict the landmarks on segmentable images.
 \end{itemize}
 
 \iffalse
@@ -618,12 +618,12 @@ In another view, Fig. \ref{figdist5parts} shows the comparation of the average d
     \label{figdist5parts}
 \end{figure}
 
-The fine-tuning process has improved the results of the proposed architecture on both $5$ datasets: left, right mandible, thorax, elytra and head. All the average distances are significantly decreased. Specially, the results have been improved $\approx 26.9\%$ on left mandible, $\approx 22.8\%$ on right mandible, $\approx 40.3\%$ on thorax, $\approx 39.8\%$ on elytra, and $\approx 46.4\%$  on head part based on considering the average distances per landmark. Addition, in the cases of thorax and head part, even if we plus the average distance and its standard deviation, the results are also less than the result when we trained the model from scratch.
+The fine-tuning process has improved the results of the proposed architecture on both $5$ datasets: left, right mandible, thorax, elytra and head. All the average distances are significantly decreased. Specially, the results have been improved $\approx 26.9\%$ on left mandible, $\approx 22.8\%$ on right mandible, $\approx 40.3\%$ on thorax, $\approx 39.8\%$ on elytra, and $\approx 46.4\%$  on head part based on considering the average distances per landmark. Addition, in the cases of thorax and head part, even if we plus the average distance and its standard deviation, the results are also less than the result when we trained the model from scratch. For segmentable images, we have a comparison between the results of deep learning and early method where we have applied image processing techniques to predict the landmarks. Clearly, the result with fine-tuning have improved the location of estimated landmarks, even when the average distances are still high when we trained the model from scratch: most of the average distance(or landmarks) of left mandibles are less than the results of the early method, while the average distances are very closed in the case of right mandibles.
 
 To illustrate the final results, we display the distribution of
 the distances in both cases: the best and the worst results (resp. landmark $1$ and $6$ on thorax dataset) of five datasets (thorax, elytra, head, left and right mandible) in  
 %The Fig. \ref{figdist3parts} shows howmuch the average distances (blue lines) and standard errors (red lines) have been improved for the landmark 1 (Fig. (\ref{figdist3parts1}) and (\ref{figdist3parts2})) and landmark 6 (Fig. \ref{figdist3parts3}) and (\ref{figdist3parts4}).
-Fig. \ref{figdist3parts}, \ref{figdist3partselytre}, \ref{figdist3partstete}, \ref{figdist3partsmg}, and \ref{figdist3partsmd}, respectively. In these figures, the left images present for the results when we trained the model from scratch; while the right images shows the results after applying fine-tuning. Clearly, the results in the fine-tuning case have been improved significantly than training from scratch.
+Fig. \ref{figdist3parts}, \ref{figdist3partselytre}, \ref{figdist3partstete}, \ref{figdist3partsmg}, and \ref{figdist3partsmd}, respectively. In these figures, the left images present for the results when we trained the model from scratch; while the right images shows the results after applying fine-tuning. The blue lines in the charts present the average distance values. Clearly, the results in the fine-tuning case have been improved significantly than training from scratch.
 
 \begin{figure}[htbp]
     \centering
@@ -632,8 +632,7 @@ Fig. \ref{figdist3parts}, \ref{figdist3partselytre}, \ref{figdist3partstete}, \r
 	\subfloat[Landmark 6 - CNN]{\label{figdist3parts3}\includegraphics[width=0.5\textwidth]{images/lm6_cnn_2}}~~
 	\subfloat[Landmark 6 - fine-tuning]{\label{figdist3parts4}\includegraphics[width=0.5\textwidth]{images/lm6_finetuning_2}}\\
     \caption{The distribution of distances on $1^{st}$ and $6^{th}$
-landmarks of all images in two testing steps (CNN and fine-tuning) (on thorax dataset). The blue and red lines present the average distances and standard
-deviation values, respectively.}
+landmarks of all images in two testing steps (CNN and fine-tuning) (on \textbf{thorax} dataset). The red line presents the standard deviation value.}
     \label{figdist3parts}
 \end{figure}
 
@@ -644,7 +643,7 @@ deviation values, respectively.}
 	\subfloat[Landmark 8 - CNN]{\label{figdist3partselytre3}\includegraphics[width=0.4\textwidth]{images/fsc_elytre_lm8}}~~
 	\subfloat[Landmark 8 - fine-tuning]{\label{figdist3partselytre4}\includegraphics[width=0.4\textwidth]{images/fn_elytre_lm8}}\\
     \caption{The distribution of distances on $1^{st}$ and $8^{th}$
-landmarks of all images in two testing steps (CNN and fine-tuning) (on elytra dataset). The blue line presents the average distance value.}
+landmarks of all images in two testing steps (CNN and fine-tuning) (on \textbf{elytra} dataset).}
     \label{figdist3partselytre}
 \end{figure}
 
@@ -655,7 +654,7 @@ landmarks of all images in two testing steps (CNN and fine-tuning) (on elytra da
 	\subfloat[Landmark 6 - CNN]{\label{figdist3partstete3}\includegraphics[width=0.4\textwidth]{images/fsc_tete_lm6}}~~
 	\subfloat[Landmark 6 - fine-tuning]{\label{figdist3partstete4}\includegraphics[width=0.4\textwidth]{images/fn_tete_lm6}}\\
     \caption{The distribution of distances on $1^{st}$ and $6^{th}$
-landmarks of all images in two testing steps (CNN and fine-tuning) (on head dataset). The blue line presents the average distance value.}
+landmarks of all images in two testing steps (CNN and fine-tuning) (on \textbf{head} dataset).}
     \label{figdist3partstete}
 \end{figure}
 
@@ -666,7 +665,7 @@ landmarks of all images in two testing steps (CNN and fine-tuning) (on head data
 	\subfloat[Landmark 1 - CNN]{\label{figdist3partstete3}\includegraphics[width=0.4\textwidth]{images/fsc_mg_lm1}}~~
 	\subfloat[Landmark 1 - fine-tuning]{\label{figdist3partstete4}\includegraphics[width=0.4\textwidth]{images/fn_mg_lm1}}\\
     \caption{The distribution of distances on $1^{st}$ and $4^{th}$
-landmarks of all images in two testing steps (CNN and fine-tuning) (on left mandible dataset). The blue line presents the average distance value.}
+landmarks of all images in two testing steps (CNN and fine-tuning) (on \textbf{left mandible} dataset).}
     \label{figdist3partsmg}
 \end{figure}
 
@@ -677,10 +676,11 @@ landmarks of all images in two testing steps (CNN and fine-tuning) (on left mand
 	\subfloat[Landmark 1 - CNN]{\label{figdist3partstete3}\includegraphics[width=0.4\textwidth]{images/fsc_md_lm1}}~~
 	\subfloat[Landmark 1 - fine-tuning]{\label{figdist3partstete4}\includegraphics[width=0.4\textwidth]{images/fn_md_lm1}}\\
     \caption{The distribution of distances on $1^{st}$ and $4^{th}$
-landmarks of all images in two testing steps (CNN and fine-tuning) (on right mandible dataset). The blue line presents the average distance value.}
+landmarks of all images in two testing steps (CNN and fine-tuning) (on \textbf{right mandible} dataset).}
     \label{figdist3partsmd}
 \end{figure}
 
+\pagebreak
 \section{Conclusion}
 \label{sconclusion}
 In this work, we have presented how to apply convolutional neural network to predict the landmark on 2D anatomical images of beetles. After going through many trial models, we have presented a convolutional neural network for automatic detection landmarks on anatomical images of beetles which includes the repeated of some elementary blocks (an elementary block consists of a convolutional layer, a max pooling layer, and a dropout layer) followed by fully connected layers. Then, the proposed model have been trained and tested by using two strategies: \textit{train from scratch} and \textit{fine-tuning}. 
