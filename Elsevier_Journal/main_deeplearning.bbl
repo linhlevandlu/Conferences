@@ -84,6 +84,37 @@ I.~Sutskever, O.~Vinyals, Q.~V. Le, Sequence to sequence learning with neural
   networks, in: Advances in neural information processing systems, 2014, pp.
   3104--3112.
 
+\bibitem{valstar2010facial}
+M.~Valstar, B.~Martinez, X.~Binefa, M.~Pantic, Facial point detection using
+  boosted regression and graph models, in: Computer Vision and Pattern
+  Recognition (CVPR), 2010 IEEE Conference on, IEEE, 2010, pp. 2729--2736.
+
+\bibitem{dantone2012real}
+M.~Dantone, J.~Gall, G.~Fanelli, L.~Van~Gool, Real-time facial feature
+  detection using conditional regression forests, in: Computer vision and
+  pattern recognition (CVPR), 2012 IEEE conference on, IEEE, 2012, pp.
+  2578--2585.
+
+\bibitem{burgos2013robust}
+X.~P. Burgos-Artizzu, P.~Perona, P.~Doll{\'a}r, Robust face landmark estimation
+  under occlusion, in: Proceedings of the IEEE International Conference on
+  Computer Vision, 2013, pp. 1513--1520.
+
+\bibitem{cootes2001active}
+T.~F. Cootes, G.~J. Edwards, C.~J. Taylor, Active appearance models, IEEE
+  Transactions on Pattern Analysis \& Machine Intelligence~(6) (2001) 681--685.
+
+\bibitem{liu2007generic}
+X.~Liu, Generic face alignment using boosted appearance model, in: Computer
+  Vision and Pattern Recognition, 2007. CVPR'07. IEEE Conference on, IEEE,
+  2007, pp. 1--8.
+
+\bibitem{yu2013pose}
+X.~Yu, J.~Huang, S.~Zhang, W.~Yan, D.~N. Metaxas, Pose-free facial landmark
+  fitting via optimized part mixtures and cascaded deformable shape model, in:
+  Proceedings of the IEEE International Conference on Computer Vision, 2013,
+  pp. 1944--1951.
+
 \bibitem{sun2013deep}
 Y.~Sun, X.~Wang, X.~Tang, Deep convolutional network cascade for facial point
   detection, in: Proceedings of the IEEE conference on computer vision and
@@ -93,6 +124,10 @@ Y.~Sun, X.~Wang, X.~Tang, Deep convolutional network cascade for facial point
 Z.~Zhang, et~al., Facial landmark detection by deep multi-task learning, in:
   European Conference on Computer Vision, Springer, 2014, pp. 94--108.
 
+\bibitem{huang2017coarse}
+S.~Huang, M.~Gong, D.~Tao, A coarse-fine network for keypoint localization, in:
+  The IEEE International Conference on Computer Vision (ICCV), Vol.~2, 2017.
+
 \bibitem{le2017maelab}
 V.~L. Le, M.~Beurton-Aimar, A.~Krahenbuhl, N.~Parisey,
   \href{https://hal.archives-ouvertes.fr/hal-01571440}{{MAELab: a framework to
@@ -100,14 +135,14 @@ V.~L. Le, M.~Beurton-Aimar, A.~Krahenbuhl, N.~Parisey,
   2017.
 \newline\urlprefix\url{https://hal.archives-ouvertes.fr/hal-01571440}
 
+\bibitem{lecun2012efficient}
+Y.~A. LeCun, et~al., Efficient backprop, in: Neural networks: Tricks of the
+  trade, Springer, 2012, pp. 9--48.
+
 \bibitem{srivastava2014dropout}
 N.~Srivastava, G.~E. Hinton, A.~Krizhevsky, I.~Sutskever, R.~Salakhutdinov,
   Dropout: a simple way to prevent neural networks from overfitting., Journal
   of machine learning research 15~(1) (2014) 1929--1958.
-
-\bibitem{lecun2012efficient}
-Y.~A. LeCun, et~al., Efficient backprop, in: Neural networks: Tricks of the
-  trade, Springer, 2012, pp. 9--48.
 
 \bibitem{lasagne}
 S.~Dieleman, et~al., \href{http://dx.doi.org/10.5281/zenodo.27878}{Lasagne:
