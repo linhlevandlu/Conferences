@@ -6,6 +6,7 @@
 \usepackage[justification=centering]{caption}
 \usepackage{subfig}
 \usepackage{multirow}
+\usepackage{xcolor}
 \journal{Pattern Recognition}
 
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -87,7 +88,7 @@ Key points detection has a wide use and becomes a critical in image analysis of 
 
 Early methods \cite{lowe2004distinctive,bay2006surf,palaniswamy2010automatic} mainly focused on the low level-vision of the image by applying the image processing techniques, and segmentation is most often the first and the most important step. This task remains a bottleneck to compute the features of an image. In some cases, the interested object is easy to extract and can be analyzed by applying the well-known image analysis procedures. Nevertheless, we can not apply the same procedure for un-segmentable images. It really becomes a challenge on the complex images. Luckily, the appearance of deep learning has seen huge success in handwritten digit recognition, speech, images classification and detecting objects in images. Now, an interesting thing is how to use deep learning for landmark detecting, which can be considered as the local characteristic of the image. Our motivation to design a CNN model that able to extract the landmarks on images (even it is segmentable or un-segmentable), which will be used to replace for the previous procedures.
 
-The main idea consists of the designing and training a CNN \cite{lecun2010convolutional} on a dataset with manual landmarks. Like other CNNs, the features are extracted by using a group of different layer types (i.e. convolutional layer, pooling layer,\ldots) followed by some dense layers to provide the prediction of the network. After designing, the proposed model will be trained on the dataset includes the images which are taken from $293$ beetles. For each beetle, the biologists have taken images of five parts: \textit{left and right mandibles, head, elytra, and thorax} (Figs.\ref{figh1}, \ref{figt1}, \ref{fige1}, \ref{figlm1}, \ref{figrm1}). All the images are presented in the RGB color model with two dimensions. Along with each image, a set of landmarks has been marked by experts which can be used as ground truth to evaluate the predicted landmarks (Figs.\ref{figh2}, \ref{figt2}, \ref{fige2}, \ref{figlm2}, \ref{figrm2}). During the experiments, the proposed network has been trained on the dataset by applying two strategies. In the first strategy, the network is trained from scratch on each dataset; while in the second strategy, the training process has been modified to include a fine-tuning \cite{yosinski2014transferable} stage. Besides, the value of Root Mean Square Error (RMSE) is used to compute the losses during two experiment processes. For more information about the model, you can see at our repository on GitHub: \texttt{https://github.com/linhlevandlu/CNN\_Beetles\_Landmarks}.
+The main idea consists of the designing and training a CNN \cite{lecun2010convolutional} on a dataset with manual landmarks. Like other CNNs, the features are extracted by using a group of different layer types (i.e. convolutional layer, pooling layer,\ldots) followed by some dense layers to provide the prediction of the network. After designing, the proposed model will be trained on the dataset includes the images which are taken from $293$ beetles. For each beetle, the biologists have taken images of five parts: \textit{left and right mandibles, head, elytra, and pronotum} (Figs.\ref{figh1}, \ref{figt1}, \ref{fige1}, \ref{figlm1}, \ref{figrm1}). All the images are presented in the RGB color model with two dimensions. Along with each image, a set of landmarks has been marked by experts which can be used as ground truth to evaluate the predicted landmarks (Figs.\ref{figh2}, \ref{figt2}, \ref{fige2}, \ref{figlm2}, \ref{figrm2}). During the experiments, the proposed network has been trained on the dataset by applying two strategies. In the first strategy, the network is trained from scratch on each dataset; while in the second strategy, the training process has been modified to include a fine-tuning \cite{yosinski2014transferable} stage. Besides, the value of Root Mean Square Error (RMSE) is used to compute the losses during two experiment processes. For more information about the model, you can see at our repository on GitHub: \texttt{https://github.com/linhlevandlu/CNN\_Beetles\_Landmarks}.
 
 \begin{figure}[htbp]
     \centering
@@ -98,9 +99,9 @@ The main idea consists of the designing and training a CNN \cite{lecun2010convol
 \end{figure}
 \begin{figure}[htbp]
     \centering
-\subfloat[Thorax]{\label{figt1}\includegraphics[width=0.4\textwidth]{images/orgThorax}}~~
-	\subfloat[Thorax's manual landmarks]{\label{figt2}\includegraphics[width=0.4\textwidth]{images/lmThorax}}
-    \caption{The \textbf{thorax} anatomical of beetle and its manual landmarks}
+\subfloat[pronotum]{\label{figt1}\includegraphics[width=0.4\textwidth]{images/orgThorax}}~~
+	\subfloat[pronotum's manual landmarks]{\label{figt2}\includegraphics[width=0.4\textwidth]{images/lmThorax}}
+    \caption{The \textbf{pronotum} anatomical of beetle and its manual landmarks}
     \label{figbeetle2}
 \end{figure}
 \begin{figure}[htbp]
@@ -130,9 +131,9 @@ The rest of this paper is organized as followed: Section \ref{related_works} dis
 \section{Related works}
 \label{related_works}
 
-Deep learning \cite{lecun2015deep} has been introduced in the middle of the previous century for artificial intelligence application but it has encountered several problems to take real-world cases. Luckily, the improvement of computing capacities, both in memory size and computing time with GPU programming, has opened a new perspective for deep learning. In recent years, deep learning is known as a solution for the tasks in computer vision, especially for image analysis. Many deep learning architectures have been proposed to solve many difficult tasks. For example, in \textbf{image classification}, Yann LeCun et al. \cite{} have proposed an architecture named LeNet to read the zip codes, digits, \ldots which had a standard structure stacked convolutional layers (normalization and max-pooling) are followed by one or more full-connected layers. In 2012, Alext Krizhevsky et al \cite{krizhevsky2012imagenet} proposed AlexNet, which similars to LeNet but more deeper and bigger, to classify the images into different categories. It was submitted to the ImageNet challenge and significantly outperformed the second runner-up. Ciresan et al. \cite{ciregan2012multi} proposed a multi-column deep CNNs which combining several CNNs. This network have been used for image classification and it have decreased the error rate by $30 - 40\%$. In \textbf{image recognition}, C.Szegedy et al. \cite{szegedy2015going} proposed Inception to achieve for classification and object detection, C. Farabet et al. \cite{farabet2013learning} have introduced a network to learn the hierarchical features of the images; H. Li et al. \cite{li2015convolutional} have present a CNN for detecting the human face at multiple resolutions. Besides, deep learning has been obtained the achievement in other domains such as \textbf{speech recognition} \cite{mikolov2011strategies, hinton2012deep}, \textbf{language translation} \cite{jean2014using, sutskever2014sequence}, \ldots.
+Deep learning \cite{lecun2015deep} has been introduced in the middle of the previous century for artificial intelligence application but it has encountered several problems to take real-world cases. Luckily, the improvement of computing capacities, both in memory size and computing time with GPU programming, has opened a new perspective for deep learning. In recent years, deep learning is known as a solution for the tasks in computer vision, especially for image analysis. Many deep learning architectures have been proposed to solve many difficult tasks. For example, in \textbf{image classification}, Yann LeCun et al. \cite{lecun1998gradient} have proposed an architecture named LeNet to read the zip codes, digits, \ldots which had a standard structure stacked convolutional layers (normalization and max-pooling) are followed by one or more full-connected layers. In 2012, Alext Krizhevsky et al \cite{krizhevsky2012imagenet} proposed AlexNet, which similars to LeNet but more deeper and bigger, to classify the images into different categories. It was submitted to the ImageNet challenge and significantly outperformed the second runner-up. Ciresan et al. \cite{ciregan2012multi} proposed a multi-column deep CNNs which combining several CNNs. This network have been used for image classification and it have decreased the error rate by $30 - 40\%$. In \textbf{image recognition}, C.Szegedy et al. \cite{szegedy2015going} proposed Inception to achieve for classification and object detection, C. Farabet et al. \cite{farabet2013learning} have introduced a network to learn the hierarchical features of the images; H. Li et al. \cite{li2015convolutional} have present a CNN for detecting the human face at multiple resolutions. Besides, deep learning has been obtained the achievement in other domains such as \textbf{speech recognition} \cite{mikolov2011strategies, hinton2012deep}, \textbf{language translation} \cite{jean2014using, sutskever2014sequence}, \textbf{natural language processing} \cite{lecun2015deep, collobert2011natural, collobert2008unified}, \ldots.
 
-Besides object classification or recognition, key points detection is another task in image analysis. Early methods of machine learning have been achieved good results. These methods are basically divided into two groups: the regression-based methods and template fitting methods. A regression-based method predicts landmark locations by regression using image features \cite{valstar2010facial,dantone2012real,burgos2013robust}. While a template fitting method builds a template to fit with the input image, then the landmarks are setting \cite{cootes2001active,liu2007generic,yu2013pose}. With the comeback of deep learning, CNN has been used to predict the landmarks on 2D and it has gained better results. Yi Sun et al. \cite{sun2013deep} have proposed a cascaded CNNs to predict the facial points on the human face. Their model includes the networks which have separated into three levels of the cascade. The networks recognize the human face from the global to the local view to increasing the accuracy of predicted key points. Zhanpeng Zhang et al. \cite{zhang2014facial} proposed a \textit{Tasks-Constrained Deep Convolutional Network} to optimize facial landmarks detection. Their model detected the facial landmarks with a set of related tasks such as head pose estimation, gender classification, age estimation, or facial attribute inference. Shaoli Huang et al. \cite{huang2017coarse} introduced a coarse-fine network, which composed of several coarse detector branches, to locate the keypoints and to estimate the human pose. Cintas et al. \cite{cintas2016automatic} has introduced a network to predict the landmarks on human ears (Fig. \ref{imgears}). After training, the network has the ability to detect $45$ landmarks on human ears. 
+Besides object classification or recognition, \textbf{key points detection} is another task in image analysis. Early methods of machine learning have been achieved good results. These methods are basically divided into two groups: the regression-based methods and template fitting methods. A regression-based method predicts landmark locations by regression using image features \cite{valstar2010facial,dantone2012real,burgos2013robust}. While a template fitting method builds a template to fit with the input image, then the landmarks are setting \cite{cootes2001active,liu2007generic,yu2013pose}. With the comeback of deep learning, CNN has been used to predict the landmarks on 2D and it has gained better results. Yi Sun et al. \cite{sun2013deep} have proposed a cascaded CNNs to predict the facial points on the human face. Their model includes the networks which have separated into three levels of the cascade. The networks recognize the human face from the global to the local view to increasing the accuracy of predicted key points. Zhanpeng Zhang et al. \cite{zhang2014facial} proposed a \textit{Tasks-Constrained Deep Convolutional Network} to optimize facial landmarks detection. Their model detected the facial landmarks with a set of related tasks such as head pose estimation, gender classification, age estimation, or facial attribute inference. Shaoli Huang et al. \cite{huang2017coarse} introduced a coarse-fine network, which composed of several coarse detector branches, to locate the keypoints and to estimate the human pose. Cintas et al. \cite{cintas2016automatic} has introduced a network to predict the landmarks on human ears (Fig. \ref{imgears}). After training, the network has the ability to detect $45$ landmarks on human ears. 
 
 \begin{figure}[!h]
 	\centering
@@ -141,13 +142,13 @@ Besides object classification or recognition, key points detection is another ta
 	\label{imgears}
 \end{figure}
 
-As an association with the biologist, we study to develop an automatic method for predicting the landmarks on beetle's anatomical (Fig. \ref{figbeetle}). In the past, locating landmarks on biological images is mainly using image processing techniques where the object in the image is easily to segment. For example, in a previous work \cite{le2017maelab}, we have applied a series of algorithms to detect the landmarks automatically on beetles mandibles which are considered as the easied objects to segment (with an quality enough good for our need). In that work, the landmarks have been detected by registering two segmentations of images and then, using SIFT descriptor to refine the location of predicted landmarks. After the experiment, we have obtained good enough results on mandibles. Unfortunately, we have observed that the method did not provide good results when the segmentation is not precise, i.e. on thorax or elytra images. This is explained why we have turned the automatically landmarking into another stage without any segmentation step. Using CNN for landmarking seems that a good choice for un-segmentable images.
+As an association with the biologist, we study to develop an automatic method for predicting the landmarks on beetle's anatomical (Figs.\ref{figh1}, \ref{figt1}, \ref{fige1}, \ref{figlm1}, \ref{figrm1}). In the past, locating landmarks on biological images is mainly using image processing techniques where the object in the image is easily to segment. For example, in a previous work \cite{le2017maelab}, we have applied a series of algorithms to detect the landmarks automatically on beetles mandibles which are considered as the easied objects to segment (with an quality enough good for our need). In that work, the landmarks have been detected by registering two segmentations of images and then, using SIFT descriptor to refine the location of predicted landmarks. After the experiment, we have obtained good enough results on mandibles. Unfortunately, we have observed that the method did not provide good results when the segmentation is not precise, i.e. on pronotum or elytra images. This is explained why we have turned the automatically landmarking into another stage without any segmentation step. Using CNN for landmarking seems that a good choice for un-segmentable images.
 
 \section{Overview of Convolutional Neural Network}
 \label{sOverview}
 CNN is a feedforward network which takes the information following one direction from the inputs to the outputs. Currently, CNNs have many different variations, but in general, it consists of convolutional and pooling layers which are stacked together to convolve and to down-sample the input. Then, they are followed by one or more fully connected layers to give the decision as the output of the network. 
 
-Fig. \ref{imgcnn_network} shows an example of a CNN for classification problem. The network inputs directly an image to several stages of convolutional and pooling layers. Then, the representation is feed into one or more full connected layers. Finally, the last fully connected layer gives the category label for the input image. This architecture could be seen as a popular one that we can find from the literature. However, several architectures have been proposed recurrently to improve the accuracy or to decrease the computation costs. In this section, we will mention to the popular layers in a CNN: convolutional layers, pooling layers and fully connected layers.
+Fig. \ref{imgcnn_network} shows an example of a CNN for classification problem. The network inputs directly an image to several stages of convolutional and pooling layers. Then, the representation is feed into one or more full connected layers. Finally, the last fully connected layer gives the category label for the input image. This architecture could be seen as a popular one that we can find from the literature. However, several architectures have been proposed recurrently to improve the accuracy or to decrease the computation costs. In this section, we will mention to the popular layers in a CNN: convolutional layers, pooling layers, and fully connected layers.
 
 \begin{figure}[!h]
 	\centering
@@ -156,9 +157,9 @@ Fig. \ref{imgcnn_network} shows an example of a CNN for classification problem. 
 	\label{imgcnn_network}
 \end{figure}
 
-Convolutional layers: use as an features extractor by applying some learnable weights on the input images. The input image are convolved with the learnable weights in order to compute the new feature maps; then, the convolved results are sent through a nonlinear activation. In convolutional layer, the neurons are are arranged into feature maps. All the neurons within a feature map have constrained to be equal; however, different features maps within the same convolutional layer have different weights so that several features can be extract at each location of an input image. 
+Convolutional layers: use as a features extractor by applying some learnable weights on the input images. The input image is convolved with the learnable weights in order to compute the new feature maps; then, the convolved results are sent through a nonlinear activation. In convolutional layer, the neurons are arranged into feature maps. All the neurons within a feature map have constrained to be equal; however, different features maps within the same convolutional layer have different weights so that several features can be extracted at each location of an input image. 
 
-Pooling layers: is mostly used to down-sampling the size of the input with the purpose to reduce the spatial resolution of the feature map to reduce the computation cost. Initially, it was common practice to use average pooling which propagates the average of all the input to the next layer. However, in more recent models \cite{krizhevsky2012imagenet, ciregan2012multi, li2015convolutional}, max pooling which propagates the maximum value (selecting the largest value) with a receptive field to the next layer. Fig. \ref{imgcnn_pooling} illustrates the differences between max and average pooling. Give an input image of size $4 \times 4$, if applying a $2 \times 2$ filter and stride of two is applied, the output will be had the size of $2 \times 2$ for both cases. However, the value in each element of the output is different because the max pooling outputs the maximum values of the filter region, while average pooling outputs the average value of the same region.
+Pooling layers: are mostly used to down-sampling the size of the input with the purpose to reduce the spatial resolution of the feature map to reduce the computation cost. Initially, it was common practice to use average pooling which propagates the average of all the input to the next layer. However, in more recent models \cite{krizhevsky2012imagenet, ciregan2012multi, li2015convolutional}, max pooling which propagates the maximum value (selecting the largest value) with a receptive field to the next layer. Fig. \ref{imgcnn_pooling} illustrates the differences between max and average pooling. Give an input image of size $4 \times 4$, if applying a $2 \times 2$ filter and stride of two is applied, the output will be had the size of $2 \times 2$ for both cases. However, the value in each element of the output is different because the max pooling outputs the maximum values of the filter region, while average pooling outputs the average value of the same region.
 
 \begin{figure}[!h]
 	\centering
@@ -167,15 +168,15 @@ Pooling layers: is mostly used to down-sampling the size of the input with the p
 	\label{imgcnn_pooling}
 \end{figure}
 
-Fully connected layers: are usually follow the convolutional and pooling layer which used to extract the abstract feature representations. A CNN may be have one or more fully connected layers. It interprets the feature represetations and perform a function of high-level reasoning (i.e. giving classification score) by applying the activation functions. In practice, the last fully connected layer refers to the output of the network and chosing the activation function is depened on which kind of problem that network solve, i.e. we usually softmax activation function for a classfication problem but it is not useful in a support vector machine. 
+Fully connected layers: are usually follow the convolutional and pooling layer which used to extract the abstract feature representations. A CNN may have one or more fully connected layers. It interprets the feature representations and performs a function of high-level reasoning (i.e. giving classification score) by applying the activation functions. In practice, the last fully connected layer refers to the output of the network and choosing the activation function is depended on which kind of problem that network solve, i.e. we usually softmax activation function for a classification problem but it is not useful in a support vector machine. 
 
-To solve a problem by using deep learning, besides designing the network architecture then training dataset is also a very important thing. The chosen dataset should enough large to provide as more different cases as possible to improve the learnable of the network because of the deep learning algorithms will be trained repeatedly to reach the best accuracy. Unfortunately, data in practice has usually not enough. So, some methods have been applied to generate the fake data with the purpose to augment the dataset. Our case is also not an exception. We work on a small dataset of beetles with $293$ images for each part. This number is really modest to apply deep learning. In the next of article, we describe the procedure to augment the dataset before coming to design the architectures.
+To solve a problem by using deep learning, besides designing the network architecture then training dataset is also a very important thing. The chosen dataset should enough large to provide as more different cases as possible to improve the learnable of the network because of the deep learning algorithms will be trained repeatedly to reach the best accuracy. Unfortunately, data in practice has usually not enough. So, some methods have been applied to generate the fake data with the purpose to augment the dataset (i.e. rotate, translate, flip the images). Our case is also not an exception, we work on a small dataset of beetles with $293$ images for each part. This number is really modest to apply deep learning. In the next of article, we describe the procedure to augment the dataset before coming to design the architectures.
 
 \section{Data augmentation}
 \label{Sdataaug}
-A characteristic of machine learning and deep learning is using a volume dataset to train the model. Of course, we are not always have enough data for training in practice. One way to solve this problem is to create the fake data from real data and to add it to the training set. Dataset augmentation has been a particularly effective technique for a specific problem. For example, in images classification problem, the operations like translating,  rotating or scaling the images have also effective. The fake images may be generated by translating (rotating or scaling) in each direction. Besides, injecting noise in the input can also see as a form of data augmentation.
+A characteristic of machine learning and deep learning is using a volume dataset to train the model. Of course, we do not always have enough data for training in practice. One way to solve this problem is to create fake data from real data and to add it to the training set. Dataset augmentation has been a particularly effective technique for a specific problem. For example, in images classification problem, the operations like translating,  rotating or scaling the images have also effective. The fake images may be generated by translating (rotating or scaling) in each direction. Besides, injecting noise in the input can also see as a form of data augmentation.
 
-Our dataset includes $293$ images of beetles (for each anatomical part). All the images are taken with the same camera in the same condition with a resolution of $(3264 \times 2448)$. Each image has a set of manual landmarks provided by biologists, i.e, each thorax has $8$ landmarks, each head has $10$ landmarks. Applying CNNs to train each part with a small number of images to reach good results is impossible. So, we need to augment the dataset before training the networks. Firstly, we have found that the original solution of the images $(3264 \times 2448)$ are heavy for the neural network. For performance considerations, in most of CNNs \cite{cintas2016automatic, lecun2010convolutional, sun2013deep}, the size of the input is limited to $(256 \times 256)$ pixels, so we have decided to down-sampling the images to a new resolution $(256 \times 192)$ (to respect the ratio between $x$ and $y$). Of course, the coordinates of manual landmarks have been also scaled to fit with the new resolution of the images. In usual way, the transformations have been used to augment the dataset (i.e rotation, translation,\ldots) but the analysis of image by CNN is most often translation and rotation invariant. Therefore, two other procedures have been imaged to increase the number of images in the dataset $(256 \times 192)$.
+Our dataset includes $293$ images of beetles (for each anatomical part). All the images are taken with the same camera in the same condition with a resolution of $(3264 \times 2448)$. Each image has a set of manual landmarks provided by biologists, i.e, each pronotum has $8$ landmarks, each head has $10$ landmarks. Applying CNNs to train each part with a small number of images to reach good results is impossible. So, we need to augment the dataset before training the networks. Firstly, we have found that the original solution of the images $(3264 \times 2448)$ are heavy for the neural network. For performance considerations, in most of CNNs \cite{cintas2016automatic, lecun2010convolutional, sun2013deep}, the size of the input is limited to $(256 \times 256)$ pixels, so we have decided to down-sampling the images to a new resolution $(256 \times 192)$ (to respect the ratio between $x$ and $y$). Of course, the coordinates of manual landmarks have been also scaled to fit with the new resolution of the images. In the usual way, the transformations have been used to augment the dataset (i.e rotation, translation,\ldots) but the analysis of image by CNN is most often translation and rotation invariant. Therefore, two other procedures have been imaged to increase the number of images in the dataset $(256 \times 192)$.
 
 The first procedure is to change the value of a color channel in the original image to generate a new image. According to that, a constant is added to one of the RGB channels each time it is used for training. Each constant is sampled in a uniform distribution $\in [1, N]$ to obtain a new value caped at $255$. For example, Fig. \ref{figaug1} shows an example when we added a constant $c = 10$ to each channel of an original image. Following this way, we can generate three version from an image.
 
@@ -261,7 +262,7 @@ The core of CNN is training over iteration. There are many ways to optimize the 
 
 \section{Experiments and results}
 \label{sexperiments}
-Before widely applying to all anatomical parts, we have firstly tried with thorax part to evaluate the performance. The networks have been trained in $5, 000$ epochs on Ubuntu machine by using NVIDIA TITAN X cards. The set of images that used for training and validation are merged together. During the training, the images are chosen randomly from the dataset with a ratio of $60\%$ for training and $40\%$ for validation. The training step takes into account a pair of information (\textit{images, manual landmarks coordinates})  as training data. In the context of deep learning, landmark prediction can be seen as a regression problem. So, we have used Root Mean Square Error (RMSE) to compute the loss of implemented architectures. At the test phase, images without landmarks are given to the trained network to produce output coordinates of the predicted landmarks. The results then evaluated by comparing with the manual landmarks coordinates provided by biologists which have been seen as ground truth. 
+Before widely applying to all anatomical parts, we have firstly tried with pronotum part to evaluate the performance. The networks have been trained in $5, 000$ epochs on Ubuntu machine by using NVIDIA TITAN X cards. The set of images that used for training and validation are merged together. During the training, the images are chosen randomly from the dataset with a ratio of $60\%$ for training and $40\%$ for validation. The training step takes into account a pair of information (\textit{images, manual landmarks coordinates})  as training data. In the context of deep learning, landmark prediction can be seen as a regression problem. So, we have used Root Mean Square Error (RMSE) to compute the loss of implemented architectures. At the test phase, images without landmarks are given to the trained network to produce output coordinates of the predicted landmarks. The results then evaluated by comparing with the manual landmarks coordinates provided by biologists which have been seen as ground truth. 
 
 Fig. \ref{figloss1} shows the training errors and the validation errors during traning phase of the first architecture. The blue curve presents the RMSE errors of training process while green curve is the validation errors. Clearly, over-fitting has appeared in the first model. The training losses are able to decrease but the validation losses are stable. In the second model (section \ref{Sneuralnetwork}), we have modified the parameters of full-connected layers to prevent the over-fitting but it seems that this solution is still not suitable.
 
@@ -272,7 +273,7 @@ Fig. \ref{figloss1} shows the training errors and the validation errors during t
 	\label{figloss1}
 \end{figure}
 
-Then, we have continued to train the third model on the same dataset of thorax images. Fig. \ref{figloss2} illustrates the losses during the training of the third model. Like the previous figure (Fig. \ref{figloss1}), the blue line is training losses, the green line is validation losses. In the opposite with two previous models, the losses are different (far) from the beginning but after several epochs, the values become more proximate and the over-fitting problem has been solved. This proves that adding dropout layers to build the elementary blocks have been effects to prevent over-fitting and contributory improve the accuracy of the model. \textit{So, we have decided to keep the architecture of the third model for our landmarking problem.}
+Then, we have continued to train the third model on the same dataset of pronotum images. Fig. \ref{figloss2} illustrates the losses during the training of the third model. Like the previous figure (Fig. \ref{figloss1}), the blue line is training losses, the green line is validation losses. In the opposite with two previous models, the losses are different (far) from the beginning but after several epochs, the values become more proximate and the over-fitting problem has been solved. This proves that adding dropout layers to build the elementary blocks have been effects to prevent over-fitting and contributory improve the accuracy of the model. \textit{So, we have decided to keep the architecture of the third model for our landmarking problem.}
 
 \begin{figure}[!h]
 	\centering
@@ -281,7 +282,7 @@ Then, we have continued to train the third model on the same dataset of thorax i
 	\label{figloss2}
 \end{figure}
 
-In order to have the predicted landmarks for all thorax images (instead of only $33$ images), we have applied \textit{cross-validation} to choose the test images, called \textit{round}. For each time, we have chosen a different fold of $33$ images as testing images, the remaining images are used as training and validation images ($293/33 \approx 9$ rounds). Following that, the network will be trained with different datasets, then the trained model will be used to predicted the lanmarks on the images in the corresponding test set. Table. \ref{tbltrainingloss} resumes the losses of $9$ rounds when we trained the third model on thorax images. Clearly, the training loss/validation loss among rounds are not so large and the RMSE values are looking pretty good ($\approx 1.7 - 2.1$ pixels).
+In order to have the predicted landmarks for all pronotum images (instead of only $33$ images), we have applied \textit{cross-validation} to choose the test images, called \textit{round}. For each time, we have chosen a different fold of $33$ images as testing images, the remaining images are used as training and validation images ($293/33 \approx 9$ rounds). Following that, the network will be trained with different datasets, then the trained model will be used to predicted the lanmarks on the images in the corresponding test set. Table. \ref{tbltrainingloss} resumes the losses of $9$ rounds when we trained the third model on pronotum images. Clearly, the training loss/validation loss among rounds are not so large and the RMSE values are looking pretty good ($\approx 1.7 - 2.1$ pixels).
 
 \begin{table}[h!]
 	\centering
@@ -297,7 +298,7 @@ In order to have the predicted landmarks for all thorax images (instead of only 
 	8 & 0.00018 & 0.00021 \\ \hline
 	9 & 0.00020 & 0.00027 \\ \hline
 	\end{tabular}
-	\caption{\small{The losses during training the third model on thorax images}}
+	\caption{\small{The losses during training the third model on pronotum images}}
 	\label{tbltrainingloss}
 \end{table}
 
@@ -313,7 +314,7 @@ To evaluate the coordinates of predicted landmarks, the correlation metrics have
 	\label{tblcorrelation}
 \end{table}
 
-The main goal of computing is to predict the coordinates of landmarks, so the distances (in pixels) between the coordinates of manual landmarks and corresponding predicted landmarks have been taken into account on all images. Then, the average of distances are computed by landmarks. Table. \ref{tblavgthorax} shows the average distances by landmarks on all images of thorax dataset. With images of resolution $256 \times 192$, we can
+The main goal of computing is to predict the coordinates of landmarks, so the distances (in pixels) between the coordinates of manual landmarks and corresponding predicted landmarks have been taken into account on all images. Then, the average of distances are computed by landmarks. Table. \ref{tblavgpronotum} shows the average distances by landmarks on all images of pronotum dataset. With images of resolution $256 \times 192$, we can
 consider that an error of $1\%$ corresponds to $2$ pixels that could
 be an acceptable error. Unhappily, our results exhibit average
 distance of $4$ pixels in the best case, landmark $1$ and more than
@@ -334,8 +335,8 @@ pixels.
 		7 & 4.636 \\ \hline
 		8 & 4.9363 \\ \hline
 	\end{tabular}
-	\caption{The average distances on all images per landmark on thorax images.}
-	\label{tblavgthorax}
+	\caption{The average distances on all images per landmark on pronotum images.}
+	\label{tblavgpronotum}
 \end{table}
 
 Fig. \ref{figchartlm1} shows the distribution of the distances on the first landmark of all images. The accuracy based on the distance in each image can be
@@ -360,7 +361,9 @@ To illustrate this purpose, Fig. \ref{figrsexample} shows the predicted landmark
     \label{figrsexample}
 \end{figure}
 
-From the success of the third architecture on thorax dataset, we apply the same procedures (data augmentation, training,\ldots) on other parts of beetle: \textit{left and right mandibles, elytra and head}. However, we have modified the number of output of the last full-connected layer to adapt with each dataset before training. According, the values at the last full-connected layer are set to $32$, $36$, $22$ and $20$ outputs corresponds to $16$, $18$, $11$ and $10$ landmarks on left mandible, right mandible, elytra and head, respectively. Of course, we have also applied \textit{cross-validation} to select testing data to get all predicted landmarks for all images in each dataset. Then, the quality of predicted landmarks are evaluated by comparing with the corresponding manual landmarks (distance computation). Table. \ref{tblavg4parts} shows the average distances on each landmark of elytra, head, left and right mandibles anatomical, respectively. Comparing with the average distances on the thorax part, it seems that the proposed architecture provides more accurate predictions on the elytra dataset, but the results are opposite on other datasets.
+From the success of the third architecture on pronotum dataset, we apply the same procedures (data augmentation, training,\ldots) on other parts of beetle: \textit{left and right mandibles, elytra and head}. However, we have modified the number of output of the last full-connected layer to adapt with each dataset before training. According, the values at the last full-connected layer are set to $32$, $36$, $22$ and $20$ outputs corresponds to $16$, $18$, $11$ and $10$ landmarks on left mandible, right mandible, elytra and head, respectively. Of course, we have also applied \textit{cross-validation} to select testing data to get all predicted landmarks for all images in each dataset. Then, the quality of predicted landmarks are evaluated by comparing with the corresponding manual landmarks (distance computation). Table. \ref{tblavg4parts} shows the average distances on each landmark of elytra, head, left and right mandibles anatomical, respectively. Comparing with the average distances on the pronotum part, the average distances on elytra and head parts are very close, but a little bit far on the mandible parts.
+
+it seems that the proposed architecture provides more accurate predictions on the elytra dataset, but the results are opposite on other datasets.
 
 \begin{table}[htbp]
 	\centering	
@@ -393,7 +396,7 @@ From the success of the third architecture on thorax dataset, we apply the same 
 
 \section{Resulting improvement by fine-tuning}
 \label{sfineTuning}
-The proposed network (third architecture) presented in Section \ref{Sneuralnetwork} have been trained from scratch on five datasets of beetles (left mandible, right mandible, thorax, elytra, and head). At the first step, the network was able to predict the landmarks on the images. But as we have discussed, even if the strength of the correlation seems to validate the results, when we display the predicted landmarks on the images, the quality of the predicted coordinates are also not enough precise, and the average error are also still high (of course, we have the distances are higher than the average distances).
+The proposed network (third architecture) presented in Section \ref{Sneuralnetwork} have been trained from scratch on five datasets of beetles (left mandible, right mandible, pronotum, elytra, and head). At the first step, the network was able to predict the landmarks on the images. But as we have discussed, even if the strength of the correlation seems to validate the results, when we display the predicted landmarks on the images, the quality of the predicted coordinates are also not enough precise, and the average error are also still high (of course, we have the distances are higher than the average distances).
 
 In order to reach more acceptable results for biologists, we have broadened model with another step of deep learning: \textbf{transfer learning}. That is a method enables to re-uses the model developed for a specific task/dataset to lead another task (called \textit{target task}) with another dataset. This process allows rapid process and improves the performance of the model on the target task \cite{torrey2009transfer}. The most popular example has been given with the project ImageNet of Google \cite{imagenet_cvpr09} which has labeled several millions of images. The obtained parameter values which can be used in another context to classify another dataset, eventually very different dataset \cite{margeta_mri}. The name of this procedure to re-use parameters to pretrain a model is currently called \textbf{fine-tuning}.
 
@@ -405,26 +408,26 @@ has not been relevant for our application. We have designed a
 way to reproduce the method with our own data. It is worth
 noting that of course the size of data to pre-train has drastically decreased. For our pre-training step, the network has been
 trained on the whole dataset including the images of three parts
-of beetle \textit{i.e thorax, elytra and head}. Then, the trained model
+of beetle \textit{i.e pronotum, elytra and head}. Then, the trained model
 has been used to fine-tune and test on each dataset.
 \subsection{Data preparation and training}
-The images training dataset is combined from the images of three sets: \textit{thorax, elytra, and head} (after augmentation). When applying the training from the scratch, we have used cross-validation to select the data ($9$ folds). It means that for each dataset, we have some different training data and corresponding testing data. So, the images that use to train the model are just select from one of the folds in each dataset. Specifically, we have taken $1, 820$ images of each part. In total, it includes $5, 460$ images $(260 \times 7 \times 3)$. 
+The images training dataset is combined from the images of three sets: \textit{pronotum, elytra, and head} (after augmentation). When applying the training from the scratch, we have used cross-validation to select the data ($9$ folds). It means that for each dataset, we have some different training data and corresponding testing data. So, the images that use to train the model are just select from one of the folds in each dataset. Specifically, we have taken $1, 820$ images of each part. In total, it includes $5, 460$ images $(260 \times 7 \times 3)$. 
 
 \begin{figure}[htbp]
 	\centerline{\includegraphics[scale=0.5]{images/merge}}
-	\caption{A presentation of head, thorax and elytra part with
+	\caption{A presentation of head, pronotum and elytra part with
 corresponding manual landmarks}
 	\label{figmerge}
 \end{figure}
 
-However, another problem has been appeared when we combined the images from different dataset. That is the different number of landmarks on each part: \textit{$8$ landmarks on thorax part, $10$ landmarks on head part, and $11$ landmarks on elytra part}. Fig. \ref{figmerge} shows the possition of the landmarks on each part. Because of the meaning of landmarks on each anatomical part for biologists, we cannot insert the landmarks arbitrary. So,  we have decided to keep the landmarks on thorax as reference and to remove the landmarks on elytra and head parts instead of adding. We kept $8$ (landmarks) as a reference number, then we have removed the supernumerary when it is unnecessary. Specifically, we have removed three landmarks on the elytra part ($1^{st}, 6^{th}, 9^{th}$), and two landmarks on the head part ($5^{th}, 6^{th}$). 
+However, another problem has been appeared when we combined the images from different dataset. That is the different number of landmarks on each part: \textit{$8$ landmarks on pronotum part, $10$ landmarks on head part, and $11$ landmarks on elytra part}. Fig. \ref{figmerge} shows the possition of the landmarks on each part. Because of the meaning of landmarks on each anatomical part for biologists, we cannot insert the landmarks arbitrary. So,  we have decided to keep the landmarks on pronotum as reference and to remove the landmarks on elytra and head parts instead of adding. We kept $8$ (landmarks) as a reference number, then we have removed the supernumerary when it is unnecessary. Specifically, we have removed three landmarks on the elytra part ($1^{st}, 6^{th}, 9^{th}$), and two landmarks on the head part ($5^{th}, 6^{th}$). 
 
 During training the proposed architecture on the combined dataset, the parameters of the network (learning rate, momentum, \ldots) are kept the same as training from scratch but the number of epochs are increased to $10, 000$ instead of $5, 000$ to achieve better learning on the parameters (weights). Additional, we have shuffled the training set. Because the neural network learns the faster from the most unexpected sample. It is advisable to choose a sample at each iteration that is the most unfamiliar to the system. Shuffling the examples will be helped the model works with different anatomical parts rather than the same anatomical samples in each training time.
 
 \subsection{Fine-tuning on each dataset}
-The combined dataset then used to train the third architecture with $16$ outputs ($8$ landmarks). Then, the trained model is used to fine-tuning on each dataset. To compare the result with the previous one, we have also fine-tuned the trained model with different dataset by applying cross-validation. Firstly, we consider on the losses during fine-tuning. \textit{For example}, Table. \ref{tblftpronotum}, \ref{tblftbody}, \ref{tblfthead} show the losses during fine-tuning on thorax, elytra, and head dataset, respectively. Comparing with the losses when we trained the model from scratch, \textit{i.e.} on thorax, the validation losses of all round in this scenario have been significantly decreased (around $40\%$).
+The combined dataset then used to train the third architecture with $16$ outputs ($8$ landmarks). Then, the trained model is used to fine-tuning on each dataset. To compare the result with the previous one, we have also fine-tuned the trained model with different dataset by applying cross-validation. Firstly, we consider on the losses during fine-tuning. \textit{For example}, Table. \ref{tblftpronotum}, \ref{tblftbody}, \ref{tblfthead} show the losses during fine-tuning on pronotum, elytra, and head dataset, respectively. Comparing with the losses when we trained the model from scratch, \textit{i.e.} on pronotum, the validation losses of all round in this scenario have been significantly decreased (around $40\%$).
 
-On each part, the landmarks are predicted on the test images. Then, the average error based on the distances between predicted and corresponding manual landmarks have been also computed. Table. \ref{tblcmppronotum}, \ref{tblcmpbody}, \ref{tblcmphead}, \ref{tblcmpmg}, and \ref{tblcmpmd} show the average distances per landmark on thorax, elytra, head, left and right mandibles dataset, respectively. \textbf{From scratch} columns remind the previously average distances. \textbf{Fine-tune} columns present the new average distances after applying fine-tuning on each part. It is clearly shown that the result of predicted landmarks with the help of fine-tuning is more precise than training from scratch. For example, the average distance at each landmark has decreased. Additional, when comparing the average distances between two processes, the worse case of fine-tuning process is still better than the best case of training from scratch.
+On each part, the landmarks are predicted on the test images. Then, the average error based on the distances between predicted and corresponding manual landmarks have been also computed. Table. \ref{tblcmppronotum}, \ref{tblcmpbody}, \ref{tblcmphead}, \ref{tblcmpmg}, and \ref{tblcmpmd} show the average distances per landmark on pronotum, elytra, head, left and right mandibles dataset, respectively. \textbf{From scratch} columns remind the previously average distances. \textbf{Fine-tune} columns present the new average distances after applying fine-tuning on each part. It is clearly shown that the result of predicted landmarks with the help of fine-tuning is more precise than training from scratch. For example, the average distance at each landmark has decreased. Additional, when comparing the average distances between two processes, the worse case of fine-tuning process is still better than the best case of training from scratch.
 
 \begin{table}[htbp]
 	\begin{minipage}[t]{0.45\textwidth}
@@ -441,7 +444,7 @@ On each part, the landmarks are predicted on the test images. Then, the average 
 	8 & 0.00018 & 0.00006 \\ \hline
 	9 & 0.00018 & 0.00009 \\ \hline
 	\end{tabular}
-	\caption{The losses during fine-tuning model on thorax dataset}
+	\caption{The losses during fine-tuning model on pronotum dataset}
 	\label{tblftpronotum}
 \end{minipage}
 \hfill
@@ -459,7 +462,7 @@ On each part, the landmarks are predicted on the test images. Then, the average 
 7 & 4.64  & 2.68 \\ \hline
 8 & 4.94  & 2.87 \\ \hline
 \end{tabular}
-\caption{The average error distance per landmark of two processes on thorax images}
+\caption{The average error distance per landmark of two processes on pronotum images}
 \label{tblcmppronotum}
 \end{minipage}
 \end{table}
@@ -611,8 +614,8 @@ In another view, Fig. \ref{figdist5parts} shows the comparation of the average d
 \iffalse
 \begin{figure}[htbp]
 	\centerline{\includegraphics[scale=0.55]{images/prono_part}}
-	\caption{The distribution of average distances on each landmark of thorax part.}
-	\label{figdistthorax}
+	\caption{The distribution of average distances on each landmark of pronotum part.}
+	\label{figdistpronotum}
 \end{figure}
 
 \begin{figure}[htbp]
@@ -633,71 +636,38 @@ In another view, Fig. \ref{figdist5parts} shows the comparation of the average d
 	\subfloat[Right mandible]{\label{}\includegraphics[width=0.5\textwidth]{images/md_part}}\\
     \subfloat[Head]{\label{}\includegraphics[width=0.5\textwidth]{images/tete_part}}~~
 	\subfloat[Elytra]{\label{}\includegraphics[width=0.5\textwidth]{images/elytre_part}}\\
-	\subfloat[Thorax]{\label{}\includegraphics[width=0.5\textwidth]{images/pronotum_part.png}}
+	\subfloat[pronotum]{\label{}\includegraphics[width=0.5\textwidth]{images/pronotum_part.png}}
     \caption{The distribution of average distances on each landmark of each beetle's anatomical }
     \label{figdist5parts}
 \end{figure}
 
-The fine-tuning process has improved the results of the proposed architecture on both $5$ datasets: left, right mandible, thorax, elytra and head. All the average distances are significantly decreased. Specially, the results have been improved $\approx 26.9\%$ on left mandible, $\approx 22.8\%$ on right mandible, $\approx 40.3\%$ on thorax, $\approx 39.8\%$ on elytra, and $\approx 46.4\%$  on head part based on considering the average distances per landmark. Addition, in the cases of thorax and head part, even if we plus the average distance and its standard deviation, the results are also less than the result when we trained the model from scratch. For segmentable images, we have a comparison between the results of deep learning and early method where we have applied image processing techniques to predict the landmarks. Clearly, the result with fine-tuning have improved the location of estimated landmarks, even when the average distances are still high when we trained the model from scratch: most of the average distance(or landmarks) of left mandibles are less than the results of the early method, while the average distances are very closed in the case of right mandibles.
+The fine-tuning process has improved the results of the proposed architecture on both $5$ datasets: left, right mandible, pronotum, elytra and head. All the average distances are significantly decreased. Specially, the results have been improved $\approx 26.9\%$ on left mandible, $\approx 22.8\%$ on right mandible, $\approx 40.3\%$ on pronotum, $\approx 39.8\%$ on elytra, and $\approx 46.4\%$  on head part based on considering the average distances per landmark. Addition, in the cases of pronotum and head part, even if we plus the average distance and its standard deviation, the results are also less than the result when we trained the model from scratch. For segmentable images, we have a comparison between the results of deep learning and early method where we have applied image processing techniques to predict the landmarks. Clearly, the result with fine-tuning have improved the location of estimated landmarks, even when the average distances are still high when we trained the model from scratch: most of the average distance(or landmarks) of left mandibles are less than the results of the early method, while the average distances are very closed in the case of right mandibles.
 
-To illustrate the final results, we display the distribution of
-the distances in both cases: the best and the worst results (resp. landmark $1$ and $6$ on thorax dataset) of five datasets (thorax, elytra, head, left and right mandible) in  
-%The Fig. \ref{figdist3parts} shows howmuch the average distances (blue lines) and standard errors (red lines) have been improved for the landmark 1 (Fig. (\ref{figdist3parts1}) and (\ref{figdist3parts2})) and landmark 6 (Fig. \ref{figdist3parts3}) and (\ref{figdist3parts4}).
-Fig. \ref{figdist3parts}, \ref{figdist3partselytre}, \ref{figdist3partstete}, \ref{figdist3partsmg}, and \ref{figdist3partsmd}, respectively. In these figures, the left images present for the results when we trained the model from scratch; while the right images shows the results after applying fine-tuning. The blue lines in the charts present the average distance values. Clearly, the results in the fine-tuning case have been improved significantly than training from scratch.
+\pagebreak
+To compare the results between image processing procedures and deep learning, we have run the test on an image in both methods. Then, we have calculated the distances between manual and predicted landmarks (in both cases). Figs. \ref{figmn5parts} show the locations of manual and predicted landmarks on each beetle's part from both two methods. In these images, the \textbf{red points} present the manual landmarks, the \textbf{yellow points} are estimated landmarks from image processing procedures and the \textbf{green points} are the predicted landmarks which provided by deep learning. Fig. \ref{fig0015parts} shows the distances of each part that we have obtained. In these charts, the \textbf{blue lines} present the distances when we apply the calculation on image processing procedures; the \textbf{orange and yellow lines} show the distances with deep learning: training from scratch and fine tuning, respectively.
 
 \begin{figure}[htbp]
     \centering
-    \subfloat[Landmark 1 - CNN]{\label{figdist3parts1}\includegraphics[width=0.5\textwidth]{images/lm1_cnn_2}}~~
-	\subfloat[Landmark 1 - fine-tuning]{\label{figdist3parts2}\includegraphics[width=0.5\textwidth]{images/lm1_finetuning_2}}\\
-	\subfloat[Landmark 6 - CNN]{\label{figdist3parts3}\includegraphics[width=0.5\textwidth]{images/lm6_cnn_2}}~~
-	\subfloat[Landmark 6 - fine-tuning]{\label{figdist3parts4}\includegraphics[width=0.5\textwidth]{images/lm6_finetuning_2}}\\
-    \caption{The distribution of distances on $1^{st}$ and $6^{th}$
-landmarks of all images in two testing steps (CNN and fine-tuning) (on \textbf{thorax} dataset). The red line presents the standard deviation value.}
-    \label{figdist3parts}
+    \subfloat[Left mandible]{\label{}\includegraphics[width=0.5\textwidth]{images/mg_3c}}~~
+	\subfloat[Right mandible]{\label{}\includegraphics[width=0.5\textwidth]{images/md_3c}}\\
+    \subfloat[Head]{\label{}\includegraphics[width=0.5\textwidth]{images/tete_3c}}~~
+	\subfloat[Elytra]{\label{}\includegraphics[width=0.5\textwidth]{images/elytre_3c}}\\
+	\subfloat[pronotum]{\label{}\includegraphics[width=0.5\textwidth]{images/pronotum_3c}}
+    \caption{The distance between manual landmarks and predicted landmarks of an image when applying different techniques of each beetle's anatomical }
+    \label{figmn5parts}
 \end{figure}
 
-\begin{figure}[htbp]
-    \centering
-    \subfloat[Landmark 1 - CNN]{\label{figdist3partselytre1}\includegraphics[width=0.4\textwidth]{images/fsc_elytre_lm1}}~~
-	\subfloat[Landmark 1 - fine-tuning]{\label{figdist3partselytre2}\includegraphics[width=0.4\textwidth]{images/fn_elytre_lm1}}\\
-	\subfloat[Landmark 8 - CNN]{\label{figdist3partselytre3}\includegraphics[width=0.4\textwidth]{images/fsc_elytre_lm8}}~~
-	\subfloat[Landmark 8 - fine-tuning]{\label{figdist3partselytre4}\includegraphics[width=0.4\textwidth]{images/fn_elytre_lm8}}\\
-    \caption{The distribution of distances on $1^{st}$ and $8^{th}$
-landmarks of all images in two testing steps (CNN and fine-tuning) (on \textbf{elytra} dataset).}
-    \label{figdist3partselytre}
-\end{figure}
+As described in \cite{le2017maelab}, we have combined some image processing procedures to output the predicted landmarks and this has become also a disadvantage of this method. If one procedure of them provides a bad result, it will affect the final result, i.e. if the result of segmentation step is bad, it seems that can not provide the output. In all beetle's anatomical, the mandibles are considered as the easy case to segment because the images are clear (they just contains the mandibles); while other parts are much noise, besides the main objects they have also the subcomponents of beetle, i.e. leg, antennae, \ldots. That explains why we have obtained good results on mandibles but bad results on head, elytra, and pronotum part when applying the image processing procedures. In the opposite side, the results with deep learning, either training from scratch or fine-tuning, are very stable. In the case of mandibles which have good results from image processing techniques then the results from deep learning are not much difference.
 
 \begin{figure}[htbp]
     \centering
-    \subfloat[Landmark 1 - CNN]{\label{figdist3partstete1}\includegraphics[width=0.4\textwidth]{images/fsc_tete_lm1}}~~
-	\subfloat[Landmark 1 - fine-tuning]{\label{figdist3partstete2}\includegraphics[width=0.4\textwidth]{images/fn_tete_lm1}}\\
-	\subfloat[Landmark 6 - CNN]{\label{figdist3partstete3}\includegraphics[width=0.4\textwidth]{images/fsc_tete_lm6}}~~
-	\subfloat[Landmark 6 - fine-tuning]{\label{figdist3partstete4}\includegraphics[width=0.4\textwidth]{images/fn_tete_lm6}}\\
-    \caption{The distribution of distances on $1^{st}$ and $6^{th}$
-landmarks of all images in two testing steps (CNN and fine-tuning) (on \textbf{head} dataset).}
-    \label{figdist3partstete}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \subfloat[Landmark 4 - CNN]{\label{figdist3partstete1}\includegraphics[width=0.4\textwidth]{images/fsc_mg_lm4}}~~
-	\subfloat[Landmark 4 - fine-tuning]{\label{figdist3partstete2}\includegraphics[width=0.4\textwidth]{images/fn_mg_lm4}}\\
-	\subfloat[Landmark 1 - CNN]{\label{figdist3partstete3}\includegraphics[width=0.4\textwidth]{images/fsc_mg_lm1}}~~
-	\subfloat[Landmark 1 - fine-tuning]{\label{figdist3partstete4}\includegraphics[width=0.4\textwidth]{images/fn_mg_lm1}}\\
-    \caption{The distribution of distances on $1^{st}$ and $4^{th}$
-landmarks of all images in two testing steps (CNN and fine-tuning) (on \textbf{left mandible} dataset).}
-    \label{figdist3partsmg}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \subfloat[Landmark 4 - CNN]{\label{figdist3partstete1}\includegraphics[width=0.4\textwidth]{images/fsc_md_lm4}}~~
-	\subfloat[Landmark 4 - fine-tuning]{\label{figdist3partstete2}\includegraphics[width=0.4\textwidth]{images/fn_md_lm4}}\\
-	\subfloat[Landmark 1 - CNN]{\label{figdist3partstete3}\includegraphics[width=0.4\textwidth]{images/fsc_md_lm1}}~~
-	\subfloat[Landmark 1 - fine-tuning]{\label{figdist3partstete4}\includegraphics[width=0.4\textwidth]{images/fn_md_lm1}}\\
-    \caption{The distribution of distances on $1^{st}$ and $4^{th}$
-landmarks of all images in two testing steps (CNN and fine-tuning) (on \textbf{right mandible} dataset).}
-    \label{figdist3partsmd}
+    \subfloat[Left mandible]{\label{}\includegraphics[width=0.5\textwidth]{images/mg001}}~~
+	\subfloat[Right mandible]{\label{}\includegraphics[width=0.5\textwidth]{images/md001}}\\
+    \subfloat[Head]{\label{}\includegraphics[width=0.5\textwidth]{images/tete001}}~~
+	\subfloat[Elytra]{\label{}\includegraphics[width=0.5\textwidth]{images/elytre001}}\\
+	\subfloat[pronotum]{\label{}\includegraphics[width=0.5\textwidth]{images/pronotum001}}
+    \caption{The distance between manual landmarks and predicted landmarks of an image when applying different techniques of each beetle's anatomical }
+    \label{fig0015parts}
 \end{figure}
 
 \pagebreak
@@ -825,4 +795,63 @@ In geometric morphometry, landmarks (or points of interest) are important featur
 	\includegraphics[scale=.4]{images/wing_landmarks}	
 	\caption{A Drosophila wing and its landmarks}
 	\label{imgflywing}
+\end{figure}
+
+To illustrate the final results, we display the distribution of
+the distances in both cases: the best and the worst results (resp. landmark $1$ and $6$ on pronotum dataset) of five datasets (pronotum, elytra, head, left and right mandible) in  
+Fig. \ref{figdist3parts}, \ref{figdist3partselytre}, \ref{figdist3partstete}, \ref{figdist3partsmg}, and \ref{figdist3partsmd}, respectively. In these figures, the left images present for the results when we trained the model from scratch; while the right images shows the results after applying fine-tuning. The blue lines in the charts present the average distance values. Clearly, the results in the fine-tuning case have been improved significantly than training from scratch.
+
+\begin{figure}[htbp]
+    \centering
+    \subfloat[Landmark 1 - CNN]{\label{figdist3parts1}\includegraphics[width=0.5\textwidth]{images/lm1_cnn_2}}~~
+	\subfloat[Landmark 1 - fine-tuning]{\label{figdist3parts2}\includegraphics[width=0.5\textwidth]{images/lm1_finetuning_2}}\\
+	\subfloat[Landmark 6 - CNN]{\label{figdist3parts3}\includegraphics[width=0.5\textwidth]{images/lm6_cnn_2}}~~
+	\subfloat[Landmark 6 - fine-tuning]{\label{figdist3parts4}\includegraphics[width=0.5\textwidth]{images/lm6_finetuning_2}}\\
+    \caption{The distribution of distances on $1^{st}$ and $6^{th}$
+landmarks of all images in two testing steps (CNN and fine-tuning) (on \textbf{pronotum} dataset). The red line presents the standard deviation value.}
+    \label{figdist3parts}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \subfloat[Landmark 1 - CNN]{\label{figdist3partselytre1}\includegraphics[width=0.4\textwidth]{images/fsc_elytre_lm1}}~~
+	\subfloat[Landmark 1 - fine-tuning]{\label{figdist3partselytre2}\includegraphics[width=0.4\textwidth]{images/fn_elytre_lm1}}\\
+	\subfloat[Landmark 8 - CNN]{\label{figdist3partselytre3}\includegraphics[width=0.4\textwidth]{images/fsc_elytre_lm8}}~~
+	\subfloat[Landmark 8 - fine-tuning]{\label{figdist3partselytre4}\includegraphics[width=0.4\textwidth]{images/fn_elytre_lm8}}\\
+    \caption{The distribution of distances on $1^{st}$ and $8^{th}$
+landmarks of all images in two testing steps (CNN and fine-tuning) (on \textbf{elytra} dataset).}
+    \label{figdist3partselytre}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \subfloat[Landmark 1 - CNN]{\label{figdist3partstete1}\includegraphics[width=0.4\textwidth]{images/fsc_tete_lm1}}~~
+	\subfloat[Landmark 1 - fine-tuning]{\label{figdist3partstete2}\includegraphics[width=0.4\textwidth]{images/fn_tete_lm1}}\\
+	\subfloat[Landmark 6 - CNN]{\label{figdist3partstete3}\includegraphics[width=0.4\textwidth]{images/fsc_tete_lm6}}~~
+	\subfloat[Landmark 6 - fine-tuning]{\label{figdist3partstete4}\includegraphics[width=0.4\textwidth]{images/fn_tete_lm6}}\\
+    \caption{The distribution of distances on $1^{st}$ and $6^{th}$
+landmarks of all images in two testing steps (CNN and fine-tuning) (on \textbf{head} dataset).}
+    \label{figdist3partstete}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \subfloat[Landmark 4 - CNN]{\label{figdist3partstete1}\includegraphics[width=0.4\textwidth]{images/fsc_mg_lm4}}~~
+	\subfloat[Landmark 4 - fine-tuning]{\label{figdist3partstete2}\includegraphics[width=0.4\textwidth]{images/fn_mg_lm4}}\\
+	\subfloat[Landmark 1 - CNN]{\label{figdist3partstete3}\includegraphics[width=0.4\textwidth]{images/fsc_mg_lm1}}~~
+	\subfloat[Landmark 1 - fine-tuning]{\label{figdist3partstete4}\includegraphics[width=0.4\textwidth]{images/fn_mg_lm1}}\\
+    \caption{The distribution of distances on $1^{st}$ and $4^{th}$
+landmarks of all images in two testing steps (CNN and fine-tuning) (on \textbf{left mandible} dataset).}
+    \label{figdist3partsmg}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \subfloat[Landmark 4 - CNN]{\label{figdist3partstete1}\includegraphics[width=0.4\textwidth]{images/fsc_md_lm4}}~~
+	\subfloat[Landmark 4 - fine-tuning]{\label{figdist3partstete2}\includegraphics[width=0.4\textwidth]{images/fn_md_lm4}}\\
+	\subfloat[Landmark 1 - CNN]{\label{figdist3partstete3}\includegraphics[width=0.4\textwidth]{images/fsc_md_lm1}}~~
+	\subfloat[Landmark 1 - fine-tuning]{\label{figdist3partstete4}\includegraphics[width=0.4\textwidth]{images/fn_md_lm1}}\\
+    \caption{The distribution of distances on $1^{st}$ and $4^{th}$
+landmarks of all images in two testing steps (CNN and fine-tuning) (on \textbf{right mandible} dataset).}
+    \label{figdist3partsmd}
 \end{figure}

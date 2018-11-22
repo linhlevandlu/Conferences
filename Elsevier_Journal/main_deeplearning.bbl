@@ -42,6 +42,10 @@ J.~Yosinski, J.~Clune, Y.~Bengio, H.~Lipson, How transferable are features in
 Y.~LeCun, Y.~Bengio, G.~Hinton, Deep learning, Nature 521~(7553) (2015)
   436--444.
 
+\bibitem{lecun1998gradient}
+Y.~LeCun, L.~Bottou, Y.~Bengio, P.~Haffner, Gradient-based learning applied to
+  document recognition, Proceedings of the IEEE 86~(11) (1998) 2278--2324.
+
 \bibitem{krizhevsky2012imagenet}
 A.~Krizhevsky, I.~Sutskever, G.~E. Hinton, Imagenet classification with deep
   convolutional neural networks, in: Advances in neural information processing
@@ -83,6 +87,17 @@ S.~Jean, K.~Cho, R.~Memisevic, Y.~Bengio, On using very large target vocabulary
 I.~Sutskever, O.~Vinyals, Q.~V. Le, Sequence to sequence learning with neural
   networks, in: Advances in neural information processing systems, 2014, pp.
   3104--3112.
+
+\bibitem{collobert2011natural}
+R.~Collobert, J.~Weston, L.~Bottou, M.~Karlen, K.~Kavukcuoglu, P.~Kuksa,
+  Natural language processing (almost) from scratch, Journal of Machine
+  Learning Research 12~(Aug) (2011) 2493--2537.
+
+\bibitem{collobert2008unified}
+R.~Collobert, J.~Weston, A unified architecture for natural language
+  processing: Deep neural networks with multitask learning, in: Proceedings of
+  the 25th international conference on Machine learning, ACM, 2008, pp.
+  160--167.
 
 \bibitem{valstar2010facial}
 M.~Valstar, B.~Martinez, X.~Binefa, M.~Pantic, Facial point detection using
