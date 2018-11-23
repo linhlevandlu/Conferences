@@ -9,7 +9,7 @@
 A.~Sonnenschein, D.~VanderZee, W.~R. Pitchers, S.~Chari, I.~Dworkin, Supporting
   material and data for "an image database of drosophila melanogaster wings for
   phenomic and biometric analysis" (2015).
-\newblock \href {https://doi.org/10.5524/100141} {\path{doi:10.5524/100141}}.
+\newblock \href {http://dx.doi.org/10.5524/100141} {\path{doi:10.5524/100141}}.
 
 \bibitem{cintas2016automatic}
 C.~Cintas, et~al., Automatic ear detection and feature extraction using
@@ -150,6 +150,16 @@ V.~L. Le, M.~Beurton-Aimar, A.~Krahenbuhl, N.~Parisey,
   2017.
 \newline\urlprefix\url{https://hal.archives-ouvertes.fr/hal-01571440}
 
+\bibitem{szegedy2014going}
+C.~Szegedy, W.~Liu, Y.~Jia, P.~Sermanet, S.~Reed, D.~Anguelov, D.~Erhan,
+  V.~Vanhoucke, A.~Rabinovich, Going deeper with convolutions, corr
+  abs/1409.4842, URL http://arxiv. org/abs/1409.4842.
+
+\bibitem{he2016deep}
+K.~He, X.~Zhang, S.~Ren, J.~Sun, Deep residual learning for image recognition,
+  in: Proceedings of the IEEE conference on computer vision and pattern
+  recognition, 2016, pp. 770--778.
+
 \bibitem{lecun2012efficient}
 Y.~A. LeCun, et~al., Efficient backprop, in: Neural networks: Tricks of the
   trade, Springer, 2012, pp. 9--48.
@@ -172,7 +182,7 @@ N.~Srivastava, G.~E. Hinton, A.~Krizhevsky, I.~Sutskever, R.~Salakhutdinov,
 \bibitem{lasagne}
 S.~Dieleman, et~al., \href{http://dx.doi.org/10.5281/zenodo.27878}{Lasagne:
   First release.} (Aug. 2015).
-\newblock \href {https://doi.org/10.5281/zenodo.27878}
+\newblock \href {http://dx.doi.org/10.5281/zenodo.27878}
   {\path{doi:10.5281/zenodo.27878}}.
 \newline\urlprefix\url{http://dx.doi.org/10.5281/zenodo.27878}
 
@@ -198,7 +208,7 @@ J.~Margeta, et~al.,
 \newblock \href
   {http://arxiv.org/abs/https://doi.org/10.1080/21681163.2015.1061448}
   {\path{arXiv:https://doi.org/10.1080/21681163.2015.1061448}}, \href
-  {https://doi.org/10.1080/21681163.2015.1061448}
+  {http://dx.doi.org/10.1080/21681163.2015.1061448}
   {\path{doi:10.1080/21681163.2015.1061448}}.
 \newline\urlprefix\url{https://doi.org/10.1080/21681163.2015.1061448}
 

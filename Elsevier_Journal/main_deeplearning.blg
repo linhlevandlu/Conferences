@@ -1,4 +1,6 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: main_deeplearning.aux
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: main_deeplearning.aux
 The style file: elsarticle-num.bst
 Database file #1: includes/mybibfile.bib
 Warning--empty booktitle in szegedy2015going
@@ -7,4 +9,45 @@ Warning--there's a number but no volume in cootes2001active
 Warning--empty pages in huang2017coarse
 Warning--empty pages in le2017maelab
 Warning--empty pages in imagenet_cvpr09
+You've used 41 entries,
+            2937 wiz_defined-function locations,
+            902 strings with 12699 characters,
+and the built_in function-call counts, 15377 in all, are:
+= -- 1467
+> -- 428
+< -- 21
++ -- 170
+- -- 129
+* -- 969
+:= -- 1890
+add.period$ -- 44
+call.type$ -- 41
+change.case$ -- 41
+chr.to.int$ -- 0
+cite$ -- 47
+duplicate$ -- 588
+empty$ -- 1812
+format.name$ -- 167
+if$ -- 4094
+int.to.chr$ -- 0
+int.to.str$ -- 41
+missing$ -- 39
+newline$ -- 137
+num.names$ -- 41
+pop$ -- 345
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 1080
+stack$ -- 0
+substring$ -- 1012
+swap$ -- 217
+text.length$ -- 21
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 6
+while$ -- 125
+width$ -- 43
+write$ -- 361
 (There were 6 warnings)
