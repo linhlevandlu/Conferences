@@ -1,0 +1,139 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \def\href#1#2{#2} \def\path#1{#1}\fi
+
+\bibitem{lecun2010convolutional}
+Y.~LeCun, K.~Kavukcuoglu, C.~Farabet, Convolutional networks and applications
+  in vision, in: Circuits and Systems (ISCAS), Proceedings of 2010 IEEE
+  International Symposium on, IEEE, 2010, pp. 253--256.
+
+\bibitem{yosinski2014transferable}
+J.~Yosinski, J.~Clune, Y.~Bengio, H.~Lipson, How transferable are features in
+  deep neural networks?, in: Advances in neural information processing systems,
+  2014, pp. 3320--3328.
+
+\bibitem{lowe2004distinctive}
+D.~G. Lowe, Distinctive image features from scale-invariant keypoints,
+  International journal of computer vision 60~(2) (2004) 91--110.
+
+\bibitem{bay2006surf}
+H.~Bay, T.~Tuytelaars, L.~Van~Gool, Surf: Speeded up robust features, in:
+  European conference on computer vision, Springer, 2006, pp. 404--417.
+
+\bibitem{palaniswamy2010automatic}
+S.~Palaniswamy, N.~A. Thacker, C.~P. Klingenberg, Automatic identification of
+  landmarks in digital images, IET Computer Vision 4~(4) (2010) 247--260.
+
+\bibitem{lecun2015deep}
+Y.~LeCun, Y.~Bengio, G.~Hinton, Deep learning, Nature 521~(7553) (2015)
+  436--444.
+
+\bibitem{krizhevsky2012imagenet}
+A.~Krizhevsky, I.~Sutskever, G.~E. Hinton, Imagenet classification with deep
+  convolutional neural networks, in: Advances in neural information processing
+  systems, 2012, pp. 1097--1105.
+
+\bibitem{ciregan2012multi}
+D.~Ciregan, U.~Meier, J.~Schmidhuber, Multi-column deep neural networks for
+  image classification, in: Computer Vision and Pattern Recognition (CVPR),
+  2012 IEEE Conference on, IEEE, 2012, pp. 3642--3649.
+
+\bibitem{szegedy2015going}
+C.~Szegedy, et~al., Going deeper with convolutions, Cvpr, 2015.
+
+\bibitem{farabet2013learning}
+C.~Farabet, C.~Couprie, L.~Najman, Y.~LeCun, Learning hierarchical features for
+  scene labeling, IEEE transactions on pattern analysis and machine
+  intelligence 35~(8) (2013) 1915--1929.
+
+\bibitem{li2015convolutional}
+H.~Li, Z.~Lin, X.~Shen, J.~Brandt, G.~Hua, A convolutional neural network
+  cascade for face detection, in: Proceedings of the IEEE Conference on
+  Computer Vision and Pattern Recognition, 2015, pp. 5325--5334.
+
+\bibitem{mikolov2011strategies}
+T.~Mikolov, et~al., Strategies for training large scale neural network language
+  models, in: Automatic Speech Recognition and Understanding (ASRU), 2011 IEEE
+  Workshop on, IEEE, 2011, pp. 196--201.
+
+\bibitem{hinton2012deep}
+G.~Hinton, et~al., Deep neural networks for acoustic modeling in speech
+  recognition: The shared views of four research groups, IEEE Signal Processing
+  Magazine 29~(6) (2012) 82--97.
+
+\bibitem{jean2014using}
+S.~Jean, K.~Cho, R.~Memisevic, Y.~Bengio, On using very large target vocabulary
+  for neural machine translation, arXiv preprint arXiv:1412.2007.
+
+\bibitem{sutskever2014sequence}
+I.~Sutskever, O.~Vinyals, Q.~V. Le, Sequence to sequence learning with neural
+  networks, in: Advances in neural information processing systems, 2014, pp.
+  3104--3112.
+
+\bibitem{sun2013deep}
+Y.~Sun, X.~Wang, X.~Tang, Deep convolutional network cascade for facial point
+  detection, in: Proceedings of the IEEE conference on computer vision and
+  pattern recognition, 2013, pp. 3476--3483.
+
+\bibitem{zhang2014facial}
+Z.~Zhang, et~al., Facial landmark detection by deep multi-task learning, in:
+  European Conference on Computer Vision, Springer, 2014, pp. 94--108.
+
+\bibitem{cintas2016automatic}
+C.~Cintas, et~al., Automatic ear detection and feature extraction using
+  geometric morphometrics and convolutional neural networks, IET Biometrics
+  6~(3) (2016) 211--223.
+
+\bibitem{le2017maelab}
+V.~L. Le, M.~Beurton-Aimar, A.~Krahenbuhl, N.~Parisey,
+  \href{https://hal.archives-ouvertes.fr/hal-01571440}{{MAELab: a framework to
+  automatize landmark estimation}}, in: {WSCG 2017}, Plzen, Czech Republic,
+  2017.
+\newline\urlprefix\url{https://hal.archives-ouvertes.fr/hal-01571440}
+
+\bibitem{lecun2012efficient}
+Y.~A. LeCun, et~al., Efficient backprop, in: Neural networks: Tricks of the
+  trade, Springer, 2012, pp. 9--48.
+
+\bibitem{srivastava2014dropout}
+N.~Srivastava, G.~E. Hinton, A.~Krizhevsky, I.~Sutskever, R.~Salakhutdinov,
+  Dropout: a simple way to prevent neural networks from overfitting., Journal
+  of machine learning research 15~(1) (2014) 1929--1958.
+
+\bibitem{lasagne}
+S.~Dieleman, et~al., \href{http://dx.doi.org/10.5281/zenodo.27878}{Lasagne:
+  First release.} (Aug. 2015).
+\newblock \href {http://dx.doi.org/10.5281/zenodo.27878}
+  {\path{doi:10.5281/zenodo.27878}}.
+\newline\urlprefix\url{http://dx.doi.org/10.5281/zenodo.27878}
+
+\bibitem{pedregosa2011scikit}
+P.~et~al, Scikit-learn: Machine learning in python, Journal of machine learning
+  research 12~(Oct) (2011) 2825--2830.
+
+\bibitem{torrey2009transfer}
+L.~Torrey, J.~Shavlik, Transfer learning, Handbook of Research on Machine
+  Learning Applications and Trends: Algorithms, Methods, and Techniques 1
+  (2009) 242.
+
+\bibitem{imagenet_cvpr09}
+J.~Deng, et~al., {ImageNet: A Large-Scale Hierarchical Image Database}, in:
+  CVPR09, 2009.
+
+\bibitem{margeta_mri}
+J.~Margeta, et~al.,
+  \href{https://doi.org/10.1080/21681163.2015.1061448}{Fine-tuned convolutional
+  neural nets for cardiac mri acquisition plane recognition}, Computer Methods
+  in Biomechanics and Biomedical Engineering: Imaging \& Visualization 5~(5)
+  (2017) 339--349.
+\newblock \href
+  {http://arxiv.org/abs/https://doi.org/10.1080/21681163.2015.1061448}
+  {\path{arXiv:https://doi.org/10.1080/21681163.2015.1061448}}, \href
+  {http://dx.doi.org/10.1080/21681163.2015.1061448}
+  {\path{doi:10.1080/21681163.2015.1061448}}.
+\newline\urlprefix\url{https://doi.org/10.1080/21681163.2015.1061448}
+
+\end{thebibliography}

@@ -1,0 +1,52 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: main_landmarks.aux
+The style file: elsarticle-num.bst
+Database file #1: includes/mybibfile.bib
+Warning--I didn't find a database entry for ""
+Warning--empty booktitle in szegedy2015going
+Warning--empty pages in szegedy2015going
+Warning--empty pages in le2017maelab
+Warning--empty pages in imagenet_cvpr09
+You've used 26 entries,
+            2937 wiz_defined-function locations,
+            821 strings with 9615 characters,
+and the built_in function-call counts, 9428 in all, are:
+= -- 908
+> -- 242
+< -- 11
++ -- 98
+- -- 72
+* -- 607
+:= -- 1173
+add.period$ -- 28
+call.type$ -- 26
+change.case$ -- 26
+chr.to.int$ -- 0
+cite$ -- 30
+duplicate$ -- 357
+empty$ -- 1121
+format.name$ -- 96
+if$ -- 2507
+int.to.chr$ -- 0
+int.to.str$ -- 26
+missing$ -- 25
+newline$ -- 91
+num.names$ -- 26
+pop$ -- 209
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 651
+stack$ -- 0
+substring$ -- 621
+swap$ -- 125
+text.length$ -- 11
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 4
+while$ -- 77
+width$ -- 28
+write$ -- 231
+(There were 5 warnings)
