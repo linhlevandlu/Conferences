@@ -51,13 +51,21 @@ A.~Krizhevsky, I.~Sutskever, G.~E. Hinton, Imagenet classification with deep
   convolutional neural networks, in: Advances in neural information processing
   systems, 2012, pp. 1097--1105.
 
-\bibitem{ciregan2012multi}
-D.~Ciregan, U.~Meier, J.~Schmidhuber, Multi-column deep neural networks for
-  image classification, in: Computer Vision and Pattern Recognition (CVPR),
-  2012 IEEE Conference on, IEEE, 2012, pp. 3642--3649.
+\bibitem{zeiler2014visualizing}
+M.~D. Zeiler, R.~Fergus, Visualizing and understanding convolutional networks,
+  in: European conference on computer vision, Springer, 2014, pp. 818--833.
 
 \bibitem{szegedy2015going}
 C.~Szegedy, et~al., Going deeper with convolutions, Cvpr, 2015.
+
+\bibitem{simonyan2014very}
+K.~Simonyan, A.~Zisserman, Very deep convolutional networks for large-scale
+  image recognition, arXiv preprint arXiv:1409.1556.
+
+\bibitem{he2016deep}
+K.~He, X.~Zhang, S.~Ren, J.~Sun, Deep residual learning for image recognition,
+  in: Proceedings of the IEEE conference on computer vision and pattern
+  recognition, 2016, pp. 770--778.
 
 \bibitem{farabet2013learning}
 C.~Farabet, C.~Couprie, L.~Najman, Y.~LeCun, Learning hierarchical features for
@@ -155,10 +163,10 @@ C.~Szegedy, W.~Liu, Y.~Jia, P.~Sermanet, S.~Reed, D.~Anguelov, D.~Erhan,
   V.~Vanhoucke, A.~Rabinovich, Going deeper with convolutions, corr
   abs/1409.4842, URL http://arxiv. org/abs/1409.4842.
 
-\bibitem{he2016deep}
-K.~He, X.~Zhang, S.~Ren, J.~Sun, Deep residual learning for image recognition,
-  in: Proceedings of the IEEE conference on computer vision and pattern
-  recognition, 2016, pp. 770--778.
+\bibitem{ciregan2012multi}
+D.~Ciregan, U.~Meier, J.~Schmidhuber, Multi-column deep neural networks for
+  image classification, in: Computer Vision and Pattern Recognition (CVPR),
+  2012 IEEE Conference on, IEEE, 2012, pp. 3642--3649.
 
 \bibitem{lecun2012efficient}
 Y.~A. LeCun, et~al., Efficient backprop, in: Neural networks: Tricks of the
