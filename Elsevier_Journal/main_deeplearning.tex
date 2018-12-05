@@ -171,6 +171,13 @@ Pooling layers: are mostly used to down-sampling the size of the input with the 
 	\label{imgcnn_pooling}
 \end{figure}
 
+Dropout is a specific layer, it is used to prevent the over-fit of a neural network.
+The term dropout mentions dropping the output units of a layer in the network. These are temporarily removing along with their connections (incoming and outgoing). The units are dropped randomly with a probability $p$ independent with other units. 
+Applying dropout technique will make the network become a collection of thinned networks because at each presentation of the training phase, a number of units are dropped randomly. During the training phase, the thinned networks
+are created and trained. So, training a neural network with dropout looks like training a collection of the thinned networks.
+Normally, the dropouts layers are placed after the fully connected layers, 
+but it is possible to use dropout after the pooling layers with creating some kind of images noise augmentation.
+
 Fully connected layers: are usually followed the convolutional and pooling layers which used to extract the abstract feature representations. A CNN may have one or more fully connected layers. It interprets the feature representations and performs a function of high-level reasoning (i.e. giving classification score) by applying the activation functions. In practice, the last fully connected layer refers to the output of the network and choosing the activation function is depended on which kind of problem that network solve, i.e. we usually softmax activation function for a classification problem but it is not useful in a support vector machine. 
 
 To solve a problem by using deep learning, besides designing the network architecture then training dataset is also a very important thing. The nature of deep learning algorithm is training the model on dataset repeatedly to reach the best accuracy. So, providing a large dataset will provide more learning cases for the model and it will clearly improve the learnable of the network. Unfortunately, data in practice has usually not enough. So, some methods have been applied to generate the fake data with the purpose to augment the dataset (i.e. rotate, translate, flip the images). Our case is also not an exception, we work on a small dataset of beetles with $293$ images for each part. This number is really modest to apply deep learning. In the next section, we describe the procedure to augment the dataset before coming to design the architectures.
