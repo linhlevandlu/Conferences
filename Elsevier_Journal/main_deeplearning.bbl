@@ -168,6 +168,11 @@ D.~Ciregan, U.~Meier, J.~Schmidhuber, Multi-column deep neural networks for
   image classification, in: Computer Vision and Pattern Recognition (CVPR),
   2012 IEEE Conference on, IEEE, 2012, pp. 3642--3649.
 
+\bibitem{srivastava2014dropout}
+N.~Srivastava, G.~E. Hinton, A.~Krizhevsky, I.~Sutskever, R.~Salakhutdinov,
+  Dropout: a simple way to prevent neural networks from overfitting., Journal
+  of machine learning research 15~(1) (2014) 1929--1958.
+
 \bibitem{lecun2012efficient}
 Y.~A. LeCun, et~al., Efficient backprop, in: Neural networks: Tricks of the
   trade, Springer, 2012, pp. 9--48.
@@ -181,11 +186,6 @@ J.~Han, C.~Moraga, The influence of the sigmoid function parameters on the
 V.~Nair, G.~E. Hinton, Rectified linear units improve restricted boltzmann
   machines, in: Proceedings of the 27th international conference on machine
   learning (ICML-10), 2010, pp. 807--814.
-
-\bibitem{srivastava2014dropout}
-N.~Srivastava, G.~E. Hinton, A.~Krizhevsky, I.~Sutskever, R.~Salakhutdinov,
-  Dropout: a simple way to prevent neural networks from overfitting., Journal
-  of machine learning research 15~(1) (2014) 1929--1958.
 
 \bibitem{lasagne}
 S.~Dieleman, et~al., \href{http://dx.doi.org/10.5281/zenodo.27878}{Lasagne:

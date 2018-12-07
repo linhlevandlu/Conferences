@@ -3,10 +3,6 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: main_deeplearning.aux
 The style file: elsarticle-num.bst
 Database file #1: includes/mybibfile.bib
-Repeated entry---line 365 of file includes/mybibfile.bib
- : @inproceedings{he2016deep
- :                          ,
-I'm skipping whatever remains of this entry
 Warning--empty booktitle in szegedy2015going
 Warning--empty pages in szegedy2015going
 Warning--there's a number but no volume in cootes2001active
@@ -54,4 +50,4 @@ warning$ -- 6
 while$ -- 130
 width$ -- 45
 write$ -- 377
-(There was 1 error message)
+(There were 6 warnings)
