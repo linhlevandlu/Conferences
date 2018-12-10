@@ -12,43 +12,43 @@ Warning--empty pages in le2017maelab
 Warning--empty pages in imagenet_cvpr09
 You've used 43 entries,
             2937 wiz_defined-function locations,
-            910 strings with 12962 characters,
-and the built_in function-call counts, 15993 in all, are:
-= -- 1526
+            908 strings with 12810 characters,
+and the built_in function-call counts, 16205 in all, are:
+= -- 1548
 > -- 442
-< -- 22
+< -- 23
 + -- 176
 - -- 133
-* -- 997
-:= -- 1963
-add.period$ -- 46
+* -- 1008
+:= -- 1982
+add.period$ -- 45
 call.type$ -- 43
 change.case$ -- 43
 chr.to.int$ -- 0
 cite$ -- 49
-duplicate$ -- 614
-empty$ -- 1887
+duplicate$ -- 627
+empty$ -- 1914
 format.name$ -- 173
-if$ -- 4264
+if$ -- 4324
 int.to.chr$ -- 0
 int.to.str$ -- 43
-missing$ -- 41
-newline$ -- 143
+missing$ -- 42
+newline$ -- 142
 num.names$ -- 43
-pop$ -- 363
+pop$ -- 365
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1131
+skip$ -- 1147
 stack$ -- 0
-substring$ -- 1044
-swap$ -- 226
-text.length$ -- 22
+substring$ -- 1076
+swap$ -- 232
+text.length$ -- 23
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 6
-while$ -- 130
+while$ -- 133
 width$ -- 45
 write$ -- 377
 (There were 7 warnings)
