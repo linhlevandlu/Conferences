@@ -5,46 +5,6 @@
 \expandafter\ifx\csname href\endcsname\relax
   \def\href#1#2{#2} \def\path#1{#1}\fi
 
-\bibitem{lowe2004distinctive}
-D.~G. Lowe, Distinctive image features from scale-invariant keypoints,
-  International journal of computer vision 60~(2) (2004) 91--110.
-
-\bibitem{bay2006surf}
-H.~Bay, T.~Tuytelaars, L.~Van~Gool, Surf: Speeded up robust features, in:
-  European conference on computer vision, Springer, 2006, pp. 404--417.
-
-\bibitem{palaniswamy2010automatic}
-S.~Palaniswamy, N.~A. Thacker, C.~P. Klingenberg, Automatic identification of
-  landmarks in digital images, IET Computer Vision 4~(4) (2010) 247--260.
-
-\bibitem{liu2016fashion}
-Z.~Liu, S.~Yan, P.~Luo, X.~Wang, X.~Tang, Fashion landmark detection in the
-  wild, in: European Conference on Computer Vision, Springer, 2016, pp.
-  229--245.
-
-\bibitem{sun2013deep}
-Y.~Sun, X.~Wang, X.~Tang, Deep convolutional network cascade for facial point
-  detection, in: Proceedings of the IEEE conference on computer vision and
-  pattern recognition, 2013, pp. 3476--3483.
-
-\bibitem{zhang2014facial}
-Z.~Zhang, et~al., Facial landmark detection by deep multi-task learning, in:
-  European Conference on Computer Vision, Springer, 2014, pp. 94--108.
-
-\bibitem{cintas2016automatic}
-C.~Cintas, et~al., Automatic ear detection and feature extraction using
-  geometric morphometrics and convolutional neural networks, IET Biometrics
-  6~(3) (2016) 211--223.
-
-\bibitem{yosinski2014transferable}
-J.~Yosinski, J.~Clune, Y.~Bengio, H.~Lipson, How transferable are features in
-  deep neural networks?, in: Advances in neural information processing systems,
-  2014, pp. 3320--3328.
-
-\bibitem{lecun2015deep}
-Y.~LeCun, Y.~Bengio, G.~Hinton, Deep learning, Nature 521~(7553) (2015)
-  436--444.
-
 \bibitem{lecun1998gradient}
 Y.~LeCun, L.~Bottou, Y.~Bengio, P.~Haffner, Gradient-based learning applied to
   document recognition, Proceedings of the IEEE 86~(11) (1998) 2278--2324.
@@ -66,6 +26,46 @@ C.~Farabet, C.~Couprie, L.~Najman, Y.~LeCun, Learning hierarchical features for
 H.~Li, Z.~Lin, X.~Shen, J.~Brandt, G.~Hua, A convolutional neural network
   cascade for face detection, in: Proceedings of the IEEE Conference on
   Computer Vision and Pattern Recognition, 2015, pp. 5325--5334.
+
+\bibitem{palaniswamy2010automatic}
+S.~Palaniswamy, N.~A. Thacker, C.~P. Klingenberg, Automatic identification of
+  landmarks in digital images, IET Computer Vision 4~(4) (2010) 247--260.
+
+\bibitem{cintas2016automatic}
+C.~Cintas, et~al., Automatic ear detection and feature extraction using
+  geometric morphometrics and convolutional neural networks, IET Biometrics
+  6~(3) (2016) 211--223.
+
+\bibitem{lowe2004distinctive}
+D.~G. Lowe, Distinctive image features from scale-invariant keypoints,
+  International journal of computer vision 60~(2) (2004) 91--110.
+
+\bibitem{bay2006surf}
+H.~Bay, T.~Tuytelaars, L.~Van~Gool, Surf: Speeded up robust features, in:
+  European conference on computer vision, Springer, 2006, pp. 404--417.
+
+\bibitem{liu2016fashion}
+Z.~Liu, S.~Yan, P.~Luo, X.~Wang, X.~Tang, Fashion landmark detection in the
+  wild, in: European Conference on Computer Vision, Springer, 2016, pp.
+  229--245.
+
+\bibitem{sun2013deep}
+Y.~Sun, X.~Wang, X.~Tang, Deep convolutional network cascade for facial point
+  detection, in: Proceedings of the IEEE conference on computer vision and
+  pattern recognition, 2013, pp. 3476--3483.
+
+\bibitem{zhang2014facial}
+Z.~Zhang, et~al., Facial landmark detection by deep multi-task learning, in:
+  European Conference on Computer Vision, Springer, 2014, pp. 94--108.
+
+\bibitem{yosinski2014transferable}
+J.~Yosinski, J.~Clune, Y.~Bengio, H.~Lipson, How transferable are features in
+  deep neural networks?, in: Advances in neural information processing systems,
+  2014, pp. 3320--3328.
+
+\bibitem{lecun2015deep}
+Y.~LeCun, Y.~Bengio, G.~Hinton, Deep learning, Nature 521~(7553) (2015)
+  436--444.
 
 \bibitem{mikolov2011strategies}
 T.~Mikolov, et~al., Strategies for training large scale neural network language
@@ -110,47 +110,9 @@ K.~He, X.~Zhang, S.~Ren, J.~Sun, Deep residual learning for image recognition,
   in: Proceedings of the IEEE conference on computer vision and pattern
   recognition, 2016, pp. 770--778.
 
-\bibitem{valstar2010facial}
-M.~Valstar, B.~Martinez, X.~Binefa, M.~Pantic, Facial point detection using
-  boosted regression and graph models, in: Computer Vision and Pattern
-  Recognition (CVPR), 2010 IEEE Conference on, IEEE, 2010, pp. 2729--2736.
-
-\bibitem{dantone2012real}
-M.~Dantone, J.~Gall, G.~Fanelli, L.~Van~Gool, Real-time facial feature
-  detection using conditional regression forests, in: Computer vision and
-  pattern recognition (CVPR), 2012 IEEE conference on, IEEE, 2012, pp.
-  2578--2585.
-
-\bibitem{burgos2013robust}
-X.~P. Burgos-Artizzu, P.~Perona, P.~Doll{\'a}r, Robust face landmark estimation
-  under occlusion, in: Proceedings of the IEEE International Conference on
-  Computer Vision, 2013, pp. 1513--1520.
-
-\bibitem{cootes2001active}
-T.~F. Cootes, G.~J. Edwards, C.~J. Taylor, Active appearance models, IEEE
-  Transactions on Pattern Analysis \& Machine Intelligence~(6) (2001) 681--685.
-
-\bibitem{liu2007generic}
-X.~Liu, Generic face alignment using boosted appearance model, in: Computer
-  Vision and Pattern Recognition, 2007. CVPR'07. IEEE Conference on, IEEE,
-  2007, pp. 1--8.
-
-\bibitem{yu2013pose}
-X.~Yu, J.~Huang, S.~Zhang, W.~Yan, D.~N. Metaxas, Pose-free facial landmark
-  fitting via optimized part mixtures and cascaded deformable shape model, in:
-  Proceedings of the IEEE International Conference on Computer Vision, 2013,
-  pp. 1944--1951.
-
 \bibitem{huang2017coarse}
 S.~Huang, M.~Gong, D.~Tao, A coarse-fine network for keypoint localization, in:
   The IEEE International Conference on Computer Vision (ICCV), Vol.~2, 2017.
-
-\bibitem{le2017maelab}
-V.~L. Le, M.~Beurton-Aimar, A.~Krahenbuhl, N.~Parisey,
-  \href{https://hal.archives-ouvertes.fr/hal-01571440}{{MAELab: a framework to
-  automatize landmark estimation}}, in: {WSCG 2017}, Plzen, Czech Republic,
-  2017.
-\newline\urlprefix\url{https://hal.archives-ouvertes.fr/hal-01571440}
 
 \bibitem{szegedy2014going}
 C.~Szegedy, W.~Liu, Y.~Jia, P.~Sermanet, S.~Reed, D.~Anguelov, D.~Erhan,
@@ -218,5 +180,12 @@ J.~Margeta, et~al.,
   {http://dx.doi.org/10.1080/21681163.2015.1061448}
   {\path{doi:10.1080/21681163.2015.1061448}}.
 \newline\urlprefix\url{https://doi.org/10.1080/21681163.2015.1061448}
+
+\bibitem{le2017maelab}
+V.~L. Le, M.~Beurton-Aimar, A.~Krahenbuhl, N.~Parisey,
+  \href{https://hal.archives-ouvertes.fr/hal-01571440}{{MAELab: a framework to
+  automatize landmark estimation}}, in: {WSCG 2017}, Plzen, Czech Republic,
+  2017.
+\newline\urlprefix\url{https://hal.archives-ouvertes.fr/hal-01571440}
 
 \end{thebibliography}

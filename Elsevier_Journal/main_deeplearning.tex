@@ -78,7 +78,7 @@ In recent years, deep learning, which has been introduced in the middle of the p
 \end{abstract}
 
 \begin{keyword}
-Landmarks \sep deep learning \sep CNN \sep fine-tuning
+Deep learning \sep CNN \sep fine-tuning \sep landmarks
 \end{keyword}
 
 \end{frontmatter}
@@ -698,7 +698,7 @@ To compare the results between image processing procedures and deep learning, we
     \label{figmn5parts}
 \end{figure}
 
-Fig. \ref{fig0015parts} shows the distances of each part that we have obtained. In these charts, the \textbf{blue lines} present the distances when we apply the calculation on image processing procedures; the \textbf{orange and yellow lines} show the distances with deep learning: training from scratch and fine tuning, respectively. As described in \cite{le2017maelab}, we have combined some image processing procedures to output the predicted landmarks and this has become also a disadvantage of this method. If one procedure of them provides a bad result, it will affect the final result, i.e. if the result of segmentation step is bad, it seems that can not provide the output. In all beetle's anatomical, the mandibles are considered as the easy case to segment because the images are clear (they just contains the mandibles); while other parts are much noise, besides the main objects they have also the subcomponents of beetle, i.e. leg, antennae, \ldots. That explains why we have obtained good results on mandibles but bad results on head, elytra, and pronotum part when applying the image processing procedures. In the opposite side, the results with deep learning, either training from scratch or fine-tuning, are very stable (Fig. \ref{fig0015parts}). In the case of mandibles which have good results from image processing techniques then the results from deep learning are not much difference.
+Fig. \ref{fig0015parts} shows the distances of each part that we have obtained. In these charts, the \textbf{blue lines} present the distances when we apply the calculation on image processing procedures; the \textbf{orange and yellow lines} show the distances with deep learning: training from scratch and fine tuning, respectively. As described in \cite{le2017maelab}, we have combined some image processing procedures to output the predicted landmarks and this has become also a disadvantage of this method. If one procedure of them provides a bad result, it will affect the final result, i.e. if the result of segmentation step is bad, it seems that can not provide the output. In all beetle's anatomical, the mandibles are considered as the easy case to segment because the images are clear (they just contains the mandibles); while other parts are much noise, besides the main objects they have also the subcomponents of beetle, i.e. leg, antennae, \ldots. That explains why we have obtained good results on mandibles but bad results on head, elytra, and pronotum part when applying the image processing procedures. In the opposite side, the results with deep learning, either training from scratch or fine-tuning, are very stable (Fig. \ref{fig0015parts}). In the case of mandibles, which have good results from image processing techniques, then the results from deep learning are not much difference.
 
 \begin{figure}[htbp]
     \centering

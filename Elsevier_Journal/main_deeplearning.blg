@@ -3,52 +3,50 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: main_deeplearning.aux
 The style file: elsarticle-num.bst
 Database file #1: includes/mybibfile.bib
-Warning--I didn't find a database entry for ""
 Warning--empty booktitle in szegedy2015going
 Warning--empty pages in szegedy2015going
-Warning--there's a number but no volume in cootes2001active
 Warning--empty pages in huang2017coarse
-Warning--empty pages in le2017maelab
 Warning--empty pages in imagenet_cvpr09
-You've used 43 entries,
+Warning--empty pages in le2017maelab
+You've used 37 entries,
             2937 wiz_defined-function locations,
-            908 strings with 12810 characters,
-and the built_in function-call counts, 16205 in all, are:
-= -- 1548
-> -- 442
-< -- 23
-+ -- 176
-- -- 133
-* -- 1008
-:= -- 1982
-add.period$ -- 45
-call.type$ -- 43
-change.case$ -- 43
+            877 strings with 11587 characters,
+and the built_in function-call counts, 13551 in all, are:
+= -- 1289
+> -- 376
+< -- 18
++ -- 150
+- -- 113
+* -- 855
+:= -- 1678
+add.period$ -- 39
+call.type$ -- 37
+change.case$ -- 37
 chr.to.int$ -- 0
-cite$ -- 49
-duplicate$ -- 627
-empty$ -- 1914
-format.name$ -- 173
-if$ -- 4324
+cite$ -- 42
+duplicate$ -- 516
+empty$ -- 1601
+format.name$ -- 148
+if$ -- 3606
 int.to.chr$ -- 0
-int.to.str$ -- 43
-missing$ -- 42
-newline$ -- 142
-num.names$ -- 43
-pop$ -- 365
+int.to.str$ -- 37
+missing$ -- 36
+newline$ -- 124
+num.names$ -- 37
+pop$ -- 307
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1147
+skip$ -- 951
 stack$ -- 0
-substring$ -- 1076
-swap$ -- 232
-text.length$ -- 23
+substring$ -- 875
+swap$ -- 182
+text.length$ -- 18
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 6
-while$ -- 133
-width$ -- 45
-write$ -- 377
-(There were 7 warnings)
+warning$ -- 5
+while$ -- 110
+width$ -- 39
+write$ -- 324
+(There were 5 warnings)
