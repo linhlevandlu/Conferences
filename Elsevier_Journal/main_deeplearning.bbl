@@ -36,14 +36,6 @@ C.~Cintas, et~al., Automatic ear detection and feature extraction using
   geometric morphometrics and convolutional neural networks, IET Biometrics
   6~(3) (2016) 211--223.
 
-\bibitem{lowe2004distinctive}
-D.~G. Lowe, Distinctive image features from scale-invariant keypoints,
-  International journal of computer vision 60~(2) (2004) 91--110.
-
-\bibitem{bay2006surf}
-H.~Bay, T.~Tuytelaars, L.~Van~Gool, Surf: Speeded up robust features, in:
-  European conference on computer vision, Springer, 2006, pp. 404--417.
-
 \bibitem{liu2016fashion}
 Z.~Liu, S.~Yan, P.~Luo, X.~Wang, X.~Tang, Fashion landmark detection in the
   wild, in: European Conference on Computer Vision, Springer, 2016, pp.
@@ -57,11 +49,6 @@ Y.~Sun, X.~Wang, X.~Tang, Deep convolutional network cascade for facial point
 \bibitem{zhang2014facial}
 Z.~Zhang, et~al., Facial landmark detection by deep multi-task learning, in:
   European Conference on Computer Vision, Springer, 2014, pp. 94--108.
-
-\bibitem{yosinski2014transferable}
-J.~Yosinski, J.~Clune, Y.~Bengio, H.~Lipson, How transferable are features in
-  deep neural networks?, in: Advances in neural information processing systems,
-  2014, pp. 3320--3328.
 
 \bibitem{lecun2015deep}
 Y.~LeCun, Y.~Bengio, G.~Hinton, Deep learning, Nature 521~(7553) (2015)
