@@ -27,15 +27,6 @@ H.~Li, Z.~Lin, X.~Shen, J.~Brandt, G.~Hua, A convolutional neural network
   cascade for face detection, in: Proceedings of the IEEE Conference on
   Computer Vision and Pattern Recognition, 2015, pp. 5325--5334.
 
-\bibitem{palaniswamy2010automatic}
-S.~Palaniswamy, N.~A. Thacker, C.~P. Klingenberg, Automatic identification of
-  landmarks in digital images, IET Computer Vision 4~(4) (2010) 247--260.
-
-\bibitem{cintas2016automatic}
-C.~Cintas, et~al., Automatic ear detection and feature extraction using
-  geometric morphometrics and convolutional neural networks, IET Biometrics
-  6~(3) (2016) 211--223.
-
 \bibitem{liu2016fashion}
 Z.~Liu, S.~Yan, P.~Luo, X.~Wang, X.~Tang, Fashion landmark detection in the
   wild, in: European Conference on Computer Vision, Springer, 2016, pp.
@@ -49,6 +40,11 @@ Y.~Sun, X.~Wang, X.~Tang, Deep convolutional network cascade for facial point
 \bibitem{zhang2014facial}
 Z.~Zhang, et~al., Facial landmark detection by deep multi-task learning, in:
   European Conference on Computer Vision, Springer, 2014, pp. 94--108.
+
+\bibitem{cintas2016automatic}
+C.~Cintas, et~al., Automatic ear detection and feature extraction using
+  geometric morphometrics and convolutional neural networks, IET Biometrics
+  6~(3) (2016) 211--223.
 
 \bibitem{lecun2015deep}
 Y.~LeCun, Y.~Bengio, G.~Hinton, Deep learning, Nature 521~(7553) (2015)

@@ -8,45 +8,45 @@ Warning--empty pages in szegedy2015going
 Warning--empty pages in huang2017coarse
 Warning--empty pages in imagenet_cvpr09
 Warning--empty pages in le2017maelab
-You've used 34 entries,
+You've used 33 entries,
             2937 wiz_defined-function locations,
-            861 strings with 11184 characters,
-and the built_in function-call counts, 12337 in all, are:
-= -- 1168
-> -- 349
+            856 strings with 11003 characters,
+and the built_in function-call counts, 12032 in all, are:
+= -- 1137
+> -- 339
 < -- 16
-+ -- 139
-- -- 105
-* -- 784
-:= -- 1537
-add.period$ -- 36
-call.type$ -- 34
-change.case$ -- 34
++ -- 135
+- -- 102
+* -- 759
+:= -- 1495
+add.period$ -- 35
+call.type$ -- 33
+change.case$ -- 33
 chr.to.int$ -- 0
-cite$ -- 39
-duplicate$ -- 467
-empty$ -- 1457
-format.name$ -- 138
-if$ -- 3278
+cite$ -- 38
+duplicate$ -- 459
+empty$ -- 1425
+format.name$ -- 134
+if$ -- 3202
 int.to.chr$ -- 0
-int.to.str$ -- 34
-missing$ -- 33
-newline$ -- 115
-num.names$ -- 34
-pop$ -- 282
+int.to.str$ -- 33
+missing$ -- 32
+newline$ -- 112
+num.names$ -- 33
+pop$ -- 277
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 861
+skip$ -- 844
 stack$ -- 0
-substring$ -- 781
-swap$ -- 161
+substring$ -- 756
+swap$ -- 160
 text.length$ -- 16
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 5
-while$ -- 99
-width$ -- 36
-write$ -- 298
+while$ -- 96
+width$ -- 35
+write$ -- 290
 (There were 5 warnings)
