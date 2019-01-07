@@ -371,12 +371,12 @@ pixels.
 	\begin{tabular}{|c|c|}
 		\hline
 		\textbf{Landmark} & \textbf{Distance} (in pixels) \\ \hline
-		1 & 4.002  \\ \hline
+		1 & \textcolor{green}{\textbf{4.002}}  \\ \hline
 		2 & 4.4831 \\ \hline
 		3 & 4.2959 \\ \hline
 		4 & 4.3865 \\ \hline
 		5 & 4.2925 \\ \hline
-		6 & 5.3631 \\ \hline
+		6 & \textcolor{red}{\textbf{5.3631}} \\ \hline
 		7 & 4.636 \\ \hline
 		8 & 4.9363 \\ \hline
 	\end{tabular}
@@ -414,14 +414,14 @@ From the success of the third architecture on pronotum dataset, we apply the sam
 		\hline
 		\multirow{2}{*}{\textbf{Landmark}} & \multicolumn{4}{|c|}{\textbf{Distance (in pixels)}} \\ \cline{2-5}
 		 & Right mandible & Left mandible & Elytra & Head  \\ \hline
-		1 & 9.4981 & 9.1267 & 3.8669 & 5.528  \\ \hline
-2 & 7.1657 & 6.7198 & 3.973 & 5.1609  \\ \hline
+		1 & \textcolor{red}{\textbf{9.4981}} & \textcolor{red}{\textbf{9.1267}} & \textcolor{green}{\textbf{3.8669}} & \textcolor{red}{\textbf{5.528}}  \\ \hline
+2 & 7.1657 & \textcolor{green}{\textbf{6.7198}} & 3.973 & 5.1609  \\ \hline
 3 & 7.242 & 6.8704 & 3.9166 & 5.3827 \\ \hline
-4 & 7.0436 & 6.7719 & 3.8673 & 5.0345 \\ \hline
+4 & \textcolor{green}{\textbf{7.0436}} & 6.7719 & 3.8673 & 5.0345 \\ \hline
 5 & 7.1599 & 7.125 & 4.0151 & 4.8393 \\ \hline
-6 & 7.5699 & 6.9441 & 4.8426 & 4.4516 \\ \hline
+6 & 7.5699 & 6.9441 & 4.8426 & \textcolor{green}{\textbf{4.4516}} \\ \hline
 7 & 7.4251 & 7.3158 & 5.2125 & 4.7937 \\ \hline
-8 & 7.6636 & 7.4142 & 5.4685 & 4.5322 \\ \hline
+8 & 7.6636 & 7.4142 & \textcolor{red}{\textbf{5.4685}} & 4.5322 \\ \hline
 9 & 7.7906 & 7.5846 & 5.2692 & 5.1412 \\ \hline
 10 & 8.0197 & 7.6349 & 4.0709 & 5.0564 \\ \hline
 11 & 8.314 & 7.6873 & 3.9896 & - \\ \hline
@@ -433,7 +433,7 @@ From the success of the third architecture on pronotum dataset, we apply the sam
 17 & 8.2866 & - & - & - \\ \hline
 18 & 8.8928 & - & - & - \\ \hline
 	\end{tabular}
-	\caption{The average distances on all images per landmark on left mandible, right mandible, elytra and head images.}
+	\caption{The average distances on all images per landmark on right mandible, left mandible, elytra and head images.}
 	\label{tblavg4parts}
 \end{table}
 
@@ -496,16 +496,16 @@ On each part, the landmarks are predicted on the test images. Then, the average 
 \begin{tabular}{|c|c|c|}
 \hline
 \textbf{$\#$LM} & \textbf{From scratch} & \textbf{Fine-tune} \\ \hline
-1 & \textbf{4.00} & \textbf{2.49}  \\ \hline
+1 & \textcolor{green}{\textbf{4.00 }}& \textcolor{green}{\textbf{2.49}}  \\ \hline
 2 & 4.48 & 2.72  \\ \hline
 3 & 4.30  & 2.65 \\ \hline
 4 & 4.39  & 2.77 \\ \hline
-5 & 4.29  & 2.49 \\ \hline
-6 & \textbf{5.36}  & \textbf{3.05} \\ \hline
+5 & 4.29  & \textcolor{green}{\textbf{2.49}} \\ \hline
+6 & \textcolor{red}{\textbf{5.36}}  & \textcolor{red}{\textbf{3.05}} \\ \hline
 7 & 4.64  & 2.68 \\ \hline
 8 & 4.94  & 2.87 \\ \hline
 \end{tabular}
-\caption{The average error distance per landmark of two processes on pronotum images}
+\caption{The average error distances per landmark of two deep learning processes on pronotum images}
 \label{tblcmppronotum}
 \end{minipage}
 \end{table}
@@ -534,19 +534,19 @@ On each part, the landmarks are predicted on the test images. Then, the average 
 \begin{tabular}{|c|c|c|}
 \hline
 \textbf{$\#$LM} & \textbf{From scratch} & \textbf{Fine-tune} \\ \hline
-1 & \textbf{3.87} & 2.34  \\ \hline
+1 & \textcolor{green}{\textbf{3.87}} & 2.34  \\ \hline
 2 & 3.97 & 2.27  \\ \hline
 3 & 3.92  & 2.27 \\ \hline
-4 & \textbf{3.87}  & \textbf{2.25} \\ \hline
+4 & \textcolor{green}{\textbf{3.87}}  & \textcolor{green}{\textbf{2.25}} \\ \hline
 5 & 4.02  & 2.27 \\ \hline
 6 & 4.84  & 3.14 \\ \hline
 7 & 5.21  & 3.14 \\ \hline
-8 & \textbf{5.47}  & 3.29 \\ \hline
-9 & 5.27  & \textbf{3.42} \\ \hline
+8 & \textcolor{red}{\textbf{5.47}}  & 3.29 \\ \hline
+9 & 5.27  & \textcolor{red}{\textbf{3.42}} \\ \hline
 10 & 4.07  & 2.49 \\ \hline
 11 & 3.99  & 2.30 \\ \hline
 \end{tabular}
-\caption{The average error distance per landmark of two processes on elytra images}
+\caption{The average error distances per landmark of two deep learning processes on elytra images}
 \label{tblcmpbody}
 \end{minipage}
 \end{table}
@@ -575,18 +575,18 @@ On each part, the landmarks are predicted on the test images. Then, the average 
 \begin{tabular}{|c|c|c|}
 \hline
 \textbf{$\#$LM} & \textbf{From scratch} & \textbf{Fine-tune} \\ \hline
-1 & 5.53 & \textbf{3.03}  \\ \hline
+1 & \textcolor{red}{\textbf{5.53}} & \textcolor{red}{\textbf{3.03}}  \\ \hline
 2 & 5.16 & 2.94  \\ \hline
-3 & \textbf{5.38}  & 2.96 \\ \hline
+3 & 5.38  & 2.96 \\ \hline
 4 & 5.03  & 2.88 \\ \hline
 5 & 4.84  & 2.76 \\ \hline
-6 & \textbf{4.45}  & 2.67 \\ \hline
+6 & \textcolor{green}{\textbf{4.45}}  & 2.67 \\ \hline
 7 & 4.79  & 2.29 \\ \hline
-8 & 4.53  & \textbf{2.20} \\ \hline
+8 & 4.53  & \textcolor{green}{\textbf{2.20}} \\ \hline
 9 & 5.14  & 2.57 \\ \hline
 10 & 5.06  & 2.44 \\ \hline
 \end{tabular}
-\caption{The average error distance per landmark of two processes on head images}
+\caption{The average error distances per landmark of two deep learning processes on head images}
 \label{tblcmphead}
 \end{minipage}
 \end{table}
@@ -597,8 +597,8 @@ On each part, the landmarks are predicted on the test images. Then, the average 
 \begin{tabular}{|c|c|c|}
 		\hline
 		\textbf{$\#$LM} & \textbf{From scratch} & \textbf{Fine-tune} \\ \hline
-		1 & 9.1267 & 6.7655 \\ \hline
-		2 & 6.7198 & 5.2952 \\ \hline
+		1 & \textcolor{red}{\textbf{9.1267}} & \textcolor{red}{\textbf{6.7655}} \\ \hline
+		2 & \textcolor{green}{\textbf{6.7198}} & \textcolor{green}{\textbf{5.2952}} \\ \hline
 		3 & 6.8704 & 5.3468 \\ \hline
 		4 & 6.7719 & 5.332 \\ \hline
 		5 & 7.125 & 5.4391 \\ \hline
@@ -614,7 +614,7 @@ On each part, the landmarks are predicted on the test images. Then, the average 
 		15 & 7.7903 & 5.8522 \\ \hline
 		16 & 8.5198 & 7.174 \\ \hline
 	\end{tabular}
-\caption{The average error distance per landmark of two processes on left mandible images}
+\caption{The average error distances per landmark of two deep learning processes on left mandible images}
 \label{tblcmpmg}
 \end{minipage}
 \hfill
@@ -623,10 +623,10 @@ On each part, the landmarks are predicted on the test images. Then, the average 
 \begin{tabular}{|c|c|c|}
 \hline
 \textbf{$\#$LM} & \textbf{From scratch} & \textbf{Fine-tune} \\ \hline
-		1 & 9.4981 & 6.3236 \\ \hline
+		1 & \textcolor{red}{\textbf{9.4981}} & 6.3236 \\ \hline
 	2 & 7.1657 & 5.1347 \\ \hline
 	3 & 7.242 & 5.1613 \\ \hline
-	4 & 7.0436 & 5.0537 \\ \hline
+	4 & \textcolor{green}{\textbf{7.0436}} & \textcolor{green}{\textbf{5.0537}} \\ \hline
 	5 & 7.1599 & 5.1372 \\ \hline
 	6 & 7.5699 & 5.301 \\ \hline
 	7 & 7.4251 & 5.2064 \\ \hline
@@ -636,13 +636,13 @@ On each part, the landmarks are predicted on the test images. Then, the average 
 	11 & 8.314 & 6.1975 \\ \hline
 	12 & 8.1564 & 6.1898 \\ \hline
 	13 & 8.8879 & 6.7612 \\ \hline
-	14 & 9.1842 & 7.0694 \\ \hline
+	14 & 9.1842 & \textcolor{red}{\textbf{7.0694}} \\ \hline
 	15 & 8.7875 & 6.5293 \\ \hline
 	16 & 8.3141 & 6.1147 \\ \hline
 	17 & 8.2866 & 6.2881 \\ \hline
 	18 & 8.8928 & 6.8367 \\ \hline
 \end{tabular}
-\caption{The average error distance per landmark of two processes on head images}
+\caption{The average error distances per landmark of two deep learning processes on right mandible images}
 \label{tblcmpmd}
 \end{minipage}
 \end{table}
@@ -680,14 +680,14 @@ In another view, Fig. \ref{figdist5parts} shows the comparison of the average di
     \subfloat[Head]{\label{}\includegraphics[width=0.5\textwidth]{images/tete_part}}~~
 	\subfloat[Elytra]{\label{}\includegraphics[width=0.5\textwidth]{images/elytre_part}}\\
 	\subfloat[pronotum]{\label{}\includegraphics[width=0.5\textwidth]{images/pronotum_part.png}}
-    \caption{The distribution of average distances on each landmark of each beetle's anatomical }
+    \caption{The distribution of average distances on each landmark of each beetle's anatomical. Black, blue, and orange lines present for the results of image processing procedures, deep learning (from scratch and fine-tuning), respectively. }
     \label{figdist5parts}
 \end{figure}
 
 The fine-tuning process has improved the results of the proposed architecture on both $5$ datasets: left, right mandible, pronotum, elytra and head. All the average distances are significantly decreased. Specially, the results have been improved $\approx 26.9\%$ on left mandible, $\approx 22.8\%$ on right mandible, $\approx 40.3\%$ on pronotum, $\approx 39.8\%$ on elytra, and $\approx 46.4\%$  on head part based on considering the average distances per landmark. Addition, in the cases of pronotum and head part, even if we plus the average distance and its standard deviation, the results are also less than the result when we trained the model from scratch. For segmentable images, we have a comparison between the results of deep learning and early method where we have applied image processing techniques to predict the landmarks \cite{le2017maelab}. Clearly, the result with fine-tuning has improved the location of estimated landmarks. Even the average distances which obtained from scratch training are still high but they are more stable than the results from the early method: most of the average distance(or landmarks) of left mandibles are less than the results of the early method, while the average distances are very closed in the case of right mandibles.
 
 %\pagebreak
-To compare the results between image processing procedures and deep learning, we have run the test on an image of all parts in both methods. Then, we have calculated the distances between manual and predicted landmarks (in both cases). Fig. \ref{figmn5parts} shows the locations of manual and predicted landmarks on each beetle's part from both two methods. In these images, the \textbf{red points} present the manual landmarks, the \textbf{yellow points} are estimated landmarks from image processing procedures and the \textbf{green points} are predicted landmarks which provided by deep learning.
+To compare the results between image processing procedures and deep learning, we have run the test on an image of all parts in both methods. Then, we have calculated the distances between manual and predicted landmarks (in both cases). Fig. \ref{figmn5parts} shows the locations of manual and predicted landmarks on each beetle's part from both two methods. In these images, the \textbf{red points} present the manual landmarks, the \textbf{yellow points} are estimated landmarks from image processing procedures and the \textbf{green points} are predicted landmarks which have been provided by deep learning.
 
 \begin{figure}[htbp]
     \centering
@@ -695,21 +695,21 @@ To compare the results between image processing procedures and deep learning, we
 	\subfloat[Right mandible]{\label{}\includegraphics[width=0.5\textwidth]{images/md_3c}}\\
     \subfloat[Head]{\label{}\includegraphics[width=0.5\textwidth]{images/tete_3c}}~~
 	\subfloat[Elytra]{\label{}\includegraphics[width=0.5\textwidth]{images/elytre_3c}}\\
-	\subfloat[pronotum]{\label{}\includegraphics[width=0.5\textwidth]{images/pronotum_3c}}
-    \caption{The presentation of manual and predicted landmarks on each beetle's part by applying two methods: image processing procedures and deep learning }
+	\subfloat[Pronotum]{\label{}\includegraphics[width=0.5\textwidth]{images/pronotum_3c}}
+    \caption{The presentation of manual and predicted landmarks on each beetle's part by applying two methods: image processing procedures and deep learning. The red points, yellow points, and green points present for manual landmarks, estimated landmarks by applying image processing procedures and using deep learning, respectively. }
     \label{figmn5parts}
 \end{figure}
 
-Fig. \ref{fig0015parts} shows the distances of each part that we have obtained. In these charts, the \textbf{blue lines} present the distances when we apply the calculation on image processing procedures; the \textbf{orange and yellow lines} show the distances with deep learning: training from scratch and fine tuning, respectively. As described in \cite{le2017maelab}, we have combined some image processing procedures to output the predicted landmarks and this has become also a disadvantage of this method. If one procedure of them provides a bad result, it will affect the final result, i.e. if the result of segmentation step is bad, it seems that can not provide the output. In all beetle's anatomical, the mandibles are considered as the easy case to segment because the images are clear (they just contains the mandibles); while other parts are much noise, besides the main objects they have also the subcomponents of beetle, i.e. leg, antennae, \ldots. That explains why we have obtained good results on mandibles but bad results on head, elytra, and pronotum part when applying the image processing procedures. In the opposite side, the results with deep learning, either training from scratch or fine-tuning, are very stable (Fig. \ref{fig0015parts}). In the case of mandibles, which have good results from image processing techniques, then the results from deep learning are not much difference.
+Fig. \ref{fig0015parts} shows the distances by landmarks when we did a test on one image of each part. In these charts, the \textbf{black lines} present the distances when we apply the calculation on image processing procedures; the \textbf{blue and orange lines} show the distances with deep learning: training from scratch and fine tuning, respectively. As described in \cite{le2017maelab}, we have combined some image processing procedures to output the predicted landmarks and this has become also a disadvantage of this method. If one procedure of them provides a bad result, it will affect the final result, i.e. if the result of segmentation step is bad, it seems that can not provide the output. In all beetle's anatomical, the mandibles are considered as the easy case to segment because the images are clear (they just contains the mandibles); while other parts are much noise, besides the main objects they have also the subcomponents of beetle, i.e. leg, antennae, \ldots. That explains why we have obtained good results on mandibles but bad results on head, elytra, and pronotum part when applying the image processing procedures. In the opposite side, the results with deep learning, either training from scratch or fine-tuning, are very stable (Fig. \ref{fig0015parts}). In the case of mandibles, which have good results from image processing techniques, then the results from deep learning are not much difference.
 
 \begin{figure}[htbp]
     \centering
-    \subfloat[Left mandible]{\label{}\includegraphics[width=0.5\textwidth]{images/mg001}}~~
-	\subfloat[Right mandible]{\label{}\includegraphics[width=0.5\textwidth]{images/md001}}\\
-    \subfloat[Head]{\label{}\includegraphics[width=0.5\textwidth]{images/tete001}}~~
-	\subfloat[Elytra]{\label{}\includegraphics[width=0.5\textwidth]{images/elytre001}}\\
-	\subfloat[pronotum]{\label{}\includegraphics[width=0.5\textwidth]{images/pronotum001}}
-    \caption{The distances between manual and predicted landmarks of a test image when applying different techniques of each beetle's anatomical }
+    \subfloat[Left mandible]{\label{}\includegraphics[width=0.5\textwidth]{images/mg001_2}}~~
+	\subfloat[Right mandible]{\label{}\includegraphics[width=0.5\textwidth]{images/md001_2}}\\
+    \subfloat[Head]{\label{}\includegraphics[width=0.5\textwidth]{images/tete001_2}}~~
+	\subfloat[Elytra]{\label{}\includegraphics[width=0.5\textwidth]{images/elytre001_2}}\\
+	\subfloat[Pronotum]{\label{}\includegraphics[width=0.5\textwidth]{images/pronotum001_2}}
+    \caption{The distances between manual and predicted landmarks of a test image when applying different techniques of each beetle's anatomical. Black, blue, and orange lines present for the results of image processing procedures, deep learning (from scratch and fine-tuning), respectively. }
     \label{fig0015parts}
 \end{figure}
 
