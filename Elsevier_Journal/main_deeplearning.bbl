@@ -5,6 +5,16 @@
 \expandafter\ifx\csname href\endcsname\relax
   \def\href#1#2{#2} \def\path#1{#1}\fi
 
+\bibitem{hinton2012deep}
+G.~Hinton, et~al., Deep neural networks for acoustic modeling in speech
+  recognition: The shared views of four research groups, IEEE Signal Processing
+  Magazine 29~(6) (2012) 82--97.
+
+\bibitem{mikolov2011strategies}
+T.~Mikolov, et~al., Strategies for training large scale neural network language
+  models, in: Automatic Speech Recognition and Understanding (ASRU), 2011 IEEE
+  Workshop on, IEEE, 2011, pp. 196--201.
+
 \bibitem{lecun1998gradient}
 Y.~LeCun, L.~Bottou, Y.~Bengio, P.~Haffner, Gradient-based learning applied to
   document recognition, Proceedings of the IEEE 86~(11) (1998) 2278--2324.
@@ -16,6 +26,24 @@ A.~Krizhevsky, I.~Sutskever, G.~E. Hinton, Imagenet classification with deep
 
 \bibitem{szegedy2015going}
 C.~Szegedy, et~al., Going deeper with convolutions, Cvpr, 2015.
+
+\bibitem{jean2014using}
+S.~Jean, K.~Cho, R.~Memisevic, Y.~Bengio, On using very large target vocabulary
+  for neural machine translation, arXiv preprint arXiv:1412.2007.
+
+\bibitem{sutskever2014sequence}
+I.~Sutskever, O.~Vinyals, Q.~V. Le, Sequence to sequence learning with neural
+  networks, in: Advances in neural information processing systems, 2014, pp.
+  3104--3112.
+
+\bibitem{lecun2015deep}
+Y.~LeCun, Y.~Bengio, G.~Hinton, Deep learning, Nature 521~(7553) (2015)
+  436--444.
+
+\bibitem{collobert2011natural}
+R.~Collobert, J.~Weston, L.~Bottou, M.~Karlen, K.~Kavukcuoglu, P.~Kuksa,
+  Natural language processing (almost) from scratch, Journal of Machine
+  Learning Research 12~(Aug) (2011) 2493--2537.
 
 \bibitem{farabet2013learning}
 C.~Farabet, C.~Couprie, L.~Najman, Y.~LeCun, Learning hierarchical features for
@@ -46,34 +74,6 @@ C.~Cintas, et~al., Automatic ear detection and feature extraction using
   geometric morphometrics and convolutional neural networks, IET Biometrics
   6~(3) (2016) 211--223.
 
-\bibitem{lecun2015deep}
-Y.~LeCun, Y.~Bengio, G.~Hinton, Deep learning, Nature 521~(7553) (2015)
-  436--444.
-
-\bibitem{mikolov2011strategies}
-T.~Mikolov, et~al., Strategies for training large scale neural network language
-  models, in: Automatic Speech Recognition and Understanding (ASRU), 2011 IEEE
-  Workshop on, IEEE, 2011, pp. 196--201.
-
-\bibitem{hinton2012deep}
-G.~Hinton, et~al., Deep neural networks for acoustic modeling in speech
-  recognition: The shared views of four research groups, IEEE Signal Processing
-  Magazine 29~(6) (2012) 82--97.
-
-\bibitem{jean2014using}
-S.~Jean, K.~Cho, R.~Memisevic, Y.~Bengio, On using very large target vocabulary
-  for neural machine translation, arXiv preprint arXiv:1412.2007.
-
-\bibitem{sutskever2014sequence}
-I.~Sutskever, O.~Vinyals, Q.~V. Le, Sequence to sequence learning with neural
-  networks, in: Advances in neural information processing systems, 2014, pp.
-  3104--3112.
-
-\bibitem{collobert2011natural}
-R.~Collobert, J.~Weston, L.~Bottou, M.~Karlen, K.~Kavukcuoglu, P.~Kuksa,
-  Natural language processing (almost) from scratch, Journal of Machine
-  Learning Research 12~(Aug) (2011) 2493--2537.
-
 \bibitem{collobert2008unified}
 R.~Collobert, J.~Weston, A unified architecture for natural language
   processing: Deep neural networks with multitask learning, in: Proceedings of
@@ -96,11 +96,6 @@ K.~He, X.~Zhang, S.~Ren, J.~Sun, Deep residual learning for image recognition,
 \bibitem{huang2017coarse}
 S.~Huang, M.~Gong, D.~Tao, A coarse-fine network for keypoint localization, in:
   The IEEE International Conference on Computer Vision (ICCV), Vol.~2, 2017.
-
-\bibitem{szegedy2014going}
-C.~Szegedy, W.~Liu, Y.~Jia, P.~Sermanet, S.~Reed, D.~Anguelov, D.~Erhan,
-  V.~Vanhoucke, A.~Rabinovich, Going deeper with convolutions, corr
-  abs/1409.4842, URL http://arxiv. org/abs/1409.4842.
 
 \bibitem{ciregan2012multi}
 D.~Ciregan, U.~Meier, J.~Schmidhuber, Multi-column deep neural networks for
