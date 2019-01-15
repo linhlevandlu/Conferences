@@ -1,0 +1,197 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \def\href#1#2{#2} \def\path#1{#1}\fi
+
+\bibitem{klingenberg_evolution_2010}
+C.~P. Klingenberg, \href{https://www.nature.com/articles/nrg2829}{Evolution and
+  development of shape: integrating quantitative approaches}, Nature Reviews
+  Genetics 11~(9) (2010) 623--635.
+\newblock \href {http://dx.doi.org/10.1038/nrg2829}
+  {\path{doi:10.1038/nrg2829}}.
+\newline\urlprefix\url{https://www.nature.com/articles/nrg2829}
+
+\bibitem{sasakawa_utility_2016}
+K.~Sasakawa,
+  \href{https://academic.oup.com/biolinnean/article/118/2/394/2194832}{Utility
+  of geometric morphometrics for inferring feeding habit from mouthpart
+  morphology in insects: tests with larval {Carabidae} ({Insecta}:
+  {Coleoptera})}, Biological Journal of the Linnean Society 118~(2) (2016)
+  394--409.
+\newblock \href {http://dx.doi.org/10.1111/bij.12727}
+  {\path{doi:10.1111/bij.12727}}.
+\newline\urlprefix\url{https://academic.oup.com/biolinnean/article/118/2/394/2194832}
+
+\bibitem{raymond_combination_2014}
+L.~Raymond, A.~Vialatte, M.~Plantegenest,
+  \href{http://onlinelibrary.wiley.com/doi/10.1890/ES14-00075.1/abstract}{Combination
+  of morphometric and isotopic tools for studying spring migration dynamics in
+  {Episyrphus} balteatus}, Ecosphere 5~(7) (2014) 1--16.
+\newblock \href {http://dx.doi.org/10.1890/ES14-00075.1}
+  {\path{doi:10.1890/ES14-00075.1}}.
+\newline\urlprefix\url{http://onlinelibrary.wiley.com/doi/10.1890/ES14-00075.1/abstract}
+
+\bibitem{kendall_diffusion_1977}
+D.~G. Kendall,
+  \href{https://www.cambridge.org/core/journals/advances-in-applied-probability/article/diffusion-of-shape/7CFF1175D4DCCF6063E403847120BE7B}{The
+  diffusion of shape}, Advances in Applied Probability 9~(3) (1977) 428--430.
+\newblock \href {http://dx.doi.org/10.1017/S0001867800028743}
+  {\path{doi:10.1017/S0001867800028743}}.
+\newline\urlprefix\url{https://www.cambridge.org/core/journals/advances-in-applied-probability/article/diffusion-of-shape/7CFF1175D4DCCF6063E403847120BE7B}
+
+\bibitem{bookstein_foundations_1982}
+F.~L. Bookstein,
+  \href{http://www.annualreviews.org/doi/10.1146/annurev.es.13.110182.002315}{Foundations
+  of {Morphometrics}}, Annual Review of Ecology and Systematics 13~(1) (1982)
+  451--470.
+\newblock \href {http://dx.doi.org/10.1146/annurev.es.13.110182.002315}
+  {\path{doi:10.1146/annurev.es.13.110182.002315}}.
+\newline\urlprefix\url{http://www.annualreviews.org/doi/10.1146/annurev.es.13.110182.002315}
+
+\bibitem{rohlf_applications_1998}
+F.~J. Rohlf,
+  \href{https://academic.oup.com/sysbio/article-lookup/doi/10.1080/106351598261094}{On
+  {Applications} of {Geometric} {Morphometrics} to {Studies} of {Ontogeny} and
+  {Phylogeny}}, Systematic Biology 47~(1) (1998) 147--158.
+\newblock \href {http://dx.doi.org/10.1080/106351598261094}
+  {\path{doi:10.1080/106351598261094}}.
+\newline\urlprefix\url{https://academic.oup.com/sysbio/article-lookup/doi/10.1080/106351598261094}
+
+\bibitem{adams_geomorph:_2013}
+D.~C. Adams, E.~Otárola-Castillo,
+  \href{http://onlinelibrary.wiley.com/doi/10.1111/2041-210X.12035/abstract}{geomorph:
+  an r package for the collection and analysis of geometric morphometric shape
+  data}, Methods in Ecology and Evolution 4~(4) (2013) 393--399.
+\newblock \href {http://dx.doi.org/10.1111/2041-210X.12035}
+  {\path{doi:10.1111/2041-210X.12035}}.
+\newline\urlprefix\url{http://onlinelibrary.wiley.com/doi/10.1111/2041-210X.12035/abstract}
+
+\bibitem{klingenberg_morphoj:_2011}
+C.~P. Klingenberg, {MorphoJ}: an integrated software package for geometric
+  morphometrics, Molecular Ecology Resources 11~(2) (2011) 353--357.
+\newblock \href {http://dx.doi.org/10.1111/j.1755-0998.2010.02924.x}
+  {\path{doi:10.1111/j.1755-0998.2010.02924.x}}.
+
+\bibitem{larochelle_1990}
+A.~Larochelle, The Food of Carabid Beetles:(coleoptera: Carabidae, Including
+  Cicindelinae), Sillery: Association des entomologistes amateurs du Québec,
+  1990.
+
+\bibitem{kromp_carabid_1999}
+B.~Kromp,
+  \href{http://www.sciencedirect.com/science/article/pii/S0167880999000377}{Carabid
+  beetles in sustainable agriculture: a review on pest control efficacy,
+  cultivation impacts and enhancement}, Agriculture, Ecosystems \& Environment
+  74~(1) (1999) 187--228.
+\newblock \href {http://dx.doi.org/10.1016/S0167-8809(99)00037-7}
+  {\path{doi:10.1016/S0167-8809(99)00037-7}}.
+\newline\urlprefix\url{http://www.sciencedirect.com/science/article/pii/S0167880999000377}
+
+\bibitem{eldred_does_2016}
+T.~Eldred, C.~Meloro, C.~Scholtz, D.~Murphy, K.~Fincken, M.~Hayward,
+  \href{https://link.springer.com/article/10.1007/s13127-016-0289-z}{Does size
+  matter for horny beetles? {A} geometric morphometric analysis of
+  interspecific and intersexual size and shape variation in
+  {\textless}{Emphasis} {Type}="{Italic}"{\textgreater}{Colophon}
+  haughtoni{\textless}/{Emphasis}{\textgreater} {Barnard}, 1929, and
+  {\textless}{Emphasis} {Type}="{Italic}"{\textgreater}{C}.
+  kawaii{\textless}/{Emphasis}{\textgreater} {Mizukami}, 1997 ({Coleoptera}:
+  {Lucanidae})}, Organisms Diversity \& Evolution 16~(4) (2016) 821--833.
+\newblock \href {http://dx.doi.org/10.1007/s13127-016-0289-z}
+  {\path{doi:10.1007/s13127-016-0289-z}}.
+\newline\urlprefix\url{https://link.springer.com/article/10.1007/s13127-016-0289-z}
+
+\bibitem{gonzalez_digital_2006}
+R.~C. Gonzalez, R.~E. Woods, Digital {Image} {Processing} (3rd {Edition}),
+  Prentice-Hall, Inc., Upper Saddle River, NJ, USA, 2006.
+
+\bibitem{lecun2015deep}
+Y.~LeCun, Y.~Bengio, G.~Hinton, Deep learning, Nature 521~(7553) (2015)
+  436--444.
+
+\bibitem{krizhevsky2012imagenet}
+A.~Krizhevsky, I.~Sutskever, G.~E. Hinton, Imagenet classification with deep
+  convolutional neural networks, in: Advances in neural information processing
+  systems, 2012, pp. 1097--1105.
+
+\bibitem{ciregan2012multi}
+D.~Ciregan, U.~Meier, J.~Schmidhuber, Multi-column deep neural networks for
+  image classification, in: Computer Vision and Pattern Recognition (CVPR),
+  2012 IEEE Conference on, IEEE, 2012, pp. 3642--3649.
+
+\bibitem{szegedy2015going}
+C.~Szegedy, W.~Liu, Y.~Jia, P.~Sermanet, S.~Reed, D.~Anguelov, D.~Erhan,
+  V.~Vanhoucke, A.~Rabinovich, Going deeper with convolutions, in: Proceedings
+  of the IEEE Conference on Computer Vision and Pattern Recognition, 2015, pp.
+  1--9.
+
+\bibitem{mikolov2011strategies}
+T.~Mikolov, A.~Deoras, D.~Povey, L.~Burget, J.~{\v{C}}ernock{\`y}, Strategies
+  for training large scale neural network language models, in: Automatic Speech
+  Recognition and Understanding (ASRU), 2011 IEEE Workshop on, IEEE, 2011, pp.
+  196--201.
+
+\bibitem{hinton2012deep}
+G.~Hinton, L.~Deng, D.~Yu, G.~E. Dahl, A.-r. Mohamed, N.~Jaitly, A.~Senior,
+  V.~Vanhoucke, P.~Nguyen, T.~N. Sainath, et~al., Deep neural networks for
+  acoustic modeling in speech recognition: The shared views of four research
+  groups, IEEE Signal Processing Magazine 29~(6) (2012) 82--97.
+
+\bibitem{sutskever2014sequence}
+I.~Sutskever, O.~Vinyals, Q.~V. Le, Sequence to sequence learning with neural
+  networks, in: Advances in neural information processing systems, 2014, pp.
+  3104--3112.
+
+\bibitem{jean2014using}
+S.~Jean, K.~Cho, R.~Memisevic, Y.~Bengio, On using very large target vocabulary
+  for neural machine translation, arXiv preprint arXiv:1412.2007.
+
+\bibitem{li2015convolutional}
+H.~Li, Z.~Lin, X.~Shen, J.~Brandt, G.~Hua, A convolutional neural network
+  cascade for face detection, in: Proceedings of the IEEE Conference on
+  Computer Vision and Pattern Recognition, 2015, pp. 5325--5334.
+
+\bibitem{cintas2016automatic}
+C.~Cintas, M.~Quinto-S{\'a}nchez, V.~Acu{\~n}a, C.~Paschetta, S.~de~Azevedo,
+  C.~C.~S. de~Cerqueira, V.~Ramallo, C.~Gallo, G.~Poletti, M.~C. Bortolini,
+  et~al., Automatic ear detection and feature extraction using geometric
+  morphometrics and convolutional neural networks, IET Biometrics 6~(3) (2016)
+  211--223.
+
+\bibitem{lowe2004distinctive}
+D.~G. Lowe, Distinctive image features from scale-invariant keypoints,
+  International journal of computer vision 60~(2) (2004) 91--110.
+
+\bibitem{palaniswamy2010automatic}
+S.~Palaniswamy, N.~A. Thacker, C.~P. Klingenberg, Automatic identification of
+  landmarks in digital images, IET Computer Vision 4~(4) (2010) 247--260.
+
+\bibitem{le2017maelab}
+V.~L. LE, M.~BEURTON-AIMAR, A.~KR{\"A}HENB{\"U}HL, N.~PARISEY,
+  \href{https://hal.archives-ouvertes.fr/hal-01571440}{{MAELab: a framework to
+  automatize landmark estimation}}, in: {WSCG 2017}, 25th International
+  Conference in Central Europe on Computer Graphics, Visualization and Computer
+  Vision'2017, Plzen, Czech Republic, 2017.
+\newline\urlprefix\url{https://hal.archives-ouvertes.fr/hal-01571440}
+
+\bibitem{sun2013deep}
+Y.~Sun, X.~Wang, X.~Tang, Deep convolutional network cascade for facial point
+  detection, in: Proceedings of the IEEE conference on computer vision and
+  pattern recognition, 2013, pp. 3476--3483.
+
+\bibitem{zhang2014facial}
+Z.~Zhang, P.~Luo, C.~C. Loy, X.~Tang, Facial landmark detection by deep
+  multi-task learning, in: European Conference on Computer Vision, Springer,
+  2014, pp. 94--108.
+
+\bibitem{lecun2012efficient}
+Y.~A. LeCun, L.~Bottou, G.~B. Orr, K.-R. M{\"u}ller, Efficient backprop, in:
+  Neural networks: Tricks of the trade, Springer, 2012, pp. 9--48.
+
+\bibitem{bland1996statistics}
+J.~M. Bland, D.~G. Altman, Statistics notes: measurement error, Bmj 313~(7059)
+  (1996) 744.
+
+\end{thebibliography}

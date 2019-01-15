@@ -107,24 +107,9 @@ N.~Srivastava, G.~E. Hinton, A.~Krizhevsky, I.~Sutskever, R.~Salakhutdinov,
   Dropout: a simple way to prevent neural networks from overfitting., Journal
   of machine learning research 15~(1) (2014) 1929--1958.
 
-\bibitem{lecun2010convolutional}
-Y.~LeCun, K.~Kavukcuoglu, C.~Farabet, Convolutional networks and applications
-  in vision, in: Circuits and Systems (ISCAS), Proceedings of 2010 IEEE
-  International Symposium on, IEEE, 2010, pp. 253--256.
-
 \bibitem{lecun2012efficient}
 Y.~A. LeCun, et~al., Efficient backprop, in: Neural networks: Tricks of the
   trade, Springer, 2012, pp. 9--48.
-
-\bibitem{han1995influence}
-J.~Han, C.~Moraga, The influence of the sigmoid function parameters on the
-  speed of backpropagation learning, in: International Workshop on Artificial
-  Neural Networks, Springer, 1995, pp. 195--201.
-
-\bibitem{nair2010rectified}
-V.~Nair, G.~E. Hinton, Rectified linear units improve restricted boltzmann
-  machines, in: Proceedings of the 27th international conference on machine
-  learning (ICML-10), 2010, pp. 807--814.
 
 \bibitem{lasagne}
 S.~Dieleman, et~al., \href{http://dx.doi.org/10.5281/zenodo.27878}{Lasagne:

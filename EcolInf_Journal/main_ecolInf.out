@@ -1,0 +1,12 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Related works}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{Contributions}{section.1}% 3
+\BOOKMARK [1][-]{section.2}{Material and Methods}{}% 4
+\BOOKMARK [2][-]{subsection.2.1}{Data sets and preprocessing}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.2}{Network architecture and training}{section.2}% 6
+\BOOKMARK [2][-]{subsection.2.3}{Measuring similarities between predicted and observed landmarks}{section.2}% 7
+\BOOKMARK [1][-]{section.3}{Results}{}% 8
+\BOOKMARK [2][-]{subsection.3.1}{Automated landmarks prediction for different anatomical parts}{section.3}% 9
+\BOOKMARK [1][-]{section.4}{Conclusion and future works}{}% 10
+\BOOKMARK [2][-]{subsection.4.1}{Evalution metrics for further predicted landmarks usage}{section.4}% 11
+\BOOKMARK [1][-]{section.5}{Discussion}{}% 12
