@@ -7,6 +7,8 @@
 \usepackage{subfig}
 \usepackage{multirow}
 \usepackage{xcolor}
+\usepackage{setspace}
+\doublespacing
 \journal{Pattern Recognition}
 
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -255,12 +257,11 @@ In the second procedure, we have applied the opposite procedure to the first one
 \section{Network architectures designing}
 \label{Sneuralnetwork}
 %From the beginning of CNN, LeNet \cite{lecun1998gradient} can be considered as the first one, which has used to classify digits on hand-written numbers on cheques. The network is very simple by stack together the convolutional layers and max-pooling layers followed by full connected layers. Because of the limit of the resources at that time, this model is also constrained by the availability of computing. Until 2012, when computing resources are improved, AlexNet \cite{krizhevsky2012imagenet} was born and it has won the challenge by reducing the top-5 error in ImageNet challenge. AlexNet had a similar architecture as LeNet but it was deeper, bigger. Besides, the activation functions have been changed from Sigmoid \cite{han1995influence} to ReLU \cite{nair2010rectified} which have been proved more improvement in computing time. Additional, it had supplement the dropout layers to control overfitting. 
-As we have presented, a CNN architecture contains several type of layers. 
-The implementation of a CNN model usually begins with classical architecture which consists of some classical layers (e.g LeNet).
+As we have presented, the implementation of a CNN model usually begins with classical architecture which consists of some classical layers (e.g LeNet).
 Then, it will be improved to increase the efficiency by changing the parameters or adding the layers (e.g. AlexNet).
 Based on the idea of the improvement, we have tried to design an architecture for landmarking on beetle images. This work is beginning with trying three network models before deciding the final architecture. Like other CNN models, we have employed the classical layers to construct the models, i.e., convolutional layers, maximum pooling layers, dropout layers and full-connected layers.
 
-The first architecture is very classical one, it receives an image with the size of $(1 \times 192 \times 256)$ as the input. Then, the network consists of three repeated structures of a convolutional layer followed by a maximum pooling layer. Most of CNNs, the hyperparameters of convolutional layers have been set to increase the depth of the images from the first layer to the last layer. That is reflected in the setting of the number of filters at each convolutional layer. So, the depths of convolutional layers increase from $32, 64, $ and $128$ with different size of the kernels: $(3 \times 3)$, $(2 \times 2)$ and $(2 \times 2)$, respectively. Inserting pooling layers after a convolutional layers is a common periodcally. The pooling layer effects to progressively reduce the spatial size of the representation to reduce the number of parameters, computation in the network, and it also controls over-fitting. The operation of pooling layers is independent on every depth slice of the input. The most common form is a pooling layer with filters of size $(2 \times 2)$ and a stride of $2$. It downsamples every depth by $2$ along width and height of the input. Thefore, all the kernels of maximum pooling layers have the same size of $(2 \times 2)$ with a stride of $2$ as usual. At the end of the model, three full-connected layers have been added to extract the global relationship between the features and to procedure the outputs. The first of two full-connected layers are set to non-linearity to make sure these nodes interact well and take into account all possible dependencies at the feature level. The outputs of the full-connected layers are $500, 500$ and $16$. The output of the last full-connected layer corresponds to the coordinates ($x$ and $y$) of $8$ landmarks which we would like to predict. Fig. \ref{fignet1} shows details of the first model: The orange rectangles represent for convolutional layers while the yellow rectangles represent for maximum pooling layers and three full-connected layers with their parameters are presented at the end of the model.
+The first architecture is very classical one, it receives an input image with the size of $(1 \times 192 \times 256)$. Then is three repeated structures of a convolutional (CONV) layer followed by a maximum pooling (POOL) layer. Most of CNNs, the hyperparameters of CONV layers have been set to increase the depth of the images from the first layer to the last layer. That is reflected in the setting of the number of filters at each CONV layer. So, the depths of CONV layers increase from $32, 64, $ and $128$ with different size of the kernels: $(3 \times 3)$, $(2 \times 2)$ and $(2 \times 2)$, respectively. Inserting POOL layers after a convolutional layers is a common periodcally. The POOL layer effects to progressively reduce the spatial size of the representation to reduce the number of parameters, computation in the network, and it also controls over-fitting. The operation of POOL layers is independent on every depth slice of the input. The most common form is a POOL layer with filters of size $(2 \times 2)$ and a stride of $2$. It downsamples every depth by $2$ along width and height of the input. Thefore, all the kernels of maximum POOL layers have the same size of $(2 \times 2)$ with a stride of $2$ as usual. At the end of the model, three full-connected (FC) layers have been added to extract the global relationship between the features and to procedure the outputs. The first of two FC layers are set to non-linearity to make sure these nodes interact well and take into account all possible dependencies at the feature level. The outputs of the FC layers are $500, 500$ and $16$. The output of the last FC layer corresponds to the coordinates ($x$ and $y$) of $8$ landmarks which we would like to predict. Fig. \ref{fignet1} shows details of the first model: The orange rectangles represent for CONV layers while the yellow rectangles represent for maximum POOL layers and three FC layers with their parameters are presented at the end of the model.
 
 \begin{figure}[!h]
 	\centering
@@ -269,7 +270,7 @@ The first architecture is very classical one, it receives an image with the size
 	\label{fignet1}
 \end{figure}
 
-The second architecture is modified from the first model. The layers are kept the same as the first one but the outputs of the first of two full-connected layers are changed from $500$ (in the first model) to $1000$ (Fig. \ref{fignet2}). Increasing the value at full-connected layers is hoping to obtain more features from convolutional layer and to prevent the over-fitting. 
+The second architecture is modified from the first model. The layers are kept the same as the first one but the outputs of the first of two FC layers are changed from $500$ (in the first model) to $1000$ (Fig. \ref{fignet2}). Increasing the value at FC layers is hoping to obtain more features from CONV layer to give the decision without requirements of a lot of new capacity resources. However, the obtained results have not been satisfying, it will be discussed in the last section. 
 
 \begin{figure}[h]
 	\centering
@@ -278,8 +279,8 @@ The second architecture is modified from the first model. The layers are kept th
 	\label{fignet2}
 \end{figure}
 
-To build the third architecture, we have used the definition of \textit{elementary block}. An {elementary block} is defined as a sequence of convolution ($C_{i}$), maximum pooling ($P_i$) and dropout ($D_i$) layers (Fig. \ref{figelementary}). This significantly reduces overfitting and gives major improvements over other regularization methods \cite{srivastava2014dropout}. The idea of dropout is to include some variations between different runs. During training phase, dropout samples are done from an exponential number of different ``thinned" network. At test phase, it is easy to approximate the effect of averaging the prediction of all thinned networks by simply using a single unthinned network with smaller weights. So, we have modified the architecture by combining some \textit{elementary blocks}. 
-
+To build the third architecture, we have chosen to define an \textit{elementary block}. An {elementary block} is defined as a sequence of a CONV ($C_{i}$), a maximum POOL ($P_i$) and a dropout ($D_i$) layers (Fig. \ref{figelementary}). In this case, we use another technique to prevent over-fitting: \textit{dropout}. This significantly reduces overfitting and gives major improvements over other regularization methods \cite{srivastava2014dropout} by including some variations among different runs. So, we have modified the architecture by combining some \textit{elementary blocks}. 
+%The idea of dropout is to include some variations between different runs. During training phase, dropout samples are done from an exponential number of different ``thinned" network. At test phase, it is easy to approximate the effect of averaging the prediction of all thinned networks by simply using a single unthinned network with smaller weights.
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.4]{images/elementary_block}
@@ -308,7 +309,7 @@ Fig. \ref{fignet3} illustrates the layers in the third architecture. For our pur
 		\end{itemize}
 \end{itemize}
 
-Three full-connected layers (FC) are kept the same as the second architecture: FC1 and FC2 have $1000$ outputs, the last full-connected layer (FC3) has $16$ outputs. As usual, a dropout layer is inserted between FC1 and FC2 with a probability equal to $0.5$.
+Three full-connected layers (FC) are kept the same as the second architecture: FC1 and FC2 have $1000$ outputs, the last FC layer (FC3) has $16$ outputs. As usual, a dropout layer is inserted between FC1 and FC2 with a probability equal to $0.5$.
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.2]{images/arch_model}
@@ -316,31 +317,25 @@ Three full-connected layers (FC) are kept the same as the second architecture: F
 	\label{fignet3}
 \end{figure}
 
-The core of CNN is training over iteration. There are many ways to optimize the learning algorithm, but gradient descent \cite{lecun2012efficient} is currently a good choice to establish the way of optimizing the loss in neural network. The core idea is following the gradient until we statify with the results will remain the same. So, we have chosen gradient descent in the backward phase to update the values of learnable parameters and to increase the accuracy of the network. The networks are designed with a small sharing learning rate and a momentum. The learning rate is initialized at $0.03$ and stopped at $0.00001$, while the momentum is updated from $0.9$ to $0.9999$. Their values are updated over training time to fit with the number of epochs \footnote{An epoch is a single pass through the full training set}. The implementation of the architectures have been done on Lasagne framework \cite{lasagne} by Python. For more information about the model, you can see at our repository on GitHub: \texttt{https://github.com/linhlevandlu/CNN\_Beetles\_Landmarks}
+The core of CNN is training over iteration. There are many ways to optimize the learning algorithm, but gradient descent \cite{lecun2012efficient} is currently a good choice to establish the way of optimizing the loss in neural network. The core idea is following the gradient until we statify with the results will remain the same. So, we have chosen gradient descent in the backward phase to update the values of learnable parameters and to increase the accuracy of the network. The networks are designed with a small sharing learning rate and a momentum. The learning rate is initialized at $0.03$ and stopped at $0.00001$, while the momentum is updated from $0.9$ to $0.9999$. Their values are updated over training time to fit with the number of epochs \footnote{An epoch is a single pass through the full training set}. The implementation of the architectures have been done on Lasagne framework \cite{lasagne} by Python code. For more information about the model, you can see at our repository on GitHub: \texttt{https://github.com/linhlevandlu/CNN\_Beetles\_Landmarks}
 
 \section{Experiments and results}
 \label{sexperiments}
 Before widely applying to all anatomical parts, we have firstly tried with pronotum part to evaluate the performance. The networks have been trained in $5, 000$ epochs on Ubuntu machine by using NVIDIA TITAN X cards. The set of images that used for training and validation are merged together. During the training, the images are chosen randomly from the dataset with a ratio of $60\%$ for training and $40\%$ for validation. The training step takes into account a pair of information (\textit{images, manual landmarks coordinates})  as training data. In the context of deep learning, landmark prediction can be seen as a regression problem. So, we have used Root Mean Square Error (RMSE) to compute the loss of implemented architectures. At the test phase, images without landmarks are given to the trained network to produce output coordinates of the predicted landmarks. The results then evaluated by comparing with the manual landmarks coordinates provided by biologists which have been seen as ground truth. 
 
-Fig. \ref{figloss1} shows the training errors and the validation errors during traning phase of the first architecture. The blue curve presents the RMSE errors of training process while green curve is the validation errors. Clearly, over-fitting has appeared in the first model. The training losses are able to decrease but the validation losses are stable. In the second model (Section \ref{Sneuralnetwork}), we have modified the parameters of full-connected layers to prevent the over-fitting but it seems that this solution is still not suitable and the results are also the same with the first architecture.
-
-\begin{figure}[!h]
-	\centering
-	\includegraphics[scale=0.4]{images/cnnmodel3_5000_pronotum_v13_without_dropout_normalized_data_loss}
-	\caption{The training and validation losses of the first model}
-	\label{figloss1}
-\end{figure}
+Fig. \ref{figloss1} shows the training errors and the validation errors during traning phase of the first architecture. The blue curve presents the RMSE errors of training process while green curve is the validation errors. Clearly, over-fitting has appeared in the first model. The training losses are able to decrease but the validation losses are stable. In the second model (Section \ref{Sneuralnetwork}), we have modified the parameters of full-connected layers to prevent the over-fitting but it seems that this solution is still not satisfying and the results are also the same with the first architecture.
 
 Then, we have continued to train the third model on the same dataset of pronotum images. Fig. \ref{figloss2} illustrates the losses during the training of the third model. As the same meaning in Fig. \ref{figloss1}, the blue line is training loss, the green line is validation loss. In the opposite with two previous models, the losses are different (far) from the beginning but after several epochs, the loss values become more proximate and the over-fitting problem has been solved. This proves that adding dropout layers to build the elementary blocks have been effects to prevent over-fitting and contributory improve the accuracy of the model. \textit{So, we have decided to keep the architecture of the third model for our landmarking problem.}
 
-\begin{figure}[!h]
-	\centering
-	\includegraphics[scale=0.4]{images/loss_v16}
-	\caption{The training and validation losses of the third model}
-	\label{figloss2}
+\begin{figure}[htbp]
+    \centering
+    \subfloat[The first model]{\label{figloss1}\includegraphics[scale=0.3]{images/model1_loss}}~~
+\subfloat[The third model]{\label{figloss2}\includegraphics[scale=0.3]{images/loss_v16}}\\    
+    \caption{The losses (training and validation) of the models}
+    \label{figlosses}
 \end{figure}
 
-In order to have the predicted landmarks for all pronotum images (instead of only $33$ images), we have applied \textit{cross-validation} to choose the test images, called \textit{round}. For each time, we have chosen a different fold of $33$ images as testing images, the remaining images are used as training and validation images ($293/33 \approx 9$ rounds). Following that, the network will be trained with different datasets, then the trained model will be used to predicted the lanmarks on the images in the corresponding test set. Table. \ref{tbltrainingloss} resumes the losses of $9$ rounds when we trained the third model on pronotum images. Clearly, the training loss/validation loss among rounds are not so large and the RMSE values are looking pretty good ($\approx 1.7 - 2.1$ pixels).
+In order to have the predicted landmarks for all pronotum images (instead of only $33$ images), we have applied \textit{cross-validation} to choose the test images, called \textit{round}. For each time, we have chosen a different fold of $33$ images as testing images, the remaining images are used as training and validation images ($293/33 \approx 9$ rounds). Following that, the network will be trained with different datasets, then the trained model will be used to predicted the lanmarks on the images in the corresponding test set. Table. \ref{tbltrainingloss} resumes the losses of $9$ rounds when we trained the third model on pronotum images. Clearly, the training loss/validation loss among rounds are not so large (stable) and the RMSE values are looking pretty good ($\approx 1.7 - 2.1$ pixels).
 
 \begin{table}[h!]
 	\centering
@@ -360,7 +355,7 @@ In order to have the predicted landmarks for all pronotum images (instead of onl
 	\label{tbltrainingloss}
 \end{table}
 
-To evaluate the coordinates of predicted landmarks, the correlation metrics have been computed the correlation between the manual landmarks and their corresponding predicted one. Table. \ref{tblcorrelation} shows the correlation scores of $3$ metrics (using \textit{scikit-learn} \cite{pedregosa2011scikit}), i.e, coefficient of determination ($r^2$), explained variance (EV), and Pearson correlation. All of three metrics have the same possibility. The best score is $1.0$ if the correlation data is good, lower values are worse. It means that our predicted coordinates are very close with the ground truth. However, the measure is not enough good to provide a useful result to biologists. Moreover standing on the side of image processing, we are looking forward to  seeing the predicted coordinates than the statistical results.
+To evaluate the coordinates of predicted landmarks, the correlation metrics have been computed the correlation between the manual landmarks and their corresponding predicted one. Table. \ref{tblcorrelation} shows the correlation scores of $3$ metrics (using \textit{scikit-learn} \cite{pedregosa2011scikit}), i.g. coefficient of determination ($r^2$), explained variance (EV), and Pearson correlation. All of three metrics have the same possibility. The best score is $1.0$ if the correlation data is good, lower values are worse. It means that our predicted coordinates are very close with the ground truth. However, the measure is not enough good to provide a useful result to biologists. Moreover standing on the side of image processing, we are looking forward to  seeing the predicted coordinates than the statistical results.
 
 \begin{table}[htbp]
 	\centering
@@ -372,8 +367,7 @@ To evaluate the coordinates of predicted landmarks, the correlation metrics have
 	\label{tblcorrelation}
 \end{table}
 
-The main goal of computing is to predict the coordinates of landmarks, so the distances (in pixels) between the coordinates of manual landmarks and corresponding predicted landmarks have been taken into account on all images. Then, the average of distances are computed by landmarks. Table. \ref{tblavgpronotum} shows the average distances by landmarks on all images of pronotum dataset. With images of resolution $256 \times 192$, we can
-consider that an error of $1\%$ corresponds to $2$ pixels that could
+The main goal of computing is to predict the coordinates of landmarks, so the distances (in pixels) between the coordinates of manual landmarks and corresponding predicted landmarks have been taken into account on all images. Then, the average of distances are computed by landmarks. Table. \ref{tblavgpronotum} shows the average distances by landmarks on all images of pronotum dataset. With images of resolution $256 \times 192$, we can consider that an error of $1\%$ corresponds to $2$ pixels that could
 be an acceptable error. Unhappily, our results exhibit average
 distance of $4$ pixels in the best case, landmark $1$ and more than
 $5$ pixels, landmark $6$. Other error distances are more than $2\%$
