@@ -5,6 +5,10 @@
 \expandafter\ifx\csname href\endcsname\relax
   \def\href#1#2{#2} \def\path#1{#1}\fi
 
+\bibitem{arbib2012brains}
+M.~A. Arbib, Brains, machines, and mathematics, Springer Science \& Business
+  Media, 2012.
+
 \bibitem{hinton2012deep}
 G.~Hinton, et~al., Deep neural networks for acoustic modeling in speech
   recognition: The shared views of four research groups, IEEE Signal Processing

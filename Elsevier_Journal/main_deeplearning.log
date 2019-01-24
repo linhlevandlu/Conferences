@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.18)  23 JAN 2019 16:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.18)  24 JAN 2019 17:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -455,7 +455,7 @@ Missing character: There is no © in font cmti8!
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4] [5]
-<images/cnn_network_2.png, id=163, 1150.2975pt x 361.35pt>
+<images/cnn_network_2.png, id=166, 1150.2975pt x 361.35pt>
 File: images/cnn_network_2.png Graphic file (type png)
 
 <use images/cnn_network_2.png>
@@ -465,7 +465,7 @@ Package pdftex.def Info: images/cnn_network_2.png used on input line 187.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[6] <images/pooling.PNG, id=174, 373.395pt x 316.7835pt>
+[6] <images/pooling.PNG, id=176, 373.395pt x 316.7835pt>
 File: images/pooling.PNG Graphic file (type png)
 
 <use images/pooling.PNG>
@@ -476,7 +476,7 @@ Package pdftex.def Info: images/pooling.PNG used on input line 200.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [7 <./images/cnn_network_2.png>] [8 <./images/pooling.PNG>]
-<images/inc_channels.png, id=196, 547.04375pt x 339.2675pt>
+<images/inc_channels.png, id=198, 547.04375pt x 339.2675pt>
 File: images/inc_channels.png Graphic file (type png)
 
 <use images/inc_channels.png>
@@ -486,14 +486,14 @@ Package pdftex.def Info: images/inc_channels.png used on input line 242.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[9] <images/sp_channels.png, id=204, 562.1pt x 338.26375pt>
+[9] <images/sp_channels.png, id=206, 562.1pt x 338.26375pt>
 File: images/sp_channels.png Graphic file (type png)
 
 <use images/sp_channels.png>
 Package pdftex.def Info: images/sp_channels.png used on input line 251.
 (pdftex.def)             Requested size: 224.83601pt x 135.30309pt.
  [10 <./images/inc_channels.png> <./images/sp_channels.png (PNG copy)>] [11] <i
-mages/net1.png, id=217, 1214.5375pt x 251.94125pt>
+mages/net1.png, id=219, 1214.5375pt x 251.94125pt>
 File: images/net1.png Graphic file (type png)
 
 <use images/net1.png>
@@ -504,7 +504,7 @@ Overfull \hbox (19.36406pt too wide) in paragraph at lines 268--269
  [][] 
  []
 
-<images/net2.png, id=220, 1208.515pt x 248.93pt>
+<images/net2.png, id=222, 1208.515pt x 248.93pt>
 File: images/net2.png Graphic file (type png)
  <use images/net2.png>
 Package pdftex.def Info: images/net2.png used on input line 277.
@@ -514,7 +514,7 @@ Overfull \hbox (17.5573pt too wide) in paragraph at lines 277--278
  [][] 
  []
 
-<images/elementary_block.png, id=223, 614.295pt x 325.215pt>
+<images/elementary_block.png, id=225, 614.295pt x 325.215pt>
 File: images/elementary_block.png Graphic file (type png)
 
 <use images/elementary_block.png>
@@ -530,7 +530,7 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 293.
 
-<images/arch_model.png, id=232, 1637.11626pt x 283.0575pt>
+<images/arch_model.png, id=234, 1637.11626pt x 283.0575pt>
 File: images/arch_model.png Graphic file (type png)
 
 <use images/arch_model.png>
@@ -538,14 +538,14 @@ Package pdftex.def Info: images/arch_model.png used on input line 315.
 (pdftex.def)             Requested size: 327.41745pt x 56.61049pt.
  [13 <./images/elementary_block.png (PNG copy)>]
 [14 <./images/arch_model.png>]
-<images/model1_loss.png, id=250, 578.16pt x 433.62pt>
+<images/model1_loss.png, id=252, 578.16pt x 433.62pt>
 File: images/model1_loss.png Graphic file (type png)
 
 <use images/model1_loss.png>
 Package pdftex.def Info: images/model1_loss.png used on input line 329.
 (pdftex.def)             Requested size: 173.44933pt x 130.087pt.
 
-<images/model2_loss.png, id=251, 578.16pt x 433.62pt>
+<images/model2_loss.png, id=253, 578.16pt x 433.62pt>
 File: images/model2_loss.png Graphic file (type png)
 
 <use images/model2_loss.png>
@@ -557,14 +557,14 @@ Overfull \hbox (8.56529pt too wide) in paragraph at lines 329--330
  []
 
 [15 <./images/model1_loss.png> <./images/model2_loss.png>]
-<images/model3_loss.png, id=265, 578.16pt x 433.62pt>
+<images/model3_loss.png, id=267, 578.16pt x 433.62pt>
 File: images/model3_loss.png Graphic file (type png)
 
 <use images/model3_loss.png>
 Package pdftex.def Info: images/model3_loss.png used on input line 341.
 (pdftex.def)             Requested size: 231.2599pt x 173.44492pt.
  [16 <./images/model3_loss.png>] [17]
-<images/statistic_pronotum_from_scratch_lm1.png, id=286, 608.2725pt x 434.62375
+<images/statistic_pronotum_from_scratch_lm1.png, id=288, 608.2725pt x 434.62375
 pt>
 File: images/statistic_pronotum_from_scratch_lm1.png Graphic file (type png)
  <use images/statistic_pronotum_from_scratch_lm1.png>
@@ -572,14 +572,14 @@ Package pdftex.def Info: images/statistic_pronotum_from_scratch_lm1.png used on
  input line 408.
 (pdftex.def)             Requested size: 182.48315pt x 130.38812pt.
  [18 <./images/statistic_pronotum_from_scratch_lm1.png>]
-<images/fn_accuracy.png, id=296, 76.3653pt x 57.3342pt>
+<images/fn_accuracy.png, id=298, 76.3653pt x 57.3342pt>
 File: images/fn_accuracy.png Graphic file (type png)
 
 <use images/fn_accuracy.png>
 Package pdftex.def Info: images/fn_accuracy.png used on input line 417.
 (pdftex.def)             Requested size: 120.7521pt x 90.66576pt.
 
-<images/plandmark2.png, id=297, 178.9887pt x 133.9404pt>
+<images/plandmark2.png, id=299, 178.9887pt x 133.9404pt>
 File: images/plandmark2.png Graphic file (type png)
 
 <use images/plandmark2.png>
@@ -587,7 +587,7 @@ Package pdftex.def Info: images/plandmark2.png used on input line 418.
 (pdftex.def)             Requested size: 120.7521pt x 90.3609pt.
  [19 <./images/fn_accuracy.png (PNG copy)> <./images/plandmark2.png (PNG copy)>
 ] [20]
-<images/merge.png, id=317, 729.72626pt x 361.35pt>
+<images/merge.png, id=319, 729.72626pt x 361.35pt>
 File: images/merge.png Graphic file (type png)
  <use images/merge.png>
 Package pdftex.def Info: images/merge.png used on input line 473.
@@ -648,14 +648,14 @@ Overfull \hbox (21.16843pt too wide) in paragraph at lines 636--658
  [][] 
  []
 
-[23] [24] <images/mg_part.png, id=354, 455.45157pt x 255.95625pt>
+[23] [24] <images/mg_part.png, id=356, 455.45157pt x 255.95625pt>
 File: images/mg_part.png Graphic file (type png)
 
 <use images/mg_part.png>
 Package pdftex.def Info: images/mg_part.png used on input line 691.
 (pdftex.def)             Requested size: 172.5pt x 96.94412pt.
 
-<images/md_part.png, id=355, 455.45157pt x 255.95625pt>
+<images/md_part.png, id=357, 455.45157pt x 255.95625pt>
 File: images/md_part.png Graphic file (type png)
 
 <use images/md_part.png>
@@ -666,14 +666,14 @@ Overfull \hbox (6.66664pt too wide) in paragraph at lines 691--692
  [][]   [][] 
  []
 
-<images/tete_part.png, id=356, 455.45157pt x 255.95625pt>
+<images/tete_part.png, id=358, 455.45157pt x 255.95625pt>
 File: images/tete_part.png Graphic file (type png)
 
 <use images/tete_part.png>
 Package pdftex.def Info: images/tete_part.png used on input line 693.
 (pdftex.def)             Requested size: 172.5pt x 96.94412pt.
 
-<images/elytre_part.png, id=357, 455.45157pt x 255.95625pt>
+<images/elytre_part.png, id=359, 455.45157pt x 255.95625pt>
 File: images/elytre_part.png Graphic file (type png)
 
 <use images/elytre_part.png>
@@ -684,7 +684,7 @@ Overfull \hbox (6.66664pt too wide) in paragraph at lines 693--694
  [][]   [][] 
  []
 
-<images/pronotum_part.png, id=358, 455.45157pt x 255.95625pt>
+<images/pronotum_part.png, id=360, 455.45157pt x 255.95625pt>
 File: images/pronotum_part.png Graphic file (type png)
 
 <use images/pronotum_part.png>
@@ -693,13 +693,13 @@ Package pdftex.def Info: images/pronotum_part.png used on input line 695.
  [25] [26 <./images/mg_part.png (PNG copy)> <./images/md_part.png (PNG copy)> <
 ./images/tete_part.png (PNG copy)> <./images/elytre_part.png (PNG copy)> <./ima
 ges/pronotum_part.png (PNG copy)>]
-<images/mg_3c.JPG, id=375, 192.72pt x 144.54pt>
+<images/mg_3c.JPG, id=377, 192.72pt x 144.54pt>
 File: images/mg_3c.JPG Graphic file (type jpg)
  <use images/mg_3c.JPG>
 Package pdftex.def Info: images/mg_3c.JPG used on input line 707.
 (pdftex.def)             Requested size: 172.5pt x 129.3746pt.
 
-<images/md_3c.JPG, id=376, 102.784pt x 77.088pt>
+<images/md_3c.JPG, id=378, 102.784pt x 77.088pt>
 File: images/md_3c.JPG Graphic file (type jpg)
  <use images/md_3c.JPG>
 Package pdftex.def Info: images/md_3c.JPG used on input line 708.
@@ -709,13 +709,13 @@ Overfull \hbox (6.66664pt too wide) in paragraph at lines 707--708
  [][]   [][] 
  []
 
-<images/tete_3c.JPG, id=377, 192.72pt x 144.54pt>
+<images/tete_3c.JPG, id=379, 192.72pt x 144.54pt>
 File: images/tete_3c.JPG Graphic file (type jpg)
  <use images/tete_3c.JPG>
 Package pdftex.def Info: images/tete_3c.JPG used on input line 709.
 (pdftex.def)             Requested size: 172.5pt x 129.3746pt.
 
-<images/elytre_3c.JPG, id=378, 192.72pt x 144.54pt>
+<images/elytre_3c.JPG, id=380, 192.72pt x 144.54pt>
 File: images/elytre_3c.JPG Graphic file (type jpg)
  <use images/elytre_3c.JPG>
 Package pdftex.def Info: images/elytre_3c.JPG used on input line 710.
@@ -725,7 +725,7 @@ Overfull \hbox (6.66664pt too wide) in paragraph at lines 709--710
  [][]   [][] 
  []
 
-<images/pronotum_3c.JPG, id=379, 102.784pt x 77.088pt>
+<images/pronotum_3c.JPG, id=381, 102.784pt x 77.088pt>
 File: images/pronotum_3c.JPG Graphic file (type jpg)
 
 <use images/pronotum_3c.JPG>
@@ -733,14 +733,14 @@ Package pdftex.def Info: images/pronotum_3c.JPG used on input line 711.
 (pdftex.def)             Requested size: 172.5pt x 129.37755pt.
  [27] [28 <./images/mg_3c.JPG> <./images/md_3c.JPG> <./images/tete_3c.JPG> <./i
 mages/elytre_3c.JPG> <./images/pronotum_3c.JPG>]
-<images/mg001_2.jpg, id=399, 455.45157pt x 266.25789pt>
+<images/mg001_2.jpg, id=401, 455.45157pt x 266.25789pt>
 File: images/mg001_2.jpg Graphic file (type jpg)
 
 <use images/mg001_2.jpg>
 Package pdftex.def Info: images/mg001_2.jpg used on input line 720.
 (pdftex.def)             Requested size: 172.5pt x 100.84589pt.
 
-<images/md001_2.jpg, id=400, 458.46281pt x 264.73642pt>
+<images/md001_2.jpg, id=402, 458.46281pt x 264.73642pt>
 File: images/md001_2.jpg Graphic file (type jpg)
 
 <use images/md001_2.jpg>
@@ -751,14 +751,14 @@ Overfull \hbox (6.66664pt too wide) in paragraph at lines 720--721
  [][]   [][] 
  []
 
-<images/tete001_2.jpg, id=401, 455.45157pt x 258.65053pt>
+<images/tete001_2.jpg, id=403, 455.45157pt x 258.65053pt>
 File: images/tete001_2.jpg Graphic file (type jpg)
 
 <use images/tete001_2.jpg>
 Package pdftex.def Info: images/tete001_2.jpg used on input line 722.
 (pdftex.def)             Requested size: 172.5pt x 97.96458pt.
 
-<images/elytre001_2.jpg, id=402, 451.6875pt x 254.84685pt>
+<images/elytre001_2.jpg, id=404, 451.6875pt x 254.84685pt>
 File: images/elytre001_2.jpg Graphic file (type jpg)
 
 <use images/elytre001_2.jpg>
@@ -769,7 +769,7 @@ Overfull \hbox (6.66664pt too wide) in paragraph at lines 722--723
  [][]   [][] 
  []
 
-<images/pronotum001_2.jpg, id=403, 453.19313pt x 258.65053pt>
+<images/pronotum001_2.jpg, id=405, 453.19313pt x 258.65053pt>
 File: images/pronotum001_2.jpg Graphic file (type jpg)
 
 <use images/pronotum001_2.jpg>
@@ -794,13 +794,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 744.
  ) 
 Here is how much of TeX's memory you used:
- 7958 strings out of 493029
- 120360 string characters out of 6136234
- 239213 words of memory out of 5000000
- 11252 multiletter control sequences out of 15000+600000
+ 7962 strings out of 493029
+ 120449 string characters out of 6136234
+ 239229 words of memory out of 5000000
+ 11255 multiletter control sequences out of 15000+600000
  9360 words of font info for 33 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,14n,49p,3174b,536s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,14n,49p,3174b,540s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -826,10 +826,10 @@ nts/type1/public/amsfonts/cm/cmti7.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmtt8.pfb>
-Output written on main_deeplearning.pdf (35 pages, 1500106 bytes).
+Output written on main_deeplearning.pdf (35 pages, 1500196 bytes).
 PDF statistics:
- 551 PDF objects out of 1000 (max. 8388607)
- 454 compressed objects within 5 object streams
- 126 named destinations out of 1000 (max. 500000)
+ 552 PDF objects out of 1000 (max. 8388607)
+ 455 compressed objects within 5 object streams
+ 127 named destinations out of 1000 (max. 500000)
  231 words of extra memory for PDF output out of 10000 (max. 10000000)
 
