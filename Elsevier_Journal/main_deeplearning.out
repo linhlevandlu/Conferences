@@ -1,10 +1,9 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
 \BOOKMARK [1][-]{section.2}{Related works}{}% 2
-\BOOKMARK [1][-]{section.3}{Overview of Convolutional Neural Network}{}% 3
-\BOOKMARK [1][-]{section.4}{Data augmentation}{}% 4
-\BOOKMARK [1][-]{section.5}{Network architectures designing}{}% 5
-\BOOKMARK [1][-]{section.6}{Experiments and results}{}% 6
-\BOOKMARK [1][-]{section.7}{Resulting improvement by fine-tuning}{}% 7
-\BOOKMARK [2][-]{subsection.7.1}{Data preparation and training}{section.7}% 8
-\BOOKMARK [2][-]{subsection.7.2}{Fine-tuning on each dataset}{section.7}% 9
-\BOOKMARK [1][-]{section.8}{Conclusion}{}% 10
+\BOOKMARK [1][-]{section.3}{Data augmentation}{}% 3
+\BOOKMARK [1][-]{section.4}{Network architectures designing}{}% 4
+\BOOKMARK [1][-]{section.5}{Experiments and results}{}% 5
+\BOOKMARK [1][-]{section.6}{Resulting improvement by fine-tuning}{}% 6
+\BOOKMARK [2][-]{subsection.6.1}{Data preparation and training}{section.6}% 7
+\BOOKMARK [2][-]{subsection.6.2}{Fine-tuning on each dataset}{section.6}% 8
+\BOOKMARK [1][-]{section.7}{Conclusion}{}% 9

@@ -35,6 +35,8 @@
 \citation{lecun1998gradient,krizhevsky2012imagenet,szegedy2015going}
 \citation{szegedy2015going,farabet2013learning,li2015convolutional}
 \citation{liu2016fashion,sun2013deep,zhang2014facial,cintas2016automatic}
+\citation{sun2013deep}
+\citation{huang2017coarse}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{2}{section.1}}
 \newlabel{sIntroduction}{{1}{2}{Introduction}{section.1}{}}
 \citation{lecun2015deep}
@@ -42,6 +44,15 @@
 \citation{mikolov2011strategies,hinton2012deep}
 \citation{jean2014using,sutskever2014sequence}
 \citation{lecun2015deep,collobert2011natural,collobert2008unified}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Related works}{3}{section.2}}
+\newlabel{related_works}{{2}{3}{Related works}{section.2}{}}
+\@writefile{toc}{\contentsline {paragraph}{Overview of Convolutional Neural Network}{4}{section*.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces A CNN network for classification problem\relax }}{4}{figure.caption.2}}
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{imgcnn_network}{{1}{4}{A CNN network for classification problem\relax }{figure.caption.2}{}}
+\citation{krizhevsky2012imagenet,ciregan2012multi,li2015convolutional}
+\citation{srivastava2014dropout}
+\citation{srivastava2014dropout}
 \citation{lecun1998gradient}
 \citation{lecun1998gradient}
 \citation{krizhevsky2012imagenet}
@@ -50,157 +61,147 @@
 \citation{szegedy2015going}
 \citation{simonyan2014very}
 \citation{he2016deep}
-\@writefile{toc}{\contentsline {section}{\numberline {2}Related works}{3}{section.2}}
-\newlabel{related_works}{{2}{3}{Related works}{section.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces The results of different pooling\relax }}{6}{figure.caption.3}}
+\newlabel{imgcnn_pooling}{{2}{6}{The results of different pooling\relax }{figure.caption.3}{}}
+\@writefile{toc}{\contentsline {paragraph}{State of the arts in deep learning and key points detection:}{6}{section*.4}}
 \citation{liu2016fashion}
 \citation{sun2013deep}
 \citation{zhang2014facial}
 \citation{huang2017coarse}
 \citation{szegedy2015going}
 \citation{cintas2016automatic}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Overview of Convolutional Neural Network}{6}{section.3}}
-\newlabel{sOverview}{{3}{6}{Overview of Convolutional Neural Network}{section.3}{}}
-\citation{krizhevsky2012imagenet,ciregan2012multi,li2015convolutional}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Data augmentation}{8}{section.3}}
+\newlabel{Sdataaug}{{3}{8}{Data augmentation}{section.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces A constant $c = 10$ has been added to each channel of an original image\relax }}{9}{figure.caption.5}}
+\newlabel{figaug1}{{3}{9}{A constant $c = 10$ has been added to each channel of an original image\relax }{figure.caption.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Three channels (red, green, blue) are separated from original image\relax }}{10}{figure.caption.6}}
+\newlabel{figaug2}{{4}{10}{Three channels (red, green, blue) are separated from original image\relax }{figure.caption.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Network architectures designing}{10}{section.4}}
+\newlabel{Sneuralnetwork}{{4}{10}{Network architectures designing}{section.4}{}}
 \citation{srivastava2014dropout}
-\citation{srivastava2014dropout}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces A CNN network for classification problem\relax }}{7}{figure.caption.1}}
-\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{imgcnn_network}{{1}{7}{A CNN network for classification problem\relax }{figure.caption.1}{}}
-\citation{krizhevsky2012imagenet,he2016deep}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces The results of different pooling\relax }}{8}{figure.caption.2}}
-\newlabel{imgcnn_pooling}{{2}{8}{The results of different pooling\relax }{figure.caption.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Data augmentation}{9}{section.4}}
-\newlabel{Sdataaug}{{4}{9}{Data augmentation}{section.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces A constant $c = 10$ has been added to each channel of an original image\relax }}{10}{figure.caption.3}}
-\newlabel{figaug1}{{3}{10}{A constant $c = 10$ has been added to each channel of an original image\relax }{figure.caption.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Three channels (red, green, blue) are separated from original image\relax }}{10}{figure.caption.4}}
-\newlabel{figaug2}{{4}{10}{Three channels (red, green, blue) are separated from original image\relax }{figure.caption.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Network architectures designing}{10}{section.5}}
-\newlabel{Sneuralnetwork}{{5}{10}{Network architectures designing}{section.5}{}}
-\citation{srivastava2014dropout}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces The architecture of the first model\relax }}{12}{figure.caption.5}}
-\newlabel{fignet1}{{5}{12}{The architecture of the first model\relax }{figure.caption.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces The layers in an elementary block. It includes a CONV layer (red), a maximum POOL layer (yellow) and a DROP layer (green).\relax }}{12}{figure.caption.6}}
-\newlabel{figelementary}{{6}{12}{The layers in an elementary block. It includes a CONV layer (red), a maximum POOL layer (yellow) and a DROP layer (green).\relax }{figure.caption.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces The architecture of the first model\relax }}{11}{figure.caption.7}}
+\newlabel{fignet1}{{5}{11}{The architecture of the first model\relax }{figure.caption.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces The layers in an elementary block. It includes a CONV layer (red), a maximum POOL layer (yellow) and a DROP layer (green).\relax }}{12}{figure.caption.8}}
+\newlabel{figelementary}{{6}{12}{The layers in an elementary block. It includes a CONV layer (red), a maximum POOL layer (yellow) and a DROP layer (green).\relax }{figure.caption.8}{}}
 \citation{lecun2012efficient}
 \citation{lasagne}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces The architecture of the third model\relax }}{13}{figure.caption.7}}
-\newlabel{fignet3}{{7}{13}{The architecture of the third model\relax }{figure.caption.7}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Experiments and results}{14}{section.6}}
-\newlabel{sexperiments}{{6}{14}{Experiments and results}{section.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces The architecture of the third model\relax }}{13}{figure.caption.9}}
+\newlabel{fignet3}{{7}{13}{The architecture of the third model\relax }{figure.caption.9}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Experiments and results}{14}{section.5}}
+\newlabel{sexperiments}{{5}{14}{Experiments and results}{section.5}{}}
 \newlabel{figloss1}{{8a}{15}{Subfigure 8a}{subfigure.8.1}{}}
 \newlabel{sub@figloss1}{{(a)}{a}{Subfigure 8a\relax }{subfigure.8.1}{}}
 \newlabel{figloss2}{{8b}{15}{Subfigure 8b}{subfigure.8.2}{}}
 \newlabel{sub@figloss2}{{(b)}{b}{Subfigure 8b\relax }{subfigure.8.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces The losses (training and validation) of the models\relax }}{15}{figure.caption.8}}
-\newlabel{figlosses}{{8}{15}{The losses (training and validation) of the models\relax }{figure.caption.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces The losses (training and validation) of the models\relax }}{15}{figure.caption.10}}
+\newlabel{figlosses}{{8}{15}{The losses (training and validation) of the models\relax }{figure.caption.10}{}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {The first model}}}{15}{subfigure.8.1}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {The second model}}}{15}{subfigure.8.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces The losses (training and validation) of the third model\relax }}{15}{figure.caption.11}}
+\newlabel{figloss3}{{9}{15}{The losses (training and validation) of the third model\relax }{figure.caption.11}{}}
 \citation{pedregosa2011scikit}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces The losses (training and validation) of the third model\relax }}{16}{figure.caption.9}}
-\newlabel{figloss3}{{9}{16}{The losses (training and validation) of the third model\relax }{figure.caption.9}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces \relax \fontsize  {9}{11}\selectfont  \abovedisplayskip 8.5\p@ plus3\p@ minus4\p@ \abovedisplayshortskip \z@ plus2\p@ \belowdisplayshortskip 4\p@ plus2\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 4\p@ plus2\p@ minus2\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip {The losses during training the third model on pronotum images}\relax }}{16}{table.caption.10}}
-\newlabel{tbltrainingloss}{{1}{16}{\small {The losses during training the third model on pronotum images}\relax }{table.caption.10}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Correlation scores between manual landmarks and predicted landmarks\relax }}{17}{table.caption.11}}
-\newlabel{tblcorrelation}{{2}{17}{Correlation scores between manual landmarks and predicted landmarks\relax }{table.caption.11}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces The average distances on all images per landmark on pronotum images.\relax }}{17}{table.caption.12}}
-\newlabel{tblavgpronotum}{{3}{17}{The average distances on all images per landmark on pronotum images.\relax }{table.caption.12}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces The distribution of the distances on the first landmark. The blue line is the average value of all distances.\relax }}{18}{figure.caption.13}}
-\newlabel{figchartlm1}{{10}{18}{The distribution of the distances on the first landmark. The blue line is the average value of all distances.\relax }{figure.caption.13}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces \relax \fontsize  {9}{11}\selectfont  \abovedisplayskip 8.5\p@ plus3\p@ minus4\p@ \abovedisplayshortskip \z@ plus2\p@ \belowdisplayshortskip 4\p@ plus2\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 4\p@ plus2\p@ minus2\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip {The losses during training the third model on pronotum images}\relax }}{16}{table.caption.12}}
+\newlabel{tbltrainingloss}{{1}{16}{\small {The losses during training the third model on pronotum images}\relax }{table.caption.12}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Correlation scores between manual landmarks and predicted landmarks\relax }}{17}{table.caption.13}}
+\newlabel{tblcorrelation}{{2}{17}{Correlation scores between manual landmarks and predicted landmarks\relax }{table.caption.13}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces The average distances on all images per landmark on pronotum images.\relax }}{17}{table.caption.14}}
+\newlabel{tblavgpronotum}{{3}{17}{The average distances on all images per landmark on pronotum images.\relax }{table.caption.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces The distribution of the distances on the first landmark. The blue line is the average value of all distances.\relax }}{18}{figure.caption.15}}
+\newlabel{figchartlm1}{{10}{18}{The distribution of the distances on the first landmark. The blue line is the average value of all distances.\relax }{figure.caption.15}{}}
+\newlabel{figsub1}{{11a}{18}{Subfigure 11a}{subfigure.11.1}{}}
+\newlabel{sub@figsub1}{{(a)}{a}{Subfigure 11a\relax }{subfigure.11.1}{}}
+\newlabel{figsub2}{{11b}{18}{Subfigure 11b}{subfigure.11.2}{}}
+\newlabel{sub@figsub2}{{(b)}{b}{Subfigure 11b\relax }{subfigure.11.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces The predicted landmarks, in red, on the images in test set.\relax }}{18}{figure.caption.16}}
+\newlabel{figrsexample}{{11}{18}{The predicted landmarks, in red, on the images in test set.\relax }{figure.caption.16}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Image with well-predicted landmarks}}}{18}{subfigure.11.1}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Image with inaccuracy landmarks}}}{18}{subfigure.11.2}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces The average distances on all images per landmark on right mandible, left mandible, elytra and head images.\relax }}{19}{table.caption.17}}
+\newlabel{tblavg4parts}{{4}{19}{The average distances on all images per landmark on right mandible, left mandible, elytra and head images.\relax }{table.caption.17}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Resulting improvement by fine-tuning}{19}{section.6}}
+\newlabel{sfineTuning}{{6}{19}{Resulting improvement by fine-tuning}{section.6}{}}
 \citation{torrey2009transfer}
 \citation{imagenet_cvpr09}
 \citation{margeta_mri}
-\newlabel{figsub1}{{11a}{19}{Subfigure 11a}{subfigure.11.1}{}}
-\newlabel{sub@figsub1}{{(a)}{a}{Subfigure 11a\relax }{subfigure.11.1}{}}
-\newlabel{figsub2}{{11b}{19}{Subfigure 11b}{subfigure.11.2}{}}
-\newlabel{sub@figsub2}{{(b)}{b}{Subfigure 11b\relax }{subfigure.11.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces The predicted landmarks, in red, on the images in test set.\relax }}{19}{figure.caption.14}}
-\newlabel{figrsexample}{{11}{19}{The predicted landmarks, in red, on the images in test set.\relax }{figure.caption.14}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Image with well-predicted landmarks}}}{19}{subfigure.11.1}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Image with inaccuracy landmarks}}}{19}{subfigure.11.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {7}Resulting improvement by fine-tuning}{19}{section.7}}
-\newlabel{sfineTuning}{{7}{19}{Resulting improvement by fine-tuning}{section.7}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces The average distances on all images per landmark on right mandible, left mandible, elytra and head images.\relax }}{20}{table.caption.15}}
-\newlabel{tblavg4parts}{{4}{20}{The average distances on all images per landmark on right mandible, left mandible, elytra and head images.\relax }{table.caption.15}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}Data preparation and training}{21}{subsection.7.1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces A presentation of head, pronotum and elytra part with corresponding manual landmarks\relax }}{22}{figure.caption.16}}
-\newlabel{figmerge}{{12}{22}{A presentation of head, pronotum and elytra part with corresponding manual landmarks\relax }{figure.caption.16}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Fine-tuning on each dataset}{23}{subsection.7.2}}
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces The losses during fine-tuning model on pronotum dataset\relax }}{24}{table.caption.17}}
-\newlabel{tblftpronotum}{{5}{24}{The losses during fine-tuning model on pronotum dataset\relax }{table.caption.17}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces The average error distances per landmark of two deep learning processes on pronotum images\relax }}{24}{table.caption.17}}
-\newlabel{tblcmppronotum}{{6}{24}{The average error distances per landmark of two deep learning processes on pronotum images\relax }{table.caption.17}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces The losses during fine-tuning model on elytra dataset\relax }}{24}{table.caption.18}}
-\newlabel{tblftbody}{{7}{24}{The losses during fine-tuning model on elytra dataset\relax }{table.caption.18}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces The average error distances per landmark of two deep learning processes on elytra images\relax }}{24}{table.caption.18}}
-\newlabel{tblcmpbody}{{8}{24}{The average error distances per landmark of two deep learning processes on elytra images\relax }{table.caption.18}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces The losses during fine-tuning model on head dataset\relax }}{24}{table.caption.19}}
-\newlabel{tblfthead}{{9}{24}{The losses during fine-tuning model on head dataset\relax }{table.caption.19}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces The average error distances per landmark of two deep learning processes on head images\relax }}{24}{table.caption.19}}
-\newlabel{tblcmphead}{{10}{24}{The average error distances per landmark of two deep learning processes on head images\relax }{table.caption.19}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Data preparation and training}{20}{subsection.6.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces A presentation of head, pronotum and elytra part with corresponding manual landmarks\relax }}{21}{figure.caption.18}}
+\newlabel{figmerge}{{12}{21}{A presentation of head, pronotum and elytra part with corresponding manual landmarks\relax }{figure.caption.18}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Fine-tuning on each dataset}{22}{subsection.6.2}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces The losses during fine-tuning model on pronotum dataset\relax }}{23}{table.caption.19}}
+\newlabel{tblftpronotum}{{5}{23}{The losses during fine-tuning model on pronotum dataset\relax }{table.caption.19}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces The average error distances per landmark of two deep learning processes on pronotum images\relax }}{23}{table.caption.19}}
+\newlabel{tblcmppronotum}{{6}{23}{The average error distances per landmark of two deep learning processes on pronotum images\relax }{table.caption.19}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces The losses during fine-tuning model on elytra dataset\relax }}{23}{table.caption.20}}
+\newlabel{tblftbody}{{7}{23}{The losses during fine-tuning model on elytra dataset\relax }{table.caption.20}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces The average error distances per landmark of two deep learning processes on elytra images\relax }}{23}{table.caption.20}}
+\newlabel{tblcmpbody}{{8}{23}{The average error distances per landmark of two deep learning processes on elytra images\relax }{table.caption.20}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces The losses during fine-tuning model on head dataset\relax }}{24}{table.caption.21}}
+\newlabel{tblfthead}{{9}{24}{The losses during fine-tuning model on head dataset\relax }{table.caption.21}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces The average error distances per landmark of two deep learning processes on head images\relax }}{24}{table.caption.21}}
+\newlabel{tblcmphead}{{10}{24}{The average error distances per landmark of two deep learning processes on head images\relax }{table.caption.21}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces The average error distances per landmark of two deep learning processes on left mandible images\relax }}{24}{table.caption.22}}
+\newlabel{tblcmpmg}{{11}{24}{The average error distances per landmark of two deep learning processes on left mandible images\relax }{table.caption.22}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces The average error distances per landmark of two deep learning processes on right mandible images\relax }}{24}{table.caption.22}}
+\newlabel{tblcmpmd}{{12}{24}{The average error distances per landmark of two deep learning processes on right mandible images\relax }{table.caption.22}{}}
 \citation{le2017maelab}
-\@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces The average error distances per landmark of two deep learning processes on left mandible images\relax }}{25}{table.caption.20}}
-\newlabel{tblcmpmg}{{11}{25}{The average error distances per landmark of two deep learning processes on left mandible images\relax }{table.caption.20}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces The average error distances per landmark of two deep learning processes on right mandible images\relax }}{25}{table.caption.20}}
-\newlabel{tblcmpmd}{{12}{25}{The average error distances per landmark of two deep learning processes on right mandible images\relax }{table.caption.20}{}}
-\newlabel{}{{13a}{26}{Subfigure 13a}{subfigure.13.1}{}}
+\newlabel{}{{13a}{25}{Subfigure 13a}{subfigure.13.1}{}}
 \newlabel{sub@}{{(a)}{a}{Subfigure 13a\relax }{subfigure.13.1}{}}
-\newlabel{}{{13b}{26}{Subfigure 13b}{subfigure.13.2}{}}
+\newlabel{}{{13b}{25}{Subfigure 13b}{subfigure.13.2}{}}
 \newlabel{sub@}{{(b)}{b}{Subfigure 13b\relax }{subfigure.13.2}{}}
-\newlabel{}{{13c}{26}{Subfigure 13c}{subfigure.13.3}{}}
+\newlabel{}{{13c}{25}{Subfigure 13c}{subfigure.13.3}{}}
 \newlabel{sub@}{{(c)}{c}{Subfigure 13c\relax }{subfigure.13.3}{}}
-\newlabel{}{{13d}{26}{Subfigure 13d}{subfigure.13.4}{}}
+\newlabel{}{{13d}{25}{Subfigure 13d}{subfigure.13.4}{}}
 \newlabel{sub@}{{(d)}{d}{Subfigure 13d\relax }{subfigure.13.4}{}}
-\newlabel{}{{13e}{26}{Subfigure 13e}{subfigure.13.5}{}}
+\newlabel{}{{13e}{25}{Subfigure 13e}{subfigure.13.5}{}}
 \newlabel{sub@}{{(e)}{e}{Subfigure 13e\relax }{subfigure.13.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces The distribution of average distances on each landmark of each beetle's anatomical. Black, blue, and orange lines present for the results of image processing procedures, deep learning (from scratch and fine-tuning), respectively. \relax }}{26}{figure.caption.21}}
-\newlabel{figdist5parts}{{13}{26}{The distribution of average distances on each landmark of each beetle's anatomical. Black, blue, and orange lines present for the results of image processing procedures, deep learning (from scratch and fine-tuning), respectively. \relax }{figure.caption.21}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Left mandible}}}{26}{subfigure.13.1}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Right mandible}}}{26}{subfigure.13.2}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Head}}}{26}{subfigure.13.3}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Elytra}}}{26}{subfigure.13.4}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {pronotum}}}{26}{subfigure.13.5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces The distribution of average distances on each landmark of each beetle's anatomical. Black, blue, and orange lines present for the results of image processing procedures, deep learning (from scratch and fine-tuning), respectively. \relax }}{25}{figure.caption.23}}
+\newlabel{figdist5parts}{{13}{25}{The distribution of average distances on each landmark of each beetle's anatomical. Black, blue, and orange lines present for the results of image processing procedures, deep learning (from scratch and fine-tuning), respectively. \relax }{figure.caption.23}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Left mandible}}}{25}{subfigure.13.1}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Right mandible}}}{25}{subfigure.13.2}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Head}}}{25}{subfigure.13.3}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Elytra}}}{25}{subfigure.13.4}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {pronotum}}}{25}{subfigure.13.5}}
 \citation{le2017maelab}
-\newlabel{}{{14a}{28}{Subfigure 14a}{subfigure.14.1}{}}
+\newlabel{}{{14a}{27}{Subfigure 14a}{subfigure.14.1}{}}
 \newlabel{sub@}{{(a)}{a}{Subfigure 14a\relax }{subfigure.14.1}{}}
-\newlabel{}{{14b}{28}{Subfigure 14b}{subfigure.14.2}{}}
+\newlabel{}{{14b}{27}{Subfigure 14b}{subfigure.14.2}{}}
 \newlabel{sub@}{{(b)}{b}{Subfigure 14b\relax }{subfigure.14.2}{}}
-\newlabel{}{{14c}{28}{Subfigure 14c}{subfigure.14.3}{}}
+\newlabel{}{{14c}{27}{Subfigure 14c}{subfigure.14.3}{}}
 \newlabel{sub@}{{(c)}{c}{Subfigure 14c\relax }{subfigure.14.3}{}}
-\newlabel{}{{14d}{28}{Subfigure 14d}{subfigure.14.4}{}}
+\newlabel{}{{14d}{27}{Subfigure 14d}{subfigure.14.4}{}}
 \newlabel{sub@}{{(d)}{d}{Subfigure 14d\relax }{subfigure.14.4}{}}
-\newlabel{}{{14e}{28}{Subfigure 14e}{subfigure.14.5}{}}
+\newlabel{}{{14e}{27}{Subfigure 14e}{subfigure.14.5}{}}
 \newlabel{sub@}{{(e)}{e}{Subfigure 14e\relax }{subfigure.14.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces The presentation of manual and predicted landmarks on each beetle's part by applying two methods: image processing procedures and deep learning. The red points, yellow points, and green points present for manual landmarks, estimated landmarks by applying image processing procedures and using deep learning, respectively. \relax }}{28}{figure.caption.22}}
-\newlabel{figmn5parts}{{14}{28}{The presentation of manual and predicted landmarks on each beetle's part by applying two methods: image processing procedures and deep learning. The red points, yellow points, and green points present for manual landmarks, estimated landmarks by applying image processing procedures and using deep learning, respectively. \relax }{figure.caption.22}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Left mandible}}}{28}{subfigure.14.1}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Right mandible}}}{28}{subfigure.14.2}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Head}}}{28}{subfigure.14.3}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Elytra}}}{28}{subfigure.14.4}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Pronotum}}}{28}{subfigure.14.5}}
-\newlabel{}{{15a}{30}{Subfigure 15a}{subfigure.15.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces The presentation of manual and predicted landmarks on each beetle's part by applying two methods: image processing procedures and deep learning. The red points, yellow points, and green points present for manual landmarks, estimated landmarks by applying image processing procedures and using deep learning, respectively. \relax }}{27}{figure.caption.24}}
+\newlabel{figmn5parts}{{14}{27}{The presentation of manual and predicted landmarks on each beetle's part by applying two methods: image processing procedures and deep learning. The red points, yellow points, and green points present for manual landmarks, estimated landmarks by applying image processing procedures and using deep learning, respectively. \relax }{figure.caption.24}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Left mandible}}}{27}{subfigure.14.1}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Right mandible}}}{27}{subfigure.14.2}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Head}}}{27}{subfigure.14.3}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Elytra}}}{27}{subfigure.14.4}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Pronotum}}}{27}{subfigure.14.5}}
+\newlabel{}{{15a}{29}{Subfigure 15a}{subfigure.15.1}{}}
 \newlabel{sub@}{{(a)}{a}{Subfigure 15a\relax }{subfigure.15.1}{}}
-\newlabel{}{{15b}{30}{Subfigure 15b}{subfigure.15.2}{}}
+\newlabel{}{{15b}{29}{Subfigure 15b}{subfigure.15.2}{}}
 \newlabel{sub@}{{(b)}{b}{Subfigure 15b\relax }{subfigure.15.2}{}}
-\newlabel{}{{15c}{30}{Subfigure 15c}{subfigure.15.3}{}}
+\newlabel{}{{15c}{29}{Subfigure 15c}{subfigure.15.3}{}}
 \newlabel{sub@}{{(c)}{c}{Subfigure 15c\relax }{subfigure.15.3}{}}
-\newlabel{}{{15d}{30}{Subfigure 15d}{subfigure.15.4}{}}
+\newlabel{}{{15d}{29}{Subfigure 15d}{subfigure.15.4}{}}
 \newlabel{sub@}{{(d)}{d}{Subfigure 15d\relax }{subfigure.15.4}{}}
-\newlabel{}{{15e}{30}{Subfigure 15e}{subfigure.15.5}{}}
+\newlabel{}{{15e}{29}{Subfigure 15e}{subfigure.15.5}{}}
 \newlabel{sub@}{{(e)}{e}{Subfigure 15e\relax }{subfigure.15.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces The distances between manual and predicted landmarks of a test image when applying different techniques of each beetle's anatomical. Black, blue, and orange lines present for the results of image processing procedures, deep learning (from scratch and fine-tuning), respectively. \relax }}{30}{figure.caption.23}}
-\newlabel{fig0015parts}{{15}{30}{The distances between manual and predicted landmarks of a test image when applying different techniques of each beetle's anatomical. Black, blue, and orange lines present for the results of image processing procedures, deep learning (from scratch and fine-tuning), respectively. \relax }{figure.caption.23}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Left mandible}}}{30}{subfigure.15.1}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Right mandible}}}{30}{subfigure.15.2}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Head}}}{30}{subfigure.15.3}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Elytra}}}{30}{subfigure.15.4}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Pronotum}}}{30}{subfigure.15.5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces The distances between manual and predicted landmarks of a test image when applying different techniques of each beetle's anatomical. Black, blue, and orange lines present for the results of image processing procedures, deep learning (from scratch and fine-tuning), respectively. \relax }}{29}{figure.caption.25}}
+\newlabel{fig0015parts}{{15}{29}{The distances between manual and predicted landmarks of a test image when applying different techniques of each beetle's anatomical. Black, blue, and orange lines present for the results of image processing procedures, deep learning (from scratch and fine-tuning), respectively. \relax }{figure.caption.25}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Left mandible}}}{29}{subfigure.15.1}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Right mandible}}}{29}{subfigure.15.2}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Head}}}{29}{subfigure.15.3}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Elytra}}}{29}{subfigure.15.4}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Pronotum}}}{29}{subfigure.15.5}}
 \bibdata{includes/mybibfile}
 \bibcite{lecun2015deep}{{1}{}{{}}{{}}}
 \bibcite{arbib2012brains}{{2}{}{{}}{{}}}
 \bibcite{hinton2012deep}{{3}{}{{}}{{}}}
-\@writefile{toc}{\contentsline {section}{\numberline {8}Conclusion}{31}{section.8}}
-\newlabel{sconclusion}{{8}{31}{Conclusion}{section.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Conclusion}{30}{section.7}}
+\newlabel{sconclusion}{{7}{30}{Conclusion}{section.7}{}}
 \bibcite{mikolov2011strategies}{{4}{}{{}}{{}}}
 \bibcite{lecun1998gradient}{{5}{}{{}}{{}}}
 \bibcite{krizhevsky2012imagenet}{{6}{}{{}}{{}}}
