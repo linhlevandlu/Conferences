@@ -78,11 +78,25 @@ C.~Cintas, et~al., Automatic ear detection and feature extraction using
   geometric morphometrics and convolutional neural networks, IET Biometrics
   6~(3) (2016) 211--223.
 
+\bibitem{huang2017coarse}
+S.~Huang, M.~Gong, D.~Tao, A coarse-fine network for keypoint localization, in:
+  The IEEE International Conference on Computer Vision (ICCV), Vol.~2, 2017.
+
 \bibitem{collobert2008unified}
 R.~Collobert, J.~Weston, A unified architecture for natural language
   processing: Deep neural networks with multitask learning, in: Proceedings of
   the 25th international conference on Machine learning, ACM, 2008, pp.
   160--167.
+
+\bibitem{ciregan2012multi}
+D.~Ciregan, U.~Meier, J.~Schmidhuber, Multi-column deep neural networks for
+  image classification, in: Computer Vision and Pattern Recognition (CVPR),
+  2012 IEEE Conference on, IEEE, 2012, pp. 3642--3649.
+
+\bibitem{srivastava2014dropout}
+N.~Srivastava, G.~E. Hinton, A.~Krizhevsky, I.~Sutskever, R.~Salakhutdinov,
+  Dropout: a simple way to prevent neural networks from overfitting., Journal
+  of machine learning research 15~(1) (2014) 1929--1958.
 
 \bibitem{zeiler2014visualizing}
 M.~D. Zeiler, R.~Fergus, Visualizing and understanding convolutional networks,
@@ -96,20 +110,6 @@ K.~Simonyan, A.~Zisserman, Very deep convolutional networks for large-scale
 K.~He, X.~Zhang, S.~Ren, J.~Sun, Deep residual learning for image recognition,
   in: Proceedings of the IEEE conference on computer vision and pattern
   recognition, 2016, pp. 770--778.
-
-\bibitem{huang2017coarse}
-S.~Huang, M.~Gong, D.~Tao, A coarse-fine network for keypoint localization, in:
-  The IEEE International Conference on Computer Vision (ICCV), Vol.~2, 2017.
-
-\bibitem{ciregan2012multi}
-D.~Ciregan, U.~Meier, J.~Schmidhuber, Multi-column deep neural networks for
-  image classification, in: Computer Vision and Pattern Recognition (CVPR),
-  2012 IEEE Conference on, IEEE, 2012, pp. 3642--3649.
-
-\bibitem{srivastava2014dropout}
-N.~Srivastava, G.~E. Hinton, A.~Krizhevsky, I.~Sutskever, R.~Salakhutdinov,
-  Dropout: a simple way to prevent neural networks from overfitting., Journal
-  of machine learning research 15~(1) (2014) 1929--1958.
 
 \bibitem{lecun2012efficient}
 Y.~A. LeCun, et~al., Efficient backprop, in: Neural networks: Tricks of the

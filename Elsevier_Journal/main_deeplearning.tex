@@ -47,7 +47,8 @@
 
 \begin{frontmatter}
 
-\title{Deep Learning for landmarking on morphometry anatomical images}
+%\title{Deep Learning for landmarking on morphometry anatomical images}
+\title{EB-Net to landmark anatomical images}
 %\tnotetext[mytitlenote]{Fully documented templates are available in the elsarticle package on \href{http://www.ctan.org/tex-archive/macros/latex/contrib/elsarticle}{CTAN}.}
 
 %% Group authors per affiliation:
@@ -76,7 +77,7 @@
 \address[itdlu]{Dalat University, Dalat, Lamdong, Vietnam}
 
 \begin{abstract}
-Deep learning has been introduced in the middle of the previous century for artificial intelligence, and in recent years, it has risen strongly because of improvements in the computation performance. It has been applied to solve the problems in different domains such as computer vision, speech recognition, or languages translation. Among different types of deep learning architectures, convolutional neural networks have been most often used in computer vision for image classification, object recognition, or key points detection and they have brought amazing achievements. In this work, we propose a convolutional neural network model to predict the key points (landmarks) on 2D anatomical biological images, specifically beetle's images. Our proposed network is trained and evaluated on a dataset including the images of $293$ beetles. During the experiments, the network is tested in two ways: training from scratch and applying fine-tuning process. The quality of predicted landmarks is evaluated by comparing with the manual landmarks which have been provided by the biologists. The obtained results have been considered by the biologists statistically good enough to replace the manual landmarks for the different morphometry analysis.
+Deep learning has been introduced in the middle of the previous century for artificial intelligence program, and in recent years, it has risen strongly because of improvements in the computation performance. It has been applied to solve problems in different domains such as computer vision, speech recognition, or languages translation. Among different types of deep learning architectures, convolutional neural networks have been most often used in computer vision for image classification, object recognition, or key points detection and they have brought amazing achievements. In this work, we propose a new convolutional neural network model based on composition of elementary blocks of layers to predict key points (landmarks) on 2D anatomical biological images. Our proposed model has been trained and evaluated on a dataset including the images of $5$ parts of $293$ beetles. During the experiments, the network has been tested in two ways: training from scratch and applying fine-tuning process. The quality of predicted landmarks is evaluated by comparing the coordinates distance between predicted landmarks and manual ones which have been set by biologists. The final results have been provided to biologists and they have confirmed that the quality of predicted landmarks is statistically good enough to replace the manual landmarks for the different morphometry analysis.
 \end{abstract}
 
 \begin{keyword}
@@ -102,12 +103,12 @@ This paper is organized as followed: Section \ref{related_works} discusses the r
 \section{Related works}
 \label{related_works}
 
-In the middle of the previous century, deep learning \cite{lecun2015deep} have been introduced as a method for artificial intelligence applications. However, several problems  appeared in order to take into account real-world cases because of the limitation of memory size or powerful computing. Nowadays, huge improvements of computing capacities, both in memory size and in computing time with GPU programming, have opened a new perspective for deep learning. In recent years, deep learning architectures have achieved remarkable accomplishments in many tasks of different domains such as \textbf{computer vision} \cite{lecun1998gradient, krizhevsky2012imagenet,  szegedy2015going,farabet2013learning,li2015convolutional}, \textbf{speech recognition} \cite{mikolov2011strategies, hinton2012deep}, \textbf{language translation} \cite{jean2014using, sutskever2014sequence}, \textbf{natural language processing} \cite{lecun2015deep, collobert2011natural, collobert2008unified}, \ldots. In computer vision, deep learning, specifically with CNN, has been used to achieve difficult tasks in image analysis such as image classification, objects or key points detection.
+In the middle of the previous century, deep learning \cite{lecun2015deep} have been introduced as a method for artificial intelligence applications. However, several problems  appeared in order to take into account real-world cases because of the limitation of memory size or computing power. Nowadays, huge improvements of computing capacities, both in memory size and in computing time with GPU programming, have opened a new perspective for deep learning. In recent years, deep learning architectures have achieved remarkable accomplishments in many domains such as \textbf{computer vision} \cite{lecun1998gradient, krizhevsky2012imagenet,  szegedy2015going,farabet2013learning,li2015convolutional}, \textbf{speech recognition} \cite{mikolov2011strategies, hinton2012deep}, \textbf{language translation} \cite{jean2014using, sutskever2014sequence}, \textbf{natural language processing} \cite{lecun2015deep, collobert2011natural, collobert2008unified}, \ldots. In computer vision, deep learning, specifically with CNN, has been used to achieve difficult tasks in image analysis such as image classification, objects or key points detection.
 
-\paragraph{Overview of Convolutional Neural Network}
-A CNN is a feedforward network which takes the information following one direction from the inputs to the outputs. Currently, CNNs have many different variations, but in general, it consists of convolutional and pooling layers which are stacked together to convolve and to down-sample the inputs. Then, they are followed by one or more fully connected layers to give the decision as the output of the network. 
+\paragraph{\textbf{Overview of Convolutional Neural Network}}
+A CNN is a feedforward network which takes the information following one direction from the inputs to the outputs. Currently, CNNs have many variations, but in general, it consists of several types of layers: convolutional and pooling layers which are stacked together to convolve and to down-sample the inputs. Then, they are followed by one or more fully connected layers to achieve the output of the network from the application of a decision function.
 
-Fig. \ref{imgcnn_network} shows a classical example of a CNN for classification problem. The network inputs directly an image to several stages of convolutional and pooling layers. Then, the representation is feed into three fully connected layers. A dropout layer is inserted after the second fully connected layer (it is represented by some blue nodes). Finally, the last fully connected layer gives the category label for the input image. This architecture could be seen as the most popular one. Now, we will describe the different types of layers.
+Fig. \ref{imgcnn_network} shows a classical example of a CNN, the network inputs directly an image to several stages of convolutional and pooling layers. Then, the representation is feed into three fully connected layers. A dropout layer is inserted after the second fully connected layer (it is represented by some blue nodes). Finally, the last fully connected layer gives the category label for the input image. This architecture could be seen as the most popular one. Now, we will describe the different types of layers, readers familar to tem can jump directly to the next section.
 
 \begin{figure}[!h]
 	\centering
@@ -116,10 +117,9 @@ Fig. \ref{imgcnn_network} shows a classical example of a CNN for classification 
 	\label{imgcnn_network}
 \end{figure}
 
-Convolutional (CONV) layer: uses as a feature extractor by applying some learnable weights (filters) on the input images. The input image is convolved with the filters in order to compute the new feature maps; then, the convolved results are sent through a nonlinear activation before sending to the next layer. In CONV layer, the neurons are arranged into feature maps. All the neurons within a feature map have the same constraints; however, different features maps within the same CONV layer have different weights so that several features can be extracted at each location of an input image. This step is similar to apply a filter operation in image processing.
+Convolutional (CONV) layer is used as a feature extractor by applying some learnable weights (filters) on the input images. The input image is convolved with the filters in order to compute the new feature maps; then, the convolved results are sent through a nonlinear activation before sending to the next layer. In CONV layer, the neurons are arranged into feature maps. All the neurons within a feature map have the same constraints; however, different features maps within the same CONV layer have different weights so that several features can be extracted at each location of an input image.
 
-Pooling (POOL) layer: is mostly used to down-sampling the size of the input with the purpose to reduce the spatial resolution of the feature map and so to reduce the computation cost. Initially, it was common practice to use average pooling which propagates the average of all the inputs to the next layer. However, in more recent models \cite{krizhevsky2012imagenet, ciregan2012multi, li2015convolutional}, maximum pooling has been prefered. It propagates the maximum values of the inputs to the next one. Fig. \ref{imgcnn_pooling} illustrates the differences between maximum and average pooling: Giving an input image of size $(4 \times 4)$, if applying a filter with size of $(2 \times 2)$ and stride of $2$, the outputs will have the same size in both of case $(2 \times 2)$ but the values are different. For example, if we apply maximum pooling at yellow region, the output value is $122$; but if we use average pooling, the output is $36.25$.
-
+Pooling (POOL) layer is mostly used to down-sampling the size of the input with the purpose to reduce the spatial resolution of the feature map and so to reduce the computation cost. Initially, it was a common practice to use average pooling to propagate the average of all the inputs to the next layer. However, in more recent models \cite{krizhevsky2012imagenet, ciregan2012multi, li2015convolutional}, maximum pooling function has been prefered. It propagates the maximum values of the inputs to the next one. Fig. \ref{imgcnn_pooling} illustrates the differences between maximum and average pooling: Giving an input image of size $(4 \times 4)$, if applying a filter with size of $(2 \times 2)$ and a stride of $2$, if we apply to the yellow region an average pooling, the output will be $36.25$ and a maximum pooling will return the value $122$.
 %However, the value in each element of the output is different because the max pooling outputs the maximum values of the filter region, while average pooling outputs the average value of the same region.
 
 \begin{figure}[!h]
@@ -129,43 +129,25 @@ Pooling (POOL) layer: is mostly used to down-sampling the size of the input with
 	\label{imgcnn_pooling}
 \end{figure}
 
-Dropout (DROP) \cite{srivastava2014dropout} is a technique use to prevent the over-fitting in a neural network. The term dropout mentions dropping some out units and their connections (incoming and outgoing) belong to a layer in the network. The units are dropped randomly with a probability $p$. When applying dropout technique, the network becomes a collection of thinned networks \cite{srivastava2014dropout} because a number of units are dropped randomly at each presentation of training phase. So, training a neural network with dropout looks like training a collection of thinned networks. The dropouts layers are most often placed after the fully connected layers, but it is possible to use them after the pooling layers to create some kind of images noise augmentation.
+Dropout (DROP) \cite{srivastava2014dropout} is a technique used to prevent the over-fitting during the training. The term dropout mentions dropping some output units and their connections (incoming and outgoing) belonging to a layer in the network. The units are dropped randomly with a probability $p$. When applying dropout technique, the network becomes a collection of thinned networks \cite{srivastava2014dropout}. So, training a neural network with dropout looks like training a collection of thinned networks. The dropouts layers are most often placed after the fully connected layers, but it is possible to use them after the pooling layers to introduce some kind of images noise augmentation.
 
-Fully connected (FC) layer: usually follows the group of convolutional and pooling layers to extract the abstract feature representations of the image. A CNN may have one or several FC layers. They interpret the feature representations (their inputs) and perform a function of high-level reasoning by applying the activation functions. In practice, the last fully connected layer produces the output of the network and choose the activation function is depended on which kind of problem that network solves.
+Fully connected (FC) layer usually follows the group of convolutional and pooling layers to extract the abstract feature representations of the image. A CNN may have one or several FC layers. They interpret the feature representations (their inputs) and perform a function of high-level reasoning by applying the activation functions. In practice, the last fully connected layer produces the output of the network and choosing the activation function is depended on which kind of problem that network solves.
 
 %From AlexNet period to ResNet-50, the obtained success stories \cite{krizhevsky2012imagenet,he2016deep} have proved that CNN models produce better results on a large dataset. To use this technique, the size of dataset remains as a bottleneck. Before to describe our proposed network architecture, we describe in the next section a way to augment data dedicated to our work.
 
-\paragraph{State of the arts in deep learning and key points detection:}
-LeNet \cite{lecun1998gradient} model is considered as the first architecture of CNN. LeCun et al. \cite{lecun1998gradient} have used LeNet to classify the handwritten digits in cheques. LeNet exhibits a standard architecture of a CNN which consists of convolutional layers, pooling layers, followed by two fully connected layers. But to be applied to realistic problems, this model requires huge computation capacities and a large amount of training data which are not available at the early 2000s. In the last ten years, as the capabilities to compute have been drastically improved and in the same time, a huge amount of data became available. New generation neural networks appear well adapted to this new environment. One of the first ones is AlexNet \cite{krizhevsky2012imagenet}, which is similar to LeNet \cite{lecun1998gradient} but with a deeper structure: LeNet has 2 convolutional layers and 1 fully connected layer while AlexNet has 5 and 3, respectively. Furthermore, in AlexNet the activation functions have been changed and dropout layers have been added to prevent the over-fitting. AlexNet won the famous ImageNet Challenge\footnote{This is a challenge where evaluates algorithms for object detection and image classification.} in 2012. From the success of AlexNet, a lot of different models have been proposed to improve the performance of CNN, one can cite ZFNet  \cite{zeiler2014visualizing}, GoogLeNet \cite{szegedy2015going}, VGGNet \cite{simonyan2014very}, or ResNet-50 \cite{he2016deep}. The main difference between these networks is that their architectures became deeper and deeper by adding more layers, e.g. ResNet-50, which won the champion of ILSVRC 2015, is deeper than AlexNet around $20$ times.
+\paragraph{\textbf{State of the arts in deep learning and key points detection}}
+LeNet \cite{lecun1998gradient} model is considered as the first architecture of CNN. LeCun et al. \cite{lecun1998gradient} have used LeNet to classify the handwritten digits in cheques. LeNet exhibits a standard architecture of a CNN which consists of convolutional layers, pooling layers, followed by two fully connected layers. But to be applied to realistic problems, this model requires huge computation capacities and a large amount of training data which are not available at the early 2000s. In the last ten years, as the capabilities to compute have been drastically improved and in the same time, a huge amount of data became available, new models of neural networks appear well adapted to this new environment. One of the first ones is AlexNet \cite{krizhevsky2012imagenet}, which is similar to LeNet \cite{lecun1998gradient} but with a deeper structure: LeNet has 2 convolutional layers and 1 fully connected layer while AlexNet has 5 and 3, respectively. Furthermore, in AlexNet the activation functions have been changed and dropout layers have been added to prevent the over-fitting. AlexNet won the famous ImageNet Challenge\footnote{This is a challenge where evaluates algorithms for object detection and image classification.} in 2012. From the success of AlexNet, a lot of different models have been proposed to improve the performance of CNN, one can cite ZFNet  \cite{zeiler2014visualizing}, GoogLeNet \cite{szegedy2015going}, VGGNet \cite{simonyan2014very}, or ResNet-50 \cite{he2016deep}. The main difference between these networks is that their architectures became deeper and deeper by adding more layers, e.g. ResNet-50, which won the champion of ILSVRC 2015, is deeper than AlexNet around $20$ times.
  
 Besides classification or recognition of objects, CNNs have been also used to detect key points inside images. Liu et al. \cite{liu2016fashion} have presented a method to predict the positions of functional key points on fashion items such as the corners of neckline, hemline and cuff. Yi Sun et al. \cite{sun2013deep} have proposed a CNNs cascade to predict the facial points on the human face. 
 Their model contains several CNNs which are linked together in a list as a cascade. Three levels of the cascade are set to recognize the human face from the global to local view with the objective to increase the accuracy of predicted key points. In the same topic, Zhanpeng Zhang et al. \cite{zhang2014facial} have proposed a \textit{Tasks-Constrained Deep Convolutional Network} to join facial landmarks detection problem with a set of related tasks, e.g. head pose estimation, gender classification, age prediction, or facial attribute inference. In their method, the input features have been extracted by $4$ convolutional layers, $3$ pooling layers and $1$ fully connected layer which is shared by  multiple tasks in the estimation step. Shaoli Huang et al. \cite{huang2017coarse} have introduced a coarse-fine network to locate keypoints and to estimate human poses. Their framework consists of the base convolutional layers shared by two streams of keypoint detectors: The first stream, named coarse stream, includes $3$ detector branches (3 stacks of Inception modules \cite{szegedy2015going}) which are used to focus on capturing local characteristics and modeling spatial dependencies between human parts. The second one, named fine stream, receives features which are concatenated from the coarse stream and provides the accurate localization. Cintas et al. \cite{cintas2016automatic} have introduced an architecture which is enable to recognize $45$ landmarks on human ears. Their proposed model includes a structure with $2$ convolutional layers, $1$ pooling layers, and $1$ dropout layer to extract the features. This structure is repeated $3$ times and is followed by 3 fully connected layers. In the same context of key point detection, we have developed a CNN to automatize landmarks prediction on beetle's anatomies. 
 
-As our work consists of a new architecture proposition for CNN, we have chosen to give in the next section some details about the definition of the different types of layers in CNN. The reader familiar to CNN can jump directly to the section about data augmentation.
+From AlexNet period to ResNet-50, the obtained success stories \cite{krizhevsky2012imagenet,he2016deep} have proved that CNN models produce better results on a large dataset. To use this technique, the size of dataset remains as a bottleneck. The next section is turn to the description of the method we have designed to augment the size of the dataset.
+%As our work consists of a new architecture proposition for CNN, we have chosen to give in the next section some details about the definition of the different types of layers in CNN. The reader familiar to CNN can jump directly to the section about data augmentation.
 
 \section{Data augmentation}
 \label{Sdataaug}
 
-The fundamentals of deep learning algorithms are to train the models on dataset repeatedly in order to reach the best accuracy. So, providing a large dataset asserts to learn more cases and clearly improves the learnable of the network. Unfortunately, in some application domains as in biology, providing large dataset is costly and could be difficult to obtain. For this reason, one way to solve this problem is to create misshapen data from real data and to add them to the training set. Most often in image processing, dataset augmentation uses operations like translation, rotation or scaling which are well known efficient in image classification processing. However, these kinds of operations are not useful in our case because the analysis of images by CNN (convoluted) are most often invariant to translation or rotation. So, we have designed another method to obtain misshapen images.
-
-%In our dataset, all the images are taken with the same camera in the same condition with a resolution of $(3264 \times 2448)$. Each image has a set of manual landmarks provided by biologists, i.e, each pronotum has $8$ landmarks, each head has $10$ landmarks (Fig. \ref{figbeetles}). Applying CNNs to train each part with a small number of images to reach good results is impossible. So, we need to augment the dataset before training the networks. Firstly, we have found that the original solution of the images $(3264 \times 2448)$ are heavy for the neural network. For performance considerations, in most of CNNs \cite{cintas2016automatic, lecun2010convolutional, sun2013deep}, the size of the input is limited to $(256 \times 256)$ pixels, so we have decided to down-sampling the images to a new resolution $(256 \times 192)$ (to respect the ratio between $x$ and $y$). Of course, the coordinates of manual landmarks have been also scaled to fit with the new resolution of the images. In the usual way, the transformations have been used to augment the dataset (i.e rotation, translation,\ldots) but the analysis of image by CNN is most often translation and rotation invariant. Therefore, two other procedures have been imaged to increase the number of images in the dataset $(256 \times 192)$.
-\iffalse
-\begin{figure}[htbp]
-    \centering
-\subfloat[Head]{\label{figh1}\includegraphics[width=0.2\textwidth]{images/orgHead}}~~    
-    \subfloat[Pronotum]{\label{figh1}\includegraphics[width=0.2\textwidth]{images/orgThorax}}~~
-\subfloat[Elytra]{\label{figh2}\includegraphics[width=0.16\textwidth]{images/orgElytra}} \\
-	\subfloat[Head's manual landmarks]{\label{figh1}\includegraphics[width=0.2\textwidth]{images/lmHead}}~~	
-	\subfloat[Pronotum's manual landmarks]{\label{figh1}\includegraphics[width=0.2\textwidth]{images/lmThorax}}~~
-\subfloat[Elytra's manual landmarks]{\label{figh2}\includegraphics[width=0.16\textwidth]{images/lmElytra}} \\
-	\subfloat[Left mandible]{\label{figh1}\includegraphics[width=0.13\textwidth]{images/orgLMandible}}~~
-	\subfloat[Left mandible's manual landmarks]{\label{figh1}\includegraphics[width=0.15\textwidth]{images/lmLMandible}}~~	
-	\subfloat[Right mandible]{\label{figh1}\includegraphics[width=0.13\textwidth]{images/orgRMandible}}~~
-\subfloat[Right mandible's manual landmarks]{\label{figh2}\includegraphics[width=0.15\textwidth]{images/lmRMandible}} \\
-    \caption{The anatomicals of beetle and their manual landmarks}
-    \label{figbeetles}
-\end{figure}
-\fi
+The fundamentals of deep learning algorithms are to train the models on dataset repeatedly in order to reach the best accuracy. So, providing a large dataset asserts to learn more cases and clearly improves the learnable of the network. Unfortunately, in some application domains as in biology, providing large dataset is costly and could be difficult to obtain. For this reason, one way to solve this problem is to create misshapen data from real data and to add them to the training set. Most often in image processing, dataset augmentation uses operations like translation, rotation or scaling which are well known to be efficient to generate new version of existing images. However, this kind of operations are not useful in our case because the analysis of images by CNN (convoluted) are most often invariant to translation or rotation. So, we have designed another method to obtain misshapen images.
 
 Our image set is in RGB color map, the first procedure consists of changing the value of one color channel of the three channels in the original image to generate a new image. A constant value is sampled in an uniform distribution $\in [1, N]$ to obtain a new value caped at $255$. For example, Fig. \ref{figaug1} shows the three images which are generated  when a constant $c = 10$ is added to each channel of an original image. Following this way, we can generate three new versions of only one image.
 
@@ -188,12 +170,9 @@ In the second procedure, each channel is considered separately and one gray imag
 
 \section{Network architectures designing}
 \label{Sneuralnetwork}
-%From the beginning of CNN, LeNet \cite{lecun1998gradient} can be considered as the first one, which has used to classify digits on hand-written numbers on cheques. The network is very simple by stack together the convolutional layers and max-pooling layers followed by full connected layers. Because of the limit of the resources at that time, this model is also constrained by the availability of computing. Until 2012, when computing resources are improved, AlexNet \cite{krizhevsky2012imagenet} was born and it has won the challenge by reducing the top-5 error in ImageNet challenge. AlexNet had a similar architecture as LeNet but it was deeper, bigger. Besides, the activation functions have been changed from Sigmoid \cite{han1995influence} to ReLU \cite{nair2010rectified} which have been proved more improvement in computing time. Additional, it had supplement the dropout layers to control overfitting. 
-%As we have presented, the implementation of a CNN model usually begins with classical architecture which consists of some classical layers (e.g LeNet). Then, it will be improved to increase the efficiency by changing the parameters or adding the layers (e.g. AlexNet). Based on the idea of the improvement, we have tried to design an architecture for landmarking on beetle images. This work is beginning with trying three network models before deciding the final architecture.
+As we have presented previously, several CNN architectures are available from literature and tools libraries. It is always possible to adapt them to a specific application by changing the parameters values or by modifying the arrangement of layers. By the way, several trials have been achieved before to obtain a satisfying model dedicated to landmarks estimation. In this section, we present three versions of the model that we have designed to solve this task. As usual, we have combined the classical layer types to build the model, i.e., convolutional, maximum pooling, dropout, and full-connected layers.
 
-As we have presented previously, several CNN architectures are available from literature or tools libraries. It is always possible to adapt them to a specific application by changing the parameters values or by modifying the arrangement of layers. By the way, several trials have been achieved before to obtain a satisfying model dedicated to landmarks estimation. In this section, we present three versions of the model that we have designed to solve this task. Like other CNN models, we have employed the classical layer types to build the model, i.e., convolutional, maximum pooling, dropout, and full-connected layers.
-
-The first architecture has been a very classical one. It receives an input image with the size of $(1 \times 192 \times 256)$, then it is composed by three repeated structures of a convolutional (CONV) layer followed by a maximum pooling (POOL) one. In most of CNNs, the parameters of CONV layers have been set to increase the depth of the images from the first  to the last layer. This is done by setting the number of filters at each CONV layer. In this first model, the depths of the CONV layers increase from $32, 64, $ to $128$ and with different size of the kernels: $(3 \times 3)$, $(2 \times 2)$ and $(2 \times 2)$, respectively. Inserting POOL layers after a convolutional layers is usually done. The POOL layer effects to progressively reduce the spatial size of the representation to reduce the number of parameters, computation in the network, and also to control over-fitting. The operation of POOL layers is independent for each depth slice of their inputs. The most common form for one POOL layer has filter of size $(2 \times 2)$ and a stride of $2$, it downsamples each depth by $2$ along width and height of the input. At the end of the model, three FC layers have been added to extract the global relationship between the features and to proceed the outputs. The first of two FC layers are set to non-linearity to make sure these nodes interact well and take into account all possible dependencies at the feature level. The outputs of the FC layers are $500, 500$ and $16$. The output of the last FC layer corresponds to the coordinates ($x$ and $y$) of $8$ landmarks which we would like to predict. Fig. \ref{fignet1} shows details of the first model: The orange rectangles represent for CONV layers while the yellow rectangles represent for maximum POOL layers and three FC layers with their parameters are presented at the end of the model. Nevertheless, the obtained results (Section \ref{sexperiments}) with this architecture are not considered as enough good to continue to use it. One of the main problems is the presence of over-fitting during the training process.
+The first architecture has been a very classical one (Fig. \ref{fignet1}). It receives an input image with the size of $(1 \times 192 \times 256)$, then it is composed by three repeated structures of a convolutional (CONV) layer followed by a maximum pooling (POOL) one. In most of CNNs, the parameters of CONV layers have been set to increase the depth of the images from the first  to the last layer. This is done by setting the number of filters at each CONV layer. In this first model, the depths of the CONV layers increase from $32, 64, $ to $128$ and with different size of the kernels: $(3 \times 3)$, $(2 \times 2)$ and $(2 \times 2)$, respectively. Inserting POOL layers after a convolutional layers is usually done. The POOL layer effects to progressively reduce the spatial size of the representation to reduce the number of parameters, computation in the network, and also to control over-fitting. The operation of POOL layers is independent for each depth slice of their inputs. In our model, we have used the most common form for one POOL layer: a filter with size of $(2 \times 2)$ and a stride of $2$ pixels. At the end of the model, three FC layers have been added to extract the global relationship between the features and to proceed the outputs. The first two FC layers have been applied the activation functions to make sure these nodes interact well and to take into account all possible dependencies at the feature level. The outputs of the FC layers are $500, 500$ and $16$. The output of the last FC layer corresponds to the coordinates ($x$ and $y$) of $8$ landmarks which we would like to predict. Nevertheless, the obtained results with this architecture has not been considered as enough good to continue to use it. One of the main problems is the presence of over-fitting during the training process (Detailed results will be discussed in Section \ref{sexperiments}).
 
 \begin{figure}[!h]
 	\centering
@@ -202,9 +181,9 @@ The first architecture has been a very classical one. It receives an input image
 	\label{fignet1}
 \end{figure}
 
-The second model has kept the same architecture but the number of output of the two FC layers has been increased to $1000$. Increasing the value at FC layers could allow to get more features from CONV layer without new resources capacity. However, the obtained results remained not satisfying, it will be discussed in the result section (Section \ref{sexperiments}). 
+The second model has kept the same architecture but the number of output of the two FC layers has been increased to $1000$. Increasing the value at FC layers could allow to get more features from CONV layer without requirements of computing resources. However, the obtained results remained not satisfying, it will be discussed in the result section (Section \ref{sexperiments}). 
 
-To build the third architecture, we have defined a new concept: the \textit{elementary block}. An {elementary block} is defined as a sequence of a CONV ($C_{i}$), a maximum POOL ($P_i$) and a dropout ($D_i$) layers (Fig. \ref{figelementary}). The Dropout layer is used to prevent over-fitting by addition of a step of removal of some nodes. This significantly reduces overfitting and gives major improvements over other regularization methods \cite{srivastava2014dropout}. The final architecture is a composition of elementary blocks. 
+To build the third architecture, we have defined a new concept: the \textit{elementary block}. An {elementary block} is defined as a sequence of a CONV ($C_{i}$), a maximum POOL ($P_i$) and a dropout ($D_i$) layers (Fig. \ref{figelementary}). The Dropout layer has been added to prevent over-fitting by addition of a step of removal of some nodes. This significantly reduces overfitting and gives major improvements over other regularization methods \cite{srivastava2014dropout}. The final architecture is a composition of elementary blocks. 
 %The idea of dropout is to include some variations between different runs. During training phase, dropout samples are done from an exponential number of different ``thinned" network. At test phase, it is easy to approximate the effect of averaging the prediction of all thinned networks by simply using a single unthinned network with smaller weights.
 \begin{figure}[h]
 	\centering
@@ -242,11 +221,11 @@ Three FC layers are kept the same as the second architecture: FC1 and FC2 have $
 	\label{fignet3}
 \end{figure}
 
-The core of CNN is training over iteration. There are many ways to optimize the learning algorithm, but gradient descent \cite{lecun2012efficient} is currently a good choice to establish the way of optimizing the loss in neural network. The core idea is following the gradient until we statify with the results will remain the same. So, we have chosen gradient descent in the backward phase to update the values of learnable parameters and to increase the accuracy of the network. The networks are designed with a small sharing learning rate and a momentum. The learning rate is initialized at $0.03$ and stopped at $0.00001$, while the momentum is updated from $0.9$ to $0.9999$. Their values are updated over training time to fit with the number of epochs \footnote{An epoch is a single pass through the full training set} by applying an adjustment on the parameters during the training. The implementation of the architectures have been done on Lasagne framework \cite{lasagne} by Python code. More information about the model can be obtained from the repository on GitHub: \texttt{https://github.com/linhlevandlu/CNN\_Beetles\_Landmarks}
+The core of CNN is training over iteration. There are many ways to optimize the learning algorithm, but gradient descent \cite{lecun2012efficient} is currently a good choice to reduce the loss in neural network. The core idea is to follow the gradient until to reach stable state. So, we have chosen gradient descent in the backward phase to update the values of learnable parameters and to increase the accuracy of the network. The networks are designed to use the same learning rate and a momentum. The learning rate is initialized at $0.03$ and stopped at $0.00001$, while the momentum is updated from $0.9$ to $0.9999$. Their values are updated over training time to fit with the number of epochs \footnote{An epoch is a single pass through the full training set} by applying parameters adjustment during the training. The three architectures implementations have been done on Lasagne framework \cite{lasagne} by Python code. More information about the model can be obtained from the repository on GitHub: \texttt{https://github.com/linhlevandlu/CNN\_Beetles\_Landmarks}
 
 \section{Experiments and results}
 \label{sexperiments}
-This work is a part of a project about automatized morphology. The choice to turn to deep learning process has been motivated by the high difficulty to segment some parts of the beetle images and consequently to apply classical image processing methods. The pronotum was the first part we have analyzed with deep learning. The networks have been trained in $5, 000$ epochs on Linux OS by using NVIDIA TITAN X cards. During the training, the images are chosen randomly from the dataset with a ratio of $60\%$ for training and $40\%$ for validation. For each image, the set of manual landmarks are available. They have been provided by the biologists and have been considered as ground truth for evaluation. In deep learning, many kinds of loss expressions have been provided. Using which kind of loss is depending on the class of problem that the network solves, e.g. cross-entropy loss is usually used in a classification problem while Root Mean Square Error (RMSE) is used in regression problems. In the context of deep learning, landmark prediction can be seen as a regression problem. Therefore, RMSE has been used to compute the losses of architectures during the training process. 
+This work is a part of a project about automatized morphology. The choice to turn to deep learning process has been motivated by the high difficulty to segment some parts of the beetle images and consequently to apply classical image processing methods. The pronotum was the first part we have analyzed with deep learning. The networks have been trained in $5, 000$ epochs on Linux OS by using NVIDIA TITAN X cards. During the training, the images are chosen randomly from the dataset with a ratio of $60\%$ for training and $40\%$ for validation. For each image, a set of $8$ manual landmarks are available. They have been set by biologists and are considered as the ground truth for the evaluation. In deep learning, many kinds of loss expressions can be considered depending on the class of problem solving by the network, for example, Root Mean Square Error (RMSE) is usually used for regression problems where the outputs are not discrete values. In the context of deep learning, landmark prediction can be seen as a regression problem because the coordinates of landmarks do not belong to discrete classes. Therefore, RMSE has been used to compute the losses of architectures during the training process. 
 %At the test phase, images without landmarks are given to the trained network to produce output coordinates of the predicted landmarks. The results then evaluated by comparing with the manual landmarks coordinates provided by biologists which have been seen as ground truth. 
 
 \begin{figure}[htbp]
@@ -257,9 +236,9 @@ This work is a part of a project about automatized morphology. The choice to tur
     \label{figlosses}
 \end{figure}
 
-Fig. \ref{figloss1} shows the training errors and the validation errors during training phase of the first architecture. The blue curve presents the RMSE errors of training process while green curve is the validation errors. Clearly, over-fitting has appeared in the first model, i.e., training losses are able to decrease but validation losses are stable. In the second model (Section \ref{Sneuralnetwork}), we have modified the parameters of full-connected layers to prevent the over-fitting but it seems that this solution is still not satisfying and the results are also the same with the first architecture (over-fitting is still appears).
+Fig. \ref{figloss1} shows the training errors and the validation errors during training phase of the first architecture. The blue curve presents the RMSE errors of training process while green curve is the validation errors. Clearly, over-fitting has appeared in the first model, i.e., training losses are able to decrease but validation losses are stable. In the second model (Section \ref{Sneuralnetwork}), the parameters of full-connected layers have been modified to prevent the over-fitting but it seems that this solution is still not satisfying, the results are very similar to the previous ones (over-fitting is still appears).
 
-Fig. \ref{figloss3} illustrates the losses during the training of the third model. Opposite to the two previous models, the losses are different at the beginning but after several epochs, the loss values become closed and the over-fitting disappears. As expecting, adding dropout layers into the elementary blocks effects to prevent over-fitting and improves the accuracy of the model greatly. This third model has been selected to compute estimated landmarks.
+Fig. \ref{figloss3} illustrates the losses during the training of the third model, one can note that after several epochs, the two-loss values become closed and the over-fitting disappears.  The sequence of Dropout addition inside elementary block works well to prevent over-fitting and improve the accuracy of the model greatly. This third model has been selected to compute automatically landmarks.
 
 \begin{figure}[htbp]
     \centering
@@ -268,7 +247,7 @@ Fig. \ref{figloss3} illustrates the losses during the training of the third mode
     \label{figloss3}
 \end{figure}
 
-In order to extract predicted landmarks for all pronotum images, we have applied \textit{cross-validation} to choose the test images, called \textit{round}. For each round, we have chosen a different fold of $33$ images as testing images ($293/33 \approx 9$ rounds), the remaining images are used as training and validation images. Of course, the training and validation images have been augmented before using to train the model. Following that, the network has been trained with different datasets, then the trained model have been used to predicted the lanmarks on the images in the corresponding test set. Table. \ref{tbltrainingloss} resumes the losses of $9$ rounds when we trained the third model on pronotum images. Clearly, the training/validation loss among rounds are tiny (stable) and the RMSE values look pretty good ($\approx 1.7 - 2.1$ pixels).
+In order to extract predicted landmarks from all pronotum images, we have applied \textit{cross-validation} procedure to choose the test images, we call it \textit{round}. For each round, we have decided to choose $33$ images for testing step. In order to predict landmarks for all available images, we will do $9$ rounds. The $260$ remaining images are used as training and validation images. Of course, this dataset will be augmented as described before to provide $1820$ images for these $2$ steps. Table. \ref{tbltrainingloss} resumes the losses of $9$ rounds when we trained the third model on pronotum images. Clearly, the training/validation loss among rounds are tiny and stable.
 
 \begin{table}[h!]
 	\centering
@@ -288,7 +267,7 @@ In order to extract predicted landmarks for all pronotum images, we have applied
 	\label{tbltrainingloss}
 \end{table}
 
-To evaluate the coordinates of predicted landmarks, the correlation metrics between the manual landmarks and corresponding predicted one have been computed. Table. \ref{tblcorrelation} shows the correlation scores of $3$ metrics (using \textit{scikit-learn} \cite{pedregosa2011scikit}), e.g. coefficient of determination ($r^2$), explained variance (EV), and Pearson correlation. These three metrics are both appropriate for our dataset type. The results closed to $1$ show that the predicted coordinates are very close with the ground truth. It proves that our prediction is enough good to provide to the biologist in some cases of statistical analysis. However, standing on the side of image processing, we are looking forward to see the real coordinates on images than the statistical results. So, the distances (in pixels) between manual coordinates and predicted coordinates have been calculated for all images. Then, the average distance for each landmark has been computed.
+To evaluate the coordinates of predicted landmarks, the correlation metrics between the manual landmarks and corresponding predicted ones have been computed. Table. \ref{tblcorrelation} shows the correlation scores of $3$ metrics (using \textit{scikit-learn} \cite{pedregosa2011scikit}), e.g. coefficient of determination ($r^2$), explained variance (EV), and Pearson correlation. These three metrics are both appropriate for our dataset type. The results closed to $1$ show that the predicted coordinates are very close with the ground truth. It proves that our prediction is good enough to replace manual landmarks in statistical analysis of pronotum morphology. However, standing on the side of image processing, seeing the real coordinates on images is more appropriate than statistical results. So, the distances (in pixels) between manual coordinates and predicted coordinates have been calculated for all images. Then, the average distance for each landmark has been computed.
 
 \begin{table}[htbp]
 	\centering
@@ -300,7 +279,7 @@ To evaluate the coordinates of predicted landmarks, the correlation metrics betw
 	\label{tblcorrelation}
 \end{table}
 
-Table. \ref{tblavgpronotum} shows the average distances by landmarks on all images of pronotum dataset. With images of resolution $256 \times 192$, we can consider that an error of $1\%$ corresponding to $2$ pixels could
+Table. \ref{tblavgpronotum} shows the average distances by landmarks on all images of pronotum dataset. With the images resolution $256 \times 192$, we can consider that an error of $1\%$ (corresponding to $2$ pixels) could
 be an acceptable error. Unhappily, our results exhibit average
 distance of $4$ pixels in the best case, landmark $1$ and more than
 $5$ pixels in the worse case, landmark $6$.
@@ -324,9 +303,9 @@ $5$ pixels in the worse case, landmark $6$.
 \end{table}
 
 Fig. \ref{figchartlm1} shows the distribution of the distances on the first landmark of all images. The accuracy based on the distance in each image can be
-separated into three spaces: the images having distance less
-than the average value ($4$ pixels): $56.66\%$; the images having the
-distance from the average value to $10$ pixels ($5\%$ acceptable errors): $40.27\%$; and the images are clearly in error with the distance greater than $10$ pixels: $3.07\%$.
+separated into three spaces: best results, the images having distance less
+than the average value ($4$ pixels): $56.66\%$; acceptable results, the images having the
+distance from the average value to $7$ pixels (standard deviation error): $31.40\%$; and the images which are clearly in error with the distance greater than $7$ pixels: $11.94\%$.
 
 \begin{figure}[htbp]
 	\centerline{\includegraphics[scale=0.3]{images/statistic_pronotum_from_scratch_lm1}}
@@ -334,8 +313,8 @@ distance from the average value to $10$ pixels ($5\%$ acceptable errors): $40.27
 	\label{figchartlm1}
 \end{figure}
 
-To illustrate this purpose, Fig. \ref{figrsexample} shows the predicted landmarks on two test images. One can note that even some predicted landmarks (Fig. \ref{figsub1}) are closed to the manual ones, in some case (Fig. \ref{figsub2}) the predicted ones are far from the expected results. This result explains why the average distance by landmarks are enough good while some predicted landmarks are so far from the manual one. So, the next step has been dedicated to the improvement of these results.
-
+To illustrate this purpose, Fig. \ref{figrsexample} shows the predicted landmarks on two test images. One can note that even some predicted landmarks (Fig. \ref{figsub1}) are closed to the manual ones, in some case (Fig. \ref{figsub2}) the predicted ones are far from the expected results. So, the next step has been dedicated to the improvement of these results.
+%This result explains why the average distance by landmarks are enough good while some predicted landmarks are so far from the manual one.
 \begin{figure}[htbp]
     \centering
     \subfloat[Image with well-predicted landmarks]{\label{figsub1}\includegraphics[width=0.35\textwidth]{images/fn_accuracy}}~~
@@ -343,37 +322,6 @@ To illustrate this purpose, Fig. \ref{figrsexample} shows the predicted landmark
     \caption{The predicted landmarks, in red,  on the images in test set.}
     \label{figrsexample}
 \end{figure}
-
-From the success of the third architecture on pronotum dataset, we apply the same procedures (data augmentation, training,\ldots) on other parts of beetle: \textit{left mandible, right mandible, elytra, and head}. However, we have modified the number of output of the last full-connected layer to adapt with each dataset before training. According, the values at the last full-connected layer are set to $32$, $36$, $22$ and $20$ outputs corresponding to $16$, $18$, $11$ and $10$ landmarks on left mandible, right mandible, elytra and head, respectively. Of course, we have also applied cross-validation to select testing data to get all predicted landmarks for all images in each dataset. Then, the quality of predicted landmarks are evaluated by comparing with the corresponding manual landmarks (distance computation). Table. \ref{tblavg4parts} shows the average distances on each landmark of elytra, head, left and right mandibles anatomical, respectively. Comparing with the average distances on the pronotum part, the average distances on elytra and head parts are very close, but a little bit far on the mandible parts.
-
-\begin{table}[htbp]
-	\centering	
-	\begin{tabular}{|c|c|c|c|c|}
-		\hline
-		\multirow{2}{*}{\textbf{Landmark}} & \multicolumn{4}{|c|}{\textbf{Distance (in pixels)}} \\ \cline{2-5}
-		 & Right mandible & Left mandible & Elytra & Head  \\ \hline
-		1 & \textcolor{red}{\textbf{9.4981}} & \textcolor{red}{\textbf{9.1267}} & \textcolor{green}{\textbf{3.8669}} & \textcolor{red}{\textbf{5.528}}  \\ \hline
-2 & 7.1657 & \textcolor{green}{\textbf{6.7198}} & 3.973 & 5.1609  \\ \hline
-3 & 7.242 & 6.8704 & 3.9166 & 5.3827 \\ \hline
-4 & \textcolor{green}{\textbf{7.0436}} & 6.7719 & 3.8673 & 5.0345 \\ \hline
-5 & 7.1599 & 7.125 & 4.0151 & 4.8393 \\ \hline
-6 & 7.5699 & 6.9441 & 4.8426 & \textcolor{green}{\textbf{4.4516}} \\ \hline
-7 & 7.4251 & 7.3158 & 5.2125 & 4.7937 \\ \hline
-8 & 7.6636 & 7.4142 & \textcolor{red}{\textbf{5.4685}} & 4.5322 \\ \hline
-9 & 7.7906 & 7.5846 & 5.2692 & 5.1412 \\ \hline
-10 & 8.0197 & 7.6349 & 4.0709 & 5.0564 \\ \hline
-11 & 8.314 & 7.6873 & 3.9896 & - \\ \hline
-12 & 8.1564 & 8.4248 & - & - \\ \hline
-13 & 8.8879 & 7.9983 & - & - \\ \hline
-14 & 9.1842 & 7.4919 & - & - \\ \hline
-15 & 8.7875 & 7.7903 & - & - \\ \hline
-16 & 8.3141 & 8.5198 & - & - \\ \hline
-17 & 8.2866 & - & - & - \\ \hline
-18 & 8.8928 & - & - & - \\ \hline
-	\end{tabular}
-	\caption{The average distances on all images per landmark on right mandible, left mandible, elytra and head images.}
-	\label{tblavg4parts}
-\end{table}
 
 \section{Resulting improvement by fine-tuning}
 \label{sfineTuning}
@@ -949,3 +897,62 @@ Dropout (DROP) \cite{srivastava2014dropout} is a technique use to prevent the ov
 Fully connected (FC) layer: usually follows the group of convolutional and pooling layers to extract the abstract feature representations of the image. A CNN may have one or several FC layers. They interpret the feature representations (their inputs) and perform a function of high-level reasoning by applying the activation functions. In practice, the last fully connected layer produces the output of the network and choose the activation function is depended on which kind of problem that network solves.
 
 %To solve a problem by using deep learning, besides designing the network architecture then training dataset is also a very important thing. The success stories \cite{krizhevsky2012imagenet,he2016deep} have proved that CNN models work better with a large dataset. However, data in practice has usually not enough and we need to augment the data by applying some generation techniques (i.e. rotate, translate, flip the images). In the next section, we describe the procedure to augment our dataset, which has been considered as a small one.
+
+%From the beginning of CNN, LeNet \cite{lecun1998gradient} can be considered as the first one, which has used to classify digits on hand-written numbers on cheques. The network is very simple by stack together the convolutional layers and max-pooling layers followed by full connected layers. Because of the limit of the resources at that time, this model is also constrained by the availability of computing. Until 2012, when computing resources are improved, AlexNet \cite{krizhevsky2012imagenet} was born and it has won the challenge by reducing the top-5 error in ImageNet challenge. AlexNet had a similar architecture as LeNet but it was deeper, bigger. Besides, the activation functions have been changed from Sigmoid \cite{han1995influence} to ReLU \cite{nair2010rectified} which have been proved more improvement in computing time. Additional, it had supplement the dropout layers to control overfitting. 
+%As we have presented, the implementation of a CNN model usually begins with classical architecture which consists of some classical layers (e.g LeNet). Then, it will be improved to increase the efficiency by changing the parameters or adding the layers (e.g. AlexNet). Based on the idea of the improvement, we have tried to design an architecture for landmarking on beetle images. This work is beginning with trying three network models before deciding the final architecture.
+
+%In our dataset, all the images are taken with the same camera in the same condition with a resolution of $(3264 \times 2448)$. Each image has a set of manual landmarks provided by biologists, i.e, each pronotum has $8$ landmarks, each head has $10$ landmarks (Fig. \ref{figbeetles}). Applying CNNs to train each part with a small number of images to reach good results is impossible. So, we need to augment the dataset before training the networks. Firstly, we have found that the original solution of the images $(3264 \times 2448)$ are heavy for the neural network. For performance considerations, in most of CNNs \cite{cintas2016automatic, lecun2010convolutional, sun2013deep}, the size of the input is limited to $(256 \times 256)$ pixels, so we have decided to down-sampling the images to a new resolution $(256 \times 192)$ (to respect the ratio between $x$ and $y$). Of course, the coordinates of manual landmarks have been also scaled to fit with the new resolution of the images. In the usual way, the transformations have been used to augment the dataset (i.e rotation, translation,\ldots) but the analysis of image by CNN is most often translation and rotation invariant. Therefore, two other procedures have been imaged to increase the number of images in the dataset $(256 \times 192)$.
+\iffalse
+\begin{figure}[htbp]
+    \centering
+\subfloat[Head]{\label{figh1}\includegraphics[width=0.2\textwidth]{images/orgHead}}~~    
+    \subfloat[Pronotum]{\label{figh1}\includegraphics[width=0.2\textwidth]{images/orgThorax}}~~
+\subfloat[Elytra]{\label{figh2}\includegraphics[width=0.16\textwidth]{images/orgElytra}} \\
+	\subfloat[Head's manual landmarks]{\label{figh1}\includegraphics[width=0.2\textwidth]{images/lmHead}}~~	
+	\subfloat[Pronotum's manual landmarks]{\label{figh1}\includegraphics[width=0.2\textwidth]{images/lmThorax}}~~
+\subfloat[Elytra's manual landmarks]{\label{figh2}\includegraphics[width=0.16\textwidth]{images/lmElytra}} \\
+	\subfloat[Left mandible]{\label{figh1}\includegraphics[width=0.13\textwidth]{images/orgLMandible}}~~
+	\subfloat[Left mandible's manual landmarks]{\label{figh1}\includegraphics[width=0.15\textwidth]{images/lmLMandible}}~~	
+	\subfloat[Right mandible]{\label{figh1}\includegraphics[width=0.13\textwidth]{images/orgRMandible}}~~
+\subfloat[Right mandible's manual landmarks]{\label{figh2}\includegraphics[width=0.15\textwidth]{images/lmRMandible}} \\
+    \caption{The anatomicals of beetle and their manual landmarks}
+    \label{figbeetles}
+\end{figure}
+\fi
+
+Fig. \ref{fignet1} shows details of the first model: The orange rectangles represent for CONV layers while the yellow rectangles represent for maximum POOL layers and three FC layers with their parameters are presented at the end of the model
+
+
+
+we have chosen a different fold of $33$ images as testing images ($293/33 \approx 9$ rounds), the remaining images are used as training and validation images. Of course, the training and validation images have been augmented before using to train the model. Following that, the network has been trained with different datasets, then the trained model have been used to predicted the lanmarks on the images in the corresponding test set.
+
+From the success of the third architecture on pronotum dataset, we apply the same procedures (data augmentation, training,\ldots) on other parts of beetle: \textit{left mandible, right mandible, elytra, and head}. However, we have modified the number of output of the last full-connected layer to adapt with each dataset before training. According, the values at the last full-connected layer are set to $32$, $36$, $22$ and $20$ outputs corresponding to $16$, $18$, $11$ and $10$ landmarks on left mandible, right mandible, elytra and head, respectively. Of course, we have also applied cross-validation to select testing data to get all predicted landmarks for all images in each dataset. Then, the quality of predicted landmarks are evaluated by comparing with the corresponding manual landmarks (distance computation). Table. \ref{tblavg4parts} shows the average distances on each landmark of elytra, head, left and right mandibles anatomical, respectively. Comparing with the average distances on the pronotum part, the average distances on elytra and head parts are very close, but a little bit far on the mandible parts.
+
+\begin{table}[htbp]
+	\centering	
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		\multirow{2}{*}{\textbf{Landmark}} & \multicolumn{4}{|c|}{\textbf{Distance (in pixels)}} \\ \cline{2-5}
+		 & Right mandible & Left mandible & Elytra & Head  \\ \hline
+		1 & \textcolor{red}{\textbf{9.4981}} & \textcolor{red}{\textbf{9.1267}} & \textcolor{green}{\textbf{3.8669}} & \textcolor{red}{\textbf{5.528}}  \\ \hline
+2 & 7.1657 & \textcolor{green}{\textbf{6.7198}} & 3.973 & 5.1609  \\ \hline
+3 & 7.242 & 6.8704 & 3.9166 & 5.3827 \\ \hline
+4 & \textcolor{green}{\textbf{7.0436}} & 6.7719 & 3.8673 & 5.0345 \\ \hline
+5 & 7.1599 & 7.125 & 4.0151 & 4.8393 \\ \hline
+6 & 7.5699 & 6.9441 & 4.8426 & \textcolor{green}{\textbf{4.4516}} \\ \hline
+7 & 7.4251 & 7.3158 & 5.2125 & 4.7937 \\ \hline
+8 & 7.6636 & 7.4142 & \textcolor{red}{\textbf{5.4685}} & 4.5322 \\ \hline
+9 & 7.7906 & 7.5846 & 5.2692 & 5.1412 \\ \hline
+10 & 8.0197 & 7.6349 & 4.0709 & 5.0564 \\ \hline
+11 & 8.314 & 7.6873 & 3.9896 & - \\ \hline
+12 & 8.1564 & 8.4248 & - & - \\ \hline
+13 & 8.8879 & 7.9983 & - & - \\ \hline
+14 & 9.1842 & 7.4919 & - & - \\ \hline
+15 & 8.7875 & 7.7903 & - & - \\ \hline
+16 & 8.3141 & 8.5198 & - & - \\ \hline
+17 & 8.2866 & - & - & - \\ \hline
+18 & 8.8928 & - & - & - \\ \hline
+	\end{tabular}
+	\caption{The average distances on all images per landmark on right mandible, left mandible, elytra and head images.}
+	\label{tblavg4parts}
+\end{table}
