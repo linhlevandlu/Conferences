@@ -1,9 +1,11 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
 \BOOKMARK [1][-]{section.2}{Related works}{}% 2
-\BOOKMARK [1][-]{section.3}{Data augmentation}{}% 3
-\BOOKMARK [1][-]{section.4}{Network architectures designing}{}% 4
-\BOOKMARK [1][-]{section.5}{Experiments and results}{}% 5
-\BOOKMARK [1][-]{section.6}{Resulting improvement by fine-tuning}{}% 6
-\BOOKMARK [2][-]{subsection.6.1}{Data preparation and training}{section.6}% 7
-\BOOKMARK [2][-]{subsection.6.2}{Fine-tuning on each dataset}{section.6}% 8
-\BOOKMARK [1][-]{section.7}{Conclusion}{}% 9
+\BOOKMARK [2][-]{subsection.2.1}{Overview of Convolutional Neural Network}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{State of the arts in deep learning and key points detection}{section.2}% 4
+\BOOKMARK [1][-]{section.3}{Data augmentation}{}% 5
+\BOOKMARK [1][-]{section.4}{Network architectures designing}{}% 6
+\BOOKMARK [1][-]{section.5}{Experiments and results}{}% 7
+\BOOKMARK [1][-]{section.6}{Resulting improvement by fine-tuning}{}% 8
+\BOOKMARK [2][-]{subsection.6.1}{Data preparation and training}{section.6}% 9
+\BOOKMARK [2][-]{subsection.6.2}{Final result for all parts}{section.6}% 10
+\BOOKMARK [1][-]{section.7}{Conclusion}{}% 11
