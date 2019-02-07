@@ -343,7 +343,7 @@ The images are combined from the training images of three sets: \textit{pronotum
 %Remember that we have used cross-validation to select the data during training from scratch ($9$ folds). It means the model has been trained over different training datasets. So, to create the dataset for pre-training, we just select the images from one fold at each dataset (after augmentation). Specifically, we have taken $1, 820$ images of each part. In total, it includes $5, 460$ images $(260 \times 7 \times 3)$. 
 
 \begin{figure}[htbp]
-	\centerline{\includegraphics[scale=0.5]{images/merge}}
+	\centerline{\includegraphics[scale=0.4]{images/merge}}
 	\caption{A presentation of head, pronotum and elytra part with
 corresponding manual landmarks}
 	\label{figmerge}
@@ -533,19 +533,20 @@ On each part, the landmarks are predicted on the test images. Then, the average 
 \end{minipage}
 \end{table}
 
-In another view, Fig. \ref{figdist5parts} shows the comparison of the average distance distributions on each dataset, the \textbf{blue} curves present for the average distances on each landmarks when we train the model from scratch and when we fine-tuned the model: \textbf{orange} curves. In the case of $2$ mandibles (left and right), we have previously predicted landmarks with convolutional methods (hough transform, PCAI \cite{le2017maelab}), the black curves (Fig. \ref{figdistmans}) present these results in order to appreciate them. It is worth to remind that this method requires a segmentation step which has not been ``applicable" on the other parts.
-
+In another view, Fig. \ref{figdistmans} shows the comparison of the average distance distributions on pronotum, left and right mandible dataset, the \textbf{blue} curves present for the average distances on each landmarks when we train the model from scratch and when we fine-tuned the model: \textbf{orange} curves. In the case of $2$ mandibles (left and right), we have previously predicted landmarks with convolutional methods (hough transform, PCAI \cite{le2017maelab}), the black curves (Fig. \ref{figdistmans}) present these results in order to appreciate them. It is worth to remind that this method requires a segmentation step which has not been ``applicable" on the other parts. Comparing with the image processing procedure, the results are not the same between left and right mandibles, the results on the left mandible have been improved. Moreover, the results from deep learning processes are more stable for all landmarks than image processing procedures. 
+\iffalse
 \begin{figure}[htbp]
     \centering
     %\subfloat[Head]{\label{}\includegraphics[width=0.5\textwidth]{images/tete_part}}~~
 	%\subfloat[Elytra]{\label{}\includegraphics[width=0.5\textwidth]{images/elytre_part}}\\
 	\subfloat[Pronotum]{\label{}\includegraphics[width=0.5\textwidth]{images/pronotum_part.png}}
-    \caption{The distribution of average distances on each landmark of three beetle's parts. Blue and orange lines present for the results when train the model from scratch and apply fine-tuning, respectively. }
+    \caption{The distribution of average distances on each landmark of pronotum part. Blue and orange lines present for the results when train the model from scratch and apply fine-tuning, respectively. }
     \label{figdist5parts}
 \end{figure}
-
+\fi
 \begin{figure}[htbp]
     \centering
+    \subfloat[Pronotum]{\label{}\includegraphics[width=0.5\textwidth]{images/pronotum_part.png}}\\
     \subfloat[Left mandible]{\label{}\includegraphics[width=0.5\textwidth]{images/mg_part}}~~
 	\subfloat[Right mandible]{\label{}\includegraphics[width=0.5\textwidth]{images/md_part}}
     \caption{The distribution of average distances on each landmark of two mandibles. Black, blue, and orange lines present for the results of image processing procedures, deep learning (from scratch and fine-tuning), respectively. }
@@ -554,34 +555,6 @@ In another view, Fig. \ref{figdist5parts} shows the comparison of the average di
 
 The fine-tuning process has improved the results of the proposed architecture on both $5$ datasets: left, right mandible, pronotum, elytra and head. All the average distances have significantly decreased: $\approx 26.9\%$ on left mandible, $\approx 22.8\%$ on right mandible, $\approx 40.3\%$ on pronotum, $\approx 39.8\%$ on elytra, and $\approx 46.4\%$  on head part based on considering the average distances per landmark. Addition, in the cases of pronotum and head part, even if we plus the average distance and its standard deviation, the results are also less than the result when we trained the model from scratch. For segmentable images, we have a comparison between the results of deep learning and early method where we have applied image processing techniques to predict the landmarks \cite{le2017maelab}. Clearly, the result with fine-tuning has improved the location of estimated landmarks. Even the average distances which obtained from scratch training are still high but they are more stable than the results from the early method: most of the average distance(or landmarks) of left mandibles are less than the results of the early method, while the average distances are very closed in the case of right mandibles.
 
-%\pagebreak
-To compare the results between image processing procedures and deep learning, we have run the test on an image of all parts in both methods. Then, we have calculated the distances between manual and predicted landmarks (in both cases). Fig. \ref{figmn5parts} shows the locations of manual and predicted landmarks on each beetle's part from both two methods. In these images, the \textbf{red points} present the manual landmarks, the \textbf{yellow points} are estimated landmarks from image processing procedures and the \textbf{green points} are predicted landmarks which have been provided by deep learning.
-
-\begin{figure}[htbp]
-    \centering
-    \subfloat[Left mandible]{\label{}\includegraphics[width=0.5\textwidth]{images/mg_3c}}~~
-	\subfloat[Right mandible]{\label{}\includegraphics[width=0.5\textwidth]{images/md_3c}}\\
-    \subfloat[Head]{\label{}\includegraphics[width=0.5\textwidth]{images/tete_3c}}~~
-	\subfloat[Elytra]{\label{}\includegraphics[width=0.5\textwidth]{images/elytre_3c}}\\
-	\subfloat[Pronotum]{\label{}\includegraphics[width=0.5\textwidth]{images/pronotum_3c}}
-    \caption{The presentation of manual and predicted landmarks on each beetle's part by applying two methods: image processing procedures and deep learning. The red points, yellow points, and green points present for manual landmarks, estimated landmarks by applying image processing procedures and using deep learning, respectively. }
-    \label{figmn5parts}
-\end{figure}
-
-Fig. \ref{fig0015parts} shows the distances by landmarks when we did a test on one image of each part. In these charts, the \textbf{black lines} present the distances when we apply the calculation on image processing procedures; the \textbf{blue and orange lines} show the distances with deep learning: training from scratch and fine tuning, respectively. As described in \cite{le2017maelab}, we have combined some image processing procedures to output the predicted landmarks and this has become also a disadvantage of this method. If one procedure of them provides a bad result, it will affect the final result, i.e. if the result of segmentation step is bad, it seems that can not provide the output. In all beetle's anatomical, the mandibles are considered as the easy case to segment because the images are clear (they just contains the mandibles); while other parts are much noise, besides the main objects they have also the subcomponents of beetle, i.e. leg, antennae, \ldots. That explains why we have obtained good results on mandibles but bad results on head, elytra, and pronotum part when applying the image processing procedures. In the opposite side, the results with deep learning, either training from scratch or fine-tuning, are very stable (Fig. \ref{fig0015parts}). In the case of mandibles, which have good results from image processing techniques, then the results from deep learning are not much difference.
-
-\begin{figure}[htbp]
-    \centering
-    \subfloat[Left mandible]{\label{}\includegraphics[width=0.5\textwidth]{images/mg001_2}}~~
-	\subfloat[Right mandible]{\label{}\includegraphics[width=0.5\textwidth]{images/md001_2}}\\
-    \subfloat[Head]{\label{}\includegraphics[width=0.5\textwidth]{images/tete001_2}}~~
-	\subfloat[Elytra]{\label{}\includegraphics[width=0.5\textwidth]{images/elytre001_2}}\\
-	\subfloat[Pronotum]{\label{}\includegraphics[width=0.5\textwidth]{images/pronotum001_2}}
-    \caption{The distances between manual and predicted landmarks of a test image when applying different techniques of each beetle's anatomical. Black, blue, and orange lines present for the results of image processing procedures, deep learning (from scratch and fine-tuning), respectively. }
-    \label{fig0015parts}
-\end{figure}
-
-\pagebreak
 \section{Conclusion}
 \label{sconclusion}
 In this work, we have presented how to apply convolutional neural network to predict the landmark on 2D anatomical images of beetles. After going through many trial models, we have presented a convolutional neural network for automatic detection landmarks on anatomical images of beetles which includes the repeated of some elementary blocks (an elementary block consists of a convolutional layer, a max pooling layer, and a dropout layer) followed by fully connected layers. Then, the proposed model have been trained and tested by using two strategies: \textit{train from scratch} and \textit{fine-tuning}. 
@@ -975,3 +948,30 @@ From the success of the third architecture on pronotum dataset, we apply the sam
 	\label{figdisthead}
 \end{figure}
 \fi
+
+%\pagebreak
+To compare the results between image processing procedures and deep learning, we have run the test on an image of all parts in both methods. Then, we have calculated the distances between manual and predicted landmarks (in both cases). Fig. \ref{figmn5parts} shows the locations of manual and predicted landmarks on each beetle's part from both two methods. In these images, the \textbf{red points} present the manual landmarks, the \textbf{yellow points} are estimated landmarks from image processing procedures and the \textbf{green points} are predicted landmarks which have been provided by deep learning.
+
+\begin{figure}[htbp]
+    \centering
+    \subfloat[Left mandible]{\label{}\includegraphics[width=0.5\textwidth]{images/mg_3c}}~~
+	\subfloat[Right mandible]{\label{}\includegraphics[width=0.5\textwidth]{images/md_3c}}\\
+    \subfloat[Head]{\label{}\includegraphics[width=0.5\textwidth]{images/tete_3c}}~~
+	\subfloat[Elytra]{\label{}\includegraphics[width=0.5\textwidth]{images/elytre_3c}}\\
+	\subfloat[Pronotum]{\label{}\includegraphics[width=0.5\textwidth]{images/pronotum_3c}}
+    \caption{The presentation of manual and predicted landmarks on each beetle's part by applying two methods: image processing procedures and deep learning. The red points, yellow points, and green points present for manual landmarks, estimated landmarks by applying image processing procedures and using deep learning, respectively. }
+    \label{figmn5parts}
+\end{figure}
+
+Fig. \ref{fig0015parts} shows the distances by landmarks when we did a test on one image of each part. In these charts, the \textbf{black lines} present the distances when we apply the calculation on image processing procedures; the \textbf{blue and orange lines} show the distances with deep learning: training from scratch and fine tuning, respectively. As described in \cite{le2017maelab}, we have combined some image processing procedures to output the predicted landmarks and this has become also a disadvantage of this method. If one procedure of them provides a bad result, it will affect the final result, i.e. if the result of segmentation step is bad, it seems that can not provide the output. In all beetle's anatomical, the mandibles are considered as the easy case to segment because the images are clear (they just contains the mandibles); while other parts are much noise, besides the main objects they have also the subcomponents of beetle, i.e. leg, antennae, \ldots. That explains why we have obtained good results on mandibles but bad results on head, elytra, and pronotum part when applying the image processing procedures. In the opposite side, the results with deep learning, either training from scratch or fine-tuning, are very stable (Fig. \ref{fig0015parts}). In the case of mandibles, which have good results from image processing techniques, then the results from deep learning are not much difference.
+
+\begin{figure}[htbp]
+    \centering
+    \subfloat[Left mandible]{\label{}\includegraphics[width=0.5\textwidth]{images/mg001_2}}~~
+	\subfloat[Right mandible]{\label{}\includegraphics[width=0.5\textwidth]{images/md001_2}}\\
+    \subfloat[Head]{\label{}\includegraphics[width=0.5\textwidth]{images/tete001_2}}~~
+	\subfloat[Elytra]{\label{}\includegraphics[width=0.5\textwidth]{images/elytre001_2}}\\
+	\subfloat[Pronotum]{\label{}\includegraphics[width=0.5\textwidth]{images/pronotum001_2}}
+    \caption{The distances between manual and predicted landmarks of a test image when applying different techniques of each beetle's anatomical. Black, blue, and orange lines present for the results of image processing procedures, deep learning (from scratch and fine-tuning), respectively. }
+    \label{fig0015parts}
+\end{figure}
