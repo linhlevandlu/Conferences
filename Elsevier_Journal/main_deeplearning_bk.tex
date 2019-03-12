@@ -335,31 +335,25 @@ model by continuing the backpropagation. Unfortunately,
 some rapid tests have shown that re-using ImageNet features
 has not been relevant for our application. We have designed a
 way to reproduce the method with our own data. It is worth
-noting that of course the size of the dataset to pre-train was not at all no huge than this one of ImageNet. To finish this task, we have pre-trained our model on another task (facial keypoints detection) before applying to fine-tune on each part of beetle. 
+noting that of course the size of the dataset to pre-train was not at all no huge than this one of ImageNet. 
+%For our pre-training step, the network has been trained on a set of images which including the training images (in one round) of three parts, \textit{i.e pronotum, elytra, and head}. Then, the trained model has been used to fine-tune and test on each dataset.
+\subsection{Data preparation and training}
+The images are combined from the training images of three sets: \textit{pronotum, elytra, and head} (after augmentation). As previously, $9$ rounds have been built from the images of each part to train the model from scratch. In this step, to create the pre-train dataset, we have just selected the train images from one round of each part. The final size of the training dataset is $260$ (original images) $\times$ $7$ (data augmentation) $\times$ 3 (parts: head, elytra and pronotum).
 
-\subsection{Pre-train model architecture with facial keypoints dataset}
-\textbf{Facial keypoints dataset:} has been publiced on Kaggle community \footnote{https://www.kaggle.com/c/facial-keypoints-detection} by University of Montreal. It includes $2,140$ human face images with the size of ($96 \times 96$). Each image contains $15$ landmarks on the face: $6$ landmarks for eyes, $4$ landmarks for eyebrows, $4$ landmarks for mouth, and $1$ landmarks for nose tip. In this dataset, the input images have been given by a list of pixels values ($0 - 255$). So, they have been pre-processed by reshape into 2-dimensions before giving to the model. Fig. \ref{figaface} shows four face images in the dataset and the landmarks on each the face.
+%Remember that we have used cross-validation to select the data during training from scratch ($9$ folds). It means the model has been trained over different training datasets. So, to create the dataset for pre-training, we just select the images from one fold at each dataset (after augmentation). Specifically, we have taken $1, 820$ images of each part. In total, it includes $5, 460$ images $(260 \times 7 \times 3)$. 
 
 \begin{figure}[htbp]
-	\centerline{\includegraphics[scale=0.2]{images/face_dataset}}
-	\caption{Some face images in the dataset and ground truth position of the landmarks.}
-	\label{figaface}
+	\centerline{\includegraphics[scale=0.4]{images/merge}}
+	\caption{A presentation of head, pronotum and elytra part with
+corresponding manual landmarks}
+	\label{figmerge}
 \end{figure}
 
-The architecture parameters (number filters, size of filter,padding, stride) are the same like working on beetle's parts. We have just modified on size of the input of network model ($96 \times 96$); and the output of the last FC layers to correspond to the number of landmarks. Besides, the hyper-parameters (learning rate, momentum) are also kept the same as when training from scratch on each part of beelte. However, we have increased the number of epochs to $10,000$ instead of $5,000$ to achieve better learning on the parameters.
+However, wanting to merge all beetle's parts in one dataset created a new problem: the number of landmarks is not the same for each part: \textit{$8$ landmarks on pronotum part, $10$ landmarks on head part, and $11$ landmarks on elytra part} (Fig. \ref{figmerge}). Because of the meaning of landmarks on each anatomical part for biologists, we cannot insert new landmarks arbitrary. So, we have decided to keep the smallest number $8$ of pronotum as reference and to remove some on elytra and head parts instead of adding. We have removed three landmarks on the elytra part ($1^{st}, 6^{th}, 9^{th}$), and two landmarks on the head part ($5^{th}, 6^{th}$). 
 
-\subsection{Fine-tuning on each beetle's part}
-Our model architecture has been trained on facial keypoints dataset with $30$ outputs ($15$ landmarks). Then, the pre-trained model has been used to fine-tune on the images of each beetle's part. 
+During training the proposed architecture on the combined dataset, the parameters of the network (learning rate, momentum, \ldots) are kept the same as training from scratch but the number of epochs are increased to $10, 000$ instead of $5, 000$ to achieve better learning on the parameters. We have also shuffled the training data because it will be helped the model to work with different anatomical parts rather than the same anatomical samples in each training time.
 
-The fine-tuning stage has been done in two scenarios: with and without freeze process. In the first scenario, the parameters values of layers were continued to update during fine-tuning; while in the second scenario, the parameters of $3$ convolutional layers in the elementary blocks have been frozen.
-
-In another scene, to be able to use the same parameters for fine-tuning process, the image have been cropped to suppress the part which are empty, to obtain a new image size of ($192 \times 192$); and a modification was made on stride properties of the first convolutional layer (changing from $1$ to $2$).
-
-
-To be able to compare with the previous results, we have also applied cross-validation during fine-tuning. 
-
-
-
+\subsection{Final result for all parts}
 The combined dataset then used to train the third architecture with $16$ outputs ($8$ landmarks). Then, the trained model is used to fine-tuning on each dataset. To compare the result with the previous one, we have also fine-tuned the trained model with different dataset by applying cross-validation. Firstly, we consider the losses during fine-tuning. \textit{For example}, Table. \ref{tblftpronotum}, \ref{tblftbody}, \ref{tblfthead} show the losses during fine-tuning on pronotum, elytra, and head dataset, respectively. Comparing with the losses when we trained the model from scratch, \textit{i.e.} on pronotum, the validation losses of all round in this scenario have been significantly decreased (around $40\%$).
 
 On each part, the landmarks are predicted on the test images. Then, the average error based on the distances between predicted and corresponding manual landmarks have been also computed. Tables. \ref{tblcmppronotum}, \ref{tblcmpbody}, \ref{tblcmphead}, \ref{tblcmpmg}, and \ref{tblcmpmd} show the average distances per landmark on pronotum, elytra, head, left and right mandibles dataset, respectively. \textbf{From scratch} columns remind the previously average distances. \textbf{Fine-tune} columns present the new average distances after applying fine-tuning on each part. It is clearly shown that the result of predicted landmarks with the help of fine-tuning is more precise than training from scratch. The average distance at each landmark has decreased. Additional, when comparing the average distances between two processes, the worse case of fine-tuning process is still better than the best case of training from scratch.
@@ -981,20 +975,3 @@ Fig. \ref{fig0015parts} shows the distances by landmarks when we did a test on o
     \caption{The distances between manual and predicted landmarks of a test image when applying different techniques of each beetle's anatomical. Black, blue, and orange lines present for the results of image processing procedures, deep learning (from scratch and fine-tuning), respectively. }
     \label{fig0015parts}
 \end{figure}
-
-
-\subsection{Data preparation and training}
-The images are combined from the training images of three sets: \textit{pronotum, elytra, and head} (after augmentation). As previously, $9$ rounds have been built from the images of each part to train the model from scratch. In this step, to create the pre-train dataset, we have just selected the train images from one round of each part. The final size of the training dataset is $260$ (original images) $\times$ $7$ (data augmentation) $\times$ 3 (parts: head, elytra and pronotum).
-
-%Remember that we have used cross-validation to select the data during training from scratch ($9$ folds). It means the model has been trained over different training datasets. So, to create the dataset for pre-training, we just select the images from one fold at each dataset (after augmentation). Specifically, we have taken $1, 820$ images of each part. In total, it includes $5, 460$ images $(260 \times 7 \times 3)$. 
-
-\begin{figure}[htbp]
-	\centerline{\includegraphics[scale=0.4]{images/merge}}
-	\caption{A presentation of head, pronotum and elytra part with
-corresponding manual landmarks}
-	\label{figmerge}
-\end{figure}
-
-However, wanting to merge all beetle's parts in one dataset created a new problem: the number of landmarks is not the same for each part: \textit{$8$ landmarks on pronotum part, $10$ landmarks on head part, and $11$ landmarks on elytra part} (Fig. \ref{figmerge}). Because of the meaning of landmarks on each anatomical part for biologists, we cannot insert new landmarks arbitrary. So, we have decided to keep the smallest number $8$ of pronotum as reference and to remove some on elytra and head parts instead of adding. We have removed three landmarks on the elytra part ($1^{st}, 6^{th}, 9^{th}$), and two landmarks on the head part ($5^{th}, 6^{th}$). 
-
-During training the proposed architecture on the combined dataset, the parameters of the network (learning rate, momentum, \ldots) are kept the same as training from scratch but the number of epochs are increased to $10, 000$ instead of $5, 000$ to achieve better learning on the parameters. We have also shuffled the training data because it will be helped the model to work with different anatomical parts rather than the same anatomical samples in each training time.
