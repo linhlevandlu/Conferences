@@ -131,10 +131,6 @@ L.~Torrey, J.~Shavlik, Transfer learning, Handbook of Research on Machine
   Learning Applications and Trends: Algorithms, Methods, and Techniques 1
   (2009) 242.
 
-\bibitem{imagenet_cvpr09}
-J.~Deng, et~al., {ImageNet: A Large-Scale Hierarchical Image Database}, in:
-  CVPR09, 2009.
-
 \bibitem{margeta_mri}
 J.~Margeta, et~al.,
   \href{https://doi.org/10.1080/21681163.2015.1061448}{Fine-tuned convolutional
