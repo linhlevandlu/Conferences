@@ -330,13 +330,13 @@ The proposed network (third architecture) presented in Section \ref{Sneuralnetwo
 
 Training a network from scratch is not the only way to work in Deep learning. It is possible to initialize parameter values with values extract from another experiment with another dataset. It is called transfer learning \cite{torrey2009transfer}. Transfer learning aims
 to address the problem when the distribution of the training
-data from the source domain is different from that of the future data from the target domain \cite{}. In order to improve our results, we have broadened model with this technique. The obtained parameter values have been used in another context to classify other datasets \cite{margeta_mri}. The name of this procedure to re-use parameters to train a model is currently called \textbf{fine-tuning}.
+data from the source domain is different from that of the future data from the target domain \cite{lin2016homemade}. In order to improve our results, we have broadened model with this technique. The obtained parameter values have been used in another context to classify other datasets \cite{margeta_mri}. The name of this procedure to re-use parameters to train a model is currently called \textbf{fine-tuning}.
 
 Fine-tuning does not only replace and retrain the top of the model on
 the new dataset but also fine-tunes the weights of a trained
 model by continuing the backpropagation. Unfortunately,
 some preliminary tests have shown that re-using ImageNet features
-is not relevant for our application because landmarks detection has a difference from image recognition. On the other hand, we noticed that our problem is related to face recognition and facial keypoints detection. So, we have decided to train our model on a facial keypoints dataset which is considered as a source model. Then, the trained parameters are transfered to predict landmarks on beetle's images.
+is not relevant for our application because landmarks detection has a difference from image recognition. On the other hand, we noticed that our problem is related to face recognition and facial keypoints detection. So, we have decided to train our model on a facial keypoints dataset which is considered as a source domain. Then, the trained parameters are transfered to predict landmarks on beetle's images as target domain.
 
 %We have designed a way to reproduce the method with our own data. It is worth noting that of course the size of the dataset to pre-train was not at all no huge than this one of ImageNet. To finish this task, we have pre-trained our model on another task (facial keypoints detection) before applying to fine-tune on each part of beetle. 
 
@@ -353,11 +353,11 @@ For pre-train step, the architecture with elementary blocks was continued to be 
 
 \subsection{Fine-tuning on each beetle's part}
 
-Our model architecture has been pre-trained on facial keypoints dataset with $30$ outputs ($15$ landmarks). Then, the parameters have been transfered to fine-tune on the images of each beetle's part. The fine-tuning stage has been done in two scenarios: with and without freeze process. In the first scenario, the parameters values of layers were continued to update during fine-tuning; while in the second scenario, the parameters of $3$ convolutional layers in the elementary blocks have been frozen.
+Our model architecture has been pre-trained on facial keypoints dataset with $30$ outputs ($15$ landmarks). Then, the parameters have been transfered to fine-tune on the images of each beetle's part. The fine-tuning stage has been done with continuing the backpropagation to update the layers parameters.
 
 In another scene, to be able to use the same parameters for fine-tuning process, the fine-tuning images have been cropped to suppress the part which are empty, to obtain a new image size of $192 \times 192$; and a modification was made on stride properties of the first convolutional layer (changing from $1$ to $2$).
 
-During fine-tuning, cross-validation has been applied to select data for training and valiation. At the end of process, the landmarks are predicted on the test images. Then, the average distances have been calculated based on the distance (in pixels) between predicted and corresponding manual landmarks. Tables. \ref{} show the average distance by landmarks on pronotum, elytra, head, left and right mandible images, respectively. \textbf{From scratch} columns remind the previously average distances. \textbf{Fine-tune freeze} and \textbf{Fine-tune} columns present the new average distances after applying fine-tuning on each part without and with freeze process, sequentially. The average distance at each landmark has decreased and clearly that the result of predicted landmarks with the help of fine-tuning is more precise than training from scratch.
+During fine-tuning, cross-validation has been applied to select data for training and valiation. At the end of process, the landmarks are predicted on the test images. Then, the average distances have been calculated based on the distance (in pixels) between predicted and corresponding manual landmarks. Tables. \ref{cmppronotum}, \ref{cmpelytre}, \ref{cmptete}, \ref{cmpmg}, and \ref{cmpmd} show the comparison of the average distances by landmarks between training from scratch and fine-tuning process on pronotum, elytra, head, left and right mandible images, respectively. \textbf{From scratch} columns remind the previously average distances. \textbf{Fine-tune} columns present the new average distances after applying fine-tuning on each part. The average distance at each landmark has decreased and clearly that the result of predicted landmarks with the help of fine-tuning is more precise than training from scratch.
 
 \begin{table}[htbp]
 	\centering
@@ -373,7 +373,8 @@ During fine-tuning, cross-validation has been applied to select data for trainin
 		7 & 4.64  & 2.93 \\ \hline
 		8 & 4.94  & 3.64 \\ \hline
 	\end{tabular}
-	\caption{Pronotum}
+	\caption{Average distances comparison between training from scratch and fine-tuning on pronotum images}
+	\label{cmppronotum}
 \end{table}
 
 \begin{table}
@@ -393,7 +394,8 @@ During fine-tuning, cross-validation has been applied to select data for trainin
 		9 & 5.14  & 4.17 \\ \hline
 		10 & 5.06  & 3.94\\ \hline
 	\end{tabular}
-	\caption{Head}
+	\caption{Average distances comparison between training from scratch and fine-tuning on head images}
+	\label{cmptete}
 	\end{minipage}
 	\hfill
 	\begin{minipage}[t]{0.45\textwidth}
@@ -413,7 +415,8 @@ During fine-tuning, cross-validation has been applied to select data for trainin
 			10 & 4.07  & 3.39 \\ \hline
 			11 & 3.99  & 3.29 \\ \hline
 		\end{tabular}
-		\caption{Elytre}
+		\caption{Average distances comparison between training from scratch and fine-tuning on elytra images}
+		\label{cmpelytre}
 	\end{minipage}
 \end{table}
 \begin{table}
@@ -422,24 +425,25 @@ During fine-tuning, cross-validation has been applied to select data for trainin
 		\begin{tabular}{|c|c|c|}
 			\hline
 			\textbf{$\#$LM} & \textbf{From scratch} & \textbf{Fine-tune} \\ \hline
-			1 & \textcolor{red}{\textbf{9.1267}} & \textcolor{red}{\textbf{6.7655}} \\ \hline
-			2 & \textcolor{green}{\textbf{6.7198}} & \textcolor{green}{\textbf{5.2952}} \\ \hline
-			3 & 6.8704 & 5.3468 \\ \hline
-			4 & 6.7719 & 5.332 \\ \hline
-			5 & 7.125 & 5.4391 \\ \hline
-			6 & 6.9441 & 5.3004 \\ \hline
-			7 & 7.3158 & 5.5314 \\ \hline
-			8 & 7.4142 & 5.6486 \\ \hline
-			9 & 7.5846 & 5.8864 \\ \hline
-			10 & 7.6349 & 5.9245 \\ \hline
-			11 & 7.6873 & 5.972 \\ \hline
-			12 & 8.4248 & 6.5755 \\ \hline
-			13 & 7.9983 & 6.1067 \\ \hline
-			14 & 7.4919 & 5.6307 \\ \hline
-			15 & 7.7903 & 5.8522 \\ \hline
-			16 & 8.5198 & 7.174 \\ \hline
+			1 & \textcolor{red}{\textbf{9.13}} & \textcolor{red}{\textbf{5.28}} \\ \hline
+			2 & \textcolor{green}{\textbf{6.72}} & \textcolor{green}{\textbf{4.05}} \\ \hline
+			3 & 6.87 & 4.01 \\ \hline
+			4 & 6.77 & 4.02 \\ \hline
+			5 & 7.13 & 3.92 \\ \hline
+			6 & 6.94 & 3.88 \\ \hline
+			7 & 7.32 & 4.01 \\ \hline
+			8 & 7.41 & 4.16 \\ \hline
+			9 & 7.58 & 4.35 \\ \hline
+			10 & 7.63 & 4.46 \\ \hline
+			11 & 7.69 & 4.72 \\ \hline
+			12 & 8.42 & 5.08 \\ \hline
+			13 & 7.99 & 4.50 \\ \hline
+			14 & 7.49 & 4.26 \\ \hline
+			15 & 7.79 & 4.62 \\ \hline
+			16 & 8.52 & 6.04 \\ \hline
 		\end{tabular}
-		\caption{left mandible}
+		\caption{Average distances comparison between training from scratch and fine-tuning on left mandible images}
+		\label{cmpmg}
 	\end{minipage}
 	\hfill
 	\begin{minipage}[t]{0.45\textwidth}
@@ -447,31 +451,32 @@ During fine-tuning, cross-validation has been applied to select data for trainin
 		\begin{tabular}{|c|c|c|}
 \hline
 \textbf{$\#$LM} & \textbf{From scratch} & \textbf{Fine-tune} \\ \hline
-		1 & \textcolor{red}{\textbf{9.4981}} & 6.3236 \\ \hline
-	2 & 7.1657 & 5.1347\\ \hline
-	3 & 7.242 & 5.1613\\ \hline
-	4 & \textcolor{green}{\textbf{7.0436}} & \textcolor{green}{\textbf{5.0537}} \\ \hline
-	5 & 7.1599 & 5.1372  \\ \hline
-	6 & 7.5699 & 5.301  \\ \hline
-	7 & 7.4251 & 5.2064  \\ \hline
-	8 & 7.6636 & 5.5168  \\ \hline
-	9 & 7.7906 & 5.6858 \\ \hline
-	10 & 8.0197 & 5.7495 \\ \hline
-	11 & 8.314 & 6.1975 \\ \hline
-	12 & 8.1564 & 6.1898 \\ \hline
-	13 & 8.8879 & 6.7612 \\ \hline
-	14 & 9.1842 & \textcolor{red}{\textbf{7.0694}} \\ \hline
-	15 & 8.7875 & 6.5293 \\ \hline
-	16 & 8.3141 & 6.1147 \\ \hline
-	17 & 8.2866 & 6.2881 \\ \hline
-	18 & 8.8928 & 6.8367 \\ \hline
+		1 & \textcolor{red}{\textbf{9.50}} & 4.86 \\ \hline
+	2 & 7.17 & 4.06\\ \hline
+	3 & 7.24 & 3.97\\ \hline
+	4 & \textcolor{green}{\textbf{7.04}} & \textcolor{green}{\textbf{3.87}} \\ \hline
+	5 & 7.16 & 4.05  \\ \hline
+	6 & 7.57 & 3.82  \\ \hline
+	7 & 7.43 & 3.77  \\ \hline
+	8 & 7.66 & 3.87  \\ \hline
+	9 & 7.79 & 3.96 \\ \hline
+	10 & 8.02 & 3.97 \\ \hline
+	11 & 8.31 & 4.27 \\ \hline
+	12 & 8.16 & 4.42 \\ \hline
+	13 & 8.89 & 4.87 \\ \hline
+	14 & 9.18 & \textcolor{red}{\textbf{4.93}} \\ \hline
+	15 & 8.79 & 4.46 \\ \hline
+	16 & 8.31 & 4.17 \\ \hline
+	17 & 8.29 & 4.57 \\ \hline
+	18 & 8.89 & 5.89 \\ \hline
 		\end{tabular}
-		\caption{right mandible}
+		\caption{Average distances comparison between training from scratch and fine-tuning on left mandible images}
+		\label{cmpmd}
 	\end{minipage}
 \end{table}
 
 
-In another view, Fig. \ref{figdistmans} shows the comparison of the average distance distributions on pronotum, left and right mandible dataset. The \textbf{blue} curves present for the average distances on each landmarks when we train the model from scratch, \textbf{orange} and \textbf{green} curves present the results using fine-tuning with and without freeze process. In the case of $2$ mandibles (left and right), we have previously predicted landmarks with convolutional methods (hough transform, PCAI \cite{le2017maelab}), the black curves (Fig. \ref{figdistmans}) present these results in order to appreciate them. It is worth to remind that this method requires a segmentation step which has not been ``applicable" on the other parts. Comparing with the image processing procedure, the results are not the same between left and right mandibles, the results on the left mandible have been improved. Moreover, the results from deep learning processes are more stable for all landmarks than image processing procedures. 
+In another view, Fig. \ref{figdistmans} shows the comparison of the average distance distributions on pronotum, left and right mandible dataset. The \textbf{blue} curves present for the average distances on each landmarks when we train the model from scratch, \textbf{orange} curve present the results using fine-tuning process. In the case of $2$ mandibles (left and right), we have previously predicted landmarks with a set of image processing methods (hough transform, PCAI \cite{le2017maelab}), the black curves (Fig. \ref{figdistmans}) present these results in order to appreciate them. It is worth to remind that this method requires a segmentation step which has not been ``applicable" on the other parts. Comparing with the image processing procedure, the results are not the same between left and right mandibles, the results on the left mandible have been improved. Moreover, the results from deep learning processes are more stable for all landmarks than image processing procedures. 
 \iffalse
 \begin{figure}[htbp]
     \centering
@@ -491,7 +496,7 @@ In another view, Fig. \ref{figdistmans} shows the comparison of the average dist
     \label{figdistmans}
 \end{figure}
 
-The fine-tuning process has improved the results of the proposed architecture on both $5$ datasets: left, right mandible, pronotum, elytra and head. All the average distances have significantly decreased: $\approx 26.9\%$ on left mandible, $\approx 22.8\%$ on right mandible, $\approx 40.3\%$ on pronotum, $\approx 39.8\%$ on elytra, and $\approx 46.4\%$  on head part based on considering the average distances per landmark. Addition, in the cases of pronotum and head part, even if we plus the average distance and its standard deviation, the results are also less than the result when we trained the model from scratch. For segmentable images, we have a comparison between the results of deep learning and early method where we have applied image processing techniques to predict the landmarks \cite{le2017maelab}. Clearly, the result with fine-tuning has improved the location of estimated landmarks. Even the average distances which obtained from scratch training are still high but they are more stable than the results from the early method: most of the average distance(or landmarks) of left mandibles are less than the results of the early method, while the average distances are very closed in the case of right mandibles.
+The fine-tuning process has improved the results of the proposed architecture on both $5$ datasets: left, right mandible, pronotum, elytra and head. All the average distances have significantly decreased: $\approx 41.35\%$ on left mandible, $\approx 46.51\%$ on right mandible, $\approx 25.98\%$ on pronotum, $\approx 15.8\%$ on elytra, and $\approx 18.10\%$  on head part based on considering the average distances per landmark. For segmentable images, we have a comparison between the results of deep learning and early method where we have applied image processing techniques to predict the landmarks \cite{le2017maelab}. Clearly, the result with fine-tuning has improved the location of estimated landmarks. Even the average distances which obtained from scratch training are still high but they are more stable than the results from the early method: most of the average distance(or landmarks) of left mandibles are less than the results of the early method, while the average distances are very closed in the case of right mandibles.
 
 \section{Conclusion}
 \label{sconclusion}
@@ -509,6 +514,7 @@ project, i.e. about all beetle parts. The quality of prediction allows using aut
 
 \end{document}
 
+Addition, in the cases of pronotum and head part, even if we plus the average distance and its standard deviation, the results are also less than the result when we trained the model from scratch.
 
 The combined dataset then used to train the third architecture with $16$ outputs ($8$ landmarks). Then, the trained model is used to fine-tuning on each dataset. To compare the result with the previous one, we have also fine-tuned the trained model with different dataset by applying cross-validation. Firstly, we consider the losses during fine-tuning. \textit{For example}, Table. \ref{tblftpronotum}, \ref{tblftbody}, \ref{tblfthead} show the losses during fine-tuning on pronotum, elytra, and head dataset, respectively. Comparing with the losses when we trained the model from scratch, \textit{i.e.} on pronotum, the validation losses of all round in this scenario have been significantly decreased (around $40\%$).
 

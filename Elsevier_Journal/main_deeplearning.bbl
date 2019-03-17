@@ -118,7 +118,7 @@ Y.~A. LeCun, et~al., Efficient backprop, in: Neural networks: Tricks of the
 \bibitem{lasagne}
 S.~Dieleman, et~al., \href{http://dx.doi.org/10.5281/zenodo.27878}{Lasagne:
   First release.} (Aug. 2015).
-\newblock \href {http://dx.doi.org/10.5281/zenodo.27878}
+\newblock \href {https://doi.org/10.5281/zenodo.27878}
   {\path{doi:10.5281/zenodo.27878}}.
 \newline\urlprefix\url{http://dx.doi.org/10.5281/zenodo.27878}
 
@@ -131,6 +131,11 @@ L.~Torrey, J.~Shavlik, Transfer learning, Handbook of Research on Machine
   Learning Applications and Trends: Algorithms, Methods, and Techniques 1
   (2009) 242.
 
+\bibitem{lin2016homemade}
+S.~Lin, Z.~Zhao, F.~Su, Homemade ts-net for automatic face recognition, in:
+  Proceedings of the 2016 ACM on International Conference on Multimedia
+  Retrieval, ACM, 2016, pp. 135--142.
+
 \bibitem{margeta_mri}
 J.~Margeta, et~al.,
   \href{https://doi.org/10.1080/21681163.2015.1061448}{Fine-tuned convolutional
@@ -140,7 +145,7 @@ J.~Margeta, et~al.,
 \newblock \href
   {http://arxiv.org/abs/https://doi.org/10.1080/21681163.2015.1061448}
   {\path{arXiv:https://doi.org/10.1080/21681163.2015.1061448}}, \href
-  {http://dx.doi.org/10.1080/21681163.2015.1061448}
+  {https://doi.org/10.1080/21681163.2015.1061448}
   {\path{doi:10.1080/21681163.2015.1061448}}.
 \newline\urlprefix\url{https://doi.org/10.1080/21681163.2015.1061448}
 
