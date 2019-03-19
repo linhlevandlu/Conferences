@@ -188,7 +188,7 @@ To build the third architecture, we have defined a new concept: the \textit{elem
 %The idea of dropout is to include some variations between different runs. During training phase, dropout samples are done from an exponential number of different ``thinned" network. At test phase, it is easy to approximate the effect of averaging the prediction of all thinned networks by simply using a single unthinned network with smaller weights.
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.4]{images/elementary_block}
+	\includegraphics[scale=0.3]{images/elementary_block}
 	\caption{The layers in an elementary block. It includes a CONV layer (red), a maximum POOL layer (yellow) and a DROP layer (green).}
 	\label{figelementary}
 \end{figure}
@@ -243,7 +243,7 @@ Fig. \ref{figloss3} illustrates the losses during the training of the third mode
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[scale=0.4]{images/model3_loss}
+    \includegraphics[scale=0.35]{images/model3_loss}
     \caption{The losses (training and validation) of the third model}
     \label{figloss3}
 \end{figure}
@@ -273,8 +273,9 @@ To evaluate the coordinates of predicted landmarks, the correlation metrics betw
 \begin{table}[htbp]
 	\centering
 	\begin{tabular}{|c|p{2cm}|p{2cm}|p{2cm}|}
+		\hline
 		Metric & $\mathbf{r^{2}}$ & \textbf{EV} & \textbf{Pearson} \\ \hline
-		Score & $\textbf{0.9952}$ & $\textbf{0.9951}$ & $\textbf{0.9974}$ 
+		Score & $\textbf{0.9952}$ & $\textbf{0.9951}$ & $\textbf{0.9974}$ \\\hline
 	\end{tabular}
 	\caption{Correlation scores between manual landmarks and predicted landmarks}
 	\label{tblcorrelation}
@@ -349,7 +350,7 @@ is not relevant for our application because landmarks detection has a difference
 	\label{figaface}
 \end{figure}
 
-For pre-train step, the architecture with elementary blocks was continued to be selected. Basically, the architecture parameters (number filters, size of filter,padding, stride) are used like working on beetle's parts. We have just modified on size of the input of network model to $96 \times 96$ and the output of the last FC layers to correspond to the number of landmarks. Besides, the hyper-parameters (learning rate, momentum) are also kept the same as when training from scratch on each part of beelte. However, we have increased the number of epochs to $10,000$ instead of $5,000$ to achieve better learning on the parameters.
+For pre-training step, the architecture with elementary blocks is continued to be selected. Basically, the architecture parameters (number filters, size of filter,padding, stride) are used like working on beetle's parts. We have just modified on size of the input of network model to $96 \times 96$ and the output of the last FC layers to correspond to the number of landmarks. Besides, the hyper-parameters (learning rate, momentum) are also kept the same as when training from scratch on each part of beelte. However, we have increased the number of epochs to $10,000$ instead of $5,000$ to achieve better learning on the parameters.
 
 \subsection{Fine-tuning on each beetle's part}
 
@@ -357,7 +358,7 @@ Our model architecture has been pre-trained on facial keypoints dataset with $30
 
 In another scene, to be able to use the same parameters for fine-tuning process, the fine-tuning images have been cropped to suppress the part which are empty, to obtain a new image size of $192 \times 192$; and a modification was made on stride properties of the first convolutional layer (changing from $1$ to $2$).
 
-During fine-tuning, cross-validation has been applied to select data for training and valiation. At the end of process, the landmarks are predicted on the test images. Then, the average distances have been calculated based on the distance (in pixels) between predicted and corresponding manual landmarks. Tables. \ref{cmppronotum}, \ref{cmpelytre}, \ref{cmptete}, \ref{cmpmg}, and \ref{cmpmd} show the comparison of the average distances by landmarks between training from scratch and fine-tuning process on pronotum, elytra, head, left and right mandible images, respectively. \textbf{From scratch} columns remind the previously average distances. \textbf{Fine-tune} columns present the new average distances after applying fine-tuning on each part. The average distance at each landmark has decreased and clearly that the result of predicted landmarks with the help of fine-tuning is more precise than training from scratch.
+During fine-tuning, cross-validation has been applied to select data for training and valiation. At the end of process, the landmarks are predicted on the test images. Then, the average distances have been calculated based on the distance (in pixels) between predicted and corresponding manual landmarks. Tables. \ref{cmppronotum}, \ref{cmptete}, \ref{cmpelytre}, \ref{cmpmg}, and \ref{cmpmd} show the comparison of the average distances by landmarks between training from scratch and fine-tuning process on pronotum, elytra, head, left and right mandible images, respectively. \textbf{From scratch} columns remind the previously average distances. \textbf{Fine-tune} columns present the new average distances after applying fine-tuning on each part. The average distance at each landmark has decreased and clearly that the result of predicted landmarks with the help of fine-tuning is more precise than training from scratch. Fig. \ref{figpdl} shows the predicted landmarks in one case of each part.
 
 \begin{table}[htbp]
 	\centering
@@ -474,29 +475,22 @@ During fine-tuning, cross-validation has been applied to select data for trainin
 		\label{cmpmd}
 	\end{minipage}
 \end{table}
+In order to get a better view of predicting results, we have calculated other statistical indicators such as median, standard error, minimum value and maximum value on each landmark based on the distances between predicted and corresponding manual landmarks. Besides, the distribution of the distances on each landmark of each part have been taked into account. All statistical values and the distribution graphs are presented in \ref{appdixA} and \ref{appdixB}.
 
-
-In another view, Fig. \ref{figdistmans} shows the comparison of the average distance distributions on pronotum, left and right mandible dataset. The \textbf{blue} curves present for the average distances on each landmarks when we train the model from scratch, \textbf{orange} curve present the results using fine-tuning process. In the case of $2$ mandibles (left and right), we have previously predicted landmarks with a set of image processing methods (hough transform, PCAI \cite{le2017maelab}), the black curves (Fig. \ref{figdistmans}) present these results in order to appreciate them. It is worth to remind that this method requires a segmentation step which has not been ``applicable" on the other parts. Comparing with the image processing procedure, the results are not the same between left and right mandibles, the results on the left mandible have been improved. Moreover, the results from deep learning processes are more stable for all landmarks than image processing procedures. 
-\iffalse
 \begin{figure}[htbp]
     \centering
-    %\subfloat[Head]{\label{}\includegraphics[width=0.5\textwidth]{images/tete_part}}~~
-	%\subfloat[Elytra]{\label{}\includegraphics[width=0.5\textwidth]{images/elytre_part}}\\
-	\subfloat[Pronotum]{\label{}\includegraphics[width=0.5\textwidth]{images/pronotum_part.png}}
-    \caption{The distribution of average distances on each landmark of pronotum part. Blue and orange lines present for the results when train the model from scratch and apply fine-tuning, respectively. }
-    \label{figdist5parts}
-\end{figure}
-\fi
-\begin{figure}[htbp]
-    \centering
-    \subfloat[Pronotum]{\label{}\includegraphics[width=0.5\textwidth]{images/pronotum_part.png}}\\
-    \subfloat[Left mandible]{\label{}\includegraphics[width=0.5\textwidth]{images/mg_part}}~~
-	\subfloat[Right mandible]{\label{}\includegraphics[width=0.5\textwidth]{images/md_part}}
-    \caption{The distribution of average distances on each landmark of two mandibles. Black, blue, and orange lines present for the results of image processing procedures, deep learning (from scratch and fine-tuning), respectively. }
-    \label{figdistmans}
+    \subfloat[Pronotum]{\label{}\includegraphics[width=0.45\textwidth]{images/predicted/Prono_001.JPG}}~~
+    \subfloat[Head]{\label{}\includegraphics[width=0.45\textwidth]{images/predicted/Tete_005.JPG}}\\
+    \subfloat[Left mandible]{\label{}\includegraphics[width=0.45\textwidth]{images/predicted/Mg_001.JPG}}~~
+    \subfloat[Right mandible]{\label{}\includegraphics[width=0.45\textwidth]{images/predicted/Md_002.JPG}}\\
+	\subfloat[Elytra]{\label{}\includegraphics[width=0.45\textwidth]{images/predicted/Elytre004.JPG}}
+    \caption{The location of predicted landmarks (red points) in one case of each part }
+    \label{figpdl}
 \end{figure}
 
-The fine-tuning process has improved the results of the proposed architecture on both $5$ datasets: left, right mandible, pronotum, elytra and head. All the average distances have significantly decreased: $\approx 41.35\%$ on left mandible, $\approx 46.51\%$ on right mandible, $\approx 25.98\%$ on pronotum, $\approx 15.8\%$ on elytra, and $\approx 18.10\%$  on head part based on considering the average distances per landmark. For segmentable images, we have a comparison between the results of deep learning and early method where we have applied image processing techniques to predict the landmarks \cite{le2017maelab}. Clearly, the result with fine-tuning has improved the location of estimated landmarks. Even the average distances which obtained from scratch training are still high but they are more stable than the results from the early method: most of the average distance(or landmarks) of left mandibles are less than the results of the early method, while the average distances are very closed in the case of right mandibles.
+The fine-tuning process has improved the results of the proposed architecture on both $5$ datasets: left, right mandible, pronotum, elytra and head. All the average distances have significantly decreased: $\approx 41.35\%$ on left mandible, $\approx 46.51\%$ on right mandible, $\approx 25.98\%$ on pronotum, $\approx 15.8\%$ on elytra, and $\approx 18.10\%$  on head part based on considering the average distances per landmark. Besides, if we consider a predicted point which has the distance (from manual ones) less than mean value plus standard deviation is acceptable, the accuracy of method on each part is $\textbf{87.07\%}$ on pronotum, $\textbf{87.92\%}$ on head, $\textbf{91.78\%}$ on elytra, $\textbf{93.58\%}$ on left mandible and $\textbf{88.31\%}$ on right mandible.
+
+For segmentable images, we have a comparison between the results of deep learning and early method where we have applied image processing techniques to predict the landmarks \cite{le2017maelab}. Clearly, the result with fine-tuning has improved the location of estimated landmarks. Even the average distances which obtained from scratch training are still high but they are more stable than the results from the early method: most of the average distance(or landmarks) of left mandibles are less than the results of the early method, while the average distances are very closed in the case of right mandibles.
 
 \section{Conclusion}
 \label{sconclusion}
@@ -512,7 +506,205 @@ project, i.e. about all beetle parts. The quality of prediction allows using aut
 
 \bibliography{includes/mybibfile}
 
+\pagebreak
+\appendix
+\section{Statistic information on each beetle's part}
+\label{appdixA}
+Table \ref{a1}, \ref{a2}, \ref{a3}, \ref{a4}, and \ref{a5} show the statistical values on each part. The green and red numbers present the best and the worse values on each statistical indicators, respectively.  
+\begin{table}[htbp]
+\begin{tabular}{ | c | c | c | c | c | c | }
+\hline
+	\textbf{\#LM} & \textbf{Mean} & \textbf{Standard Error} & \textbf{Median} & \textbf{Minimum} & \textbf{Maximum} \\ \hline
+	LM1 & 2.9914 & \textcolor{green}{\textbf{0.1057}} & 2.7031 & \textcolor{red}{\textbf{0.23}} & 14.2496 \\ \hline
+	LM2 & 3.4066 & 0.1306 & 2.9626 & 0.175 & 18.4053 \\ \hline
+	LM3 & 2.9829 & 0.1205 & 2.5864 & 0.216 & 19.2092 \\ \hline
+	LM4 & 3.5449 & 0.1422 & 3.117 & 0.1638 & \textcolor{red}{\textbf{22.8899}} \\ \hline
+	LM5 & 3.3675 & 0.1327 & 2.9741 & \textcolor{green}{\textbf{0.101}} & 17.4586 \\ \hline
+	LM6 & \textcolor{red}{\textbf{4.0611}} & \textcolor{red}{\textbf{0.1512}} & \textcolor{red}{\textbf{3.5733}} & 0.1733 & \textcolor{green}{\textbf{14.0745}} \\ \hline
+	LM7 & \textcolor{green}{\textbf{2.9274}} & 0.1159 & \textcolor{green}{\textbf{2.5703}} & 0.2263 & 14.092 \\ \hline
+	LM8 & 3.6448 & 0.145 & 3.0116 & 0.1647 & 15.4585 \\ \hline
+\end{tabular}
+\caption{The statistical values on pronotum images}
+\label{a1}
+\end{table}
+
+\begin{table}[htbp]
+\begin{tabular}{ | c | c | c | c | c | c | }
+\hline
+	\textbf{\#LM} & \textbf{Mean} & \textbf{Standard Error} & \textbf{Median} & \textbf{Minimum} & \textbf{Maximum} \\ \hline
+	LM1 & \textcolor{red}{\textbf{4.8185}} & 0.1709 & 4.2951 & 0.3732 & 21.1819 \\ \hline
+	LM2 & 4.2098 & \textcolor{red}{\textbf{0.1715}} & 3.7484 & 0.2072 & \textcolor{red}{\textbf{23.9351}} \\ \hline
+	LM3 & 4.7286 & 0.1705 & \textcolor{red}{\textbf{4.3991}} & 0.2719 & \textcolor{green}{\textbf{19.12}} \\ \hline
+	LM4 & 4.1071 & 0.1701 & 3.6232 & 0.1942 & 21.6451 \\ \hline
+	LM5 & 4.1769 & 0.1545 & 3.7967 & 0.2683 & 20.2307 \\ \hline
+	LM6 & 3.4976 & 0.1657 & 2.9338 & 0.2384 & 22.6836 \\ \hline
+	LM7 & 3.9168 & \textcolor{green}{\textbf{0.1477}} & 3.4284 & 0.2134 & 21.0319 \\ \hline
+	LM8 & \textcolor{green}{\textbf{3.402}} & 0.1486 & \textcolor{green}{\textbf{2.7877}} & \textcolor{green}{\textbf{0.1478}} & 21.233 \\ \hline
+	LM9 & 4.1703 & 0.1481 & 3.7181 & \textcolor{red}{\textbf{0.4441}} & 22.0267 \\ \hline
+	LM10 & 3.9433 & 0.1574 & 3.4147 & 0.152 & 20.7223 \\ \hline
+\end{tabular}
+\caption{The statistical values on head images}
+\label{a2}
+\end{table}
+
+\begin{table}[htbp]
+	\begin{tabular}{ | c | c | c | c | c | c | }
+\hline
+	 \textbf{\#LM} & \textbf{Mean} & \textbf{Standard Error} & \textbf{Median} & \textbf{Minimum} & \textbf{Maximum} \\ \hline
+	LM1 & 3.2081 & 0.179 & 2.6311 & 0.1265 & 32.6688 \\ \hline
+	LM2 & 3.2842 & 0.1872 & 2.5934 & 0.1607 & 33.9982 \\ \hline
+	LM3 & \textcolor{green}{\textbf{3.1975}} & \textcolor{green}{\textbf{0.1755}} & 2.5412 & 0.0763 & 31.0928 \\ \hline
+	LM4 & 3.225 & 0.1812 & \textcolor{green}{\textbf{2.479}} & 0.1485 & 33.1458 \\ \hline
+	LM5 & 3.3062 & 0.1869 & 2.606 & 0.1187 & \textcolor{red}{\textbf{35.7959}} \\ \hline
+	LM6 & 4.2069 & 0.1957 & 3.578 & 0.2149 & 35.3037 \\ \hline
+	LM7 & 4.5445 & \textcolor{red}{\textbf{0.2049}} & 4.0792 & 0.3454 & 34.7368 \\ \hline
+	LM8 & \textcolor{red}{\textbf{4.7596}} & 0.2018 & \textcolor{red}{\textbf{4.3057}} & \textcolor{red}{\textbf{0.4697}} & 32.1749 \\ \hline
+	LM9 & 4.548 & 0.1916 & 3.9626 & 0.2711 & \textcolor{green}{\textbf{28.3484}} \\ \hline
+	LM10 & 3.3918 & 0.1772 & 2.7726 & 0.1799 & 29.9211 \\ \hline
+	LM11 & 3.2897 & 0.1764 & 2.7064 & \textcolor{green}{\textbf{0.0527}} & 32.3641 \\ \hline
+\end{tabular}
+\caption{The statistical values on elytra images}
+\label{a3}
+\end{table}
+
+\begin{table}[htbp]
+	\begin{tabular}{ | c | c | c | c | c | c | }
+\hline
+	 \textbf{\#LM} & \textbf{Mean} & \textbf{Standard Error} & \textbf{Median} & \textbf{Minimum} & \textbf{Maximum} \\ \hline
+	LM1 & 5.2804 & 0.2805 & 4.2294 & \textcolor{red}{\textbf{0.6754}} & 41.9898 \\ \hline
+	LM2 & 4.0548 & 0.276 & 3.2748 & 0.2977 & 62.6295 \\ \hline
+	LM3 & 4.013 & 0.2965 & \textcolor{green}{\textbf{3.0758}} & 0.0416 & 72.6524 \\ \hline
+	LM4 & 4.0203 & 0.2915 & 3.2101 & \textcolor{green}{\textbf{0.0167}} & 70.5794 \\ \hline
+	LM5 & 3.9157 & 0.318 & 3.1796 & 0.2025 & 82.6241 \\ \hline
+	LM6 & \textcolor{green}{\textbf{3.8781}} & 0.3022 & 3.1983 & 0.2125 & 77.8756 \\ \hline
+	LM7 & 4.0127 & 0.3306 & 3.126 & 0.2276 & 86.2835 \\ \hline
+	LM8 & 4.1555 & 0.3251 & 3.2471 & 0.2322 & 84.0953 \\ \hline
+	LM9 & 4.349 & \textcolor{red}{\textbf{0.3521}} & 3.3104 & 0.1464 & \textcolor{red}{\textbf{91.2018}} \\ \hline
+	LM10 & 4.4575 & 0.3105 & 3.6117 & 0.0886 & 79.3924 \\ \hline
+	LM11 & 4.7191 & \textcolor{green}{\textbf{0.1915}} & 4.0415 & 0.4054 & \textcolor{green}{\textbf{27.077}} \\ \hline
+	LM12 & 5.0797 & 0.2816 & 4.1478 & 0.3743 & 58.941 \\ \hline
+	LM13 & 4.4999 & 0.3194 & 3.5737 & 0.1282 & 77.467 \\ \hline
+	LM14 & 4.2572 & 0.2776 & 3.4518 & 0.4414 & 66.049 \\ \hline
+	LM15 & 4.618 & 0.3165 & 3.811 & 0.1256 & 77.1424 \\ \hline
+	LM16 & \textcolor{red}{\textbf{6.042}} & 0.3312 & \textcolor{red}{\textbf{4.5958}} & 0.1927 & 62.5569 \\ \hline
+\end{tabular}
+\caption{The statistical values on left mandible images}
+\label{a4}
+\end{table}
+
+\begin{table}[htbp]
+	\begin{tabular}{ | c | c | c | c | c | c | }
+\hline
+	 \textbf{\#LM} & \textbf{Mean} & \textbf{Standard Error} & \textbf{Median} & \textbf{Minimum} & \textbf{Maximum} \\ \hline
+	LM1 & 4.8759 & 0.2462 & 3.721 & 0.133 & 26.9596 \\ \hline
+	LM2 & 4.0644 & \textcolor{green}{\textbf{0.1737}} & 3.3734 & 0.1778 & 22.6007 \\ \hline
+	LM3 & 3.9658 & 0.1923 & 3.2037 & 0.1583 & 23.8552 \\ \hline
+	LM4 & 3.8721 & 0.1823 & 3.2363 & \textcolor{green}{\textbf{0.0428}} & \textcolor{green}{\textbf{21.6248}} \\ \hline
+	LM5 & 4.0479 & 0.2011 & 3.1172 & \textcolor{red}{\textbf{0.3983}} & 24.7061 \\ \hline
+	LM6 & 3.8179 & 0.1847 & 3.1692 & 0.1078 & 35.2811 \\ \hline
+	LM7 & \textcolor{green}{\textbf{3.7662}} & 0.186 & \textcolor{green}{\textbf{3.0912}} & 0.1559 & 34.9122 \\ \hline
+	LM8 & 3.8728 & 0.1891 & 3.1345 & 0.2351 & 36.0385 \\ \hline
+	LM9 & 3.9616 & 0.1948 & 3.2576 & 0.1376 & 35.3078 \\ \hline
+	LM10 & 3.9661 & 0.1876 & 3.3955 & 0.1709 & 34.7438 \\ \hline
+	LM11 & 4.2698 & 0.1919 & 3.6016 & 0.2445 & 36.3356 \\ \hline
+	LM12 & 4.4238 & 0.205 & 3.7387 & 0.341 & \textcolor{red}{\textbf{38.4304}} \\ \hline
+	LM13 & 4.8663 & 0.1922 & 4.1789 & 0.3772 & 27.2213 \\ \hline
+	LM14 & 4.9318 & 0.2134 & 4.0853 & 0.1473 & 31.3994 \\ \hline
+	LM15 & 4.4636 & 0.1975 & 3.5378 & 0.0791 & 28.7507 \\ \hline
+	LM16 & 4.1737 & 0.1838 & 3.3537 & 0.3285 & 25.8165 \\ \hline
+	LM17 & 4.566 & 0.1933 & 3.8441 & 0.2639 & 27.9728 \\ \hline
+	LM18 & \textcolor{red}{\textbf{5.8936}} & \textcolor{red}{\textbf{0.2812}} & \textcolor{red}{\textbf{4.7034}} & 0.1854 & 30.8248 \\ \hline
+\end{tabular}
+\caption{The statistical values on right mandible images}
+\label{a5}
+\end{table}
+\pagebreak
+\section{The distribution of distances on each part}
+\label{appdixB}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[scale=0.4]{images/charts/pronotum_2.png}
+    \caption{The distribution of distances on each landmark on pronotum images}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[scale=0.5]{images/charts/tete_2.png}
+    \caption{The distribution of distances on each landmark on head images}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[scale=0.5]{images/charts/elytre_2.png}
+    \caption{The distribution of distances on each landmark on elytra images}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[scale=0.5]{images/charts/mg_2.png}
+    \caption{The distribution of distances on each landmark on left mandible images}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[scale=0.5]{images/charts/md_2.png}
+    \caption{The distribution of distances on each landmark on righ mandible images}
+\end{figure}
 \end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\iffalse
+\begin{figure}[htbp]
+    \centering
+    %\subfloat[Head]{\label{}\includegraphics[width=0.5\textwidth]{images/tete_part}}~~
+	%\subfloat[Elytra]{\label{}\includegraphics[width=0.5\textwidth]{images/elytre_part}}\\
+	\subfloat[Pronotum]{\label{}\includegraphics[width=0.5\textwidth]{images/pronotum_part.png}}
+    \caption{The distribution of average distances on each landmark of pronotum part. Blue and orange lines present for the results when train the model from scratch and apply fine-tuning, respectively. }
+    \label{figdist5parts}
+\end{figure}
+\fi
+In another view, Fig. \ref{figdistmans} shows the comparison of the average distance distributions on pronotum, left and right mandible dataset. The \textbf{blue} curves present for the average distances on each landmarks when we train the model from scratch, \textbf{orange} curve present the results using fine-tuning process. In the case of $2$ mandibles (left and right), we have previously predicted landmarks with a set of image processing methods (hough transform, PCAI \cite{le2017maelab}), the black curves (Fig. \ref{figdistmans}) present these results in order to appreciate them. It is worth to remind that this method requires a segmentation step which has not been ``applicable" on the other parts. Comparing with the image processing procedure, the results are not the same between left and right mandibles, the results on the left mandible have been improved. Moreover, the results from deep learning processes are more stable for all landmarks than image processing procedures. 
 
 Addition, in the cases of pronotum and head part, even if we plus the average distance and its standard deviation, the results are also less than the result when we trained the model from scratch.
 
