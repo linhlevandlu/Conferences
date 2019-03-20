@@ -149,6 +149,10 @@ J.~Margeta, et~al.,
   {\path{doi:10.1080/21681163.2015.1061448}}.
 \newline\urlprefix\url{https://doi.org/10.1080/21681163.2015.1061448}
 
+\bibitem{imagenet_cvpr09}
+J.~Deng, et~al., {ImageNet: A Large-Scale Hierarchical Image Database}, in:
+  CVPR09, 2009.
+
 \bibitem{le2017maelab}
 V.~L. Le, M.~Beurton-Aimar, A.~Krahenbuhl, N.~Parisey,
   \href{https://hal.archives-ouvertes.fr/hal-01571440}{{MAELab: a framework to

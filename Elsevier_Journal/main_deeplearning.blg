@@ -6,37 +6,38 @@ Database file #1: includes/mybibfile.bib
 Warning--empty booktitle in szegedy2015going
 Warning--empty pages in szegedy2015going
 Warning--empty pages in huang2017coarse
+Warning--empty pages in imagenet_cvpr09
 Warning--empty pages in le2017maelab
-You've used 30 entries,
+You've used 31 entries,
             2937 wiz_defined-function locations,
-            840 strings with 10356 characters,
-and the built_in function-call counts, 10829 in all, are:
-= -- 1029
-> -- 294
+            844 strings with 10449 characters,
+and the built_in function-call counts, 11083 in all, are:
+= -- 1047
+> -- 301
 < -- 14
-+ -- 118
-- -- 88
-* -- 688
-:= -- 1345
-add.period$ -- 32
-call.type$ -- 30
-change.case$ -- 29
++ -- 121
+- -- 90
+* -- 701
+:= -- 1376
+add.period$ -- 33
+call.type$ -- 31
+change.case$ -- 30
 chr.to.int$ -- 0
-cite$ -- 34
-duplicate$ -- 409
-empty$ -- 1288
-format.name$ -- 116
-if$ -- 2883
+cite$ -- 36
+duplicate$ -- 420
+empty$ -- 1329
+format.name$ -- 119
+if$ -- 2955
 int.to.chr$ -- 0
-int.to.str$ -- 30
-missing$ -- 30
-newline$ -- 103
-num.names$ -- 30
-pop$ -- 250
+int.to.str$ -- 31
+missing$ -- 31
+newline$ -- 106
+num.names$ -- 31
+pop$ -- 260
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 753
+skip$ -- 774
 stack$ -- 0
 substring$ -- 692
 swap$ -- 142
@@ -44,8 +45,8 @@ text.length$ -- 14
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 4
-while$ -- 87
-width$ -- 32
-write$ -- 264
-(There were 4 warnings)
+warning$ -- 5
+while$ -- 88
+width$ -- 33
+write$ -- 272
+(There were 5 warnings)
