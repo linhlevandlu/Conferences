@@ -47,7 +47,7 @@
 \@writefile{toc}{\contentsline {section}{\numberline {2}Related works}{3}{section.2}}
 \newlabel{related_works}{{2}{3}{Related works}{section.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Overview of Convolutional Neural Network}{4}{subsection.2.1}}
-\citation{krizhevsky2012imagenet,ciregan2012multi,li2015convolutional}
+\citation{krizhevsky2012imagenet,li2015convolutional,ciregan2012multi}
 \citation{srivastava2014dropout}
 \citation{srivastava2014dropout}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces A CNN network for classification problem\relax }}{5}{figure.caption.1}}
@@ -88,8 +88,8 @@
 \citation{lasagne}
 \@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces The architecture of EB-Net\relax }}{13}{figure.caption.7}}
 \newlabel{fignet3}{{7}{13}{The architecture of EB-Net\relax }{figure.caption.7}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Experiments and results}{14}{section.5}}
-\newlabel{sexperiments}{{5}{14}{Experiments and results}{section.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Experiments and results}{13}{section.5}}
+\newlabel{sexperiments}{{5}{13}{Experiments and results}{section.5}{}}
 \newlabel{figloss1}{{8a}{14}{Subfigure 8a}{subfigure.8.1}{}}
 \newlabel{sub@figloss1}{{(a)}{a}{Subfigure 8a\relax }{subfigure.8.1}{}}
 \newlabel{figloss2}{{8b}{14}{Subfigure 8b}{subfigure.8.2}{}}
@@ -98,9 +98,9 @@
 \newlabel{figlosses}{{8}{14}{The losses (training and validation) of the models\relax }{figure.caption.8}{}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {The first model}}}{14}{subfigure.8.1}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {The second model}}}{14}{subfigure.8.2}}
+\citation{pedregosa2011scikit}
 \@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces The losses (training and validation) of the third model\relax }}{15}{figure.caption.9}}
 \newlabel{figloss3}{{9}{15}{The losses (training and validation) of the third model\relax }{figure.caption.9}{}}
-\citation{pedregosa2011scikit}
 \@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces \relax \fontsize  {9}{11}\selectfont  \abovedisplayskip 8.5\p@ plus3\p@ minus4\p@ \abovedisplayshortskip \z@ plus2\p@ \belowdisplayshortskip 4\p@ plus2\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 4\p@ plus2\p@ minus2\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip {The losses during training the third model on pronotum images}\relax }}{16}{table.caption.10}}
 \newlabel{tbltrainingloss}{{1}{16}{\small {The losses during training the third model on pronotum images}\relax }{table.caption.10}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Correlation scores between manual landmarks and predicted landmarks\relax }}{16}{table.caption.11}}
@@ -110,8 +110,11 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces The distribution of the distances on the first landmark. The blue line is the average value of all distances.\relax }}{17}{figure.caption.13}}
 \newlabel{figchartlm1}{{10}{17}{The distribution of the distances on the first landmark. The blue line is the average value of all distances.\relax }{figure.caption.13}{}}
 \citation{torrey2009transfer}
-\citation{lin2016homemade}
 \citation{margeta_mri}
+\citation{imagenet_cvpr09}
+\citation{krizhevsky2012imagenet}
+\citation{simonyan2014very}
+\citation{lin2016homemade}
 \newlabel{figsub1}{{11a}{18}{Subfigure 11a}{subfigure.11.1}{}}
 \newlabel{sub@figsub1}{{(a)}{a}{Subfigure 11a\relax }{subfigure.11.1}{}}
 \newlabel{figsub2}{{11b}{18}{Subfigure 11b}{subfigure.11.2}{}}
@@ -120,14 +123,11 @@
 \newlabel{figrsexample}{{11}{18}{The predicted landmarks, in red, on the images in test set.\relax }{figure.caption.14}{}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Image with well-predicted landmarks}}}{18}{subfigure.11.1}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Image with inaccuracy landmarks}}}{18}{subfigure.11.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Resulting improvement by fine-tuning}{18}{section.6}}
-\newlabel{sfineTuning}{{6}{18}{Resulting improvement by fine-tuning}{section.6}{}}
-\citation{imagenet_cvpr09}
-\citation{krizhevsky2012imagenet}
-\citation{simonyan2014very}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Pre-train model architecture with facial key points dataset}{19}{subsection.6.1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Four face images in the dataset and ground truth position of the landmarks.\relax }}{20}{figure.caption.15}}
-\newlabel{figaface}{{12}{20}{Four face images in the dataset and ground truth position of the landmarks.\relax }{figure.caption.15}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Improving results by fine-tuning}{18}{section.6}}
+\newlabel{sfineTuning}{{6}{18}{Improving results by fine-tuning}{section.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Pre-train EB-Net on facial key points dataset}{19}{subsection.6.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Four face images in the dataset and ground truth position of the landmarks.\relax }}{19}{figure.caption.15}}
+\newlabel{figaface}{{12}{19}{Four face images in the dataset and ground truth position of the landmarks.\relax }{figure.caption.15}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Fine-tuning on each beetle's part}{20}{subsection.6.2}}
 \@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Average distances comparison between training from scratch and fine-tuning on pronotum images\relax }}{21}{table.caption.16}}
 \newlabel{cmppronotum}{{4}{21}{Average distances comparison between training from scratch and fine-tuning on pronotum images\relax }{table.caption.16}{}}
@@ -159,10 +159,10 @@
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Elytra}}}{24}{subfigure.13.5}}
 \bibdata{includes/mybibfile}
 \bibcite{lecun2015deep}{{1}{}{{}}{{}}}
-\@writefile{toc}{\contentsline {section}{\numberline {7}Conclusion}{25}{section.7}}
-\newlabel{sconclusion}{{7}{25}{Conclusion}{section.7}{}}
 \bibcite{arbib2012brains}{{2}{}{{}}{{}}}
 \bibcite{hinton2012deep}{{3}{}{{}}{{}}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Conclusion}{25}{section.7}}
+\newlabel{sconclusion}{{7}{25}{Conclusion}{section.7}{}}
 \bibcite{mikolov2011strategies}{{4}{}{{}}{{}}}
 \bibcite{lecun1998gradient}{{5}{}{{}}{{}}}
 \bibcite{krizhevsky2012imagenet}{{6}{}{{}}{{}}}
@@ -187,9 +187,9 @@
 \bibcite{lasagne}{{25}{}{{}}{{}}}
 \bibcite{pedregosa2011scikit}{{26}{}{{}}{{}}}
 \bibcite{torrey2009transfer}{{27}{}{{}}{{}}}
-\bibcite{lin2016homemade}{{28}{}{{}}{{}}}
-\bibcite{margeta_mri}{{29}{}{{}}{{}}}
-\bibcite{imagenet_cvpr09}{{30}{}{{}}{{}}}
+\bibcite{margeta_mri}{{28}{}{{}}{{}}}
+\bibcite{imagenet_cvpr09}{{29}{}{{}}{{}}}
+\bibcite{lin2016homemade}{{30}{}{{}}{{}}}
 \bibcite{le2017maelab}{{31}{}{{}}{{}}}
 \@writefile{toc}{\contentsline {section}{\numberline {Appendix A}Statistic information on each beetle's part}{30}{appendix.A}}
 \newlabel{appdixA}{{Appendix A}{30}{Statistic information on each beetle's part}{appendix.A}{}}
