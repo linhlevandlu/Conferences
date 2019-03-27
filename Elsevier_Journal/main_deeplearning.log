@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.18)  25 MAR 2019 18:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.18)  27 MAR 2019 11:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -501,207 +501,207 @@ Package pdftex.def Info: images/model3_loss.png used on input line 243.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [15 <./images/model3_loss.png>] [16]
-<images/statistic_pronotum_from_scratch_lm1.png, id=290, 608.2725pt x 434.62375
+<images/statistic_pronotum_from_scratch_lm1.png, id=286, 608.2725pt x 434.62375
 pt>
 File: images/statistic_pronotum_from_scratch_lm1.png Graphic file (type png)
  <use images/statistic_pronotum_from_scratch_lm1.png>
 Package pdftex.def Info: images/statistic_pronotum_from_scratch_lm1.png used on
- input line 310.
+ input line 313.
 (pdftex.def)             Requested size: 182.48315pt x 130.38812pt.
 
-<images/fn_accuracy.png, id=294, 76.3653pt x 57.3342pt>
+<images/fn_accuracy.png, id=290, 76.3653pt x 57.3342pt>
 File: images/fn_accuracy.png Graphic file (type png)
 
 <use images/fn_accuracy.png>
-Package pdftex.def Info: images/fn_accuracy.png used on input line 319.
+Package pdftex.def Info: images/fn_accuracy.png used on input line 322.
 (pdftex.def)             Requested size: 120.7521pt x 90.66576pt.
 
-<images/plandmark2.png, id=295, 178.9887pt x 133.9404pt>
+<images/plandmark2.png, id=291, 178.9887pt x 133.9404pt>
 File: images/plandmark2.png Graphic file (type png)
 
 <use images/plandmark2.png>
-Package pdftex.def Info: images/plandmark2.png used on input line 320.
+Package pdftex.def Info: images/plandmark2.png used on input line 323.
 (pdftex.def)             Requested size: 120.7521pt x 90.3609pt.
- [17 <./images/statistic_pronotum_from_scratch_lm1.png>]
-Overfull \hbox (6.75056pt too wide) in paragraph at lines 326--327
+ [17]
+Overfull \hbox (6.75056pt too wide) in paragraph at lines 329--330
 []\OT1/cmr/m/n/10 EB-Net has been trained from scratch on five datasets of bee-
 tles (left mandible,
  []
 
-[18 <./images/fn_accuracy.png (PNG copy)> <./images/plandmark2.png (PNG copy)>]
-<images/face_dataset_2.png, id=319, 1915.155pt x 478.78876pt>
+[18 <./images/statistic_pronotum_from_scratch_lm1.png> <./images/fn_accuracy.pn
+g (PNG copy)> <./images/plandmark2.png (PNG copy)>]
+<images/face_dataset_2.png, id=313, 1915.155pt x 478.78876pt>
 File: images/face_dataset_2.png Graphic file (type png)
 
 <use images/face_dataset_2.png>
-Package pdftex.def Info: images/face_dataset_2.png used on input line 341.
+Package pdftex.def Info: images/face_dataset_2.png used on input line 344.
 (pdftex.def)             Requested size: 306.43106pt x 76.60776pt.
- [19 <./images/face_dataset_2.png>] [20]
-Overfull \hbox (21.16843pt too wide) in paragraph at lines 376--390
+ [19] [20 <./images/face_dataset_2.png>]
+Overfull \hbox (21.16843pt too wide) in paragraph at lines 379--393
  [][] 
  []
 
 
-Overfull \hbox (21.16843pt too wide) in paragraph at lines 396--411
+Overfull \hbox (21.16843pt too wide) in paragraph at lines 399--414
  [][] 
  []
 
 
-Overfull \hbox (21.16843pt too wide) in paragraph at lines 418--438
+Overfull \hbox (21.16843pt too wide) in paragraph at lines 421--441
  [][] 
  []
 
 
-Overfull \hbox (21.16843pt too wide) in paragraph at lines 444--466
+Overfull \hbox (21.16843pt too wide) in paragraph at lines 447--469
  [][] 
  []
 
-<images/predicted/Prono_001.JPG, id=346, 46.2528pt x 46.2528pt>
+[21] [22] <images/predicted/Prono_001.JPG, id=351, 46.2528pt x 46.2528pt>
 File: images/predicted/Prono_001.JPG Graphic file (type jpg)
 
 <use images/predicted/Prono_001.JPG>
-Package pdftex.def Info: images/predicted/Prono_001.JPG used on input line 474.
+Package pdftex.def Info: images/predicted/Prono_001.JPG used on input line 477.
 
 (pdftex.def)             Requested size: 155.24895pt x 155.25731pt.
 
-<images/predicted/Tete_005.JPG, id=347, 46.2528pt x 46.2528pt>
+<images/predicted/Tete_005.JPG, id=352, 46.2528pt x 46.2528pt>
 File: images/predicted/Tete_005.JPG Graphic file (type jpg)
 
 <use images/predicted/Tete_005.JPG>
-Package pdftex.def Info: images/predicted/Tete_005.JPG used on input line 475.
+Package pdftex.def Info: images/predicted/Tete_005.JPG used on input line 478.
 (pdftex.def)             Requested size: 155.24895pt x 155.25731pt.
 
-<images/predicted/Mg_001.JPG, id=348, 46.2528pt x 46.2528pt>
+<images/predicted/Mg_001.JPG, id=353, 46.2528pt x 46.2528pt>
 File: images/predicted/Mg_001.JPG Graphic file (type jpg)
 
 <use images/predicted/Mg_001.JPG>
-Package pdftex.def Info: images/predicted/Mg_001.JPG used on input line 476.
+Package pdftex.def Info: images/predicted/Mg_001.JPG used on input line 479.
 (pdftex.def)             Requested size: 155.24895pt x 155.25731pt.
 
-<images/predicted/Md_002.JPG, id=349, 46.2528pt x 46.2528pt>
+<images/predicted/Md_002.JPG, id=354, 46.2528pt x 46.2528pt>
 File: images/predicted/Md_002.JPG Graphic file (type jpg)
 
 <use images/predicted/Md_002.JPG>
-Package pdftex.def Info: images/predicted/Md_002.JPG used on input line 477.
+Package pdftex.def Info: images/predicted/Md_002.JPG used on input line 480.
 (pdftex.def)             Requested size: 155.24895pt x 155.25731pt.
 
-<images/predicted/Elytre004.JPG, id=350, 46.2528pt x 46.2528pt>
+<images/predicted/Elytre004.JPG, id=355, 46.2528pt x 46.2528pt>
 File: images/predicted/Elytre004.JPG Graphic file (type jpg)
 
 <use images/predicted/Elytre004.JPG>
-Package pdftex.def Info: images/predicted/Elytre004.JPG used on input line 478.
+Package pdftex.def Info: images/predicted/Elytre004.JPG used on input line 481.
 
 (pdftex.def)             Requested size: 155.24895pt x 155.25731pt.
 
 
-LaTeX Warning: Float too large for page by 7.77187pt on input line 481.
+LaTeX Warning: Float too large for page by 7.77187pt on input line 484.
 
-[21] [22] [23 <./images/predicted/Prono_001.JPG> <./images/predicted/Tete_005.J
-PG> <./images/predicted/Mg_001.JPG> <./images/predicted/Md_002.JPG> <./images/p
-redicted/Elytre004.JPG>] [24] (./main_deeplearning.bbl [25] [26] [27] [28])
-[29]
-Overfull \hbox (1.33879pt too wide) in paragraph at lines 507--519
+[23] [24 <./images/predicted/Prono_001.JPG> <./images/predicted/Tete_005.JPG> <
+./images/predicted/Mg_001.JPG> <./images/predicted/Md_002.JPG> <./images/predic
+ted/Elytre004.JPG>] (./main_deeplearning.bbl [25] [26] [27] [28]) [29]
+Overfull \hbox (1.33879pt too wide) in paragraph at lines 510--522
 [][] 
  []
 
 
-Overfull \hbox (1.33879pt too wide) in paragraph at lines 524--538
+Overfull \hbox (1.33879pt too wide) in paragraph at lines 527--541
 [][] 
  []
 
 
-Overfull \hbox (1.33879pt too wide) in paragraph at lines 543--558
+Overfull \hbox (1.33879pt too wide) in paragraph at lines 546--561
 [][] 
  []
 
 
-Overfull \hbox (1.33879pt too wide) in paragraph at lines 563--583
+Overfull \hbox (1.33879pt too wide) in paragraph at lines 566--586
 [][] 
  []
 
 
-Overfull \hbox (1.33879pt too wide) in paragraph at lines 588--610
+Overfull \hbox (1.33879pt too wide) in paragraph at lines 591--613
 [][] 
  []
 
-[30] [31] [32] <images/charts/pronotum_2.png, id=438, 1108.14pt x 813.0375pt>
+[30] [31] [32] <images/charts/pronotum_2.png, id=435, 1108.14pt x 813.0375pt>
 File: images/charts/pronotum_2.png Graphic file (type png)
 
 <use images/charts/pronotum_2.png>
-Package pdftex.def Info: images/charts/pronotum_2.png used on input line 619.
+Package pdftex.def Info: images/charts/pronotum_2.png used on input line 622.
 (pdftex.def)             Requested size: 443.24815pt x 325.20924pt.
 
-Overfull \hbox (98.24815pt too wide) in paragraph at lines 619--620
+Overfull \hbox (98.24815pt too wide) in paragraph at lines 622--623
  [][] 
  []
 
-<images/charts/tete_2.png, id=439, 846.16125pt x 850.17625pt>
+<images/charts/tete_2.png, id=436, 846.16125pt x 850.17625pt>
 File: images/charts/tete_2.png Graphic file (type png)
 
 <use images/charts/tete_2.png>
-Package pdftex.def Info: images/charts/tete_2.png used on input line 625.
+Package pdftex.def Info: images/charts/tete_2.png used on input line 628.
 (pdftex.def)             Requested size: 423.07959pt x 425.08708pt.
 
-Overfull \hbox (78.07959pt too wide) in paragraph at lines 625--626
+Overfull \hbox (78.07959pt too wide) in paragraph at lines 628--629
  [][] 
  []
 
-<images/charts/elytre_2.png, id=440, 842.14626pt x 851.18pt>
+<images/charts/elytre_2.png, id=437, 842.14626pt x 851.18pt>
 File: images/charts/elytre_2.png Graphic file (type png)
 
 <use images/charts/elytre_2.png>
-Package pdftex.def Info: images/charts/elytre_2.png used on input line 631.
+Package pdftex.def Info: images/charts/elytre_2.png used on input line 634.
 (pdftex.def)             Requested size: 421.0721pt x 425.58894pt.
 
-Overfull \hbox (76.0721pt too wide) in paragraph at lines 631--632
+Overfull \hbox (76.0721pt too wide) in paragraph at lines 634--635
  [][] 
  []
 
-<images/charts/mg_2.png, id=441, 841.1425pt x 849.1725pt>
+<images/charts/mg_2.png, id=438, 841.1425pt x 849.1725pt>
 File: images/charts/mg_2.png Graphic file (type png)
 
 <use images/charts/mg_2.png>
-Package pdftex.def Info: images/charts/mg_2.png used on input line 637.
+Package pdftex.def Info: images/charts/mg_2.png used on input line 640.
 (pdftex.def)             Requested size: 420.57022pt x 424.5852pt.
 
-Overfull \hbox (75.57022pt too wide) in paragraph at lines 637--638
+Overfull \hbox (75.57022pt too wide) in paragraph at lines 640--641
  [][] 
  []
 
-<images/charts/md_2.png, id=442, 889.3225pt x 890.32625pt>
+<images/charts/md_2.png, id=439, 889.3225pt x 890.32625pt>
 File: images/charts/md_2.png Graphic file (type png)
 
 <use images/charts/md_2.png>
-Package pdftex.def Info: images/charts/md_2.png used on input line 643.
+Package pdftex.def Info: images/charts/md_2.png used on input line 646.
 (pdftex.def)             Requested size: 444.66016pt x 445.16203pt.
 
-Overfull \hbox (99.66016pt too wide) in paragraph at lines 643--644
+Overfull \hbox (99.66016pt too wide) in paragraph at lines 646--647
  [][] 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 646.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 649.
 [33 <./images/charts/pronotum_2.png>] [34 <./images/charts/tete_2.png>]
 [35 <./images/charts/elytre_2.png>] [36 <./images/charts/mg_2.png>] [37 <./imag
 es/charts/md_2.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 646.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 649.
  (./main_deeplearning.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 646.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 646.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 649.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 649.
 Package rerunfilecheck Info: File `main_deeplearning.out' has not changed.
 (rerunfilecheck)             Checksum: 5EF40C58D164446220FAE0361A0DF3E1;917.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 646.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 649.
  ) 
 Here is how much of TeX's memory you used:
- 7944 strings out of 493029
- 120197 string characters out of 6136234
- 238421 words of memory out of 5000000
- 11237 multiletter control sequences out of 15000+600000
- 9981 words of font info for 35 fonts, out of 8000000 for 9000
+ 7932 strings out of 493029
+ 120016 string characters out of 6136234
+ 238422 words of memory out of 5000000
+ 11230 multiletter control sequences out of 15000+600000
+ 8741 words of font info for 31 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,14n,49p,1977b,548s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,11n,49p,1977b,536s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -715,28 +715,27 @@ pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
 , replaced by a fixed one
 
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmti7.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmtt8.pfb>
-Output written on main_deeplearning.pdf (37 pages, 2503254 bytes).
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmtt8.pfb>
+Output written on main_deeplearning.pdf (37 pages, 2495769 bytes).
 PDF statistics:
- 564 PDF objects out of 1000 (max. 8388607)
- 472 compressed objects within 5 object streams
- 130 named destinations out of 1000 (max. 500000)
+ 558 PDF objects out of 1000 (max. 8388607)
+ 467 compressed objects within 5 object streams
+ 129 named destinations out of 1000 (max. 500000)
  225 words of extra memory for PDF output out of 10000 (max. 10000000)
 

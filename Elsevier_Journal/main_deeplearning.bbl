@@ -122,10 +122,6 @@ S.~Dieleman, et~al., \href{http://dx.doi.org/10.5281/zenodo.27878}{Lasagne:
   {\path{doi:10.5281/zenodo.27878}}.
 \newline\urlprefix\url{http://dx.doi.org/10.5281/zenodo.27878}
 
-\bibitem{pedregosa2011scikit}
-P.~et~al, Scikit-learn: Machine learning in python, Journal of machine learning
-  research 12~(Oct) (2011) 2825--2830.
-
 \bibitem{torrey2009transfer}
 L.~Torrey, J.~Shavlik, Transfer learning, Handbook of Research on Machine
   Learning Applications and Trends: Algorithms, Methods, and Techniques 1

@@ -264,21 +264,24 @@ In order to extract predicted landmarks from all pronotum images, we have applie
 	\caption{\small{The losses during training the third model on pronotum images}}
 	\label{tbltrainingloss}
 \end{table}
-
-To evaluate the coordinates of predicted landmarks, the correlation metrics between the manual landmarks and corresponding predicted ones have been computed. Table. \ref{tblcorrelation} shows the correlation scores of $3$ metrics (using \textit{scikit-learn} \cite{pedregosa2011scikit}), e.g. coefficient of determination ($r^2$), explained variance (EV), and Pearson correlation. These three metrics are both appropriate for our dataset type. The results closed to $1$ show that the predicted coordinates are very close with the ground truth. It proves that our prediction is good enough to replace manual landmarks in statistical analysis of pronotum morphology. However, standing on the side of image processing, seeing the real coordinates on images is more appropriate than statistical results. So, the distances (in pixels) between manual coordinates and predicted coordinates have been calculated for all images. Then, the average distance for each landmark has been computed.
+%To evaluate the coordinates of predicted landmarks, the correlation metrics between the manual landmarks and corresponding predicted ones have been computed. Table. \ref{tblcorrelation} shows the correlation scores of $3$ metrics (using \textit{scikit-learn} \cite{pedregosa2011scikit}), e.g. coefficient of determination ($r^2$), explained variance (EV), and Pearson correlation. These three metrics are both appropriate for our dataset type. The results closed to $1$ show that the predicted coordinates are very close with the ground truth. It proves that our prediction is good enough to replace manual landmarks in statistical analysis of pronotum morphology. However, standing on the side of image processing, seeing the real coordinates on images is more appropriate than statistical results. So, the distances (in pixels) between manual coordinates and predicted coordinates have been calculated for all images. Then, the average distance for each landmark has been computed.
+To evaluate the coordinates of predicted landmarks, the Pearson correlation metric has been calculated on each dimension (x and y) between them and corresponding manual ones. Then, some statistic indicators have been considered to figure out the distribution of predicted results such as mean, variance, min and max value. In Table \ref{tblcorrelation}, the rows show the values of the statistical indicators. All columns present the values when we take into account the correlation metrics of all dimensions (both x and y), while X-dimension and Y-dimension columns display the metric values on x and y coordinates separately. When considering the correlation both x and y dimensions, the average value is $0.8777$. This value indicates that the coordinates of predicted and manual landmarks have a very strong positive correlation. Additionaly, the high mean ($0.8777$) and small variance ($0.0058$) proof that the overall shape of each individual is well predicted.
 
 \begin{table}[htbp]
 	\centering
-	\begin{tabular}{|c|p{2cm}|p{2cm}|p{2cm}|}
-		\hline
-		Metric & $\mathbf{r^{2}}$ & \textbf{EV} & \textbf{Pearson} \\ \hline
-		Score & $\textbf{0.9952}$ & $\textbf{0.9951}$ & $\textbf{0.9974}$ \\\hline
-	\end{tabular}
-	\caption{Correlation scores between manual landmarks and predicted landmarks}
+	\begin{tabular}{ | l | c | c | c | }
+\hline
+	& All & X-dimesion & Y-dimension  \  \\ \hline
+	Mean & 0.8777 & 0.8116 & 0.9438 \\ \hline
+	Variance & 0.0059 & 0.002 & 0.0006 \\ \hline
+	Min & 0.7474 & 0.7474 & 0.9063 \\ \hline
+	Max & 0.9638 & 0.8577 & 0.9638 \\ \hline
+\end{tabular}
+	\caption{Statistical indicators on Pearson correlation between manual and predicted landmarks}
 	\label{tblcorrelation}
 \end{table}
 
-Table. \ref{tblavgpronotum} shows the average distances by landmarks on all images of pronotum dataset. With the images resolution $256 \times 192$, we can consider that an error of $1\%$ (corresponding to $2$ pixels) could
+Standing on the side of image processing, seeing the real coordinates on images is more appropriate than statistical results. So, the distances (in pixels) between manual coordinates and predicted coordinates have been calculated for all images. Then, the average distance for each landmark has been computed. Table. \ref{tblavgpronotum} shows the average distances by landmarks on all images of pronotum dataset. With the images resolution $256 \times 192$, we can consider that an error of $1\%$ (corresponding to $2$ pixels) could
 be an acceptable error. Unhappily, our results exhibit average
 distance of $4$ pixels in the best case, landmark $1$ and more than
 $5$ pixels in the worse case, landmark $6$.
