@@ -332,7 +332,7 @@ Fig. \ref{figloss3} illustrates the losses during the training of EB-Net, one ca
     \label{figloss3}
 \end{figure}
 
-Table. \ref{tbltrainingloss} resumes the losses of $9$ rounds when we trained EB-Net on pronotum images. Clearly, the training/validation loss among rounds are tiny and stable.
+Table \ref{tbltrainingloss} resumes the losses of $9$ rounds when we trained EB-Net on pronotum images. Clearly, the training/validation loss among rounds are tiny and stable.
 
 \begin{table}[h!]
 	\centering
@@ -352,15 +352,16 @@ Table. \ref{tbltrainingloss} resumes the losses of $9$ rounds when we trained EB
 	\label{tbltrainingloss}
 \end{table}
 %To evaluate the coordinates of predicted landmarks, the correlation metrics between the manual landmarks and corresponding predicted ones have been computed. Table. \ref{tblcorrelation} shows the correlation scores of $3$ metrics (using \textit{scikit-learn} \cite{pedregosa2011scikit}), e.g. coefficient of determination ($r^2$), explained variance (EV), and Pearson correlation. These three metrics are both appropriate for our dataset type. The results closed to $1$ show that the predicted coordinates are very close with the ground truth. It proves that our prediction is good enough to replace manual landmarks in statistical analysis of pronotum morphology. However, standing on the side of image processing, seeing the real coordinates on images is more appropriate than statistical results. So, the distances (in pixels) between manual coordinates and predicted coordinates have been calculated for all images. Then, the average distance for each landmark has been computed.
+
 To evaluate the coordinates of predicted landmarks, the Pearson
 correlation  metric  between predicted and manual landmarks has been
 calculated for each dimension (x and y). Table \ref {tblcorrelation}
 shows the obtained results. The average value of the coordinates
-correlation (both x and y) is in the first row, standard error,
-minimun and maximum of correlation scores are given in the next
-raws. One can note that the correlation is strongly positive in each
-case with a very small standard error, proving that each individual
-coordinate  is well predicted.
+correlation (both x and y) is in the first row, variance,
+minimum and maximum of correlation scores are given in the next
+rows. One can note that the correlation is strongly positive in each
+case with a very small variance, proving that each individual
+coordinate is well predicted.
 
 \begin{table}[htbp]
 	\centering
@@ -368,7 +369,7 @@ coordinate  is well predicted.
 \hline
 	& X-dimension & Y-dimension  \  \\ \hline
 	Mean & 0.8116 & 0.9438 \\ \hline
-	Std. Err.  & 0.002 & 0.0006 \\ \hline
+	Variance  & 0.0020 & 0.0006 \\ \hline
 	Min  & 0.7474 & 0.9063 \\ \hline
 	Max  & 0.8577 & 0.9638 \\ \hline
 \end{tabular}
