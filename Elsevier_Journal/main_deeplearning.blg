@@ -6,28 +6,28 @@ Database file #1: includes/mybibfile.bib
 Warning--empty booktitle in szegedy2015going
 Warning--empty pages in szegedy2015going
 Warning--empty pages in huang2017coarse
-Warning--empty pages in imagenet_cvpr09
 Warning--empty pages in le2017maelab
+Warning--empty pages in imagenet_cvpr09
 You've used 31 entries,
             2937 wiz_defined-function locations,
-            847 strings with 10638 characters,
-and the built_in function-call counts, 11198 in all, are:
-= -- 1047
+            847 strings with 10645 characters,
+and the built_in function-call counts, 11084 in all, are:
+= -- 1032
 > -- 331
 < -- 14
 + -- 131
 - -- 100
-* -- 717
-:= -- 1405
+* -- 711
+:= -- 1396
 add.period$ -- 33
 call.type$ -- 31
 change.case$ -- 30
 chr.to.int$ -- 0
 cite$ -- 36
-duplicate$ -- 421
-empty$ -- 1326
+duplicate$ -- 415
+empty$ -- 1317
 format.name$ -- 130
-if$ -- 2972
+if$ -- 2942
 int.to.chr$ -- 0
 int.to.str$ -- 31
 missing$ -- 31
@@ -37,10 +37,10 @@ pop$ -- 260
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 774
+skip$ -- 765
 stack$ -- 0
-substring$ -- 686
-swap$ -- 142
+substring$ -- 662
+swap$ -- 136
 text.length$ -- 14
 text.prefix$ -- 0
 top$ -- 0

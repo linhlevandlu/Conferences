@@ -82,6 +82,11 @@ C.~Cintas, et~al., Automatic ear detection and feature extraction using
 S.~Huang, M.~Gong, D.~Tao, A coarse-fine network for keypoint localization, in:
   The IEEE International Conference on Computer Vision (ICCV), Vol.~2, 2017.
 
+\bibitem{vu2018heritage}
+M.-T. Vu, M.~Beurton-Aimar, V.-L. Le, Heritage image classification by
+  convolution neural networks, in: 2018 1st International Conference on
+  Multimedia Analysis and Pattern Recognition (MAPR), IEEE, 2018, pp. 1--6.
+
 \bibitem{collobert2008unified}
 R.~Collobert, J.~Weston, A unified architecture for natural language
   processing: Deep neural networks with multitask learning, in: Proceedings of
@@ -92,16 +97,6 @@ R.~Collobert, J.~Weston, A unified architecture for natural language
 J.~Gu, Z.~Wang, J.~Kuen, L.~Ma, A.~Shahroudy, B.~Shuai, T.~Liu, X.~Wang,
   G.~Wang, J.~Cai, et~al., Recent advances in convolutional neural networks,
   Pattern Recognition 77 (2018) 354--377.
-
-\bibitem{ciregan2012multi}
-D.~Ciregan, U.~Meier, J.~Schmidhuber, Multi-column deep neural networks for
-  image classification, in: Computer Vision and Pattern Recognition (CVPR),
-  2012 IEEE Conference on, IEEE, 2012, pp. 3642--3649.
-
-\bibitem{srivastava2014dropout}
-N.~Srivastava, G.~E. Hinton, A.~Krizhevsky, I.~Sutskever, R.~Salakhutdinov,
-  Dropout: a simple way to prevent neural networks from overfitting., Journal
-  of machine learning research 15~(1) (2014) 1929--1958.
 
 \bibitem{zeiler2014visualizing}
 M.~D. Zeiler, R.~Fergus, Visualizing and understanding convolutional networks,
@@ -116,6 +111,11 @@ K.~He, X.~Zhang, S.~Ren, J.~Sun, Deep residual learning for image recognition,
   in: Proceedings of the IEEE conference on computer vision and pattern
   recognition, 2016, pp. 770--778.
 
+\bibitem{srivastava2014dropout}
+N.~Srivastava, G.~E. Hinton, A.~Krizhevsky, I.~Sutskever, R.~Salakhutdinov,
+  Dropout: a simple way to prevent neural networks from overfitting., Journal
+  of machine learning research 15~(1) (2014) 1929--1958.
+
 \bibitem{lecun2012efficient}
 Y.~A. LeCun, et~al., Efficient backprop, in: Neural networks: Tricks of the
   trade, Springer, 2012, pp. 9--48.
@@ -126,6 +126,13 @@ S.~Dieleman, et~al., \href{http://dx.doi.org/10.5281/zenodo.27878}{Lasagne:
 \newblock \href {http://dx.doi.org/10.5281/zenodo.27878}
   {\path{doi:10.5281/zenodo.27878}}.
 \newline\urlprefix\url{http://dx.doi.org/10.5281/zenodo.27878}
+
+\bibitem{le2017maelab}
+V.~L. Le, M.~Beurton-Aimar, A.~Krahenbuhl, N.~Parisey,
+  \href{https://hal.archives-ouvertes.fr/hal-01571440}{{MAELab: a framework to
+  automatize landmark estimation}}, in: {WSCG 2017}, Plzen, Czech Republic,
+  2017.
+\newline\urlprefix\url{https://hal.archives-ouvertes.fr/hal-01571440}
 
 \bibitem{torrey2009transfer}
 L.~Torrey, J.~Shavlik, Transfer learning, Handbook of Research on Machine
@@ -153,12 +160,5 @@ J.~Deng, et~al., {ImageNet: A Large-Scale Hierarchical Image Database}, in:
 S.~Lin, Z.~Zhao, F.~Su, Homemade ts-net for automatic face recognition, in:
   Proceedings of the 2016 ACM on International Conference on Multimedia
   Retrieval, ACM, 2016, pp. 135--142.
-
-\bibitem{le2017maelab}
-V.~L. Le, M.~Beurton-Aimar, A.~Krahenbuhl, N.~Parisey,
-  \href{https://hal.archives-ouvertes.fr/hal-01571440}{{MAELab: a framework to
-  automatize landmark estimation}}, in: {WSCG 2017}, Plzen, Czech Republic,
-  2017.
-\newline\urlprefix\url{https://hal.archives-ouvertes.fr/hal-01571440}
 
 \end{thebibliography}
