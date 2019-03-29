@@ -109,7 +109,7 @@ In the middle of the previous century, deep learning \cite{lecun2015deep} have b
 \subsection{Overview of Convolutional Neural Network}
 A CNN is a feedforward network which takes the information following one direction from the inputs to the outputs. Currently, CNNs have many variations, but it generally consists of several types of layers, for examples, convolutional layer, pooling layer or fully connected layer. In which, convolutional and pooling layers are stacked together to convolve and to down-sample the inputs. Then, the fully connected layers are followed to achieve the output of the network from the application of a decision function.
 
-Fig. \ref{imgcnn_network} shows a classical example of a CNN network, it inputs directly an image to several stages of convolutional and pooling layers. Then, the representation is feed into three fully connected layers. A dropout layer is inserted after the second fully connected layer to drop some nodes during the training process (blue nodes). Finally, the last fully connected layer gives output as the category label for the input image. This architecture could be seen as the most popular one. Now, we will describe the different types of layers, readers familiar with CNN terminology can jump directly to the next section.
+Fig. \ref{imgcnn_network} shows a classical example of a CNN network, it inputs directly an image to several stages of convolutional and pooling layers. Then, the representation is feed into three fully connected layers. A dropout layer is inserted after the second fully connected layer to drop some nodes during the training process (blue nodes). Finally, the last fully connected layer gives output as the category label for the input image. This architecture could be seen as the most popular one. Now, we will describe the different types of layers \cite{gu2018recent}, readers familiar with CNN terminology can jump directly to the next section.
 
 \begin{figure}[!h]
 	\centering
@@ -120,15 +120,16 @@ Fig. \ref{imgcnn_network} shows a classical example of a CNN network, it inputs 
 
 Convolutional (CONV) layer is used as a feature extractor by applying some learnable weights (filters) on the input images. The image values are convolved with the filters in order to compute the new feature maps; then the convolved results are sent through a nonlinear activation to the next layer. In CONV layer, the neurons are arranged into feature maps. All the neurons within a feature map have the same weights; however, different features maps within the same CONV layer have different weights so that several features can be extracted at each location of an input image.
 
-Pooling (POOL) layer is mostly used to down-sample the size of the input with the purpose to reduce the spatial resolution of the feature map and so to reduce the computation cost. Initially, it was a common practice to use average pooling to propagate the average of all the inputs to the next layer. However, in more recent models \cite{krizhevsky2012imagenet, li2015convolutional,  ciregan2012multi}, maximum pooling function has been prefered. It propagates the maximum values of the inputs to the next one. Fig. \ref{imgcnn_pooling} illustrates the differences between maximum and average pooling: Giving an input image of size $4 \times 4$, if applying a filter with size of $2 \times 2$ and a stride of $2$, if we apply to the yellow region an average pooling, the output will be $36.25$ and a maximum pooling will return the value $122$.
+Pooling (POOL) layer is mostly used to down-sample the size of the input with the purpose to reduce the spatial resolution of the feature map and so to reduce the computation cost. Initially, it was a common practice to use average pooling to propagate the average of all the inputs to the next layer. However, in more recent models \cite{krizhevsky2012imagenet, li2015convolutional,  ciregan2012multi}, maximum pooling function has been prefered. It propagates the maximum values of the inputs to the next one.% Fig. \ref{imgcnn_pooling} illustrates the differences between maximum and average pooling: Giving an input image of size $4 \times 4$, if applying a filter with size of $2 \times 2$ and a stride of $2$, if we apply to the yellow region an average pooling, the output will be $36.25$ and a maximum pooling will return the value $122$.
 %However, the value in each element of the output is different because the max pooling outputs the maximum values of the filter region, while average pooling outputs the average value of the same region.
-
+\iffalse
 \begin{figure}[!h]
 	\centering
 	\includegraphics[scale=.5]{images/pooling}
 	\caption{The results of different pooling}
 	\label{imgcnn_pooling}
 \end{figure}
+\fi
 
 Dropout (DROP) \cite{srivastava2014dropout} is a technique used to prevent over-fitting during the training. The term dropout mentions dropping some output units and their connections (incoming and outgoing) belonging to a layer in the network. The units are dropped randomly with a probability $p$. When applying dropout technique, the network becomes a collection of thinned networks \cite{srivastava2014dropout}. So, training a neural network with dropout looks like training a collection of thinned networks. The dropouts layers are most often placed after the fully connected layers, but it is possible to use them after the pooling layers to learn the most robust features possible.
 
@@ -263,13 +264,13 @@ To evaluate the coordinates of predicted landmarks, the Pearson correlation metr
 
 \begin{table}[htbp]
 	\centering
-	\begin{tabular}{ | l | c | c | c | }
+	\begin{tabular}{ | l | c | c | }
 \hline
-	& All & X-dimesion & Y-dimension  \  \\ \hline
-	Mean & 0.8777 & 0.8116 & 0.9438 \\ \hline
-	Variance & 0.0059 & 0.002 & 0.0006 \\ \hline
-	Min & 0.7474 & 0.7474 & 0.9063 \\ \hline
-	Max & 0.9638 & 0.8577 & 0.9638 \\ \hline
+	 & X-dimesion & Y-dimension  \  \\ \hline
+	Mean & 0.8116 & 0.9438 \\ \hline
+	Variance &  0.002 & 0.0006 \\ \hline
+	Min &  0.7474 & 0.9063 \\ \hline
+	Max &  0.8577 & 0.9638 \\ \hline
 \end{tabular}
 	\caption{Statistical indicators on Pearson correlation between manual and predicted landmarks}
 	\label{tblcorrelation}
@@ -479,7 +480,7 @@ In order to get a better view of the results, we have considered that average va
 
 The fine-tuning process has improved the results of the proposed architecture on both $5$ datasets: left, right mandible, pronotum, elytra and head. All the average distances have significantly decreased: $\approx 41.35\%$ on left mandible, $\approx 46.51\%$ on right mandible, $\approx 25.98\%$ on pronotum, $\approx 15.8\%$ on elytra, and $\approx 18.10\%$  on head part. Besides, if we consider a predicted landmark, which has the distance (from manual ones) less than mean value plus standard deviation, is acceptable, the accuracy of method on each part is $\textbf{87.07\%}$ on pronotum, $\textbf{87.92\%}$ on head, $\textbf{91.78\%}$ on elytra, $\textbf{93.58\%}$ on left mandible and $\textbf{88.31\%}$ on right mandible.
 
-We also have a comparison between the results of deep learning and early methods where we have applied image processing techniques to predict the landmarks \cite{le2017maelab}. Clearly, the result with fine-tuning has improved the location of estimated landmarks. Even the average distances obtained from scratch training are still higher but they are more stable than the results from the early method: most of the average distance(or landmarks) of left mandibles are less than the results of the early method, while the average distances are very close in the case of right mandibles.
+We also have a comparison between the results of deep learning and early methods where we have applied image processing techniques to predict the landmarks \cite{le2017maelab}. Clearly, the result with fine-tuning has improved the location of estimated landmarks. Even the average distances obtained from scratch training are still higher but they are lower variance than the results from the early method: most of the average distance(or landmarks) of left mandibles are less than the results of the early method, while the average distances are very close in the case of right mandibles.
 %\pagebreak
 \section{Conclusion}
 \label{sconclusion}

@@ -88,6 +88,11 @@ R.~Collobert, J.~Weston, A unified architecture for natural language
   the 25th international conference on Machine learning, ACM, 2008, pp.
   160--167.
 
+\bibitem{gu2018recent}
+J.~Gu, Z.~Wang, J.~Kuen, L.~Ma, A.~Shahroudy, B.~Shuai, T.~Liu, X.~Wang,
+  G.~Wang, J.~Cai, et~al., Recent advances in convolutional neural networks,
+  Pattern Recognition 77 (2018) 354--377.
+
 \bibitem{ciregan2012multi}
 D.~Ciregan, U.~Meier, J.~Schmidhuber, Multi-column deep neural networks for
   image classification, in: Computer Vision and Pattern Recognition (CVPR),
