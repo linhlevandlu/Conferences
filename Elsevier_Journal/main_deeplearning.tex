@@ -226,7 +226,7 @@ Their model contains several CNNs which are linked together in a list as a casca
 
 \section{Data augmentation}
 \label{Sdataaug}
-From AlexNet period to ResNet-50, the obtained success stories \cite{krizhevsky2012imagenet,he2016deep} have proved that CNN models produce better results on a large dataset but to use this technique, the size of dataset remains a bottleneck and our own some hundreds of images are considered as modest for these models. So, it is important to be able to provide a large dataset in order to learn more cases and improves the learning ability of the network. Unfortunately, in some application domains as this work in biology, providing a large dataset is too costly. For this reason, one way to solve this problem is to create misshapen data from real data and to add them to the training set. Most often in image processing, dataset augmentation uses operations like translation, rotation or scaling which are well known to be efficient to generate new version of existing images. However, this kind of operations are not useful in our case because the analysis of images by CNN (convoluted) are usually invariant to translation or rotation. So, we prefered to rely on method changing color space values to obtain misshapen images.
+From AlexNet period to ResNet-50, the obtained success stories \cite{krizhevsky2012imagenet,he2016deep} have proved that CNN models produce better results on a large dataset but to use this technique, the size of dataset remains a bottleneck and our own some hundred of images are considered as modest for these models. So, it is important to be able to provide a large dataset in order to learn more cases and improves the learning ability of the network. Unfortunately, in some application domains as this work in biology, providing a large dataset is too costly. For this reason, one way to solve this problem is to create misshapen data from real data and to add them to the training set. Most often in image processing, dataset augmentation uses operations like translation, rotation or scaling which are well known to be efficient to generate new version of existing images. However, this kind of operations are not useful in our case because the analysis of images by CNN (convoluted) are usually invariant to translation or rotation. So, we prefered to rely on method changing color space values to obtain misshapen images.
 
 Our image set is in RGB color map, the first procedure consists of changing the value of one color channel of the three channels in the original image to generate a new image. A constant value is sampled in an uniform distribution $\in [1, N]$ to obtain a new value caped at $255$. For example, Fig. \ref{figaug1} shows the three images which are generated  when a constant $c = 10$ is added to each channel of an original image. Following this way, we can generate three new versions of only one image.
 
@@ -259,14 +259,14 @@ The first architecture has been a very classical one (Fig. \ref{fignet1}). It re
 	\label{fignet1}
 \end{figure}
 
-The second model has kept the same architecture of the first model but the number of output of the two FC layers has been increased to $1000$. Increasing the value at FC layers could allow to get more features from CONV layer without requirements of computing resources. However, the obtained results remained not satisfying, it will be discussed also in the result section (Section \ref{sexperiments}). 
+The second model has kept the same architecture of the first model but the number of output of the two FC layers has been increased to $1000$. Increasing the value at FC layers could allow to get more features from CONV layer without requirements of computing resources. However, the obtained results remained not satisfying, it will be discussed also in the result section (see Section \ref{sexperiments}). 
 
 To build the third architecture, we have defined the \textit{Elementary Block} (EB). An EB is defined as a sequence of $1$ CONV ($C_{i}$), $1$ maximum POOL ($P_i$) and $1$ dropout ($D_i$) layers (Fig. \ref{figelementary}). The dropout layer has been added to prevent over-fitting by adding a step to remove some nodes. This has significantly reduced overfitting and over performed the other regularization methods \cite{srivastava2014dropout}.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.3]{images/elementary_block}
-	\caption{The layers in an elementary block. It includes a CONV layer (red), a maximum POOL layer (yellow) and a DROP layer (green).}
+	\caption{The layers in an elementary block. It includes a CONV layer (orange), a maximum POOL layer (yellow) and a DROP layer (green).}
 	\label{figelementary}
 \end{figure}
 
@@ -301,38 +301,39 @@ For the FC layers, FC1 and FC2 have $1000$ outputs, the last FC layer (FC3) has 
 The core of CNN is training over iteration. There are many ways to optimize the learning algorithm, but gradient descent \cite{lecun2012efficient} is currently a good choice to reduce the loss in neural network. The core idea is to follow the gradient until reaching a minimum of the cost function. So, we have chosen gradient descent in the backward phase to update the values of learnable parameters. EB-Net is designed to use a learning rate initialize at $0.03$ and to stop at $0.00001$, while the momentum is updated from $0.9$ to $0.9999$. The values are updated over training time to fit with the number of epochs \footnote{An epoch is a single pass through the full training set} by applying parameters adjustment during the training. The architecture implementation has been written in Lasagne framework \cite{lasagne} in Python code. More information about the model can be obtained from the repository on GitHub: \texttt{https://github.com/linhlevandlu/CNN\_Beetles\_Landmarks}
 \section{Experiments and results}
 \label{sexperiments}
-This work is a part of a project about automatized morphology measurements. Fig. \ref{fig5parts} presents an example of each part of our dataset. In these parts, the left and right mandible are considered as the segmentable parts while other parts are high difficulty to segment. In the previous work, we have proposed a method based on image processing techniques to work with segmentable images \cite{le2017maelab}. The choice to turn to deep learning process has been motivated by the high difficulty to segment some parts of the beetle images and consequently to apply classical image processing methods. The pronotum was the first part we have analyzed with deep learning. images5parts
+This work is a part of a project about automatized morphology measurements. Fig. \ref{fig5parts} presents an image example of each part in our dataset. In these parts, the left and right mandibles have been processed in previous work based on image processing techniques to work with segmentable images \cite{le2017maelab}. The choice to turn to deep learning methods for the three remained ones, which have been motivated by the high difficulty to segment them, as we can observed in Fig. \ref{fig5parts} and consequently to apply more usual image processing methods. The pronotum was the first part we have analyzed with deep learning and the presented results mainly concern these images.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.25]{images/images5parts}
-	\caption{The image in each part of beetle. From the left to right: pronotum, elytra, head, left and right mandible.}
+	\caption{The image in each part of beetle. From left to right: pronotum, elytra, head, left and right mandible.}
 	\label{fig5parts}
 \end{figure}
 
-The networks have been trained in $5, 000$ epochs on Linux OS by using NVIDIA TITAN X cards. During the training, the images are chosen randomly from the dataset with a ratio of $60\%$ for training and $40\%$ for validation. For each image, a set of $8$ manual landmarks are available. They have been set by biologists and are considered as the ground truth for the evaluation. In deep learning, many kinds of loss expressions can be considered depending on the class of problem solving by the network, for example, Root Mean Square Error (RMSE) is usually used for regression problems where the outputs are not discrete values. In our work, landmark prediction can be seen as a regression problem because the coordinates of landmarks do not belong to discrete classes.
-% Therefore, RMSE has been used to compute the losses of architectures during the training process. 
+The networks have been trained in $5, 000$ epochs on Linux OS by using NVIDIA TITAN X cards. During the training, the images are chosen randomly from the dataset with a ratio of $60\%$ for training and $40\%$ for validation. For each image of pronotum, a set of $8$ manual landmarks are available. They have been set by biologists and are considered as the ground truth for the evaluation. In deep learning, many kinds of loss expressions can be considered depending on the class of problem solving by the network, we have considered Root Mean Square Error (RMSE) because it is usually used for regression problems where the outputs are not discrete values and it is the case of the predicted coordinates values of landmarks.
 
-In order to extract predicted landmarks from all pronotum images, we have applied \textit{cross-validation} procedure to choose the test images, we call it \textit{round}. For each round, we have decided to choose $33$ images for testing step. In order to predict landmarks for all available images, we will do $9$ rounds. The $260$ remaining images are used as training and validation images. Of course, this dataset will be augmented as described before to provide $1820$ images for these $2$ steps. 
+In order to predict landmarks for all pronotum images, we have applied \textit{cross-validation} procedure to choose the test images, we call it \textit{round}. For each round, we have decided to choose $33$ images for testing step. The $260$ remaining images are used as training and validation images. In order to predict landmarks for all available images, we did $9$ rounds. Of course, this dataset has been augmented as described before to provide $1820$ images for these $2$ steps. 
 
 \begin{figure}[htbp]
     \centering
-    \subfloat[The first model]{\label{figloss1}\includegraphics[scale=0.3]{images/model1_loss}}~~
-\subfloat[The second model]{\label{figloss2}\includegraphics[scale=0.3]{images/model2_loss}}\\    
+    \subfloat[The first architecture model]{\label{figloss1}\includegraphics[width=0.5\textwidth]{images/model1_loss}}~~
+\subfloat[The second architecture model]{\label{figloss2}\includegraphics[width=0.5\textwidth]{images/model2_loss}}\\    
     \caption{The losses (training and validation) of the models. The blue curve presents the RMSE errors of training process while green curve is the validation errors.}
     \label{figlosses}
 \end{figure}
-Fig. \ref{figloss1} shows the training errors and the validation errors during training phase of the first architecture. The blue curve presents the RMSE errors of training process while green curve is the validation errors. Clearly, over-fitting has appeared in the first model, i.e., training losses are able to decrease but validation losses are stable. In the second model (Section \ref{Sneuralnetwork}), the parameters of full-connected layers have been modified to prevent the over-fitting but it seems that this solution is still not satisfying, the results are very similar to the previous ones (over-fitting still appears).
+As it has been mentioned in Section \ref{Sneuralnetwork}, the first and the second architectures exhibit over-fitting behavior. Fig. \ref{figlosses} shows the different curves of the losses during training and validation steps. The blue curves present the RMSE errors of training process while green curves are the validation errors. Clearly, over-fitting has appeared in the first model, e.g., training losses are able to decrease but validation losses are stable. In the second architecture (Section \ref{Sneuralnetwork}), there is no concrete change in the curves even the parameters of full-connected layers have been modified.
+%the parameters of full-connected layers have been modified to prevent the over-fitting but it seems that this solution is still not satisfying, the results are very similar to the previous ones (over-fitting still appears).
 
-Fig. \ref{figloss3} illustrates the losses during the training of EB-Net, one can note that after several epochs, the two-loss values become close and the over-fitting disappears. The sequence of Dropout addition inside elementary block works well to prevent over-fitting and improve the accuracy of the model greatly. This third model has been selected to compute automatically landmarks.
+Fig. \ref{figloss3} illustrates the losses during the training of the last version, EB-Net, one can note that after several epochs, the two-loss values become close and the over-fitting disappears. Addition of Dropout sequence inside elementary block works well to prevent over-fitting and improves the accuracy of the model greatly. 
+
 \begin{figure}[h!]
     \centering
-    \includegraphics[scale=0.4]{images/model3_loss}
+    \includegraphics[width=0.7\textwidth]{images/model3_loss}
     \caption{The losses (training and validation) of EB-Net}
     \label{figloss3}
 \end{figure}
 
-Table \ref{tbltrainingloss} resumes the losses of $9$ rounds when we trained EB-Net on pronotum images. Clearly, the training/validation loss among rounds are tiny and stable.
+Table \ref{tbltrainingloss} resumes the losses of $9$ rounds when we trained EB-Net on pronotum images. Clearly, the training/validation losses among rounds are tiny and stable.
 
 \begin{table}[h!]
 	\centering
@@ -362,7 +363,6 @@ minimum and maximum of correlation scores are given in the next
 rows. One can note that the correlation is strongly positive in each
 case with a very small variance, proving that each individual
 coordinate is well predicted.
-
 \begin{table}[htbp]
 	\centering
 	\begin{tabular}{ | l | c | c | }
@@ -382,14 +382,13 @@ obtain an acceptable position of the landmark when they look at the
 images. So, the distances (in pixels) between manual coordinates and predicted
 ones have been calculated for all images. Then, the average
 distance for each landmark has been
-computed. Table. \ref{tblavgpronotum} shows the average distances by
+computed. Table \ref{tblavgpronotum} shows the average distances by
 landmarks on all images of pronotum dataset. With the images
 resolution $256 \times 192$, we can consider that an error of $1\%$
 (corresponding to $2$ pixels) could 
 be an acceptable error. Unhappily, our results exhibit average
 distance of $4$ pixels in the best case, landmark $1$ and more than
 $5$ pixels in the worse case, landmark $6$.
-
 \begin{table}[htbp]
 	\centering	
 	\begin{tabular}{|c|c|}
@@ -408,17 +407,6 @@ $5$ pixels in the worse case, landmark $6$.
 	\label{tblavgpronotum}
 \end{table}
 
-Fig. \ref{figchartlm1} shows the distribution of the distances on the first landmark of all images. The accuracy based on the distance in each image can be
-separated into three spaces: best results, the images having distance less
-than the average value ($4$ pixels): $56.66\%$; acceptable results, the images having the
-distance from the average value to $7$ pixels (standard deviation error): $31.40\%$; and the images which are clearly in error with the distance greater than $7$ pixels: $11.94\%$.
-
-\begin{figure}[htbp]
-	\centerline{\includegraphics[scale=0.3]{images/statistic_pronotum_from_scratch_lm1}}
-	\caption{The distribution of the distances on the first landmark. The blue line is the average value of all distances.}
-	\label{figchartlm1}
-\end{figure}
-
 To illustrate this purpose, Fig. \ref{figrsexample} shows the predicted landmarks on two test images. One can note that even some predicted landmarks (Fig. \ref{figsub1}) are close to the manual ones, in some case (Fig. \ref{figsub2}) the predicted ones are far from the expected results. So, the next step has been dedicated to the improvement of these results.
 %This result explains why the average distance by landmarks are enough good while some predicted landmarks are so far from the manual one.
 \begin{figure}[htbp]
@@ -428,21 +416,29 @@ To illustrate this purpose, Fig. \ref{figrsexample} shows the predicted landmark
     \caption{The predicted landmarks, in red,  on the images in test set.}
     \label{figrsexample}
 \end{figure}
+
+To analyze how to improve the results, we have studied the distribution of the distance between manual and predicted landmarks. Fig. \ref{figchartlm1} shows the distribution of the distances of the first landmarks (the best case) in pronotum images. The accuracy based on the distance in each image can be
+separated into three spaces: best results, the images having distance less
+than the average value ($4$ pixels): $56.66\%$; acceptable results, the images having the
+distance from the average value to $7$ pixels (standard deviation error): $31.40\%$; and the images which are clearly in error with the distance greater than $7$ pixels: $11.94\%$.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/charts/fs_lm1.png}
+    \caption{The distribution of the distances on the best case ( $1^{st}$ landmark).\\ The line present for the average values.}
+    \label{figchartlm1}
+\end{figure}
+
 \section{Improving results by fine-tuning}
 \label{sfineTuning}
-EB-Net has been trained from scratch on five datasets of beetles (left mandible, right mandible, pronotum, elytra, and head). At this step, the network was able to predict the landmarks on the images. But as we have discussed before, even if the strength of the correlation validates the results, when we display on the images, the predicted coordinates are not exactly close to the manual ones, and the average distances are a little bit high.
-
-Training a network from scratch is not the only way to work in Deep learning. It is possible to initialize parameter values by extracted values from another experiment on another dataset. It is called transfer learning \cite{torrey2009transfer}. In tranfer learning, the obtained parameters values of model which have been used to solve a problem, are reused on other datasets \cite{margeta_mri} and potentially to solve another task. The name of this procedure is currently called \textbf{fine-tuning}.
+The results that we have just discussed, have been obtained by training EB-Net from scratch but training a network from scratch is not the only way to work in Deep learning. It is possible to initialize parameter values by extracted values from another experiment on another dataset. It is called transfer learning \cite{torrey2009transfer}. In tranfer learning, the obtained parameters values of a model which have been used to solve a problem, are reused for other datasets \cite{margeta_mri} and potentially to solve another task. The name of this procedure is currently called \textbf{fine-tuning}.
 
 Fine-tuning does not only replace and retrain the last layer of the model on
 the new dataset but also tunes the weights of a trained
-model by continuing the backpropagation. In this context, ImageNet \cite{imagenet_cvpr09} is a well-known dataset with more than $100,000 $ images. It has been used to train many famous CNN architectures such as AlexNet \cite{krizhevsky2012imagenet} or VGG-16 \cite{simonyan2014very} with success. The pre-trained models on ImageNet have been then shared in deep learning community as a source to re-use features of ImageNet. Unfortunately, some preliminary tests have shown that re-using ImageNet features
-is not relevant for our application because landmarks dectection has a distinct difference from general object recognition, as mentioned in \cite{lin2016homemade}. However, we noticed that our problem is related to face recognition and facial key points detection. So, we have decided to train EB-Net on a facial key points dataset and then, the trained parameters have been transfered to fine-tune on beetle's images.
-
-%We have designed a way to reproduce the method with our own data. It is worth noting that of course the size of the dataset to pre-train was not at all no huge than this one of ImageNet. To finish this task, we have pre-trained our model on another task (facial key points detection) before applying to fine-tune on each part of beetle. 
-
+model by continuing the backpropagation. In this context, ImageNet \cite{imagenet_cvpr09}, a well-known dataset with more than $100,000 $ images, has been used to train many famous CNN architectures such as AlexNet \cite{krizhevsky2012imagenet} or VGG-16 \cite{simonyan2014very} with success. The pre-trained models on ImageNet have been then shared in deep learning community as a source to re-use features of ImageNet. Unfortunately, some preliminary tests have shown that re-using ImageNet features
+is not relevant for our application because landmarks dectection has a distinct difference from general object recognition, as mentioned in \cite{lin2016homemade}. On another note, searching for landmarks is well defined in face recognition and facial key points detection and we can consider that this application is similar to our problem. So, we have decided to train EB-Net on a facial key points dataset and then to transfer the trained parameters to fine-tune on beetle's images.
 \subsection{Pre-train EB-Net on facial key points dataset}
-\textbf{Facial Keypoints dataset} has been published for a competition on Kaggle community \footnote{https://www.kaggle.com/c/facial-key points-detection}. It includes $2,140$ human face images with the size of $96 \times 96$. Each image contains $15$ landmarks on the face: $6$ landmarks for eyes, $4$ landmarks for eyebrows, $4$ landmarks for mouth, and $1$ landmarks for nose tip. Fig. \ref{figaface} shows four face images in the dataset and the landmarks on each face.
+A \textbf{Facial Keypoints dataset} has been published for a competition on Kaggle community \footnote{https://www.kaggle.com/c/facial-key points-detection}. It includes $2,140$ human face images with the size of $96 \times 96$. Each image contains $15$ landmarks on the face: $6$ landmarks for eyes, $4$ landmarks for eyebrows, $4$ landmarks for mouth, and $1$ landmarks for nose tip. Fig. \ref{figaface} shows four face images in the dataset and the landmarks on each face.
 
 \begin{figure}[htbp]
 	\centerline{\includegraphics[scale=0.16]{images/face_dataset_2.png}}
@@ -450,15 +446,11 @@ is not relevant for our application because landmarks dectection has a distinct 
 	\label{figaface}
 \end{figure}
 
-For the pre-training step, EB-Net has been trained on facial key point dataset. The objective of this task is to evaluate and to compare the effectiveness of EB-Net and other published results in the challenge. Basically, the layer's parameters are the same when training from scratch. We have just changed the image size of network model to $96 \times 96$ and the output number of the last FC layer to correspond to the number of landmarks ($15$ landmarks). For hyper-parameters of model, the learning rate and momentum remained the same but the number of epochs has been changed to $10,000$ instead of $5,000$ to achieve better learning on the parameters. After training, the obtained RMSE score is $1.1464$. This score is better than top $3$ on the leader board of the challenge.
-% It proved that EB-Net fits perfectly with facial key points challenge and we have good reason to believe that the obtained parameter values of EB-Net on facial key points dataset can be used to fine-tune on beetle's images.
-\subsection{Fine-tuning on each beetle's part}
-EB-Net has been pre-trained on facial key points dataset with $30$ outputs ($15$ landmarks $\times$ 2 coordinates). Then, the parameters have been transfered to be fine-tuned for the images of each beetle's part. The fine-tuning stage has been done by continuing the backpropagation to update the layers parameters.
+For the pre-training step, EB-Net has been trained with this dataset, the objective of this task has been to evaluate and to compare the effectiveness of EB-Net with other published results in the challenge. Basically, the layer's parameters are the same than for tranining from scratch. We have just changed the image size of network model to $96 \times 96$ and the output number of the last FC layer to correspond to the waited number of landmarks ($15$ landmarks). For the hyper-parameters of model, the learning rate and momentum remained the same but the number of epochs has been changed to $10,000$ instead of $5,000$ to improve the parameters learning. After training, the obtained RMSE score is $1.1464$. This score is better than top $3$ of the challenge.
+\subsection{Fine-tuning on beetle parts}
+The parameters obtained from this pre-training has been then transfered to continue the process with beetle images. The fine-tuning stage has been done by continuing the backpropagation to update the layers parameters. One can note that, the images in Facial Keypoints dataset are squared, in order to respect this we have reduced the size of beetle's images to $192 \times 192$ by cropping a background band. To declare this, the stride property of the first convolutional layer has been also modified from $1$ to $2$.
 
-The images in Facial Keypoints dataset are squared, in order to respect that we have reduced the size of beetle's images to $192 \times 192$ by cropping a background band. The stride property of the first convolutional layer has been also modified from $1$ to $2$.
-%In another scene, to be able to use the same parameters for fine-tuning process, the input images have been cropped to suppress the part which is empty (background), to obtain a new image size of $192 \times 192$; and a modification was made on stride property of the first convolutional layer (changing from $1$ to $2$).
-
-After finishing the fine-tuning process, EB-Net is used to predict the landmarks on test images. To evaluate the accuracy of the model's output, the distances (in pixels) between predicted and corresponding manual landmarks have been calculated. Then, the average distances for each landmark has been taked into account. Tables \ref{cmppronotum}, \ref{cmptete}, \ref{cmpelytre}, \ref{cmpmg}, and \ref{cmpmd} show the average distances by landmarks on each beetle's part of the two processes: training from scratch and fine-tuning process. \textbf{From scratch} columns remind the previously average distances when EB-Net was trained from scratch. \textbf{Fine-tune} columns present the new average distances after applying fine-tuning on each part. The green and red values represent the best and the worst average distances on each part. From these tables, one can note a difference in average distances between the two processes, the average distances of each landmark have decreased in the case of fine-tuning. It is clearly proved that the quality of predicted landmarks with the help of fine-tuning is better than training from scratch.
+After finishing the fine-tuning process, EB-Net is used to predict the landmarks on test images. To evaluate the accuracy of the model's outputs, the distances (in pixels) between predicted and corresponding manual landmarks have been calculated again as their average distances. Tables \ref{cmppronotum} resumes the results on pronotum images: \textbf{From scratch} columns remind the previously average distances when EB-Net was trained from scratch; \textbf{Fine-tune} columns present the new average distances after applying fine-tuning. The green and red values are respectively the best and the worst average distances. The results of elytra and head can be seen in \ref{appdixA1}. First of all, the results have been clearly improved with the help of transfer learning for each landmark.
 \begin{table}[htbp]
 	\centering
 	\begin{tabular}{|c|c|c|}
@@ -477,7 +469,52 @@ After finishing the fine-tuning process, EB-Net is used to predict the landmarks
 	\label{cmppronotum}
 \end{table}
 
-\begin{table}
+It is worth to note that average computing can hide different situations. So, the distribution of the distances has been taken into account. Fig. \ref{figchartfn} describes the distribution of distances of two examples cases: $1^{st}$ and $6^{th}$ landmarks. Clearly, with the help of fine-tuning, the distances have been decreased and more convergence to the mean value.
+
+\begin{figure}[htbp]
+    \centering
+    \subfloat[$1^{st}$ landmark (the best case)]{\label{}\includegraphics[width=0.49\textwidth]{images/charts/fs_lm1.png}}~~
+    \subfloat[$6^{th}$ landmark (the worst case)]{\label{}\includegraphics[width=0.49\textwidth]{images/charts/fs_lm6.png}}\\
+    \subfloat[$1^{st}$ landmark]{\label{}\includegraphics[width=0.49\textwidth]{images/charts/fn_lm7.png}}~~
+    \subfloat[$6^{th}$ landmark (the worst case)]{\label{}\includegraphics[width=0.49\textwidth]{images/charts/fn_lm6.png}}
+    \caption{A comparison of distances distribution of the $1^{st}$ landmark and the worst case ($6^{th}$ landmark) when applying two processes. The top/bottom line shows the distribution when applying training from scratch/fine-tuning.  The lines in charts present for the average values.}
+    \label{figchartfn}
+\end{figure}
+
+Another way to characterize the distribution of the values can be given by standard error, median, minimum and maximum values. These statistical values are presented in \ref{appdixA}. From these tables, we can see the minimum and the maximum distances have a large range of values. However, the median values, which separate the distances set into two parts, are smaller than the averages values and they are very close to the minimum values and so far from maximum values. It confirms that almost all distances stay around the median values and the predicted landmarks are good enough to replace the manual ones. Besides, the distribution of the distances on each landmark of each part have been taked into account in \ref{appdixB}. We can observe that most of distances are close to the mean and median values, only some exceptional cases are really far. Fig. \ref{figpdl} shows the predicted landmarks of fine-tuning process in one case of each part. The red points and yellow points represent for predicted and manual landmarks, respectively.
+
+\begin{figure}[h!]
+    \centering
+    \subfloat[Pronotum]{\label{}\includegraphics[width=0.45\textwidth]{images/predicted/Prono_001.JPG}}~~
+    \subfloat[Head]{\label{}\includegraphics[width=0.45\textwidth]{images/predicted/Tete_005.JPG}}\\
+	\subfloat[Elytra]{\label{}\includegraphics[width=0.45\textwidth]{images/predicted/Elytre004.JPG}}
+    \caption{The location of predicted landmarks (red points) in one case of each part}
+    \label{figpdl}
+\end{figure}
+
+The fine-tuning process has improved the results of the proposed architecture on both $5$ datasets: left, right mandible, pronotum, elytra and head. All the average distances have significantly decreased: $\approx 25.98\%$ on pronotum, $\approx 15.8\%$ on elytra, and $\approx 18.10\%$  on head part. Besides, if we consider a predicted landmark, which has the distance (from manual ones) less than mean value plus standard deviation, is acceptable, the accuracy of method on each part is $\textbf{87.07\%}$ on pronotum, $\textbf{87.92\%}$ on head, and $\textbf{91.78\%}$ on elytra.
+
+We also have a comparison between the results of deep learning and early methods where we have applied image processing techniques to predict the landmarks \cite{le2017maelab}. Clearly, the result with fine-tuning has improved the location of estimated landmarks. Even the average distances obtained from scratch training are still higher but they are more stable than the results from the early method: most of the average distance(or landmarks) of left mandibles are less than the results of the early method, while the average distances are very close in the case of right mandibles.
+%\pagebreak
+\section{Conclusion}
+\label{sconclusion}
+In this work, we have presented a new CNN model, EB-Net, to predict key points - landmarks on 2D anatomical images of beetles. EB-Net model includes the repetition of $3$ Elementary Blocks, followed by $3$ fully connected layers. An elementary block is a sequence of $1$ CONV layer, $1$ maximum POOL layer and $1$ Dropout layer. In order to augment the dataset size, we have generated new images by modification of color channels of the original images. The training step has been improved by using transfer learning from the a dataset of human facial keypoints.
+
+The results have shown that using the convolutional network to predict the landmarks on biological images leads to satisfying results without need for time consuming human intervention (i.e. semi-automatic methods) or lots of pre- and post- processing of the digital images. The
+best set of estimated landmarks has been obtained after a step
+of fine-tuning using the whole set of images that we have for the
+project, i.e. about all beetle parts. The quality of prediction allows using automatic landmarking to replace the manual ones.
+
+\textit{In our case, the size of dataset is limitting. Therefore, we have applied image processing techniques to augment dataset. The predicted landmarks have been evaluated by calculating the distance between manual landmarks and corresponding predicted landmarks. Then, the average of distance errors on each landmarks has been considered.}
+\section*{References}
+
+\bibliography{includes/mybibfile}
+
+\pagebreak
+\appendix
+\section{Comparing the results between training from scratch and fine-tuning process}
+\label{appdixA1}
+\begin{table}[h]
 	\begin{minipage}[t]{0.45\textwidth}
 		\centering
 		\begin{tabular}{|c|c|c|}
@@ -519,98 +556,10 @@ After finishing the fine-tuning process, EB-Net is used to predict the landmarks
 		\label{cmpelytre}
 	\end{minipage}
 \end{table}
-\begin{table}
-	\begin{minipage}[t]{0.45\textwidth}
-		\centering
-		\begin{tabular}{|c|c|c|}
-			\hline
-			\textbf{$\#$LM} & \textbf{From scratch} & \textbf{Fine-tune} \\ \hline
-			1 & \textcolor{red}{\textbf{9.13}} & 5.28 \\ \hline
-			2 & \textcolor{green}{\textbf{6.72}} & 4.05 \\ \hline
-			3 & 6.87 & 4.01 \\ \hline
-			4 & 6.77 & 4.02 \\ \hline
-			5 & 7.13 & 3.92 \\ \hline
-			6 & 6.94 & \textcolor{green}{\textbf{3.88}} \\ \hline
-			7 & 7.32 & 4.01 \\ \hline
-			8 & 7.41 & 4.16 \\ \hline
-			9 & 7.58 & 4.35 \\ \hline
-			10 & 7.63 & 4.46 \\ \hline
-			11 & 7.69 & 4.72 \\ \hline
-			12 & 8.42 & 5.08 \\ \hline
-			13 & 7.99 & 4.50 \\ \hline
-			14 & 7.49 & 4.26 \\ \hline
-			15 & 7.79 & 4.62 \\ \hline
-			16 & 8.52 & \textcolor{red}{\textbf{6.04}} \\ \hline
-		\end{tabular}
-		\caption{Average distances comparison between training from scratch and fine-tuning on left mandible images}
-		\label{cmpmg}
-	\end{minipage}
-	\hfill
-	\begin{minipage}[t]{0.45\textwidth}
-		\centering
-		\begin{tabular}{|c|c|c|}
-\hline
-\textbf{$\#$LM} & \textbf{From scratch} & \textbf{Fine-tune} \\ \hline
-		1 & \textcolor{red}{\textbf{9.50}} & 4.86 \\ \hline
-	2 & 7.17 & 4.06\\ \hline
-	3 & 7.24 & 3.97\\ \hline
-	4 & \textcolor{green}{\textbf{7.04}} & 3.87 \\ \hline
-	5 & 7.16 & 4.05  \\ \hline
-	6 & 7.57 & 3.82  \\ \hline
-	7 & 7.43 & \textcolor{green}{\textbf{3.77}}  \\ \hline
-	8 & 7.66 & 3.87  \\ \hline
-	9 & 7.79 & 3.96 \\ \hline
-	10 & 8.02 & 3.97 \\ \hline
-	11 & 8.31 & 4.27 \\ \hline
-	12 & 8.16 & 4.42 \\ \hline
-	13 & 8.89 & 4.87 \\ \hline
-	14 & 9.18 & 4.93 \\ \hline
-	15 & 8.79 & 4.46 \\ \hline
-	16 & 8.31 & 4.17 \\ \hline
-	17 & 8.29 & 4.57 \\ \hline
-	18 & 8.89 & \textcolor{red}{\textbf{5.89}} \\ \hline
-		\end{tabular}
-		\caption{Average distances comparison between training from scratch and fine-tuning on left mandible images}
-		\label{cmpmd}
-	\end{minipage}
-\end{table}
-In order to get a better view of the results, we have considered that average values can hidde different case of errors. So, we have calculated other statistical indicators such as median, standard error, minimum value and maximum values to appreciate of dispersion of points. All these statistical values are presented in \ref{appdixA}. From these tables, we can see the minimum and the maximum distances have a large range of values. However, the median values, which separate the set into two parts, are very close with minimum values and so far from maximum values, even smaller than the mean distances. It confirms that almost all distances stay around the median values and the predicted landmarks are good enough to replace the manual ones. Besides, the distribution of the distances on each landmark of each part have been taked into account in \ref{appdixB}. We can observe that most of distances are close to the mean and median values, only some exceptional cases are really far. Fig. \ref{figpdl} shows the predicted landmarks of fine-tuning process in one case of each part.
 
-\begin{figure}[htbp]
-    \centering
-    \subfloat[Pronotum]{\label{}\includegraphics[width=0.45\textwidth]{images/predicted/Prono_001.JPG}}~~
-    \subfloat[Head]{\label{}\includegraphics[width=0.45\textwidth]{images/predicted/Tete_005.JPG}}\\
-    \subfloat[Left mandible]{\label{}\includegraphics[width=0.45\textwidth]{images/predicted/Mg_001.JPG}}~~
-    \subfloat[Right mandible]{\label{}\includegraphics[width=0.45\textwidth]{images/predicted/Md_002.JPG}}\\
-	\subfloat[Elytra]{\label{}\includegraphics[width=0.45\textwidth]{images/predicted/Elytre004.JPG}}
-    \caption{The location of predicted landmarks (red points) in one case of each part }
-    \label{figpdl}
-\end{figure}
-
-The fine-tuning process has improved the results of the proposed architecture on both $5$ datasets: left, right mandible, pronotum, elytra and head. All the average distances have significantly decreased: $\approx 41.35\%$ on left mandible, $\approx 46.51\%$ on right mandible, $\approx 25.98\%$ on pronotum, $\approx 15.8\%$ on elytra, and $\approx 18.10\%$  on head part. Besides, if we consider a predicted landmark, which has the distance (from manual ones) less than mean value plus standard deviation, is acceptable, the accuracy of method on each part is $\textbf{87.07\%}$ on pronotum, $\textbf{87.92\%}$ on head, $\textbf{91.78\%}$ on elytra, $\textbf{93.58\%}$ on left mandible and $\textbf{88.31\%}$ on right mandible.
-
-We also have a comparison between the results of deep learning and early methods where we have applied image processing techniques to predict the landmarks \cite{le2017maelab}. Clearly, the result with fine-tuning has improved the location of estimated landmarks. Even the average distances obtained from scratch training are still higher but they are more stable than the results from the early method: most of the average distance(or landmarks) of left mandibles are less than the results of the early method, while the average distances are very close in the case of right mandibles.
-%\pagebreak
-\section{Conclusion}
-\label{sconclusion}
-In this work, we have presented how to apply CNN to predict the landmark on 2D anatomical images of beetles. After going through many trial models, we have presented EB-Net for automatic detection landmarks on anatomical images of beetles which includes the repetition of some elementary blocks, followed by fully connected layers. We have applied transfer learning to fine-tune the model. A public facial keypoints dataset has been used to pre-train EB-Net.
-%Then, the proposed model have been trained and tested by using two strategies: \textit{train from scratch} and \textit{fine-tuning}. 
-
-In our case, the size of dataset is limitting. Therefore, we have applied image processing techniques to augment dataset. The predicted landmarks have been evaluated by calculating the distance between manual landmarks and corresponding predicted landmarks. Then, the average of distance errors on each landmarks has been considered.
-
-The results have shown that using the convolutional network to predict the landmarks on biological images leads to satisfying results without need for time consuming human intervention (i.e. semi-automatic methods) or lots of pre- and post- processing of the digital images that will be only add hyperparameters and/or more errors to the predicted landmarks. The
-best set of estimated landmarks has been obtained after a step
-of fine-tuning using the whole set of images that we have for the
-project, i.e. about all beetle parts. The quality of prediction allows using automatic landmarking to replace the manual ones.
-\section*{References}
-
-\bibliography{includes/mybibfile}
-
-\pagebreak
-\appendix
 \section{Statistic information on each beetle's part}
 \label{appdixA}
-Table \ref{a1}, \ref{a2}, \ref{a3}, \ref{a4}, and \ref{a5} show the statistical values on each part. The green and red numbers represent the best and the worst values on each statistical indicators, respectively.  
+Table \ref{a1}, \ref{a2}, and \ref{a3} show the statistical values on each part. The green and red numbers represent the best and the worst values on each statistical indicators, respectively.  
 \begin{table}[htbp]
 \begin{tabular}{ | c | c | c | c | c | c | }
 \hline
@@ -666,6 +615,66 @@ Table \ref{a1}, \ref{a2}, \ref{a3}, \ref{a4}, and \ref{a5} show the statistical 
 \caption{The statistical values on elytra images}
 \label{a3}
 \end{table}
+\pagebreak
+\section{The distribution of distances on each part}
+\label{appdixB}
+In this section, the distribution of distances on each landmark of each part is shown. The red and green lines are represented for the mean and median values, respectively.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=.95\textwidth]{images/charts/pronotum_2.png}
+    \caption{The distribution of distances on each landmark on pronotum images}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=.95\textwidth]{images/charts/tete_2.png}
+    \caption{The distribution of distances on each landmark on head images}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=.95\textwidth]{images/charts/elytre_2.png}
+    \caption{The distribution of distances on each landmark on elytra images}
+\end{figure}
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=.95\textwidth]{images/charts/mg_2.png}
+    \caption{The distribution of distances on each landmark on left mandible images}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=.95\textwidth]{images/charts/md_2.png}
+    \caption{The distribution of distances on each landmark on righ mandible images}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centerline{\includegraphics[scale=0.3]{images/statistic_pronotum_from_scratch_lm1}}
+	\caption{The distribution of the distances on the first landmark. The blue line is the average value of all distances.}
+	\label{figchartlm1}
+\end{figure}
+
+
+$\textbf{93.58\%}$ on left mandible and $\textbf{88.31\%}$ on right mandible
+$\approx 41.35\%$ on left mandible, $\approx 46.51\%$ on right mandible, 
+
+
+\subfloat[Left mandible]{\label{}\includegraphics[width=0.45\textwidth]{images/predicted/Mg_001.JPG}}~~
+    \subfloat[Right mandible]{\label{}\includegraphics[width=0.45\textwidth]{images/predicted/Md_002.JPG}}\\
 
 \begin{table}[htbp]
 	\begin{tabular}{ | c | c | c | c | c | c | }
@@ -718,77 +727,77 @@ Table \ref{a1}, \ref{a2}, \ref{a3}, \ref{a4}, and \ref{a5} show the statistical 
 \caption{The statistical values on right mandible images}
 \label{a5}
 \end{table}
-\pagebreak
-\section{The distribution of distances on each part}
-\label{appdixB}
-In this section, the distribution of distances on each landmark of each part is shown. The red and green lines are represented for the mean and median values, respectively.
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[scale=0.4]{images/charts/pronotum_2.png}
-    \caption{The distribution of distances on each landmark on pronotum images}
-\end{figure}
 
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[scale=0.5]{images/charts/tete_2.png}
-    \caption{The distribution of distances on each landmark on head images}
-\end{figure}
+\begin{table}
+	\begin{minipage}[t]{0.45\textwidth}
+		\centering
+		\begin{tabular}{|c|c|c|}
+			\hline
+			\textbf{$\#$LM} & \textbf{From scratch} & \textbf{Fine-tune} \\ \hline
+			1 & \textcolor{red}{\textbf{9.13}} & 5.28 \\ \hline
+			2 & \textcolor{green}{\textbf{6.72}} & 4.05 \\ \hline
+			3 & 6.87 & 4.01 \\ \hline
+			4 & 6.77 & 4.02 \\ \hline
+			5 & 7.13 & 3.92 \\ \hline
+			6 & 6.94 & \textcolor{green}{\textbf{3.88}} \\ \hline
+			7 & 7.32 & 4.01 \\ \hline
+			8 & 7.41 & 4.16 \\ \hline
+			9 & 7.58 & 4.35 \\ \hline
+			10 & 7.63 & 4.46 \\ \hline
+			11 & 7.69 & 4.72 \\ \hline
+			12 & 8.42 & 5.08 \\ \hline
+			13 & 7.99 & 4.50 \\ \hline
+			14 & 7.49 & 4.26 \\ \hline
+			15 & 7.79 & 4.62 \\ \hline
+			16 & 8.52 & \textcolor{red}{\textbf{6.04}} \\ \hline
+		\end{tabular}
+		\caption{Average distances comparison between training from scratch and fine-tuning on left mandible images}
+		\label{cmpmg}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.45\textwidth}
+		\centering
+		\begin{tabular}{|c|c|c|}
+\hline
+\textbf{$\#$LM} & \textbf{From scratch} & \textbf{Fine-tune} \\ \hline
+		1 & \textcolor{red}{\textbf{9.50}} & 4.86 \\ \hline
+	2 & 7.17 & 4.06\\ \hline
+	3 & 7.24 & 3.97\\ \hline
+	4 & \textcolor{green}{\textbf{7.04}} & 3.87 \\ \hline
+	5 & 7.16 & 4.05  \\ \hline
+	6 & 7.57 & 3.82  \\ \hline
+	7 & 7.43 & \textcolor{green}{\textbf{3.77}}  \\ \hline
+	8 & 7.66 & 3.87  \\ \hline
+	9 & 7.79 & 3.96 \\ \hline
+	10 & 8.02 & 3.97 \\ \hline
+	11 & 8.31 & 4.27 \\ \hline
+	12 & 8.16 & 4.42 \\ \hline
+	13 & 8.89 & 4.87 \\ \hline
+	14 & 9.18 & 4.93 \\ \hline
+	15 & 8.79 & 4.46 \\ \hline
+	16 & 8.31 & 4.17 \\ \hline
+	17 & 8.29 & 4.57 \\ \hline
+	18 & 8.89 & \textcolor{red}{\textbf{5.89}} \\ \hline
+		\end{tabular}
+		\caption{Average distances comparison between training from scratch and fine-tuning on left mandible images}
+		\label{cmpmd}
+	\end{minipage}
+\end{table}
 
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[scale=0.5]{images/charts/elytre_2.png}
-    \caption{The distribution of distances on each landmark on elytra images}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[scale=0.5]{images/charts/mg_2.png}
-    \caption{The distribution of distances on each landmark on left mandible images}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[scale=0.5]{images/charts/md_2.png}
-    \caption{The distribution of distances on each landmark on righ mandible images}
-\end{figure}
-\end{document}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+In order to get a better view of the results, we have considered that average values can hidde different case of errors. So, we have calculated other statistical indicators such as median, standard error, minimum value and maximum values to appreciate of dispersion of points.
 
 
+From these tables, one can note a difference in average distances between the two processes, the average distances of each landmark have decreased in the case of fine-tuning. It is clearly proved that the quality of predicted landmarks with the help of fine-tuning is better than training from scratch.
 
 
+%In another scene, to be able to use the same parameters for fine-tuning process, the input images have been cropped to suppress the part which is empty (background), to obtain a new image size of $192 \times 192$; and a modification was made on stride property of the first convolutional layer (changing from $1$ to $2$).
+
+% It proved that EB-Net fits perfectly with facial key points challenge and we have good reason to believe that the obtained parameter values of EB-Net on facial key points dataset can be used to fine-tune on beetle's images.
+
+%We have designed a way to reproduce the method with our own data. It is worth noting that of course the size of the dataset to pre-train was not at all no huge than this one of ImageNet. To finish this task, we have pre-trained our model on another task (facial key points detection) before applying to fine-tune on each part of beetle.
 
 
-
-
-
-
-
+EB-Net has been trained from scratch on five datasets of beetles (left mandible, right mandible, pronotum, elytra, and head). At this step, the network was able to predict the landmarks on the images. But as we have discussed before, even if the strength of the correlation validates the results, when we display on the images, the predicted coordinates are not exactly close to the manual ones, and the average distances are a little bit high.
 
 In which, convolutional and pooling layers are stacked together to convolve and to down-sample the inputs. Then, the fully connected layers are followed to achieve the output of the network from the application of a decision function.
 Now, we will describe the different types of layers, readers familiar with CNN terminology can jump directly to the next section.

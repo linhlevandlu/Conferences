@@ -7,7 +7,8 @@
 \BOOKMARK [1][-]{section.5}{Experiments and results}{}% 7
 \BOOKMARK [1][-]{section.6}{Improving results by fine-tuning}{}% 8
 \BOOKMARK [2][-]{subsection.6.1}{Pre-train EB-Net on facial key points dataset}{section.6}% 9
-\BOOKMARK [2][-]{subsection.6.2}{Fine-tuning on each beetle's part}{section.6}% 10
+\BOOKMARK [2][-]{subsection.6.2}{Fine-tuning on beetle parts}{section.6}% 10
 \BOOKMARK [1][-]{section.7}{Conclusion}{}% 11
-\BOOKMARK [1][-]{appendix.A}{Statistic information on each beetle's part}{}% 12
-\BOOKMARK [1][-]{appendix.B}{The distribution of distances on each part}{}% 13
+\BOOKMARK [1][-]{appendix.A}{Comparing the results between training from scratch and fine-tuning process}{}% 12
+\BOOKMARK [1][-]{appendix.B}{Statistic information on each beetle's part}{}% 13
+\BOOKMARK [1][-]{appendix.C}{The distribution of distances on each part}{}% 14
