@@ -425,7 +425,7 @@ distance from the average value to $7$ pixels (standard deviation error): $31.40
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.6\textwidth]{images/charts/fs_lm1.png}
-    \caption{The distribution of the distances on the best case ( $1^{st}$ landmark).\\ The line present for the average values.}
+    \caption{The distribution of the distances on the best case ( $1^{st}$ landmark).\\ The line presents the average values.}
     \label{figchartlm1}
 \end{figure}
 
@@ -473,22 +473,22 @@ It is worth to note that average computing can hide different situations. So, th
 
 \begin{figure}[htbp]
     \centering
-    \subfloat[$1^{st}$ landmark (the best case)]{\label{}\includegraphics[width=0.49\textwidth]{images/charts/fs_lm1.png}}~~
-    \subfloat[$6^{th}$ landmark (the worst case)]{\label{}\includegraphics[width=0.49\textwidth]{images/charts/fs_lm6.png}}\\
-    \subfloat[$1^{st}$ landmark]{\label{}\includegraphics[width=0.49\textwidth]{images/charts/fn_lm7.png}}~~
-    \subfloat[$6^{th}$ landmark (the worst case)]{\label{}\includegraphics[width=0.49\textwidth]{images/charts/fn_lm6.png}}
+    \subfloat[$1^{st}$ landmark (from scratch)]{\label{}\includegraphics[width=0.49\textwidth]{images/charts/fs_lm1.png}}~~
+    \subfloat[$6^{th}$ landmark (from scratch)]{\label{}\includegraphics[width=0.49\textwidth]{images/charts/fs_lm6.png}}\\
+    \subfloat[$1^{st}$ landmark (fine-tuning)]{\label{}\includegraphics[width=0.49\textwidth]{images/charts/fn_lm7.png}}~~
+    \subfloat[$6^{th}$ landmark (fine-tuning)]{\label{}\includegraphics[width=0.49\textwidth]{images/charts/fn_lm6.png}}
     \caption{A comparison of distances distribution of the $1^{st}$ landmark and the worst case ($6^{th}$ landmark) when applying two processes. The top/bottom line shows the distribution when applying training from scratch/fine-tuning.  The lines in charts present for the average values.}
     \label{figchartfn}
 \end{figure}
 
-Another way to characterize the distribution of the values can be given by standard error, median, minimum and maximum values. These statistical values are presented in \ref{appdixA}. From these tables, we can see the minimum and the maximum distances have a large range of values. However, the median values, which separate the distances set into two parts, are smaller than the averages values and they are very close to the minimum values and so far from maximum values. It confirms that almost all distances stay around the median values and the predicted landmarks are good enough to replace the manual ones. Besides, the distribution of the distances on each landmark of each part have been taked into account in \ref{appdixB}. We can observe that most of distances are close to the mean and median values, only some exceptional cases are really far. Fig. \ref{figpdl} shows the predicted landmarks of fine-tuning process in one case of each part. The red points and yellow points represent for predicted and manual landmarks, respectively.
+Another way to characterize the distribution of the values can be given by standard error, median, minimum and maximum values. These statistical values are presented in \ref{appdixA}. From these tables, we can see the minimum and the maximum distances have a large range of values. However, the median values, which separate the distances set into two parts, are smaller than the averages values and they are very close to the minimum values and so far from maximum values. It confirms that almost all distances stay around the median values and the predicted landmarks are good enough to replace the manual ones. Besides, the distribution of the distances on each landmark of each part have been taked into account in \ref{appdixB}. We can observe that most of distances are close to the mean and median values, only some exceptional cases are really far. Fig. \ref{figpdl} shows the predicted landmarks of fine-tuning process in one case of each part. The red points and yellow points represent predicted and manual landmarks, respectively.
 
 \begin{figure}[h!]
     \centering
     \subfloat[Pronotum]{\label{}\includegraphics[width=0.45\textwidth]{images/predicted/Prono_001.JPG}}~~
     \subfloat[Head]{\label{}\includegraphics[width=0.45\textwidth]{images/predicted/Tete_005.JPG}}\\
 	\subfloat[Elytra]{\label{}\includegraphics[width=0.45\textwidth]{images/predicted/Elytre004.JPG}}
-    \caption{The location of predicted landmarks (red points) in one case of each part}
+    \caption{The location of predicted landmarks in one case of each part. The red/yellow points represent the predicted/manual landmarks.}
     \label{figpdl}
 \end{figure}
 
