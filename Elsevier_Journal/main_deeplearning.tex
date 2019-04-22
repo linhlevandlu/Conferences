@@ -116,25 +116,24 @@ Deep learning \sep CNN \sep fine-tuning \sep landmarks
 \section{Introduction}
 \label{sIntroduction}
 In recent years, deep learning which is a part of machine learning is known as a
-solution for difficult tasks in different domains\cite{lecun2015deep}. Computational model of deep
+solution for difficult tasks in different domains \cite{lecun2015deep}. Computational model of deep
 learning is composed of multiple layers to learn data
 representation. Each layer extracts the representation of input data
-which comes from the previous layers, then it will compute a new
+which comes from the previous layers, then it computes a new
 output to the next layer. In a deep learning model, each layer may
 contain different number of nodes, called \textit{neurons} which have
 been inspired from the biological neural system
 \cite{arbib2012brains}. Currently, deep learning has many kinds of
 variant architectures and each of them has found success such as: Deep
 Neural Network (DNN) to solve classification or data analysis
-problems\cite{hinton2012deep, mikolov2011strategies}; Convolutional
+problems \cite{hinton2012deep, mikolov2011strategies}; Convolutional
 Neural Network (CNN) in computer vision \cite{lecun1998gradient,
   krizhevsky2012imagenet,szegedy2015going}; Recurrent Neural Network
 (RNN) on time sequences analysis \cite{lecun2015deep,jean2014using,
   sutskever2014sequence,collobert2011natural}. All of
 them have exhibited impressive performance comparing to more classical
-methods. Considering deep learning architectures, CNN is a specific
-one for pre-processing data which have grid topology, for
-examples, time series (1-D), 2D and 3D images, or video. From the
+methods, for example, CNN is a specific
+one for pre-processing data which have grid topology, such as time series (1-D), 2D and 3D images, or video. From the
 first architecture \cite{lecun1998gradient} until now, many CNN models
 have been proposed and have succeeded in different tasks of computer
 vision such as image classification \cite{lecun1998gradient,
@@ -142,7 +141,6 @@ vision such as image classification \cite{lecun1998gradient,
 \cite{szegedy2015going,farabet2013learning,li2015convolutional}, and
 key points detection \cite{liu2016fashion, sun2013deep,
   zhang2014facial, cintas2016automatic}.
-
 
 In computer vision, key points detection is an important field. In
 this field, algorithms try to find the key points, called Points of
@@ -154,10 +152,8 @@ biologists. Depending on the objective of work and the studied object,
 the number of landmarks may be different and their positions
  can be defined along the outline of the object or inside the
 object. From landmarks coordinates, it is possible to extract object
-features and to apply measure, for examples, to detect human face
-\cite{sun2013deep}, human pose \cite{huang2017coarse} or measures of
-an organism anatomy.
-
+features and to apply measure, for example, to detect human face
+\cite{sun2013deep}, human pose \cite{huang2017coarse} or to measure out the organism anatomy.
 
 In this work, we propose  a new composition of layers for a CNN
 architecture, Elementary Blocks Network (EB-Net), to predict the
@@ -185,8 +181,8 @@ by the fine-tuning procedure.
 \section{Related works}
 \label{related_works}
 
-In the middle of the previous century, deep learning
-has been introduced  by Lecun \cite{lecun2015deep} as a method for artificial
+In the middle of the previous century, deep learning algorithms
+have been introduced as multiple layers of non-linear features by using statistical methods to select the best features to forward to the next layer. Additional, the backpropagation \cite{lecun1989backpropagation}, which has been introduced in the early $1960s$ in a inefficient and incomplete form, did not use to train the network at that time, instead, they used layer by layer least squares fitting. Until $1989$, LeCun \cite{lecun1998gradient} used convolutional networks in combination with backpropagation to classify handwritten digits (MNIST), and it was known as a first practical system for artificial
 intelligence applications. However, several problems  appeared in
 order to take into account real-world cases because of the limitation
 of the memory size or computing power. Nowadays, huge improvements of
@@ -215,7 +211,7 @@ A CNN is a feedforward network which takes the information following from the in
 	\label{imgcnn_network}
 \end{figure}
 
-\subsection{State of the arts in deep learning and key points detection}
+\subsection{State of the art in deep learning and key points detection}
 LeNet \cite{lecun1998gradient} model is considered as the first
 architecture of CNN. LeCun et al. \cite{lecun1998gradient} have used
 it to classify the handwritten digits in cheques. LeNet exhibits a
@@ -271,10 +267,10 @@ local features and modeling spatial dependencies between human
 parts. The second one, named fine stream, receives the  features which
 are concatenated from the coarse stream and provides accurate
 localization. Cintas et al. \cite{cintas2016automatic} have introduced
-an architecture which is enable to recognize $45$ landmarks on human
-ears. Their model includes a structure with $2$ convolutional layers,
-$1$ pooling layers, and $1$ dropout layer to extract the
-features. This structure is repeated $3$ times and is followed by 3
+an architecture which enabled to recognize $45$ landmarks on human
+ears. Their model includes $3$ times repeated of a structure consists of $2$ convolutional layers,
+$1$ pooling layer, and $1$ dropout layer, to extract the
+features. These structures are followed by $3$
 fully connected layers. In the same context of key point detection, we
 have developed a CNN to automatize landmarks prediction on beetle's
 anatomies but before to describe it, we will present the augmentation
@@ -286,13 +282,12 @@ procedure that we have defined for our dataset.
 
 \section{Data augmentation}
 \label{Sdataaug}
-From AlexNet period to ResNet-50, the obtained success stories
+From AlexNet to ResNet-50, the obtained success stories
 \cite{krizhevsky2012imagenet,he2016deep} have proved that CNN models
 produce better results on a large dataset but to use this technique,
 the size of dataset remains a bottleneck and our own some hundred of
 images are considered as modest for these models. So, it is important
-to be able to provide a large dataset in order to learn more cases and
-improves the learning ability of the network. Unfortunately, in some
+to be able to provide a large dataset in order to learn more cases and to improve the learning ability of the network. Unfortunately, in some
 application domains as this work in biology, providing a large dataset
 is too costly. For this reason, one way to solve this problem is to
 create misshapen data from real data and to add them to the training
@@ -304,16 +299,14 @@ analysis of images by CNN (convoluted) are usually invariant to
 translation or rotation. So, we prefered to rely on method changing
 color space values to obtain misshapen images.
 
-
 Our image set is in RGB color map, the first procedure consists of
 changing the value of one color channel of the three channels in the
 original image to generate a new image. A constant value is sampled in
-an uniform distribution $\in [1, N]$ to obtain a new value caped at
+an uniform distribution $\in [1, 255]$ to obtain a new value caped at
 $255$. For example, Fig. \ref{figaug1} shows the three images which
 are generated  when a constant $c = 10$ is added to each channel of an
 original image. Following this way, we can generate three new versions
 of only one image.
-
 
 \begin{figure}[h]
 	\centering
@@ -323,12 +316,11 @@ of only one image.
 \end{figure}
 
 In the second procedure, each channel is considered separately and one
-gray image is generated for it (Fig. \ref{figaug2}). Consequently, we
+grayscale image is generated for it (Fig. \ref{figaug2}). Consequently, we
 obtain 3 new images (single channel) from an original one. At the end
 of the process, $6$ versions of an original image are made. In total,
 the new data set contains $293 \times 7 = 2051$ images for each
 anatomical part of beetle (an original image and six misshapen ones).
-
 
 \begin{figure}[h]
 	\centering
@@ -348,7 +340,7 @@ trials have been achieved before to obtain a satisfying model
 dedicated to landmarks estimation. In this section, we present three
 versions of the model that we have designed to solve this task. As
 usual, we have combined the classical layer types to build the model,
-e.g. convolutional, maximum pooling, dropout, and full-connected
+e.g. convolutional, maximum pooling, dropout, and fully-connected
 layers.
 
 
@@ -362,14 +354,13 @@ layer. This is done by setting the number of filters at each CONV
 layer. In this first model, the depths of the CONV layers increase
 from $32, 64, $ to $128$ and with different size of the kernels: $3
 \times 3$, $2 \times 2$ and $2 \times 2$, respectively. Inserting POOL
-layers after a convolutional layers is usually done. The POOL layer
+layers after a CONV layers is usually done. The POOL layers
 progressively reduce the spatial size of the representation, reduce
-the number of parameters, computation in the network, and also to
-prevent over-fitting. The operations of POOL layers are independent
+the number of parameters, computation in the network, and also prevent over-fitting. The operations of POOL layers are independent
 for each depth slice of their inputs. In our model, we have used the
 most common form for one POOL layer: a filter with size of $2 \times
 2$ and a stride equal to the size of filter have been applied. At the
-end of the model, $3$ FC layers have been added to extract the global
+end of the model, $3$ fully-connected (FC) layers have been added to extract the global
 relationship between the features and to proceed the outputs. The
 first two FC layers have been applied the activation functions to make
 sure these nodes interact well and to take into account all possible
@@ -384,7 +375,7 @@ the training process (Detailed results will be discussed in Section
 
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.98\textwidth]{images/net1}
+	\includegraphics[width=0.98\textwidth]{images/model1}
 	\caption{The architecture of the first model}
 	\label{fignet1}
 \end{figure}
@@ -443,7 +434,7 @@ For the FC layers, FC1 and FC2 have $1000$ outputs, the last FC layer (FC3) has 
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.99\textwidth]{images/net3}
+	\includegraphics[width=0.99\textwidth]{images/model3}
 	\caption{The architecture of EB-Net}
 	\label{fignet3}
 \end{figure}
@@ -455,7 +446,7 @@ loss in neural network. The core idea is to follow the gradient until
 reaching a minimum of the cost function. So, we have chosen gradient
 descent in the backward phase to update the values of learnable
 parameters. EB-Net was designed to use a learning rate initialize at
-$0.03$ and to stop at $0.00001$, while the momentum was updated from
+$0.03$ and to stop at $0.00001$, while the momentum rateS was updated from
 $0.9$ to $0.9999$. The values were updated over training time to fit
 with the number of epochs \footnote{An epoch is a single pass through
   the full training set} by applying parameters adjustment during the
@@ -506,21 +497,19 @@ all landmarks. Of course, this dataset has been
 augmented as described before to provide $1820$ images for these $2$
 steps.
 
-
-\begin{figure}[htbp]
+\begin{figure}[h!]
     \centering
-    \subfloat[The first architecture model]{\label{figloss1}\includegraphics[width=0.5\textwidth]{images/model1_loss}}~~
-\subfloat[The second architecture model]{\label{figloss2}\includegraphics[width=0.5\textwidth]{images/model2_loss}}\\    
-    \caption{The losses (training and validation) of the models. The
+    \includegraphics[width=0.6\textwidth]{images/model1_loss}
+    \caption{The losses (training and validation) of the $1^{st}$ models. The
       blue curve presents the RMSE errors of training process while
       green curve is the validation errors.}
-    
     \label{figlosses}
 \end{figure}
+
 As it has been mentioned in Section \ref{Sneuralnetwork}, the first
 and the second models exhibit over-fitting
 behavior. Fig. \ref{figlosses} shows the different curves of the
-losses during training and validation steps. The blue curves present
+losses during training and validation steps in the first architecture model. The blue curves present
 the RMSE errors of training process while green curves are the
 validation errors. Clearly, over-fitting has appeared in the first
 model, e.g. training losses are able to decrease but validation
@@ -641,7 +630,6 @@ improvement of these results.
     \caption{The predicted landmarks, in red,  on the images in test set.}
     \label{figrsexample}
 \end{figure}
-
 \section{Improving results by fine-tuning}
 \label{sfineTuning}
 The results that we have been just discussed, have been obtained by
@@ -962,4 +950,13 @@ In this section, the distribution of distances on each landmark of each part is 
 \end{document}
 
 
-
+\begin{figure}[htbp]
+    \centering
+    \subfloat[The first architecture model]{\label{figloss1}\includegraphics[width=0.5\textwidth]{images/model1_loss}}~~
+\subfloat[The second architecture model]{\label{figloss2}\includegraphics[width=0.5\textwidth]{images/model2_loss}}\\    
+    \caption{The losses (training and validation) of the models. The
+      blue curve presents the RMSE errors of training process while
+      green curve is the validation errors.}
+    
+    \label{figlosses}
+\end{figure}

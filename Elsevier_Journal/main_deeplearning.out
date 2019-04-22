@@ -1,7 +1,7 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
 \BOOKMARK [1][-]{section.2}{Related works}{}% 2
 \BOOKMARK [2][-]{subsection.2.1}{Overview of Convolutional Neural Network}{section.2}% 3
-\BOOKMARK [2][-]{subsection.2.2}{State of the arts in deep learning and key points detection}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.2}{State of the art in deep learning and key points detection}{section.2}% 4
 \BOOKMARK [1][-]{section.3}{Data augmentation}{}% 5
 \BOOKMARK [1][-]{section.4}{Network architectures designing}{}% 6
 \BOOKMARK [1][-]{section.5}{Experiments and results}{}% 7
