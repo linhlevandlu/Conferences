@@ -439,7 +439,7 @@ For the FC layers, FC1 and FC2 have $1000$ outputs, the last FC layer (FC3) has 
 	\label{fignet3}
 \end{figure}
 
-The core of CNN is training over iteration. There are many ways to
+The core of CNN is training over iterations. In each iteration, the features of images are computed in two phases: forward and backward. In the forward phase, the features are computed following the order of the layer in the network. In the backward phase, the values of learnable parameters are computed and updated to increase the accuracy of the network by using an optimizer. There are many ways to
 optimize the learning algorithm, but gradient descent
 \cite{lecun2012efficient} is currently a good choice to reduce the
 loss in neural network. The core idea is to follow the gradient until
@@ -472,7 +472,7 @@ these images.
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.8\textwidth]{images/images5parts}
+	\includegraphics[width=0.97\textwidth]{images/images5parts}
 	\caption{The image in each part of beetle. From left to right:
           left, right mandibles, pronotum, elytra and head.}
 	\label{fig5parts}
@@ -481,7 +481,7 @@ The networks have been trained in $5, 000$ epochs on Linux OS by using
 NVIDIA TITAN X cards. During the training, the images are chosen
 randomly from the dataset with a ratio of $60\%$ for training and
 $40\%$ for validation. For each image of pronotum, a set of $8$ manual
-landmarks are available. They have been set by biologists and are
+landmarks is available. They have been set by biologists and are
 considered as the ground truth for the evaluation. In deep learning,
 many kinds of loss functions can be considered depending on the
 class of problem solving by the network, we have considered Root Mean
@@ -507,13 +507,13 @@ steps.
 \end{figure}
 
 As it has been mentioned in Section \ref{Sneuralnetwork}, the first
-and the second models exhibit over-fitting
+and the second model exhibit over-fitting
 behavior. Fig. \ref{figlosses} shows the different curves of the
-losses during training and validation steps in the first architecture model. The blue curves present
-the RMSE errors of training process while green curves are the
-validation errors. Clearly, over-fitting has appeared in the first
-model, e.g. training losses are able to decrease but validation
-losses are stable. In the second one, no concrete change appears in the curves even the parameters of full-connected layers were modified.
+losses during training and validation step in the first architecture model. The blue curve presents
+the RMSE error of training process while green curve is the
+validation error. Clearly, over-fitting has appeared in the first
+model, e.g., training loss is able to decrease but validation
+loss is stable. In the second one, no concrete change appears in the curves even the parameters of fully-connected layers were modified.
 
 Fig. \ref{figloss3} illustrates the losses during the training of the
 third model, EB-Net. One can note that after several epochs, the
