@@ -1,0 +1,169 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \def\href#1#2{#2} \def\path#1{#1}\fi
+
+\bibitem{lecun2015deep}
+Y.~LeCun, Y.~Bengio, G.~Hinton, Deep learning, Nature 521~(7553) (2015)
+  436--444.
+
+\bibitem{arbib2012brains}
+M.~A. Arbib, Brains, machines, and mathematics, Springer Science \& Business
+  Media, 2012.
+
+\bibitem{hinton2012deep}
+G.~Hinton, et~al., Deep neural networks for acoustic modeling in speech
+  recognition: The shared views of four research groups, IEEE Signal Processing
+  Magazine 29~(6) (2012) 82--97.
+
+\bibitem{mikolov2011strategies}
+T.~Mikolov, et~al., Strategies for training large scale neural network language
+  models, in: Automatic Speech Recognition and Understanding (ASRU), 2011 IEEE
+  Workshop on, IEEE, 2011, pp. 196--201.
+
+\bibitem{lecun1998gradient}
+Y.~LeCun, L.~Bottou, Y.~Bengio, P.~Haffner, Gradient-based learning applied to
+  document recognition, Proceedings of the IEEE 86~(11) (1998) 2278--2324.
+
+\bibitem{krizhevsky2012imagenet}
+A.~Krizhevsky, I.~Sutskever, G.~E. Hinton, Imagenet classification with deep
+  convolutional neural networks, in: Advances in neural information processing
+  systems, 2012, pp. 1097--1105.
+
+\bibitem{szegedy2015going}
+C.~Szegedy, et~al., Going deeper with convolutions, Cvpr, 2015.
+
+\bibitem{jean2014using}
+S.~Jean, K.~Cho, R.~Memisevic, Y.~Bengio, On using very large target vocabulary
+  for neural machine translation, arXiv preprint arXiv:1412.2007.
+
+\bibitem{sutskever2014sequence}
+I.~Sutskever, O.~Vinyals, Q.~V. Le, Sequence to sequence learning with neural
+  networks, in: Advances in neural information processing systems, 2014, pp.
+  3104--3112.
+
+\bibitem{collobert2011natural}
+R.~Collobert, J.~Weston, L.~Bottou, M.~Karlen, K.~Kavukcuoglu, P.~Kuksa,
+  Natural language processing (almost) from scratch, Journal of Machine
+  Learning Research 12~(Aug) (2011) 2493--2537.
+
+\bibitem{farabet2013learning}
+C.~Farabet, C.~Couprie, L.~Najman, Y.~LeCun, Learning hierarchical features for
+  scene labeling, IEEE transactions on pattern analysis and machine
+  intelligence 35~(8) (2013) 1915--1929.
+
+\bibitem{li2015convolutional}
+H.~Li, Z.~Lin, X.~Shen, J.~Brandt, G.~Hua, A convolutional neural network
+  cascade for face detection, in: Proceedings of the IEEE Conference on
+  Computer Vision and Pattern Recognition, 2015, pp. 5325--5334.
+
+\bibitem{liu2016fashion}
+Z.~Liu, S.~Yan, P.~Luo, X.~Wang, X.~Tang, Fashion landmark detection in the
+  wild, in: European Conference on Computer Vision, Springer, 2016, pp.
+  229--245.
+
+\bibitem{sun2013deep}
+Y.~Sun, X.~Wang, X.~Tang, Deep convolutional network cascade for facial point
+  detection, in: Proceedings of the IEEE conference on computer vision and
+  pattern recognition, 2013, pp. 3476--3483.
+
+\bibitem{zhang2014facial}
+Z.~Zhang, et~al., Facial landmark detection by deep multi-task learning, in:
+  European Conference on Computer Vision, Springer, 2014, pp. 94--108.
+
+\bibitem{cintas2016automatic}
+C.~Cintas, et~al., Automatic ear detection and feature extraction using
+  geometric morphometrics and convolutional neural networks, IET Biometrics
+  6~(3) (2016) 211--223.
+
+\bibitem{huang2017coarse}
+S.~Huang, M.~Gong, D.~Tao, A coarse-fine network for keypoint localization, in:
+  The IEEE International Conference on Computer Vision (ICCV), Vol.~2, 2017.
+
+\bibitem{lecun1989backpropagation}
+Y.~LeCun, B.~Boser, J.~S. Denker, D.~Henderson, R.~E. Howard, W.~Hubbard, L.~D.
+  Jackel, Backpropagation applied to handwritten zip code recognition, Neural
+  computation 1~(4) (1989) 541--551.
+
+\bibitem{vu2018heritage}
+M.-T. Vu, M.~Beurton-Aimar, V.-L. Le, Heritage image classification by
+  convolution neural networks, in: 2018 1st International Conference on
+  Multimedia Analysis and Pattern Recognition (MAPR), IEEE, 2018, pp. 1--6.
+
+\bibitem{collobert2008unified}
+R.~Collobert, J.~Weston, A unified architecture for natural language
+  processing: Deep neural networks with multitask learning, in: Proceedings of
+  the 25th international conference on Machine learning, ACM, 2008, pp.
+  160--167.
+
+\bibitem{gu2018recent}
+J.~Gu, Z.~Wang, J.~Kuen, L.~Ma, A.~Shahroudy, B.~Shuai, T.~Liu, X.~Wang,
+  G.~Wang, J.~Cai, et~al., Recent advances in convolutional neural networks,
+  Pattern Recognition 77 (2018) 354--377.
+
+\bibitem{zeiler2014visualizing}
+M.~D. Zeiler, R.~Fergus, Visualizing and understanding convolutional networks,
+  in: European conference on computer vision, Springer, 2014, pp. 818--833.
+
+\bibitem{simonyan2014very}
+K.~Simonyan, A.~Zisserman, Very deep convolutional networks for large-scale
+  image recognition, arXiv preprint arXiv:1409.1556.
+
+\bibitem{he2016deep}
+K.~He, X.~Zhang, S.~Ren, J.~Sun, Deep residual learning for image recognition,
+  in: Proceedings of the IEEE conference on computer vision and pattern
+  recognition, 2016, pp. 770--778.
+
+\bibitem{srivastava2014dropout}
+N.~Srivastava, G.~E. Hinton, A.~Krizhevsky, I.~Sutskever, R.~Salakhutdinov,
+  Dropout: a simple way to prevent neural networks from overfitting., Journal
+  of machine learning research 15~(1) (2014) 1929--1958.
+
+\bibitem{lecun2012efficient}
+Y.~A. LeCun, et~al., Efficient backprop, in: Neural networks: Tricks of the
+  trade, Springer, 2012, pp. 9--48.
+
+\bibitem{lasagne}
+S.~Dieleman, et~al., \href{http://dx.doi.org/10.5281/zenodo.27878}{Lasagne:
+  First release.} (Aug. 2015).
+\newblock \href {http://dx.doi.org/10.5281/zenodo.27878}
+  {\path{doi:10.5281/zenodo.27878}}.
+\newline\urlprefix\url{http://dx.doi.org/10.5281/zenodo.27878}
+
+\bibitem{le2017maelab}
+V.~L. Le, M.~Beurton-Aimar, A.~Krahenbuhl, N.~Parisey,
+  \href{https://hal.archives-ouvertes.fr/hal-01571440}{{MAELab: a framework to
+  automatize landmark estimation}}, in: {WSCG 2017}, Plzen, Czech Republic,
+  2017.
+\newline\urlprefix\url{https://hal.archives-ouvertes.fr/hal-01571440}
+
+\bibitem{torrey2009transfer}
+L.~Torrey, J.~Shavlik, Transfer learning, Handbook of Research on Machine
+  Learning Applications and Trends: Algorithms, Methods, and Techniques 1
+  (2009) 242.
+
+\bibitem{margeta_mri}
+J.~Margeta, et~al.,
+  \href{https://doi.org/10.1080/21681163.2015.1061448}{Fine-tuned convolutional
+  neural nets for cardiac mri acquisition plane recognition}, Computer Methods
+  in Biomechanics and Biomedical Engineering: Imaging \& Visualization 5~(5)
+  (2017) 339--349.
+\newblock \href
+  {http://arxiv.org/abs/https://doi.org/10.1080/21681163.2015.1061448}
+  {\path{arXiv:https://doi.org/10.1080/21681163.2015.1061448}}, \href
+  {http://dx.doi.org/10.1080/21681163.2015.1061448}
+  {\path{doi:10.1080/21681163.2015.1061448}}.
+\newline\urlprefix\url{https://doi.org/10.1080/21681163.2015.1061448}
+
+\bibitem{imagenet_cvpr09}
+J.~Deng, et~al., {ImageNet: A Large-Scale Hierarchical Image Database}, in:
+  CVPR09, 2009.
+
+\bibitem{lin2016homemade}
+S.~Lin, Z.~Zhao, F.~Su, Homemade ts-net for automatic face recognition, in:
+  Proceedings of the 2016 ACM on International Conference on Multimedia
+  Retrieval, ACM, 2016, pp. 135--142.
+
+\end{thebibliography}
