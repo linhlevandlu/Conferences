@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.18)  2 MAY 2019 09:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.18)  15 MAY 2019 10:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -514,28 +514,28 @@ Package pdftex.def Info: images/face_dataset_2.png used on input line 675.
 File: images/charts/fs_lm1.png Graphic file (type png)
 
 <use images/charts/fs_lm1.png>
-Package pdftex.def Info: images/charts/fs_lm1.png used on input line 741.
+Package pdftex.def Info: images/charts/fs_lm1.png used on input line 737.
 (pdftex.def)             Requested size: 169.0519pt x 95.00696pt.
 
 <images/charts/fs_lm6.png, id=328, 455.45157pt x 255.95625pt>
 File: images/charts/fs_lm6.png Graphic file (type png)
 
 <use images/charts/fs_lm6.png>
-Package pdftex.def Info: images/charts/fs_lm6.png used on input line 742.
+Package pdftex.def Info: images/charts/fs_lm6.png used on input line 738.
 (pdftex.def)             Requested size: 169.0519pt x 95.00696pt.
 
 <images/charts/fn_lm7.png, id=329, 455.45157pt x 255.95625pt>
 File: images/charts/fn_lm7.png Graphic file (type png)
 
 <use images/charts/fn_lm7.png>
-Package pdftex.def Info: images/charts/fn_lm7.png used on input line 743.
+Package pdftex.def Info: images/charts/fn_lm7.png used on input line 739.
 (pdftex.def)             Requested size: 169.0519pt x 95.00696pt.
 
 <images/charts/fn_lm6.png, id=330, 455.45157pt x 255.95625pt>
 File: images/charts/fn_lm6.png Graphic file (type png)
 
 <use images/charts/fn_lm6.png>
-Package pdftex.def Info: images/charts/fn_lm6.png used on input line 744.
+Package pdftex.def Info: images/charts/fn_lm6.png used on input line 740.
 (pdftex.def)             Requested size: 169.0519pt x 95.00696pt.
  [19] [20 <./images/charts/fs_lm1.png (PNG copy)> <./images/charts/fs_lm6.png (
 PNG copy)> <./images/charts/fn_lm7.png (PNG copy)> <./images/charts/fn_lm6.png 
@@ -544,7 +544,7 @@ PNG copy)> <./images/charts/fn_lm7.png (PNG copy)> <./images/charts/fn_lm6.png
 File: images/predicted/Prono_001.JPG Graphic file (type jpg)
 
 <use images/predicted/Prono_001.JPG>
-Package pdftex.def Info: images/predicted/Prono_001.JPG used on input line 768.
+Package pdftex.def Info: images/predicted/Prono_001.JPG used on input line 761.
 
 (pdftex.def)             Requested size: 155.24895pt x 155.25731pt.
 
@@ -552,14 +552,14 @@ Package pdftex.def Info: images/predicted/Prono_001.JPG used on input line 768.
 File: images/predicted/Tete_005.JPG Graphic file (type jpg)
 
 <use images/predicted/Tete_005.JPG>
-Package pdftex.def Info: images/predicted/Tete_005.JPG used on input line 769.
+Package pdftex.def Info: images/predicted/Tete_005.JPG used on input line 762.
 (pdftex.def)             Requested size: 155.24895pt x 155.25731pt.
 
 <images/predicted/Elytre004.JPG, id=351, 46.2528pt x 46.2528pt>
 File: images/predicted/Elytre004.JPG Graphic file (type jpg)
 
 <use images/predicted/Elytre004.JPG>
-Package pdftex.def Info: images/predicted/Elytre004.JPG used on input line 770.
+Package pdftex.def Info: images/predicted/Elytre004.JPG used on input line 763.
 
 (pdftex.def)             Requested size: 155.24895pt x 155.25731pt.
 
@@ -569,70 +569,70 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [21] [22 <./images/predicted/Prono_001.JPG> <./images/predicted/Tete_005.JPG> <
 ./images/predicted/Elytre004.JPG>] (./main_deeplearning.bbl [23] [24] [25]
 [26]) [27]
-Overfull \hbox (21.16843pt too wide) in paragraph at lines 823--837
+Overfull \hbox (21.16843pt too wide) in paragraph at lines 806--820
  [][] 
  []
 
 
-Overfull \hbox (21.16843pt too wide) in paragraph at lines 843--858
+Overfull \hbox (21.16843pt too wide) in paragraph at lines 826--841
  [][] 
  []
 
 
-Overfull \hbox (1.33879pt too wide) in paragraph at lines 867--879
+Overfull \hbox (1.33879pt too wide) in paragraph at lines 850--862
 [][] 
  []
 
 
-Overfull \hbox (1.33879pt too wide) in paragraph at lines 884--898
+Overfull \hbox (1.33879pt too wide) in paragraph at lines 867--881
 [][] 
  []
 
 
-Overfull \hbox (1.33879pt too wide) in paragraph at lines 903--918
+Overfull \hbox (1.33879pt too wide) in paragraph at lines 886--901
 [][] 
  []
 
-[28] [29] <images/charts/pronotum_2.png, id=425, 948.54375pt x 694.595pt>
+[28] [29] <images/charts/pronotum_2.png, id=424, 948.54375pt x 694.595pt>
 File: images/charts/pronotum_2.png Graphic file (type png)
 
 <use images/charts/pronotum_2.png>
-Package pdftex.def Info: images/charts/pronotum_2.png used on input line 928.
+Package pdftex.def Info: images/charts/pronotum_2.png used on input line 911.
 (pdftex.def)             Requested size: 327.74895pt x 239.99588pt.
 
-<images/charts/tete_2.png, id=426, 1081.03876pt x 804.00375pt>
+<images/charts/tete_2.png, id=425, 1081.03876pt x 804.00375pt>
 File: images/charts/tete_2.png Graphic file (type png)
 
 <use images/charts/tete_2.png>
-Package pdftex.def Info: images/charts/tete_2.png used on input line 935.
+Package pdftex.def Info: images/charts/tete_2.png used on input line 918.
 (pdftex.def)             Requested size: 327.74895pt x 243.75475pt.
 
-<images/charts/elytre_2.png, id=427, 1149.29375pt x 842.14626pt>
+<images/charts/elytre_2.png, id=426, 1149.29375pt x 842.14626pt>
 File: images/charts/elytre_2.png Graphic file (type png)
 
 <use images/charts/elytre_2.png>
-Package pdftex.def Info: images/charts/elytre_2.png used on input line 942.
+Package pdftex.def Info: images/charts/elytre_2.png used on input line 925.
 (pdftex.def)             Requested size: 327.74895pt x 240.15553pt.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 946.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 929.
  [30 <./images/charts/pronotum_2.png>] [31 <./images/charts/tete_2.png> <./imag
 es/charts/elytre_2.png (PNG copy)>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 946.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 929.
 
 (./main_deeplearning.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 946.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 946.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 929.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 929.
 Package rerunfilecheck Info: File `main_deeplearning.out' has not changed.
 (rerunfilecheck)             Checksum: 3FECA853294F11243C345325CDD97125;1021.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 946.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 929.
  ) 
 Here is how much of TeX's memory you used:
  7916 strings out of 493029
  119740 string characters out of 6136234
- 230749 words of memory out of 5000000
+ 230673 words of memory out of 5000000
  11225 multiletter control sequences out of 15000+600000
  8741 words of font info for 31 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -665,10 +665,10 @@ nts/type1/public/amsfonts/cm/cmti7.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmtt8.pfb>
-Output written on main_deeplearning.pdf (31 pages, 1880058 bytes).
+Output written on main_deeplearning.pdf (31 pages, 1880489 bytes).
 PDF statistics:
- 531 PDF objects out of 1000 (max. 8388607)
- 447 compressed objects within 5 object streams
+ 530 PDF objects out of 1000 (max. 8388607)
+ 446 compressed objects within 5 object streams
  120 named destinations out of 1000 (max. 500000)
  223 words of extra memory for PDF output out of 10000 (max. 10000000)
 
