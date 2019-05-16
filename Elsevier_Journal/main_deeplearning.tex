@@ -730,19 +730,19 @@ go deeply in the analysis, it is worth to note that average computing can hide d
 \end{table}
 
 Fig. \ref{figchartfn} describes the distribution of distances
-of two examples cases: $1^{st}$ and $6^{th}$ landmarks, the best and the worst cases. Clearly, we can observe that: firstly, the average distances have decreased by helping of fine-tuning in both the best and the worst cases; secondly, the distances among the predicted and manual landmarks have been reduced and more close in the case of fine-tuning.
+of two examples cases: $1^{st}$ and $6^{th}$ landmarks, the best and the worst cases. Clearly, we can observe that the average distances have decreased by helping of fine-tuning in both the best and the worst cases, and the distribution of the distance points in the graphic is closest to the average value.
 
 \begin{figure}[htbp]
     \centering
     \subfloat[$1^{st}$ landmark (from scratch)]{\label{}\includegraphics[width=0.49\textwidth]{images/charts/fs_lm1.png}}~~
     \subfloat[$6^{th}$ landmark (from scratch)]{\label{}\includegraphics[width=0.49\textwidth]{images/charts/fs_lm6.png}}\\
-    \subfloat[$1^{st}$ landmark (fine-tuning)]{\label{}\includegraphics[width=0.49\textwidth]{images/charts/fn_lm7.png}}~~
+    \subfloat[$1^{st}$ landmark (fine-tuning)]{\label{}\includegraphics[width=0.49\textwidth]{images/charts/fn_lm1.png}}~~
     \subfloat[$6^{th}$ landmark (fine-tuning)]{\label{}\includegraphics[width=0.49\textwidth]{images/charts/fn_lm6.png}}
     \caption{A comparison of distances distribution of the $1^{st}$ landmark and the $6^{th}$ landmark when applying two processes. The line in each figure presents the average distance value for these landmarks.}
     \label{figchartfn}
 \end{figure}
 
-The average distance gives a global view of distances. However, It suffered from many influences from the worst distances. In order to have more conclusion about the obtained results, we have calculated other statistical indicators to characterize the distribution of the distance values, such as standard error, median, minimum and maximum values. These
+As average distance reflects different situations, it is always interested to check also other statistical indicators to characterize the distribution of the distance values, such as standard error, median, minimum and maximum values. These
 statistical values are presented in \ref{appdixA}. From these tables,
 we can see the minimum and the maximum distances have a large range of
 values. However, the median values, which separate the distances set
@@ -751,10 +751,7 @@ close to the minimum values and so far from maximum values. It
 confirms that almost all distances stay around the median values and
 the predicted landmarks are good enough to replace the manual
 ones. The distribution of the distances on each landmark of
-each part are given in \ref{appdixB}. From these results, we can observe that most of distances are close to the mean and median
-values, only some exceptional cases are really far. To illustrate that
-the Fig. \ref{figpdl} shows both the predicted (in red) and the manual
-(in yellow) landmarks for the three beetle parts.
+each part are given in \ref{appdixB}. To illustrate the correctness of the approach, the Fig. \ref{figpdl} shows both the predicted (in red) and the manual (in yellow) landmarks for the three beetle parts.
 
 \begin{figure}[h!]
     \centering
@@ -769,11 +766,8 @@ The fine-tuning process has improved the results of the proposed
 architecture on both $3$ sets of images: pronotum,
 elytra and head. All the average distances have significantly
 decreased: $\approx25.98\%$ on pronotum, $\approx15.8\%$ on elytra,
-and $\approx18.10\%$  on head part. Additionally, if we consider a
-predicted landmark, which has the distance (from manual ones) less
-than mean value plus standard deviation, is acceptable, the accuracy
-of method on each part is $\textbf{87.07\%}$ on pronotum,
-$\textbf{87.92\%}$ on head, and $\textbf{91.78\%}$ on elytra.
+and $\approx18.10\%$  on head part. To evaluate the percentage of acceptable estimated landmarks, we validate all points with a distance from manual one less than the average plus standard error. With this procedure $\textbf{87.07\%}$ on pronotum,
+$\textbf{87.92\%}$ on head, and $\textbf{91.78\%}$ on elytra, have been validated
 
 \pagebreak
 \section{Conclusion}
@@ -937,3 +931,9 @@ they are more stable than the results from the early method: most of
 the average distance(or landmarks) of left mandibles are less than the
 results of the early method, while the average distances are very
 close in the case of right mandibles.
+
+Additionally, if we consider a
+predicted landmark, which has the distance (from manual ones) less
+than mean value plus standard deviation, is acceptable, the accuracy
+of method on each part is $\textbf{87.07\%}$ on pronotum,
+$\textbf{87.92\%}$ on head, and $\textbf{91.78\%}$ on elytra.
