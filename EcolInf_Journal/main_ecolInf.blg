@@ -1,42 +1,41 @@
-This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
-Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: main_ecolInf.aux
 The style file: elsarticle-num.bst
 Database file #1: includes/references.bib
 Warning--I didn't find a database entry for "sainath2013deep"
-Warning--I didn't find a database entry for "bordes2014question"
 Warning--I didn't find a database entry for "tompson2014joint"
 Warning--empty pages in le2017maelab
-You've used 29 entries,
+You've used 30 entries,
             2937 wiz_defined-function locations,
-            867 strings with 12200 characters,
-and the built_in function-call counts, 10525 in all, are:
-= -- 1018
-> -- 326
+            870 strings with 12324 characters,
+and the built_in function-call counts, 10716 in all, are:
+= -- 1033
+> -- 336
 < -- 9
-+ -- 128
-- -- 99
-* -- 790
-:= -- 1378
-add.period$ -- 39
-call.type$ -- 29
-change.case$ -- 27
++ -- 132
+- -- 102
+* -- 797
+:= -- 1407
+add.period$ -- 40
+call.type$ -- 30
+change.case$ -- 28
 chr.to.int$ -- 0
-cite$ -- 30
-duplicate$ -- 353
-empty$ -- 1191
-format.name$ -- 119
-if$ -- 2730
+cite$ -- 31
+duplicate$ -- 359
+empty$ -- 1211
+format.name$ -- 123
+if$ -- 2780
 int.to.chr$ -- 0
-int.to.str$ -- 29
-missing$ -- 31
-newline$ -- 115
-num.names$ -- 29
-pop$ -- 206
+int.to.str$ -- 30
+missing$ -- 32
+newline$ -- 118
+num.names$ -- 30
+pop$ -- 213
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 657
+skip$ -- 674
 stack$ -- 0
 substring$ -- 660
 swap$ -- 127
@@ -45,7 +44,7 @@ text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 1
-while$ -- 87
-width$ -- 31
-write$ -- 276
-(There were 4 warnings)
+while$ -- 88
+width$ -- 32
+write$ -- 283
+(There were 3 warnings)

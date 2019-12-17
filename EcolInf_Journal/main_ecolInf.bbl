@@ -139,6 +139,10 @@ G.~Hinton, L.~Deng, D.~Yu, G.~E. Dahl, A.-r. Mohamed, N.~Jaitly, A.~Senior,
   acoustic modeling in speech recognition: The shared views of four research
   groups, IEEE Signal Processing Magazine 29~(6) (2012) 82--97.
 
+\bibitem{bordes2014question}
+A.~Bordes, S.~Chopra, J.~Weston, Question answering with subgraph embeddings,
+  arXiv preprint arXiv:1406.3676.
+
 \bibitem{sutskever2014sequence}
 I.~Sutskever, O.~Vinyals, Q.~V. Le, Sequence to sequence learning with neural
   networks, in: Advances in neural information processing systems, 2014, pp.

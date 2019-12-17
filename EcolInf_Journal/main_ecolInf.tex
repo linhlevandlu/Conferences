@@ -7,6 +7,7 @@
 \usepackage{subcaption}
 \usepackage{graphicx}
 \usepackage[justification=centering]{caption}
+\usepackage{tikz}
 \journal{Ecological Informatics}
 
 %%
@@ -106,8 +107,8 @@ Landmarks \sep morphometry \sep deep learning \sep CNN
 In the context of ecosystem services, there is an interest in studying complex interactions between evolution of insect populations and environmental factors affecting their functions. In order to assess specifically pest-regulating services and in line with studies pointing to shape traducing function \cite{klingenberg_evolution_2010}, there are more and more research about beneficial insect morphometrics \cite{sasakawa_utility_2016,raymond_combination_2014}. 
  In such morphometric studies, it is common to analyze subject's shape independently of their poses and sizes \cite{kendall_diffusion_1977}. Since the late $20^{th}$ century \cite{bookstein_foundations_1982}, rooted in a strong statistical background, geometric morphometrics addresses the study of such biological shapes \cite{rohlf_applications_1998}. It is an effective set of methods with several specialised softwares readily available \cite{adams_geomorph:_2013,klingenberg_morphoj:_2011}. Classical geometric morphometrics uses a set of landmarks to describe shape, a landmark being a two-dimensional anatomically-relevant point. In order to investigate the possibility of automated morphometric geometrics on beneficial insects, we chose to focus on one of the most common and ubiquitous beneficial insect of north-western France, \textit{Poecilus cupreus} (Carabidae). It is considered a polyphagous predator \cite{larochelle_1990} beneficial to agriculture, being able to consume a large variety of agricultural pests including weed seeds, slugs and aphids \cite{kromp_carabid_1999}. As a Coleoptera, its morphological variability is usually measured on exoskeleton structures such as the head, pronotum and elytra \cite{eldred_does_2016}. \\
  
-Of course, the first step in any morphometric geometrics study is the digital imaging of the biological specimens, usualy with controlled illumination and contrasting background. As such, morphometric landmark detection and positioning can be though as a particular problem of features detection and solved using robust digital image processing \cite{gonzalez_digital_2006}. In the recent years, the term 'deep learning' emerged describing class of computational models composed of multiple processing layers learning representations of data with multiple levels of abstraction \cite{lecun2015deep}. Each layer extracts the representation of the input data from the previous layer and computes a new representation for the next layer. In the hierarchy of model, higher layers of representation enlarge aspects of the input that is important for the computational task (classification, regression, \ldots) and suppress irrelevant variations. As supervised learning algorithms, they use gradient descent optimization method to update the learnable parameters via backpropagation. Deep learning algorithms have proved to be very efficient in a wide variety of domains, notably image recognition and classification \cite{krizhevsky2012imagenet,ciregan2012multi,szegedy2015going}, speech recognition \cite{mikolov2011strategies,hinton2012deep,sainath2013deep}, question answering \cite{bordes2014question} and language translation \cite{sutskever2014sequence} \cite{jean2014using}.
-Within deep learning, convolutional neural networks (CNNs) are well known for their success in many computer vision tasks such as image classification \cite{krizhevsky2012imagenet,ciregan2012multi} and  objets recognition \cite{li2015convolutional,tompson2014joint}.
+Of course, the first step in any morphometric geometrics study is the digital imaging of the biological specimens, usually with controlled illumination and contrasting background. As such, morphometric landmark detection and positioning can be though as a particular problem of features detection and solved using robust digital image processing \cite{gonzalez_digital_2006}. In the recent years, the term ``deep learning" emerged describing class of computational models composed of multiple processing layers learning representations of data with multiple levels of abstraction \cite{lecun2015deep}. Each layer extracts the representation of the input data from the previous layer and computes a new representation for the next layer. In the hierarchy of model, higher layers of representation enlarge aspects of the input that is important for the computational task (classification, regression, \ldots) and suppress irrelevant variations. As supervised learning algorithms, they use gradient descent optimization method to update the learnable parameters via backpropagation. Deep learning algorithms have proved to be very efficient in a wide variety of domains, notably image recognition and classification \cite{krizhevsky2012imagenet,ciregan2012multi,szegedy2015going}, speech recognition \cite{mikolov2011strategies, hinton2012deep, sainath2013deep}, question answering \cite{bordes2014question} and language translation \cite{sutskever2014sequence, jean2014using}.
+Within deep learning, Convolutional Neural Networks (CNNs) are well known for their success in many computer vision tasks such as image classification \cite{krizhevsky2012imagenet,ciregan2012multi} and  objets recognition \cite{li2015convolutional,tompson2014joint}.
 Recent success of this algorithm in human biometry \cite{cintas2016automatic} lead us to believe in its potential for insect morphometrics.  
 
 \subsection{Related works}\label{rw}
@@ -123,15 +124,63 @@ We present an approach to predict morphometric landmarks based on standardized d
 
 \section{Material and Methods}
 
-blabla intro \ldots \\
+In the context of this section, we first present the dataset that we have used in this study, as well as the strategies to pre-process the data. Then, we show the network architecture model that we have designed to predict the landmarks in the beetle's images.
 
-\subsection{Data sets and preprocessing}
+\subsection{Dataset and preprocessing}
+In order to provide the experiment data, we have selected the Brittany lands (North-West of France) to collect the samples. After collecting in three months, a collection of $293$ beetles has been established ($147$ males and $146$ females/ $155$ organic and $138$ conventional) (Figure \ref{imgbeetle}). As usual, images of beetles have been chosen to be studied instead of using real objects for pratical reasons. The pictures of each body parts were captured under a trinocular magnifier at $\approx 300$ pixels/mm for elytra, $\approx 600$ pixels/mm for pronotum and head, $1500$ pixels/mm for mandibles. One can note that the head, pronotum, and elytra parts have been captured before dissection. The Lleft and right mandibles have been separated from the beetle's body before taking the photos. All the images have been taken with the same camera under same conditions to release in the RGB color mode with the size of $3264 \times 2448$.
 
-Morphological landmarks were first set manualy on the dorsal views of several body parts of the beetles (head, pronotum, elytra, right and left mandibles). Pictures of each body parts were captured under a trinocular magnifier at XX for head, XX for pronotum, XX for elytra and XX for mandibles. The morphology of each body part was processed and analyzed separately in order to limit variation resulting from their relative positions due to articulation. Landmarks were chosen according to the ease and the precision of their location on each specimen (Fig 1). Replicability analyses were performed to confirm the accuracy of landmarks positioning. They were positioned on each picture with TPSDig2 software (version 2.17) (Rohlf, 2013a). In some individuals, mandibles could not be processed because they were lacking or broken. Landmarks were acquired on 293 individuals (147 males, 146 females, 155 organic, 138 conventional) for head, pronotum and elytra, 289 (144 males, 145 females, 149 organic, 130 conventional) for right mandible and 283 (140 male, 143 female, 153 organic, 136 conventional) for left mandible.  \\
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}
+		\node (img1) {\includegraphics[width=0.60\textwidth]{images/beetle2}};
+		\draw[thick,<->] (-3.2,-2.5) -- (4.7,-2.5);
+		\node at (1, -2.7) {\footnotesize{12 mm}};	
+	\end{tikzpicture}
+	\caption{An illustration of the beetle.}
+	\label{imgbeetle}
+\end{figure}
 
-The images come from a collection of 293 beetles from Brittany lands. All the images are taken with the same camera under same conditions with a $3264 \times 2448$ resolutions. For each specific part, a set of manual landmarks has been determined by biologists, \textit{for examples, 8 landmarks for pronotum, 16 landmarks for the left mandible, 18 landmarks for right mandible}. In the content of this study, we work on pronotum part of beetle. The provided dataset contains 293 images, each image with 8 landmarks provided by biologists. The dataset was split into a training set with 260 images (training and validation) and a testing set of 33 images. During the training, the network learned the information through a pair of \textit{(image, landmarks)} in training set. At the testing phase, the image without landmarks was given to the trained network and the predicted landmarks will be given at the output. Fig. \ref{figpronotum} shows an example of pronotum image with its manual landmarks.
+In the next step, morphological landmarks were first set manually on the dorsal views of each body part of the beetles (head, pronotum, elytra, right and left mandibles). The morphology of each body part was processed and analyzed separately in order to limit variation resulting from their relative positions due to articulation. Landmarks were chosen according to the ease and the precision of their location on each specimen (Figure \ref{figdatasamples}). Replicability analyses were performed to confirm the accuracy of landmarks positioning. They were positioned on each picture with TPSDig2 software (version 2.17) (Rohlf, 2013a). In some individuals, mandibles could not be processed because they were lacking or broken. For each specific part, a set of number of landmarks has been provided, for example, \textit{$8$ landmarks for pronotum, $10$ landmarks for head, $11$ landmarks for elytra, $16$ and $18$ landmarks for left and right mandibles, respectively} (Figure \ref{figdatasamples}). In the context of this study, these manual landmarks have been used as ground truth to evaluate the output of our method.
 
-\begin{figure}[htbp]
+\begin{figure}[h!]
+    \centering
+    \subcaptionbox{. Pronotum.}{\includegraphics[width=0.19\textwidth]{./images/Prono_010}}~~
+\subcaptionbox{. Head.}{\includegraphics[width=0.19\textwidth]{./images/Tete_009}}~~
+\subcaptionbox{. Elytra.}{\includegraphics[width=0.19\textwidth]{./images/Elytre119}}~~
+\subcaptionbox{. Left mandible.}{\includegraphics[width=0.19\textwidth]{./images/Mg_021}}~~
+\subcaptionbox{. Right mandible.}{\includegraphics[width=0.19\textwidth]{./images/Md_015}}~\\
+	\subcaptionbox{. Pronotum.}{\includegraphics[width=0.19\textwidth]{./images/pronotum_mlm}}~~
+\subcaptionbox{. Head.}{\includegraphics[width=0.19\textwidth]{./images/tete_mlm}}~~
+\subcaptionbox{. Elytra.}{\includegraphics[width=0.19\textwidth]{./images/elytre_mlm}}~~
+\subcaptionbox{. Left mandible.}{\includegraphics[width=0.19\textwidth]{./images/lmandible_mlm}}~~
+\subcaptionbox{. Right mandible.}{\includegraphics[width=0.19\textwidth]{./images/rmandible_mlm}}~\\
+    \caption{The sample images in our dataset (top row) and manual landmarks on each part defined by biologists (bottom row).}
+    \label{figdatasamples}
+\end{figure}
+
+The success stories \cite{} have proved that CNN models have been trained on a large dataset with an enormous number of data samples before using it to perform on testing data. Training the model with a big dataset can help the model able to learn more different cases and to improve the learning ability of the network. Unfortunately, providing a large dataset is too costly in several domains, e.g., in biology, medical. A solution to deal with this problem is to create the misshapen data from real data and to add them to the dataset. In our case, we have only 293 images for each part of the beetles. This number is large from the point of view of manual operations, but it is not enough to apply deep learning methods. So, we have augmented the number of images in each set of images.
+
+Most often in deep learning applications, dataset augmentation uses operations such as translation, rotation, or scaling, which are well-known efficient to generate the new version of existing images \cite{}. However, these operations can be invariant in some cases \cite{}. We have done some tests by moving the object in the picture. In each time, we have quickly gone to the over-fitting in the training step (more detail in Section X). Consequently, we have preferred different ways to produce misshapen images by operating on the image's color channels. We have proposed two strategies to augment the number of images in our dataset.
+
+The first strategy was applied to change the value of each channel in the original image. According to this, a constant have been added to a channel of RGB image for each time. For example, if we add a constant $c = 10$ to the red channel from an original RGB image, we will obtain a new image with the values at red channel by greater than the red channel of original image a value of $10$. By this way, we can generate three new RGB images from a RGB image.
+
+The second procedure was split the channels of RGB images to create three gray-scale images. This work seems promising because the network model on single-channel images. At the end, we have generated six versions from an image. In total, we have obtained $293 \times 7 = 2051$ images for each set of images. Figure \ref{figdataauge} illustrates the two strategies that we have described.
+
+\begin{figure}[h!]
+    \centering
+    \subcaptionbox{. Add a constant to each channel.}{\includegraphics[width=0.49\textwidth]{./images/inc_channels}}~~
+\subcaptionbox{. Split the channels of image.}{\includegraphics[width=0.49\textwidth]{./images/sp_channels}}
+    \caption{The two strategies to augment the number of images in our dataset.}
+    \label{figdataauge}
+\end{figure}
+
+
+
+
+
+In the content of this study, we work on pronotum part of beetle. The provided dataset contains 293 images, each image with 8 landmarks provided by biologists. The dataset was split into a training set with 260 images (training and validation) and a testing set of 33 images. During the training, the network learned the information through a pair of \textit{(image, landmarks)} in training set. At the testing phase, the image without landmarks was given to the trained network and the predicted landmarks will be given at the output. Fig. \ref{figpronotum} shows an example of pronotum image with its manual landmarks.
+
+\begin{figure}[h!]
 	\centerline{\includegraphics[scale=0.8]{images/pronotum}}
 	\caption{An example of pronotum with manual landmarks}
 	\label{figpronotum}
