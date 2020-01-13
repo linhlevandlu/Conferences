@@ -318,20 +318,19 @@ In order to use EB-Net on this dataset, we have adapted the parameters of the in
 Table \ref{tblRMSE_challenge} shows the scores of top $3$ on the challenge board and our one. It is worth to note that their scores have been obtained by testing their models on a private set of images that we can not access. So, we have kept $100$ images in the public dataset for testing process. Comparing with these scores, the three models present better results than us but we are very close. In our opinion, the RMSE score around the 1 pixels is not so far if we would like to display the landmarks on the images. Consequently, we have the base to believe that EB-Net is still good in any way, and we have decided to re-use the pre-trained parameter values to fine-tune the model for beetle images. 
 
 \subsection{Fine-tuning on beetle images}
+As we have mentioned, fine-tuning is a strategy of transfer learning that we could boost the efficiency of a model on the target task. Technically, the weights of a CNN model can be fine-tuned by continuing the backpropagation. It exists two ways to perform fine-tuning process: \textit{frozen} and \textit{unfrozen}.
+\begin{itemize}
+	\item \textbf{Frozen} scenario: the parameter of lower layers (close to the input layer) will be fixed, we fine-tune only the higher ones (close to the output layer).
+	\item \textbf{Unfrozen} scenario: allows continuing to update the parameter values of all layers in the pre-trained model.
+\end{itemize}
 
-One can note that the sizes of images between the two datasets are different, the beetle
-images have a size of $256 \times 192$ pixels; whereas the facial images are $96 \times 96$. Therefore,
+One can note that the sizes of images in the two datasets are different: the beetle images have a size of $256 \times 192$ pixels; whereas the size of facial images is $96 \times 96$ pixels. Therefore,
 adjustments are needed to match the two tasks.
-First of all, reducing the resolution of the beetle images to $96 \times 96$ could be lead to
-a loss of essential information. As our images contain a background band that is easy
-to suppress with a pre-processing operation, we have chosen to remove the background
-region instead of down-sampling our pictures. Moreover, removing the background
-pixels can limit the effect of un-useful image areas.
-We have also respected the form of images that they are square. The new beetle
-images are finally set to $192 \times 192$ pixels. The EB-Net parameters will be settled to take
-into account these values between the pre-training and fine-tuning steps. To declare the
-modification, we mention in a stride value of the first convolutional layer equals to 2
-(as the usual way to do \cite{}).
+
+First of all, reducing the resolution of the beetle images to $96 \times 96$ could be lead to a loss of essential information. As our images contain a background band that is easy to suppress with a pre-processing operation, we have chosen to remove the background
+region instead of down-sampling our pictures. Moreover, removing the background pixels can limit the effect of un-useful image areas.
+We have also respected the form of images that they are square. The new beetle images are finally set to $192 \times 192$ pixels. The EB-Net parameters will be settled to take into account these values between the pre-training and fine-tuning steps. To declare the modification, we mention in a stride value of the first convolutional layer equals to $2$ (as the usual way to do \cite{}). To evaluate this process, the parameters of the pre-trained model have been transferred to
+separately fine-tune on three sets of images: pronotum, head, and elytra. We present all the obtained results in the same way as the previous section to provide an explicit comparison.
 
 \subsection{Automated landmarks prediction for different anatomical parts}
 
