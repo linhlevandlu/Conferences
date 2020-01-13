@@ -61,41 +61,72 @@
 \citation{}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces The sample images in our dataset (top row) and manual landmarks on each part defined by biologists (bottom row).\relax }}{4}{figure.caption.2}}
 \newlabel{figdatasamples}{{2}{4}{The sample images in our dataset (top row) and manual landmarks on each part defined by biologists (bottom row).\relax }{figure.caption.2}{}}
-\citation{krizhevsky2012imagenet}
-\citation{sun2013deep}
-\citation{cintas2016automatic}
+\citation{lecun2012efficient}
+\citation{}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces The two strategies to augment the number of images in our dataset.\relax }}{5}{figure.caption.3}}
 \newlabel{figdataauge}{{3}{5}{The two strategies to augment the number of images in our dataset.\relax }{figure.caption.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces An example of pronotum with manual landmarks\relax }}{5}{figure.caption.4}}
-\newlabel{figpronotum}{{4}{5}{An example of pronotum with manual landmarks\relax }{figure.caption.4}{}}
-\citation{lecun2012efficient}
-\citation{lecun2012efficient}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Network architecture and training}{6}{subsection.2.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Measuring similarities between predicted and observed landmarks}{6}{subsection.2.3}}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Results}{6}{section.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Automated landmarks prediction for different anatomical parts}{6}{subsection.3.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Network architecture}{5}{subsection.2.2}}
+\citation{}
+\citation{}
+\citation{figebnet}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces The components of an elementary block\relax }}{6}{figure.caption.4}}
+\newlabel{figeblock}{{4}{6}{The components of an elementary block\relax }{figure.caption.4}{}}
+\citation{}
+\citation{}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Elementary Blocks Network (EB-Net) architecture\relax }}{7}{figure.caption.5}}
+\newlabel{figebnet}{{5}{7}{Elementary Blocks Network (EB-Net) architecture\relax }{figure.caption.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Setting and training EB-Net}{7}{subsection.2.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Results}{8}{section.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}The first test}{8}{subsection.3.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces The losses of two models on pronotum images.\relax }}{8}{figure.caption.6}}
+\newlabel{figdlosses}{{6}{8}{The losses of two models on pronotum images.\relax }{figure.caption.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Training from scratch}{9}{subsection.3.2}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces The losses during the training of the third model on pronotum images\relax }}{9}{table.caption.7}}
+\newlabel{tbltrainingloss}{{1}{9}{The losses during the training of the third model on pronotum images\relax }{table.caption.7}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces The average distances per landmark on images of each set.\relax }}{9}{table.caption.8}}
+\newlabel{tblavgpronotum}{{2}{9}{The average distances per landmark on images of each set.\relax }{table.caption.8}{}}
+\citation{}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces The landmarks on three parts of beetle. The red/ yellow points present the predicted/ manual landmarks.\relax }}{10}{figure.caption.9}}
+\newlabel{figeb1}{{7}{10}{The landmarks on three parts of beetle. The red/ yellow points present the predicted/ manual landmarks.\relax }{figure.caption.9}{}}
+\newlabel{figc4lm1dist}{{8a}{10}{. The $1^{st}$ landmark \relax }{figure.caption.10}{}}
+\newlabel{sub@figc4lm1dist}{{a}{10}{. The $1^{st}$ landmark \relax }{figure.caption.10}{}}
+\newlabel{figc4lm6dist}{{8b}{10}{. The $6^{th}$ landmark \relax }{figure.caption.10}{}}
+\newlabel{sub@figc4lm6dist}{{b}{10}{. The $6^{th}$ landmark \relax }{figure.caption.10}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces The distribution of distances between manual and corresponding landmarks of all pronotum images for the best ($1^{st}$ landmark) and the worst case ($6^{th}$ landmark)\relax }}{10}{figure.caption.10}}
+\newlabel{figprodist}{{8}{10}{The distribution of distances between manual and corresponding landmarks of all pronotum images for the best ($1^{st}$ landmark) and the worst case ($6^{th}$ landmark)\relax }{figure.caption.10}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Transfer learning process}{10}{subsection.3.3}}
+\citation{}
+\citation{}
+\citation{}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Pre-train EB-Net on facial keypoint dataset}{11}{subsection.3.4}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces RMSE comparison between our score and top three of challenge.\relax }}{11}{table.caption.11}}
+\newlabel{tblRMSE_challenge}{{3}{11}{RMSE comparison between our score and top three of challenge.\relax }{table.caption.11}{}}
+\citation{}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Fine-tuning on beetle images}{12}{subsection.3.5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6}Automated landmarks prediction for different anatomical parts}{12}{subsection.3.6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Learning curves of the first model.\relax }}{12}{figure.caption.12}}
+\newlabel{figloss1}{{9}{12}{Learning curves of the first model.\relax }{figure.caption.12}{}}
 \citation{bland1996statistics}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Learning curves of the first model.\relax }}{7}{figure.caption.5}}
-\newlabel{figloss1}{{5}{7}{Learning curves of the first model.\relax }{figure.caption.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Learning curves of the last model.\relax }}{7}{figure.caption.6}}
-\newlabel{figloss}{{6}{7}{Learning curves of the last model.\relax }{figure.caption.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Learning curves of the last model.\relax }}{13}{figure.caption.13}}
+\newlabel{figloss}{{10}{13}{Learning curves of the last model.\relax }{figure.caption.13}{}}
+\newlabel{figsub1}{{11a}{13}{Image with well-predicted landmarks\relax }{figure.caption.14}{}}
+\newlabel{sub@figsub1}{{a}{13}{Image with well-predicted landmarks\relax }{figure.caption.14}{}}
+\newlabel{figsub2}{{11b}{13}{Image with inaccuracy landmarks\relax }{figure.caption.14}{}}
+\newlabel{sub@figsub2}{{b}{13}{Image with inaccuracy landmarks\relax }{figure.caption.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces The predicted landmarks on an image in test set (red points)\relax }}{13}{figure.caption.14}}
+\newlabel{figrsexample}{{11}{13}{The predicted landmarks on an image in test set (red points)\relax }{figure.caption.14}{}}
 \citation{le2017maelab}
-\newlabel{figsub1}{{7a}{8}{Image with well-predicted landmarks\relax }{figure.caption.7}{}}
-\newlabel{sub@figsub1}{{a}{8}{Image with well-predicted landmarks\relax }{figure.caption.7}{}}
-\newlabel{figsub2}{{7b}{8}{Image with inaccuracy landmarks\relax }{figure.caption.7}{}}
-\newlabel{sub@figsub2}{{b}{8}{Image with inaccuracy landmarks\relax }{figure.caption.7}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces The predicted landmarks on an image in test set (red points)\relax }}{8}{figure.caption.7}}
-\newlabel{figrsexample}{{7}{8}{The predicted landmarks on an image in test set (red points)\relax }{figure.caption.7}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces The average distance per landmark\relax }}{8}{table.caption.8}}
-\newlabel{tab2}{{1}{8}{The average distance per landmark\relax }{table.caption.8}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Conclusion and future works}{8}{section.4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces The distribution of the distances on the first landmark. The blue line is the average value of all distances.\relax }}{9}{figure.caption.9}}
-\newlabel{figchartlm1}{{8}{9}{The distribution of the distances on the first landmark. The blue line is the average value of all distances.\relax }{figure.caption.9}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces The proportion of acceptable predicted landmarks\relax }}{9}{figure.caption.10}}
-\newlabel{figchart}{{9}{9}{The proportion of acceptable predicted landmarks\relax }{figure.caption.10}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Evalution metrics for further predicted landmarks usage}{9}{subsection.4.1}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces The average distance per landmark\relax }}{14}{table.caption.15}}
+\newlabel{tab2}{{4}{14}{The average distance per landmark\relax }{table.caption.15}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces The distribution of the distances on the first landmark. The blue line is the average value of all distances.\relax }}{14}{figure.caption.16}}
+\newlabel{figchartlm1}{{12}{14}{The distribution of the distances on the first landmark. The blue line is the average value of all distances.\relax }{figure.caption.16}{}}
 \bibdata{includes/references}
 \bibcite{klingenberg_evolution_2010}{{1}{}{{}}{{}}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces The proportion of acceptable predicted landmarks\relax }}{15}{figure.caption.17}}
+\newlabel{figchart}{{13}{15}{The proportion of acceptable predicted landmarks\relax }{figure.caption.17}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Conclusion and future works}{15}{section.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Evalution metrics for further predicted landmarks usage}{15}{subsection.4.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Discussion}{15}{section.5}}
 \bibcite{sasakawa_utility_2016}{{2}{}{{}}{{}}}
 \bibcite{raymond_combination_2014}{{3}{}{{}}{{}}}
 \bibcite{kendall_diffusion_1977}{{4}{}{{}}{{}}}
@@ -106,7 +137,6 @@
 \bibcite{larochelle_1990}{{9}{}{{}}{{}}}
 \bibcite{kromp_carabid_1999}{{10}{}{{}}{{}}}
 \bibcite{eldred_does_2016}{{11}{}{{}}{{}}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Discussion}{10}{section.5}}
 \bibcite{gonzalez_digital_2006}{{12}{}{{}}{{}}}
 \bibcite{lecun2015deep}{{13}{}{{}}{{}}}
 \bibcite{krizhevsky2012imagenet}{{14}{}{{}}{{}}}

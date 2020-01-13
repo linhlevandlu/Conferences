@@ -8,6 +8,7 @@
 \usepackage{graphicx}
 \usepackage[justification=centering]{caption}
 \usepackage{tikz}
+\usepackage{multirow}
 \journal{Ecological Informatics}
 
 %%
@@ -127,7 +128,7 @@ We present an approach to predict morphometric landmarks based on standardized d
 In the context of this section, we first present the dataset that we have used in this study, as well as the strategies to pre-process the data. Then, we show the network architecture model that we have designed to predict the landmarks in the beetle's images.
 
 \subsection{Dataset and preprocessing}
-In order to provide the experiment data, we have selected the Brittany lands (North-West of France) to collect the samples. After collecting in three months, a collection of $293$ beetles has been established ($147$ males and $146$ females/ $155$ organic and $138$ conventional) (Figure \ref{imgbeetle}). As usual, images of beetles have been chosen to be studied instead of using real objects for pratical reasons. The pictures of each body parts were captured under a trinocular magnifier at $\approx 300$ pixels/mm for elytra, $\approx 600$ pixels/mm for pronotum and head, $1500$ pixels/mm for mandibles. One can note that the head, pronotum, and elytra parts have been captured before dissection. The Lleft and right mandibles have been separated from the beetle's body before taking the photos. All the images have been taken with the same camera under same conditions to release in the RGB color mode with the size of $3264 \times 2448$.
+In order to provide the experiment data, we have selected the Brittany lands (North-West of France) to collect the samples. After collecting in three months, a collection of $293$ beetles has been established ($147$ males and $146$ females/ $155$ organic and $138$ conventional) (Figure \ref{imgbeetle}). As usual, images of beetles have been chosen to be studied instead of using real objects for pratical reasons. The pictures of each body parts were captured under a trinocular magnifier at $\approx 300$ pixels/mm for elytra, $\approx 600$ pixels/mm for pronotum and head, $1500$ pixels/mm for mandibles. One can note that the head, pronotum, and elytra parts have been captured before dissection. The left and right mandibles have been separated from the beetle's body before taking the photos. All the images have been taken with the same camera under same conditions to release in the RGB color mode with the size of $3264 \times 2448$.
 
 \begin{figure}[h!]
 	\centering
@@ -174,33 +175,163 @@ The second procedure was split the channels of RGB images to create three gray-s
     \label{figdataauge}
 \end{figure}
 
+To perform the objective, we have observed the input size of the several CNN models and noticed that their input sizes were limited to $256$ pixels. One can note that our images were released with the size of $3264 \times 2448$, as mentioned in Section \ref{}. This size has a bit heavy for training the network. Consequently, we have down-sampled our images to a new size of $256 \times 192$ to respect the ratio between width and height. Of course, coordinates of landmarks have been down-sampled to the new size of images. Practically, convergence is usually faster if the average of each input variable over the training set is close to zero. According to \cite{lecun2012efficient}, the brightness of the image is normalized to $[0,1]$, instead of $[0,255]$ and the coordinates of the landmarks are normalized to $[-1,1]$, instead of $[0,256]$ and $[0,192]$ before giving to the network.
 
+\subsection{Network architecture}
+From the first appearance to current, many CNN architectures have been available. Most often, they were designed to solve specific problems. 
 
+The first model has been inspired by AlexNet architecture. It received gray-scale image with the size of $256 \times 192$ as the input. The image is analyzed by three repeated structures of a convolution (CONV) layer followed by a maximum pooling (POOL) layer. As usual, the depth of CONV layers are set to increase from the beginning to the end with a small kernel. In our model, we have chosen $32, 64, 128 $ for the depths and $ 3 \times 3, 2 \times 2, 2 \times 2 $ for the kernel'sizes of CONV layers, respectively. Using POOL layers after the CONV layers is a common occurrence in CNN \cite{}. This work towards to two advantages: reducing the spatial size of the representation to decrease the number of parameters as well as saving the computing time, and to prevent the over-fitting during the training process. In the first model, we have used the common form for a POOL layer: a filter with the size of $2 \times 2$ and a stride of $2$ pixels. With these parameter values, the spatial size of the image will be halved after every POOL layer. In order to extract the global relationship between the features and to provide the prediction, three fully-connected (FC) layers have been added after the combination of CONV-POOL. The first FC layer takes all features from the last POOL layer as the input for computing. Then, the computed results will be passed through the activation functions to provide the outputs. The second FC layer receives the outputs of the first FC layer as the input. The process at this layer is the same than the first one. The third FC layer accepts the outputs of the second FC layer, then they will be used to compute the input. It is worth to note that we keep the linear value for the output of the third FC layer. The number of outputs at each FC layers is set to $500, 500$, and $X$, respectively. The number $X$ equals to two times the number of landmarks that we want to predict, for example, to predict $8$ landmarks on pronotum, we have set $16$ as the outputs of the last FC layer. The first model has been trained and tested on our pronotum images. Nevertheless, the obtained results have not been considered good enough to use it. The main problem comes from the appearance of over-fitting during the training process. The detail of this experiment will be discussed in Section X.
 
+As an attempt to remove over-fitting, we have increased the number outputs of the first two FC layers from $500$ to $1000$ with a hypothesis considering more features. However, the obtained results have not changed, the over-fitting was not suppressed.
 
-In the content of this study, we work on pronotum part of beetle. The provided dataset contains 293 images, each image with 8 landmarks provided by biologists. The dataset was split into a training set with 260 images (training and validation) and a testing set of 33 images. During the training, the network learned the information through a pair of \textit{(image, landmarks)} in training set. At the testing phase, the image without landmarks was given to the trained network and the predicted landmarks will be given at the output. Fig. \ref{figpronotum} shows an example of pronotum image with its manual landmarks.
+In order to build the third model, we have defined a concept of Elementary Block (EB). Figure \ref{figeblock} illustrates the order of the classes in an EB, it is defined as a sequence of a CONV layer, a maximum POOL layer, and a Dropout layer. As usual, the dropout layers are inserted between the FC layers to prevent the over-fitting as we have seen in the success stories \cite{}, but we have added them in the extracting features blocks to create some kinds of image noise augmentation. The objective of this work is to provide more studied cased in each training iteration. Besides, dropout layer will randomly drop some connections during the training process. It makes the network thinner than the original one (less parameters), and training a network with dropout layer is equalivalent to train a set of thinner networks. These works have significantly reduced over-fitting and given more major improvements than other regularization methods \cite{}.
 
 \begin{figure}[h!]
-	\centerline{\includegraphics[scale=0.8]{images/pronotum}}
-	\caption{An example of pronotum with manual landmarks}
-	\label{figpronotum}
+	\centering
+	\includegraphics[width=0.6\textwidth]{images/elementary_block}
+	\caption{The components of an elementary block}
+	\label{figeblock}
 \end{figure}
 
-In some succeed networks \cite{krizhevsky2012imagenet}\cite{sun2013deep}\cite{cintas2016automatic}, the maximum size of the inputs is not over 256 pixels. In our case, the resolution of the image is large, it becomes a difficulty for the network. During training and testing, the images are down-sampling to the new resolution of $256 \times 192$. Certainly, the landmark coordinates of the image are also scaled to suit their new resolution. 
+For our critical objective, we have initially assembled three Elementary Blocks to create the third model, so-called Elementary Blocks Network (EB-Net). The used parameters of the convolution and the pooling layers have been kept in the same configuration as the second model. The probabilities of the dropout layers, which were added after the pooling layers, are set increasing: $0.1, 0.2$, and $0.3$, respectively. Following the three EBs is three fully-connected layers with a similar number of outputs as the second model. Moreover, a dropout layer with the probability equals to $0.5$ has been inserted between the first and the second fully-connected layers. Figure \cite{figebnet} shows the structure of the EB-Net.
 
-The proposed network has a large number of learnable parameters. In addition, the size of the dataset is limited, this means that overfitting will occur during the training process. Therefore, we need to enlarge the size of the dataset. In image processing, we usually apply transform procedure (i.e rotate, translate) to generate a new image but in fact, when we compute the value of the pixels, it does not change while CNN computes the values of the pixels.Therefore, we have applied two other procedures to increase the number of images in the dataset. To address this problem, we have applied two procedures to enlarge the size of the dataset.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.8\textwidth]{images/model3}
+	\caption{Elementary Blocks Network (EB-Net) architecture}
+	\label{figebnet}
+\end{figure}
 
-The first procedure was applied to change the value of each channel in the original image. According to this, a constant is added to a channel of RGB image and for each time, we just change the value of one of three channels. For example, from an original RGB image, if we add a constant $c = 10$ to the red channel, we will obtain a new image with the values at red channel by greater than the red channel of original image a value of 10. By this way, we can generate three new RGB images from a RGB image.
+In a CNN model, besides the model-specific hyper-parameters which involve the structure of the network (e.g., the number of layers or parameter values for each layer), the optimized hyper-parameters are also important variables in designing a CNN model. These variables are related to train a network model, for example, the loss function, number of epochs, or initialized values of learning rate, batch size. Practically, these values depend on the task and the dataset, they are determined empirically. In our application, we have chosen gradient descent as the optimized algorithm as usual studies \cite{}. Consequently, the learning rate begins from $0.03$ and to stop at $0.00001$; whereas the momentum rate is updated from $0.9$ to $0.9999$. During the training, the learning and momentum rates are adjusted to fit with the number of epochs. Besides, the Root Mean Square Error (RMSE) has been chosen to use as the loss function because it is usually used for regression problems where outputs are not discrete values as in the case of landmark coordinates. 
 
-The second procedure is splitting the channels of RGB images. It means that we separate the channels of RGB into three gray-scale images. This work seems promising because the network works on single-channel images. At the end, we can generate six versions from an image, the total number of images used to train and validate is $260 \times 7 = 1820$ images (six versions and original image). The number of images that used for training and validation is splitted randomly by a ratio (training: $80\%$, validation: $20\%$) that has been set during the network setup.
+\subsection{Setting and training EB-Net}
+In order to provide the predicted landmarks for all images, we have applied cross-validation technique to select the test images, we will call a selection step is a round. For each round, we take $33$ images and keep them for testing. The $260$ remaining images will be used to train and to validate the network model. It is worth to note that the set of $260$ images has been augmented by the strategies described in Section Y, to provide $1820$ images for these two steps. To achieve the cross-validation steps, we have to do $9$ rounds in total. 
 
-In practical, when we work with CNN, convergence is usually faster if the average of each input variable over the training set is close to zero. Moreover, when the input is set closed with zero, it will be more suitable with the sigmoid activation function \cite{lecun2012efficient}. According to \cite{lecun2012efficient}, the brightness of the image is normalized to $[0,1]$, instead of $[0,255]$ and the coordinates of the landmarks are normalized to $[-1,1]$, instead of $[0,256]$ and $[0,192]$ before giving to the network.
-
-\subsection{Network architecture and training}
-
-\subsection{Measuring similarities between predicted and observed landmarks}
+During the training and validation step, $1820$ images are randomly divided into two sets with a ratio of $60\% : 40\%$ and used for the corresponding processes (training : validation). In each training step, the pair of \textit{image} and \textit{its manual landmarks} is inputted to train the network model. In our cases, the manual landmarks have been given by the biologists. So, they can be used as ground truth to train the network, as well as to evaluate the predicted ones. The EB-Net has been implemented by using Lasagne framework \cite{}, and trained in $5000$ epochs on Linux system by using a NVIDIA GPU (Titan X) card.
 
 \section{Results}
+\subsection{The first test}
+As mentioned in Section X, we have three models for predicting landmarks. In order to select the best one for our objective, we have first tested the three models on pronotum, before applying the best one on the two other parts of beetle (head and elytra).
+
+\begin{figure}[h!]
+    \centering
+    \subcaptionbox{. Losses of the first model.}{\includegraphics[width=0.49\textwidth]{./images/loss_model_1}}~~
+\subcaptionbox{. Losses of EB-Net.}{\includegraphics[width=0.49\textwidth]{./images/loss_v16}}
+    \caption{The losses of two models on pronotum images.}
+    \label{figdlosses}
+\end{figure}
+
+Figure \ref{figdlosses} shows the losses during the training and validation processes of two models (the first one and EB-Net) on pronotum images. The blue curves are training losses, and the green curves are validation losses. In the first model (Figure \ref{figdlosses}a), the training loss ables to decrease along with the number of epochs, but the validation loss is stable after $2000$ epochs. Clearly, the over-fitting has appeared in the fist model. In the second model, no concrete change appears in the curves even the parameters of fully-connected layers have been modified. We have also checked the losses of the second model, the result is also the same as the first one. So, we have not mentioned it in this document. On the opposite side of the first two models, the losses of EB-Net (Figure \ref{figdlosses}b) is really different. They are far from the beginning, but become more close at the end of process. One can note that the over-fitting has disappeared in this architecture. Therefore, we can assume that using elementary block works well to prevent over-fitting in our case. For these reasons, we have decided to use EB-Net for producing the landmarks.
+
+In order to achieve the best quality of predicted landmarks, we have tested EB-Net in two different strategies: training from scratch and transfer learning. The following sections describe detailed results from these processes. Firstly, we consider the losses during the training and validation processes. Secondly, we compare the coordinates of predicted landmarks and corresponding manual ones by calculating the distance between them. The average distance is also taken into account for each landmark position. We display also the landmarks on the image. Finally, the distribution of distances will be discussed in some cases of landmarks. 
+
+\subsection{Training from scratch}
+In the first strategy, EB-Net has been separately trained on three sets of images: pronotum, head, and elytra. Table \ref{tbltrainingloss} shows the losses of 9 rounds when we train EB-Net on pronotum images. We can observe the losses are tiny in each round, and the differences among rounds are not various even we have altered images in each step.
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{l l l}
+	Round & Training loss & Validation loss \\ \hline
+	1 & 0.00018 & 0.00019  \\ \hline
+	2 & 0.00019 & 0.00021 \\ \hline
+	3 & 0.00019 & 0.00026 \\ \hline
+	4 & 0.00021 & 0.00029 \\ \hline
+	5 & 0.00021 & 0.00029 \\ \hline
+	6 & 0.00019 & 0.00018 \\ \hline
+	7 & 0.00018 & 0.00018 \\ \hline
+	8 & 0.00018 & 0.00021 \\ \hline
+	9 & 0.00020 & 0.00027 \\ \hline
+	\end{tabular}
+	\caption{The losses during the training of the third model on pronotum images}
+	\label{tbltrainingloss}
+\end{table}
+
+In the next step, we focus on the location of predicted landmarks by comparing these with the ground truths. We have calculated the distances (in pixels) between the manual landmarks and corresponding predicted ones. Then, the average distance on each position has been considered. Table X shows the average distance on each position of all three parts: pronotum, head and elytra. With the image's size of $256 \times 192$, we can consider that an error around $1\%$ ($\approx 2$ pixels) coud be an acceptable error. Unfortunately, our results exhibit the average distance around $4$ pixels for the best cases, and more than $5$ pixels in the worst cases.
+
+\begin{table}[h!]
+	\centering	
+	\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+		\hline
+		\textbf{LM} & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 \\ \hline
+		\textbf{Pronotum} & \textcolor{green}{4.00} & 4.48 & 4.3 & 4.39 & 4.29 & \textcolor{red}{5.36} & 4.64 & 4.94 & - & - & - \\ \hline
+		\textbf{Head} & \textcolor{red}{5.53} & 5.16 & 5.38 & 5.03 & 4.84 & \textcolor{green}{4.45} & 4.79 & 4.53 & 5.14 & 5.06 & - \\ \hline
+		\textbf{Elytra} & \textcolor{green}{3.87} & 3.97 & 3.92 & 3.87 & 4.02 & 4.84 & 5.21 & \textcolor{red}{5.47} & 5.27 & 4.07 & 3.99 \\ \hline
+	\end{tabular}
+	\caption{The average distances per landmark on images of each set.}
+	\label{tblavgpronotum}
+\end{table}
+
+To illustrate the points, Figure \ref{figeb1} shows the predicted landmarks on the three parts of beetles. The red/yellow points present the predicted/manual landmarks. One can note that even some predicted landmarks are close to the manual ones, we have also some predicted coordinates that are far from the expected results.
+
+\begin{figure}[h!]
+	\centering
+    \subcaptionbox{. Pronotum}{\includegraphics[width=0.31\textwidth]{images/Prono_001_2}}~~
+	\subcaptionbox{. Head}{\includegraphics[width=0.31\textwidth]{images/Tete_006_2}}~~
+	\subcaptionbox{. Elytra}{\includegraphics[width=0.31\textwidth]{images/Elytre007_2}}
+    \caption{The landmarks on three parts of beetle. The red/ yellow points present the predicted/ manual landmarks.}
+    \label{figeb1}
+\end{figure}
+
+It is worth to note that an average value could reflect two different cases: the values closed together (small dispersion) or two sets of values very far (large dispersion). In order to check the , Figure \ref{figprodist} shows the distribution of distances between the manual and predicted landmarks for the best and the worst cases in each set of images. Each point presents the distance between the points (landmarks) of an image. The lines illustrate the average distance in each case. In both of two cases (the best and the worst), the distances are most often stay in the region from 0 to the average value. However, it exhibits a small dispersion, some points are still far away the mean value.
+
+\begin{figure}[h!]
+    \centering
+    \subcaptionbox{. The $1^{st}$ landmark \label{figc4lm1dist}}{\includegraphics[width=0.48\textwidth]{./images/fs_lm1}}\hspace{0.5cm}
+\subcaptionbox{. The $6^{th}$ landmark \label{figc4lm6dist}}{\includegraphics[width=0.48\textwidth]{./images/fs_lm6}}
+    \caption{The distribution of distances between manual and corresponding landmarks of all pronotum images for the best ($1^{st}$ landmark) and the worst case ($6^{th}$ landmark)}
+    \label{figprodist}
+\end{figure}
+
+The EB-Net has achieved good outcomes in most cases. However, it exists several difficult images in our dataset that the model can not recognize. That leads to the appearance of some high distance values in Figure X. The next step is to improve the predicted results.
+
+\subsection{Transfer learning process}
+Working with deep learning requires not only to design a good architecture but also to provide a large dataset to train and to test the model. Practically, this is a potential problem in some application domains as in biology. As mentioned in section X, we have augmented the number of images in our dataset and used it to train EB-Net. However, our number is far away several thousands images. In this case, knowledge transfer or transfer learning between tasks could be an advice. We describe this process in this section to improve our predictions.
+
+Transfer learning \cite{} is a technique in deep learning to re-purpose a model, which has been designed for a specific task (called source task), on another related task (target task). Chosing which strategy of transfer learning to apply depending on the relationship between two tasks, as well as the size of database. Practically, transfer learning is mostly targeted on $2$ strategies:
+\begin{itemize}
+	\item \textbf{Use CNN as a fixed feature extractor}: Take a CNN pre-trained on a large dataset, then remove the last fully-connected and use the rest layers of CNN as a fixed extractor for the new dataset.
+	\item \textbf{Fine-tuning a CNN}: This situation is the same as the first one. However, it does not only replace and retrain the last layer but also fine-tunes the weights of the pre-trained model by extending the backpropagation. One can note that to reuse a pre-trained model, the parameters have been adapted between two tasks. These parameters could be the size of input images, the number of outputs, or the parameters of each layer. As usual, the parameter values at each layer, e.g., padding or stride values, are selected to change their values to declare the differences between the two tasks.
+\end{itemize}
+
+As a preliminary work, we have tested several well-known models \cite{} that have been trained on ImageNet \cite{}. These pre-trained models have been shared in deep learning community as a source to re-use the features of ImageNet dataset. Unfortunately, the features from ImageNet seem that do not relevant for our application because Image features mainly concern the detection of global shape of the objects whereas landmarks can be considered as local features \cite{}. Luckily, searching for landmarks is well defined in other application such as face recognition, or facial keypoints detection. Consequently, we have decided to continue with EB-Net: we have pre-trained EB-Net with a public facial keypoints dataset, then transferred the pre-trained parameters to fine-tune on beetle's images.
+
+\subsection{Pre-train EB-Net on facial keypoint dataset}
+
+In recent years, several competitions have been published for predicting facial keypoints on human face, where they have publiced a dataset for training the models. As mention before, our problem has a revelant to these kind of competition. So, we have decided to choose a facial keypoints dataset to train EB-Net, and then to transfer the parameters to fine-tune on beetle's images.
+
+The dataset that we have selected has been published for a challenge in the Kaggle website. It includes $2140$ images of human faces with a size of $96 \times 96$. Each image contains $15$ landmarks on the face: $6$ landmarks for eyes, $4$ landmarks for eyebrows, $4$ landmarks for the mouth, and $1$ landmark for nose tip. Figure X shows four face images in the dataset and the landmarks on each face.
+
+In order to use EB-Net on this dataset, we have adapted the parameters of the input and the output layers to match with the requirements of the challenge. The new parameter values are $96 \times 96$ for the input size, and $30$ for the number of output (corresponding to $15$ landmarks). In hyper-parameters side, we have increased the number of epochs to $10000$ but kept the same for other values as training from scratch. As the first step, we take into account the RMSE score to evaluate and to compare the effectiveness of EB-Net with other published scores in the challenge.
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{ | c | c | c | c | c |}
+	\hline
+	\multirow{2}{*}{Team} & Olegra & Trump & Enes & \multirow{2}{*}{Our} \\
+	  & $1^{st}$ & $2^{nd}$ & $3^{rd}$ &  \\ \hline
+	RMSE score (in pixels) & 1.2824 & 1.4004 & 1.4026 & \textbf{1.497} \\ \hline
+\end{tabular}	
+	\caption{RMSE comparison between our score and top three of challenge.}
+	\label{tblRMSE_challenge}
+\end{table}
+
+Table \ref{tblRMSE_challenge} shows the scores of top $3$ on the challenge board and our one. It is worth to note that their scores have been obtained by testing their models on a private set of images that we can not access. So, we have kept $100$ images in the public dataset for testing process. Comparing with these scores, the three models present better results than us but we are very close. In our opinion, the RMSE score around the 1 pixels is not so far if we would like to display the landmarks on the images. Consequently, we have the base to believe that EB-Net is still good in any way, and we have decided to re-use the pre-trained parameter values to fine-tune the model for beetle images. 
+
+\subsection{Fine-tuning on beetle images}
+
+One can note that the sizes of images between the two datasets are different, the beetle
+images have a size of $256 \times 192$ pixels; whereas the facial images are $96 \times 96$. Therefore,
+adjustments are needed to match the two tasks.
+First of all, reducing the resolution of the beetle images to $96 \times 96$ could be lead to
+a loss of essential information. As our images contain a background band that is easy
+to suppress with a pre-processing operation, we have chosen to remove the background
+region instead of down-sampling our pictures. Moreover, removing the background
+pixels can limit the effect of un-useful image areas.
+We have also respected the form of images that they are square. The new beetle
+images are finally set to $192 \times 192$ pixels. The EB-Net parameters will be settled to take
+into account these values between the pre-training and fine-tuning steps. To declare the
+modification, we mention in a stride value of the first convolutional layer equals to 2
+(as the usual way to do \cite{}).
 
 \subsection{Automated landmarks prediction for different anatomical parts}
 
@@ -291,3 +422,32 @@ TODO : a biological part, a computational part \\
 \bibliography{includes/references}
 
 \end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In the content of this study, we work on pronotum part of beetle. The provided dataset contains 293 images, each image with 8 landmarks provided by biologists. The dataset was split into a training set with 260 images (training and validation) and a testing set of 33 images. During the training, the network learned the information through a pair of \textit{(image, landmarks)} in training set. At the testing phase, the image without landmarks was given to the trained network and the predicted landmarks will be given at the output. Fig. \ref{figpronotum} shows an example of pronotum image with its manual landmarks.
+
+\begin{figure}[h!]
+	\centerline{\includegraphics[scale=0.8]{images/pronotum}}
+	\caption{An example of pronotum with manual landmarks}
+	\label{figpronotum}
+\end{figure}
+
+In some succeed networks \cite{krizhevsky2012imagenet}\cite{sun2013deep}\cite{cintas2016automatic}, the maximum size of the inputs is not over 256 pixels. In our case, the resolution of the image is large, it becomes a difficulty for the network. During training and testing, the images are down-sampling to the new resolution of $256 \times 192$. Certainly, the landmark coordinates of the image are also scaled to suit their new resolution. 
+
+The proposed network has a large number of learnable parameters. In addition, the size of the dataset is limited, this means that overfitting will occur during the training process. Therefore, we need to enlarge the size of the dataset. In image processing, we usually apply transform procedure (i.e rotate, translate) to generate a new image but in fact, when we compute the value of the pixels, it does not change while CNN computes the values of the pixels.Therefore, we have applied two other procedures to increase the number of images in the dataset. To address this problem, we have applied two procedures to enlarge the size of the dataset.
+
+The first procedure was applied to change the value of each channel in the original image. According to this, a constant is added to a channel of RGB image and for each time, we just change the value of one of three channels. For example, from an original RGB image, if we add a constant $c = 10$ to the red channel, we will obtain a new image with the values at red channel by greater than the red channel of original image a value of 10. By this way, we can generate three new RGB images from a RGB image.
+
+The second procedure is splitting the channels of RGB images. It means that we separate the channels of RGB into three gray-scale images. This work seems promising because the network works on single-channel images. At the end, we can generate six versions from an image, the total number of images used to train and validate is $260 \times 7 = 1820$ images (six versions and original image). The number of images that used for training and validation is splitted randomly by a ratio (training: $80\%$, validation: $20\%$) that has been set during the network setup.
