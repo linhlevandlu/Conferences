@@ -8,45 +8,45 @@ Warning--I didn't find a database entry for "tompson2014joint"
 Warning--I didn't find a database entry for ""
 Warning--I didn't find a database entry for "figebnet"
 Warning--empty pages in le2017maelab
-You've used 30 entries,
+You've used 29 entries,
             2937 wiz_defined-function locations,
-            871 strings with 12332 characters,
-and the built_in function-call counts, 10716 in all, are:
-= -- 1033
-> -- 336
+            862 strings with 12184 characters,
+and the built_in function-call counts, 10473 in all, are:
+= -- 1010
+> -- 329
 < -- 9
-+ -- 132
-- -- 102
-* -- 797
-:= -- 1407
-add.period$ -- 40
-call.type$ -- 30
-change.case$ -- 28
++ -- 129
+- -- 100
+* -- 779
+:= -- 1373
+add.period$ -- 39
+call.type$ -- 29
+change.case$ -- 27
 chr.to.int$ -- 0
-cite$ -- 31
-duplicate$ -- 359
-empty$ -- 1211
-format.name$ -- 123
-if$ -- 2780
+cite$ -- 30
+duplicate$ -- 351
+empty$ -- 1183
+format.name$ -- 120
+if$ -- 2716
 int.to.chr$ -- 0
-int.to.str$ -- 30
-missing$ -- 32
-newline$ -- 118
-num.names$ -- 30
-pop$ -- 213
+int.to.str$ -- 29
+missing$ -- 31
+newline$ -- 115
+num.names$ -- 29
+pop$ -- 208
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 674
+skip$ -- 657
 stack$ -- 0
-substring$ -- 660
-swap$ -- 127
+substring$ -- 651
+swap$ -- 126
 text.length$ -- 9
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 1
-while$ -- 88
-width$ -- 32
-write$ -- 283
+while$ -- 86
+width$ -- 31
+write$ -- 275
 (There were 5 warnings)

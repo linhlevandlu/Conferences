@@ -9,9 +9,9 @@
 \BOOKMARK [2][-]{subsection.3.1}{The first test}{section.3}% 9
 \BOOKMARK [2][-]{subsection.3.2}{Training from scratch}{section.3}% 10
 \BOOKMARK [2][-]{subsection.3.3}{Transfer learning process}{section.3}% 11
-\BOOKMARK [2][-]{subsection.3.4}{Pre-train EB-Net on facial keypoint dataset}{section.3}% 12
-\BOOKMARK [2][-]{subsection.3.5}{Fine-tuning on beetle images}{section.3}% 13
-\BOOKMARK [2][-]{subsection.3.6}{Automated landmarks prediction for different anatomical parts}{section.3}% 14
-\BOOKMARK [1][-]{section.4}{Conclusion and future works}{}% 15
-\BOOKMARK [2][-]{subsection.4.1}{Evalution metrics for further predicted landmarks usage}{section.4}% 16
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Pre-train EB-Net on facial keypoint dataset}{subsection.3.3}% 12
+\BOOKMARK [3][-]{subsubsection.3.3.2}{Fine-tuning on beetle images}{subsection.3.3}% 13
+\BOOKMARK [3][-]{subsubsection.3.3.3}{Fine-tuning results}{subsection.3.3}% 14
+\BOOKMARK [3][-]{subsubsection.3.3.4}{A comparison on mandible results}{subsection.3.3}% 15
+\BOOKMARK [1][-]{section.4}{Conclusion and future works}{}% 16
 \BOOKMARK [1][-]{section.5}{Discussion}{}% 17

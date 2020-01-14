@@ -18,8 +18,6 @@
 \providecommand\HyField@AuxAddToCoFields[2]{}
 \bibstyle{elsarticle-num}
 \emailauthor{van-linh.le@labri.fr}{Le Van Linh\corref {cor1}}
-\Newlabel{cor1}{1}
-\Newlabel{ba}{1}
 \citation{klingenberg_evolution_2010}
 \citation{sasakawa_utility_2016,raymond_combination_2014}
 \citation{kendall_diffusion_1977}
@@ -29,6 +27,8 @@
 \citation{larochelle_1990}
 \citation{kromp_carabid_1999}
 \citation{eldred_does_2016}
+\Newlabel{cor1}{1}
+\Newlabel{ba}{1}
 \Newlabel{igepp}{a}
 \Newlabel{labri}{b}
 \Newlabel{itdlu}{c}
@@ -85,9 +85,9 @@
 \newlabel{tbltrainingloss}{{1}{9}{The losses during the training of the third model on pronotum images\relax }{table.caption.7}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces The average distances per landmark on images of each set.\relax }}{9}{table.caption.8}}
 \newlabel{tblavgpronotum}{{2}{9}{The average distances per landmark on images of each set.\relax }{table.caption.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces The landmarks on three parts of beetle. The red/ yellow points present the predicted/ manual landmarks.\relax }}{9}{figure.caption.9}}
+\newlabel{figeb1}{{7}{9}{The landmarks on three parts of beetle. The red/ yellow points present the predicted/ manual landmarks.\relax }{figure.caption.9}{}}
 \citation{}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces The landmarks on three parts of beetle. The red/ yellow points present the predicted/ manual landmarks.\relax }}{10}{figure.caption.9}}
-\newlabel{figeb1}{{7}{10}{The landmarks on three parts of beetle. The red/ yellow points present the predicted/ manual landmarks.\relax }{figure.caption.9}{}}
 \newlabel{figc4lm1dist}{{8a}{10}{. The $1^{st}$ landmark \relax }{figure.caption.10}{}}
 \newlabel{sub@figc4lm1dist}{{a}{10}{. The $1^{st}$ landmark \relax }{figure.caption.10}{}}
 \newlabel{figc4lm6dist}{{8b}{10}{. The $6^{th}$ landmark \relax }{figure.caption.10}{}}
@@ -98,31 +98,66 @@
 \citation{}
 \citation{}
 \citation{}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Pre-train EB-Net on facial keypoint dataset}{11}{subsection.3.4}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.1}Pre-train EB-Net on facial keypoint dataset}{11}{subsubsection.3.3.1}}
 \@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces RMSE comparison between our score and top three of challenge.\relax }}{11}{table.caption.11}}
 \newlabel{tblRMSE_challenge}{{3}{11}{RMSE comparison between our score and top three of challenge.\relax }{table.caption.11}{}}
 \citation{}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Fine-tuning on beetle images}{12}{subsection.3.5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.6}Automated landmarks prediction for different anatomical parts}{12}{subsection.3.6}}
-\citation{bland1996statistics}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Learning curves of the first model.\relax }}{13}{figure.caption.12}}
-\newlabel{figloss1}{{9}{13}{Learning curves of the first model.\relax }{figure.caption.12}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Learning curves of the last model.\relax }}{13}{figure.caption.13}}
-\newlabel{figloss}{{10}{13}{Learning curves of the last model.\relax }{figure.caption.13}{}}
-\citation{le2017maelab}
-\newlabel{figsub1}{{11a}{14}{Image with well-predicted landmarks\relax }{figure.caption.14}{}}
-\newlabel{sub@figsub1}{{a}{14}{Image with well-predicted landmarks\relax }{figure.caption.14}{}}
-\newlabel{figsub2}{{11b}{14}{Image with inaccuracy landmarks\relax }{figure.caption.14}{}}
-\newlabel{sub@figsub2}{{b}{14}{Image with inaccuracy landmarks\relax }{figure.caption.14}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces The predicted landmarks on an image in test set (red points)\relax }}{14}{figure.caption.14}}
-\newlabel{figrsexample}{{11}{14}{The predicted landmarks on an image in test set (red points)\relax }{figure.caption.14}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces The average distance per landmark\relax }}{14}{table.caption.15}}
-\newlabel{tab2}{{4}{14}{The average distance per landmark\relax }{table.caption.15}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces The distribution of the distances on the first landmark. The blue line is the average value of all distances.\relax }}{15}{figure.caption.16}}
-\newlabel{figchartlm1}{{12}{15}{The distribution of the distances on the first landmark. The blue line is the average value of all distances.\relax }{figure.caption.16}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces The proportion of acceptable predicted landmarks\relax }}{15}{figure.caption.17}}
-\newlabel{figchart}{{13}{15}{The proportion of acceptable predicted landmarks\relax }{figure.caption.17}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Conclusion and future works}{15}{section.4}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.2}Fine-tuning on beetle images}{12}{subsubsection.3.3.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.3}Fine-tuning results}{12}{subsubsection.3.3.3}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Average distances comparison on pronotum images\relax }}{13}{table.caption.12}}
+\newlabel{tblfn_pronotum}{{4}{13}{Average distances comparison on pronotum images\relax }{table.caption.12}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Average distances comparison on head images\relax }}{13}{table.caption.13}}
+\newlabel{tblfn_head}{{5}{13}{Average distances comparison on head images\relax }{table.caption.13}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Average distances comparison on elytra images\relax }}{13}{table.caption.14}}
+\newlabel{tblfn_elytra}{{6}{13}{Average distances comparison on elytra images\relax }{table.caption.14}{}}
+\newlabel{}{{9a}{14}{. $1^{st}$ landmark (from scratch) \relax }{figure.caption.15}{}}
+\newlabel{sub@}{{a}{14}{. $1^{st}$ landmark (from scratch) \relax }{figure.caption.15}{}}
+\newlabel{}{{9b}{14}{. $6^{th}$ landmark (from scratch) \relax }{figure.caption.15}{}}
+\newlabel{sub@}{{b}{14}{. $6^{th}$ landmark (from scratch) \relax }{figure.caption.15}{}}
+\newlabel{}{{9c}{14}{. $1^{st}$ landmark (fine-tuning) \relax }{figure.caption.15}{}}
+\newlabel{sub@}{{c}{14}{. $1^{st}$ landmark (fine-tuning) \relax }{figure.caption.15}{}}
+\newlabel{}{{9d}{14}{. $6^{th}$ landmark (fine-tuning) \relax }{figure.caption.15}{}}
+\newlabel{sub@}{{d}{14}{. $6^{th}$ landmark (fine-tuning) \relax }{figure.caption.15}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces A comparison of distances distribution of the $1^{st}$ landmark and the worst case ($6^{th}$ landmark) on pronotum images. \relax }}{14}{figure.caption.15}}
+\newlabel{figchartpfn}{{9}{14}{A comparison of distances distribution of the $1^{st}$ landmark and the worst case ($6^{th}$ landmark) on pronotum images. \relax }{figure.caption.15}{}}
+\newlabel{}{{10a}{14}{. $1^{st}$ landmark (from scratch) \relax }{figure.caption.16}{}}
+\newlabel{sub@}{{a}{14}{. $1^{st}$ landmark (from scratch) \relax }{figure.caption.16}{}}
+\newlabel{}{{10b}{14}{. $6^{th}$ landmark (from scratch) \relax }{figure.caption.16}{}}
+\newlabel{sub@}{{b}{14}{. $6^{th}$ landmark (from scratch) \relax }{figure.caption.16}{}}
+\newlabel{}{{10c}{14}{. $1^{st}$ landmark (fine-tuning) \relax }{figure.caption.16}{}}
+\newlabel{sub@}{{c}{14}{. $1^{st}$ landmark (fine-tuning) \relax }{figure.caption.16}{}}
+\newlabel{}{{10d}{14}{. $6^{th}$ landmark (fine-tuning) \relax }{figure.caption.16}{}}
+\newlabel{sub@}{{d}{14}{. $6^{th}$ landmark (fine-tuning) \relax }{figure.caption.16}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces The distribution of distances of all head images on $1^{st}$ landmark and $6^{th}$ landmark. \relax }}{14}{figure.caption.16}}
+\newlabel{figcharthfn}{{10}{14}{The distribution of distances of all head images on $1^{st}$ landmark and $6^{th}$ landmark. \relax }{figure.caption.16}{}}
+\citation{}
+\newlabel{}{{11a}{15}{. $1^{st}$ landmark (from scratch) \relax }{figure.caption.17}{}}
+\newlabel{sub@}{{a}{15}{. $1^{st}$ landmark (from scratch) \relax }{figure.caption.17}{}}
+\newlabel{}{{11b}{15}{. $8^{th}$ landmark (from scratch) \relax }{figure.caption.17}{}}
+\newlabel{sub@}{{b}{15}{. $8^{th}$ landmark (from scratch) \relax }{figure.caption.17}{}}
+\newlabel{}{{11c}{15}{. $1^{st}$ landmark (fine-tuning) \relax }{figure.caption.17}{}}
+\newlabel{sub@}{{c}{15}{. $1^{st}$ landmark (fine-tuning) \relax }{figure.caption.17}{}}
+\newlabel{}{{11d}{15}{. $8^{th}$ landmark (fine-tuning) \relax }{figure.caption.17}{}}
+\newlabel{sub@}{{d}{15}{. $8^{th}$ landmark (fine-tuning) \relax }{figure.caption.17}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces The distribution of distances of all elytra images on $1^{st}$ landmark and $8^{th}$ landmark.\relax }}{15}{figure.caption.17}}
+\newlabel{figchartefn}{{11}{15}{The distribution of distances of all elytra images on $1^{st}$ landmark and $8^{th}$ landmark.\relax }{figure.caption.17}{}}
+\newlabel{}{{12a}{15}{. Pronotum \relax }{figure.caption.18}{}}
+\newlabel{sub@}{{a}{15}{. Pronotum \relax }{figure.caption.18}{}}
+\newlabel{}{{12b}{15}{. Head \relax }{figure.caption.18}{}}
+\newlabel{sub@}{{b}{15}{. Head \relax }{figure.caption.18}{}}
+\newlabel{}{{12c}{15}{. Elytra \relax }{figure.caption.18}{}}
+\newlabel{sub@}{{c}{15}{. Elytra \relax }{figure.caption.18}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces The location of predicted/manual landmarks in one case of each part. The red/yellow points represent the predicted/manual landmarks.\relax }}{15}{figure.caption.18}}
+\newlabel{figpdl}{{12}{15}{The location of predicted/manual landmarks in one case of each part.\\The red/yellow points represent the predicted/manual landmarks.\relax }{figure.caption.18}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.4}A comparison on mandible results}{15}{subsubsection.3.3.4}}
+\citation{}
+\newlabel{figchartavgComparemg}{{13a}{16}{. Left mandible \relax }{figure.caption.19}{}}
+\newlabel{sub@figchartavgComparemg}{{a}{16}{. Left mandible \relax }{figure.caption.19}{}}
+\newlabel{figchartavgComparemd}{{13b}{16}{. Right mandible \relax }{figure.caption.19}{}}
+\newlabel{sub@figchartavgComparemd}{{b}{16}{. Right mandible \relax }{figure.caption.19}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces These charts show the average distance on each landmark of all mandibles images. The red, blue lines present the results from image processing and fine-tuning process, respectively.\relax }}{16}{figure.caption.19}}
+\newlabel{figchartavgCompare}{{13}{16}{These charts show the average distance on each landmark of all mandibles images. The red, blue lines present the results from image processing and fine-tuning process, respectively.\relax }{figure.caption.19}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Conclusion and future works}{16}{section.4}}
 \bibdata{includes/references}
 \bibcite{klingenberg_evolution_2010}{{1}{}{{}}{{}}}
 \bibcite{sasakawa_utility_2016}{{2}{}{{}}{{}}}
@@ -131,10 +166,9 @@
 \bibcite{bookstein_foundations_1982}{{5}{}{{}}{{}}}
 \bibcite{rohlf_applications_1998}{{6}{}{{}}{{}}}
 \bibcite{adams_geomorph:_2013}{{7}{}{{}}{{}}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Discussion}{17}{section.5}}
 \bibcite{klingenberg_morphoj:_2011}{{8}{}{{}}{{}}}
 \bibcite{larochelle_1990}{{9}{}{{}}{{}}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Evalution metrics for further predicted landmarks usage}{16}{subsection.4.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Discussion}{16}{section.5}}
 \bibcite{kromp_carabid_1999}{{10}{}{{}}{{}}}
 \bibcite{eldred_does_2016}{{11}{}{{}}{{}}}
 \bibcite{gonzalez_digital_2006}{{12}{}{{}}{{}}}
@@ -155,5 +189,4 @@
 \bibcite{sun2013deep}{{27}{}{{}}{{}}}
 \bibcite{zhang2014facial}{{28}{}{{}}{{}}}
 \bibcite{lecun2012efficient}{{29}{}{{}}{{}}}
-\bibcite{bland1996statistics}{{30}{}{{}}{{}}}
 \providecommand\NAT@force@numbers{}\NAT@force@numbers
