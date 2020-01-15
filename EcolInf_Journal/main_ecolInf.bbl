@@ -139,6 +139,11 @@ G.~Hinton, L.~Deng, D.~Yu, G.~E. Dahl, A.-r. Mohamed, N.~Jaitly, A.~Senior,
   acoustic modeling in speech recognition: The shared views of four research
   groups, IEEE Signal Processing Magazine 29~(6) (2012) 82--97.
 
+\bibitem{sainath2013deep}
+T.~N. Sainath, A.-r. Mohamed, B.~Kingsbury, B.~Ramabhadran, Deep convolutional
+  neural networks for lvcsr, in: 2013 IEEE international conference on
+  acoustics, speech and signal processing, IEEE, 2013, pp. 8614--8618.
+
 \bibitem{bordes2014question}
 A.~Bordes, S.~Chopra, J.~Weston, Question answering with subgraph embeddings,
   arXiv preprint arXiv:1406.3676.
@@ -156,6 +161,11 @@ S.~Jean, K.~Cho, R.~Memisevic, Y.~Bengio, On using very large target vocabulary
 H.~Li, Z.~Lin, X.~Shen, J.~Brandt, G.~Hua, A convolutional neural network
   cascade for face detection, in: Proceedings of the IEEE Conference on
   Computer Vision and Pattern Recognition, 2015, pp. 5325--5334.
+
+\bibitem{tompson2014joint}
+J.~J. Tompson, A.~Jain, Y.~LeCun, C.~Bregler, Joint training of a convolutional
+  network and a graphical model for human pose estimation, in: Advances in
+  neural information processing systems, 2014, pp. 1799--1807.
 
 \bibitem{cintas2016automatic}
 C.~Cintas, M.~Quinto-S{\'a}nchez, V.~Acu{\~n}a, C.~Paschetta, S.~de~Azevedo,
@@ -190,8 +200,54 @@ Z.~Zhang, P.~Luo, C.~C. Loy, X.~Tang, Facial landmark detection by deep
   multi-task learning, in: European Conference on Computer Vision, Springer,
   2014, pp. 94--108.
 
+\bibitem{le2018landmarks}
+V.-L. Le, M.~Beurton-Aimar, A.~Zemmari, N.~Parisey, Landmarks detection by
+  applying deep networks, in: 2018 1st International Conference on Multimedia
+  Analysis and Pattern Recognition (MAPR), IEEE, 2018, pp. 1--6.
+
+\bibitem{shorten2019survey}
+C.~Shorten, T.~M. Khoshgoftaar, A survey on image data augmentation for deep
+  learning, Journal of Big Data 6~(1) (2019) 60.
+
 \bibitem{lecun2012efficient}
 Y.~A. LeCun, L.~Bottou, G.~B. Orr, K.-R. M{\"u}ller, Efficient backprop, in:
   Neural networks: Tricks of the trade, Springer, 2012, pp. 9--48.
+
+\bibitem{srivastava2014dropout}
+N.~Srivastava, G.~E. Hinton, A.~Krizhevsky, I.~Sutskever, R.~Salakhutdinov,
+  Dropout: a simple way to prevent neural networks from overfitting., Journal
+  of machine learning research 15~(1) (2014) 1929--1958.
+
+\bibitem{lasagne}
+S.~Dieleman, J.~Schlüter, C.~Raffel, E.~Olson, S.~K. Sønderby, D.~Nouri,
+  et~al., \href{http://dx.doi.org/10.5281/zenodo.27878}{Lasagne: First
+  release.} (Aug. 2015).
+\newblock \href {http://dx.doi.org/10.5281/zenodo.27878}
+  {\path{doi:10.5281/zenodo.27878}}.
+\newline\urlprefix\url{http://dx.doi.org/10.5281/zenodo.27878}
+
+\bibitem{olivas2009handbook}
+E.~S. Olivas, Handbook of Research on Machine Learning Applications and Trends:
+  Algorithms, Methods, and Techniques: Algorithms, Methods, and Techniques, IGI
+  Global, 2009.
+
+\bibitem{yosinski2014transferable}
+J.~Yosinski, J.~Clune, Y.~Bengio, H.~Lipson, How transferable are features in
+  deep neural networks?, in: Advances in neural information processing systems,
+  2014, pp. 3320--3328.
+
+\bibitem{simonyan2014very}
+K.~Simonyan, A.~Zisserman, Very deep convolutional networks for large-scale
+  image recognition, arXiv preprint arXiv:1409.1556.
+
+\bibitem{deng2009imagenet}
+J.~Deng, W.~Dong, R.~Socher, L.-J. Li, K.~Li, L.~Fei-Fei, Imagenet: A
+  large-scale hierarchical image database, in: 2009 IEEE conference on computer
+  vision and pattern recognition, Ieee, 2009, pp. 248--255.
+
+\bibitem{lin2016homemade}
+S.~Lin, Z.~Zhao, F.~Su, Homemade ts-net for automatic face recognition, in:
+  Proceedings of the 2016 ACM on International Conference on Multimedia
+  Retrieval, ACM, 2016, pp. 135--142.
 
 \end{thebibliography}
