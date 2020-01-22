@@ -110,6 +110,10 @@ Within deep learning, Convolutional Neural Networks (CNNs) are well known for th
 Recent success of this algorithm in human biometry \cite{cintas2016automatic} lead us to believe in its potential for insect morphometrics.  
 
 \subsection{Related works}\label{rw}
+In biology, landmarks could be divided into three types. Some landmarks are cleary defined on a structure (type I), others that are more ambigious and usually describe maxima of curvature (type II), and those that are geometric construction generated from lines (type III). In geometric morphometry analysis, the detection of landmarks in biological images is a necessary step in many researchs.
+
+In computer vision, landmark localization is usually studied on human faces where we identify some points corresponding to important parts on face, e.g., nose, eyes, mouth region \cite{}. In biology, the landmark identification problem has been appeared in the studies to analyse shape and size on the organisms \cite{}, e.g., analyzing the corolla shape variation. In biomedical field, the problem of automatic landmark positioning has een addressed in cephalometry \cite{}. The standard methods in this domain are based on the combination of template matching and prior knowledge information from feature extraction steps. More recently, several algorithms have been succeed by using machine learning techniques followed by global landmark structure refinement \cite{}.
+
 
 Landmark or point of interest is a specific point that may contain the useful information. For example, the tip of the nose or the corners of the mouth are landmarks on human face. In image processing, we can consider two kinds of cases: the object of interest can or not be segmented. Setting landmarks can not be achieved in the same way depending on which situation we are. When segmentation can be applied, Lowe et al. \cite{lowe2004distinctive} have proposed SIFT method to find the corresponding keypoints between two images. Palaniswamy et al. \cite{palaniswamy2010automatic} have proposed a method based on probabilistic Hough Transform to automatically locate the landmarks in digital images of Drosophila wings. In our work \cite{le2017maelab}, we have proposed a method which was extended from Palaniswamy's method, to determine landmarks on mandibles of beetles. The mandibles of beetle have the simple shape and easy to segment. We have obtained good enough results about determining the landmarks automatically on mandibles. Unfortunately, this method can not be applied to other parts of beetles than the pronotum seems is segmentation has too many noises.
 
@@ -183,7 +187,7 @@ As an attempt to remove over-fitting, we have increased the number outputs of th
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.45\textwidth]{images/elementary_block}
+	\includegraphics[width=0.45\textwidth]{images/eblock}
 	\caption{The components of an elementary block}
 	\label{figeblock}
 \end{figure}
@@ -193,7 +197,7 @@ For our critical objective, we have initially assembled three Elementary Blocks 
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.81\textwidth]{images/model3}
+	\includegraphics[width=0.99\textwidth]{images/arch_model}
 	\caption{Elementary Blocks Network (EB-Net) architecture}
 	\label{figebnet}
 \end{figure}
