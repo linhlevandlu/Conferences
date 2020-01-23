@@ -174,13 +174,88 @@ C.~Cintas, M.~Quinto-S{\'a}nchez, V.~Acu{\~n}a, C.~Paschetta, S.~de~Azevedo,
   morphometrics and convolutional neural networks, IET Biometrics 6~(3) (2016)
   211--223.
 
-\bibitem{lowe2004distinctive}
-D.~G. Lowe, Distinctive image features from scale-invariant keypoints,
-  International journal of computer vision 60~(2) (2004) 91--110.
+\bibitem{rosas2015geometric}
+A.~Rosas, L.~P{\'e}rez-Criado, M.~Bastir, A.~Estalrrich, R.~Huguet,
+  A.~Garc{\'\i}a-Tabernero, J.~F. Pastor, M.~De~la Rasilla, A geometric
+  morphometrics comparative analysis of neandertal humeri (epiphyses-fused)
+  from the el sidr{\'o}n cave site (asturias, spain), Journal of human
+  evolution 82 (2015) 51--66.
+
+\bibitem{fearon2015morphometric}
+J.~L. Fearon, D.~J. Varricchio, Morphometric analysis of the forelimb and
+  pectoral girdle of the cretaceous ornithopod dinosaur oryctodromeus
+  cubicularis and implications for digging, Journal of Vertebrate Paleontology
+  35~(4) (2015) e936555.
+
+\bibitem{chazot2016morpho}
+N.~Chazot, S.~Panara, N.~Zilbermann, P.~Blandin, Y.~Le~Poul, R.~Cornette,
+  M.~Elias, V.~Debat, Morpho morphometrics: shared ancestry and selection drive
+  the evolution of wing size and shape in morpho butterflies, Evolution 70~(1)
+  (2016) 181--194.
+
+\bibitem{aceto2015zebrafish}
+J.~Aceto, R.~Nourizadeh-Lillabadi, R.~Mar{\'e}e, N.~Dardenne, N.~Jeanray,
+  L.~Wehenkel, P.~Alestr{\"o}m, J.~J. van Loon, M.~Muller, Zebrafish bone and
+  general physiology are differently affected by hormones or changes in
+  gravity, PloS one 10~(6).
+
+\bibitem{van2010three}
+T.~van~der Niet, C.~P. Zollikofer, M.~S.~P. de~Le{\'o}n, S.~D. Johnson, H.~P.
+  Linder, Three-dimensional geometric morphometrics for studying floral shape
+  variation, Trends in plant science 15~(8) (2010) 423--426.
+
+\bibitem{lindner2016fully}
+C.~Lindner, C.-W. Wang, C.-T. Huang, C.-H. Li, S.-W. Chang, T.~F. Cootes, Fully
+  automatic system for accurate localisation and analysis of cephalometric
+  landmarks in lateral cephalograms, Scientific reports 6 (2016) 33581.
+
+\bibitem{grau2001automatic}
+V.~Grau, M.~Alcaniz, M.~Juan, C.~Monserrat, C.~Knoll, Automatic localization of
+  cephalometric landmarks, Journal of Biomedical Informatics 34~(3) (2001)
+  146--156.
 
 \bibitem{palaniswamy2010automatic}
 S.~Palaniswamy, N.~A. Thacker, C.~P. Klingenberg, Automatic identification of
   landmarks in digital images, IET Computer Vision 4~(4) (2010) 247--260.
+
+\bibitem{vandaele2018landmark}
+R.~Vandaele, J.~Aceto, M.~Muller, F.~Peronnet, V.~Debat, C.-W. Wang, C.-T.
+  Huang, S.~Jodogne, P.~Martinive, P.~Geurts, et~al., Landmark detection in 2d
+  bioimages for geometric morphometrics: a multi-resolution tree-based
+  approach, Scientific reports 8~(1) (2018) 1--13.
+
+\bibitem{burgos2013robust}
+X.~P. Burgos-Artizzu, P.~Perona, P.~Doll{\'a}r, Robust face landmark estimation
+  under occlusion, in: Proceedings of the IEEE international conference on
+  computer vision, 2013, pp. 1513--1520.
+
+\bibitem{yang2013sieving}
+H.~Yang, I.~Patras, Sieving regression forest votes for facial feature
+  detection in the wild, in: Proceedings of the IEEE International Conference
+  on Computer Vision, 2013, pp. 1936--1943.
+
+\bibitem{savriama2018step}
+Y.~Savriama, A step-by-step guide for geometric morphometrics of floral
+  symmetry, Frontiers in plant science 9 (2018) 1433.
+
+\bibitem{mohseni2007automatic}
+H.~Mohseni, S.~Kasaei, Automatic localization of cephalometric landmarks, in:
+  2007 IEEE International Symposium on Signal Processing and Information
+  Technology, IEEE, 2007, pp. 396--401.
+
+\bibitem{ibragimov2012game}
+B.~Ibragimov, B.~Likar, F.~Pernus, et~al., A game-theoretic framework for
+  landmark-based image segmentation, IEEE Transactions on Medical Imaging
+  31~(9) (2012) 1761--1776.
+
+\bibitem{donner2013global}
+R.~Donner, B.~H. Menze, H.~Bischof, G.~Langs, Global localization of 3d
+  anatomical structures by pre-filtered hough forests and discrete
+  optimization, Medical image analysis 17~(8) (2013) 1304--1314.
+
+\bibitem{lowe2004distinctive}
+D.~G. Lowe, Distinctive image features from scale-invariant keypoints,
+  International journal of computer vision 60~(2) (2004) 91--110.
 
 \bibitem{le2017maelab}
 V.~L. LE, M.~BEURTON-AIMAR, A.~KR{\"A}HENB{\"U}HL, N.~PARISEY,
@@ -199,11 +274,6 @@ Y.~Sun, X.~Wang, X.~Tang, Deep convolutional network cascade for facial point
 Z.~Zhang, P.~Luo, C.~C. Loy, X.~Tang, Facial landmark detection by deep
   multi-task learning, in: European Conference on Computer Vision, Springer,
   2014, pp. 94--108.
-
-\bibitem{le2018landmarks}
-V.-L. Le, M.~Beurton-Aimar, A.~Zemmari, N.~Parisey, Landmarks detection by
-  applying deep networks, in: 2018 1st International Conference on Multimedia
-  Analysis and Pattern Recognition (MAPR), IEEE, 2018, pp. 1--6.
 
 \bibitem{shorten2019survey}
 C.~Shorten, T.~M. Khoshgoftaar, A survey on image data augmentation for deep

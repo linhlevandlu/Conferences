@@ -5,45 +5,45 @@ The style file: elsarticle-num.bst
 Database file #1: includes/references.bib
 Warning--I didn't find a database entry for ""
 Warning--empty pages in le2017maelab
-You've used 40 entries,
+You've used 53 entries,
             2937 wiz_defined-function locations,
-            915 strings with 14296 characters,
-and the built_in function-call counts, 14586 in all, are:
-= -- 1388
-> -- 466
-< -- 15
-+ -- 182
-- -- 142
-* -- 1029
-:= -- 1877
-add.period$ -- 51
-call.type$ -- 40
-change.case$ -- 37
+            993 strings with 17605 characters,
+and the built_in function-call counts, 19136 in all, are:
+= -- 1806
+> -- 677
+< -- 17
++ -- 261
+- -- 208
+* -- 1379
+:= -- 2516
+add.period$ -- 64
+call.type$ -- 53
+change.case$ -- 50
 chr.to.int$ -- 0
-cite$ -- 41
-duplicate$ -- 511
-empty$ -- 1663
-format.name$ -- 172
-if$ -- 3817
+cite$ -- 54
+duplicate$ -- 644
+empty$ -- 2118
+format.name$ -- 250
+if$ -- 4953
 int.to.chr$ -- 0
-int.to.str$ -- 40
-missing$ -- 42
-newline$ -- 150
-num.names$ -- 40
-pop$ -- 309
+int.to.str$ -- 53
+missing$ -- 55
+newline$ -- 189
+num.names$ -- 53
+pop$ -- 381
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 952
+skip$ -- 1224
 stack$ -- 0
-substring$ -- 888
-swap$ -- 188
-text.length$ -- 15
+substring$ -- 1204
+swap$ -- 224
+text.length$ -- 17
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 1
-while$ -- 118
-width$ -- 42
-write$ -- 369
+while$ -- 154
+width$ -- 55
+write$ -- 475
 (There were 2 warnings)
