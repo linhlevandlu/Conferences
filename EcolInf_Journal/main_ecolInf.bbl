@@ -127,6 +127,16 @@ C.~Szegedy, W.~Liu, Y.~Jia, P.~Sermanet, S.~Reed, D.~Anguelov, D.~Erhan,
   of the IEEE Conference on Computer Vision and Pattern Recognition, 2015, pp.
   1--9.
 
+\bibitem{li2015convolutional}
+H.~Li, Z.~Lin, X.~Shen, J.~Brandt, G.~Hua, A convolutional neural network
+  cascade for face detection, in: Proceedings of the IEEE Conference on
+  Computer Vision and Pattern Recognition, 2015, pp. 5325--5334.
+
+\bibitem{tompson2014joint}
+J.~J. Tompson, A.~Jain, Y.~LeCun, C.~Bregler, Joint training of a convolutional
+  network and a graphical model for human pose estimation, in: Advances in
+  neural information processing systems, 2014, pp. 1799--1807.
+
 \bibitem{mikolov2011strategies}
 T.~Mikolov, A.~Deoras, D.~Povey, L.~Burget, J.~{\v{C}}ernock{\`y}, Strategies
   for training large scale neural network language models, in: Automatic Speech
@@ -156,16 +166,6 @@ I.~Sutskever, O.~Vinyals, Q.~V. Le, Sequence to sequence learning with neural
 \bibitem{jean2014using}
 S.~Jean, K.~Cho, R.~Memisevic, Y.~Bengio, On using very large target vocabulary
   for neural machine translation, arXiv preprint arXiv:1412.2007.
-
-\bibitem{li2015convolutional}
-H.~Li, Z.~Lin, X.~Shen, J.~Brandt, G.~Hua, A convolutional neural network
-  cascade for face detection, in: Proceedings of the IEEE Conference on
-  Computer Vision and Pattern Recognition, 2015, pp. 5325--5334.
-
-\bibitem{tompson2014joint}
-J.~J. Tompson, A.~Jain, Y.~LeCun, C.~Bregler, Joint training of a convolutional
-  network and a graphical model for human pose estimation, in: Advances in
-  neural information processing systems, 2014, pp. 1799--1807.
 
 \bibitem{cintas2016automatic}
 C.~Cintas, M.~Quinto-S{\'a}nchez, V.~Acu{\~n}a, C.~Paschetta, S.~de~Azevedo,
@@ -243,16 +243,6 @@ H.~Mohseni, S.~Kasaei, Automatic localization of cephalometric landmarks, in:
   2007 IEEE International Symposium on Signal Processing and Information
   Technology, IEEE, 2007, pp. 396--401.
 
-\bibitem{ibragimov2012game}
-B.~Ibragimov, B.~Likar, F.~Pernus, et~al., A game-theoretic framework for
-  landmark-based image segmentation, IEEE Transactions on Medical Imaging
-  31~(9) (2012) 1761--1776.
-
-\bibitem{donner2013global}
-R.~Donner, B.~H. Menze, H.~Bischof, G.~Langs, Global localization of 3d
-  anatomical structures by pre-filtered hough forests and discrete
-  optimization, Medical image analysis 17~(8) (2013) 1304--1314.
-
 \bibitem{lowe2004distinctive}
 D.~G. Lowe, Distinctive image features from scale-invariant keypoints,
   International journal of computer vision 60~(2) (2004) 91--110.
@@ -264,6 +254,16 @@ V.~L. LE, M.~BEURTON-AIMAR, A.~KR{\"A}HENB{\"U}HL, N.~PARISEY,
   Conference in Central Europe on Computer Graphics, Visualization and Computer
   Vision'2017, Plzen, Czech Republic, 2017.
 \newline\urlprefix\url{https://hal.archives-ouvertes.fr/hal-01571440}
+
+\bibitem{ibragimov2012game}
+B.~Ibragimov, B.~Likar, F.~Pernus, et~al., A game-theoretic framework for
+  landmark-based image segmentation, IEEE Transactions on Medical Imaging
+  31~(9) (2012) 1761--1776.
+
+\bibitem{donner2013global}
+R.~Donner, B.~H. Menze, H.~Bischof, G.~Langs, Global localization of 3d
+  anatomical structures by pre-filtered hough forests and discrete
+  optimization, Medical image analysis 17~(8) (2013) 1304--1314.
 
 \bibitem{sun2013deep}
 Y.~Sun, X.~Wang, X.~Tang, Deep convolutional network cascade for facial point

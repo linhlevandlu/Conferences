@@ -6,7 +6,7 @@
 \BOOKMARK [2][-]{subsection.2.2}{Network architecture}{section.2}% 6
 \BOOKMARK [2][-]{subsection.2.3}{Setting and training EB-Net}{section.2}% 7
 \BOOKMARK [1][-]{section.3}{Results}{}% 8
-\BOOKMARK [2][-]{subsection.3.1}{The first test}{section.3}% 9
+\BOOKMARK [2][-]{subsection.3.1}{The first evaluation}{section.3}% 9
 \BOOKMARK [2][-]{subsection.3.2}{Training from scratch}{section.3}% 10
 \BOOKMARK [2][-]{subsection.3.3}{Transfer learning process}{section.3}% 11
 \BOOKMARK [3][-]{subsubsection.3.3.1}{Pre-train EB-Net on facial keypoint dataset}{subsection.3.3}% 12
