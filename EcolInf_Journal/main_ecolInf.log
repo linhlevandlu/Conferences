@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.7.17)  7 FEB 2020 16:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.7.17)  10 FEB 2020 17:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -797,32 +797,32 @@ Missing character: There is no © in font cmti8!
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
-<images/beetle2.png, id=207, 322.806pt x 157.7895pt>
+<images/beetle2.png, id=208, 322.806pt x 157.7895pt>
 File: images/beetle2.png Graphic file (type png)
 <use images/beetle2.png>
 Package pdftex.def Info: images/beetle2.png  used on input line 143.
 (pdftex.def)             Requested size: 300.29344pt x 146.79567pt.
-<./images/Prono_010.JPG, id=211, 192.72pt x 192.72pt>
+<./images/Prono_010.JPG, id=212, 192.72pt x 192.72pt>
 File: ./images/Prono_010.JPG Graphic file (type jpg)
 <use ./images/Prono_010.JPG>
 Package pdftex.def Info: ./images/Prono_010.JPG  used on input line 155.
 (pdftex.def)             Requested size: 95.09317pt x 95.09232pt.
-<./images/Tete_009.JPG, id=212, 192.72pt x 192.72pt>
+<./images/Tete_009.JPG, id=213, 192.72pt x 192.72pt>
 File: ./images/Tete_009.JPG Graphic file (type jpg)
 <use ./images/Tete_009.JPG>
 Package pdftex.def Info: ./images/Tete_009.JPG  used on input line 156.
 (pdftex.def)             Requested size: 95.09317pt x 95.09232pt.
-<./images/Elytre119.JPG, id=213, 192.72pt x 192.72pt>
+<./images/Elytre119.JPG, id=214, 192.72pt x 192.72pt>
 File: ./images/Elytre119.JPG Graphic file (type jpg)
 <use ./images/Elytre119.JPG>
 Package pdftex.def Info: ./images/Elytre119.JPG  used on input line 157.
 (pdftex.def)             Requested size: 95.09317pt x 95.09232pt.
-<./images/Mg_021.JPG, id=214, 192.72pt x 192.72pt>
+<./images/Mg_021.JPG, id=215, 192.72pt x 192.72pt>
 File: ./images/Mg_021.JPG Graphic file (type jpg)
 <use ./images/Mg_021.JPG>
 Package pdftex.def Info: ./images/Mg_021.JPG  used on input line 158.
 (pdftex.def)             Requested size: 95.09317pt x 95.09232pt.
-<./images/Md_015.JPG, id=215, 192.72pt x 192.72pt>
+<./images/Md_015.JPG, id=216, 192.72pt x 192.72pt>
 File: ./images/Md_015.JPG Graphic file (type jpg)
 <use ./images/Md_015.JPG>
 Package pdftex.def Info: ./images/Md_015.JPG  used on input line 159.
@@ -832,27 +832,27 @@ Overfull \hbox (1.64842pt too wide) in paragraph at lines 155--159
  [][]   []   []   []   [] 
  []
 
-<./images/pronotum_mlm.png, id=216, 192.72pt x 272.01625pt>
+<./images/pronotum_mlm.png, id=217, 192.72pt x 272.01625pt>
 File: ./images/pronotum_mlm.png Graphic file (type png)
 <use ./images/pronotum_mlm.png>
 Package pdftex.def Info: ./images/pronotum_mlm.png  used on input line 160.
 (pdftex.def)             Requested size: 95.09317pt x 134.21886pt.
-<./images/tete_mlm.png, id=217, 192.72pt x 272.01625pt>
+<./images/tete_mlm.png, id=218, 192.72pt x 272.01625pt>
 File: ./images/tete_mlm.png Graphic file (type png)
 <use ./images/tete_mlm.png>
 Package pdftex.def Info: ./images/tete_mlm.png  used on input line 161.
 (pdftex.def)             Requested size: 95.09317pt x 134.21886pt.
-<./images/elytre_mlm.png, id=218, 192.72pt x 272.01625pt>
+<./images/elytre_mlm.png, id=219, 192.72pt x 272.01625pt>
 File: ./images/elytre_mlm.png Graphic file (type png)
 <use ./images/elytre_mlm.png>
 Package pdftex.def Info: ./images/elytre_mlm.png  used on input line 162.
 (pdftex.def)             Requested size: 95.09317pt x 134.21886pt.
-<./images/lmandible_mlm.png, id=219, 192.72pt x 272.01625pt>
+<./images/lmandible_mlm.png, id=220, 192.72pt x 272.01625pt>
 File: ./images/lmandible_mlm.png Graphic file (type png)
 <use ./images/lmandible_mlm.png>
 Package pdftex.def Info: ./images/lmandible_mlm.png  used on input line 163.
 (pdftex.def)             Requested size: 95.09317pt x 134.21886pt.
-<./images/rmandible_mlm.png, id=220, 192.72pt x 272.01625pt>
+<./images/rmandible_mlm.png, id=221, 192.72pt x 272.01625pt>
 File: ./images/rmandible_mlm.png Graphic file (type png)
 <use ./images/rmandible_mlm.png>
 Package pdftex.def Info: ./images/rmandible_mlm.png  used on input line 164.
@@ -866,12 +866,12 @@ Overfull \hbox (1.64842pt too wide) in paragraph at lines 160--164
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [4 <./images/beetle2.png>]
-<./images/inc_channels.png, id=234, 547.04375pt x 339.2675pt>
+<./images/inc_channels.png, id=235, 547.04375pt x 339.2675pt>
 File: ./images/inc_channels.png Graphic file (type png)
 <use ./images/inc_channels.png>
 Package pdftex.def Info: ./images/inc_channels.png  used on input line 175.
 (pdftex.def)             Requested size: 245.2399pt x 152.09433pt.
-<./images/sp_channels.png, id=235, 562.1pt x 338.26375pt>
+<./images/sp_channels.png, id=236, 562.1pt x 338.26375pt>
 File: ./images/sp_channels.png Graphic file (type png)
 <use ./images/sp_channels.png>
 Package pdftex.def Info: ./images/sp_channels.png  used on input line 176.
@@ -1152,7 +1152,7 @@ f-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmtt8.pfb>
-Output written on main_ecolInf.pdf (23 pages, 2781794 bytes).
+Output written on main_ecolInf.pdf (23 pages, 2781807 bytes).
 PDF statistics:
  579 PDF objects out of 1000 (max. 8388607)
  483 compressed objects within 5 object streams
