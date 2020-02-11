@@ -288,6 +288,11 @@ N.~Srivastava, G.~E. Hinton, A.~Krizhevsky, I.~Sutskever, R.~Salakhutdinov,
   Dropout: a simple way to prevent neural networks from overfitting., Journal
   of machine learning research 15~(1) (2014) 1929--1958.
 
+\bibitem{hinton2012improving}
+G.~E. Hinton, N.~Srivastava, A.~Krizhevsky, I.~Sutskever, R.~R. Salakhutdinov,
+  Improving neural networks by preventing co-adaptation of feature detectors,
+  arXiv preprint arXiv:1207.0580.
+
 \bibitem{lasagne}
 S.~Dieleman, J.~Schlüter, C.~Raffel, E.~Olson, S.~K. Sønderby, D.~Nouri,
   et~al., \href{http://dx.doi.org/10.5281/zenodo.27878}{Lasagne: First

@@ -229,6 +229,16 @@ During the training and validation step, $1820$ images are randomly divided into
 \label{sec3}
 \subsection{The first evaluation}
 \label{subsec31}
+
+EB-Net has been firstly trained and tested on the pronotum images before applying to other parts beetle (head and elytra). The first evaluation is typically considered the losses during the training process. Figure \ref{figdlosses} shows the losses of training and validation processes of one round on pronotum images. The blue curves are training losses, and the green curves are validation losses. Clearly, the losses are far from the beginning but become more close at the end of the process. The over-fitting has not been appeared any more. Therefore, we can assume that elementary blocks have properly worked to prevent over-fitting in our case. For these reasons, we have decided to use EB-Net for producing the landmarks on beelte images.
+
+\begin{figure}[h!]
+    \centering
+	\includegraphics[width=0.46\textwidth]{./images/loss_v16}
+    \caption{The losses during training EB-Net on pronotum images.}
+    \label{figdlosses}
+\end{figure}
+
 %As mentioned in Section \ref{subsec22}, we have designed three models for our objective. In order to select the best one for our goal, we have first tested the three models on pronotum, before applying the best one on the two other parts of beetle (head and elytra).
 
 %\begin{figure}[h!]
@@ -241,9 +251,10 @@ During the training and validation step, $1820$ images are randomly divided into
 
 %Figure \ref{figdlosses} shows the losses during the training and validation processes of two models (the first one and EB-Net) on pronotum images. The blue curves are training losses, and the green curves are validation losses. In the first model (Figure \ref{figdlosses}a), the training loss ables to decrease along with the number of epochs, but the validation loss is stable after $2000$ epochs. Clearly, the over-fitting has appeared in the fist model. In the second model, no concrete change appears in the curves even the parameters of fully-connected layers have been modified. We have also checked the losses of the second model, the result is also the same as the first one. So, we have not mentioned it in this document. On the opposite side of the first two models, the losses of EB-Net (Figure \ref{figdlosses}b) is really different. They are far from the beginning, but become more close at the end of process. One can note that the over-fitting has disappeared in this architecture. Therefore, we can assume that using elementary block works well to prevent over-fitting in our case. For these reasons, we have decided to use EB-Net for producing the landmarks.
 
-%In order to achieve the best quality of predicted landmarks, we have tested EB-Net in two different strategies: \textit{training from scratch} and \textit{transfer learning}. The following sections describe specific results from these processes. Initially, we consider the losses during the training and validation processes. Next, we compare the coordinates of predicted landmarks and corresponding manual ones by calculating the distance between them. Then, the average distance is taken into account for each landmark position. We also display the landmarks on the image. Ultimately, the distribution of distances will be discussed in some cases of landmarks. 
+In order to achieve the best quality of predicted landmarks, we have tested EB-Net in two different strategies: \textit{training from scratch} and \textit{transfer learning}. The following sections describe specific results from these processes. Initially, we consider the losses during the training and validation processes. Next, we compare the coordinates of predicted landmarks and corresponding manual ones by calculating the distance between them. Then, the average distance is taken into account for each landmark position. We also display the landmarks on the image. Ultimately, the distribution of distances will be discussed in some cases of landmarks. 
 
-EB-Net has been firstly trained and tested on the pronotum images. Table \ref{tbltrainingloss} shows the losses of 9 rounds when we train EB-Net on pronotum images. We can observe the losses are tiny in each round, and the differences among rounds are not various even we have altered images in each round. Based on the success of EB-Net on pronotum images, we have employed it on the two sets of head and elytra images. We have got the similar situation as training on pronotum. The obtained losses are tiny, and not too much difference between the losses of rounds.
+\subsection{Training from scratch}
+In the first strategy, EB-Net has been separately trained on three sets of images: pronotum, head, and elytra. Table \ref{tbltrainingloss} shows the losses of 9 rounds when we train EB-Net on pronotum images. We can observe the losses are tiny in each round, and the differences among rounds are not various even we have altered images in each round. On head and elytra images, we have obtained the same situation when we trained the EB-Net on these two sets of images.
 
 \begin{table}[h!]
 	\centering
@@ -256,15 +267,6 @@ Validation loss & 0.00019 & 0.00021 & 0.00026 & 0.00029 & 0.00029 & 0.00018 & 0.
 	\caption{The losses during the training of EB-Net on pronotum images}
 	\label{tbltrainingloss}
 \end{table}
-
-Figure \ref{figdlosses} shows the losses of training and validation processes of one round on pronotum images. The blue curve is training loss, and the green curve is validation loss. Learning is effective and over-fitting does not appear. We can assume that EBs have properly worked to prevent over-fitting during training and validation steps.
-
-\begin{figure}[h!]
-    \centering
-	\includegraphics[width=0.46\textwidth]{./images/loss_v16}
-    \caption{The losses during training EB-Net on pronotum images.}
-    \label{figdlosses}
-\end{figure}
 
 The trained model of each round has been then used to predict the landmarks on the corresponding testing images. The coordinates of outputted landmarks are evaluated by comparing with the manual ones. We have calculated the distances (in pixels) between the manual landmarks and corresponding predicted ones. Then, the average distance on each position has been considered. Table \ref{tblavgpronotum} shows the average distance on each position of all three parts: pronotum, head and elytra. With the image's size of $256 \times 192$, we can consider that an error around $1\%$ ($\approx 2$ pixels) coud be an acceptable error. Unfortunately, our results exhibit the average distance around $4$ pixels for the best cases, and more than $5$ pixels in the worst cases.
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.7.17)  10 FEB 2020 17:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.7.17)  11 FEB 2020 17:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -797,32 +797,32 @@ Missing character: There is no © in font cmti8!
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
-<images/beetle2.png, id=208, 322.806pt x 157.7895pt>
+<images/beetle2.png, id=204, 322.806pt x 157.7895pt>
 File: images/beetle2.png Graphic file (type png)
 <use images/beetle2.png>
 Package pdftex.def Info: images/beetle2.png  used on input line 143.
 (pdftex.def)             Requested size: 300.29344pt x 146.79567pt.
-<./images/Prono_010.JPG, id=212, 192.72pt x 192.72pt>
+<./images/Prono_010.JPG, id=208, 192.72pt x 192.72pt>
 File: ./images/Prono_010.JPG Graphic file (type jpg)
 <use ./images/Prono_010.JPG>
 Package pdftex.def Info: ./images/Prono_010.JPG  used on input line 155.
 (pdftex.def)             Requested size: 95.09317pt x 95.09232pt.
-<./images/Tete_009.JPG, id=213, 192.72pt x 192.72pt>
+<./images/Tete_009.JPG, id=209, 192.72pt x 192.72pt>
 File: ./images/Tete_009.JPG Graphic file (type jpg)
 <use ./images/Tete_009.JPG>
 Package pdftex.def Info: ./images/Tete_009.JPG  used on input line 156.
 (pdftex.def)             Requested size: 95.09317pt x 95.09232pt.
-<./images/Elytre119.JPG, id=214, 192.72pt x 192.72pt>
+<./images/Elytre119.JPG, id=210, 192.72pt x 192.72pt>
 File: ./images/Elytre119.JPG Graphic file (type jpg)
 <use ./images/Elytre119.JPG>
 Package pdftex.def Info: ./images/Elytre119.JPG  used on input line 157.
 (pdftex.def)             Requested size: 95.09317pt x 95.09232pt.
-<./images/Mg_021.JPG, id=215, 192.72pt x 192.72pt>
+<./images/Mg_021.JPG, id=211, 192.72pt x 192.72pt>
 File: ./images/Mg_021.JPG Graphic file (type jpg)
 <use ./images/Mg_021.JPG>
 Package pdftex.def Info: ./images/Mg_021.JPG  used on input line 158.
 (pdftex.def)             Requested size: 95.09317pt x 95.09232pt.
-<./images/Md_015.JPG, id=216, 192.72pt x 192.72pt>
+<./images/Md_015.JPG, id=212, 192.72pt x 192.72pt>
 File: ./images/Md_015.JPG Graphic file (type jpg)
 <use ./images/Md_015.JPG>
 Package pdftex.def Info: ./images/Md_015.JPG  used on input line 159.
@@ -832,27 +832,27 @@ Overfull \hbox (1.64842pt too wide) in paragraph at lines 155--159
  [][]   []   []   []   [] 
  []
 
-<./images/pronotum_mlm.png, id=217, 192.72pt x 272.01625pt>
+<./images/pronotum_mlm.png, id=213, 192.72pt x 272.01625pt>
 File: ./images/pronotum_mlm.png Graphic file (type png)
 <use ./images/pronotum_mlm.png>
 Package pdftex.def Info: ./images/pronotum_mlm.png  used on input line 160.
 (pdftex.def)             Requested size: 95.09317pt x 134.21886pt.
-<./images/tete_mlm.png, id=218, 192.72pt x 272.01625pt>
+<./images/tete_mlm.png, id=214, 192.72pt x 272.01625pt>
 File: ./images/tete_mlm.png Graphic file (type png)
 <use ./images/tete_mlm.png>
 Package pdftex.def Info: ./images/tete_mlm.png  used on input line 161.
 (pdftex.def)             Requested size: 95.09317pt x 134.21886pt.
-<./images/elytre_mlm.png, id=219, 192.72pt x 272.01625pt>
+<./images/elytre_mlm.png, id=215, 192.72pt x 272.01625pt>
 File: ./images/elytre_mlm.png Graphic file (type png)
 <use ./images/elytre_mlm.png>
 Package pdftex.def Info: ./images/elytre_mlm.png  used on input line 162.
 (pdftex.def)             Requested size: 95.09317pt x 134.21886pt.
-<./images/lmandible_mlm.png, id=220, 192.72pt x 272.01625pt>
+<./images/lmandible_mlm.png, id=216, 192.72pt x 272.01625pt>
 File: ./images/lmandible_mlm.png Graphic file (type png)
 <use ./images/lmandible_mlm.png>
 Package pdftex.def Info: ./images/lmandible_mlm.png  used on input line 163.
 (pdftex.def)             Requested size: 95.09317pt x 134.21886pt.
-<./images/rmandible_mlm.png, id=221, 192.72pt x 272.01625pt>
+<./images/rmandible_mlm.png, id=217, 192.72pt x 272.01625pt>
 File: ./images/rmandible_mlm.png Graphic file (type png)
 <use ./images/rmandible_mlm.png>
 Package pdftex.def Info: ./images/rmandible_mlm.png  used on input line 164.
@@ -866,12 +866,12 @@ Overfull \hbox (1.64842pt too wide) in paragraph at lines 160--164
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [4 <./images/beetle2.png>]
-<./images/inc_channels.png, id=235, 547.04375pt x 339.2675pt>
+<./images/inc_channels.png, id=231, 547.04375pt x 339.2675pt>
 File: ./images/inc_channels.png Graphic file (type png)
 <use ./images/inc_channels.png>
 Package pdftex.def Info: ./images/inc_channels.png  used on input line 175.
 (pdftex.def)             Requested size: 245.2399pt x 152.09433pt.
-<./images/sp_channels.png, id=236, 562.1pt x 338.26375pt>
+<./images/sp_channels.png, id=232, 562.1pt x 338.26375pt>
 File: ./images/sp_channels.png Graphic file (type png)
 <use ./images/sp_channels.png>
 Package pdftex.def Info: ./images/sp_channels.png  used on input line 176.
@@ -881,204 +881,215 @@ Package pdftex.def Info: ./images/sp_channels.png  used on input line 176.
 s/tete_mlm.png> <./images/elytre_mlm.png> <./images/lmandible_mlm.png> <./image
 s/rmandible_mlm.png> <./images/inc_channels.png> <./images/sp_channels.png (PNG
  copy)>]
-<images/eblock.png, id=257, 548.0475pt x 286.06876pt>
+<images/eblock.png, id=252, 548.0475pt x 286.06876pt>
 File: images/eblock.png Graphic file (type png)
 <use images/eblock.png>
 Package pdftex.def Info: images/eblock.png  used on input line 193.
 (pdftex.def)             Requested size: 230.22598pt x 120.17424pt.
  [6 <./images/eblock.png>]
-<images/arch_model.png, id=271, 1637.11626pt x 283.0575pt>
+<images/arch_model.png, id=266, 1637.11626pt x 283.0575pt>
 File: images/arch_model.png Graphic file (type png)
 <use images/arch_model.png>
 Package pdftex.def Info: images/arch_model.png  used on input line 215.
 (pdftex.def)             Requested size: 495.48189pt x 85.66942pt.
  [7 <./images/arch_model.png>]
-<./images/loss_v16.png, id=284, 578.16pt x 433.62pt>
+<./images/loss_v16.png, id=281, 578.16pt x 433.62pt>
 File: ./images/loss_v16.png Graphic file (type png)
 <use ./images/loss_v16.png>
-Package pdftex.def Info: ./images/loss_v16.png  used on input line 237.
+Package pdftex.def Info: ./images/loss_v16.png  used on input line 264.
 (pdftex.def)             Requested size: 230.22598pt x 172.66417pt.
  [8 <./images/loss_v16.png>]
-<./images/fs_lm1.png, id=295, 455.45157pt x 255.95625pt>
+<./images/fs_lm1.png, id=291, 455.45157pt x 255.95625pt>
 File: ./images/fs_lm1.png Graphic file (type png)
 <use ./images/fs_lm1.png>
-Package pdftex.def Info: ./images/fs_lm1.png  used on input line 290.
+Package pdftex.def Info: ./images/fs_lm1.png  used on input line 288.
 (pdftex.def)             Requested size: 225.21626pt x 126.56789pt.
-<./images/fs_lm6.png, id=296, 455.45157pt x 255.95625pt>
+<./images/fs_lm6.png, id=292, 455.45157pt x 255.95625pt>
 File: ./images/fs_lm6.png Graphic file (type png)
 <use ./images/fs_lm6.png>
-Package pdftex.def Info: ./images/fs_lm6.png  used on input line 291.
+Package pdftex.def Info: ./images/fs_lm6.png  used on input line 289.
 (pdftex.def)             Requested size: 225.21626pt x 126.56789pt.
-<./images/head6_fs.png, id=297, 455.45157pt x 255.95625pt>
+<./images/head6_fs.png, id=293, 455.45157pt x 255.95625pt>
 File: ./images/head6_fs.png Graphic file (type png)
 <use ./images/head6_fs.png>
-Package pdftex.def Info: ./images/head6_fs.png  used on input line 292.
+Package pdftex.def Info: ./images/head6_fs.png  used on input line 290.
 (pdftex.def)             Requested size: 225.21626pt x 126.56789pt.
-<./images/head1_fs.png, id=298, 455.45157pt x 255.95625pt>
+<./images/head1_fs.png, id=294, 455.45157pt x 255.95625pt>
 File: ./images/head1_fs.png Graphic file (type png)
 <use ./images/head1_fs.png>
-Package pdftex.def Info: ./images/head1_fs.png  used on input line 293.
+Package pdftex.def Info: ./images/head1_fs.png  used on input line 291.
 (pdftex.def)             Requested size: 225.21626pt x 126.56789pt.
-<./images/elytre1_fs.png, id=299, 455.45157pt x 255.95625pt>
+<./images/elytre1_fs.png, id=295, 455.45157pt x 255.95625pt>
 File: ./images/elytre1_fs.png Graphic file (type png)
 <use ./images/elytre1_fs.png>
-Package pdftex.def Info: ./images/elytre1_fs.png  used on input line 294.
+Package pdftex.def Info: ./images/elytre1_fs.png  used on input line 292.
 (pdftex.def)             Requested size: 225.21626pt x 126.56789pt.
-<./images/elytre8_fs.png, id=300, 455.45157pt x 255.95625pt>
+<./images/elytre8_fs.png, id=296, 455.45157pt x 255.95625pt>
 File: ./images/elytre8_fs.png Graphic file (type png)
 <use ./images/elytre8_fs.png>
-Package pdftex.def Info: ./images/elytre8_fs.png  used on input line 295.
+Package pdftex.def Info: ./images/elytre8_fs.png  used on input line 293.
 (pdftex.def)             Requested size: 225.21626pt x 126.56789pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[9]
-<images/Prono_001_2.png, id=309, 46.2528pt x 46.2528pt>
+<images/Prono_001_2.png, id=298, 46.2528pt x 46.2528pt>
 File: images/Prono_001_2.png Graphic file (type png)
 <use images/Prono_001_2.png>
-Package pdftex.def Info: images/Prono_001_2.png  used on input line 304.
+Package pdftex.def Info: images/Prono_001_2.png  used on input line 302.
 (pdftex.def)             Requested size: 155.1488pt x 155.15779pt.
-<images/Tete_006_2.png, id=310, 192.72pt x 192.72pt>
+<images/Tete_006_2.png, id=299, 192.72pt x 192.72pt>
 File: images/Tete_006_2.png Graphic file (type png)
 <use images/Tete_006_2.png>
-Package pdftex.def Info: images/Tete_006_2.png  used on input line 305.
+Package pdftex.def Info: images/Tete_006_2.png  used on input line 303.
 (pdftex.def)             Requested size: 155.1488pt x 155.1466pt.
-<images/Elytre007_2.png, id=311, 192.72pt x 192.72pt>
+<images/Elytre007_2.png, id=300, 192.72pt x 192.72pt>
 File: images/Elytre007_2.png Graphic file (type png)
 <use images/Elytre007_2.png>
-Package pdftex.def Info: images/Elytre007_2.png  used on input line 306.
+Package pdftex.def Info: images/Elytre007_2.png  used on input line 304.
 (pdftex.def)             Requested size: 155.1488pt x 155.1466pt.
-
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[10 <./images/fs_lm1.png (PNG copy)> <./images/fs_lm6.png (PNG copy)> <./images
-/head6_fs.png (PNG copy)> <./images/head1_fs.png (PNG copy)> <./images/elytre1_
-fs.png (PNG copy)> <./images/elytre8_fs.png (PNG copy)>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 318.
-
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 316.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 318.
- [11 <./images/Prono_001_2.png> <./images/Tete_006_2.png> <./images/Elytre007_2
-.png>]
-<images/face_dataset_2.png, id=341, 1915.155pt x 478.78876pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 316.
+ [9] [10 <./images/fs_lm1.png (PNG copy)> <./images/fs_lm6.png (PNG copy)> <./i
+mages/head6_fs.png (PNG copy)> <./images/head1_fs.png (PNG copy)> <./images/ely
+tre1_fs.png (PNG copy)> <./images/elytre8_fs.png (PNG copy)>]
+<images/face_dataset_2.png, id=328, 1915.155pt x 478.78876pt>
 File: images/face_dataset_2.png Graphic file (type png)
 <use images/face_dataset_2.png>
-Package pdftex.def Info: images/face_dataset_2.png  used on input line 331.
+Package pdftex.def Info: images/face_dataset_2.png  used on input line 329.
 (pdftex.def)             Requested size: 405.39081pt x 101.34492pt.
- [12 <./images/face_dataset_2.png (PNG copy)>] [13] [14]
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[11 <./images/Prono_001_2.png> <./images/Tete_006_2.png> <./images/Elytre007_2.
+png>] [12 <./images/face_dataset_2.png (PNG copy)>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[13]
 File: ./images/fs_lm1.png Graphic file (type png)
 <use ./images/fs_lm1.png>
-Package pdftex.def Info: ./images/fs_lm1.png  used on input line 427.
+Package pdftex.def Info: ./images/fs_lm1.png  used on input line 425.
 (pdftex.def)             Requested size: 225.21626pt x 126.56789pt.
 File: ./images/fs_lm6.png Graphic file (type png)
 <use ./images/fs_lm6.png>
-Package pdftex.def Info: ./images/fs_lm6.png  used on input line 428.
+Package pdftex.def Info: ./images/fs_lm6.png  used on input line 426.
 (pdftex.def)             Requested size: 225.21626pt x 126.56789pt.
-<./images/fn_lm1.png, id=374, 455.45157pt x 255.95625pt>
+<./images/fn_lm1.png, id=362, 455.45157pt x 255.95625pt>
 File: ./images/fn_lm1.png Graphic file (type png)
 <use ./images/fn_lm1.png>
-Package pdftex.def Info: ./images/fn_lm1.png  used on input line 429.
+Package pdftex.def Info: ./images/fn_lm1.png  used on input line 427.
 (pdftex.def)             Requested size: 225.21626pt x 126.56789pt.
-<./images/fn_lm6.png, id=375, 455.45157pt x 255.95625pt>
+<./images/fn_lm6.png, id=363, 455.45157pt x 255.95625pt>
 File: ./images/fn_lm6.png Graphic file (type png)
 <use ./images/fn_lm6.png>
-Package pdftex.def Info: ./images/fn_lm6.png  used on input line 430.
+Package pdftex.def Info: ./images/fn_lm6.png  used on input line 428.
 (pdftex.def)             Requested size: 225.21626pt x 126.56789pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 File: ./images/head6_fs.png Graphic file (type png)
 <use ./images/head6_fs.png>
-Package pdftex.def Info: ./images/head6_fs.png  used on input line 437.
+Package pdftex.def Info: ./images/head6_fs.png  used on input line 435.
 (pdftex.def)             Requested size: 225.21626pt x 126.56789pt.
 File: ./images/head1_fs.png Graphic file (type png)
 <use ./images/head1_fs.png>
-Package pdftex.def Info: ./images/head1_fs.png  used on input line 438.
+Package pdftex.def Info: ./images/head1_fs.png  used on input line 436.
 (pdftex.def)             Requested size: 225.21626pt x 126.56789pt.
-<./images/head6_fn.png, id=376, 455.45157pt x 255.95625pt>
+<./images/head6_fn.png, id=364, 455.45157pt x 255.95625pt>
 File: ./images/head6_fn.png Graphic file (type png)
 <use ./images/head6_fn.png>
-Package pdftex.def Info: ./images/head6_fn.png  used on input line 439.
+Package pdftex.def Info: ./images/head6_fn.png  used on input line 437.
 (pdftex.def)             Requested size: 225.21626pt x 126.56789pt.
-<./images/head1_fn.png, id=377, 456.95718pt x 257.46187pt>
+<./images/head1_fn.png, id=365, 456.95718pt x 257.46187pt>
 File: ./images/head1_fn.png Graphic file (type png)
 <use ./images/head1_fn.png>
-Package pdftex.def Info: ./images/head1_fn.png  used on input line 440.
+Package pdftex.def Info: ./images/head1_fn.png  used on input line 438.
 (pdftex.def)             Requested size: 225.21626pt x 126.89204pt.
-
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 File: ./images/elytre1_fs.png Graphic file (type png)
 <use ./images/elytre1_fs.png>
-Package pdftex.def Info: ./images/elytre1_fs.png  used on input line 447.
+Package pdftex.def Info: ./images/elytre1_fs.png  used on input line 445.
 (pdftex.def)             Requested size: 225.21626pt x 126.56789pt.
 File: ./images/elytre8_fs.png Graphic file (type png)
 <use ./images/elytre8_fs.png>
-Package pdftex.def Info: ./images/elytre8_fs.png  used on input line 448.
+Package pdftex.def Info: ./images/elytre8_fs.png  used on input line 446.
 (pdftex.def)             Requested size: 225.21626pt x 126.56789pt.
-<./images/elytre1_fn.png, id=378, 455.45157pt x 255.95625pt>
+<./images/elytre1_fn.png, id=366, 455.45157pt x 255.95625pt>
 File: ./images/elytre1_fn.png Graphic file (type png)
 <use ./images/elytre1_fn.png>
-Package pdftex.def Info: ./images/elytre1_fn.png  used on input line 449.
+Package pdftex.def Info: ./images/elytre1_fn.png  used on input line 447.
 (pdftex.def)             Requested size: 225.21626pt x 126.56789pt.
-<./images/elytre8_fn.png, id=379, 455.45157pt x 255.95625pt>
+<./images/elytre8_fn.png, id=367, 455.45157pt x 255.95625pt>
 File: ./images/elytre8_fn.png Graphic file (type png)
 <use ./images/elytre8_fn.png>
-Package pdftex.def Info: ./images/elytre8_fn.png  used on input line 450.
+Package pdftex.def Info: ./images/elytre8_fn.png  used on input line 448.
 (pdftex.def)             Requested size: 225.21626pt x 126.56789pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./images/Prono_001.JPG, id=381, 46.2528pt x 46.2528pt>
+<./images/Prono_001.JPG, id=369, 46.2528pt x 46.2528pt>
 File: ./images/Prono_001.JPG Graphic file (type jpg)
 <use ./images/Prono_001.JPG>
-Package pdftex.def Info: ./images/Prono_001.JPG  used on input line 459.
+Package pdftex.def Info: ./images/Prono_001.JPG  used on input line 457.
 (pdftex.def)             Requested size: 150.14671pt x 150.15536pt.
-<./images/Tete_005.JPG, id=382, 46.2528pt x 46.2528pt>
+<./images/Tete_005.JPG, id=370, 46.2528pt x 46.2528pt>
 File: ./images/Tete_005.JPG Graphic file (type jpg)
 <use ./images/Tete_005.JPG>
-Package pdftex.def Info: ./images/Tete_005.JPG  used on input line 460.
+Package pdftex.def Info: ./images/Tete_005.JPG  used on input line 458.
 (pdftex.def)             Requested size: 150.14671pt x 150.15536pt.
-<./images/Elytre004.JPG, id=383, 46.2528pt x 46.2528pt>
+<./images/Elytre004.JPG, id=371, 46.2528pt x 46.2528pt>
 File: ./images/Elytre004.JPG Graphic file (type jpg)
 <use ./images/Elytre004.JPG>
-Package pdftex.def Info: ./images/Elytre004.JPG  used on input line 461.
+Package pdftex.def Info: ./images/Elytre004.JPG  used on input line 459.
 (pdftex.def)             Requested size: 150.14671pt x 150.15536pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[15 <./images/fn_lm1.png (PNG copy)> <./images/fn_lm6.png (PNG copy)>]
+[14]
 
-LaTeX Warning: Text page 16 contains only floats.
+LaTeX Warning: Text page 15 contains only floats.
 
 
 Overfull \vbox (1.93663pt too high) has occurred while \output is active []
 
 
-[16 <./images/head6_fn.png (PNG copy)> <./images/head1_fn.png (PNG copy)> <./im
-ages/elytre1_fn.png (PNG copy)> <./images/elytre8_fn.png (PNG copy)>]
+[15 <./images/fn_lm1.png (PNG copy)> <./images/fn_lm6.png (PNG copy)> <./images
+/head6_fn.png (PNG copy)> <./images/head1_fn.png (PNG copy)>]
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
-<./images/mg_avg_comparison.png, id=396, 501.37312pt x 258.21469pt>
+ [16 <./images/elytre1_fn.png (PNG copy)> <./images/elytre8_fn.png (PNG copy)> 
+<./images/Prono_001.JPG> <./images/Tete_005.JPG> <./images/Elytre004.JPG>]
+<./images/mg_avg_comparison.png, id=392, 501.37312pt x 258.21469pt>
 File: ./images/mg_avg_comparison.png Graphic file (type png)
 <use ./images/mg_avg_comparison.png>
-Package pdftex.def Info: ./images/mg_avg_comparison.png  used on input line 472
+Package pdftex.def Info: ./images/mg_avg_comparison.png  used on input line 470
 .
 (pdftex.def)             Requested size: 240.23016pt x 123.72493pt.
-<./images/md_avg_comparison.png, id=397, 499.11469pt x 258.21469pt>
+<./images/md_avg_comparison.png, id=393, 499.11469pt x 258.21469pt>
 File: ./images/md_avg_comparison.png Graphic file (type png)
 <use ./images/md_avg_comparison.png>
-Package pdftex.def Info: ./images/md_avg_comparison.png  used on input line 473
+Package pdftex.def Info: ./images/md_avg_comparison.png  used on input line 471
 .
 (pdftex.def)             Requested size: 240.23016pt x 124.28047pt.
- [17 <./images/Prono_001.JPG> <./images/Tete_005.JPG> <./images/Elytre004.JPG> 
-<./images/mg_avg_comparison.png> <./images/md_avg_comparison.png>] [18]
-(./main_ecolInf.bbl
+ [17 <./images/mg_avg_comparison.png> <./images/md_avg_comparison.png>] (./main
+_ecolInf.bbl
 Underfull \hbox (badness 2393) in paragraph at lines 37--43
 []\OT1/cmr/m/n/10 D. G. Kendall, []The dif-fu-sion of shape[], Ad-vances in Ap-
 plied Prob-a-bil-ity 9 (3) (1977) 428--430.
@@ -1090,13 +1101,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 37--43
 e / journals / advances-[]in-[]applied-[]probability / article /
  []
 
+[18]
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no ¡ in font cmr10!
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no © in font cmr10!
 LaTeX Font Info:    Try loading font information for OML+cmr on input line 101.
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
@@ -1112,25 +1124,25 @@ Missing character: There is no Ã in font cmr10!
 Missing character: There is no ¼ in font cmr10!
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no ¸ in font cmr10!
- [22]) [23]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 508.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 508.
+) [22]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 506.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 506.
  (./main_ecolInf.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 508.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 508.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 506.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 506.
 Package rerunfilecheck Info: File `main_ecolInf.out' has not changed.
-(rerunfilecheck)             Checksum: C2D729AE9F448E0ADCEF3B5AD9AEDDBD;1161.
+(rerunfilecheck)             Checksum: 2E2F4B38DEDFA64027DD2B5E0B03FDDF;1090.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 508.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 506.
  ) 
 Here is how much of TeX's memory you used:
- 18399 strings out of 492982
- 340835 string characters out of 6134896
- 412678 words of memory out of 5000000
- 21501 multiletter control sequences out of 15000+600000
+ 18400 strings out of 492982
+ 340903 string characters out of 6134896
+ 413694 words of memory out of 5000000
+ 21503 multiletter control sequences out of 15000+600000
  10483 words of font info for 38 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,10n,54p,2441b,721s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1152,10 +1164,10 @@ f-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmtt8.pfb>
-Output written on main_ecolInf.pdf (23 pages, 2781807 bytes).
+Output written on main_ecolInf.pdf (22 pages, 2781026 bytes).
 PDF statistics:
- 579 PDF objects out of 1000 (max. 8388607)
- 483 compressed objects within 5 object streams
- 122 named destinations out of 1000 (max. 500000)
- 334 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 568 PDF objects out of 1000 (max. 8388607)
+ 473 compressed objects within 5 object streams
+ 121 named destinations out of 1000 (max. 500000)
+ 326 words of extra memory for PDF output out of 10000 (max. 10000000)
 
