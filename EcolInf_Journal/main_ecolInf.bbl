@@ -311,14 +311,14 @@ J.~Yosinski, J.~Clune, Y.~Bengio, H.~Lipson, How transferable are features in
   deep neural networks?, in: Advances in neural information processing systems,
   2014, pp. 3320--3328.
 
-\bibitem{simonyan2014very}
-K.~Simonyan, A.~Zisserman, Very deep convolutional networks for large-scale
-  image recognition, arXiv preprint arXiv:1409.1556.
-
 \bibitem{deng2009imagenet}
 J.~Deng, W.~Dong, R.~Socher, L.-J. Li, K.~Li, L.~Fei-Fei, Imagenet: A
   large-scale hierarchical image database, in: 2009 IEEE conference on computer
   vision and pattern recognition, Ieee, 2009, pp. 248--255.
+
+\bibitem{simonyan2014very}
+K.~Simonyan, A.~Zisserman, Very deep convolutional networks for large-scale
+  image recognition, arXiv preprint arXiv:1409.1556.
 
 \bibitem{lin2016homemade}
 S.~Lin, Z.~Zhao, F.~Su, Homemade ts-net for automatic face recognition, in:
