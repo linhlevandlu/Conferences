@@ -247,7 +247,7 @@ EB-Net has been firstly trained and tested on the pronotum images. Figure \ref{f
 
 \begin{figure}[h!]
     \centering
-	\includegraphics[width=0.42\textwidth]{./images/loss_v16}
+	\includegraphics[width=0.45\textwidth]{./images/loss_v16}
     \caption{The losses during training EB-Net on pronotum images.}
     \label{figdlosses}
 \end{figure}
@@ -317,12 +317,12 @@ Transfer learning is a technique in deep learning to re-purpose a model, which h
 	\item \textbf{Fine-tuning a CNN}: This scenario begins as the first strategy. However, it does not only replace and retrain the last layer but also fine-tunes the weights of the pre-trained model by extending the backpropagation. One can note that to reuse a pre-trained model, the parameters have to be adapted between the two tasks. These parameters could be the size of input images, the number of outputs, or the parameters of each layer.% As usual, the parameter values at each layer, e.g., padding or stride values, are selected to change their values to declare the differences between the two tasks.
 \end{itemize}
 
-In Deep Learning community, ImageNet is known as a large dataset with more than 14 million images of thousands of categories \cite{deng2009imagenet}. Notable models have employed ImageNet as training data to solve different tasks \cite{krizhevsky2012imagenet, simonyan2014very}. These pre-trained models have been widely shared in deep learning community as a source to re-use the features of ImageNet dataset. As a preliminary work, we have tested several well-known models, e.g., AlexNet \cite{krizhevsky2012imagenet}, VGG-16 \cite{simonyan2014very} that have been trained on ImageNet \cite{deng2009imagenet}. Unfortunately, the features from ImageNet seem to be not relevant for our application because the image features mainly concern the detection of global shape of the objects whereas landmarks can be considered as local features \cite{lin2016homemade}. Fortunately, searching for landmarks is explicitly defined in other applications like face recognition, or facial key-points detection. Consequently, we have decided to continue with EB-Net: we have pre-trained EB-Net on a public facial keypoints dataset, then transferred the pre-trained parameters to fine-tune on beetle's images.
+In Deep Learning community, ImageNet is known as a large dataset with more than 14 million images of thousands of categories \cite{deng2009imagenet}. Notable models have employed ImageNet as training data to solve different tasks \cite{krizhevsky2012imagenet, simonyan2014very}. These pre-trained models have been widely shared in deep learning community as a source to re-use the features of ImageNet dataset. As a preliminary work, we have tested several well-known models, e.g., AlexNet \cite{krizhevsky2012imagenet}, VGG-16 \cite{simonyan2014very} that have been trained on ImageNet \cite{deng2009imagenet}. Unfortunately, the features from ImageNet seem to be not relevant for our application because the image features mainly concern the detection of global shape of the objects whereas landmarks can be considered as local features \cite{lin2016homemade}. Fortunately, searching for landmarks is explicitly defined in other applications like face recognition, or facial key-points detection. Consequently, we have decided to continue with EB-Net to improve the quality of predicted landmarks coordinates.
 
 \subsubsection{Pre-train EB-Net on facial keypoint dataset}
-In recent years, several competitions \footnote{Deepfake Detection Challenge/ Facial Keypoints Detection} have been organized for predicting facial keypoints on human face, the training datasets have been freely published. As we have mentioned, our problem has a revelant to this kind of applications. So, we have decided to choose a facial keypoints dataset to train EB-Net, and then to transfer the parameters to fine-tune it for beetle's images.
+In recent years, several competitions \footnote{Deepfake Detection Challenge/ Facial Keypoints Detection} have been organized for predicting facial keypoints on human face, the training datasets have been freely published. As we have mentioned, our problem has a revelant to this kind of applications. Therefore, we have decided to choose a facial keypoints dataset to pre-train EB-Net. Then, transferring the parameters values to fine-tune them for beetle's images.
 
-The dataset that we have selected has been published for a challenge\footnote{https://www.kaggle.com/c/facial-keypoints-detection} on the Kaggle website. It includes $2140$ images of human faces ($96 \times 96$ pixels). For each image, $15$ landmarks have been defined: $6$ landmarks for eyes, $4$ landmarks for eyebrows, $4$ landmarks for the mouth, and $1$ landmark for nose tip. Figure \ref{fighmface} shows $4$ examples of face images and their landmark positions in the dataset.
+The selected dataset to pre-train EB-Net has been published for a challenge\footnote{https://www.kaggle.com/c/facial-keypoints-detection} on the Kaggle website. It includes $2140$ images of human faces ($96 \times 96$ pixels). For each image, $15$ landmarks have been defined: $6$ landmarks for eyes, $4$ landmarks for eyebrows, $4$ landmarks for the mouth, and $1$ landmark for nose tip. Figure \ref{fighmface} shows $4$ examples of face images and their landmark positions in the dataset.
 
 \begin{figure}[h!]
 	\centering
@@ -331,7 +331,7 @@ The dataset that we have selected has been published for a challenge\footnote{ht
 	\label{fighmface}
 \end{figure}
 
-In order to use EB-Net on this dataset, we have adapted the parameters of the input and the output layers to match with the face images size and the landmark number. The new parameter values are $96 \times 96$ for the input size, and $30$ for the number of outputs of the last FC layer (corresponding to $15$ landmarks). In hyper-parameters side, we have increased the number of epochs to $10000$ but kept the same for other values as training from scratch. As the first step, we take into account the RMSE score to evaluate and to compare the effectiveness of EB-Net with other published scores in the challenge.
+In order to use EB-Net on this dataset, we have adapted the parameters of the input and the output layers to match with the face images size and the landmark number. The new parameter values are $96 \times 96$ for the input size, and $30$ for the number of outputs of the last FC layer (corresponding to $15$ landmarks). For hyper-parameters, just the number of epochs have changed to reach the value of $10000$ epochs. In table \ref{tblRMSE_challenge}, we show the RMSE score and the comparison of the effectiveness between EB-Net and the three best ones that have published of the challenge.
 
 \begin{table}[h!]
 	\centering
@@ -345,25 +345,23 @@ In order to use EB-Net on this dataset, we have adapted the parameters of the in
 	\label{tblRMSE_challenge}
 \end{table}
 
-Table \ref{tblRMSE_challenge} shows the scores of top $3$ on the challenge board and our one. It is worth to note that their scores have been obtained by testing their models on a private set of images that we can not access. So, we have kept $100$ images in the public dataset for testing process. Comparing with these scores, the three models present better results than us but we are very close. In our opinion, the RMSE score around the 1 pixels is not so far if we would like to display the landmarks on the images. Consequently, we have the base to believe that EB-Net is still good in any way, and we have decided to re-use the pre-trained parameter values to fine-tune the model for beetle images. 
+It is worth to note the three scores have been obtained by testing the models on a private set of images that are not freely available. Therefore, we have kept $100$ images from the public dataset for the testing step. Comparing with these scores, the three models present better results than us but we are very close. The RMSE score is around 1 pixel that is an acceptable error to display the landmarks on the images. Consequently, the pre-training of EB-Net is considered as correct and we have decided to re-use the pre-trained parameters values to fine-tune the model for beetle images.
 
 \subsubsection{Fine-tuning on beetle images}
-As we have mentioned, fine-tuning is a strategy of transfer learning that could boost the efficiency of a model on the target task. Technically, the weights of a CNN model can be fine-tuned by continuing the backpropagation, and it exists two ways to perform fine-tuning process: \textit{frozen} and \textit{unfrozen}.
+As we have mentioned, fine-tuning is a strategy of transfer learning that could boost the efficiency of a model on a target task. Technically, the weights of a CNN model can be fine-tuned by continuing the backpropagation, and it exists two ways to perform fine-tuning process: \textit{frozen} and \textit{unfrozen}.
 \begin{itemize}
-	\item \textbf{Frozen} scenario: the parameter of lower layers (close to the input layer) will be fixed, we fine-tune only the higher ones (close to the output layer).
-	\item \textbf{Unfrozen} scenario: allows continuing to update the parameter values of all layers in the pre-trained model.
+	\item \textbf{Frozen} scenario: the parameters of lower layers (close to the input layer) will be fixed, we fine-tune only the higher ones (close to the output layer).
+	\item \textbf{Unfrozen} scenario: allows continuing to update the parameter values of all layers in the model.
 \end{itemize}
 
 In order to fine-tune EB-Net on beetle images, we have gone with unfrozen process to continue updating the parameter values. One can note that the sizes of images in the two datasets are different: the beetle images have a size of $256 \times 192$ pixels; whereas the size of facial images is $96 \times 96$ pixels. Therefore, adjustments are needed to match the two tasks.
 
-First of all, reducing the resolution of the beetle images to $96 \times 96$ could be lead to a loss of essential information. As our images contain a background band that is easy to suppress with a pre-processing operation, we have chosen to remove the background
-region instead of down-sampling our pictures. Moreover, removing the background pixels can limit the effect of un-useful image areas. So, the new beetle images are finally set to $192 \times 192$ pixels. The EB-Net parameters will be settled to take into account these values between the pre-training and fine-tuning steps. To declare the modification, we mention in a stride value of the first convolutional layer equals to $2$ (as the usual way to do \cite{yosinski2014transferable}). 
-
+First of all, reducing the resolution of the beetle images to $96 \times 96$ could be lead to a loss of essential information. As our images contain a background band that is easy to suppress with a pre-processing operation, we have chosen to remove a part of the background region (without any beetle's parts) instead of down-sampling our pictures. So, the new beetle images are finally set to $192 \times 192$ pixels. The EB-Net parameters will be settled to take into account the differences of the values between the pre-training and fine-tuning steps. To declare the modification, we set the stride value of the first convolutional layer to $2$ (as the usual way to do \cite{yosinski2014transferable}). 
+%Moreover, removing the background pixels can limit the effect of un-useful image areas
 \subsubsection{Fine-tuning results}
-To evaluate fine-tuning process, the parameters of the pre-trained model have been transferred to
-separately fine-tune on three sets of images: pronotum, head, and elytra. We present all the obtained results in the same way as the previous section to provide an explicit comparison. Foremost, the average distance at each landmark is provided by computing in the same way as the previous one.%: we calculate the distances (in pixels) between predicted and corresponding manual landmarks, then these distances are used to calculate the average value for each landmark position. 
-
-Tables \ref{tblfn_pronotum}, \ref{tblfn_head}, \ref{tblfn_elytra} show the comparison at each position between the average distances provided by the two processes (training from scratch and fine-tuning) on pronotum, head, and elytra, respectively.  The first row presents the landmark number; \textbf{From scratch} row reminds the previously average distances when EB-Net was trained from scratch; \textbf{Fine-tune} row presents the new average distances; the last row presents the improvement percentage between the two processes. The green and red values are respectively the best and the worst values in each process. All distances are given in pixel unity. From these tables, all the average distances have decreased from $1$ to $1.5$ pixels in both of three sets of images. Clearly, the fine-tuning process has improved the prediction of landmarks, we can see the change at the best-predicted position (green ones), but it exists a group of well-predicted landmarks in each set of images, such as:
+%To evaluate fine-tuning process, the parameters of the pre-trained model have been transferred to separately fine-tune on three sets of images: pronotum, head, and elytra. We present all the obtained results in the same way as the previous section to provide an explicit comparison. Foremost, the average distance at each landmark is provided by computing in the same way as the previous one.
+%: we calculate the distances (in pixels) between predicted and corresponding manual landmarks, then these distances are used to calculate the average value for each landmark position. 
+We present all the obtained results for the three beetle parts: pronotum, head and elytra, in the same way than in the previous results to provide an explicit comparison. Tables \ref{tblfn_pronotum}, \ref{tblfn_head}, \ref{tblfn_elytra} show the comparison at each position between the average distances provided by the two processes (training from scratch and fine-tuning) on pronotum, head, and elytra, respectively.  The first row presents the landmark number; \textbf{From scratch} row reminds the previously average distances when EB-Net was trained from scratch; \textbf{Fine-tune} row presents the new average distances; the last row presents the improvement percentage between the two processes. The green and red values are respectively the best and the worst values in each process. All distances are given in pixel unity. From these tables, all the average distances have decreased between $1$ and $1.5$ pixels in both of three sets of images. Clearly, the fine-tuning process has improved the prediction of landmarks, we can see the change at the best-predicted position (green ones), but it exists a group of well-predicted landmarks in each set of images, such as:
 
 \begin{itemize}
 	\item For pronotum: the $1^{st}$, $3^{rd}$, and $7^{th}$ landmark.
@@ -375,11 +373,11 @@ At the opposite side, the worst cases remain the same positions as previously: t
 
 \begin{table}[h!]
 	\centering
-	\begin{tabular}{| c | c | c | c | c | c | c | c | c |}
+	\begin{tabular}{| c || c | c | c | c | c | c | c | c |}
 		\hline
-		\textbf{Landmark} & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\ \hline
+		\textbf{Landmark} & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\ \hline \hline
 		\textbf{From scratch} & \textcolor{green}{4.00} & 4.48 & 4.3 & 4.39 & 4.29 & \textcolor{red}{5.36} & 4.64 & 4.94 \\ \hline
-		\textbf{Fine-tune} & 2.99 & 3.41 & 2.98 & 3.54 & 3.37 & \textcolor{red}{4.06} & \textcolor{green}{2.93} & 3.64 \\ \hline
+		\textbf{Fine-tune} & 2.99 & 3.41 & 2.98 & 3.54 & 3.37 & \textcolor{red}{4.06} & \textcolor{green}{2.93} & 3.64 \\ \hline \hline
 		\textbf{\% of impr.} & 25.25 & 24.01 & 30.56 & 19.18 & 21.55 & 24.28 & 36.85 & 26.16 \\ \hline
 	\end{tabular}
 	\caption{Average distances comparison on pronotum images}
@@ -388,11 +386,11 @@ At the opposite side, the worst cases remain the same positions as previously: t
 
 \begin{table}[h!]
 	\centering
-	\begin{tabular}{| c | c | c | c | c | c | c | c | c | c | c |}
+	\begin{tabular}{| c || c | c | c | c | c | c | c | c | c | c |}
 		\hline
-		\textbf{Landmark} & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline
+		\textbf{Landmark} & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline \hline
 		\textbf{From scratch} & \textcolor{red}{5.53} & 5.16 & 5.38 & 5.03 & 4.84 & \textcolor{green}{4.45} & 4.79 & 4.53 & 5.14 & 5.06 \\ \hline
-		\textbf{Fine-tune} & \textcolor{red}{4.82} & 4.21 & 4.73 & 4.11 & 4.18 & 3.5 & 3.92 & \textcolor{green}{3.4} & 4.17 & 3.94 \\ \hline
+		\textbf{Fine-tune} & \textcolor{red}{4.82} & 4.21 & 4.73 & 4.11 & 4.18 & 3.5 & 3.92 & \textcolor{green}{3.4} & 4.17 & 3.94 \\ \hline \hline
 		\textbf{\% of impr.} & 12.83 & 18.43 & 12.15 & 18.42 & 13.69 & 21.43 & 18.29 & 24.94 & 18.88 & 22.01 \\ \hline
 	\end{tabular}
 	\caption{Average distances comparison on head images}
@@ -401,11 +399,11 @@ At the opposite side, the worst cases remain the same positions as previously: t
 
 \begin{table}[h!]
 	\centering
-	\begin{tabular}{| c | c | c | c | c | c | c | c | c | c | c | c |}
+	\begin{tabular}{| c || c | c | c | c | c | c | c | c | c | c | c |}
 		\hline
-		\textbf{Landmark} & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 \\ \hline
+		\textbf{Landmark} & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 \\ \hline \hline
 		\textbf{From scratch} & \textcolor{green}{3.87} & 3.97 & 3.92 & 3.87 & 4.02 & 4.84 & 5.21 & \textcolor{red}{5.47} & 5.27 & 4.07 & 3.99 \\ \hline
-		\textbf{Fine-tune} & 3.21 & 3.28 & \textcolor{green}{3.2} & 3.22 & 3.31 & 4.21 & 4.54 & \textcolor{red}{4.76} & 4.55 & 3.39 & 3.29 \\ \hline
+		\textbf{Fine-tune} & 3.21 & 3.28 & \textcolor{green}{3.2} & 3.22 & 3.31 & 4.21 & 4.54 & \textcolor{red}{4.76} & 4.55 & 3.39 & 3.29 \\ \hline \hline
 		\textbf{\% of impr.} & 17.04 & 17.34 & 18.36 & 16.61 & 17.66 & 13.13 & 12.82 & 12.96 & 13.69 & 16.68 & 17.54 \\ \hline
 	\end{tabular}
 	\caption{Average distances comparison on elytra images}
@@ -414,15 +412,13 @@ At the opposite side, the worst cases remain the same positions as previously: t
 
 Considering on each landmark position, the improvement is different depending on the difficulty of its location. But, all cases have been improved even they are the best or the worst cases. With the help of fine-tuning, the predictions have gained from $36.85\%/ 24.94\%/ 18.36\%$ to $19.18\%/ 12.15\%/ 12.82\%$ on pronotuom, head, and elytra, respectively.
 
-The average distance between manual and predicted landmarks could be not the only way to appreciate the obtained results. As we have mentioned, the mean value can hide different situations when deeply going to the analysis. Again, it could exist of two cases for an average value: all distance values are very close to the mean value, or they are widely widespread around the mean one. In this case, distribution of distances could be taken into account to characterize this situation.
-
-Figure \ref{figchartpfn}, \ref{figcharthfn}, \ref{figchartefn} show the distribution of distances on two samples in each set of images: pronotum, head, and elytra, respectively. In these charts, the x-axis and y-axis present the number of images and the distance (in pixel). Each point in the chart represents a distance between manual and predicted landmarks. The blue/red lines in charts present the average values. We can observe from the figures that the distance values are very different from the two processes (training from scratch and fine-tuning). The distances have been reduced with the help of fine-tuning process even they were the low or high values when training from scratch. We have gained more points (in the chart) in the range from zero to the average one, and the number of extraordinary values have been decrease too. For example, in the worst case of pronotum (the $6^{th}$ landmark), we do not see any point greater than $15$ pixels with the fine-tuning process.
+As we have mentioned before, the mean value hides different situations when deeply going to the analysis. So, we have checked again the distribution of distances. Figure \ref{figchartpfn}, \ref{figcharthfn}, \ref{figchartefn} show the distribution of distances on two samples in each set of images: pronotum, head, and elytra, respectively. In these charts, the x-axis and y-axis present the number of images and the distance (in pixel). Each point in the chart represents a distance between manual and predicted landmarks. The blue/red lines in charts present the average values. We can observe from the figures that the distance values are very different from the two processes (training from scratch and fine-tuning). The distances have been reduced with the help of fine-tuning process even they were the low or high values when training from scratch. We have gained more points (in the chart) in the range from zero to the average one, and the number of extraordinary values have been decrease too. For example, in the worst case of pronotum (the $6^{th}$ landmark), we do not see any point greater than $15$ pixels with the fine-tuning process. However, it nevertheless exists some difficult cases that the model could not optimize. These cases could be noted as the outlier values in our dataset.
 
 \begin{figure}[h!]
     \centering
     \subcaptionbox{. $1^{st}$ landmark (from scratch) \label{}}{\includegraphics[width=0.45\textwidth]{./images/fs_lm1}}~~
-    \subcaptionbox{. $6^{th}$ landmark (from scratch) \label{}}{\includegraphics[width=0.45\textwidth]{./images/fs_lm6}}\\
-    \subcaptionbox{. $1^{st}$ landmark (fine-tuning) \label{}}{\includegraphics[width=0.45\textwidth]{./images/fn_lm1}}~~
+    \subcaptionbox{. $1^{st}$ landmark (fine-tuning) \label{}}{\includegraphics[width=0.45\textwidth]{./images/fn_lm1}}\\
+    \subcaptionbox{. $6^{th}$ landmark (from scratch) \label{}}{\includegraphics[width=0.45\textwidth]{./images/fs_lm6}}~~
     \subcaptionbox{. $6^{th}$ landmark (fine-tuning) \label{}}{\includegraphics[width=0.45\textwidth]{./images/fn_lm6}}
     \caption{A comparison of distances distribution of the $1^{st}$ landmark and the worst case ($6^{th}$ landmark) on pronotum images. }
     \label{figchartpfn}
@@ -431,8 +427,8 @@ Figure \ref{figchartpfn}, \ref{figcharthfn}, \ref{figchartefn} show the distribu
 \begin{figure}[h!]
     \centering
     \subcaptionbox{. $6^{th}$ landmark (from scratch) \label{}}{\includegraphics[width=0.45\textwidth]{./images/head6_fs}}~~
-    \subcaptionbox{. $1^{st}$ landmark (from scratch) \label{}}{\includegraphics[width=0.45\textwidth]{./images/head1_fs}}\\
-    \subcaptionbox{. $6^{th}$ landmark (fine-tuning) \label{}}{\includegraphics[width=0.45\textwidth]{./images/head6_fn}}~~
+    \subcaptionbox{. $6^{th}$ landmark (fine-tuning) \label{}}{\includegraphics[width=0.45\textwidth]{./images/head6_fn}}\\
+    \subcaptionbox{. $1^{st}$ landmark (from scratch) \label{}}{\includegraphics[width=0.45\textwidth]{./images/head1_fs}}~~
     \subcaptionbox{. $1^{st}$ landmark (fine-tuning) \label{}}{\includegraphics[width=0.45\textwidth]{./images/head1_fn}}
     \caption{The distribution of distances of all head images on $1^{st}$ landmark and $6^{th}$ landmark. }
     \label{figcharthfn}
@@ -441,8 +437,8 @@ Figure \ref{figchartpfn}, \ref{figcharthfn}, \ref{figchartefn} show the distribu
 \begin{figure}[h!]
     \centering
     \subcaptionbox{. $1^{st}$ landmark (from scratch) \label{}}{\includegraphics[width=0.45\textwidth]{./images/elytre1_fs}}~~
-    \subcaptionbox{. $8^{th}$ landmark (from scratch) \label{}}{\includegraphics[width=0.45\textwidth]{./images/elytre8_fs}}\\
-    \subcaptionbox{. $1^{st}$ landmark (fine-tuning) \label{}}{\includegraphics[width=0.45\textwidth]{./images/elytre1_fn}}~~
+    \subcaptionbox{. $1^{st}$ landmark (fine-tuning) \label{}}{\includegraphics[width=0.45\textwidth]{./images/elytre1_fn}}\\
+    \subcaptionbox{. $8^{th}$ landmark (from scratch) \label{}}{\includegraphics[width=0.45\textwidth]{./images/elytre8_fs}}~~
     \subcaptionbox{. $8^{th}$ landmark (fine-tuning) \label{}}{\includegraphics[width=0.45\textwidth]{./images/elytre8_fn}}
     \caption{The distribution of distances of all elytra images on $1^{st}$ landmark and $8^{th}$ landmark.}
     \label{figchartefn}
@@ -459,21 +455,28 @@ To illustrate the results, Figure \ref{figpdl} shows both predicted (in red) and
     \label{figpdl}
 \end{figure}
 
-\pagebreak
+%\pagebreak
 \subsubsection{Results on mandibles}
-In the five sets of beetle images, the mandibles are considered as easy to extract by using the image processing algorithms. In \cite{le2017maelab}, we have proposed a pipeline to estimate the landmarks in mandible images. In order to evaluate the effectivement of deep learning method and to compare with the obtained results from \cite{le2017maelab}, we have applied the fine-tuning process on mandible images in the same way as we have done on other parts. Figure \ref{figchartavgCompare} shows the comparison of average distance at each landmark position between the obtained results of two methods (deep learning and image processing methods). The red curves illustrate the average distances which have been obtained from image processing technique while the blue curves present the results of fine-tuning process. To reach the comparison, the obtained values in \cite{le2017maelab} have been re-computed to match the new size of the images by scaling these errors (distances) with the same ratio that we have used to down-sample images. Then, the average value has been computed for each landmark’s position.
+As mentioned in previous work \cite{le2017maelab}, the mandible images have been analyzed with the help of a pipeline based on the segmentation step. We have wanted to evaluate the performance of EB-Net on this dataset. It is worth to note that the fine-tuning process has been also applied for this experiment in the same way than other parts: pre-training EB-Net with the facial key-points dataset and transferring the parameter values to fine-tune on mandibles.
+
+Figure \ref{figchartavgCompare} shows the comparison of average distance at each landmark position between the obtained results of two methods (deep learning and image processing methods). The red curves illustrate the average distances which have been obtained from image processing technique while the blue curves present the results of fine-tuning process. To achieve the comparison, the obtained values in \cite{le2017maelab} have been re-computed to match the new size of the images by scaling these errors (distances) with the same ratio that we have used to down-sample images. Then, the average value has been computed for each landmark’s position.
 
 \begin{figure}[h!]
     \centering
-    \subcaptionbox{. Left mandible \label{figchartavgComparemg}}{\includegraphics[width=0.48\textwidth]{./images/mg_avg_comparison}}~~
-    \subcaptionbox{. Right mandible \label{figchartavgComparemd}}{\includegraphics[width=0.48\textwidth]{./images/md_avg_comparison}}
+	\subcaptionbox{. Right mandible \label{figchartavgComparemd}}{\includegraphics[width=0.48\textwidth]{./images/md_avg_comparison}}~~    
+    \subcaptionbox{. Left mandible \label{figchartavgComparemg}}{\includegraphics[width=0.48\textwidth]{./images/mg_avg_comparison}}    
     \caption{These charts show the average distance on each landmark of all mandibles images.\\ The red, blue lines present the results from image processing and fine-tuning process, respectively.}
     \label{figchartavgCompare}
 \end{figure}
 
-For the left mandible (Figure \ref{figchartavgComparemg}), it is worth to note that they were more difficult to process than the right ones by using image processing techniques, as we have discussed in \cite{le2017maelab}. However, the results of the fine-tuning process are almost better than image processing one. The fine-tuning has improved the results even the cases that were difficult to predict with image processing (the $9^{th} - 12^{th}$ landmark).
+For the right mandible (Figure \ref{figchartavgComparemd}), some first landmarks (from $1^{st}$ to $6^{th}$) have been well-predicted by the pipeline of image processing techniques. They are illustrated by the small average values in the chart (from $2.07$ pixels to $9.73$ pixels). However, these values begin increasing from the $7^{th}$ landmark and peak at the $14^{th}$ position. The reason is the first group of landmarks is mainly concentrated on the tip of the mandible where we can obtain the precise segmentation, while the others are on the base and we can encounter some difficulties to get the segment contours. For the fine-tuning process, the obtained values are more stable. Except the first position, all other distances are better than the previous results.
 
-For the right mandible (Figure \ref{figchartavgComparemd}), with image processing techniques, some first landmarks (from $1^{st}$ to $6^{th}$) have been well-predicted, which illustrated by small average values in the chart. However, these values begin to increase from the $7^{th}$ landmark. The reason is that the first group of events is mainly concentrated on the tip of the mandible where we can obtain the precise segmentation, while others are on the base where we can meet some difficulties to get the segment contours. For the fine-tuning process, the obtained values are more stable. Although some first values can be approximate or larger (from $2^{nd}$ to $7^{th}$ positions), other ones are better than the previous results (after $7^{th}$ position). Remarkably, the fine-tuning has a great improvement at the positions located at parts that are hard to extract the contours. More, these results are stable on every landmark position. 
+For the left mandible (Figure \ref{figchartavgComparemg}), we obtain the similar situation than the right one. The obtained average values are more stable and better than the results coming from previous method (except the first one). One can note that the left mandibles are more difficult to process than the right ones by using image processing technique as discussed in \cite{le2017maelab}. The proof is that the values of the precise predictions (between $1^{st}$ and $8^{th}$) in the left mandibles are higher than the right ones. With the help of fine-tuning process, these values become more stable and are significantly improved. Almost results have been improved even the cases are difficult to predict with image processing. Remarkably, it has also reduced the range between the highest and the lowest values in both of two sets, for example, it has decreased the different values from $6.85/ 7.66$ pixels to $2.17/ 2.13$ pixels for the left and right mandibles, respectively.
+
+
+
+
+% Remarkably, the fine-tuning has a great improvement at the positions located at parts that are hard to extract the contours. More, these results are stable on every landmark position. with image processing techniques, some first landmarks (from $1^{st}$ to $6^{th}$) have been well-predicted, which illustrated by small average values in the chart. However, these values begin to increase from the $7^{th}$ landmark. The reason is that the first group of events is mainly concentrated on the tip of the mandible where we can obtain the precise segmentation, while others are on the base where we can meet some difficulties to get the segment contours. For the fine-tuning process, the obtained values are more stable. Although some first values can be approximate or larger (from $2^{nd}$ to $7^{th}$ positions), other ones are better than the previous results (after $7^{th}$ position). Remarkably, the fine-tuning has a great improvement at the positions located at parts that are hard to extract the contours. More, these results are stable on every landmark position. 
 
 \section{Discussion}
 In this work, we have proposed the elementary block as the based to build the CNN for predicting landmarks. It is worth to note that our block is a generic one. It is easy to add it, easy to test the model, even to remove a block from the model if the results are not satisfying. The users can choose suitable blocks for their applications. Choosing the number of blocks depends on the computing resources, as well as the expected results. For example, we have tried to add a new elementary block to EB-Net. The experiments have shown that the results have been improved, but we have spent more resources and computing times to reach this improvement. The average distances have been improved $0.5$ pixels. However, this change is insignificant if we show it on the images. Consequently, we need to note that it exists a balance between the depth of the model, the accuracy of outputs and the cost to compute.
@@ -503,8 +506,11 @@ In future, we plan to test our model on different datasets owned by the INRA tea
 \end{document}
 
 
+As mentioned in section \ref{subsec21}, the mandible images have been taken after dissection, whereas the images of other parts have been captured before this process. In \cite{le2017maelab}, we have proposed a pipeline based on the segmentation step and applied to mandible images. The results have shown the pipeline has worked efficiently to provide the automatic landmarks on mandibles, but it could not be applied on the three parts of beetle: pronotum, head and elytra. It is why we have turned to utilize the CNN model for these three parts. In this experiment, we would like checking that if CNN work well to predict the landmark on mandible images. We have applied the fine-tuning process to mandible images in the same way than other parts. Then, we compare the obtained results between the two processes (fine-tuning and pipeline in \cite{le2017maelab}). 
 
+In the five sets of beetle images, the mandibles are considered as easy to extract by using the image processing algorithms. In \cite{le2017maelab}, we have proposed a pipeline to estimate the landmarks in mandible images. In order to evaluate the effectivement of deep learning method and to compare with the obtained results from \cite{le2017maelab}, we have applied the fine-tuning process on mandible images in the same way as we have done on other parts. 
 
+ In hyper-parameters side, we have increased the number of epochs to $10000$ but kept the same for other values as training from scratch. As the first step, we take into account the RMSE score to evaluate and to compare the effectiveness of EB-Net with other published scores in the challenge.
 
 
 
