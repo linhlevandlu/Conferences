@@ -63,22 +63,25 @@
 
 
 %% Group authors per affiliation:
-\author[labri,itdlu]{Le Van Linh\corref{cor1}}
+\author[labri]{Le Van Linh\corref{cor1}}
 \ead{van-linh.le@labri.fr}
 \author[labri]{Beurton-Aimar Marie\fnref{ba}}
+\ead{beurton@labri.fr}
 \author[labri]{Zemmari Akka}
-\author[igepp]{Marie Alexia (?)}
+\ead{zemmari@labri.fr}
+\author[igepp]{Marie Alexia}
+\ead{alexia.marie@inrae.fr}
 \author[igepp]{Parisey Nicolas\fnref{ba}}
+\ead{nicolas.parisey@inrae.fr}
 
 \fntext[ba]{both authors contributed equally to this work.}
 \cortext[cor1]{Corresponding author} 
 
 %% %% or include affiliations in footnotes:
+\address[labri]{LaBRI - University of Bordeaux, UMR 5800, 351, cours de la Liberation, 33405 Talence, France}
 \address[igepp]{UMR 1349 IGEPP, BP 35327, 35653 Le Rheu, France}
 %% \ead[url]{www.elsevier.com}
-
-\address[labri]{University of Bordeaux, 351, cours de la Libération, 33405 Talence}
-\address[itdlu]{Dalat University, Dalat, Lamdong, Vietnam}
+%\address[itdlu]{Dalat University, Dalat, Lamdong, Vietnam}
 %% \cortext[mycorrespondingauthor]{Corresponding author}
 %% \ead{support@elsevier.com}
 
@@ -86,14 +89,13 @@
 %% \address[mysecondaryaddress]{360 Park Avenue South, New York}
 
 \begin{abstract}
-\textit{Aims:} \ldots \textit{Methods:} \ldots \textit{Conclusions:} \ldots
 Landmark is one of the important concepts in morphometry analysis. Setting landmarks is not only used to measure the shape of the object but is also applied to analyze the inter-organisms variations. Currently, the landmarks are mostly determined manually by the biologists.
 In this work, we propose a method to automatically predict the landmarks on biological images: Deep Learning, more specifically Convolutional Neural Network (CNN). We proposed a CNN architecture which was built from the module, so-called ``elementary blocks". Each block was made up of some popular layers of CNN. This work has been also introduced a procedure to augment number of images in our dataset which can see a little bit small in our case to apply deep learning methods. 
 The network then trained and tested on a dataset includes three parts of beetle (pronotum, head and elytra). In the experiments, we applied two strategies to evaluate the network and to improve the obtained results: training from scratch and applying a fine-tuning step. The predicted landmarks from the network have been compared with the manual landmarks which provided by the biologists. The obtained results have proved that the predicted landmarks were considered to be statistically good enough to replace the manual landmarks.
 \end{abstract}
 
 \begin{keyword}
-Landmarks \sep morphometry \sep deep learning \sep CNN
+Landmarks \sep morphometry \sep deep learning \sep Convolutional Neural Network
 \end{keyword}
 
 \end{frontmatter}
@@ -326,7 +328,7 @@ The selected dataset to pre-train EB-Net has been published for a challenge\foot
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.81\textwidth]{images/face_dataset_2}
+	\includegraphics[width=0.75\textwidth]{images/face_dataset_2}
 	\caption{The samples (face and manual landmarks) in the dataset that we used to pre-train EB-Net.}
 	\label{fighmface}
 \end{figure}
@@ -337,8 +339,9 @@ In order to use EB-Net on this dataset, we have adapted the parameters of the in
 	\centering
 	\begin{tabular}{ | c | c | c | c | c |}
 	\hline
-	\multirow{2}{*}{Team} & Olegra & Trump & Enes & \multirow{2}{*}{EB-Net} \\
-	  & $1^{st}$ & $2^{nd}$ & $3^{rd}$ &  \\ \hline
+	%\multirow{2}{*}{Team} & Olegra & Trump & Enes & \multirow{2}{*}{EB-Net} \\ \hline
+%	  & $1^{st}$ & $2^{nd}$ & $3^{rd}$ &  \\ \hline
+	Team & Olegra & Trump & Enes & EB-Net \\ \hline
 	RMSE score (in pixels) & 1.2824 & 1.4004 & 1.4026 & \textbf{1.497} \\ \hline
 \end{tabular}	
 	\caption{RMSE comparison between our score and top three of challenge.}
@@ -457,9 +460,9 @@ To illustrate the results, Figure \ref{figpdl} shows both predicted (in red) and
 
 %\pagebreak
 \subsubsection{Results on mandibles}
-As mentioned in previous work \cite{le2017maelab}, the mandible images have been analyzed with the help of a pipeline based on the segmentation step. We have wanted to evaluate the performance of EB-Net on this dataset. It is worth to note that the fine-tuning process has been also applied for this experiment in the same way than other parts: pre-training EB-Net with the facial key-points dataset and transferring the parameter values to fine-tune on mandibles.
+As mentioned in previous work \cite{le2017maelab}, the mandible images have been analyzed with the help of a pipeline based on the segmentation step. We have evaluated the performances of EB-Net on this dataset. It is worth to note that the fine-tuning process has been applied for this experiment in the same way than the other parts: pre-training EB-Net with the facial key-points dataset and transferring the parameter values to fine-tune on mandibles.
 
-Figure \ref{figchartavgCompare} shows the comparison of average distance at each landmark position between the obtained results of two methods (deep learning and image processing methods). The red curves illustrate the average distances which have been obtained from image processing technique while the blue curves present the results of fine-tuning process. To achieve the comparison, the obtained values in \cite{le2017maelab} have been re-computed to match the new size of the images by scaling these errors (distances) with the same ratio that we have used to down-sample images. Then, the average value has been computed for each landmark’s position.
+To achieve the comparison, the obtained values in \cite{le2017maelab} have been re-computed to match the new size of the images by scaling these errors (distances) with the same ratio that we have used to down-sample images. Then, the average value has been computed for each landmark’s position. Figure \ref{figchartavgCompare} shows the comparison of average distance at each landmark position between the obtained results of the two methods (deep learning and image processing methods). The red curves illustrate the average distances which have been obtained from image processing technique while the blue curves present the results of fine-tuning process. 
 
 \begin{figure}[h!]
     \centering
@@ -469,25 +472,23 @@ Figure \ref{figchartavgCompare} shows the comparison of average distance at each
     \label{figchartavgCompare}
 \end{figure}
 
-For the right mandible (Figure \ref{figchartavgComparemd}), some first landmarks (from $1^{st}$ to $6^{th}$) have been well-predicted by the pipeline of image processing techniques. They are illustrated by the small average values in the chart (from $2.07$ pixels to $9.73$ pixels). However, these values begin increasing from the $7^{th}$ landmark and peak at the $14^{th}$ position. The reason is the first group of landmarks is mainly concentrated on the tip of the mandible where we can obtain the precise segmentation, while the others are on the base and we can encounter some difficulties to get the segment contours. For the fine-tuning process, the obtained values are more stable. Except the first position, all other distances are better than the previous results.
+For the right mandible (Figure \ref{figchartavgComparemd}), EB-Net has got better results than the image processing pipeline for all landmarks (except the first one). One can notice that the first position represent the tip of the shape, and it is easy to detect after a segmentation step. EB-Net works without segmentation, it is why the result for this point is similar to the other ones. Moreover, it is clear that the results of EB-Net exhibit of less variation than the previous method. For the left mandible (Figure \ref{figchartavgComparemg}), the pipeline has provided the worst results than for the right one. The hypothesis has been given that the size of this part varies more than the right one. On the opposite side, we can observe that EB-Net has produced results similar to the right one.
 
-For the left mandible (Figure \ref{figchartavgComparemg}), we obtain the similar situation than the right one. The obtained average values are more stable and better than the results coming from previous method (except the first one). One can note that the left mandibles are more difficult to process than the right ones by using image processing technique as discussed in \cite{le2017maelab}. The proof is that the values of the precise predictions (between $1^{st}$ and $8^{th}$) in the left mandibles are higher than the right ones. With the help of fine-tuning process, these values become more stable and are significantly improved. Almost results have been improved even the cases are difficult to predict with image processing. Remarkably, it has also reduced the range between the highest and the lowest values in both of two sets, for example, it has decreased the different values from $6.85/ 7.66$ pixels to $2.17/ 2.13$ pixels for the left and right mandibles, respectively.
-
-
-
-
-% Remarkably, the fine-tuning has a great improvement at the positions located at parts that are hard to extract the contours. More, these results are stable on every landmark position. with image processing techniques, some first landmarks (from $1^{st}$ to $6^{th}$) have been well-predicted, which illustrated by small average values in the chart. However, these values begin to increase from the $7^{th}$ landmark. The reason is that the first group of events is mainly concentrated on the tip of the mandible where we can obtain the precise segmentation, while others are on the base where we can meet some difficulties to get the segment contours. For the fine-tuning process, the obtained values are more stable. Although some first values can be approximate or larger (from $2^{nd}$ to $7^{th}$ positions), other ones are better than the previous results (after $7^{th}$ position). Remarkably, the fine-tuning has a great improvement at the positions located at parts that are hard to extract the contours. More, these results are stable on every landmark position. 
+To summarize, the average value at each landmark position is better than the previous ones in both two cases: left and right mandibles, with the help of the fine-tuning process. The predictions are more stable and significantly improved: it has reduced the range between the highest and the lowest values in both of two sets, for example, from $6.85/ 7.66$ pixels to $2.17/ 2.13$ pixels for the left and right mandibles, respectively.
 
 \section{Discussion}
-In this work, we have proposed the elementary block as the based to build the CNN for predicting landmarks. It is worth to note that our block is a generic one. It is easy to add it, easy to test the model, even to remove a block from the model if the results are not satisfying. The users can choose suitable blocks for their applications. Choosing the number of blocks depends on the computing resources, as well as the expected results. For example, we have tried to add a new elementary block to EB-Net. The experiments have shown that the results have been improved, but we have spent more resources and computing times to reach this improvement. The average distances have been improved $0.5$ pixels. However, this change is insignificant if we show it on the images. Consequently, we need to note that it exists a balance between the depth of the model, the accuracy of outputs and the cost to compute.
+This work has addressed a complex task in digital biology: automatized landmarks setting. We show that a neural network with a relevant architecture can provide an outstanding quality of results with reducing the number of steps. Our model, EB-Net, is one of them. The obtained results have pointed out that EB-Net easy to work on a limited number of images, and simply to improve results by fine-tuning the parameter values obtained from pre-training on another dataset.
 
-\textbf{TODO}: on biological part.
+%This work has addressed a complex task in digital biology: automatized landmarks setting. We show that a neural network with a relevant architecture can provide a high quality of results with reducing the number of steps. If training a network remains a costly operation, utilizing it is not time-consuming nor spends so much memory.
+%Our model, EB-Net, has been built from elementary blocks and used to provide the landmarks on beetle images by applying two scenarios: training from scratch and fine-tuning process. The results have shown that our network architecture has worked effectively for predicting the landmarks. One can note that the model is independent of the segmentation step, it has analyzed the raw image through a sequence of elementary blocks before providing the location of landmarks. Moreover, the predictions have figured out that we have obtained better results with the help of the fine-tuning process. This point out that EB-Net is easy to work on a limited number of images, and simply to improve results by fine-tuning the parameter values obtained from pre-training on another dataset. It also shows the obtained results are more stable than the pipeline of image processing techniques.
 
-\section{Conclusion and future works}
-%With beetle mandibles images, the object is easy to segment and we have succeeded to determine the landmarks automatically. In opposite, the pronotum images are difficult to segment. Methods which not suppose to be based on segmentation are necessary. 
-In this article, we have presented a convolutional neural network, EB-Net, for automatic detection landmarks on the pronotum, the head, and the elytra of beeltes after testing several models. It includes three times repeated structure which consists of a convolutional layer, a max pooling layer, and a dropout layer, followed by the connected layers. In the first step, the EB-Net has been separately trained on each part of beetles. In order to improve the results, the fine-tuning process has been applied by pre-training EB-Net on a facial keypoints dataset before transfering the parameter values to fine-tune on each set of images.
+One can note that the elementary block that we used to build EB-Net, is a generic one. It is easy to add it, easy to test the model, even to remove a block from the model if the results are not satisfying. The users can select the suitable number of blocks for their applications depending on the computing resources, as well as the expected results. For example, we have tried to add a new elementary block to EB-Net. The experiments have shown that the results have been improved, but we have spent more resources and computing times to reach this improvement. The average distances have been improved $0.5$ pixels. However, this change is insignificant if we show it on the images. Consequently, we need to note that it exists a balance between the depth of the model, the accuracy of outputs and the cost to compute.
+% Remarkably, the fine-tuning has a great improvement at the positions located at parts that are hard to extract the contours. More, these results are stable on every landmark position. with image processing techniques, some first landmarks (from $1^{st}$ to $6^{th}$) have been well-predicted, which illustrated by small average values in the chart. However, these values begin to increase from the $7^{th}$ landmark. The reason is that the first group of events is mainly concentrated on the tip of the mandible where we can obtain the precise segmentation, while others are on the base where we can meet some difficulties to get the segment contours. For the fine-tuning process, the obtained values are more stable. Although some first values can be approximate or larger (from $2^{nd}$ to $7^{th}$ positions), other ones are better than the previous results (after $7^{th}$ position). Remarkably, the fine-tuning has a great improvement at the positions located at parts that are hard to extract the contours. More, these results are stable on every landmark position. 
 
-The results have been evaluated by calculating the distance between manual landmarks and predicted ones. These results on the three parts have shown that using CNN to predict the landmarks on biological images leads to satisfying results without need for segmentation step on studied object. The best set of predicted landmarks has been obtained after a step of fine-tuning step. These results have been delivered to biologists and they have confirmed that the quality of prediction allows using estimated landmarks to replace the manual ones.
+\section{Conclusion}
+In this article, we have presented a convolutional neural network, EB-Net, for automatic detection of landmarks on biological species. It is based on three times repeated of a generic block followed by the connected layers. The block consists of a convolutional layer, a max pooling layer, and a dropout layer. In the first step, the EB-Net has been separately trained on each part of beetles. In order to improve the results, the fine-tuning process has been added by pre-training EB-Net on a facial keypoints dataset before transfering the parameter values to fine-tune on each set of images.
+
+The results have been evaluated by calculating the distance between manual landmarks and predicted ones. These results have shown that using CNN to predict the landmarks on biological images leads to satisfying results without need for segmentation step on the studied objects. These results have been valided by biologists that our model could be used to replace the manual task.
 
 In future, we plan to test our model on different datasets owned by the INRA team. All the implementations, EB-Net model and EB-Net parameters, are available freely on the Github website. It is possible to reuse EB-Net parameters for another landmark setting application and to apply transfer learning. We plan also to export EB-Net architecture to other application domains stuided in our team such as MRI images analysis, pose identification.
 
@@ -505,6 +506,22 @@ In future, we plan to test our model on different datasets owned by the INRA tea
 
 \end{document}
 
+
+%In this work, we have proposed a CNN network architecture for predicting landmarks in beetle images. The model is based on the concept of elementary block including a CONV layer, a Max POOL layer, and a Dropout layer. 
+
+%With beetle mandibles images, the object is easy to segment and we have succeeded to determine the landmarks automatically. In opposite, the pronotum images are difficult to segment. Methods which not suppose to be based on segmentation are necessary. 
+
+
+
+
+%For the right mandible (Figure \ref{figchartavgComparemd}), some first landmarks (from the $1^{st}$ to the $6^{th}$) have been well-predicted by the pipeline of image processing techniques. They are illustrated by the small average values in the chart (from $2.07$ pixels to $9.73$ pixels). However, these values begin increasing from the $7^{th}$ landmark and peak at the $14^{th}$ position. The reason is the first group of landmarks is mainly concentrated on the tip of the mandible where we can obtain the precise segmentation, while the others are on the base and we can encounter some difficulties to get the segment contours. For the fine-tuning process, all distances are better than the previous results (except the first one). The obtained values are more stable, and the variants between the results are not so large as in the previous one.
+
+%For the left mandible (Figure \ref{figchartavgComparemg}), we obtain the similar situation than the right one. The obtained average values are more stable and better than the results coming from previous method (except the first one). One can note that the left mandibles are more difficult to process than the right ones by using image processing technique as discussed in \cite{le2017maelab}. The proof is that the values of the precise predictions (between $1^{st}$ and $8^{th}$) in the left mandibles are higher than the right ones. 
+
+\section{Discussion}
+In this work, we have proposed the elementary block as the based to build the CNN for predicting landmarks. It is worth to note that our block is a generic one. It is easy to add it, easy to test the model, even to remove a block from the model if the results are not satisfying. The users can choose suitable blocks for their applications. Choosing the number of blocks depends on the computing resources, as well as the expected results. For example, we have tried to add a new elementary block to EB-Net. The experiments have shown that the results have been improved, but we have spent more resources and computing times to reach this improvement. The average distances have been improved $0.5$ pixels. However, this change is insignificant if we show it on the images. Consequently, we need to note that it exists a balance between the depth of the model, the accuracy of outputs and the cost to compute.
+
+\textbf{TODO}: on biological part.
 
 As mentioned in section \ref{subsec21}, the mandible images have been taken after dissection, whereas the images of other parts have been captured before this process. In \cite{le2017maelab}, we have proposed a pipeline based on the segmentation step and applied to mandible images. The results have shown the pipeline has worked efficiently to provide the automatic landmarks on mandibles, but it could not be applied on the three parts of beetle: pronotum, head and elytra. It is why we have turned to utilize the CNN model for these three parts. In this experiment, we would like checking that if CNN work well to predict the landmark on mandible images. We have applied the fine-tuning process to mandible images in the same way than other parts. Then, we compare the obtained results between the two processes (fine-tuning and pipeline in \cite{le2017maelab}). 
 
