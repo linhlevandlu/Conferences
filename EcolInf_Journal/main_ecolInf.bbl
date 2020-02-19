@@ -93,11 +93,8 @@ B.~Kromp,
 T.~Eldred, C.~Meloro, C.~Scholtz, D.~Murphy, K.~Fincken, M.~Hayward,
   \href{https://link.springer.com/article/10.1007/s13127-016-0289-z}{Does size
   matter for horny beetles? {A} geometric morphometric analysis of
-  interspecific and intersexual size and shape variation in
-  {\textless}{Emphasis} {Type}="{Italic}"{\textgreater}{Colophon}
-  haughtoni{\textless}/{Emphasis}{\textgreater} {Barnard}, 1929, and
-  {\textless}{Emphasis} {Type}="{Italic}"{\textgreater}{C}.
-  kawaii{\textless}/{Emphasis}{\textgreater} {Mizukami}, 1997 ({Coleoptera}:
+  interspecific and intersexual size and shape variation in {Colophon}
+  haughtoni{Barnard}, 1929, and {C}. kawaii {Mizukami}, 1997 ({Coleoptera}:
   {Lucanidae})}, Organisms Diversity \& Evolution 16~(4) (2016) 821--833.
 \newblock \href {http://dx.doi.org/10.1007/s13127-016-0289-z}
   {\path{doi:10.1007/s13127-016-0289-z}}.
@@ -254,16 +251,6 @@ V.~L. LE, M.~BEURTON-AIMAR, A.~KR{\"A}HENB{\"U}HL, N.~PARISEY,
   Conference in Central Europe on Computer Graphics, Visualization and Computer
   Vision'2017, Plzen, Czech Republic, 2017.
 \newline\urlprefix\url{https://hal.archives-ouvertes.fr/hal-01571440}
-
-\bibitem{ibragimov2012game}
-B.~Ibragimov, B.~Likar, F.~Pernus, et~al., A game-theoretic framework for
-  landmark-based image segmentation, IEEE Transactions on Medical Imaging
-  31~(9) (2012) 1761--1776.
-
-\bibitem{donner2013global}
-R.~Donner, B.~H. Menze, H.~Bischof, G.~Langs, Global localization of 3d
-  anatomical structures by pre-filtered hough forests and discrete
-  optimization, Medical image analysis 17~(8) (2013) 1304--1314.
 
 \bibitem{sun2013deep}
 Y.~Sun, X.~Wang, X.~Tang, Deep convolutional network cascade for facial point
