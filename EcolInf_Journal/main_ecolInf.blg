@@ -4,45 +4,45 @@ The top-level auxiliary file: main_ecolInf.aux
 The style file: elsarticle-num.bst
 Database file #1: includes/references.bib
 Warning--empty pages in le2017maelab
-You've used 52 entries,
+You've used 53 entries,
             2937 wiz_defined-function locations,
-            985 strings with 17234 characters,
-and the built_in function-call counts, 18681 in all, are:
-= -- 1755
-> -- 667
+            992 strings with 17367 characters,
+and the built_in function-call counts, 18973 in all, are:
+= -- 1786
+> -- 674
 < -- 17
-+ -- 257
-- -- 205
-* -- 1332
-:= -- 2456
-add.period$ -- 63
-call.type$ -- 52
-change.case$ -- 49
++ -- 260
+- -- 207
+* -- 1355
+:= -- 2495
+add.period$ -- 64
+call.type$ -- 53
+change.case$ -- 50
 chr.to.int$ -- 0
-cite$ -- 53
-duplicate$ -- 634
-empty$ -- 2070
-format.name$ -- 246
-if$ -- 4843
+cite$ -- 54
+duplicate$ -- 642
+empty$ -- 2102
+format.name$ -- 249
+if$ -- 4917
 int.to.chr$ -- 0
-int.to.str$ -- 52
-missing$ -- 54
-newline$ -- 186
-num.names$ -- 52
-pop$ -- 379
+int.to.str$ -- 53
+missing$ -- 55
+newline$ -- 189
+num.names$ -- 53
+pop$ -- 384
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1207
+skip$ -- 1224
 stack$ -- 0
-substring$ -- 1142
-swap$ -- 222
+substring$ -- 1167
+swap$ -- 223
 text.length$ -- 17
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 1
-while$ -- 149
-width$ -- 54
-write$ -- 466
+while$ -- 152
+width$ -- 55
+write$ -- 474
 (There was 1 warning)

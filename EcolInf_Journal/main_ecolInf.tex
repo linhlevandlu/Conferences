@@ -63,7 +63,7 @@
 
 
 %% Group authors per affiliation:
-\author[labri]{Le Van Linh\corref{cor1}}
+\author[labri,inria]{Le Van Linh\corref{cor1}}
 \ead{van-linh.le@labri.fr}
 \author[labri]{Beurton-Aimar Marie\fnref{ba}}
 \ead{beurton@labri.fr}
@@ -80,6 +80,7 @@
 %% %% or include affiliations in footnotes:
 \address[labri]{LaBRI - University of Bordeaux, UMR 5800, 351, cours de la Liberation, 33405 Talence, France}
 \address[igepp]{UMR 1349 IGEPP, BP 35327, 35653 Le Rheu, France}
+\address[inria]{INRIA Bordeaux Sud-Ouest, 200, avenue de la Vieille Tour, 33405 Talence, France}
 %% \ead[url]{www.elsevier.com}
 %\address[itdlu]{Dalat University, Dalat, Lamdong, Vietnam}
 %% \cortext[mycorrespondingauthor]{Corresponding author}
@@ -89,9 +90,9 @@
 %% \address[mysecondaryaddress]{360 Park Avenue South, New York}
 
 \begin{abstract}
-Landmark is one of the important concepts in morphometry analysis. Setting landmarks is not only used to measure the shape of the object but is also applied to analyze the inter-organisms variations. Currently, the landmarks are mostly determined manually by the biologists.
-In this work, we propose a method to automatically predict the landmarks on biological images: Deep Learning, more specifically Convolutional Neural Network. We proposed a CNN architecture which was built from the module, so-called ``elementary blocks". Each block was made up of some popular layers of CNN. This work has been also introduced a procedure to augment number of images in our dataset which can see a little bit small in our case to apply deep learning methods. 
-The network then trained and tested on a dataset includes three parts of beetle (pronotum, head and elytra). In the experiments, we applied two strategies to evaluate the network and to improve the obtained results: training from scratch and applying a fine-tuning step. The predicted landmarks from the network have been compared with the manual landmarks which provided by the biologists. The obtained results have proved that the predicted landmarks were considered to be statistically good enough to replace the manual landmarks.
+Landmarks are one of the important concepts in morphometry analysis. They are morphological points that can be located precisely (e.g. corner of the eyes) and used to establish correspondence or divergence among morphology of biological specimens. Currently, the landmarks are mostly positionned manually by entomologists on numerical images.
+In this work, we propose a method to automatically predict the landmarks on entomological images : Deep Learning, more specifically Convolutional Neural Network. We propose a CNN architecture which was built in a modular way using so-called ``elementary blocks", each made up of some popular layers of CNN. After using a custom data augmentation procedure, 
+the network was trained and tested on a dataset of different anatomical part of carabids (pronotum, head and elytra). In this numerical experiment, we applied two strategies to evaluate the network and to improve the obtained results: training from scratch or applying a fine-tuning step. The predicted landmarks from the network have been compared with the manual landmarks provided by the biologists. The obtained predicted landmarks were considered to be statistically good enough to replace the manual landmarks.
 \end{abstract}
 
 \begin{keyword}
@@ -477,7 +478,29 @@ For the right mandible (Figure \ref{figchartavgComparemd}), EB-Net has got bette
 
 To summarize, the average value at each landmark position is better than the previous ones in both two cases: left and right mandibles, with the help of the fine-tuning process. The predictions are more stable and significantly improved: it has reduced the range between the highest and the lowest values in both of two sets, for example, from $6.85/ 7.66$ pixels to $2.17/ 2.13$ pixels for the left and right mandibles, respectively.
 
-\subsection{Discussion}
+\subsubsection{Predicted shapes : comparing 'from-scratch' to fine-tuning}
+
+We have measured shape covariations between predicted landmarks and manual ones \cite{rohlf_use_2000}, assessing the performance of fine-tuned and `from scratch' networks (described previously) on each anatomical parts. The shape covariation is expressed as a correlation coefficient and an associated p-value.
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{| c || c | c | c | c |}
+		\hline
+		  & \multicolumn{2}{ c |}{From scratch}  & \multicolumn{2}{ c |}{Fine-tune} \\ \cline{2-5}
+		  & cor & p-value & cor. & p-v. \\ \hline
+		\textbf{Pronotum} & 0.4118 & 0.001 & 0.7424 & 0.001 \\ \hline 
+		\textbf{Head} & 0.5145 & 0.001 & 0.7337 & 0.001 \\ \hline 
+		\textbf{Elytra} & 0.2513 & 0.407 & 0.3025 & 0.069 \\ \hline 
+		\textbf{Left mandible} & 0.2666 & 0.173 & 0.3112 & 0.057 \\ \hline 
+		\textbf{Right mandible} & 0.3071 & 0.239 & 0.4597 & 0.002 \\ \hline 
+	\end{tabular}
+	\caption{Shape covariation between predicted and manual landmarks : shape covariation as a correlation (cor.) and an associated p-values (p-v.) }
+	\label{tblfsft_comparing}
+\end{table}
+
+We can see from table \ref{tblfsft_comparing} that shape correlations varies between $0.2513$ and $0.7424$ and that $5$ out of $10$ of them are statistically significant (i.e. p-value $< 0.05$). For all the anatomical parts, the fine-tuning improved the shape correlations. For all the correlations with  p-values $> 0.05$, the fine tuning improved at the same time the correlation strength and the statistical significance. Best results are obtained for fine-tuned networks predicting pronotum's and head's  landmarks with high significant correlations, $0.7224$ and $0.7337$ respectively. Right mandible predictions by fine tuned network is also of interest with a mild correlation ($0.4597$) but still significant (p-value $= 0.002$). We end up with a majority ($\frac{3}{5}$) of anatomical parts were the predicted landmarks are good candidate for replacing manual ones in any procrustes regressions.
+
+\section{Discussion and perspectives}
 %This work has addressed a complex task in digital biology: automatized landmarks setting. We show that a neural network with a relevant architecture can provide an outstanding quality of results with reducing the number of steps. Our model, EB-Net, is one of them. The obtained results have pointed out that EB-Net easy to work on a limited number of images, and simply to improve results by fine-tuning the parameter values obtained from pre-training on another dataset.
 
 %This work has addressed a complex task in digital biology: automatized landmarks setting. We show that a neural network with a relevant architecture can provide a high quality of results with reducing the number of steps. If training a network remains a costly operation, utilizing it is not time-consuming nor spends so much memory.
@@ -509,6 +532,32 @@ In future, we plan to test our model on different datasets owned by the INRA tea
 \bibliography{includes/references}
 
 \end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 %In this work, we have proposed a CNN network architecture for predicting landmarks in beetle images. The model is based on the concept of elementary block including a CONV layer, a Max POOL layer, and a Dropout layer. 

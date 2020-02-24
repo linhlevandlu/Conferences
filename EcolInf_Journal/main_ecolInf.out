@@ -12,5 +12,6 @@
 \BOOKMARK [3][-]{subsubsection.3.2.2}{Fine-tuning on beetle images}{subsection.3.2}% 12
 \BOOKMARK [3][-]{subsubsection.3.2.3}{Fine-tuning results}{subsection.3.2}% 13
 \BOOKMARK [3][-]{subsubsection.3.2.4}{Results on mandibles}{subsection.3.2}% 14
-\BOOKMARK [2][-]{subsection.3.3}{Discussion}{section.3}% 15
-\BOOKMARK [1][-]{section.4}{Conclusion}{}% 16
+\BOOKMARK [3][-]{subsubsection.3.2.5}{Predicted shapes : comparing 'from-scratch' to fine-tuning}{subsection.3.2}% 15
+\BOOKMARK [1][-]{section.4}{Discussion and perspectives}{}% 16
+\BOOKMARK [1][-]{section.5}{Conclusion}{}% 17
