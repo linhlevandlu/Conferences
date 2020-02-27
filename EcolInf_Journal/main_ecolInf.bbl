@@ -316,4 +316,64 @@ S.~Lin, Z.~Zhao, F.~Su, Homemade ts-net for automatic face recognition, in:
 F.~J. Rohlf, M.~Corti, Use of two-block partial least-squares to study
   covariation in shape, Syst. Biol. 49~(4) (2000) 740--753.
 
+\bibitem{goodall_procrustes_1991}
+C.~Goodall,
+  \href{https://rss.onlinelibrary.wiley.com:443/doi/abs/10.1111/j.2517-6161.1991.tb01825.x}{Procrustes
+  {Methods} in the {Statistical} {Analysis} of {Shape}}, Journal of the Royal
+  Statistical Society: Series B (Methodological) 53~(2) (1991) 285--321.
+\newblock \href {http://dx.doi.org/10.1111/j.2517-6161.1991.tb01825.x}
+  {\path{doi:10.1111/j.2517-6161.1991.tb01825.x}}.
+\newline\urlprefix\url{https://rss.onlinelibrary.wiley.com:443/doi/abs/10.1111/j.2517-6161.1991.tb01825.x}
+
+\bibitem{collyer_method_2015}
+M.~L. Collyer, D.~J. Sekora, D.~C. Adams,
+  \href{http://www.nature.com/doifinder/10.1038/hdy.2014.75}{A method for
+  analysis of phenotypic change for phenotypes described by high-dimensional
+  data}, Heredity 115~(4) (2015) 357--365.
+\newblock \href {http://dx.doi.org/10.1038/hdy.2014.75}
+  {\path{doi:10.1038/hdy.2014.75}}.
+\newline\urlprefix\url{http://www.nature.com/doifinder/10.1038/hdy.2014.75}
+
+\bibitem{palaniswamy_automatic_2010}
+S.~Palaniswamy, N.~Thacker, C.~Klingenberg,
+  \href{http://digital-library.theiet.org/content/journals/10.1049/iet-cvi.2009.0014}{Automatic
+  identification of landmarks in digital images}, IET Computer Vision 4~(4)
+  (2010) 247.
+\newblock \href {http://dx.doi.org/10.1049/iet-cvi.2009.0014}
+  {\path{doi:10.1049/iet-cvi.2009.0014}}.
+\newline\urlprefix\url{http://digital-library.theiet.org/content/journals/10.1049/iet-cvi.2009.0014}
+
+\bibitem{cintas_automatic_2017}
+C.~Cintas, M.~Quinto-Sánchez, V.~Acuña, C.~Paschetta, S.~de~Azevedo, C.~Cesa
+  r Silva~de Cerqueira, V.~Ramallo, C.~Gallo, G.~Poletti, M.~C. Bortolini,
+  S.~Canizales-Qui~nteros, F.~Rothhammer, G.~Bedoya, A.~Ruiz-Linares,
+  R.~Gonzalez-José, C.~o. Delrieux,
+  \href{http://digital-library.theiet.org/content/journals/10.1049/iet-bmt.2016.0002}{Automatic
+  ear detection and feature extraction using {Geometric} {Morphometrics} and
+  convolutional neural networks}, IET Biometrics 6~(3) (2017) 211--223.
+\newblock \href {http://dx.doi.org/10.1049/iet-bmt.2016.0002}
+  {\path{doi:10.1049/iet-bmt.2016.0002}}.
+\newline\urlprefix\url{http://digital-library.theiet.org/content/journals/10.1049/iet-bmt.2016.0002}
+
+\bibitem{vandaele_landmark_2018}
+R.~Vandaele, J.~Aceto, M.~Muller, F.~Péronnet, V.~Debat, C.-W. Wang, C.-T.
+  Huang, S.~Jodogne, P.~Martinive, P.~Geurts, R.~Marée,
+  \href{http://www.nature.com/articles/s41598-017-18993-5}{Landmark detection
+  in 2d bioimages for geometric morphometrics: a multi-resolution tree-based
+  approach}, Scientific Reports 8~(1).
+\newblock \href {http://dx.doi.org/10.1038/s41598-017-18993-5}
+  {\path{doi:10.1038/s41598-017-18993-5}}.
+\newline\urlprefix\url{http://www.nature.com/articles/s41598-017-18993-5}
+
+\bibitem{dai_locating_2019}
+X.~Dai, H.~Zhao, T.~Liu, D.~Cao, L.~Xie, Locating {Anatomical} {Landmarks} on
+  2d {Lateral} {Cephalograms} {Through} {Adversarial} {Encoder}-{Decoder}
+  {Networ ks}, IEEE Access 7 (2019) 132738--132747.
+\newblock \href {http://dx.doi.org/10.1109/ACCESS.2019.2940623}
+  {\path{doi:10.1109/ACCESS.2019.2940623}}.
+
+\bibitem{elsken_neural_2019}
+T.~Elsken, J.~H. Metzen, F.~Hutter, Neural {Architecture} {Search}: {A}
+  {Survey}, Journal of Machine Learning Research 20~(55) (2019) 1--21.
+
 \end{thebibliography}
