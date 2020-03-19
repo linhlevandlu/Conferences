@@ -9,8 +9,7 @@
 C.~P. Klingenberg, \href{https://www.nature.com/articles/nrg2829}{Evolution and
   development of shape: integrating quantitative approaches}, Nature Reviews
   Genetics 11~(9) (2010) 623--635.
-\newblock \href {http://dx.doi.org/10.1038/nrg2829}
-  {\path{doi:10.1038/nrg2829}}.
+\newblock \href {https://doi.org/10.1038/nrg2829} {\path{doi:10.1038/nrg2829}}.
 \newline\urlprefix\url{https://www.nature.com/articles/nrg2829}
 
 \bibitem{sasakawa_utility_2016}
@@ -20,7 +19,7 @@ K.~Sasakawa,
   morphology in insects: tests with larval {Carabidae} ({Insecta}:
   {Coleoptera})}, Biological Journal of the Linnean Society 118~(2) (2016)
   394--409.
-\newblock \href {http://dx.doi.org/10.1111/bij.12727}
+\newblock \href {https://doi.org/10.1111/bij.12727}
   {\path{doi:10.1111/bij.12727}}.
 \newline\urlprefix\url{https://academic.oup.com/biolinnean/article/118/2/394/2194832}
 
@@ -29,7 +28,7 @@ L.~Raymond, A.~Vialatte, M.~Plantegenest,
   \href{http://onlinelibrary.wiley.com/doi/10.1890/ES14-00075.1/abstract}{Combination
   of morphometric and isotopic tools for studying spring migration dynamics in
   {Episyrphus} balteatus}, Ecosphere 5~(7) (2014) 1--16.
-\newblock \href {http://dx.doi.org/10.1890/ES14-00075.1}
+\newblock \href {https://doi.org/10.1890/ES14-00075.1}
   {\path{doi:10.1890/ES14-00075.1}}.
 \newline\urlprefix\url{http://onlinelibrary.wiley.com/doi/10.1890/ES14-00075.1/abstract}
 
@@ -37,7 +36,7 @@ L.~Raymond, A.~Vialatte, M.~Plantegenest,
 D.~G. Kendall,
   \href{https://www.cambridge.org/core/journals/advances-in-applied-probability/article/diffusion-of-shape/7CFF1175D4DCCF6063E403847120BE7B}{The
   diffusion of shape}, Advances in Applied Probability 9~(3) (1977) 428--430.
-\newblock \href {http://dx.doi.org/10.1017/S0001867800028743}
+\newblock \href {https://doi.org/10.1017/S0001867800028743}
   {\path{doi:10.1017/S0001867800028743}}.
 \newline\urlprefix\url{https://www.cambridge.org/core/journals/advances-in-applied-probability/article/diffusion-of-shape/7CFF1175D4DCCF6063E403847120BE7B}
 
@@ -46,7 +45,7 @@ F.~L. Bookstein,
   \href{http://www.annualreviews.org/doi/10.1146/annurev.es.13.110182.002315}{Foundations
   of {Morphometrics}}, Annual Review of Ecology and Systematics 13~(1) (1982)
   451--470.
-\newblock \href {http://dx.doi.org/10.1146/annurev.es.13.110182.002315}
+\newblock \href {https://doi.org/10.1146/annurev.es.13.110182.002315}
   {\path{doi:10.1146/annurev.es.13.110182.002315}}.
 \newline\urlprefix\url{http://www.annualreviews.org/doi/10.1146/annurev.es.13.110182.002315}
 
@@ -55,7 +54,7 @@ F.~J. Rohlf,
   \href{https://academic.oup.com/sysbio/article-lookup/doi/10.1080/106351598261094}{On
   {Applications} of {Geometric} {Morphometrics} to {Studies} of {Ontogeny} and
   {Phylogeny}}, Systematic Biology 47~(1) (1998) 147--158.
-\newblock \href {http://dx.doi.org/10.1080/106351598261094}
+\newblock \href {https://doi.org/10.1080/106351598261094}
   {\path{doi:10.1080/106351598261094}}.
 \newline\urlprefix\url{https://academic.oup.com/sysbio/article-lookup/doi/10.1080/106351598261094}
 
@@ -64,14 +63,14 @@ D.~C. Adams, E.~Otárola-Castillo,
   \href{http://onlinelibrary.wiley.com/doi/10.1111/2041-210X.12035/abstract}{geomorph:
   an r package for the collection and analysis of geometric morphometric shape
   data}, Methods in Ecology and Evolution 4~(4) (2013) 393--399.
-\newblock \href {http://dx.doi.org/10.1111/2041-210X.12035}
+\newblock \href {https://doi.org/10.1111/2041-210X.12035}
   {\path{doi:10.1111/2041-210X.12035}}.
 \newline\urlprefix\url{http://onlinelibrary.wiley.com/doi/10.1111/2041-210X.12035/abstract}
 
 \bibitem{klingenberg_morphoj:_2011}
 C.~P. Klingenberg, {MorphoJ}: an integrated software package for geometric
   morphometrics, Molecular Ecology Resources 11~(2) (2011) 353--357.
-\newblock \href {http://dx.doi.org/10.1111/j.1755-0998.2010.02924.x}
+\newblock \href {https://doi.org/10.1111/j.1755-0998.2010.02924.x}
   {\path{doi:10.1111/j.1755-0998.2010.02924.x}}.
 
 \bibitem{larochelle_1990}
@@ -85,7 +84,7 @@ B.~Kromp,
   beetles in sustainable agriculture: a review on pest control efficacy,
   cultivation impacts and enhancement}, Agriculture, Ecosystems \& Environment
   74~(1) (1999) 187--228.
-\newblock \href {http://dx.doi.org/10.1016/S0167-8809(99)00037-7}
+\newblock \href {https://doi.org/10.1016/S0167-8809(99)00037-7}
   {\path{doi:10.1016/S0167-8809(99)00037-7}}.
 \newline\urlprefix\url{http://www.sciencedirect.com/science/article/pii/S0167880999000377}
 
@@ -96,7 +95,7 @@ T.~Eldred, C.~Meloro, C.~Scholtz, D.~Murphy, K.~Fincken, M.~Hayward,
   interspecific and intersexual size and shape variation in {Colophon}
   haughtoni{Barnard}, 1929, and {C}. kawaii {Mizukami}, 1997 ({Coleoptera}:
   {Lucanidae})}, Organisms Diversity \& Evolution 16~(4) (2016) 821--833.
-\newblock \href {http://dx.doi.org/10.1007/s13127-016-0289-z}
+\newblock \href {https://doi.org/10.1007/s13127-016-0289-z}
   {\path{doi:10.1007/s13127-016-0289-z}}.
 \newline\urlprefix\url{https://link.springer.com/article/10.1007/s13127-016-0289-z}
 
@@ -284,9 +283,31 @@ G.~E. Hinton, N.~Srivastava, A.~Krizhevsky, I.~Sutskever, R.~R. Salakhutdinov,
 S.~Dieleman, J.~Schlüter, C.~Raffel, E.~Olson, S.~K. Sønderby, D.~Nouri,
   et~al., \href{http://dx.doi.org/10.5281/zenodo.27878}{Lasagne: First
   release.} (Aug. 2015).
-\newblock \href {http://dx.doi.org/10.5281/zenodo.27878}
+\newblock \href {https://doi.org/10.5281/zenodo.27878}
   {\path{doi:10.5281/zenodo.27878}}.
 \newline\urlprefix\url{http://dx.doi.org/10.5281/zenodo.27878}
+
+\bibitem{adams_geomorph_2013}
+D.~C. Adams, E.~Otárola‐Castillo,
+  \href{https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1111/2041-210X.12035}{geomorph:
+  an r package for the collection and analysis of geometric morphometric shape
+  data}, Methods in Ecology and Evolution 4~(4) (2013) 393--399.
+\newblock \href {https://doi.org/10.1111/2041-210X.12035}
+  {\path{doi:10.1111/2041-210X.12035}}.
+\newline\urlprefix\url{https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1111/2041-210X.12035}
+
+\bibitem{goodall_procrustes_1991}
+C.~Goodall,
+  \href{https://rss.onlinelibrary.wiley.com:443/doi/abs/10.1111/j.2517-6161.1991.tb01825.x}{Procrustes
+  {Methods} in the {Statistical} {Analysis} of {Shape}}, Journal of the Royal
+  Statistical Society: Series B (Methodological) 53~(2) (1991) 285--321.
+\newblock \href {https://doi.org/10.1111/j.2517-6161.1991.tb01825.x}
+  {\path{doi:10.1111/j.2517-6161.1991.tb01825.x}}.
+\newline\urlprefix\url{https://rss.onlinelibrary.wiley.com:443/doi/abs/10.1111/j.2517-6161.1991.tb01825.x}
+
+\bibitem{rohlf_use_2000}
+F.~J. Rohlf, M.~Corti, Use of two-block partial least-squares to study
+  covariation in shape, Syst. Biol. 49~(4) (2000) 740--753.
 
 \bibitem{olivas2009handbook}
 E.~S. Olivas, Handbook of Research on Machine Learning Applications and Trends:
@@ -312,25 +333,12 @@ S.~Lin, Z.~Zhao, F.~Su, Homemade ts-net for automatic face recognition, in:
   Proceedings of the 2016 ACM on International Conference on Multimedia
   Retrieval, ACM, 2016, pp. 135--142.
 
-\bibitem{rohlf_use_2000}
-F.~J. Rohlf, M.~Corti, Use of two-block partial least-squares to study
-  covariation in shape, Syst. Biol. 49~(4) (2000) 740--753.
-
-\bibitem{goodall_procrustes_1991}
-C.~Goodall,
-  \href{https://rss.onlinelibrary.wiley.com:443/doi/abs/10.1111/j.2517-6161.1991.tb01825.x}{Procrustes
-  {Methods} in the {Statistical} {Analysis} of {Shape}}, Journal of the Royal
-  Statistical Society: Series B (Methodological) 53~(2) (1991) 285--321.
-\newblock \href {http://dx.doi.org/10.1111/j.2517-6161.1991.tb01825.x}
-  {\path{doi:10.1111/j.2517-6161.1991.tb01825.x}}.
-\newline\urlprefix\url{https://rss.onlinelibrary.wiley.com:443/doi/abs/10.1111/j.2517-6161.1991.tb01825.x}
-
 \bibitem{collyer_method_2015}
 M.~L. Collyer, D.~J. Sekora, D.~C. Adams,
   \href{http://www.nature.com/doifinder/10.1038/hdy.2014.75}{A method for
   analysis of phenotypic change for phenotypes described by high-dimensional
   data}, Heredity 115~(4) (2015) 357--365.
-\newblock \href {http://dx.doi.org/10.1038/hdy.2014.75}
+\newblock \href {https://doi.org/10.1038/hdy.2014.75}
   {\path{doi:10.1038/hdy.2014.75}}.
 \newline\urlprefix\url{http://www.nature.com/doifinder/10.1038/hdy.2014.75}
 
@@ -339,7 +347,7 @@ S.~Palaniswamy, N.~Thacker, C.~Klingenberg,
   \href{http://digital-library.theiet.org/content/journals/10.1049/iet-cvi.2009.0014}{Automatic
   identification of landmarks in digital images}, IET Computer Vision 4~(4)
   (2010) 247.
-\newblock \href {http://dx.doi.org/10.1049/iet-cvi.2009.0014}
+\newblock \href {https://doi.org/10.1049/iet-cvi.2009.0014}
   {\path{doi:10.1049/iet-cvi.2009.0014}}.
 \newline\urlprefix\url{http://digital-library.theiet.org/content/journals/10.1049/iet-cvi.2009.0014}
 
@@ -351,7 +359,7 @@ C.~Cintas, M.~Quinto-Sánchez, V.~Acuña, C.~Paschetta, S.~de~Azevedo, C.~Cesa
   \href{http://digital-library.theiet.org/content/journals/10.1049/iet-bmt.2016.0002}{Automatic
   ear detection and feature extraction using {Geometric} {Morphometrics} and
   convolutional neural networks}, IET Biometrics 6~(3) (2017) 211--223.
-\newblock \href {http://dx.doi.org/10.1049/iet-bmt.2016.0002}
+\newblock \href {https://doi.org/10.1049/iet-bmt.2016.0002}
   {\path{doi:10.1049/iet-bmt.2016.0002}}.
 \newline\urlprefix\url{http://digital-library.theiet.org/content/journals/10.1049/iet-bmt.2016.0002}
 
@@ -361,7 +369,7 @@ R.~Vandaele, J.~Aceto, M.~Muller, F.~Péronnet, V.~Debat, C.-W. Wang, C.-T.
   \href{http://www.nature.com/articles/s41598-017-18993-5}{Landmark detection
   in 2d bioimages for geometric morphometrics: a multi-resolution tree-based
   approach}, Scientific Reports 8~(1).
-\newblock \href {http://dx.doi.org/10.1038/s41598-017-18993-5}
+\newblock \href {https://doi.org/10.1038/s41598-017-18993-5}
   {\path{doi:10.1038/s41598-017-18993-5}}.
 \newline\urlprefix\url{http://www.nature.com/articles/s41598-017-18993-5}
 
@@ -369,7 +377,7 @@ R.~Vandaele, J.~Aceto, M.~Muller, F.~Péronnet, V.~Debat, C.-W. Wang, C.-T.
 X.~Dai, H.~Zhao, T.~Liu, D.~Cao, L.~Xie, Locating {Anatomical} {Landmarks} on
   2d {Lateral} {Cephalograms} {Through} {Adversarial} {Encoder}-{Decoder}
   {Networ ks}, IEEE Access 7 (2019) 132738--132747.
-\newblock \href {http://dx.doi.org/10.1109/ACCESS.2019.2940623}
+\newblock \href {https://doi.org/10.1109/ACCESS.2019.2940623}
   {\path{doi:10.1109/ACCESS.2019.2940623}}.
 
 \bibitem{elsken_neural_2019}
