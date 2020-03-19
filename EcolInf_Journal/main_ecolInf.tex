@@ -194,7 +194,7 @@ Our initial trials were inspired by AlexNet architecture \cite{krizhevsky2012ima
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.42\textwidth]{images/eblock}
+	\includegraphics[width=0.5\textwidth]{images/eblock}
 	\caption{The components of an elementary block}
 	\label{figeblock}
 \end{figure}
@@ -228,6 +228,15 @@ In a CNN model, besides the model-specific parameters which involve the structur
 In order to provide the predicted landmarks for all images, we have applied cross-validation technique to select the test images, we will call a selection step is a round. For each round, we take $33$ images for testing step, the $260$ remaining images will be used to train and to validate the network model. It is worth to note that the set of $260$ images has been augmented by the strategies described in Section \ref{subsec21}, to provide $1820$ $(260 \times 7)$ images for training and validation steps. To achieve the cross-validation steps, we have to do $9$ rounds in total. 
 
 During the training and validation step, $1820$ images are randomly divided into training and validation sets with a ratio of $60\%:40\%$. In each training step, the pair of \textit{image} and \textit{its manual landmarks} is inputted to train the network model. In the testing step, we input the image only to the trained model to predict landmarks. In our cases, the manual landmarks have been given by the biologists. So, they can be used as ground truth to train the network, as well as to evaluate the predicted ones. 
+
+\subsection{Statistical evaluation of CNN predicted shapes}
+\label{subsec24}
+The quality of landmarks predicted by the network must be assessed in view of the desired usage for these predictions. It is quite frequent in geometric morphometrics to use the landmarks for subsequent procrustes regression \cite{adams_geomorph_2013} which is a method for  quantification of the relative amount of shape variation (among specimens) attributable to one or more factors in a linear model. 
+Before the regression step, a generalized procrustes analysis \cite{adams_geomorph_2013} translates all specimens related landmarks to the origin, scales them to unit-centroid size, and optimally rotates them until the coordinates of corresponding points align at best. The resulting aligned coordinates represent the shape of each specimen. Afterward, the procrustes distance between specimens (i.e. sum-of-squared distance between corresponding landmarks) can be used for regression purpose \cite{goodall_procrustes_1991}. 
+% One can note that using predicted landmarks instead of manual ones for procrustes regression will be a special case of Estimated Dependent Variable (EDV) models \cite{lewis_estimating_2005}. 
+The crucial step that we can take to ensure the validity of using predicted landmarks for procrustes regression is a measure of shape covariation between predicted and manual landmarks \cite{rohlf_use_2000}. 
+% This will be an insurance that the predicted procrustes distances are correlated between predicted and manula landmarks.
+This problem is related to constructing a latent variable of shape deformation and it goes further than studying, independently, each landmark correlation between predicted versus manual. Indeed, the landmarks are not independent to each other in their relative positions between specimens because they form a shape. Hence, we are looking for covariations between predicted and manual shapes that are positive, as high as possible  and statistically significant. 
 
 \section{Results}
 \label{sec3}
@@ -517,7 +526,7 @@ In this application, we focused on a carabid species which is linked to studies 
 So in the future, we plan to test our model on more  
 datasets that are linked to other ecological fields most notably invasive species and quarantine species (e.g. nematods). All the implementations, EB-Net model and EB-Net parameters, are available freely \footnote{\url{ https://github.com/linhlevandlu/cnnBeetles}}. It is possible to reuse EB-Net parameters for another landmark setting application and to apply transfer learning. We plan also to export EB-Net architecture to other application domains in biomedicsl imaging most notably MRI images analysis. 
 
-\section*{References}
+%\section*{References}
 
 \bibliography{includes/references}
 
