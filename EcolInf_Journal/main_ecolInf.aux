@@ -74,30 +74,30 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces An illustration of the beetle.\relax }}{4}{figure.caption.1}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{imgbeetle}{{1}{4}{An illustration of the beetle.\relax }{figure.caption.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces The sample images in our dataset (top) and manual landmarks on each part defined by biologists (bottom).\relax }}{5}{figure.caption.2}}
-\newlabel{figdatasamples}{{2}{5}{The sample images in our dataset (top) and manual landmarks on each part defined by biologists (bottom).\relax }{figure.caption.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces The two strategies to augment the number of images in pronotum set.\relax }}{5}{figure.caption.3}}
-\newlabel{figdataauge}{{3}{5}{The two strategies to augment the number of images in pronotum set.\relax }{figure.caption.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces The sample images in our dataset (top), the 5 parts and their landmarks defined manually by biologists (bottom).\relax }}{5}{figure.caption.2}}
+\newlabel{figdatasamples}{{2}{5}{The sample images in our dataset (top), the 5 parts and their landmarks defined manually by biologists (bottom).\relax }{figure.caption.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces The two strategies to augment the number of images in pronotum set.a) illustrate the augmentation channel per channel by adding a constant value to each pixel on the corresponding channel. b) illustrate how to extract 3 different images from only one by selecting a color channel each time.\relax }}{5}{figure.caption.3}}
+\newlabel{figdataauge}{{3}{5}{The two strategies to augment the number of images in pronotum set.a) illustrate the augmentation channel per channel by adding a constant value to each pixel on the corresponding channel. b) illustrate how to extract 3 different images from only one by selecting a color channel each time.\relax }{figure.caption.3}{}}
 \citation{krizhevsky2012imagenet,ciregan2012multi,cintas2016automatic,sun2013deep}
 \citation{lecun2012efficient}
 \citation{krizhevsky2012imagenet}
 \citation{srivastava2014dropout}
 \citation{lecun2015deep,krizhevsky2012imagenet}
-\citation{hinton2012improving}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Network architecture}{6}{subsection.2.2}}
 \newlabel{subsec22}{{2.2}{6}{Network architecture}{subsection.2.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces The components of an elementary block\relax }}{6}{figure.caption.4}}
-\newlabel{figeblock}{{4}{6}{The components of an elementary block\relax }{figure.caption.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces The components of an Elementary Block. Orange, yellow and green boxes contain the operations, blue boxes the data.\relax }}{6}{figure.caption.4}}
+\newlabel{figeblock}{{4}{6}{The components of an Elementary Block. Orange, yellow and green boxes contain the operations, blue boxes the data.\relax }{figure.caption.4}{}}
+\citation{hinton2012improving}
 \citation{krizhevsky2012imagenet,cintas2016automatic}
 \citation{lasagne}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Elementary Blocks Network (EB-Net) architecture\relax }}{7}{figure.caption.5}}
-\newlabel{figebnet}{{5}{7}{Elementary Blocks Network (EB-Net) architecture\relax }{figure.caption.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Setting and training EB-Net}{7}{subsection.2.3}}
-\newlabel{subsec23}{{2.3}{7}{Setting and training EB-Net}{subsection.2.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Elementary Blocks Network (EB-Net) architecture obtained from a composition of 3 Elementary Blocks and ended by 3 Full Connected layers.\relax }}{7}{figure.caption.5}}
+\newlabel{figebnet}{{5}{7}{Elementary Blocks Network (EB-Net) architecture obtained from a composition of 3 Elementary Blocks and ended by 3 Full Connected layers.\relax }{figure.caption.5}{}}
 \citation{adams_geomorph_2013}
 \citation{adams_geomorph_2013}
 \citation{goodall_procrustes_1991}
 \citation{rohlf_use_2000}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Setting and training EB-Net}{8}{subsection.2.3}}
+\newlabel{subsec23}{{2.3}{8}{Setting and training EB-Net}{subsection.2.3}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Statistical evaluation of predicted shapes}{8}{subsection.2.4}}
 \newlabel{subsec24}{{2.4}{8}{Statistical evaluation of predicted shapes}{subsection.2.4}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3}Results}{8}{section.3}}
@@ -122,22 +122,20 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Transfer learning to improve performances}{10}{subsection.3.2}}
 \@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces The distribution of distances for the best and the worst cases of the three parts\relax }}{11}{figure.caption.10}}
 \newlabel{figprodist}{{8}{11}{The distribution of distances for the best and the worst cases of the three parts\relax }{figure.caption.10}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}Pre-train EB-Net on facial keypoint dataset}{11}{subsubsection.3.2.1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces The samples (face and manual landmarks) in the dataset that we used to pre-train EB-Net.\relax }}{12}{figure.caption.11}}
-\newlabel{fighmface}{{9}{12}{The samples (face and manual landmarks) in the dataset that we used to pre-train EB-Net.\relax }{figure.caption.11}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}Pre-train EB-Net on facial keypoint dataset}{12}{subsubsection.3.2.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces The samples (face and manual landmarks) in the dataset on Kaggle that we have used to pre-train EB-Net.\relax }}{12}{figure.caption.11}}
+\newlabel{fighmface}{{9}{12}{The samples (face and manual landmarks) in the dataset on Kaggle that we have used to pre-train EB-Net.\relax }{figure.caption.11}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces RMSE comparison between our score and top three of challenge.\relax }}{12}{table.caption.12}}
 \newlabel{tblRMSE_challenge}{{3}{12}{RMSE comparison between our score and top three of challenge.\relax }{table.caption.12}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}Fine-tuning on beetle images}{12}{subsubsection.3.2.2}}
 \citation{yosinski2014transferable}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}Fine-tuning on beetle images}{13}{subsubsection.3.2.2}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.3}Fine-tuning results}{13}{subsubsection.3.2.3}}
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Average distances comparison on pronotum images\relax }}{13}{table.caption.13}}
-\newlabel{tblfn_pronotum}{{4}{13}{Average distances comparison on pronotum images\relax }{table.caption.13}{}}
-\citation{rohlf_use_2000}
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Average distances comparison on head images\relax }}{14}{table.caption.14}}
-\newlabel{tblfn_head}{{5}{14}{Average distances comparison on head images\relax }{table.caption.14}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Average distances comparison on elytra images\relax }}{14}{table.caption.15}}
-\newlabel{tblfn_elytra}{{6}{14}{Average distances comparison on elytra images\relax }{table.caption.15}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.4}Predicted shapes : comparing 'from-scratch' to fine-tuning}{14}{subsubsection.3.2.4}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Average distances comparison on pronotum images. The landmarks number 1 and 7 remain the best estimation after fine-tunning, the number 6 the worst one. \relax }}{14}{table.caption.13}}
+\newlabel{tblfn_pronotum}{{4}{14}{Average distances comparison on pronotum images. The landmarks number 1 and 7 remain the best estimation after fine-tunning, the number 6 the worst one. \relax }{table.caption.13}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Average distances comparison on head images. The landmarks number 6 and 8 obtain the best estimation and the number 8 the worst one. \relax }}{14}{table.caption.14}}
+\newlabel{tblfn_head}{{5}{14}{Average distances comparison on head images. The landmarks number 6 and 8 obtain the best estimation and the number 8 the worst one. \relax }{table.caption.14}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Average distances comparison on elytra images. The landmarks number 1 and 3 obtain the best estimation and the number 8 the worst one.\relax }}{14}{table.caption.15}}
+\newlabel{tblfn_elytra}{{6}{14}{Average distances comparison on elytra images. The landmarks number 1 and 3 obtain the best estimation and the number 8 the worst one.\relax }{table.caption.15}{}}
 \newlabel{}{{10a}{15}{. $1^{st}$ landmark (from scratch) \relax }{figure.caption.16}{}}
 \newlabel{sub@}{{a}{15}{. $1^{st}$ landmark (from scratch) \relax }{figure.caption.16}{}}
 \newlabel{}{{10b}{15}{. $1^{st}$ landmark (fine-tuning) \relax }{figure.caption.16}{}}
@@ -158,6 +156,7 @@
 \newlabel{sub@}{{d}{15}{. $1^{st}$ landmark (fine-tuning) \relax }{figure.caption.17}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces The distribution of distances of all head images on $1^{st}$ landmark and $6^{th}$ landmark. \relax }}{15}{figure.caption.17}}
 \newlabel{figcharthfn}{{11}{15}{The distribution of distances of all head images on $1^{st}$ landmark and $6^{th}$ landmark. \relax }{figure.caption.17}{}}
+\citation{rohlf_use_2000}
 \newlabel{}{{12a}{16}{. $1^{st}$ landmark (from scratch) \relax }{figure.caption.18}{}}
 \newlabel{sub@}{{a}{16}{. $1^{st}$ landmark (from scratch) \relax }{figure.caption.18}{}}
 \newlabel{}{{12b}{16}{. $1^{st}$ landmark (fine-tuning) \relax }{figure.caption.18}{}}
@@ -176,12 +175,15 @@
 \newlabel{sub@}{{c}{16}{. Elytra \relax }{figure.caption.19}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces The location of predicted/manual landmarks in one case of each part. The red/yellow points represent the predicted/manual landmarks.\relax }}{16}{figure.caption.19}}
 \newlabel{figpdl}{{13}{16}{The location of predicted/manual landmarks in one case of each part.\\The red/yellow points represent the predicted/manual landmarks.\relax }{figure.caption.19}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.4}Predicted shapes : comparing 'from-scratch' to fine-tuning}{16}{subsubsection.3.2.4}}
 \citation{goodall_procrustes_1991,collyer_method_2015}
 \citation{palaniswamy_automatic_2010,cintas_automatic_2017,vandaele_landmark_2018,dai_locating_2019}
-\citation{elsken_neural_2019}
-\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Shape covariation between predicted and manual landmarks : shape covariation as a correlation (cor.) and an associated p-values (p-v.) \relax }}{17}{table.caption.20}}
-\newlabel{tblfsft_comparing}{{7}{17}{Shape covariation between predicted and manual landmarks : shape covariation as a correlation (cor.) and an associated p-values (p-v.) \relax }{table.caption.20}{}}
+\citation{martineau_survey_2017}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Shape covariation between predicted and manual landmarks : shape covariation as a correlation coefficient (cor.) and the an associated p-values (p-v.) \relax }}{17}{table.caption.20}}
+\newlabel{tblfsft_comparing}{{7}{17}{Shape covariation between predicted and manual landmarks : shape covariation as a correlation coefficient (cor.) and the an associated p-values (p-v.) \relax }{table.caption.20}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {4}Discussion and perspectives}{17}{section.4}}
+\citation{elsken_neural_2019}
+\citation{tatsuta_geometric_2018}
 \bibdata{includes/references}
 \bibcite{klingenberg_evolution_2010}{{1}{}{{}}{{}}}
 \bibcite{sasakawa_utility_2016}{{2}{}{{}}{{}}}

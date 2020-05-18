@@ -201,7 +201,11 @@ architecture.
 	\label{figeblock}
 \end{figure}
 
-Figure \ref{figeblock} illustrates the order of the layers in an EB item. It is defined as a sequence of a CONV layer, a maximum POOL layer, and a Dropout layer. In an Elementary Block, the convolution layer is used to extract the high-level features by applying different filters on the input. Setting POOL layer after the CONV layer towards to reduce the spatial size of the representation to decrease the number of parameters as well as to use less the computing time. The DROP layer, usually inserted between the FC layers to prevent over-fitting \cite{lecun2015deep, krizhevsky2012imagenet}, is included in our model in the extracting feature blocks to produce some kinds of image noise augmentation. The DROP layer randomly drops some connections during the training process. It makes the network thinner than the original one (fewer parameters), so training a network with dropout layer is equivalent to train a set of thinner networks.
+Figure \ref{figeblock} illustrates the order of the layers in an EB
+item. It is defined as a sequence of a CONV layer, a maximum POOL
+layer, and a Dropout layer. In an Elementary Block, the convolution
+layer is used to extract the high-level features by applying different
+filters on the input. Setting POOL layer after the CONV layer towards to reduce the spatial size of the representation to decrease the number of parameters as well as to use less the computing time. The DROP layer, usually inserted between the FC layers to prevent over-fitting \cite{lecun2015deep, krizhevsky2012imagenet}, is included in our model in the extracting feature blocks to produce some kinds of image noise augmentation. The DROP layer randomly drops some connections during the training process. It makes the network thinner than the original one (fewer parameters), so training a network with dropout layer is equivalent to train a set of thinner networks.
 
 Three Elementary Blocks have been then assembled to create the whole network
 architecture, called Elementary Blocks Network (EB-Net). The used
@@ -231,7 +235,8 @@ architecture.
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.99\textwidth]{images/arch_model}
-	\caption{Elementary Blocks Network (EB-Net) architecture obtained from a composition of 3 Elementary Blocks and ended
+	\caption{Elementary Blocks Network (EB-Net) architecture
+          obtained from a composition of 3 Elementary Blocks and ended
         by 3 Full Connected layers.}
 	\label{figebnet}
 \end{figure}
@@ -344,7 +349,8 @@ The selected dataset to pre-train EB-Net has been published for a challenge\foot
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.80\textwidth]{images/face_dataset_2}
-	\caption{The samples (face and manual landmarks) in the dataset on Kaggle that we have used to pre-train EB-Net.}
+	\caption{The samples (face and manual landmarks) in the Kaggle
+          dataset that we have used to pre-train EB-Net.}
 	\label{fighmface}
 \end{figure}
 
@@ -396,7 +402,8 @@ At the opposite side, the worst cases remain the same positions as previously: t
 		\textbf{Fine-tune} & 2.99 & 3.41 & 2.98 & 3.54 & 3.37 & \textcolor{red}{4.06} & \textcolor{green}{2.93} & 3.64 \\ \hline \hline
 		\textbf{\% of impr.} & 25.25 & 24.01 & 30.56 & \textcolor{red}{19.18} & 21.55 & 24.28 & \textcolor{green}{36.85} & 26.16 \\ \hline
 	\end{tabular}
-	\caption{Average distances comparison on pronotum images. The landmarks number 1 and 7 remain the best estimation
+	\caption{Average distances comparison on pronotum
+          images. The landmarks number 1 and 7 remain the best estimation
           after fine-tunning, the number 6 the worst one. }
 	\label{tblfn_pronotum}
 \end{table}
@@ -477,7 +484,12 @@ To illustrate the results, Figure \ref{figpdl} shows both predicted (in red) and
 \end{figure}
 \subsubsection{Predicted shapes : comparing 'from-scratch' to fine-tuning}
 
-We have measured shape covariations between predicted landmarks and manual ones \cite{rohlf_use_2000}, assessing the performance of fine-tuned and `from scratch' networks (described previously) on each anatomical parts. The shape covariation is expressed as a correlation coefficient and an associated p-value.
+We have measured shape covariations between predicted landmarks and
+manual ones \cite{rohlf_use_2000}, assessing the performance of
+fine-tuned and `from scratch' networks (described previously) on each
+anatomical parts. The shape covariation is expressed as a correlation
+coefficient and an associated p-value.
+
 
 \begin{table}[h!]
 	\centering
@@ -491,21 +503,36 @@ We have measured shape covariations between predicted landmarks and manual ones 
 		%\textbf{Left mandible} & 0.2666 & 0.173 & 0.3112 & 0.057 \\ \hline 
 		%\textbf{Right mandible} & 0.3071 & 0.239 & 0.4597 & 0.002 \\ \hline 
 	\end{tabular}
-	\caption{Shape covariation between predicted and manual landmarks : shape covariation as a correlation coefficient (cor.) and the an associated p-values (p-v.) }
+	\caption{Shape covariation between predicted and manual
+          landmarks : shape covariation as a correlation coefficient
+          (cor.) and the associated p-values (p-v.) }
+        
 	\label{tblfsft_comparing}
 \end{table}
 
-We can see from table \ref{tblfsft_comparing} that shape correlations varies between $0.2513$ and $0.7424$ and that $4$ out of $6$ of them are statistically significant (i.e. p-value $< 0.001$). For all the anatomical parts, the fine-tuning improved the shape correlations and its statistical significance. Best results are obtained for fine-tuned networks predicting pronotum's and head's  landmarks with high significant correlations, $0.7224$ and $0.7337$ respectively. Fine-tuning enhanced predictions on Elytra but not enough to make them usuable. We end up with a majority ($\frac{2}{3}$) of anatomical parts where the predicted landmarks are good candidate for replacing manual ones in any procrustes regressions.
+We can see from table \ref{tblfsft_comparing} that shape correlations
+varies between $0.2513$ and $0.7424$ and that $4$ out of $6$ of them
+are statistically significant (i.e. p-value $\le 0.001$). For all the
+anatomical parts, the fine-tuning improved the shape correlations and
+its statistical significance. Best results are obtained for fine-tuned
+networks predicting pronotum's and head's  landmarks with high
+significant correlations, $0.7224$ and $0.7337$
+respectively. Fine-tuning enhanced predictions on Elytra but not
+enough to make them usable. We end up with a majority ($\frac{2}{3}$)
+of anatomical parts where the predicted landmarks are good candidate
+for replacing manual ones in procrustes regressions.
+
 
 \section{Discussion and perspectives}
-
 In this article, we have presented a convolutional neural network, EB-Net, for automatically predict the landmarks on entomological images. It is based on three times the repetitions of a generic block followed by fully connected layers. The block consists of a convolutional layer, a max-pooling layer, and a dropout layer. In the first step, the EB-Net has been separately trained on each part of the beetles. In order to improve the results, the fine-tuning process has been added by pre-training EB-Net on a facial key-points dataset before transferring the parameter values to fine-tune on each set of images.
 
 The results have been evaluated by calculating the distance between manual landmarks and predicted ones. These results have shown that using CNN to predict the landmarks on biological images leads to satisfying results without need for the complex pre or post processing steps on the studied objects. These predictions are statistically significant enough to replace manual landmarks in procrustes regression studies, which are fairly common in morphometric studies e.g. two classic methodological papers on the subject\cite{goodall_procrustes_1991,collyer_method_2015} have, respectively, direct citations of over one thousand and over a hundred \footnote{source Web of Science$^{TM}$ accessed on 04/24/2020}.
 
 This work has addressed a complex task in computational biology: automatic landmark digitalization. The interest in this topic is not new, but the relevant algorithms and computational power have only been available fairly recently \cite{palaniswamy_automatic_2010,cintas_automatic_2017,vandaele_landmark_2018,dai_locating_2019}. Even so  most methods are seldom used by biologist and even so by entomologist. 
 Maybe it is because the software tools are too complex and the necessary datasets not always available (e.g. too few training images and related manual landmarks).
-We show here that a neural network with a relevant architecture can provide a high quality of results in only a few methodological steps. We took care of constructing this network using standard software tools to ease any technological transfer. Also, our model, EB-Net, can easily work with a limited number of images and improve its prediction results by fine-tuning the parameter values obtained from pre-training on another dataset. Another interesting trait about automatic landmark digitalization is that it's a proxy to many different questions. While image-based insect classification (within or among species) \cite{martineau_survey_2017} serves a singular purpose, automatic generation of landmarks can help a variety of questions including regressions on (environmental) covariates, studies of shape-covariations, evaluation of phylogenetic signals and, of course, classification.
+We show here that a neural network with a relevant architecture can provide a high quality of results in only a few methodological steps. We took care of constructing this network using standard software tools to ease any technological transfer. Also, our model, EB-Net, can easily work with a limited number of images and improve its prediction results by fine-tuning the parameter values obtained from pre-training on another dataset.
+
+Another interesting trait about automatic landmark digitalization is that it's a proxy to many different questions. While image-based insect classification (within or among species) \cite{martineau_survey_2017} serves a singular purpose, automatic generation of landmarks can help a variety of questions including regressions on (environmental) covariates, studies of shape-covariations, evaluation of phylogenetic signals and, of course, classification.
 
 One can note that the elementary block that we used to build EB-Net, is generic so it's easy to adjust the suitable number of blocks for ones applications depending on the computing resources, as well as the expected results. For example, we have tried to add a new elementary block to EB-Net. The experiments have shown that the results have been slightly improved, but we have spent more resources and computing times to reach this improvement. The average distances have been improved by $0.5$ pixels. However, this change was statistically insignificant (data not shown). Consequently, we need to note that it exists a balance between the depth of the model, the accuracy of outputs and the cost to compute.
 This elementary block approach is not, formally, a  neural architecture search \cite{elsken_neural_2019} i.e. a method for automating the design of a CNN,  but it is an easy to implement practical solution.
@@ -514,7 +541,8 @@ In this paper, we focused on a carabid species which is linked to studies in agr
 To ease the use of our model, all the implementations, EB-Net model and EB-Net parameters, are available freely \footnote{\url{ https://github.com/linhlevandlu/cnnBeetles}} so it should possible to reuse EB-Net parameters for another landmark setting application and to apply transfer learning. We plan also to export EB-Net architecture to other application domains in biomedical imaging most notably MRI images analysis. 
 
 %\section*{References}
-%\paragraph{}
+\paragraph{}
+
 \bibliography{includes/references}
 
 \end{document}
