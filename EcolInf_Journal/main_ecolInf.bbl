@@ -244,7 +244,7 @@ D.~G. Lowe, Distinctive image features from scale-invariant keypoints,
   International journal of computer vision 60~(2) (2004) 91--110.
 
 \bibitem{le2017maelab}
-V.~L. LE, M.~BEURTON-AIMAR, A.~KR{\"A}HENB{\"U}HL, N.~PARISEY,
+V.~L. Le, M.~Beurton-Aimar, A.~Kr{\"a}henb{\"u}hl, N.~Parisey,
   \href{https://hal.archives-ouvertes.fr/hal-01571440}{{MAELab: a framework to
   automatize landmark estimation}}, in: {WSCG 2017}, 25th International
   Conference in Central Europe on Computer Graphics, Visualization and Computer
@@ -261,6 +261,11 @@ Z.~Zhang, P.~Luo, C.~C. Loy, X.~Tang, Facial landmark detection by deep
   multi-task learning, in: European Conference on Computer Vision, Springer,
   2014, pp. 94--108.
 
+\bibitem{porto2020ml}
+A.~Porto, K.~L. Voje, Ml-morph: A fast, accurate and general approach for
+  automated detection and landmarking of biological structures in images,
+  Methods in Ecology and Evolution 11~(4) (2020) 500--512.
+
 \bibitem{shorten2019survey}
 C.~Shorten, T.~M. Khoshgoftaar, A survey on image data augmentation for deep
   learning, Journal of Big Data 6~(1) (2019) 60.
@@ -268,6 +273,10 @@ C.~Shorten, T.~M. Khoshgoftaar, A survey on image data augmentation for deep
 \bibitem{lecun2012efficient}
 Y.~A. LeCun, L.~Bottou, G.~B. Orr, K.-R. M{\"u}ller, Efficient backprop, in:
   Neural networks: Tricks of the trade, Springer, 2012, pp. 9--48.
+
+\bibitem{Goodfellow2016}
+I.~Goodfellow, Y.~Bengio, A.~Courville, Deep Learning, MIT Press, 2016,
+  \url{http://www.deeplearningbook.org}.
 
 \bibitem{srivastava2014dropout}
 N.~Srivastava, G.~E. Hinton, A.~Krizhevsky, I.~Sutskever, R.~Salakhutdinov,
@@ -278,6 +287,11 @@ N.~Srivastava, G.~E. Hinton, A.~Krizhevsky, I.~Sutskever, R.~Salakhutdinov,
 G.~E. Hinton, N.~Srivastava, A.~Krizhevsky, I.~Sutskever, R.~R. Salakhutdinov,
   Improving neural networks by preventing co-adaptation of feature detectors,
   arXiv preprint arXiv:1207.0580.
+
+\bibitem{bastien2012theano}
+F.~Bastien, P.~Lamblin, R.~Pascanu, J.~Bergstra, I.~Goodfellow, A.~Bergeron,
+  N.~Bouchard, D.~Warde-Farley, Y.~Bengio, Theano: new features and speed
+  improvements, arXiv preprint arXiv:1211.5590.
 
 \bibitem{lasagne}
 S.~Dieleman, J.~Schlüter, C.~Raffel, E.~Olson, S.~K. Sønderby, D.~Nouri,
@@ -380,8 +394,31 @@ X.~Dai, H.~Zhao, T.~Liu, D.~Cao, L.~Xie, Locating {Anatomical} {Landmarks} on
 \newblock \href {https://doi.org/10.1109/ACCESS.2019.2940623}
   {\path{doi:10.1109/ACCESS.2019.2940623}}.
 
+\bibitem{martineau_survey_2017}
+M.~Martineau, D.~Conte, R.~Raveaux, I.~Arnault, D.~Munier, G.~Venturini,
+  \href{https://linkinghub.elsevier.com/retrieve/pii/S0031320316304411}{A
+  survey on image-based insect classification}, Pattern Recognition 65 (2017)
+  273--284.
+\newblock \href {https://doi.org/10.1016/j.patcog.2016.12.020}
+  {\path{doi:10.1016/j.patcog.2016.12.020}}.
+\newline\urlprefix\url{https://linkinghub.elsevier.com/retrieve/pii/S0031320316304411}
+
 \bibitem{elsken_neural_2019}
 T.~Elsken, J.~H. Metzen, F.~Hutter, Neural {Architecture} {Search}: {A}
   {Survey}, Journal of Machine Learning Research 20~(55) (2019) 1--21.
+
+\bibitem{tatsuta_geometric_2018}
+H.~Tatsuta, K.~H. Takahashi, Y.~Sakamaki,
+  \href{http://doi.wiley.com/10.1111/ens.12293}{Geometric morphometrics in
+  entomology: {Basics} and application s: {Geometric} morphometrics in
+  entomology}, Entomological Science 21~(2) (2018) 164--184.
+\newblock \href {https://doi.org/10.1111/ens.12293}
+  {\path{doi:10.1111/ens.12293}}.
+\newline\urlprefix\url{http://doi.wiley.com/10.1111/ens.12293}
+
+\bibitem{thevenoux2020hidden}
+R.~Thevenoux, L.~Folcher, M.~Esquibet, D.~Fouville, J.~Montarry, E.~Grenier,
+  The hidden diversity of the potato cyst nematode globodera pallida in the
+  south of peru, Evolutionary applications 13~(4) (2020) 727--737.
 
 \end{thebibliography}
