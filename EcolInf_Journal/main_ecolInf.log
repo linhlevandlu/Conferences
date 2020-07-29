@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.22)  27 JUL 2020 16:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.22)  29 JUL 2020 11:30
 entering extended mode
 **./main_ecolInf.tex
 (main_ecolInf.tex
@@ -1014,19 +1014,19 @@ File: ./images/fs_lm1.png Graphic file (type png)
 <use ./images/fs_lm1.png>
 Package pdftex.def Info: ./images/fs_lm1.png  used on input line 460.
 (pdftex.def)             Requested size: 235.22807pt x 132.19582pt.
-<./images/fn_lm1.png, id=379, 455.45157pt x 255.95625pt>
-File: ./images/fn_lm1.png Graphic file (type png)
-<use ./images/fn_lm1.png>
-Package pdftex.def Info: ./images/fn_lm1.png  used on input line 461.
-(pdftex.def)             Requested size: 235.22807pt x 132.19582pt.
+<./images/fn_lm1_2.png, id=379, 441.90094pt x 247.67531pt>
+File: ./images/fn_lm1_2.png Graphic file (type png)
+<use ./images/fn_lm1_2.png>
+Package pdftex.def Info: ./images/fn_lm1_2.png  used on input line 461.
+(pdftex.def)             Requested size: 235.22807pt x 131.84172pt.
 File: ./images/fs_lm6.png Graphic file (type png)
 <use ./images/fs_lm6.png>
 Package pdftex.def Info: ./images/fs_lm6.png  used on input line 462.
 (pdftex.def)             Requested size: 235.22807pt x 132.19582pt.
-<./images/fn_lm6.png, id=380, 455.45157pt x 255.95625pt>
-File: ./images/fn_lm6.png Graphic file (type png)
-<use ./images/fn_lm6.png>
-Package pdftex.def Info: ./images/fn_lm6.png  used on input line 463.
+<./images/fn_lm6_2.png, id=380, 455.45157pt x 255.95625pt>
+File: ./images/fn_lm6_2.png Graphic file (type png)
+<use ./images/fn_lm6_2.png>
+Package pdftex.def Info: ./images/fn_lm6_2.png  used on input line 463.
 (pdftex.def)             Requested size: 235.22807pt x 132.19582pt.
 File: ./images/head6_fs.png Graphic file (type png)
 <use ./images/head6_fs.png>
@@ -1071,7 +1071,7 @@ Package pdftex.def Info: ./images/elytre8_fn.png  used on input line 483.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[15 <./images/fn_lm1.png (PNG copy)> <./images/fn_lm6.png (PNG copy)>]
+[15 <./images/fn_lm1_2.png (PNG copy)> <./images/fn_lm6_2.png (PNG copy)>]
 
 LaTeX Warning: Text page 16 contains only floats.
 
@@ -1128,7 +1128,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 540.
  ) 
 Here is how much of TeX's memory you used:
  18446 strings out of 492970
- 341781 string characters out of 3135851
+ 341801 string characters out of 3135851
  429755 words of memory out of 3000000
  21865 multiletter control sequences out of 15000+200000
  8656 words of font info for 32 fonts, out of 3000000 for 9000
@@ -1151,7 +1151,7 @@ ic/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
 nts/cm/cmti7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
 ti8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on main_ecolInf.pdf (24 pages, 2902608 bytes).
+Output written on main_ecolInf.pdf (24 pages, 2897869 bytes).
 PDF statistics:
  646 PDF objects out of 1000 (max. 8388607)
  139 named destinations out of 1000 (max. 500000)
